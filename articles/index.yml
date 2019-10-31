@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Dokumentace k Microsoft Quantum
+summary: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové algoritmy. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.
+metadata:
+  title: Dokumentace k Microsoft Quantum – referenční materiály k rozhraní API Q#
+  description: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové algoritmy. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.
+  ms.prod: quantum
+  ms.topic: landing-page
+  ms.collection: collection
+  author: cjgronlund
+  ms.author: cgronlun
+  ms.date: 09/30/2019
+  ms.openlocfilehash: 692456cb6b117b206d202b01967202b7ac89e59d
+  ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/30/2019
+  ms.locfileid: "73065057"
+landingContent:
+- title: Začínáme s Microsoft Quantum
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Vítá vás sada Microsoft Quantum Developer Kit
+      url: welcome.md
+  - linkListType: get-started
+    links:
+    - text: Instalace sady QDK
+      url: install-guide/index.md
+    - text: Aktualizace sady QDK
+      url: install-guide/update.md
+  - linkListType: quickstart
+    links:
+    - text: Vytvoření prvního kvantového programu
+      url: quickstart.md
+- title: Informace o kvantových výpočtech
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Co jsou kvantové výpočty?
+      url: concepts/index.md
+    - text: Vektory a matice
+      url: concepts/vectors-and-matrices.md
+    - text: Pokročilé koncepty matice
+      url: concepts/advanced-matrices.md
+    - text: Qubit
+      url: concepts/the-qubit.md
+    - text: Softwarový zásobník
+      url: concepts/software-stack.md
+- title: Techniky kvantového vývoje
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Co je Q#?
+      url: techniques/file-structure.md
+    - text: Operace a funkce
+      url: techniques/operations-and-functions.md
+    - text: Místní proměnné
+      url: techniques/local-variables.md
+    - text: Práce s qubity
+      url: techniques/working-with-qubits.md
+    - text: 'Sestavení: Teleportace'
+      url: techniques/putting-it-all-together.md
+- title: Správa počítačů a ovladačů
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Klasické ovladače a počítače
+      url: machines/index.md
+    - text: Simulátor celkového stavu QDK
+      url: machines/full-state-simulator.md
+    - text: Odhad prostředků
+      url: machines/resources-estimator.md
+    - text: Simulátor kvantového trasování
+      url: machines/qc-trace-simulator/index.md
+    - text: Simulátor QDK Toffoli
+      url: machines/toffoli-simulator.md
+- title: Jazyk Q# a knihovny
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Úvod do jazyka Q#
+      url: language/index.md
+    - text: Poznámky k verzi
+      url: relnotes/index.md
+  - linkListType: reference
+    links:
+    - text: Standardní knihovny
+      url: libraries/standard/index.md
+    - text: Chemické knihovny
+      url: libraries/chemistry/index.md
+    - text: Numerické knihovny
+      url: libraries/numerics/index.md
+  - linkListType: reference
+    links:
+    - text: Referenční dokumentace k jazyku Q#
+      url: https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.bitwise?view=qsharp-preview
+    - text: Komponenty C#
+      url: https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators?view=quantum-dotnet-latest

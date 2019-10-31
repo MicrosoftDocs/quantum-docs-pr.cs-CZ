@@ -9,8 +9,8 @@ ms.openlocfilehash: 5a5b28f7e8c1669d26d1064753f20551a6b0d036
 ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72970394"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056454"
 ---
 Sada Quantum Development Kit je poskytována s několika knihovnami, které usnadňují vývoj kvantových aplikací v jazyce Q#.
 V této části dokumentace popisujeme tyto knihovny a způsob jejich použití ve vašich programech.

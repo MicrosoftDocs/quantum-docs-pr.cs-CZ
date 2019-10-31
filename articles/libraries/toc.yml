@@ -1,0 +1,9 @@
+- name: Standardní knihovny
+  topicHref: standard/index.md
+  href: standard/toc.yml
+- name: Kvantová chemická knihovna
+  topicHref: chemistry/index.md
+  href: chemistry/toc.yml
+- name: Kvantová numerická knihovna
+  topicHref: numerics/index.md
+  href: numerics/toc.yml
