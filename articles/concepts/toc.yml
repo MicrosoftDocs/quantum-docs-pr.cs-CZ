@@ -1,0 +1,20 @@
+- name: Co jsou kvantové výpočty?
+  href: index.md
+- name: Vektory a matice
+  href: vectors-and-matrices.md
+- name: Pokročilé koncepty matice
+  href: advanced-matrices.md
+- name: Qubit
+  href: the-qubit.md
+- name: Více qubitů
+  href: multiple-qubits.md
+- name: Diracova notace
+  href: dirac-notation.md
+- name: Pauliho měření
+  href: pauli-measurements.md
+- name: Kvantové okruhy
+  href: circuits.md
+- name: Kvantová orákula
+  href: oracles.md
+- name: Softwarový zásobník
+  href: software-stack.md

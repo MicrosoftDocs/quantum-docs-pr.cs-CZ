@@ -1,0 +1,11 @@
+- name: Klasické počítače a ovladače
+  href: index.md
+- name: Kvantový simulátor
+  href: full-state-simulator.md
+- name: Odhad prostředků
+  href: resources-estimator.md
+- name: Simulátor trasování kvantového počítače
+  topicHref: qc-trace-simulator/index.md
+  href: qc-trace-simulator/toc.yml
+- name: Simulátor Toffoli
+  href: toffoli-simulator.md
