@@ -1,0 +1,190 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.extensions.math
+name: Microsoft. nespravované. Extensions. Math
+functions:
+- uid: microsoft.quantum.extensions.math.absb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.absl".
+- uid: microsoft.quantum.extensions.math.absd
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.absd".
+- uid: microsoft.quantum.extensions.math.absi
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.absi".
+- uid: microsoft.quantum.extensions.math.arccos
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.arccos".
+- uid: microsoft.quantum.extensions.math.arcsin
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.arcsin".
+- uid: microsoft.quantum.extensions.math.arctan
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.arctan".
+- uid: microsoft.quantum.extensions.math.arctan2
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.arctan2".
+- uid: microsoft.quantum.extensions.math.ceiling
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.ceiling".
+- uid: microsoft.quantum.extensions.math.cos
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.cos".
+- uid: microsoft.quantum.extensions.math.cosh
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.cosh".
+- uid: microsoft.quantum.extensions.math.divremb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.divreml".
+- uid: microsoft.quantum.extensions.math.e
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.e".
+- uid: microsoft.quantum.extensions.math.expd
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.expd".
+- uid: microsoft.quantum.extensions.math.floor
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.floor".
+- uid: microsoft.quantum.extensions.math.ieeeremainder
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.ieeeremainder".
+- uid: microsoft.quantum.extensions.math.log
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.log".
+- uid: microsoft.quantum.extensions.math.log10
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.log10".
+- uid: microsoft.quantum.extensions.math.maxb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.maxl".
+- uid: microsoft.quantum.extensions.math.maxd
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.maxd".
+- uid: microsoft.quantum.extensions.math.maxi
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.maxi".
+- uid: microsoft.quantum.extensions.math.minb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.minl".
+- uid: microsoft.quantum.extensions.math.mind
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.mind".
+- uid: microsoft.quantum.extensions.math.mini
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.mini".
+- uid: microsoft.quantum.extensions.math.modpowb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.modpowl".
+- uid: microsoft.quantum.extensions.math.pi
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.pi".
+- uid: microsoft.quantum.extensions.math.powd
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.powd".
+- uid: microsoft.quantum.extensions.math.round
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.round".
+- uid: microsoft.quantum.extensions.math.signb
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.signl".
+- uid: microsoft.quantum.extensions.math.signd
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.signd".
+- uid: microsoft.quantum.extensions.math.signi
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.signi".
+- uid: microsoft.quantum.extensions.math.sin
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.sin".
+- uid: microsoft.quantum.extensions.math.sinh
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.sinh".
+- uid: microsoft.quantum.extensions.math.sqrt
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.sqrt".
+- uid: microsoft.quantum.extensions.math.tan
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.tan".
+- uid: microsoft.quantum.extensions.math.tanh
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.tanh".
+- uid: microsoft.quantum.extensions.math.truncate
+  summary: >-
+    > [!WARNING]
+
+    > Zastaralé prosím, použijte @"microsoft.quantum.math.truncate".
+ms.openlocfilehash: a1a8cda192f7e95141eb2e34baa37ddaae4cb8c9
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056336"

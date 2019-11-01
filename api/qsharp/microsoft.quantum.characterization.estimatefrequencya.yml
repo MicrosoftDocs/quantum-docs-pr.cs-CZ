@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimatefrequencya
+name: EstimateFrequencyA
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Vzhledem k přípravě, která je sousední a měření, odhadne četnost, s jakou je měření úspěšné (vrátí `Zero`), a to provedením daného počtu zkušebních hodnot.
+remarks: U sousedních operací lze určit určité předpoklady, jako je například volání operace, připraví qubits na přesně stejný stav, což umožňuje cílovým počítačům provádět některé optimalizace výkonu.
+syntax: 'operation EstimateFrequencyA (preparation : (Qubit[] => Unit is Adj), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
+input:
+  content: '(preparation : (Qubit[] => Unit is Adj), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: preparation
+    summary: Operace s sousedícím objektem $P $, která připraví daný stav $ \rho $ na vstupním registru.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: measurement
+    summary: Operace $M $ představuje měření zájmu.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Result
+  - name: nQubits
+    summary: Počet qubits, na které se každý působí přípravek a měření.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Počet, kolikrát by měla být provedena měření, aby se mohla odhadnout frekvence zájmu.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: Odhad $ \hat{p} $ frekvence, s jakou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ vrátí `Zero`, získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, kde $n\_{\ Šipka nahoru} $ je počet pozorovaných výsledků `Zero`.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: cfc90cee0b98b88391ee23218489669600a97920
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229170"

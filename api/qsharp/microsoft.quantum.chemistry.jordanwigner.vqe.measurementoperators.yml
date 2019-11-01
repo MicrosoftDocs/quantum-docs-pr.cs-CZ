@@ -1,0 +1,38 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.vqe.measurementoperators
+name: MeasurementOperators
+type: function
+namespace: Microsoft.Quantum.Chemistry.JordanWigner.VQE
+summary: Vypočítá všechny operátory měření potřebné k výpočtu očekávaného termínu Wigner.
+syntax: 'function MeasurementOperators (nQubits : Int, indices : Int[], termType : Int) : Pauli[][]'
+input:
+  content: '(nQubits : Int, indices : Int[], termType : Int)'
+  types:
+  - name: nQubits
+    summary: Počet qubits potřebných pro simulaci molekulárního systému.
+    isPrimitive: true
+    uid: Int
+  - name: indices
+    summary: Pole obsahující indexy qubit každý operátor Pauli je aplikován na.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: termType
+    summary: Typ termínu Jordánsko-Wigner.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Pauli[][]
+  types:
+  - summary: Pole operátorů měření (každý z nich je pole Pauli).
+    isArray: true
+    types:
+    - isArray: true
+      isPrimitive: true
+      uid: Pauli
+ms.openlocfilehash: e22af035b43d8b3ebeea22c8c4bfa0f7289ab82c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227521"

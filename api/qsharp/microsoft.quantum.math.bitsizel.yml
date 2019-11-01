@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.bitsizel
+name: BitSizeL
+type: function
+namespace: Microsoft.Quantum.Math
+summary: >-
+  Pro nezáporné celé číslo `a`vrátí počet bitů požadovaných k reprezentaci `a`.
+
+
+  To znamená, že vrátí nejmenší $n $, který $a < 2 ^ n $.
+syntax: 'function BitSizeL (a : BigInt) : Int'
+input:
+  content: '(a : BigInt)'
+  types:
+  - name: a
+    summary: Celé číslo, jehož bitová velikost má být vypočítána.
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: Int
+  types:
+  - summary: Bitová velikost `a`.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 09d5cfb994584bc2f411ea70dc57acf0338b93c3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73230156"

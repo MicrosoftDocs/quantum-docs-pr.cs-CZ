@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.foreach
+name: ForEach
+type: operation
+namespace: Microsoft.Quantum.Arrays
+summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
+remarks: "Operace je definována pro obecné typy, tj. kdykoli máme pole `'T[]` a operace `action : 'T -> 'U` můžeme namapovat prvky pole a vytvořit nové pole typu `'U[]`."
+syntax: "operation ForEach (action : ('T => 'U), array : 'T[]) : 'U[]"
+input:
+  content: "(action : ('T => 'U), array : 'T[])"
+  types:
+  - name: action
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - uid: "'U"
+        isLocal: true
+  - name: array
+    summary: Pole prvků nad `'T`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'U[]"
+  types:
+  - summary: Pole `'U[]` prvků, které jsou mapovány operací `action`.
+    isArray: true
+    uid: "'U"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ `array` prvků.
+- uid: "'U"
+  summary: Typ výsledku operace `action`.
+ms.openlocfilehash: f97e01504142681f34772cc84d6e598507d7d734
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218324"

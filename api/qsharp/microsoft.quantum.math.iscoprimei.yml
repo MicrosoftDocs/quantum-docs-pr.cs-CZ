@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.iscoprimei
+name: IsCoprimeI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrátí hodnotu true, pokud $a $ a $b $ jsou souběžné a false v opačném případě.
+syntax: 'function IsCoprimeI (a : Int, b : Int) : Bool'
+input:
+  content: '(a : Int, b : Int)'
+  types:
+  - name: a
+    summary: první počet primality, které se testují společně
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: druhý počet, který provádí testování primality
+    isPrimitive: true
+    uid: Int
+output:
+  content: Bool
+  types:
+  - summary: True, pokud $a $ a $b $ jsou souběžné (například jejich největší společný dělitel je 1) a jinak false
+    isPrimitive: true
+    uid: Bool
+ms.openlocfilehash: 3071dc6481c1bbf3fb5544e9de84ee6e944ad4ba
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232723"

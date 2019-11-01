@@ -1,0 +1,67 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applymulticontrolledc
+name: ApplyMultiControlledC
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje vynásobení kontrolované verze samostatně kontrolované operace.
+
+  Modifikátor `C` označuje, že se má řídit operace s jedním qubit.
+remarks: >-
+  Tato operace používá pouze čistě ancilla qubits.
+
+
+  Diagram vysvětlení a okruhu viz obrázek 4,10, část 4,3 v Nielsen & Čuangština
+syntax: 'operation ApplyMultiControlledC (singlyControlledOp : (Qubit[] => Unit), ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit'
+references: '- [*Michal a. Nielsen, Petr L. Čuangština*, výpočet doby a informace o tom,](http://doi.org/10.1017/CBO9780511976667)'
+input:
+  content: '(singlyControlledOp : (Qubit[] => Unit), ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[])'
+  types:
+  - name: singlyControlledOp
+    summary: >-
+      Operace řízená na jednom qubit.
+
+      První qubit v argumentu operace se považuje za ovládací prvek a zbytek se předpokládá jako cílový qubits.
+
+      `ApplyMultiControlled` vždy volá `singlyControlledOp` s argumentem Length alespoň 1.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: ccnot
+    summary: Nekontrolovaná brána, která se má použít pro konstrukci.
+    uid: microsoft.quantum.canon.ccnotop
+  - name: controls
+    summary: >-
+      Qubits, na kterém má být řízení `singlyControlledOp`.
+
+      Délka `controls` musí být alespoň 1.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targets
+    summary: Cílový qubits, na kterém `singlyControlledOp` úkony.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applymulticontrolledca
+ms.openlocfilehash: 0c6f30505081f3b5f449a72a10bac89815c3bf14
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217338"

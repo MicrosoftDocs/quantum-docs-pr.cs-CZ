@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.errorcorrection.syndromemeasop
+name: SyndromeMeasOp
+type: newtype
+namespace: Microsoft.Quantum.ErrorCorrection
+summary: Představuje operaci, která slouží k měření Syndrome bloku kódu chyby.
+remarks: >-
+  Signatura `(LogicalRegister => Syndrome)` představuje operaci, která pracuje společně na qubits v `LogicalRegister` a některé auxillary qubits, za kterými následuje měření auxillary qubits pro extrakci `Syndrome` hodnoty představující `Result[]` těchto měření.
+
+
+  ### <a name="examples"></a>Příklady
+
+  Syndromes míry pro překlápění kódu $S = \langle ZZI, IZZ \rangle $ použití pomocné qubits v případě, že je odolný proti chybám:
+
+
+  ```qsharp
+      let syndMeasOp = SyndromeMeasOp(MeasureStabilizerGenerators([
+              [PauliZ, PauliZ, PauliI],
+              [PauliI, PauliZ, PauliZ]
+          ], _, MeasureWithScratch));
+  ```
+syntax: newtype SyndromeMeasOp = (Microsoft.Quantum.ErrorCorrection.LogicalRegister => Microsoft.Quantum.ErrorCorrection.Syndrome);
+seeAlso:
+- logicalregister
+- syndrome
+ms.openlocfilehash: 75f0fee569475e887b97d9969c9e92285809f1cb
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232230"

@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifonea
+name: ApplyIfOneA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje na jednu operaci sousedících hodnot s hodnotou klasického výsledku.
+
+
+  V případě `op` operace a hodnoty výsledku `result`použije `op` na `target`, pokud `result` `One`. Pokud `Zero`, nic se nestane s `target`.
+
+  Přípona `A` označuje, že operace, která se má použít, je sousední.
+syntax: "operation ApplyIfOneA (result : Result, (op : ('T => Unit is Adj), target : 'T)) : Unit"
+input:
+  content: "(result : Result, (op : ('T => Unit is Adj), target : 'T))"
+  types:
+  - name: result
+    summary: Výsledek měření, který určuje, zda je použita možnost op nebo ne.
+    isPrimitive: true
+    uid: Result
+  - name: op
+    summary: Operace, která se má podmíněně použít
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: target
+    summary: Vstup, na který se operace používá
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má podmíněně použít.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applyifonec
+- microsoft.quantum.canon.applyifonea
+- microsoft.quantum.canon.applyifoneca
+ms.openlocfilehash: 5846b1178a8373f4b21faaa63ae9f6f86e514339
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217406"

@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.delaya
+name: Zpoždění
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje danou operaci na zpoždění.
+
+
+  Po předané operaci a vstupu k této operaci se operace aplikuje, jakmile bude poskytnut další vstup.
+
+  Konkrétně výraz `Delay(op, arg, _)` je operace, která `op` na `arg` při volání metody.
+
+  Výraz `Delay(op,arg,_)` umožňuje zpoždění aplikace `op`.
+syntax: "operation DelayA (op : ('T => Unit is Adj), arg : 'T, aux : Unit) : Unit"
+input:
+  content: '(op: (t = > jednotka je ADJ), ARG: t, AUX: Unit)'
+  types:
+  - name: evřít
+    summary: Operace, která se má použít.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: ARG
+    summary: Vstup, na který se operace používá
+    uid: "'T"
+    isLocal: true
+  - name: pomocné
+    summary: Argument použitý ke zpoždění použití operace pomocí částečné aplikace
+    isPrimitive: true
+    uid: Unit
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má zpozdit
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.delay
+- microsoft.quantum.canon.delayed
+ms.openlocfilehash: f36930faacf0aa4a1ea87a09fc3018e06e62d7ac
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067794"

@@ -1,0 +1,28 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.measurement.multim
+name: MultiM
+type: operation
+namespace: Microsoft.Quantum.Measurement
+summary: Měří jednotlivé qubity v daném poli na úrovni Standard.
+syntax: 'operation MultiM (targets : Qubit[]) : Result[]'
+input:
+  content: '(targets : Qubit[])'
+  types:
+  - name: targets
+    summary: Pole qubits, které se má změřit
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Result[]
+  types:
+  - summary: Pole výsledků měření.
+    isArray: true
+    isPrimitive: true
+    uid: Result
+ms.openlocfilehash: 647957702c124f0acafa76c155a71796b0c56f25
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231142"

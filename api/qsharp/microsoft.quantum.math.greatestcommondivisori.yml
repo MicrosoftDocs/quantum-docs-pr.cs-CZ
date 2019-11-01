@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.greatestcommondivisori
+name: GreatestCommonDivisorI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vypočítá největšího společného dělitele $a $ a $b $. GCD je vždy pozitivní.
+syntax: 'function GreatestCommonDivisorI (a : Int, b : Int) : Int'
+input:
+  content: '(a : Int, b : Int)'
+  types:
+  - name: a
+    summary: první číslo, které je vypočítáno jako největšího nejdelšího společného dělitele
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: druhý počet, od kterého se počítá rozšířený největší dělitel
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Největší společný dělitel $a $ a $b $
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 24f187968a2b628ebe8e18d84b762def91e3bb95
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232842"

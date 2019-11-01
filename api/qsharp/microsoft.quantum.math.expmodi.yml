@@ -1,0 +1,40 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.expmodi
+name: ExpModI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: >-
+  Vrátí celé číslo umocněné na daný příkon s ohledem na dané zbytky.
+
+
+  ExpBase $, Power by vám podíváme na to, co je to $x $, Power by $p $ a $N modulům.
+
+  Funkce vrátí $x ^ p \operatorname{mod} N $.
+
+
+  Předpokládáme, že $N $, $x $ jsou kladné a výkon je nezáporný.
+remarks: Doba trvá v poměru k počtu bitů v `power`, nikoli `power` sobě samým.
+syntax: 'function ExpModI (expBase : Int, power : Int, modulus : Int) : Int'
+input:
+  content: '(expBase : Int, power : Int, modulus : Int)'
+  types:
+  - name: expBase
+    isPrimitive: true
+    uid: Int
+  - name: power
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - isPrimitive: true
+    uid: Int
+ms.openlocfilehash: cd98e60dab928d1cbb5055a762c8ffa31c460009
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229493"

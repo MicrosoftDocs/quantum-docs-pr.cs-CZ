@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.cz
+name: CZ
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje bránu řízená – Z (CZ) na pár qubits.
+
+
+  $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 &-1 \end{align} , $ $ kde jsou řádky a sloupce uspořádané jako v průvodci koncepcemi.
+remarks: >-
+  Ekvivalent:
+
+
+  ```qsharp
+
+  Controlled Z([control], target);
+
+  ```
+syntax: 'operation CZ (control : Qubit, target : Qubit) : Unit'
+input:
+  content: '(control : Qubit, target : Qubit)'
+  types:
+  - name: control
+    summary: Qubit ovládacího prvku pro hradlo CZ.
+    isPrimitive: true
+    uid: Qubit
+  - name: target
+    summary: Cílová qubit pro hradlo CZ
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 000bcb896589343372e415e5a7e628a0665bbc7d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73226161"

@@ -1,0 +1,43 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.reversedople
+name: ReversedOpLE
+type: function
+namespace: Microsoft.Quantum.Arithmetic
+summary: Vzhledem k operaci, která trvá vstupu Little-endian, vrátí novou operaci, která bude mít vstup big-endian.
+syntax: 'function ReversedOpLE (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit)) : (Microsoft.Quantum.Arithmetic.BigEndian => Unit)'
+input:
+  content: '(op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit))'
+  types:
+  - name: op
+    summary: Operace, jejíž vstup má být obrácený.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.littleendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+output:
+  content: (Microsoft.Quantum.Arithmetic.BigEndian => Unit)
+  types:
+  - summary: Nová operace, která přijme svůj vstup jako registr big-endian.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.bigendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+seeAlso:
+- applyreversedople
+- reversedoplea
+- reversedoplec
+- reversedopleca
+ms.openlocfilehash: c28c5a87a908287323d25cff82f0079f2c062882
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218511"

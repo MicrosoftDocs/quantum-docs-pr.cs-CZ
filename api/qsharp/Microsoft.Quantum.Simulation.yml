@@ -1,0 +1,169 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.simulation
+name: Microsoft.Quantum.Simulation
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro soudržný simulaci dynamiky systémů."
+functions:
+- uid: microsoft.quantum.simulation.addgeneratorsystems
+  summary: Přidá dvě `GeneratorSystem`s k vytvoření nového `GeneratorSystem`.
+- uid: microsoft.quantum.simulation.blockencodingbylcu
+  summary: >-
+    Zakóduje operátor zájmu na `BlockEncoding`.
+
+
+    Tato konstrukce sestaví `BlockEncoding` Jednotková $U = P\cdot V\cdot P ^ \dagger $, která kóduje některé operátory $H = \sum_{j} | \alpha_j | U_j $ z zájmu, který je lineární kombinací unitaries. Obvykle $P $ je stavový přípravek, který $P \ket{0}\_a = \ sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ a $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
+- uid: microsoft.quantum.simulation.blockencodingreflectionbylcu
+  summary: >-
+    Zakóduje operátor zájmu na `BlockEncodingReflection`.
+
+
+    Tato konstrukce sestaví `BlockEncodingReflection` Jednotková $U = P\cdot V\cdot P ^ \dagger $, která kóduje některé operátory $H = \sum_{j} | \alpha_j | U_j $ z zájmu, který je lineární kombinací unitaries. $P $ je typicky Příprava stavu, takže $P \ket{0}\_a\sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ a $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
+- uid: microsoft.quantum.simulation.blockencodingtoreflection
+  summary: >-
+    Převede `BlockEncoding` na ekvivalentní `BLockEncodingReflection`.
+
+
+    To znamená, že daná `BlockEncoding` Jednotková $U $, která kóduje některý operátor $H $, převede ho na `BlockEncodingReflection` $U $, který kóduje stejný operátor, ale také splňuje $U ^ \dagger = U $.
+
+    Tím se zvýší velikost pomocného registru $U $ o jeden qubit.
+- uid: microsoft.quantum.simulation.getgeneratorsystemfunction
+  summary: Načte funkci `GeneratorIndex` v `GeneratorSystem`.
+- uid: microsoft.quantum.simulation.getgeneratorsystemnterms
+  summary: Načte počet podmínek ve `GeneratorSystem`.
+- uid: microsoft.quantum.simulation.identitygeneratorindex
+  summary: Vrátí index generátoru konzistentní s nulovým Hamiltonian, `H = 0`, který odpovídá operaci vývoje identity.
+- uid: microsoft.quantum.simulation.identitygeneratorsystem
+  summary: Vrátí systém generátoru konzistentní s nulovou Hamiltonian `H = 0`, která odpovídá operaci vývoje identity.
+- uid: microsoft.quantum.simulation.identitytimedependentgeneratorsystem
+  summary: Vrátí systém generátoru závislý na čase, který je konzistentní s `H(s) = 0`Hamiltonian.
+- uid: microsoft.quantum.simulation.interpolatedevolution
+  summary: Interpoluje mezi dvěma generátory s jednotným plánem a vrátí operaci, která použije Simulovaný vývoj v rámci výsledného generátoru závislého na čase do qubit registru.
+- uid: microsoft.quantum.simulation.interpolategeneratorsystems
+  summary: Vrátí `TimeDependentGeneratorSystem` reprezentující lineární interpolaci mezi dvěma `GeneratorSystem`y.
+- uid: microsoft.quantum.simulation.intstopaulis
+  summary: Převede pole celých čísel na pole qubitch operátorů Pauli s jedním.
+- uid: microsoft.quantum.simulation.inttopauli
+  summary: Převede celé číslo na operátor Pauli s jedním qubit.
+- uid: microsoft.quantum.simulation.multiplygeneratorindex
+  summary: Vynásobí koeficient ve `GeneratorIndex`.
+- uid: microsoft.quantum.simulation.multiplygeneratorsystem
+  summary: Vynásobí koeficient všech podmínek ve `GeneratorSystem`.
+- uid: microsoft.quantum.simulation.pauliblockencoding
+  summary: >-
+    Vytvoří jednotkové kódování bloku pro Hamiltonian.
+
+
+    Hamiltonian $H = \sum_{j}\alpha_j P_j $ je popsána úhrnem podmínek Pauli $P _J $, každý s reálným koeficientem $ \alpha_j $.
+- uid: microsoft.quantum.simulation.paulicoefficientfromgenidx
+  summary: Extrahuje koeficient Pauli výrazu popsanýho `GeneratorIndex`.
+- uid: microsoft.quantum.simulation.paulievolutionfunction
+  summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v Pauli.
+- uid: microsoft.quantum.simulation.paulievolutionset
+  summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v Pauli.
+- uid: microsoft.quantum.simulation.paulistringfromgenidx
+  summary: Extrahuje řetězec Pauli a jeho qubit indexy Pauliho výrazu popsanýho `GeneratorIndex`.
+- uid: microsoft.quantum.simulation.quantumwalkbyqubitization
+  summary: >-
+    Převede `BlockEncodingReflection` na názorné.
+
+
+    To znamená, že daná `BlockEncodingReflection` Jednotková $U $, která kóduje určitý operátor $H $, převede ho na úkol $W $ obsahující spektrum $ \Pm e ^ {\Pm i\sin ^{-1}(H)} $.
+- uid: microsoft.quantum.simulation.sumgeneratorsystems
+  summary: Přidá více `GeneratorSystem`s pro vytvoření nového GeneratorSystem.
+- uid: microsoft.quantum.simulation.timedependenttrottersimulationalgorithm
+  summary: '`TimeDependentSimulationAlgorithm` funkce, která používá dekompozici Trotter – Suzuki k aproximaci jednotkového operátoru, který řeší rovnici Schrodinger závislé na čase.'
+- uid: microsoft.quantum.simulation.trottersimulationalgorithm
+  summary: '`SimulationAlgorithm` funkce, která používá dekompozici Trotter – Suzuki k aproximaci operátoru vývojového času _EXP (-iHt)_.'
+- uid: microsoft.quantum.simulation.trotterstep
+  summary: Implementuje jediný časový krok pro vývoj času systémem, který je popsaný v `EvolutionGenerator` s využitím Trotter – Suzuki rekompozice.
+operations:
+- uid: microsoft.quantum.simulation.adiabaticstateenergyunitary
+  summary: Provede přípravu stavu pomocí `statePrepUnitary` ve stavu vstupu, následovaným přípravou stavu adiabatic pomocí `adiabaticUnitary`a konečně odhadem fáze s ohledem na `qpeUnitary`ve výsledném stavu pomocí `phaseEstAlgorithm`.
+- uid: microsoft.quantum.simulation.estimateenergy
+  summary: Provede přípravu stavu pomocí `statePrepUnitary` na základě automaticky přiděleného odhadu fáze stavu vstupu s ohledem na `qpeUnitary`ve výsledném stavu pomocí `phaseEstAlgorithm`.
+- uid: microsoft.quantum.simulation.estimateenergywithadiabaticevolution
+  summary: Provede přípravu stavu pomocí `statePrepUnitary` pro automaticky přidělený stav vstupu následovaný přípravou stavu adiabatic pomocí `adiabaticUnitary`a konečně odhadem fáze s ohledem na `qpeUnitary`ve výsledném stavu pomocí `phaseEstAlgorithm`.
+newtypes:
+- uid: microsoft.quantum.simulation.blockencoding
+  summary: >-
+    Představuje jednotnou, kde je libovolný operátor zájmu kódovaný v horním levém bloku.
+
+
+    To znamená, že `BlockEncoding` je jednotková $U $, kde libovolný operátor $H $ z zájmu, který funguje na `s` registru, je kódovaný v horním levém bloku, který odpovídá pomocnému stavu $ \ket{0}_a $. To je
+
+
+    $ $ \begin{align} (\bra{0}_a \ otimes I_s) U (\ket{0}_a \ otimes I_s) = H \end{align} $ $.
+- uid: microsoft.quantum.simulation.blockencodingreflection
+  summary: Představuje `BlockEncoding`, který je také reflexe.
+- uid: microsoft.quantum.simulation.evolutiongenerator
+  summary: >-
+    Představuje dynamický generátor jako sadu simulovaných bran a rozšíření z hlediska tohoto základu.
+
+
+    Poslední parametr pro počet podmínek
+- uid: microsoft.quantum.simulation.evolutionschedule
+  summary: >-
+    Představuje dynamický generátor závislý na čase.
+
+
+    Parametr `Double` je plán v parametru $ [0, 1] $.
+- uid: microsoft.quantum.simulation.evolutionset
+  summary: >-
+    Představuje sadu bran, které lze snadno implementovat a použít k implementaci algoritmů simulace.
+
+
+    Prvky v sadě jsou indexovány <xref:microsoft.quantum.simulation.generatorindex>a každá sada je popsána funkcí z `GeneratorIndex` na <xref:microsoft.quantum.simulation.evolutionunitary>, což jsou operace parametrizované reálné číslo představující čas
+- uid: microsoft.quantum.simulation.evolutionunitary
+  summary: >-
+    Představuje jednotnou obsluhu časového vývoje.
+
+
+    Prvním parametrem je doba trvání vývoje času a druhý parametr je qubit registrem, který se používá v rámci jednotně.
+- uid: microsoft.quantum.simulation.generatorindex
+  summary: >-
+    Představuje jeden primitivní výraz v sadě všech dynamických generátorů, např. Hermitian operátory, pro které existuje mapa od tohoto generátoru k časovému vývoji tohoto generátoru prostřednictvím `EvolutionSet`.
+
+
+    První prvek (int []; Double []) je index, který je jedním termínem--například řetězec Pauli XXY s koeficientem 0,5 by byl indexován ([1, 1, 2], [0,5]). Alternativně je Hamiltonians Parametrizovaná souvislou proměnnou, jako je například X cos φ + Y Sin φ, může být instance reprezentovaná ([], [φ]). Druhý prvek indexuje podsystém, na kterém generátor působí.
+- uid: microsoft.quantum.simulation.generatorsystem
+  summary: >-
+    Představuje kolekci `GeneratorIndex`ES.
+
+
+    Procházíme přes tuto kolekci s použitím jednoho indexu celé číslo a velikost kolekce se předpokládá jako známá.
+- uid: microsoft.quantum.simulation.simulationalgorithm
+  summary: >-
+    Představuje algoritmus simulace závislý na čase.
+
+
+    Technika simulace, která je závislá na čase, převede <xref:microsoft.quantum.simulation.evolutiongenerator>
+
+    na jednotkový vývoj pro určitý časový interval.
+- uid: microsoft.quantum.simulation.timedependentblockencoding
+  summary: >-
+    Představuje `BlockEncoding`, který je řízen registrem hodin.
+
+
+    To znamená, že `TimeDependentBlockEncoding` je jednotková $U, která je řízena stavem $ \ket{k}_D $ v registru hodin `d` tak, že libovolný operátor $H _k $ z zájmu, který funguje v registru systému `s`, je kódovaný v levém horním bloku, který odpovídá pomocnému stavu $ \ket @no __t_3_ _a $. To je
+
+
+    $ $ \begin{align} (\bra{0}\_a\otimes i_ {DS}) U (\ket{0}\_a\otimes i_ {DS}) = \sum_{k}\ket{k}\bra{k}\_d\otimes H_k.
+
+    \end{align} $ $.
+- uid: microsoft.quantum.simulation.timedependentgeneratorsystem
+  summary: Představuje časově závislý dynamický generátor jako funkci od času k hodnotě dynamického generátoru v daném čase.
+- uid: microsoft.quantum.simulation.timedependentsimulationalgorithm
+  summary: >-
+    Představuje algoritmus simulace závislý na čase.
+
+
+    Technika simulace závislá na čase převede <xref:microsoft.quantum.simulation.evolutionschedule>
+
+    na jednotkový čas – vývoj pro určitý časový interval.
+- uid: microsoft.quantum.simulation.unitary
+  summary: Představuje vývoj pod operátorem s jednou jednotkou.
+ms.openlocfilehash: 05db213d04304a635e4e86e0f6c40f15bb81441a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215876"

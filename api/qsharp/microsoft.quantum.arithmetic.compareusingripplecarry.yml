@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.compareusingripplecarry
+name: CompareUsingRippleCarry
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Tyto jednotkové testy, pokud jsou dvě celá čísla `x` a `y` uloženy v registrech se stejnou velikostí, `x > y`. Pokud je nastaveno na true, je 1 XORed do výstupního qubit. V opačném případě je 0 XORed do výstupního qubit.
+
+
+  Jinými slovy, Tato jednotková $U $ splňuje: $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x > y)}.
+
+  \end{align} $ $.
+syntax: 'operation CompareUsingRippleCarry (x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit) : Unit'
+references: '- Nové v rámci Ripple – přenést okruh Steven A. Cuccaro, Tomáš G. Draper, Samuel A. Kutin, David Petrie Moulton https://arxiv.org/abs/quant-ph/0410184'
+input:
+  content: '(x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit)'
+  types:
+  - name: x
+    summary: První číslo, které se má porovnat s uložením v `LittleEndian`ovém formátu v registru qubit
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: y
+    summary: Druhé číslo, které se má porovnat s uložením v `LittleEndian`ovém formátu v registru qubit
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: output
+    summary: Qubit, který ukládá výsledek porovnání $x > a $.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: fa3db99da28f96e1cb42dd03e465440e015722fa
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221095"

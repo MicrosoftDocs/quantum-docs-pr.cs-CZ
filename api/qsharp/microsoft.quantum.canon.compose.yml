@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.compose
+name: Compose
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Generuje složení dvou funkcí.
+
+
+  To znamená, že zadané dvě funkce $f $ a $g $, vrátí novou funkci reprezentující $f \circ g $.
+syntax: "function Compose (outer : ('U -> 'V), inner : ('T -> 'U)) : ('T -> 'V)"
+input:
+  content: "(outer : ('U -> 'V), inner : ('T -> 'U))"
+  types:
+  - name: outer
+    summary: Druhá funkce, která má být použita.
+    isFunction: true
+    input:
+      types:
+      - uid: "'U"
+        isLocal: true
+    output:
+      types:
+      - uid: "'V"
+        isLocal: true
+  - name: inner
+    summary: První funkce, která se má použít
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - uid: "'U"
+        isLocal: true
+output:
+  content: ('T -> 'V)
+  types:
+  - summary: Nová funkce $h $, což pro všechny vstupy $x $, $f (g (x)) = h (x) $.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - uid: "'V"
+        isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ první funkce, která má být použita.
+- uid: "'U"
+  summary: Typ výstupu první funkce, která má být použita, a vstupní typ druhé funkce, která má být použita.
+- uid: "'V"
+  summary: Typ výstupu druhé funkce, která má být použita.
+ms.openlocfilehash: 69fbd6a4fafbc61a63e41257b7100303fd48d4d4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73223067"

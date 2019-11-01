@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifonec
+name: ApplyIfOneC
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje na sebe ovladatelné operace s hodnotou klasického výsledku.
+
+
+  V případě `op` operace a hodnoty výsledku `result`použije `op` na `target`, pokud `result` `One`. Pokud `Zero`, nic se nestane s `target`.
+
+  Přípona `C` označuje, že operace, která se má použít, je ovladatelné.
+syntax: "operation ApplyIfOneC (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit"
+input:
+  content: "(result : Result, (op : ('T => Unit is Ctl), target : 'T))"
+  types:
+  - name: result
+    summary: Výsledek měření, který určuje, zda je použita možnost op nebo ne.
+    isPrimitive: true
+    uid: Result
+  - name: op
+    summary: Operace, která se má podmíněně použít
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: target
+    summary: Vstup, na který se operace používá
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má podmíněně použít.
+functors:
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applyifonec
+- microsoft.quantum.canon.applyifonea
+- microsoft.quantum.canon.applyifoneca
+ms.openlocfilehash: 51388c63a15b9f8244b49cc145297faef11bf5cc
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73220772"

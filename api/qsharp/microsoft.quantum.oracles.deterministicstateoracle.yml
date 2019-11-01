@@ -1,0 +1,24 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.deterministicstateoracle
+name: DeterministicStateOracle
+type: newtype
+namespace: Microsoft.Quantum.Oracles
+summary: >-
+  Představuje Oracle pro deterministické přípravení stavu.
+
+
+  Vstup pro Oracle $O $ je:
+
+
+  - Registr, ve kterém bude uložený požadovaný stav pro stav dat $ \ket{\psi}\_s $
+remarks: >-
+  Tento Oracle definovaný pomocí $O \ket{0}= \ket{\psi} $ pracuje na stavovém základě výpočtu $ \ket{0}$ k vytvoření stavu $ \ket{\psi} $.
+
+  Prvním parametrem je qubit registr $ \ket{\psi} $.
+syntax: newtype DeterministicStateOracle = (Qubit[] => Unit is Adj + Ctl);
+ms.openlocfilehash: bc10b84502866d1f5e19b28e77e54c1b10d01b28
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231125"

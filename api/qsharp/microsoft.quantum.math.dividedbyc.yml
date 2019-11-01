@@ -1,0 +1,27 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.dividedbyc
+name: DividedByC
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrátí podíl dvou vstupů.
+syntax: 'function DividedByC (a : Microsoft.Quantum.Math.Complex, b : Microsoft.Quantum.Math.Complex) : Microsoft.Quantum.Math.Complex'
+input:
+  content: '(a : Microsoft.Quantum.Math.Complex, b : Microsoft.Quantum.Math.Complex)'
+  types:
+  - name: a
+    summary: První vstupní $a $, který se má rozdělit.
+    uid: microsoft.quantum.math.complex
+  - name: b
+    summary: Druhý vstup $b $, který se má rozdělit.
+    uid: microsoft.quantum.math.complex
+output:
+  content: Microsoft.Quantum.Math.Complex
+  types:
+  - summary: Podíl $a/b $.
+    uid: microsoft.quantum.math.complex
+ms.openlocfilehash: f07acd54fac1189c5691c0492d37136fa61ec9e0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229782"

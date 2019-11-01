@@ -1,0 +1,28 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.intstopaulis
+name: IntsToPaulis
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: Převede pole celých čísel na pole qubitch operátorů Pauli s jedním.
+syntax: 'function IntsToPaulis (ints : Int[]) : Pauli[]'
+input:
+  content: '(čísla: int [])'
+  types:
+  - name: čísla
+    summary: Pole celých čísel v rozsahu `0..3` má být převedeno na operátory Pauli.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+output:
+  content: Pauli[]
+  types:
+  - summary: Pole `paulis` operátorů Pauli `Pauli[]` stejnou délku jako `ints` tak, aby `paulis[idxPauli]` byla rovna prvku `[PauliI, PauliX, PauliY, PauliZ]` daným `ints[idxPauli]`.
+    isArray: true
+    isPrimitive: true
+    uid: Pauli
+ms.openlocfilehash: 407ad1481c220f390fffb5f1b59f0968d6d6570c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066978"

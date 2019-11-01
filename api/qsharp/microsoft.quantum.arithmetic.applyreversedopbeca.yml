@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyreversedopbeca
+name: ApplyReversedOpBECA
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Aplikuje operaci, která přebírá vstup big-endian do registru kódování unsigned integer ve formátu Little endian.
+syntax: 'operation ApplyReversedOpBECA (op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is Ctl + Adj), register : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is Ctl + Adj), register : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: op
+    summary: Operace, která funguje v registru big-endian.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.bigendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: register
+    summary: Registr s malým endianm, který se má transformovat
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- applyreversedopbe
+- applyreversedopbea
+- applyreversedopbec
+ms.openlocfilehash: b905b37ebd68c3eedd4d7d6e2d0a5a4dc15abf1d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215060"

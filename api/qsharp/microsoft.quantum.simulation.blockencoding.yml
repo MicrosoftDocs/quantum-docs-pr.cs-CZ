@@ -1,0 +1,20 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.blockencoding
+name: blockEncoding
+type: newtype
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Představuje jednotnou, kde je libovolný operátor zájmu kódovaný v horním levém bloku.
+
+
+  To znamená, že `BlockEncoding` je jednotková $U $, kde libovolný operátor $H $ z zájmu, který funguje na `s` registru, je kódovaný v horním levém bloku, který odpovídá pomocnému stavu $ \ket{0}_a $. To je
+
+
+  $ $ \begin{align} (\bra{0}_a \ otimes I_s) U (\ket{0}_a \ otimes I_s) = H \end{align} $ $.
+syntax: newtype BlockEncoding = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: 0991b1b54cdd8e908f60fc104edf588ae08e12e7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066026"

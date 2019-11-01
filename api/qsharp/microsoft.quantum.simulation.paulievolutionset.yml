@@ -1,0 +1,22 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.paulievolutionset
+name: PauliEvolutionSet
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v Pauli.
+remarks: Toto se získá částečnou aplikací <xref:microsoft.quantum.simulation.paulievolutionfunction>.
+syntax: 'function PauliEvolutionSet () : Microsoft.Quantum.Simulation.EvolutionSet'
+input:
+  content: ()
+  types: []
+output:
+  content: Microsoft. v. simulace. EvolutionSet
+  types:
+  - summary: '`EvolutionSet`, který mapuje `GeneratorIndex` pro Pauli na základ pro EvolutionUnitary.'
+    uid: microsoft.quantum.simulation.evolutionset
+ms.openlocfilehash: cd1180caa3e2afeea044e409ddde9ac414a7ee84
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73065380"

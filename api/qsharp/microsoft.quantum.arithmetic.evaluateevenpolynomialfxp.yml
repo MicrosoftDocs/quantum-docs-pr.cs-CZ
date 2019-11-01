@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.evaluateevenpolynomialfxp
+name: EvaluateEvenPolynomialFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Vyhodnotí ještě polynomu v reprezentaci s pevnou desetinnou čárkou.
+syntax: 'operation EvaluateEvenPolynomialFxP (coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: coefficients
+    summary: Koeficienty ještě nepolynomované jako dvojitá Array, tj. Array $ [A_0, A_1,..., a_k] $ pro ještě polynomické $P (x) = A_0 + A_1 x ^ 2 + \cdots + a_k x ^ {2k} $.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: fpx
+    summary: Vstupní číslo s pevnou desetinnou čárkou, pro které se má vyhodnotit polynomická hodnota
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: result
+    summary: Výstupní číslo s pevnou desetinnou čárkou, které bude obsahovat $P (x) $. Musí se nacházet ve stavu $ \ket{0}$ zpočátku.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4b0979dd2a0758bbefbb4b0456051a38e040ab5a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221027"

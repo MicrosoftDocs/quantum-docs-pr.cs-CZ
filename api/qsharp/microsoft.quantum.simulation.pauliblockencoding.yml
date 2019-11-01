@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.pauliblockencoding
+name: PauliBlockEncoding
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Vytvoří jednotkové kódování bloku pro Hamiltonian.
+
+
+  Hamiltonian $H = \sum_{j}\alpha_j P_j $ je popsána úhrnem podmínek Pauli $P _J $, každý s reálným koeficientem $ \alpha_j $.
+remarks: To se získá tím, že se připraví a odpravují stav $ \ sum_ {j} \ sqrt {\ alpha_j/\ Alpha} \ KET {j} $ a vytvoří se jednotková <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> a <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>s hodnotou násobení.
+syntax: 'function PauliBlockEncoding (generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem) : (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)'
+input:
+  content: '(generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem)'
+  types:
+  - name: generatorSystem
+    summary: '`GeneratorSystem`, který popisuje $H $ jako součet podmínek Pauli'
+    uid: microsoft.quantum.simulation.generatorsystem
+output:
+  content: (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)
+  types:
+  - summary: >-
+      ## <a name="first-parameter"></a>První parametr
+
+
+      Jedna-norma koeficientů $ \Alpha = \sum_{j} | \alpha_j | $
+
+
+      ## <a name="second-parameter"></a>Druhý parametr
+
+
+      `BlockEncodingReflection` Jednotková $U $ Hamiltonian $H $. Protože tato jednotná operace splňuje $U ^ 2 = I $, je také odraz.
+    types:
+    - isPrimitive: true
+      uid: Double
+    - uid: microsoft.quantum.simulation.blockencodingreflection
+ms.openlocfilehash: 352ab71457601c38b22e93f706cb59f50bf24151
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216131"

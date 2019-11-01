@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.preparation.prepareuniformsuperposition
+name: PrepareUniformSuperposition
+type: operation
+namespace: Microsoft.Quantum.Preparation
+summary: >-
+  Vytvoří jednotnou polohu přes stavy, které zakódují 0 do `nIndices`.
+
+
+  To znamená, že tato Jednotková $U $ vytvoří jednotnou polohu ve všech číselných stavech $0 $ to $M-$1 a zadá vstupní stav $ \ket{0\cdots 0} $. Jinými slovy $ $ \begin{align} U\ket{0}= \frac{1}{\sqrt{M}}\sum_{j = 0} ^ {M-1} \ket{j}.
+
+  \end{align} $ $.
+examples: >-
+  Následující příklad připraví stav $ \frac{1}{{6}\sqrt} \sum_{j = 0} ^{5}\ket{j} $ na $3 $ qubits.
+
+
+  ```Q#
+
+  let nIndices = 6;
+
+  using(indexRegister = Qubit[3]) {
+      PrepareUniformSuperposition(nIndices, LittleEndian(indexRegister));
+  }
+
+  ```
+syntax: 'operation PrepareUniformSuperposition (nIndices : Int, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(nIndices : Int, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: nIndices
+    summary: Požadovaný počet stavů $M $ v jednotném umístění.
+    isPrimitive: true
+    uid: Int
+  - name: indexRegister
+    summary: >-
+      Qubit registr, ve kterém je uložený počet stavů ve formátu `LittleEndian`.
+
+      Tento registr musí být schopný ukládat číslo $M-$1 a předpokládá se, že bude inicializovaný ve stavu $ \ket{0\cdots 0} $.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4bb7c83382f8d48f132fbd91acfd2184a570aea4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73226484"

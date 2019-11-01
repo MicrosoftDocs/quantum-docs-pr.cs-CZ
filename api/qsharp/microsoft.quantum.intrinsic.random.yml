@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.random
+name: Random
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: >-
+  Náhodná operace přebírá pole Double jako vstup a vrací náhodně vybraný index do pole jako `Int`.
+
+  Pravděpodobnost výběru konkrétního indexu je úměrná hodnotě prvku pole v daném indexu.
+
+  Prvky pole, které jsou rovny nule, se ignorují a jejich indexy se nikdy nevrátí. Pokud je některý prvek pole menší než nula, nebo pokud žádný element pole není větší než nula, operace se nezdařila.
+syntax: 'operation Random (probs : Double[]) : Int'
+input:
+  content: '(probs : Double[])'
+  types:
+  - name: probs
+    summary: Pole čísel s plovoucí desetinnou čárkou, které je úměrné pravděpodobnosti výběru každého indexu.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+output:
+  content: Int
+  types:
+  - summary: Celé číslo $i $ s pravděpodobností $ \Pr (i) = p_i/\sum_i p_i $, kde $p _i $ je $i $ th elementu `probs`.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: b2a5f6a0b1d2584e385bfa4de2b2c43fc1cf6509
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233930"

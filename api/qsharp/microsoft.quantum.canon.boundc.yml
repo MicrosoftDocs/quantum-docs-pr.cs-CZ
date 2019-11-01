@@ -1,0 +1,74 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.boundc
+name: BoundC
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Vzhledem k poli operací, které fungují na jednom vstupu, vytvoří nová operace, která provede každou danou operaci v pořadí.
+
+  Modifikátor `C` označuje, že všechny operace v poli jsou ovladatelné.
+examples: >-
+  The following are equivalent:
+
+
+  ```qsharp
+
+  let bound = BoundC([U, V]);
+
+  bound(x);
+
+  ```
+
+
+  and
+
+
+  ```qsharp
+
+  U(x); V(x);
+
+  ```
+syntax: "function BoundC (operations : ('T => Unit is Ctl)[]) : ('T => Unit is Ctl)"
+input:
+  content: '(operace: (t = > jednotka je CTL) [])'
+  types:
+  - name: Operace
+    summary: Posloupnost operací, které mají být provedeny na daném vstupu.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+output:
+  content: (T = > jednotka je seznam CTL)
+  types:
+  - summary: Nová operace, která každou danou operaci provede v pořadí podle jeho vstupu.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+typeParameters:
+- uid: "'T"
+  summary: Cíl, na kterém každá z operací v poli působí.
+seeAlso:
+- microsoft.quantum.canon.bound
+ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068168"

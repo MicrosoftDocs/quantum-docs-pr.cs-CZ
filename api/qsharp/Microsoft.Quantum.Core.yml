@@ -1,0 +1,21 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.core
+name: Microsoft. Procore. Core
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů zahrnuje Q # Core functions a Operations.\n\n # <a name=\"remarks\"></a>Poznámky\n Tento obor názvů je automaticky otevřen kompilátorem Q #, takže všechny prvky tohoto oboru názvů jsou vždy k dispozici."
+functions:
+- uid: microsoft.quantum.core.length
+  summary: Vrátí počet prvků v poli.
+- uid: microsoft.quantum.core.rangeend
+  summary: Vrátí definovanou koncovou hodnotu daného rozsahu, což není nutně poslední prvek v sekvenci.
+- uid: microsoft.quantum.core.rangereverse
+  summary: Vrátí nový rozsah, který je zpětným rozsahem vstupu.
+- uid: microsoft.quantum.core.rangestart
+  summary: Vrátí definovanou počáteční hodnotu daného rozsahu.
+- uid: microsoft.quantum.core.rangestep
+  summary: Vrátí celé číslo, které určuje, jak se počítá další hodnota rozsahu.
+ms.openlocfilehash: 41c28f8e8e11990ec1cf9b315478996a1e0811f4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056891"

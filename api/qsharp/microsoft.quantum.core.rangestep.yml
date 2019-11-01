@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.core.rangestep
+name: RangeStep
+type: function
+namespace: Microsoft.Quantum.Core
+summary: Vrátí celé číslo, které určuje, jak se počítá další hodnota rozsahu.
+remarks: První prvek výrazu rozsahu je `start`, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` předáno.
+syntax: 'function RangeStep (range : Range) : Int'
+input:
+  content: '(rozsah: rozsah)'
+  types:
+  - name: oblasti
+    isPrimitive: true
+    uid: Range
+output:
+  content: Hmot
+  types:
+  - summary: Definovaná hodnota kroku daného rozsahu.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 0195f0f2eb03c163ae08cc789867627286a44097
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066604"

@@ -1,0 +1,51 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytoeachindexc
+name: ApplyToEachIndexC
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje jednu operaci qubit na každý indexovaný element v registru.
+
+  Modifikátor `C` označuje, že se má řídit operace s jedním qubit.
+syntax: "operation ApplyToEachIndexC (singleElementOperation : ((Int, 'T) => Unit is Ctl), register : 'T[]) : Unit"
+input:
+  content: '(singleElementOperation: ((int, t) = > jednotka je CTL), Register: t [])'
+  types:
+  - name: singleElementOperation
+    summary: Operace, která se má použít u každého qubit
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Int
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: Registrace
+    summary: Pole qubits, na které se má použít daná operace
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Cíl, na kterém každá operace funguje.
+functors:
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applytoeachindex
+ms.openlocfilehash: ca5ba68229968b43d28535e3bf728b2b8a8ef4fb
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068440"

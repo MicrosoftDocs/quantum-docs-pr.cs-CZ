@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.modulusl
+name: ModulusL
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vypočítá kanonický zbytek `value` modulo `modulus`.
+remarks: 'Tato funkce se chová jinak, než se operátor `%` chová v C# a Q # jako ve výsledku je vždy kladné celé číslo mezi 0 a `modulus - 1`, a to i v případě, že je hodnota záporná.'
+syntax: 'function ModulusL (value : BigInt, modulus : BigInt) : BigInt'
+input:
+  content: '(value : BigInt, modulus : BigInt)'
+  types:
+  - name: value
+    summary: Hodnota, kterou je vypočítáno reziduum
+    isPrimitive: true
+    uid: BigInt
+  - name: modulus
+    summary: Zbytky, podle kterých jsou zbytky vzaty, musí být kladné
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: BigInt
+  types:
+  - summary: Celočíselná hodnota $r $ mezi 0 a `modulus - 1` taková, že `value - r` je dělitelná modulem.
+    isPrimitive: true
+    uid: BigInt
+ms.openlocfilehash: 14ef3669e4c59912129c9ffac6ecbf1a2ed25534
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232451"

@@ -1,0 +1,55 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.cx
+name: CX
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje bránu řízená – X (CX) na pár qubits.
+
+
+  $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{align} , $ $ kde jsou řádky a sloupce uspořádané jako v průvodci koncepcemi.
+remarks: >-
+  Ekvivalent:
+
+
+  ```qsharp
+
+  Controlled X([control], target);
+
+  ```
+
+
+  a na:
+
+
+  ```qsharp
+
+  CNOT(control, target);
+
+  ```
+syntax: 'operation CX (control : Qubit, target : Qubit) : Unit'
+input:
+  content: '(Control: qubit; target: qubit)'
+  types:
+  - name: Nad
+    summary: Qubit ovládacího prvku pro bránu CX.
+    isPrimitive: true
+    uid: Qubit
+  - name: Cílové
+    summary: Cílová qubit pro bránu CX.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 26cbc8dc2f22cdf8583d453b84e53b0151619f5d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067862"

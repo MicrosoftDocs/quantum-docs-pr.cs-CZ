@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.computereciprocalfxp
+name: ComputeReciprocalFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Vypočítá $1/x $ pro číslo s pevnou desetinnou čárkou $x $.
+syntax: 'operation ComputeReciprocalFxP (x : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(x : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: x
+    summary: Číslo s pevnou desetinnou čárkou, které se má vrátit
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: result
+    summary: Číslo s pevnou desetinnou čárkou, které bude obsahovat výsledek. Je nutné inicializovat na $ \ket{0.0} $.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 258a3386b21286e7a6a7b9a1fc716f69f1a48682
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221010"

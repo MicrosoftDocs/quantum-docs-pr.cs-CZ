@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.allequalityfactb
+name: AllEqualityFactB
+type: function
+namespace: Microsoft.Quantum.Diagnostics
+summary: Vyhodnotí, že dvě pole logických hodnot jsou shodná.
+syntax: 'function AllEqualityFactB (actual : Bool[], expected : Bool[], message : String) : Unit'
+input:
+  content: '(actual : Bool[], expected : Bool[], message : String)'
+  types:
+  - name: actual
+    summary: Pole, které je vytvořeno testovacím případem zájmu.
+    isArray: true
+    isPrimitive: true
+    uid: Bool
+  - name: expected
+    summary: Pole, které je očekáváno z testovacího případu, který je předmětem zájmu.
+    isArray: true
+    isPrimitive: true
+    uid: Bool
+  - name: message
+    summary: Zpráva, která má být vytištěna v případě, že pole nejsou shodná.
+    isPrimitive: true
+    uid: String
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: ebda74cfe793c2c5ec8411f893aa852f9e091728
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227147"

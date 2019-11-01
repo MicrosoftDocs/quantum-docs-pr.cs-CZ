@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.cascadeccnot
+name: CascadeCCNOT
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Implementuje kaskády CCNOTch bran řízených v odpovídajících bitech dvou registrů qubit, které fungují na dalších qubit jednoho z registrů.
+
+  Počínaje od qubits na pozici 0 v obou registrech jako ovládací prvky se CCNOT použije na qubit na pozici 1 cílového registru, která se řídí qubits na pozici 1 v qubit na pozici 2 v cílovém registru atd. a končí akcí na Cílová qubit na pozici `Length(nQubits)-1`.
+remarks: Cílový registr qubit musí mít jeden qubit více než druhý registr.
+syntax: 'operation CascadeCCNOT (register : Qubit[], targets : Qubit[]) : Unit'
+input:
+  content: '(register : Qubit[], targets : Qubit[])'
+  types:
+  - name: register
+    summary: Qubit registr, používá se pouze pro ovládací prvky.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targets
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 02ef9028070a0922b6644bf4cd20ef2f6ec9d04e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221316"

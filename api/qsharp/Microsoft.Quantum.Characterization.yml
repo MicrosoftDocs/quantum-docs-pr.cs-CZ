@@ -1,0 +1,33 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.characterization
+name: Microsoft. procharakteristiky
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro učení vlastností stavů a procesů, včetně odhadu tomography a fáze."
+operations:
+- uid: microsoft.quantum.characterization.continuousphaseestimationiteration
+  summary: Provádí jednu iteraci iteračního (klasického) algoritmu fáze odhadu pomocí libovolného reálného výkonu jednotkové databáze Oracle.
+- uid: microsoft.quantum.characterization.discretephaseestimationiteration
+  summary: Provádí jednu iteraci iteračního (klasického) algoritmu fáze odhadu pomocí celočíselné mocniny jednotkové databáze Oracle.
+- uid: microsoft.quantum.characterization.estimatefrequency
+  summary: S ohledem na přípravu a měření vyhodnotí četnost, s jakou je měření úspěšná (vrátí `Zero`) provedením daného počtu testů.
+- uid: microsoft.quantum.characterization.estimatefrequencya
+  summary: Vzhledem k přípravě, která je sousední a měření, odhadne četnost, s jakou je měření úspěšné (vrátí `Zero`), a to provedením daného počtu zkušebních hodnot.
+- uid: microsoft.quantum.characterization.measureallz
+  summary: >-
+    Společně měří Registry qubits v Pauli Z.
+
+
+    Jinými slovy, měří operaci $Z \otimes Z \otimes \cdots \otimes Z $ v daném registru.
+- uid: microsoft.quantum.characterization.measureidentity
+  summary: Měří operátor identity v registru qubits.
+- uid: microsoft.quantum.characterization.quantumphaseestimation
+  summary: Provádí pro daný Oracle `U` a `targetState`algoritmus odhadu doby přírůstku při přečtení fáze do pokladny na základě služby big-endian.
+- uid: microsoft.quantum.characterization.robustphaseestimation
+  summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané Oracle `U` a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
+- uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
+  summary: Provede qubit proces tomography měření v Pauli, a to s ohledem na konkrétní kanál zájmu.
+ms.openlocfilehash: f6ca8c97c1e44950fb87da8ed7335c885cabc425
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056950"

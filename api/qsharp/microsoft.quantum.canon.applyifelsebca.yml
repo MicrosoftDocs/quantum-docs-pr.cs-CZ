@@ -1,0 +1,78 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifelsebca
+name: ApplyIfElseBCA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje jednu ze dvou jednotkových operací v závislosti na hodnotě klasického bitu.
+
+
+  V případě bitového `bit`použije operace `trueOp` `trueInput` jako vstup, pokud `bit` `true`, a použije `falseOp(falseInput)`, když `bit` `false`.
+syntax: "operation ApplyIfElseBCA (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit"
+input:
+  content: "(bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U))"
+  types:
+  - name: bit
+    isPrimitive: true
+    uid: Bool
+  - name: trueOp
+    summary: Jednotná operace, která se má použít, když je `bit` `true`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: trueInput
+    summary: Vstup, který má být k dispozici pro `trueOp` `bit` `true`.
+    uid: "'T"
+    isLocal: true
+  - name: falseOp
+    summary: Jednotná operace, která se má použít, když je `bit` `false`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'U"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: falseInput
+    summary: Vstup, který má být k dispozici pro `falseOp` `bit` `false`.
+    uid: "'U"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace `trueOp` být podmíněně použit.
+- uid: "'U"
+  summary: Vstupní typ operace `falseOp` být podmíněně použit.
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.applyifzero
+- microsoft.quantum.canon.applyifone
+- microsoft.quantum.canon.applyifelserc
+- microsoft.quantum.canon.applyifelsera
+- microsoft.quantum.canon.applyifelserca
+ms.openlocfilehash: d9fa6aad5c319d4cde19ff6b1da697f47bcc8806
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213768"

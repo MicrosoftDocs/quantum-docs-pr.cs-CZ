@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.multiplybymodularinteger
+name: MultiplyByModularInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Provede modulární násobení pomocí celočíselné konstanty v qubit registru.
+
+
+  Poznamenejte si, že v části N a constMultiplier by tato operace implementovala při výpočetních základech jednotkou definovanou pomocí následující mapy: | y ⟩ ↦ | a ⋅ y (mod N) ⟩, pro všechny y mezi 0 a N-1.
+remarks: >-
+  - Pro diagram okruhu a vysvětlení viz obrázek 7 na [stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)
+
+  - Tato operace odpovídá ₐ U v [arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf)
+syntax: 'operation MultiplyByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: constMultiplier
+    summary: Konstanta, o kterou se násobí násobitel. Musí být souběžně s modulem.
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    summary: Operace násobení je prováděna modulo `modulus`
+    isPrimitive: true
+    uid: Int
+  - name: multiplier
+    summary: >-
+      Číslo vynásobené konstantou.
+
+      Toto je pole qubits představující celé číslo v pořadí bitů Little-endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4a99aff903b22ad4edcd96f2a980bd65c740025f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218749"
