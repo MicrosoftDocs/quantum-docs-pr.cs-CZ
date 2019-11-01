@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.preparesparsemulticonfigurationalstate
+name: PrepareSparseMultiConfigurationalState
+type: operation
+namespace: Microsoft.Quantum.Chemistry.JordanWigner
+summary: Příprava zkušebního stavu s více konfiguračními stavy přidáním excitations do počátečního stavu zkušební verze.
+syntax: 'operation PrepareSparseMultiConfigurationalState (initialStatePreparation : (Qubit[] => Unit), excitations : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerInputState[], qubits : Qubit[]) : Unit'
+input:
+  content: '(initialStatePreparation : (Qubit[] => Unit), excitations : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerInputState[], qubits : Qubit[])'
+  types:
+  - name: initialStatePreparation
+    summary: Pro přípravu počátečního stavu zkušební verze se jedná o jednotnou.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: excitations
+    summary: Excitations počátečního zkušebního stavu reprezentovaného amplitudou excitation a qubit indexy, na kterých excitation funguje.
+    isArray: true
+    uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerinputstate
+  - name: qubits
+    summary: Qubits z Hamiltonian.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: c97f5e7ec8a4cc26b4fb173414526363db424293
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231805"

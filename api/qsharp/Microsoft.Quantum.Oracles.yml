@@ -1,0 +1,80 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.oracles
+name: Microsoft.Quantum.Oracles
+summary: " # <a name=\"summary\"></a>Souhrn\n Tyto obory názvů poskytují uživatelsky definované typy pro vyupravování různých druhů Oracle podle jejich zamýšleného použití v algoritmech doby provozu, jako je odhad fáze a zesílení amplitud."
+functions:
+- uid: microsoft.quantum.oracles.deterministicstateoraclefromstateoracle
+  summary: Převede Oracle typu `StateOracle` na `DeterministicStateOracle`.
+- uid: microsoft.quantum.oracles.obliviousoraclefromdeterministicstateoracle
+  summary: Kombinuje `DeterministicStateOracle` a `ObliviousOracle`Oracle.
+- uid: microsoft.quantum.oracles.oracletodiscrete
+  summary: Vzhledem k tomu, že operace představující "černé pole" je Oracle, vrátí nediskrétní Oracle, který představuje "černý rámeček" Oracle se opakuje několikrát.
+- uid: microsoft.quantum.oracles.reflectionoraclefromdeterministicstateoracle
+  summary: >-
+    Sestaví reflexi o daném stavu od Oracle.
+
+
+    Vzhledem k tomu, že <xref:microsoft.quantum.oracles.deterministicstateoracle>typu Oracle $O $ je výsledkem této funkce odraz kolem stavu $ \ket{\psi} $, kde $O \ket{0} = \ket{\psi} $.
+- uid: microsoft.quantum.oracles.stateoraclefromdeterministicstateoracle
+  summary: Převede Oracle typu `DeterministicStateOracle` na `StateOracle`.
+newtypes:
+- uid: microsoft.quantum.oracles.continuousoracle
+  summary: >-
+    Představuje Oracle v nepřetržitém čase.
+
+
+    Toto je Oracle, který implementuje $U (\delta t): \ket{\psi (t)} \mapsto \ket{\psi (t + \delta t)} $ všechny časy $t $, kde $U $ je pevná operace a kde $ \delta t $ je nezáporné reálné číslo.
+- uid: microsoft.quantum.oracles.deterministicstateoracle
+  summary: >-
+    Představuje Oracle pro deterministické přípravení stavu.
+
+
+    Vstup pro Oracle $O $ je:
+
+
+    - Registr, ve kterém bude uložený požadovaný stav pro stav dat $ \ket{\psi}\_s $
+- uid: microsoft.quantum.oracles.discreteoracle
+  summary: >-
+    Představuje diskrétní čas Oracle.
+
+
+    Jedná se o Oracle, který implementuje $U ^ m $ pro pevnou operaci $U $ a nezáporné celé číslo $m $.
+- uid: microsoft.quantum.oracles.obliviousoracle
+  summary: >-
+    Představuje systém Oracle pro zesílení amplitud oblivious.
+
+
+    Vstupy pro Oracle $O $ jsou:
+
+
+    - Registr ancilla $a $, na kterém $O $ funguje.
+
+    - V registru systému $s $, na kterém se použije požadovaná Jednotková $U $, po vybírání v registrech $a $ ve stavu $ \ket{t}\_a $.
+- uid: microsoft.quantum.oracles.reflectionoracle
+  summary: >-
+    Představuje reflexi Oracle.
+
+
+    Reflexe Oracle, $O $, má vstupy:
+
+
+    - Fáze $ \phi $, o kterou se má otočit odrážet mezera.
+
+    - Registr qubit, na kterém se má provést daná reflexe.
+- uid: microsoft.quantum.oracles.stateoracle
+  summary: >-
+    Představuje Oracle pro přípravu stavu.
+
+
+    Vstupy pro Oracle $O $ jsou:
+
+
+    - Celé číslo, které označuje příznak qubit $f $.
+
+    - Registr systému $s $, ve kterém bude uložen požadovaný stav pro \ket{\psi},\_s $.
+ms.openlocfilehash: 10eb2c7acebf805b955816abe2bf1cabb95ce059
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216097"

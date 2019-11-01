@@ -1,0 +1,17 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.evolutionunitary
+name: EvolutionUnitary
+type: newtype
+namespace: Microsoft.Quantum.Simulation
+summary: >-
+  Představuje jednotnou obsluhu časového vývoje.
+
+
+  Prvním parametrem je doba trvání vývoje času a druhý parametr je qubit registrem, který se používá v rámci jednotně.
+syntax: newtype EvolutionUnitary = ((Double, Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: 185e621920a7800fd2c78ccbfb7b4ca12d51e8ba
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067080"

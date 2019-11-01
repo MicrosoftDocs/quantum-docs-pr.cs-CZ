@@ -1,0 +1,69 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.bound
+name: Bound
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Vzhledem k poli operací, které fungují na jednom vstupu, vytvoří nová operace, která provede každou danou operaci v pořadí.
+examples: >-
+  Následují ekvivalenty:
+
+
+  ```qsharp
+
+  let bound = Bound([U, V]);
+
+  bound(x);
+
+  ```
+
+
+  a
+
+
+  ```qsharp
+
+  U(x); V(x);
+
+  ```
+syntax: "function Bound (operations : ('T => Unit)[]) : ('T => Unit)"
+input:
+  content: "(operations : ('T => Unit)[])"
+  types:
+  - name: operations
+    summary: Posloupnost operací, které mají být provedeny na daném vstupu.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+output:
+  content: ('T => Unit)
+  types:
+  - summary: Nová operace, která každou danou operaci provede v pořadí podle jeho vstupu.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Cíl, na kterém každá z operací v poli působí.
+seeAlso:
+- microsoft.quantum.canon.boundc
+- microsoft.quantum.canon.bounda
+- microsoft.quantum.canon.boundca
+ms.openlocfilehash: 67cb4cb93c5d306491bfce83caf1c112194991be
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73220636"

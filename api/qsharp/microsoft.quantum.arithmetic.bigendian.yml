@@ -1,0 +1,14 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.bigendian
+name: BigEndian
+type: newtype
+namespace: Microsoft.Quantum.Arithmetic
+summary: Zaregistrujte, aby se v pořadí big-endian zakódují unsigned integer. Qubit s index `0` kóduje nejvyšší bit unsigned integer.
+remarks: V dokumentaci se zkrátí `BigEndian` jako `BE`.
+syntax: newtype BigEndian = Qubit[];
+ms.openlocfilehash: a4d96ab9299d983583949de5ae8eebba64a189a4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221350"

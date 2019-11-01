@@ -1,0 +1,36 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.plusa
+name: PlusA
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrátí součet (zřetězení) dvou vstupů.
+syntax: "function PlusA (a : 'Element[], b : 'Element[]) : 'Element[]"
+input:
+  content: "(a : 'Element[], b : 'Element[])"
+  types:
+  - name: a
+    summary: První vstupní $a $, která se má sečíst
+    isArray: true
+    uid: "'Element"
+    isLocal: true
+  - name: b
+    summary: Druhý vstup $b $ se má sečíst.
+    isArray: true
+    uid: "'Element"
+    isLocal: true
+output:
+  content: "'Element[]"
+  types:
+  - summary: Suma $a + b $.
+    isArray: true
+    uid: "'Element"
+    isLocal: true
+typeParameters:
+- uid: "'Element"
+  summary: Typ každého prvku v každé ze dvou vstupních polí.
+ms.openlocfilehash: d37faecdcbe7e1d96f27fcaddd211989a543f1d9
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73211456"

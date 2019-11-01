@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimatefrequency
+name: EstimateFrequency
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: S ohledem na přípravu a měření vyhodnotí četnost, s jakou je měření úspěšná (vrátí `Zero`) provedením daného počtu testů.
+syntax: 'operation EstimateFrequency (preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
+input:
+  content: '(preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: preparation
+    summary: Operace $P $, která ve svém vstupním registru připraví daný stav $ \rho $.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: measurement
+    summary: Operace $M $ představuje měření zájmu.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Result
+  - name: nQubits
+    summary: Počet qubits, na které se každý působí přípravek a měření.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Počet, kolikrát by měla být provedena měření, aby se mohla odhadnout frekvence zájmu.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: >-
+      Odhad $ \hat{p} $ frekvence, s jakou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ vrátí `Zero`, získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, kde $n\_{\ Šipka nahoru} $ je počet pozorovaných výsledků `Zero`.
+
+
+      To je důležité zejména u cílových počítačů, které jsou v souladu s fyzickými omezeními, což znamená, že pravděpodobnosti nelze změřit.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 1c27d38983f9fa9c1a1dc5c80548e307b7c36ffe
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229187"

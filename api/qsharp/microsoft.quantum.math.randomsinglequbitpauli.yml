@@ -1,0 +1,23 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.randomsinglequbitpauli
+name: RandomSingleQubitPauli
+type: operation
+namespace: Microsoft.Quantum.Math
+summary: Vrátí jednu z qubitch Pauliých operátorů s jednou náhodným rozsahem.
+remarks: Tato funkce volá <xref:microsoft.quantum.intrinsic.random>, takže její náhodnost závisí na implementaci `Random`.
+syntax: 'operation RandomSingleQubitPauli () : Pauli'
+input:
+  content: ()
+  types: []
+output:
+  content: Pauli
+  types:
+  - summary: Operátor `Pauli`, který je jedním z `[PauliI, PauliX, PauliY, PauliZ]`.
+    isPrimitive: true
+    uid: Pauli
+ms.openlocfilehash: 564e6c78859d5f74e0fc4ca9c5467e806742b7b2
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219939"

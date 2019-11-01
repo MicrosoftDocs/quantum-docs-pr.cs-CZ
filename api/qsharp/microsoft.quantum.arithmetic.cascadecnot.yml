@@ -1,0 +1,29 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.cascadecnot
+name: CascadeCNOT
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Implementuje kaskády CNOTch bran pro sousední qubits v daném registru qubit, počínaje od qubit na pozici 0 jako řízení pro qubit na pozici 1 jako cíl, a pak od qubit na pozici 1 jako ovládací prvek na pozici 2 pro qubit na pozici 2 jako cíl. , atd., končící na qubit na pozici `Length(register)-1` jako cíl.
+syntax: 'operation CascadeCNOT (register : Qubit[]) : Unit'
+input:
+  content: '(register : Qubit[])'
+  types:
+  - name: register
+    summary: Qubit registraci.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 9089948665a9ad8d4884196c4a84ed715104048a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221299"

@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.bitwise.leftshiftedl
+name: LeftShiftedL
+type: function
+namespace: Microsoft.Quantum.Bitwise
+summary: Posune bitovou reprezentaci čísla vlevo o daný počet bitů.
+remarks: >-
+  Následují ekvivalenty:
+
+
+  ```Q#
+
+  let c = a <<< b;
+
+  let c = LeftShiftedL(a, b);
+
+  ```
+syntax: 'function LeftShiftedL (value : BigInt, amount : Int) : BigInt'
+input:
+  content: '(value : BigInt, amount : Int)'
+  types:
+  - name: value
+    summary: Číslo, jehož bitová reprezentace má být posunuta doleva (důležitější).
+    isPrimitive: true
+    uid: BigInt
+  - name: amount
+    summary: Počet bitů, o které má být `value` posunut doleva.
+    isPrimitive: true
+    uid: Int
+output:
+  content: BigInt
+  types:
+  - summary: Hodnota `value`posunuta vlevo od `amount` bitů.
+    isPrimitive: true
+    uid: BigInt
+ms.openlocfilehash: cffab4695cc4bef50975206d2f1eb81554e14ffb
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217797"

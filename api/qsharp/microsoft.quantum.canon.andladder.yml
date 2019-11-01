@@ -1,0 +1,50 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.andladder
+name: AndLadder
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Provede na cílovém qubits řízený "a žebřík".
+
+
+  To se vztahuje na jednu z nich na základě následující mapy na výpočetních vektorech: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1 , \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
+remarks: >-
+  - Slouží jako součást <xref:microsoft.quantum.canon.applymulticontrolledc> a <xref:microsoft.quantum.canon.applymulticontrolledca>.
+
+  - Diagram vysvětlení a okruhu viz obrázek 4,10, část 4,3 v Nielsen & Čuangština.
+syntax: 'operation AndLadder (ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit'
+references: '- [*Michal a. Nielsen, Petr L. Čuangština*, výpočet doby a informace o tom,](http://doi.org/10.1017/CBO9780511976667)'
+input:
+  content: '(ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[])'
+  types:
+  - name: ccnot
+    summary: Brána CCNOT, která se má použít pro konstrukci
+    uid: microsoft.quantum.canon.ccnotop
+  - name: controls
+    summary: >-
+      Registr qubits, který se má použít jako ovládací prvky pro žebřík a.
+
+      Tato operace opouští výpočetní základní stav `controls` invariantní.
+
+      Délka `controls` musí být alespoň 2 a musí být rovna jedné hodnotě plus délka `targets`.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targets
+    summary: Délka `targets` musí být alespoň 1 a rovná se délce `controls` minus jedna.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+ms.openlocfilehash: 2970f9c783ea233f2f1ceb4089802320efe82602
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217712"

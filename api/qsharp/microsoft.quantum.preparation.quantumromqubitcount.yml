@@ -1,0 +1,40 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.preparation.quantumromqubitcount
+name: QuantumROMQubitCount
+type: function
+namespace: Microsoft.Quantum.Preparation
+summary: Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM`.
+syntax: 'function QuantumROMQubitCount (targetError : Double, nCoeffs : Int) : (Int, (Int, Int))'
+input:
+  content: '(targetError : Double, nCoeffs : Int)'
+  types:
+  - name: targetError
+    summary: Cílová chyba $ \epsilon $.
+    isPrimitive: true
+    uid: Double
+  - name: nCoeffs
+    summary: Počet koeficientů zadaných v `QuantumROM`.
+    isPrimitive: true
+    uid: Int
+output:
+  content: (Int, (Int, Int))
+  types:
+  - summary: >-
+      ## <a name="first-parameter"></a>První parametr
+
+
+      Řazená kolekce členů `(x,(y,z))`, kde `x = y + z` je celkový počet přidělených qubits, `y` je počet qubits pro `LittleEndian`ový registr a `z` je počet qubitsů pro uvolnění paměti.
+    types:
+    - isPrimitive: true
+      uid: Int
+    - types:
+      - isPrimitive: true
+        uid: Int
+      - isPrimitive: true
+        uid: Int
+ms.openlocfilehash: fdc1d18f088cd5d07558a6fac28b92af6c9884d3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73226382"

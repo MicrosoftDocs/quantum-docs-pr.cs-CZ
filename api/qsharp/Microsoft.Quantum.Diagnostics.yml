@@ -1,0 +1,82 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.diagnostics
+name: Microsoft. prověří. Diagnostics
+functions:
+- uid: microsoft.quantum.diagnostics.allequalityfactb
+  summary: Vyhodnotí, že dvě pole logických hodnot jsou shodná.
+- uid: microsoft.quantum.diagnostics.dumpmachine
+  summary: Vypíše stav aktuálního cílového počítače.
+- uid: microsoft.quantum.diagnostics.dumpregister
+  summary: Vypíše stav aktuálního cílového počítače přidružený k danému qubits.
+- uid: microsoft.quantum.diagnostics.equalityfactb
+  summary: Vyhodnotí, že klasická proměnná bool má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalityfactc
+  summary: Vyhodnotí, že komplexní číslo má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalityfactcp
+  summary: Vyhodnotí, že komplexní číslo má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalityfacti
+  summary: Vyhodnotí, že proměnná klasického int má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalityfactl
+  summary: Vyhodnotí, že klasická hodnota typu BigInt má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalityfactr
+  summary: Vyhodnotí, že klasická proměnná výsledku má očekávanou hodnotu.
+- uid: microsoft.quantum.diagnostics.equalitywithintolerancefact
+  summary: Představuje deklaraci identity, že klasická hodnota s plovoucí desetinnou čárkou má očekávanou hodnotu až do dané absolutní tolerance.
+- uid: microsoft.quantum.diagnostics.fact
+  summary: Deklaruje, že klasická podmínka je pravdivá.
+- uid: microsoft.quantum.diagnostics.nearequalityfactc
+  summary: Vyhodnotí, že klasická komplexní číslo má očekávanou hodnotu až do malé tolerance 1E-10.
+- uid: microsoft.quantum.diagnostics.nearequalityfactcp
+  summary: Vyhodnotí, že klasická komplexní číslo má očekávanou hodnotu až do malé tolerance 1E-10.
+- uid: microsoft.quantum.diagnostics.nearequalityfactd
+  summary: Vyhodnotí, že klasická hodnota s plovoucí desetinnou čárkou má očekávanou hodnotu až na malou toleranci 1E-10.
+operations:
+- uid: microsoft.quantum.diagnostics.assertallzero
+  summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu $ \ket{0}$.
+- uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
+  summary: Vytvrzení, že zadané qubits jsou všechny ve stavu $ \ket{0}$ State až do dané tolerance.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
+  summary: >-
+    Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
+
+
+    Tento kontrolní výraz je implementován kontrolou akce operací ve všech stavech formuláře $V _0 \otimes... \otimes v_ {n-1} $, kde $V _k $ je jedním ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
+
+
+    Tento kontrolní výraz používá $n $ qubits a vyžaduje více volání operací, které jsou porovnány.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
+  summary: >-
+    Kontroluje, zda je operace `givenU` shodná s operací `expectedU` na dané vstupní velikosti tím, že kontroluje akci operací pouze na vektorech z výpočetního základu.
+
+    To je nezbytné, ale nedostatečné, podmínkou rovnosti dvou unitaries.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
+  summary: >-
+    Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
+
+
+    Tento kontrolní výraz je implementován pomocí Choi – Jamiłkowski isomorphism k omezení kontrolního výrazu na jeden z kontrolního výrazu qubit ve dvou registrech entangled.
+
+    Proto tato operace potřebuje pouze jedno volání každé testované operace, ale vyžaduje, aby bylo přiděleno více qubits.
+
+    Tento kontrolní výraz lze použít k zajištění toho, aby Optimalizovaná verze operace se shoduje s jeho implementací Naive nebo aby operace, která funguje na řadě nestránkovaného řetězce, souhlasila se známými případy.
+- uid: microsoft.quantum.diagnostics.assertqubit
+  summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli Z.
+- uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
+  summary: >-
+    Vyhodnotí, že qubit v očekávaném stavu.
+
+
+    `expected` představuje složitý vektor, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+
+    První prvek řazených kolekcí členů, který představuje každý z $a $, $b $ je reálnou částí komplexního čísla, zatímco druhým z nich je imaginární část.
+
+    Poslední argument definuje toleranci, se kterou je proveden kontrolní výraz.
+- uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
+  summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli Z až do dané tolerance.
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace, které jsou užitečné pro diagnostické účely, včetně operací Assert a funkcí deklarací identity."
+ms.openlocfilehash: c387a7dc3b2e997d00d54457b0af89a04fa918d3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056862"

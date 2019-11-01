@@ -1,0 +1,27 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.errorcorrection.fivequbitcoderecoveryfn
+name: FiveQubitCodeRecoveryFn
+type: function
+namespace: Microsoft.Quantum.ErrorCorrection
+summary: Vrátí funkci, která mapuje Syndrome o chybách na odpovídající chybu – správné správnosti Paulich operátorů podle vyhledávání v tabulce pro kód ⟦ 5, 1, 3 ⟧.
+remarks: >-
+  Díky iteraci všech chyb s váhou $1 $ získáme celkem $3 \ krát 5 = 15 $ možné netriviální Syndromes.
+
+  Společně s identitou je sestavena tabulka Error a odpovídající Syndrome. Pro kód 5 qubit, na který je tato tabulka dána: $X\_1: (0, 0, 0, 1); X\_2: (1, 0, 0, 0); X\_3: (1, 1, 0, 0); X\_4: (0, 1, 1, 0); X\_5: (0, 0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1, 0, 0, 1); Z\_5: (0, 1, 0, 0) $ s $Y _i $ získaný přidáním $X _i $ a $Z _i $ Syndromes. Všimněte si, že pořadí při obnovení tabulky je předané převedením bitvectors na celá čísla (s použitím Little Endian).
+syntax: 'function FiveQubitCodeRecoveryFn () : Microsoft.Quantum.ErrorCorrection.RecoveryFn'
+input:
+  content: ()
+  types: []
+output:
+  content: Microsoft.Quantum.ErrorCorrection.RecoveryFn
+  types:
+  - summary: Funkce typu `RecoveryFn`, která přijímá Syndrome měření `Result[]` a vrací operátory `Pauli[]`, které opraví zjištěnou chybu.
+    uid: microsoft.quantum.errorcorrection.recoveryfn
+seeAlso:
+- recoveryfn
+ms.openlocfilehash: efeabbeb6595d1440882eef73f152610a3ac74c5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73211626"

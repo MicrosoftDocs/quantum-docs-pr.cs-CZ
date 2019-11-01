@@ -1,0 +1,29 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.ampamprotationtoreflectionphases
+name: AmpAmpRotationToReflectionPhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Převede fáze zadané jako qubit otočení na fáze určené jako částečné odrazy.
+syntax: 'function AmpAmpRotationToReflectionPhases (rotPhases : Microsoft.Quantum.AmplitudeAmplification.RotationPhases) : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases'
+references: >-
+  Konvence používáme v
+
+
+  - [ *G.H. nízká, I. L. Čuangština* ](https://arxiv.org/abs/1707.05391) pro související fáze rotace s jedním qubit pro fáze operátoru reflexe.
+input:
+  content: '(rotPhases : Microsoft.Quantum.AmplitudeAmplification.RotationPhases)'
+  types:
+  - name: rotPhases
+    summary: Pole rotací s jednou qubit, která se mají převést na částečné odrazy
+    uid: microsoft.quantum.amplitudeamplification.rotationphases
+output:
+  content: Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases
+  types:
+  - summary: Operace, která implementuje fáze určené jako částečné odrazy.
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+ms.openlocfilehash: 2e4e447fd7ceef02249aa6577ff0274db046b9f2
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215604"

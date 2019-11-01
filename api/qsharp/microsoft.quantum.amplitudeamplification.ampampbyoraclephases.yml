@@ -1,0 +1,49 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.ampampbyoraclephases
+name: AmpAmpByOraclePhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Amplituda zesílení pro částečné odrazy od Oracle
+remarks: >-
+  To představuje přísnější podmínky ve formě počátečních a cílových stavů než v `AmpAmpByReflectionPhases`.
+
+  Předpokládá se, že cílový stav je označený jako $ \ket{1}\_f $.
+
+  Předpokládá se, že \begin{align} A\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ text {Target}}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots Ve většině případů se \end{align} `flagQubit` a `ancillaRegister` inicializuje ve stavu $ \ket{0}\_{f} \ket{0}\_s $.
+syntax: 'function AmpAmpByOraclePhases (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int) : (Qubit[] => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int)'
+  types:
+  - name: phases
+    summary: Fáze částečných odrazů
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: stateOracle
+    summary: Jednotková databáze Oracle $A $, která připraví stav spuštění
+    uid: microsoft.quantum.oracles.stateoracle
+  - name: idxFlagQubit
+    summary: Index pro označení qubit
+    isPrimitive: true
+    uid: Int
+output:
+  content: (Qubit[] => Unit is Adj + Ctl)
+  types:
+  - summary: Operace, která implementuje zesílení amplitudy od Oracle, které jsou implementované částečnými odrazy.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+ms.openlocfilehash: cacd3b34fae01697ee5bba414d9a7422b3260e2f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215825"

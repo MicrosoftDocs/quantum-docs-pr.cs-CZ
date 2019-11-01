@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyxorinplace
+name: ApplyXorInPlace
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Aplikuje operace `X` na qubits v registru Little-endian na základě 1 bitů v rámci celého čísla.
+
+
+  Poznamenejte si `value` a nechte y unsigned integer zakódovaný v `target`a pak `InPlaceXorLE` provede operaci určenou následující mapou: $ \ket{y}\rightarrow \ket{y\oplus a} $, kde $ \oplus $ je bitový exkluzivní operátor OR.
+syntax: 'operation ApplyXorInPlace (value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: value
+    summary: Celé číslo, které je považováno za nezáporné.
+    isPrimitive: true
+    uid: Int
+  - name: target
+    summary: Registr na základě doby, který se používá k ukládání `value` v kódování Little endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: b37de7ed7e838089fe0c3bce00c8a0e9b222c43f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221639"

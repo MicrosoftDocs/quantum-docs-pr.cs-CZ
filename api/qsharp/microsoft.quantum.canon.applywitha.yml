@@ -1,0 +1,65 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applywitha
+name: ApplyWithA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Dané dvě operace platí pro sebe jako sdružené s druhou.
+
+
+  Vzhledem k dvěma operacím, které jsou popsány v rámci $U $ a $V $, jsou použity v sekvenci $U ^ {\dagger} V U $. To znamená, že tato operace implementuje jednotkový operátor, který je dán $V $ sdružený s $U $.
+remarks: Vnější operace se vždycky předpokládá jako sousední, ale nemusí být ovladatelné, aby se kombinovaná operace dala řídit.
+syntax: "operation ApplyWithA (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Adj), target : 'T) : Unit"
+input:
+  content: "(outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Adj), target : 'T)"
+  types:
+  - name: outerOperation
+    summary: Operace $U $, která se má použít pro sdruženou $V $ Všimněte si, že vnější operace $U $ musí být sousední, ale nemusí být ovladatelné.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: innerOperation
+    summary: Operace $V $ je sdružená.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: target
+    summary: Vstup, který má být poskytnut vnější a vnitřní operaci.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Cíl, na kterém každá z vnitřních a vnějších operací působí.
+functors:
+- Adjoint
+seeAlso:
+- applywith
+- applywithc
+- applywithca
+ms.openlocfilehash: 98ca0cd734202c7a1b78048177dd0c0774554864
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73212731"

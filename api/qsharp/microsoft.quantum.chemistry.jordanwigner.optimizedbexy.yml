@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.optimizedbexy
+name: OptimizedBEXY
+type: operation
+namespace: Microsoft.Quantum.Chemistry.JordanWigner
+summary: Jednotková $U $, která používá řetězec Pauli v $ (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0 $ on qubits $0.. p $ Conditioned on a index $z \in\{0, 1\}$ a $p $. To znamená $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psí} = \ket{z}\ket{p} (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0\ket {\ psí} \end{align} $ $
+syntax: 'operation OptimizedBEXY (pauliBasis : Qubit, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian, targetRegister : Qubit[]) : Unit'
+references: '- Kódování elektronického spektra v Okruhech v případě využití lineární T, Babbush, Craig Gidney, Dominic W. bobulovin, Nathan Wiebe, Jarrod McClean, Alexandru bledější, Austin Fowlera, Hartmut Neven https://arxiv.org/abs/1805.03662'
+input:
+  content: '(pauliBasis : Qubit, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian, targetRegister : Qubit[])'
+  types:
+  - name: pauliBasis
+    summary: Pokud je tento qubit ve stavu $ \ket{0}$, použije se $X $. Pokud je ve stavu $ \ket{1}$, použije se $Y $.
+    isPrimitive: true
+    uid: Qubit
+  - name: indexRegister
+    summary: Stav $ \ket{p} $ tohoto registru určuje qubit, na kterém je použita $X $ nebo $Y $.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: targetRegister
+    summary: Registr qubits, na kterých se používají operátory Pauli
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: e0ac3f2f050ed584053f7da7a310f1855e992141
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73228456"

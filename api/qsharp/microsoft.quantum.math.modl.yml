@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.modl
+name: ModL
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrátí zbytek čísla s ohledem na jiné číslo.
+syntax: 'function ModL (a : BigInt, b : BigInt) : BigInt'
+input:
+  content: '(a : BigInt, b : BigInt)'
+  types:
+  - name: a
+    summary: Vstupní $a $, jejichž zbytek má být vrácen.
+    isPrimitive: true
+    uid: BigInt
+  - name: b
+    summary: Číslo s ohledem na to, jaké zbytky $a $ mají být vráceny.
+    isPrimitive: true
+    uid: BigInt
+output:
+  content: BigInt
+  types:
+  - summary: Zbytky $a \bmod b $.
+    isPrimitive: true
+    uid: BigInt
+ms.openlocfilehash: 7431cc366b8c8e592008d2787a58e45d101dd2e6
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233709"

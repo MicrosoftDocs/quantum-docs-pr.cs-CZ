@@ -1,0 +1,55 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.multiplexoperations
+name: MultiplexOperations
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Použije pole operací řízené polem číselných stavů.
+
+
+  To znamená, že aplikuje jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _J $, pokud je ovládána $n $-qubit Number State $ \ket{j} $.
+
+
+  $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
+remarks: '`coefficients` bude doplněna prvky identity, pokud je zadáno méně než $2 ^ n $. Tato implementace používá $n-$1 ancilla qubits.'
+syntax: "operation MultiplexOperations (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
+references: '- Směrem k první simulaci nedostatku na více minut s využitím zrychleníů Andrew M. Childs, Dmitri Maslov, Yunseonga, Neilem J. Rossův, jüan Su https://arxiv.org/abs/1711.10980'
+input:
+  content: "(unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
+  types:
+  - name: unitaries
+    summary: Pole až do $2 ^ n $ jednotkových operací. Operace $j $ th je indexovaná pomocí číselného stavu $ \ket{j} $ kódovaného ve formátu Little endian.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: index
+    summary: $n $-qubit registr ovládacího prvku, který kóduje číselný stav $ \ket{j} $ ve formátu Little endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: target
+    summary: Obecný qubit registr, na kterém $V _J $.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: bd248ece9d76729a33db3dfead177fa68909f438
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73223492"

@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.subarray
+name: Subarray
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Převezme pole a seznam umístění a vytvoří nové pole vytvořené z prvků původního pole, které odpovídá zadaným umístěním.
+remarks: >-
+  Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a seznam umístění `Int[]` definování podpole.
+
+  Konstrukce podpole je založena na generování nové, hluboké kopie daného pole na rozdíl od udržování odkazů.
+
+
+  Pokud se `Length(indices) < Length(array)`, tato funkce vrátí podmnožinu `array`. Na druhé straně, pokud `indices` obsahuje opakující se prvky, odpovídající prvky `array` budou také opakovány.
+
+  Pokud `indices` a `array` mají stejnou délku, tato funkce poskytuje permutace `array`.
+syntax: "function Subarray (indices : Int[], array : 'T[]) : 'T[]"
+input:
+  content: "(indices : Int[], array : 'T[])"
+  types:
+  - name: indices
+    summary: Seznam celých čísel, která se používají k definování podpole.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: array
+    summary: Pole prvků nad `'T`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Pole `out` prvků, jejichž indexy odpovídají podpole, například `out[idx] == array[indices[idx]]`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ `array` prvků.
+ms.openlocfilehash: 1590e5c24dad56db8c6a0f5dc433bf060d8ac175
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217848"

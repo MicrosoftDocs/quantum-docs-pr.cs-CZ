@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.pnormalized
+name: PNormalized
+type: function
+namespace: Microsoft.Quantum.Math
+summary: >-
+  Normalizuje vektor `Double`s v `L(p)` normě.
+
+
+  To znamená, že dané pole $x $ typu `Double[]`, vrátí pole, kde jsou všechny prvky děleny $p $-Norm $\|x\|_p $.
+syntax: 'function PNormalized (p : Double, array : Double[]) : Double[]'
+input:
+  content: '(p: Double; Array: Double [])'
+  types:
+  - name: Trub
+    summary: Exponent $p $ v $p $-norma.
+    isPrimitive: true
+    uid: Double
+  - name: pole
+    isArray: true
+    isPrimitive: true
+    uid: Double
+output:
+  content: Double []
+  types:
+  - summary: Pole $x $ normalizován $p $-Norm $\|x\|_p $.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+seeAlso:
+- pnorm
+ms.openlocfilehash: 5fd219b866b14d3d6faf58cdf4f1ce2b9fbadf9d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067284"

@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyreversedoplea
+name: ApplyReversedOpLEA
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Aplikuje operaci, která se zařadí do registru pomocí formátu Little endian, a kódování unsigned integer ve formátu big endian.
+syntax: 'operation ApplyReversedOpLEA (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Adj), register : Microsoft.Quantum.Arithmetic.BigEndian) : Unit'
+input:
+  content: '(op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Adj), register : Microsoft.Quantum.Arithmetic.BigEndian)'
+  types:
+  - name: op
+    summary: Operace, která funguje v registru Little-endian.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.littleendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: register
+    summary: Registr big-endian, který se má transformovat.
+    uid: microsoft.quantum.arithmetic.bigendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+seeAlso:
+- applyreversedople
+- applyreversedoplec
+- applyreversedopleca
+ms.openlocfilehash: f400edfe4d88fe82a0842a90cd9c248b34d35b73
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215094"

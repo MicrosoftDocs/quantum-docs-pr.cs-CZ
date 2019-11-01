@@ -1,0 +1,40 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.dumpregister
+name: DumpRegister
+type: function
+namespace: Microsoft.Quantum.Diagnostics
+summary: Vypíše stav aktuálního cílového počítače přidružený k danému qubits.
+remarks: >-
+  Tato metoda umožňuje vypsat informace přidružené ke stavu daného qubits do souboru nebo do jiného umístění.
+
+  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění (`()`) obvykle znamená, že se výstup vygeneruje do konzoly.
+
+
+  U místních úplných simulátorů distribuovaných jako součást vývojové sady pro plnění stavových prostředí očekává Tato metoda řetězec s cestou k souboru, ve kterém bude zapisovat stav daného qubits (tj. funkce Wave odpovídajícího subsystému) jako jednorozměrné ar. Ray komplexních čísel, kde každý prvek představuje amplitudy pravděpodobnosti měření odpovídajícího stavu.
+
+  Pokud jsou zadané qubits entangled s jinými qubit a jejich stav nelze oddělit, pouze hlásí, že qubits je entangled.
+syntax: "function DumpRegister (location : 'T, qubits : Qubit[]) : Unit"
+input:
+  content: "(location : 'T, qubits : Qubit[])"
+  types:
+  - name: location
+    summary: Poskytuje informace o tom, kde vygeneruje výpis stavu.
+    uid: "'T"
+    isLocal: true
+  - name: qubits
+    summary: Seznam qubitsů, které se mají ohlásit
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - summary: Žádné.
+    isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 6d553a95bfa619d142b681e2830fc0375c6bcae5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227028"

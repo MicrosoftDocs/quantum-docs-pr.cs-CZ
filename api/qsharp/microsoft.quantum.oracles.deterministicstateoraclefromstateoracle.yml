@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.deterministicstateoraclefromstateoracle
+name: DeterministicStateOracleFromStateOracle
+type: function
+namespace: Microsoft.Quantum.Oracles
+summary: Převede Oracle typu `StateOracle` na `DeterministicStateOracle`.
+syntax: 'function DeterministicStateOracleFromStateOracle (idxFlagQubit : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle) : Microsoft.Quantum.Oracles.DeterministicStateOracle'
+input:
+  content: '(idxFlagQubit : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle)'
+  types:
+  - name: idxFlagQubit
+    summary: 'Index pro příznak qubit `stateOracle` $A $, který explicitně funguje na dvou registrech: příznak $f $ a systém $s $, např. $A \ket{0}\_f\ket {\ psí}\_s $.'
+    isPrimitive: true
+    uid: Int
+  - name: stateOracle
+    summary: Příprava stavu Oracle $A $ typu `StateOracle`.
+    uid: microsoft.quantum.oracles.stateoracle
+output:
+  content: Microsoft.Quantum.Oracles.DeterministicStateOracle
+  types:
+  - summary: Stejná Příprava stavu Oracle $A $, ale nyní je typu `DeterministicStateOracle`, takže funguje v registru, kde $a, s $ již explicitně nezávisle, např.  $A \ket{0\psi}\_{as} $.
+    uid: microsoft.quantum.oracles.deterministicstateoracle
+seeAlso:
+- microsoft.quantum.canon.stateoracle
+- microsoft.quantum.canon.deterministicstateoracle
+ms.openlocfilehash: 5eda40115d4d4ca7b4187f76b5e0807695913407
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231091"

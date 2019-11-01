@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.stateoracle
+name: StateOracle
+type: newtype
+namespace: Microsoft.Quantum.Oracles
+summary: >-
+  Představuje Oracle pro přípravu stavu.
+
+
+  Vstupy pro Oracle $O $ jsou:
+
+
+  - Celé číslo, které označuje příznak qubit $f $.
+
+  - Registr systému $s $, ve kterém bude uložen požadovaný stav pro \ket{\psi},\_s $.
+remarks: >-
+  Tento jazyk Oracle definovaný pomocí $ $ O\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ psí}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots , $ $ funguje na výpočetním stavu na základě výpočtů $ \ket{0}\_{f} \ket{0}\_s $, aby se vytvořil cílový stav $ \ket{\psi}\_s $ s amplitudou $ \lambda $ v závislosti na tom, které $ \ket{1}\_f $.
+
+  První parametr je index pro qubit registru typu $ \ket{0}\_f $. Druhý parametr zahrnuje oba Registry.
+syntax: newtype StateOracle = ((Int, Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: 1faa47c21e43355ed036498adf4e823ff3f8a0e4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067216"

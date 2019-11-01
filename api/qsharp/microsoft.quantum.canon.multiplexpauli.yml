@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.multiplexpauli
+name: MultiplexPauli
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Použije Pauli rotaci v poli qubits.
+
+
+  Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \theta_j $ o qubit Pauli $P $, pokud se řídí stavem $n $-qubit číslo $ \ket{j} $.
+
+
+  $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \theta_j} $.
+remarks: '`coefficients` budou doplněny elementy $ \theta_j = $0,0, pokud je zadána méně než $2 ^ n $.'
+syntax: 'operation MultiplexPauli (coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
+input:
+  content: '(coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
+  types:
+  - name: coefficients
+    summary: Pole až do $2 ^ n $ $ \theta_j $. $J $ th součinitel indexuje číselný stav $ \ket{j} $ kódovaný ve formátu Little endian.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: pauli
+    summary: Pauli operátor $P $, který určuje osu otočení.
+    isPrimitive: true
+    uid: Pauli
+  - name: control
+    summary: $n $-qubit registr ovládacího prvku, který kóduje číselný stav $ \ket{j} $ ve formátu Little endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: target
+    summary: Jeden qubit registr, který je otočen $e ^ {i P \theta_j} $.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: efc5e1cef8574528eeb124100c4d5f875fc2e0e3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227742"

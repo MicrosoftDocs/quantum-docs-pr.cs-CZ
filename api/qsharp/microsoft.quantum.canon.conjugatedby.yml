@@ -1,0 +1,62 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.conjugatedby
+name: ConjugatedBy
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Pro dané vnější a vnitřní operace vrátí novou operaci, která přijedná vnitřní operaci do sdružené operace vnější operací.
+remarks: Vnější operace se vždycky předpokládá jako sousední, ale nemusí být ovladatelné, aby se kombinovaná operace dala řídit.
+syntax: "function ConjugatedBy (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit)) : ('T => Unit)"
+input:
+  content: '(outerOperation: (t = > jednotka je ADJ), innerOperation: (t = > jednotka))'
+  types:
+  - name: outerOperation
+    summary: Operace $U $, která se má použít pro sdruženou $V $ Všimněte si, že vnější operace $U $ musí být sousední, ale nemusí být ovladatelné.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: innerOperation
+    summary: Operace $V $ je sdružená.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+output:
+  content: (T = > jednotka)
+  types:
+  - summary: Nová operace, jejíž akce je reprezentovaná jednotkou $U ^ {\dagger} V U $.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Typ cíle, na kterém každá z vnitřních a vnějších operací působí.
+seeAlso:
+- conjugatedbya
+- conjugatedbyc
+- conjugatedbyca
+- applywith
+ms.openlocfilehash: 4acd29aa515d1f2323b301673bd620f2b81d76f5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067998"

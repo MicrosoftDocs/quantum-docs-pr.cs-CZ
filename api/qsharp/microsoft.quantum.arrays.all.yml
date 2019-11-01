@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.all
+name: All
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Předané pole a predikát, který je definován pro prvky pole a kontroluje, zda všechny prvky pole odpovídají predikátu.
+remarks: "Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a funkce `predicate: 'T -> Bool` můžeme vytvořit `Bool` hodnotu, která označuje, zda všechny prvky vyhoví `predicate`."
+syntax: "function All (predicate : ('T -> Bool), array : 'T[]) : Bool"
+input:
+  content: "(predicate : ('T -> Bool), array : 'T[])"
+  types:
+  - name: predicate
+    summary: Funkce z `'T` `Bool`, která se používá ke kontrole prvků.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+  - name: array
+    summary: Pole prvků nad `'T`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Bool
+  types:
+  - summary: Hodnota `Bool` funkce a predikátu použité pro všechny elementy.
+    isPrimitive: true
+    uid: Bool
+typeParameters:
+- uid: "'T"
+  summary: Typ `array` prvků.
+ms.openlocfilehash: bb439ae76d0f7644625686cd89f05670051a4c9d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214448"

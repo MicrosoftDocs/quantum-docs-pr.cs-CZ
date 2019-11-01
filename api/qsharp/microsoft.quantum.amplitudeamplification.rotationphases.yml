@@ -1,0 +1,17 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.rotationphases
+name: RotationPhases
+type: newtype
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Fáze pro sekvenci qubit otočení v zesílení amplitudy.
+remarks: >-
+  První parametr je pole fází pro odrazy vyjádřené jako součin qubit otočení.
+
+  [ G.H. Nízká, I. L. Čuangština, https://arxiv.org/abs/1707.05391].
+syntax: newtype RotationPhases = Double[];
+ms.openlocfilehash: 1ad6a80a10cc3880122303a7bbd708087976f906
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215451"

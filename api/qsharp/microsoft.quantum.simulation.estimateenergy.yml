@@ -1,0 +1,69 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.estimateenergy
+name: EstimateEnergy
+type: operation
+namespace: Microsoft.Quantum.Simulation
+summary: Provede přípravu stavu pomocí `statePrepUnitary` na základě automaticky přiděleného odhadu fáze stavu vstupu s ohledem na `qpeUnitary`ve výsledném stavu pomocí `phaseEstAlgorithm`.
+syntax: 'operation EstimateEnergy (nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double)) : Double'
+input:
+  content: '(nQubits : Int, statePrepUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double))'
+  types:
+  - name: nQubits
+    summary: Počet qubits, které se používají k provedení simulace.
+    isPrimitive: true
+    uid: Int
+  - name: statePrepUnitary
+    summary: Oracle představující stavovou přípravu počátečního dynamického generátoru.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: qpeUnitary
+    summary: Oracle reprezentující jednotkový operátor $U $ představující vývoj pro čas $ \delta t $ v rámci dynamického generátoru s uzemněným stavem $ \ket{\phi} $ a pozemní energie $E = \phi\\, \delta t $.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: phaseEstAlgorithm
+    summary: >-
+      Operace, která provádí odhad fáze pro danou jednotkovou operaci.
+
+      Další podrobnosti najdete v tématu [odhad iterativní fáze](/quantum/libraries/characterization#iterative-phase-estimation) .
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.oracles.discreteoracle
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Double
+output:
+  content: Double
+  types:
+  - summary: Odhad $ \hat{\phi} $ z mletého stavu energie $ \phi $ základní energie generátoru, reprezentovaný $U $.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: aff8ac5575b6a5e08dc80263a7a8d4bfec59fa12
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73223322"

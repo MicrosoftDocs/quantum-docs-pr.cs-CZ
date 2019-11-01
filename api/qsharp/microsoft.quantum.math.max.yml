@@ -1,0 +1,27 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.max
+name: Max.
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Pro pole celých čísel vrátí největší prvek.
+syntax: 'function Max (values : Int[]) : Int'
+input:
+  content: '(hodnoty: int [])'
+  types:
+  - name: Hodnota
+    summary: Pole, které má přijmout maximum.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+output:
+  content: Hmot
+  types:
+  - summary: Největší prvek `values`.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 2e5a33b9b476e0428d5afc80957bb2524cc3dd6a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066502"

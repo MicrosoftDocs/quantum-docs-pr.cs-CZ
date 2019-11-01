@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.incrementphasebyinteger
+name: IncrementPhaseByInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Zvýší nepodepsaná bezplatných hodnot do registru pomocí klasického celého čísla pomocí otočení fáze.
+
+
+  Předpokládejme, že `target` zakódování unsigned integer $x $ v kódování Little endian a `increment` je rovno $a $.
+
+  Tato operace pak implementuje jednotkové $ \ket{x} \mapsto \ket{x + a} $, kde sčítání se provádí modulo $2 ^ n $, kde $n = \texttt{Length (Target!)} $.
+remarks: >-
+  Všimněte si, že jsme tento okruh zjednodušili, protože přírůstek je klasická konstanta, ne Pokladna za sebou.
+
+
+  Podívejte se na obrázek na [stránce 6 arXiv: quant-pH/0008033v1](https://arxiv.org/pdf/quant-ph/0008033.pdf#page=6) pro diagram okruhu a vysvětlení.
+syntax: 'operation IncrementPhaseByInteger (increment : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
+references: '- [*Tomáš G. Draper*, arXiv: quant-pH/0008033](https://arxiv.org/pdf/quant-ph/0008033v1.pdf)'
+input:
+  content: '(increment : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
+  types:
+  - name: increment
+    summary: Celé číslo, o které je `target` zvětšeno.
+    isPrimitive: true
+    uid: Int
+  - name: target
+    summary: V poli pro duální (QFT) se registruje při kódování nenáročného využívání unsigned integer.
+    uid: microsoft.quantum.arithmetic.phaselittleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- incrementbyintegerbe
+- incrementbyintegerle
+ms.openlocfilehash: 379e643826ca54e123c8b855f4bba48a9d79a137
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219038"

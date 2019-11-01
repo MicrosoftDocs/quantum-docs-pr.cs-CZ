@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.plusi
+name: PlusI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrátí součet dvou vstupů.
+syntax: 'function PlusI (a : Int, b : Int) : Int'
+input:
+  content: '(a : Int, b : Int)'
+  types:
+  - name: a
+    summary: První vstupní $a $, která se má sečíst
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: Druhý vstup $b $ se má sečíst.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Suma $a + b $.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 18bcd4a8ba2b7e5dca2cb72997a842d76c0e52b7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73211320"

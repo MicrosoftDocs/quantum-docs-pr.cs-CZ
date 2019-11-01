@@ -1,0 +1,24 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.reset
+name: Reset
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: V případě jednoho qubitu je měří a zajišťuje, že je ve stavu | 0 ⟩, takže je možné ho bezpečně uvolnit.
+syntax: 'operation Reset (target : Qubit) : Unit'
+input:
+  content: '(target : Qubit)'
+  types:
+  - name: target
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 9c46f5d3162c8f124418b61dae7449f05f86072d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216607"

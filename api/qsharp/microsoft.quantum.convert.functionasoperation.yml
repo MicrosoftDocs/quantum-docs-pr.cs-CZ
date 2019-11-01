@@ -1,0 +1,50 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.convert.functionasoperation
+name: FunctionAsOperation
+type: function
+namespace: Microsoft.Quantum.Convert
+summary: >-
+  Převede funkce na operace.
+
+
+  V případě funkce vrátí operaci, která volá tuto funkci, a která nedělá nic jiného.
+remarks: To je užitečné hlavně při předávání funkcí funkcí nebo operací, které očekávají operaci jako vstup.
+syntax: "function FunctionAsOperation (fn : ('Input -> 'Output)) : ('Input => 'Output)"
+input:
+  content: "(fn : ('Input -> 'Output))"
+  types:
+  - name: fn
+    summary: Funkce, která má být převedena na operaci.
+    isFunction: true
+    input:
+      types:
+      - uid: "'Input"
+        isLocal: true
+    output:
+      types:
+      - uid: "'Output"
+        isLocal: true
+output:
+  content: ('Input => 'Output)
+  types:
+  - summary: Operace `op` taková, že `op(input)` je stejná jako `fn(input)` pro všechny `input`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'Input"
+        isLocal: true
+    output:
+      types:
+      - uid: "'Output"
+        isLocal: true
+typeParameters:
+- uid: "'Input"
+  summary: Typ vstupu funkce, která má být převedena.
+- uid: "'Output"
+  summary: Typ výstupu funkce, která má být převedena.
+ms.openlocfilehash: a58e2fc4f9c8f931b4020cb06abebdd94c642bd9
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73220381"

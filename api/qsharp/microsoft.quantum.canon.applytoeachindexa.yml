@@ -1,0 +1,51 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytoeachindexa
+name: ApplyToEachIndexA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje jednu operaci qubit na každý indexovaný element v registru.
+
+  Modifikátor `A` označuje, že operace s jedním qubit je sousední.
+syntax: "operation ApplyToEachIndexA (singleElementOperation : ((Int, 'T) => Unit is Adj), register : 'T[]) : Unit"
+input:
+  content: '(singleElementOperation: ((int, t) = > jednotka je ADJ), Register: t [])'
+  types:
+  - name: singleElementOperation
+    summary: Operace, která se má použít u každého qubit
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Int
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: Registrace
+    summary: Pole qubits, na které se má použít daná operace
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Cíl, na kterém každá operace funguje.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applytoeachindex
+ms.openlocfilehash: 6b99e977120a417780875475b35094a44d1c4e08
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068474"

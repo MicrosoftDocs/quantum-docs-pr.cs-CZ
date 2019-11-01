@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.measurement.mresety
+name: MResetY
+type: operation
+namespace: Microsoft.Quantum.Measurement
+summary: Měří jednu qubitu na ose Y a obnoví ji na standardní základní stav | 0 〉 za měřením.
+syntax: 'operation MResetY (target : Qubit) : Result'
+input:
+  content: '(target : Qubit)'
+  types:
+  - name: target
+    summary: Jedna qubit, která se má změřit
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Result
+  types:
+  - summary: Výsledek měření `target` v rámci Pauli $Y $
+    isPrimitive: true
+    uid: Result
+ms.openlocfilehash: e63202da4d72e6e1403319914d078ee51092f9b3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231193"

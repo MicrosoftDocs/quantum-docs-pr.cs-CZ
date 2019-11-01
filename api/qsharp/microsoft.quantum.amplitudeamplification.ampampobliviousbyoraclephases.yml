@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyoraclephases
+name: AmpAmpObliviousByOraclePhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Oblivious zesílení amplitudy od Oracle po částečné odrazy.
+remarks: >-
+  To představuje přísnější podmínky ve formě ancilla počáteční a cílové stavy než v `AmpAmpObliviousByReflectionPhases`.
+
+  Předpokládá se, že $A \ket{0}\_f\ket{0}\_A = \ket{\Text{Start}}\_{FA} $ připraví počáteční stav ancilla $ \ket{\Text{Start}}\_{FA} $ z výpočetního základu $ \ket{0}\_f\ket{0}$.
+
+  Předpokládá se, že cílový stav je označený jako $ \ket{1}\_f $.
+
+  Předpokládá se, že \begin{align} O\ket {\ text {Start}}\_{FA} \ket{\psi}\_s = \lambda\ket{1}\_f\ket {\ text {cokoli}}\_a\ket {\ text {Target}}\_s U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots, \end{align} pro některé jednotkové $U $.
+syntax: 'function AmpAmpObliviousByOraclePhases (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, ancillaOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, ancillaOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int)'
+  types:
+  - name: phases
+    summary: Fáze částečných odrazů
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: ancillaOracle
+    summary: Jednotková databáze Oracle $A $, která připraví stav spuštění ancilla
+    uid: microsoft.quantum.oracles.deterministicstateoracle
+  - name: signalOracle
+    summary: Jednotná aplikace Oracle $O $ typu `ObliviousOracle`, která pracuje společně na ancilla a registru systému
+    uid: microsoft.quantum.oracles.obliviousoracle
+  - name: idxFlagQubit
+    summary: Index do registru příznaků s jedním qubit
+    isPrimitive: true
+    uid: Int
+output:
+  content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
+  types:
+  - summary: Operace, která implementuje zesílení oblivious amplitud na základě částečných odrazů.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+ms.openlocfilehash: ff75e09bf106ccc351aa9c6fa1b6bc6ee776ffad
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215757"

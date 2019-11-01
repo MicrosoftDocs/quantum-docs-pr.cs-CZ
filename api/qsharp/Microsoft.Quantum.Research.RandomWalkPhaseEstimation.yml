@@ -1,0 +1,16 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.research.randomwalkphaseestimation
+name: Microsoft.Quantum.Research.RandomWalkPhaseEstimation
+operations:
+- uid: microsoft.quantum.research.randomwalkphaseestimation.exporacle
+  summary: ''
+- uid: microsoft.quantum.research.randomwalkphaseestimation.phaseestimationsample
+  summary: ''
+- uid: microsoft.quantum.research.randomwalkphaseestimation.randomwalkphaseestimation
+  summary: Provádí odhad iterativní fáze pomocí náhodného prohledání přibližné bayesovského rozhodování odvození na výsledky klasických měření z daných Oracle a eigenstate.
+ms.openlocfilehash: 3512f53bc5f29a634ea61e3a2d0c8a9f3fcc01f5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215910"

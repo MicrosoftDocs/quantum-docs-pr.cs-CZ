@@ -1,0 +1,34 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.snd
+name: Snd
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: S ohledem na pár vrátí jeho druhý prvek.
+syntax: "function Snd (pair : ('T, 'U)) : 'U"
+input:
+  content: "(pair : ('T, 'U))"
+  types:
+  - name: pair
+    summary: Řazená kolekce členů se dvěma prvky.
+    types:
+    - uid: "'T"
+      isLocal: true
+    - uid: "'U"
+      isLocal: true
+output:
+  content: "'U"
+  types:
+  - summary: Druhý prvek `pair`.
+    uid: "'U"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ prvního člena dvojice.
+- uid: "'U"
+  summary: Typ druhého člena dvojice.
+ms.openlocfilehash: c9a7d38a389411b374fbe2b154ce22a6bed5943e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73222302"

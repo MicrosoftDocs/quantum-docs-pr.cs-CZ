@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.robustphaseestimation
+name: RobustPhaseEstimation
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané Oracle `U` a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
+remarks: V případě velkého počtu dotazů Cramer-Rao dolní meze pro směrodatnou odchylku odhadu $ \phi $ vyhovuje $ \sigma \ge 2 \pi/\Text{# dotazů} $.
+syntax: 'operation RobustPhaseEstimation (bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[]) : Double'
+references: '- Robustní kalibrace univerzální qubit brány, která je nastavená pomocí robustního odhadu fáze Shelby Kimmel, Guang vystoupí hao nízká, Theodora J. Yoder https://arxiv.org/abs/1502.02677'
+input:
+  content: '(bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[])'
+  types:
+  - name: bitsPrecision
+    summary: To poskytuje odhad $ \phi $ se směrodatnou odchylkou $ \sigma \le 2 \ pi/2 ^ \text{bitsPrecision} $ s použitím řady dotazů, které se mění jako $ \sigma \le 10,7 \pi/\Text{# dotazů} $.
+    isPrimitive: true
+    uid: Int
+  - name: oracle
+    summary: Operace implementující $U ^ m $ pro celočíselné pravomoci $m $.
+    uid: microsoft.quantum.oracles.discreteoracle
+  - name: targetState
+    summary: Každé z nich registruje, že $U $ funguje. Pokud ukládá eigenstate $ \ket{\phi} $ z $U $, pak $U \ket{\phi} = e ^ {i\phi} \ket{\phi} $ for $ \phi\in (-\pi, \pi] $ je neznámá fáze.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 169a828036fbe84f49e5d87399319d14a9584051
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229051"

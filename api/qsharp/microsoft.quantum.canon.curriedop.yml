@@ -1,0 +1,74 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.curriedop
+name: CurriedOp
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Vrátí curryfikované verzi operace se dvěma vstupy.
+
+
+  To znamená, že vzhledem k operaci se dvěma vstupy Tato funkce použije Curry isomorphism $f (x, y) \equiv f (x) (y) $ a vrátí operaci jednoho vstupu, který vrátí operaci jednoho vstupu.
+remarks: >-
+  Následují ekvivalenty:
+
+
+  ```qsharp
+
+  op(x, y);
+
+
+  let curried = CurriedOp(op);
+
+  let partial = curried(x);
+
+  partial(y);
+
+  ```
+syntax: "function CurriedOp (op : (('T, 'U) => Unit)) : ('T -> ('U => Unit))"
+input:
+  content: "(op: ((ne, ' U) = > jednotka))"
+  types:
+  - name: evřít
+    summary: Operace, jejíž vstup je pár.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+      - uid: "'U"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+output:
+  content: (T-> (' U = > jednotka))
+  types:
+  - summary: Operace, která přijímá první prvek páru a vrátí operaci, která přijímá jako svůj vstup druhý prvek vstupu původní operace.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isOperation: true
+        input:
+          types:
+          - uid: "'U"
+            isLocal: true
+        output:
+          types:
+          - isPrimitive: true
+            uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Typ první součásti funkce definované na dvojicích.
+- uid: "'U"
+  summary: Typ druhé komponenty funkce definované na dvojicích.
+ms.openlocfilehash: 788648d24ba536926504caba92e768ecb34e001a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067896"

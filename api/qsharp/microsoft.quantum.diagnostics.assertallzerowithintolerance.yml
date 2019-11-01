@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
+name: AssertAllZeroWithinTolerance
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: Vytvrzení, že zadané qubits jsou všechny ve stavu $ \ket{0}$ State až do dané tolerance.
+syntax: 'operation AssertAllZeroWithinTolerance (qubits : Qubit[], tolerance : Double) : Unit'
+input:
+  content: '(qubits: qubit []; tolerance: Double)'
+  types:
+  - name: qubits
+    summary: Qubits, které jsou uplatněny ve stavu $ \ket{0}$.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: odolnost
+    summary: Přesnost, se kterou má být stav ve stavu $ \ket{0}$
+    isPrimitive: true
+    uid: Double
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- assertqubitwithintolerance
+ms.openlocfilehash: 0e3b560d08077bb353147d98a921a2c2ca3ae202
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066536"

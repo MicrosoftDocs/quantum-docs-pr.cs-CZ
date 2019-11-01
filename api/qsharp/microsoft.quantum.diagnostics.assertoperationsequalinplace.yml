@@ -1,0 +1,61 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
+name: AssertOperationsEqualInPlace
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: >-
+  Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
+
+
+  Tento kontrolní výraz je implementován kontrolou akce operací ve všech stavech formuláře $V _0 \otimes... \otimes v_ {n-1} $, kde $V _k $ je jedním ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
+
+
+  Tento kontrolní výraz používá $n $ qubits a vyžaduje více volání operací, které jsou porovnány.
+syntax: 'operation AssertOperationsEqualInPlace (nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj)) : Unit'
+references: Základem stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ je Čuangština-Nielsen, popsané v části [ *i. L. Čuangština, M. A. Nielsen* ](https://arxiv.org/abs/quant-ph/9610001).
+input:
+  content: '(nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj))'
+  types:
+  - name: nQubits
+    summary: Počet qubits $n $, na kterých operace `givenU` a `expectedU` provozují.
+    isPrimitive: true
+    uid: Int
+  - name: givenU
+    summary: Bude zkontrolována operace na $n $ qubits.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: expectedU
+    summary: Operace reference na $n $ qubits, na kterou se `givenU` porovnat.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- assertoperationsequalreferenced
+ms.openlocfilehash: a6c58f51bbc30f3917457d4137afb083533519fe
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73225753"

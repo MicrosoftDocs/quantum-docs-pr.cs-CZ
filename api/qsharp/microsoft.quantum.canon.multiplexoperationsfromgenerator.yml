@@ -1,0 +1,61 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.multiplexoperationsfromgenerator
+name: MultiplexOperationsFromGenerator
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _J $, pokud se řídí stavem n-qubit čísla $ \ket{j} $.
+
+
+  $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
+remarks: '`coefficients` bude doplněna prvky identity, pokud je zadáno méně než $2 ^ n $. Tato implementace používá pomocná qubits $n-$1.'
+syntax: "operation MultiplexOperationsFromGenerator (unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
+references: '- [*Andrew M. Childs, Dmitri Maslov, Yunseong, Neilem J. Rossův, jüan Su*, arXiv: 1711.10980](https://arxiv.org/abs/1711.10980)'
+input:
+  content: "(unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
+  types:
+  - name: unitaryGenerator
+    summary: Řazená kolekce členů, kde je první prvek `Int` počet unitaries $N $ a druhý prvek `(Int -> ('T => () is Adj + Ctl))` je funkce, která přebírá celé číslo $j $ in $ [0, N-1] $ a výstupuje Jednotková operace $V _J $.
+    types:
+    - isPrimitive: true
+      uid: Int
+    - isFunction: true
+      input:
+        types:
+        - isPrimitive: true
+          uid: Int
+      output:
+        types:
+        - isOperation: true
+          input:
+            types:
+            - uid: "'T"
+              isLocal: true
+          output:
+            types:
+            - isPrimitive: true
+              uid: Unit
+          functors:
+          - Adjoint
+          - Controlled
+  - name: index
+    summary: $n $-qubit registr ovládacího prvku, který kóduje číselný stav $ \ket{j} $ ve formátu Little endian.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: target
+    summary: Obecný qubit registr, na kterém $V _J $.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 54c0db61b5e18c7a598b6c8ec930f2851ba608f2
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227776"

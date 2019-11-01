@@ -1,0 +1,82 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.adiabaticstateenergyunitary
+name: AdiabaticStateEnergyUnitary
+type: operation
+namespace: Microsoft.Quantum.Simulation
+summary: Provede přípravu stavu pomocí `statePrepUnitary` ve stavu vstupu, následovaným přípravou stavu adiabatic pomocí `adiabaticUnitary`a konečně odhadem fáze s ohledem na `qpeUnitary`ve výsledném stavu pomocí `phaseEstAlgorithm`.
+syntax: 'operation AdiabaticStateEnergyUnitary (statePrepUnitary : (Qubit[] => Unit), adiabaticUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double), qubits : Qubit[]) : Double'
+input:
+  content: '(statePrepUnitary : (Qubit[] => Unit), adiabaticUnitary : (Qubit[] => Unit), qpeUnitary : (Qubit[] => Unit is Adj + Ctl), phaseEstAlgorithm : ((Microsoft.Quantum.Oracles.DiscreteOracle, Qubit[]) => Double), qubits : Qubit[])'
+  types:
+  - name: statePrepUnitary
+    summary: Oracle představující stavovou přípravu počátečního dynamického generátoru.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: adiabaticUnitary
+    summary: Oracle představující algoritmus vývoje adiabatic, který se použije k implementaci Sweep do konečného stavu algoritmu.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: qpeUnitary
+    summary: Oracle reprezentující jednotkový operátor $U $ představující vývoj pro čas $ \delta t $ v rámci dynamického generátoru s uzemněným stavem $ \ket{\phi} $ a pozemní energie $E = \phi\\, \delta t $.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: phaseEstAlgorithm
+    summary: >-
+      Operace, která provádí odhad fáze pro danou jednotkovou operaci.
+
+      Další podrobnosti najdete v tématu [odhad iterativní fáze](/quantum/libraries/characterization#iterative-phase-estimation) .
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.oracles.discreteoracle
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Double
+  - name: qubits
+    summary: Registr qubits, který se má použít k provedení simulace.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Double
+  types:
+  - summary: Odhad $ \hat{\phi} $ pro stav energie $ \phi $ generátoru, reprezentovaný $U $.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 747e9f6d926863ce1add86d183ca2ed1dc43c8a4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232026"

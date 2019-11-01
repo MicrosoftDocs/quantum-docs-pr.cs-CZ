@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.obliviousoracle
+name: ObliviousOracle
+type: newtype
+namespace: Microsoft.Quantum.Oracles
+summary: >-
+  Představuje systém Oracle pro zesílení amplitud oblivious.
+
+
+  Vstupy pro Oracle $O $ jsou:
+
+
+  - Registr ancilla $a $, na kterém $O $ funguje.
+
+  - V registru systému $s $, na kterém se použije požadovaná Jednotková $U $, po vybírání v registrech $a $ ve stavu $ \ket{t}\_a $.
+remarks: >-
+  Tento Oracle definovaný pomocí $ $ O\ket {s}\_a\ket {\ psí}\_s = \lambda\ket{t}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{t ^ \perp}\_a\cdots $ $ funguje na ancilla State $ \ket{s}\_a $ to Implementujte jednotkové $U $ v jakémkoli stavu systému $ \ket{\psi}\_s $ s amplitudou \lambda $ v tomto případě příznakem $ \ket{t}\_a $.
+
+  Prvním parametrem je qubit registr $ \ket{s}\_$. Druhým parametrem je qubit registr $ \ket{\psi}\_s $.
+syntax: newtype ObliviousOracle = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: f06527701dfad61843df66faca5dd265525b6aa6
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231057"

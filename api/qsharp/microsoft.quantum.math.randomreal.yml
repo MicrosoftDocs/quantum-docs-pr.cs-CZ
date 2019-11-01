@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.randomreal
+name: RandomReal
+type: operation
+namespace: Microsoft.Quantum.Math
+summary: Vrátí náhodné reálné číslo v intervalu, který je větší nebo roven nule a menší než 1.
+remarks: Tato funkce volá <xref:microsoft.quantum.intrinsic.random>, takže její náhodnost závisí na implementaci `Random`.
+syntax: 'operation RandomReal (bitsRandom : Int) : Double'
+input:
+  content: '(bitsRandom : Int)'
+  types:
+  - name: bitsRandom
+    summary: >-
+      Počet bitů přesnosti, se kterými by se mělo vzorkovat náhodné číslo.
+
+          # Output
+
+      Reálné číslo $x = k/2 ^ {\texttt{bitsRandom}} $ pro celočíselnou $k $ vzorkovat z intervalu $ [0, 2 ^ {\texttt{bitsRandom}}) $ s pravděpodobností $ \Pr (k) = 1/2 ^ {\texttt{bitsRandom}} $.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - isPrimitive: true
+    uid: Double
+ms.openlocfilehash: c0780e0b8771c74a04145d5dce70d47dfefafa0e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219956"

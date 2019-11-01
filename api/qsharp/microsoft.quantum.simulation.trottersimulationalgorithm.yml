@@ -1,0 +1,29 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.trottersimulationalgorithm
+name: TrotterSimulationAlgorithm
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: '`SimulationAlgorithm` funkce, která používá dekompozici Trotter – Suzuki k aproximaci operátoru vývojového času _EXP (-iHt)_.'
+syntax: 'function TrotterSimulationAlgorithm (trotterStepSize : Double, trotterOrder : Int) : Microsoft.Quantum.Simulation.SimulationAlgorithm'
+input:
+  content: '(trotterStepSize : Double, trotterOrder : Int)'
+  types:
+  - name: trotterStepSize
+    summary: Doba trvání simulovaného vývojového času v jednom kroku Trotter
+    isPrimitive: true
+    uid: Double
+  - name: trotterOrder
+    summary: Pořadí Trotter integrátoru. Hodnota musí být buď 1, nebo sudé číslo.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Microsoft.Quantum.Simulation.SimulationAlgorithm
+  types:
+  - summary: Typ `SimulationAlgorithm`.
+    uid: microsoft.quantum.simulation.simulationalgorithm
+ms.openlocfilehash: 2daaeb3be5d73351797cb9f4efacb6e276b18e10
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231992"

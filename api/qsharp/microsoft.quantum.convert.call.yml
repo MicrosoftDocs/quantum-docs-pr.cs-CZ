@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.convert.call
+name: Call
+type: operation
+namespace: Microsoft.Quantum.Convert
+summary: >-
+  Volá funkci s daným vstupem.
+
+
+  Při zadání funkce a vstupu do této funkce volá funkci a vrátí její výstup.
+remarks: Tato operace je hlavně užitečná pro vynucení volání funkce na konkrétní místo v rámci operace nebo pro volání funkce, kde je očekávána operace.
+syntax: "operation Call (fn : ('Input -> 'Output), input : 'Input) : 'Output"
+input:
+  content: "(fn : ('Input -> 'Output), input : 'Input)"
+  types:
+  - name: fn
+    summary: Funkce, která má být volána.
+    isFunction: true
+    input:
+      types:
+      - uid: "'Input"
+        isLocal: true
+    output:
+      types:
+      - uid: "'Output"
+        isLocal: true
+  - name: input
+    summary: Vstup, který má být předán do funkce.
+    uid: "'Input"
+    isLocal: true
+output:
+  content: "'Output"
+  types:
+  - summary: Výsledek volání `fn`.
+    uid: "'Output"
+    isLocal: true
+ms.openlocfilehash: a2cbb56ce70dbe3cbec0fbddffb5155a17704b84
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219327"

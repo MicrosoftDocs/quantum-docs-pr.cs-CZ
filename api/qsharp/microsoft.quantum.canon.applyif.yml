@@ -1,0 +1,66 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyif
+name: ApplyIf
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Použije operaci s podmíněným klasickým bitem.
+
+
+  Při `op` operace a `bit`bitové hodnoty platí `op` `target`, pokud `bit` `true`. Pokud `false`, nic se nestane s `target`.
+examples: >-
+  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězec zadaný jako pole hodnot `Bool`:
+
+
+  ```Q#
+
+  let bitstring = [true, false, true];
+
+  using (register = Qubit(3)) {
+      ApplyToEach(ApplyIf(X, _, _), Zip(bitstring, register));
+      // register should now be in the state |101⟩.
+      ...
+  }
+
+  ```
+syntax: "operation ApplyIf (op : ('T => Unit), bit : Bool, target : 'T) : Unit"
+input:
+  content: "(op : ('T => Unit), bit : Bool, target : 'T)"
+  types:
+  - name: op
+    summary: Operace, která se má podmíněně použít
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: bit
+    summary: logická hodnota, která určuje, zda je použita možnost op.
+    isPrimitive: true
+    uid: Bool
+  - name: target
+    summary: Vstup, na který se operace používá
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má podmíněně použít.
+seeAlso:
+- microsoft.quantum.canon.applyifc
+- microsoft.quantum.canon.applyifa
+- microsoft.quantum.canon.applyifca
+ms.openlocfilehash: 8493200e8c87fc423bee6754f50f0f5c6b7cdd5c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217644"

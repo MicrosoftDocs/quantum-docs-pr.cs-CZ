@@ -1,0 +1,72 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifa
+name: ApplyIfA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje v klasickém bitu operaci s sousedním objektem.
+
+
+  Při `op` operace a `bit`bitové hodnoty platí `op` `target`, pokud `bit` `true`. Pokud `false`, nic se nestane s `target`.
+
+  Přípona `A` označuje, že operace, která se má použít, je sousední.
+examples: >-
+  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězec zadaný jako pole hodnot `Bool`:
+
+
+  ```Q#
+
+  let bitstring = [true, false, true];
+
+  using (register = Qubit(3)) {
+      ApplyToEach(ApplyIf(X, _, _), Zip(bitstring, register));
+      // register should now be in the state |101⟩.
+      ...
+  }
+
+  ```
+syntax: "operation ApplyIfA (op : ('T => Unit is Adj), bit : Bool, target : 'T) : Unit"
+input:
+  content: "(op : ('T => Unit is Adj), bit : Bool, target : 'T)"
+  types:
+  - name: op
+    summary: Operace, která se má podmíněně použít
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: bit
+    summary: logická hodnota, která určuje, zda je použita možnost op.
+    isPrimitive: true
+    uid: Bool
+  - name: target
+    summary: Vstup, na který se operace používá
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má podmíněně použít.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applyifc
+- microsoft.quantum.canon.applyifa
+- microsoft.quantum.canon.applyifca
+ms.openlocfilehash: 2c62617251d7795f19fa67f7de01859679c94313
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213870"

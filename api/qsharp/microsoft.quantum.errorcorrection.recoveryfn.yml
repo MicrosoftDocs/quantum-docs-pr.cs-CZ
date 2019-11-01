@@ -1,0 +1,13 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.errorcorrection.recoveryfn
+name: RecoveryFn
+type: newtype
+namespace: Microsoft.Quantum.ErrorCorrection
+summary: Zadejte funkci, která mapuje chybu Syndrome na sekvenci `Pauli[]` operací, které opraví zjištěnou chybu.
+syntax: newtype RecoveryFn = (Microsoft.Quantum.ErrorCorrection.Syndrome -> Pauli[]);
+ms.openlocfilehash: 86d0c6444a3e822525f605f2c15978323b9e1caf
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73220313"

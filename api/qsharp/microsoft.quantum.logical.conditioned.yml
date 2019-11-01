@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.logical.conditioned
+name: Conditioned
+type: function
+namespace: Microsoft.Quantum.Logical
+summary: Vrátí jednu ze dvou hodnot v závislosti na hodnotě logické podmínky.
+remarks: >-
+  Na rozdíl od operátoru `?|` Tato funkce nemá krátký okruh, takže oba vstupy jsou plně vyhodnoceny.
+
+
+  V případě chování až po krátkého okruhu jsou následující ekvivalenty:
+
+
+  ```Q#
+
+  let x = condition ? ifTrue | ifFalse;
+
+  let x = Conditioned(condition, ifTrue, ifFalse);
+
+  ```
+syntax: "function Conditioned (condition : Bool, ifTrue : 'T, ifFalse : 'T) : 'T"
+input:
+  content: "(condition : Bool, ifTrue : 'T, ifFalse : 'T)"
+  types:
+  - name: condition
+    summary: Podmínka sloužící k řízení, který vstup je vrácen.
+    isPrimitive: true
+    uid: Bool
+  - name: ifTrue
+    summary: Hodnota, která se má vrátit, když `condition` `true`.
+    uid: "'T"
+    isLocal: true
+  - name: ifFalse
+    summary: Hodnota, která se má vrátit, když `condition` `false`.
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T"
+  types:
+  - summary: '`ifTrue`, pokud `condition` `true`, a `ifFalse` jinak.'
+    uid: "'T"
+    isLocal: true
+ms.openlocfilehash: f26e540b181ce405125dbf80cd97c3e177ad9531
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233335"

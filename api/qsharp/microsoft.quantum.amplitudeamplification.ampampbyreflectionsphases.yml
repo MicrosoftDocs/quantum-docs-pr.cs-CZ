@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.ampampbyreflectionsphases
+name: AmpAmpByReflectionsPhases
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Amplituda amplitud na základě částečných odrazů
+remarks: >-
+  Zesílení amplitud je zvláštní případ oblivious zesílení amplitud, kde nejsou žádné systémové qubits a oblivious Oracle je nastavená na identity.
+
+  Ve většině případů je `startQubits` inicializován ve stavu $ \ket{\Text{Start}}\_$1, což je eigenstate v `startStateReflection`$-$1.
+syntax: 'function AmpAmpByReflectionsPhases (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle) : (Qubit[] => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle)'
+  types:
+  - name: phases
+    summary: Fáze částečných odrazů
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateReflection
+    summary: Operátor reflexe o počátečním stavu
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: targetStateReflection
+    summary: Operátor reflexe pro cílový stav
+    uid: microsoft.quantum.oracles.reflectionoracle
+output:
+  content: (Qubit[] => Unit is Adj + Ctl)
+  types:
+  - summary: Operace, která implementuje zesílení amplitud pomocí částečných odrazů.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+ms.openlocfilehash: 90305f330669aa4e9570e56b26744cdb7efd98bc
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215808"

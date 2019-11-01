@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.negationd
+name: NegationD
+type: function
+namespace: Microsoft.Quantum.Math
+summary: Vrací unární negaci vstupu.
+syntax: 'function NegationD (input : Double) : Double'
+input:
+  content: '(input : Double)'
+  types:
+  - name: input
+    summary: Hodnota, jejíž negaci má být vrácena.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Double
+  types:
+  - summary: Unární negace `input`.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: e20bae5e2d482f5bad346764ccfecc8a1d77ca7b
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232383"

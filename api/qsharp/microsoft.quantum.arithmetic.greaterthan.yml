@@ -1,0 +1,40 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.greaterthan
+name: GreaterThan
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Provede striktně větší než porovnání dvou celých čísel $x $ a $y $ kódovaný v qubit Registry XS a y. Pokud $x > y $, výsledek qubit se překlopí, jinak si ponechá svůj stav.
+remarks: Používá štych, který $x-y = (x ' + y) ' $, kde ', kde ' označuje první doplněk.
+syntax: 'operation GreaterThan (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Qubit) : Unit'
+references: >-
+  - Steven A. Cuccaro, Tomáš G. Draper, Samuel A. Kutin, David Petrie Moulton: "nové v rámci Ripple – přenést okruh", 2004.
+    https://arxiv.org/abs/quant-ph/0410184v1
+
+  - Tomáš Haener, Martin Roetteler, Krysta M. Svore: "faktoring pomocí 2n + 2 qubits s modulární násobení Toffoli", 2016 https://arxiv.org/abs/1611.07995
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Qubit)'
+  types:
+  - name: xs
+    summary: LittleEndian qubit registruje kódování prvního celého čísla $x $.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: ys
+    summary: LittleEndian qubit registruje kódování druhého celého čísla $y $.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: result
+    summary: Jeden qubit, který se překlopí, pokud $x > a $.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 6961a6a4f22d2290a264298a3be3b15f7bdb0ac7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214941"

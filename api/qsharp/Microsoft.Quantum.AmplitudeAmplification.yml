@@ -1,0 +1,43 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.amplitudeamplification
+name: Microsoft. AmplitudeAmplification.
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro provádění zesílení amplitud.\n\n # <a name=\"description\"></a>Popis\n Zesílení zesílení oblivious s částečnou odrazací je nejobecnější forma zesílení amplitud, které jsou zde implementovány.\n\n Tato funkce se volá prostřednictvím operace AmpAmpObliviousByReflectionPhases.\n\n Má dva Registry: `ancillaRegister` a `systemRegister`.\n\n To přijímá dva Oracle pro tyto odrazy typu `ReflectionOracle`, které fungují pouze v registru `ancillaRegister`.\n\n To přijímá speciální rozhraní Oracle pro oblivious amplitudy amplitud typu `ObliviousOracle` které společně v obou registrech fungují.\n\n U vstupního stavu na `ancillaRegister` se předpokládá, že se jedná o jedinečný $-$1 eigenstate prvního operátoru reflexe $I-2 \\ KET {s} \\ Bra {s} $.\n\n Odrazy týkající se cílového stavu se často implementují tím, že předpokládají přístup k Oracle, který tento stav připravuje z výpočetního základu $ \\ket{0\\cdots 0} $.\n\n Naše konvence pro tyto Oracle vyžaduje dva Registry: jeden qubit `flagQubit` registraci a registr pro všechno ostatní v registru ancillaRegister.\n\n Oracle typu `StateOracle` pracuje společně na obou registrech k vytvoření cílového stavu označeného $ \\ket{1}$ v registru `flagQubit` s určitou skutečnou amplitudou.\n\n Reflexe `ReflectionOracle` o stavu tohoto příznaku je vygenerována operací `TargetStateReflectionOracle`.\n\n Reflexe `ReflectionOracle` o vstupním stavu do `ancillaRegister` je vygenerována obráceným StateOracle a pak odráží přibližně $ \\ket{0\\cdots 0} $ s ReflectionStart ().\n\n Typ Oracle typu `DeterministicStateOracle` pracuje na `qubitState` registry a vytvoří cílový stav přesně bez příznaku.\n\n `AmpAmpObliviousByOraclePhases` je verze zesílení amplitud oblivious, která přijímá `StateOracle` Oracle a `ObliviousOracle` místo odrazů.\n\n Všimněte si, že zesílení amplitud je zvláštní případ zesílení amplitud oblivious, kde `ObliviousOracle` je operátorem identity a neexistuje qubits systému, tj. `systemRegister` je prázdný.\n\n Tato funkce se volá prostřednictvím `AmpAmByReflectionPhases` operace a `AmpAmpByOraclePhases`.\n\n Fáze pro částečné odrazy ve standardním případu hledání Grover jsou poskytovány funkcí AmpAmpPhasesStandard.\n\n Například máme následující závislosti: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
+functions:
+- uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
+  summary: Algoritmus zesílení standardní amplitudy
+- uid: microsoft.quantum.amplitudeamplification.ampampbyoraclephases
+  summary: Amplituda zesílení pro částečné odrazy od Oracle
+- uid: microsoft.quantum.amplitudeamplification.ampampbyreflectionsphases
+  summary: Amplituda amplitud na základě částečných odrazů
+- uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyoraclephases
+  summary: Oblivious zesílení amplitudy od Oracle po částečné odrazy.
+- uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyreflectionphases
+  summary: Vrátí jednotnou, která implementuje zesílení oblivious amplitudy zadáním pro částečné odrazy.
+- uid: microsoft.quantum.amplitudeamplification.ampampphasesfixedpoint
+  summary: Vypočítá částečné odrazové fáze pro zesílení amplitudy s pevnou desetinnou čárkou.
+- uid: microsoft.quantum.amplitudeamplification.ampampphasesstandard
+  summary: Vypočítá částečné odrazové fáze pro zesílení standardního amplitudy.
+- uid: microsoft.quantum.amplitudeamplification.ampamprotationtoreflectionphases
+  summary: Převede fáze zadané jako qubit otočení na fáze určené jako částečné odrazy.
+- uid: microsoft.quantum.amplitudeamplification.reflectionstart
+  summary: Sestaví reflexi z řetězce All-Zero | 0... 0 〉, což je typický vstupní stav pro amplitudu zesílení.
+- uid: microsoft.quantum.amplitudeamplification.targetstatereflectionoracle
+  summary: >-
+    Vytvoří `ReflectionOracle` o cílovém stavu jednoznačně označené příznakem qubit.
+
+
+    Cílový stav má jednu qubit sadu na 1 a všechny ostatní 0: $ \ket{1}_F $.
+operations:
+- uid: microsoft.quantum.amplitudeamplification.ampamprusbyoracle
+  summary: Algoritmus zesílení amplitudy s pevnou desetinnou čárkou
+newtypes:
+- uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  summary: Fáze pro sekvenci částečných odrazů v zesílení amplitudy.
+- uid: microsoft.quantum.amplitudeamplification.rotationphases
+  summary: Fáze pro sekvenci qubit otočení v zesílení amplitudy.
+ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057130"

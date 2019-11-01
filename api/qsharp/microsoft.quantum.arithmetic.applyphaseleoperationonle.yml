@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyphaseleoperationonle
+name: ApplyPhaseLEOperationOnLE
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Použije operaci, která pro cílový registr typu <xref:microsoft.quantum.arithmetic.phaselittleendian>používá jako vstup registraci <xref:microsoft.quantum.arithmetic.littleendian>.
+remarks: Registr se transformuje na `PhaseLittleEndian` pomocí <xref:microsoft.quantum.canon.qftle> a pak se vrátí do původní reprezentace po použití `op`.
+syntax: 'operation ApplyPhaseLEOperationOnLE (op : (Microsoft.Quantum.Arithmetic.PhaseLittleEndian => Unit), target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(op: (Microsoft. aritmetické PhaseLittleEndian = > Unit); target: Microsoft. aritmetický. LittleEndian)'
+  types:
+  - name: evřít
+    summary: Operace, která se má použít.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.phaselittleendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: Cílové
+    summary: Registr, na který se operace používá
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Jednotka
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- microsoft.quantum.canon.applyphaseleoperationonlea
+- microsoft.quantum.canon.applyphaseleoperationonlea
+- microsoft.quantum.canon.applyphaseleoperationonleca
+ms.openlocfilehash: f610069706c06a3454c15b2f5170cce4b478530d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056989"

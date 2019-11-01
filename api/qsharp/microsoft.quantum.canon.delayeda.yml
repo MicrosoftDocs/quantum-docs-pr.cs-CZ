@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.delayeda
+name: DelayedA
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Vrátí operaci, která aplikuje danou operaci s daným argumentem.
+syntax: "function DelayedA (op : ('T => Unit is Adj), arg : 'T) : (Unit => Unit is Adj)"
+input:
+  content: "(op : ('T => Unit is Adj), arg : 'T)"
+  types:
+  - name: op
+    summary: Operace, která se má použít v důsledku použití návratové hodnoty
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: arg
+    summary: Vstup, na který je operace `op` použita.
+    uid: "'T"
+    isLocal: true
+output:
+  content: (Unit => Unit is Adj)
+  types:
+  - summary: Nová operace, která `op` se vstupní `arg`
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace, která se má zpozdit
+seeAlso:
+- microsoft.quantum.canon.delayed
+- microsoft.quantum.canon.delay
+ms.openlocfilehash: b1ac535cf5d46e1dbde7c9e9fb33a0f9cc33c24d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219480"

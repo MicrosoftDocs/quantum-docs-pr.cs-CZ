@@ -1,0 +1,76 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyifelsera
+name: ApplyIfElseRA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Aplikuje jednu ze dvou sousedících operací v závislosti na hodnotě klasického výsledku.
+
+
+  V důsledku `result`použije operace `zeroOp` `zeroInput` jako vstup, když se `result` rovná `Zero`, a použije `oneOp(oneInput)`, pokud `result == One`.
+syntax: "operation ApplyIfElseRA (result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U)) : Unit"
+input:
+  content: "(result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U))"
+  types:
+  - name: result
+    summary: Výsledek měření použitý k určení, zda je použita `zeroOp` nebo `oneOp`.
+    isPrimitive: true
+    uid: Result
+  - name: zeroOp
+    summary: Operace sousedících, která se má použít, když `result == Zero`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: zeroInput
+    summary: Vstup, který má být k dispozici pro `zeroOp` při `result == Zero`.
+    uid: "'T"
+    isLocal: true
+  - name: oneOp
+    summary: Operace sousedících, která se má použít, když `result == One`.
+    isOperation: true
+    input:
+      types:
+      - uid: "'U"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: oneInput
+    summary: Vstup, který má být k dispozici pro `oneOp` při `result == One`.
+    uid: "'U"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Vstupní typ operace `zeroOp` být podmíněně použit.
+- uid: "'U"
+  summary: Vstupní typ operace `oneOp` být podmíněně použit.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applyifzero
+- microsoft.quantum.canon.applyifone
+- microsoft.quantum.canon.applyifelserc
+- microsoft.quantum.canon.applyifelsera
+- microsoft.quantum.canon.applyifelserca
+ms.openlocfilehash: df838f6eda12db4710ee19cd3c0aeb334935cd22
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213904"
