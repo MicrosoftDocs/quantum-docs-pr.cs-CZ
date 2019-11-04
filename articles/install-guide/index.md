@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 090cf98612c6c549c733e54f9dcbf74442b30fbd
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 2a098d89f13278d7137bf182a184a74afb9393be
+ms.sourcegitcommit: 2ca4755d1a63431e3cb2d2918a10ad477ec2e368
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442249"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73462870"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Instalace sady Microsoft Quantum Development Kit (QDK)
 
@@ -177,8 +177,6 @@ Visual Studio nabízí bohaté prostředí pro vývoj programů v Q# se skvělý
 > * Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
 
 ## <a name="develop-with-c-using-visual-studio-code"></a>Vývoj s využitím C# v editoru Visual Studio Code
-
-Visual Studio Code (VS Code) nabízí bohaté prostředí pro vývoj programů v Q# napříč různými výpočetními prostředími, včetně systémů Windows, Linux a Mac, a poskytuje skvělé funkce, jako je dokončování kódu a zvýrazňování syntaxe, které vývojářům pomáhají při vytváření aplikací.  Rozšíření Q# VS Code obsahuje zvýrazňování syntaxe a fragmenty kódu v Q#.
 
 Visual Studio Code (VS Code) nabízí bohaté prostředí pro vývoj programů v Q# napříč různými výpočetními prostředími, včetně systémů Windows, Linux a Mac, a poskytuje skvělé funkce, jako je dokončování kódu a zvýrazňování syntaxe, které vývojářům pomáhají při vytváření aplikací.  Rozšíření Q# VS Code obsahuje zvýrazňování syntaxe a fragmenty kódu v Q#.
 

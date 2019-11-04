@@ -1,18 +1,20 @@
 ---
-title: Glosář | Microsoft Docs
+title: Glosář pro výpočetní výkon | Microsoft Docs
 description: Glosář termínů
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: bfa275b3330ea2c2a541b08f137893b63b6213aa
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: ce15fee2be68d41f0b806be50320b562a749c3b7
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183620"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442548"
 ---
+# <a name="quantum-computing-glossary"></a>Glosář pro výpočetní výkon
+
 |Doba účinnosti|Definice|
 |-------------|----------|
 |Sousednít|Složitá sdružená transpozice operace. Pro operace, které implementují operátor s jednou jednotkou, je sousední osoba inverzní k operaci.|
@@ -29,7 +31,7 @@ ms.locfileid: "73183620"
 |Měření|Získání klasického bitu z qubit (nebo sady qubits). Další podrobnosti najdete v části věnované [konceptům qubit](xref:microsoft.quantum.concepts.qubit) .|
 |Měnitelné|Proměnná, jejíž hodnota může být po vytvoření změněna.|
 |hosting|Popisek pro kolekci souvisejících názvů (typicky operace, funkce a typy). Obor názvů například [`Microsoft.Quantum.Preparation`](xref:microsoft.quantum.preparation) popisky všech symbolů definovaných ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.|
-|Operace|Základní jednotka provádění ve službě Q #. Je zhruba ekvivalentní funkci v C nebo C++ nebo Pythonu nebo statickou metodou v C# nebo Java.|
+|Operace|Základní jednotka provádění ve službě Q #. Zhruba odpovídá funkci v C, C++ nebo Pythonu, případně statické metodě v C# nebo Javě.|
 |Aplikace operátora|Provádění operací s více operačními operacemi. To obvykle platí jednotnou matici s aktuálním vektorem stavu. Další podrobnosti najdete v tématu [Úvod do konceptů](xref:microsoft.quantum.concepts.intro) .|
 |Oracle|Podprogram, který poskytuje informace závislé na datech pro algoritmus v době běhu. Cílem je obvykle poskytnout nadmnožinu výstupů odpovídajících vstupům, které jsou umístěny na pozici.   |
 |Částečná aplikace|Volání funkce nebo operace bez všech požadovaných parametrů. Vrátí nový, který lze volat, který potřebuje pouze chybějící parametry, které byly zadány v budoucí aplikaci.|

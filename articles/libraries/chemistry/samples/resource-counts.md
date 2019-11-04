@@ -6,16 +6,16 @@ ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.resourcecounts
-ms.openlocfilehash: b28a27c4c1f1e64644fcfb074a731ff7b65cacb6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: f9311c1987ced4336c4e98bdb984fbee009e9acc
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184079"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442463"
 ---
-## <a name="obtaining-resource-counts"></a>Získání počtu prostředků
+# <a name="obtaining-resource-counts"></a>Získání počtů prostředků
 
-Náklady na simulaci $n $ qubits v klasických počítačích škálují exponenciálně s $n $. Tím se významně omezuje velikost simulační simulace, kterou můžeme provádět s simulátorem s plným stavem. U velkých instancí chemického programu můžeme Nicméně získat užitečné informace. Tady zjistíte, jak se náklady na prostředky, jako je třeba počet T-Branch nebo CNOTch bran, pro simulaci chemické látky, získají automatizovaným způsobem pomocí [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Tyto informace informují o tom, kdy může být počítač dostatečně velký, aby mohl spouštět tyto chemické algoritmy. Referenční informace najdete v uvedené ukázce `GetGateCount`.
+Náklady na simulaci $n $ qubits v klasických počítačích škálují exponenciálně s $n $. To významně omezuje velikost chemického simulaci pro každé z procesorů, které můžeme provádět s simulátorem s plným stavem. U velkých instancí chemického programu můžeme Nicméně získat užitečné informace. Tady zjistíte, jak se náklady na prostředky, jako je třeba počet T-Branch nebo CNOTch bran, pro simulaci chemické látky, získají automatizovaným způsobem pomocí [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Tyto informace informují o tom, kdy může být počítač dostatečně velký, aby mohl spouštět tyto chemické algoritmy. Referenční informace najdete v uvedené ukázce `GetGateCount`.
 
 Můžeme předpokládat, že již máme instanci `FermionHamiltonian`, kterou jste načetli ze schématu Broombridge, jak je popsáno v příkladu [načtení-z-souboru](xref:microsoft.quantum.chemistry.examples.loadhamiltonian) . 
 
@@ -83,7 +83,7 @@ operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
 }
 ```
 
-Teď nakonfigurujeme simulátor trasování pro sledování prostředků, které vás zajímá. V tomto případě je počet primitivních operací na základě nastavení příznaku `usePrimitiveOperationsCounter` `true`. Technický detail `throwOnUnconstraintMeasurement` je nastaven na hodnotu `false`, aby nedocházelo k výjimkám v případech, kdy kód Q # nepracuje správně s probabiltiymi výsledky měření, pokud jsou prováděny.
+Teď nakonfigurujeme simulátor trasování pro sledování prostředků, které vás zajímá. V tomto případě je počet primitivních operací na základě nastavení příznaku `usePrimitiveOperationsCounter` `true`. Technický detail `throwOnUnconstraintMeasurement` je nastaven na `false`, aby nedocházelo k výjimkám v případech, kdy kód Q # nepracuje správně s pravděpodobností výsledků měření, pokud jsou provedeny.
 
 ```csharp
 private static QCTraceSimulator CreateAndConfigureTraceSim()

@@ -6,27 +6,23 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 56455e9d5cd452b8620ee794f40563d1d3040193
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 4050e2ee9e516aed7a8ba1398792562926808ee0
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183841"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463322"
 ---
 # <a name="q-style-guide"></a>Průvodce stylem Q # #
 ## <a name="general-conventions"></a>Obecné konvence ##
 
 Konvence navržené v této příručce jsou určené k tomu, aby usnadnily čtení a pochopení programů a knihoven ve službě Q #.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+## <a name="guidance"></a>Pokyny
 
 Navrhujeme:
 
 - Nikdy nepoužívejte konvenci, pokud to neprovedete záměrně za účelem poskytnutí čitelnějšího a srozumitelného kódu pro uživatele.
-
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
-
-***
 
 ## <a name="naming-conventions"></a>Zásady vytváření názvů ##
 
@@ -67,9 +63,9 @@ V tomto případě mohou být užitečné i jiné akce, jako v `IterateThroughCa
 | Operace | Očekávaný efekt |
 | ---- | ------ |
 | Použít | Nazývá se operace zadaná jako vstup. |
-| Uplatňuje | Hypotéza o výsledku možného měření doby využívání se kontroluje simulátorem. |
+| Assert | Hypotéza o výsledku možného měření doby využívání se kontroluje simulátorem. |
 | Ocenění | Vrátí se klasická hodnota, která představuje odhad vykreslený z jedné nebo více měření. |
-| Měrné | Měří se měření po sobě a výsledek se vrátí uživateli. |
+| Measure | Měří se měření po sobě a výsledek se vrátí uživateli. |
 | Připravit | Daný registr qubits se inicializuje do určitého stavu. |
 | Ukázka | Z nějaké distribuce se náhodně vrátí klasická hodnota. |
 

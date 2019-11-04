@@ -1,21 +1,18 @@
 ---
-title: Licence Microsoft Quantum Development Kit | Microsoft Docs
+title: Microsoft Quantum Development Kit licence
 description: Microsoft Quantum Development Kit licence
-services: service-name-with-dashes-AZURE-ONLY
-keywords: Nepřidávejte ani neupravujte klíčová slova, aniž byste se poradili se svým odborníkem na SEO.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
-ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
-ms.openlocfilehash: e14720143144d4890358a1c6167541a0ea5a8362
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.author: cpalmer
+ms.date: 11/04/2019
+ms.openlocfilehash: d864c3e4ecefa6f998b9a893ecc4a3995d67dac4
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184929"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463363"
 ---
 # <a name="microsoft-software-license-terms"></a>LICENČNÍ PODMÍNKY PRO SOFTWARE SPOLEČNOSTI MICROSOFT 
-# <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT PRO VÝVOJOVÁ PROSTŘEDÍ (PREVIEW)
+## <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT PRO VÝVOJOVÁ PROSTŘEDÍ (PREVIEW)
 
 
 * * *
@@ -61,13 +58,13 @@ POKUD TYTO LICENČNÍ PODMÍNKY VYDRŽÍTE V SOULADU S TĚMITO LICENČNÍMI PODM
     
     e. Umožněte sdílení, publikování, distribuci nebo zapůjčení softwaru, poskytněte software jako samostatné hostované řešení, které budou jiní uživatelé používat, nebo přeneste software nebo tuto smlouvu na kteroukoli třetí stranu.
 
-1. **omezení exportu**. Musíte dodržovat všechny vnitrostátní i mezinárodní zákony a předpisy o vývozu, které se vztahují na software, který obsahuje omezení na cíle, koncové uživatele a koncové použití. Další informace o omezeních exportu najdete v http://aka.ms/exporting.
+1. **omezení exportu**. Musíte dodržovat všechny vnitrostátní i mezinárodní zákony a předpisy o vývozu, které se vztahují na software, který obsahuje omezení na cíle, koncové uživatele a koncové použití. Další informace o omezeních exportu najdete v https://aka.ms/exporting.
 
 1. **služby podpory**. Společnost Microsoft není povinná v rámci této smlouvy, aby poskytovala žádné služby podpory pro daný software. Jakákoli poskytnutá podpora je "tak jak je", "se všemi chybami" a bez záruky jakéhokoli druhu.
 
 1. **Aktualizace**. Software může pravidelně vyhledávat aktualizace a stahovat a instalovat je za vás. Aktualizace můžete získat pouze od společnosti Microsoft nebo autorizovaných zdrojů. Microsoft možná bude muset aktualizovat systém, aby vám poskytoval aktualizace. Souhlasíte s tím, že obdržíte tyto automatické aktualizace bez dalšího oznámení. Aktualizace nemusí zahrnovat ani podporovat všechny existující funkce softwaru, služby nebo periferní zařízení.
 
-1. **vyjednávání o rozhodčím řízení a zřeknutí se akce třídy. Tato část se vztahuje, pokud žijete v systému (nebo v případě podniku, kde se nachází hlavní sídlo firmy) USA**.  Pokud jste vy a Microsoft máte spor, vyjadřujete souhlas s tím, že jste vy a společnost Microsoft vyzkoušeli 60 dní, aby bylo možné je vyřešit neformálně. Pokud vy a společnost Microsoft nemůžete, vy a společnost Microsoft souhlasíte s tím, že před sdružením rozhodčího řízení v rámci federální arbitrážního aktu ("FAA") vytvoříte **vazbu na jednotlivé arbitráže** a nebudete **se Sue soudem soudu**. Místo toho se rozhodne neutrální rozhodce. **Soudní spory týkající se třídy, arbitráže v rámci jednotlivých tříd, soukromé akce obecného zabezpečení**a jakékoli další kroky, pokud **není povolená**jiná osoba, která je v reprezentativní kapacitě; ani kombinuje jednotlivá jednání bez souhlasu všech stran. Úplná smlouva o arbitráže obsahuje více podmínek a je na http://aka.ms/arb-agreement-1. Vy a Microsoft souhlasíte s těmito podmínkami.
+1. **vyjednávání o rozhodčím řízení a zřeknutí se akce třídy. Tato část se vztahuje, pokud žijete v systému (nebo v případě podniku, kde se nachází hlavní sídlo firmy) USA**.  Pokud jste vy a Microsoft máte spor, vyjadřujete souhlas s tím, že jste vy a společnost Microsoft vyzkoušeli 60 dní, aby bylo možné je vyřešit neformálně. Pokud vy a společnost Microsoft nemůžete, vy a společnost Microsoft souhlasíte s tím, že před sdružením rozhodčího řízení v rámci federální arbitrážního aktu ("FAA") vytvoříte **vazbu na jednotlivé arbitráže** a nebudete **se Sue soudem soudu**. Místo toho se rozhodne neutrální rozhodce. **Soudní spory týkající se třídy, arbitráže v rámci jednotlivých tříd, soukromé akce obecného zabezpečení**a jakékoli další kroky, pokud **není povolená**jiná osoba, která je v reprezentativní kapacitě; ani kombinuje jednotlivá jednání bez souhlasu všech stran. Úplná smlouva o arbitráže obsahuje více podmínek a je na https://aka.ms/arb-agreement-1. Vy a Microsoft souhlasíte s těmito podmínkami.
 
 1. **Úplná smlouva**. Tato smlouva a jakékoli jiné výrazy, které může společnost Microsoft poskytnout pro doplňky, aktualizace nebo aplikace třetích stran, je úplná smlouva pro software.
 
