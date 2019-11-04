@@ -1,19 +1,19 @@
 ---
-title: Koncepce kvantových výpočtů
-description: Co jsou kvantové výpočty?
+title: Pozadí a historie kvantových výpočtů
+description: Seznamte se s historií kvantových výpočtů, přečtěte si něco o tom, jak fungují, a seznamte se blíž sadou Microsoft Quantum Development Kit.
 author: QuantumWriter
-ms.author: nawiebe@microsoft.com
+ms.author: nawiebe
 uid: microsoft.quantum.concepts.intro
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 37f5181f2d9e4e11efa29811c24116ca7d64f81b
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: fb1df9e3460c18d0cdc0ff430fa236192b3aa2fa
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72978953"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442305"
 ---
-# <a name="what-is-quantum-computing"></a>Co jsou kvantové výpočty?
+# <a name="quantum-computing-history-and-background"></a>Pozadí a historie kvantových výpočtů
 
 V posledních letech se objevilo mnoho nových počítačových technologií. Kvantové výpočty jsou pravděpodobně tou, která od vývojářů vyžaduje nejzásadnější změnu přístupu.  Kvantové počítače navrhli v 80. letech minulého století [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) a [Jurij Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  Intuice stojící za kvantovými výpočty vychází z toho, co se často považovalo za téměř největší ostudu fyziky: pozoruhodný vědecký pokrok narážející na neschopnost modelovat byť jen jednoduché systémy. Kvantová mechanika se rozvíjela v letech 1900 až 1925 a dodnes zůstává úhelným kamenem, na kterém pevně spočívá chemie, fyzika kondenzovaného stavu a technologie od počítačových čipů až po osvětlení diodami LED.  Přes tyto úspěchy se však dokonce i některé z nejjednodušších systémů zdají být mimo lidské možnosti modelování s využitím kvantové mechaniky.  Důvodem je skutečnost, že i simulace systémů o pouhých několika desítkách částic, které spolu interagují, vyžaduje větší výpočetní výkon, než by jakýkoli běžný počítač mohl poskytnout za tisíce let!
 
@@ -21,7 +21,7 @@ Obtížnost simulace kvantové mechaniky je možné chápat mnoha způsoby.  Nej
 
 Podívejme se například na soustavu elektronů, ve které můžou být elektrony ve kterékoli ze zhruba $40$ pozic.  Elektrony se proto můžou nacházet ve kterékoli z $2^{40}$ konfigurací (protože každá pozice může, ale nemusí obsahovat elektron). K uložení kvantového stavu elektronů v běžné počítačové paměti bychom jí potřebovali víc než $130$ GB!  Je to hodně, ale některé počítače by to zvládly.  Kdybychom částicím povolili kteroukoli z $41$ pozic, bylo by konfigurací dvakrát víc ($2^{41}$), což by vyžadovalo více než $260$ GB paměti pro uložení kvantového stavu. Tuto hru se zvyšováním počtu pozic nejde hrát donekonečna, pokud chceme stav ukládat běžným způsobem, protože bychom brzy překročili kapacitu paměti i těch nejvýkonnějších počítačů na světě.  Při několika stovkách elektronů by paměť potřebná k uložení systému překročila počet částic ve vesmíru; není proto žádná naděje, že by běžné počítače dokázaly kvantovou dynamiku alespoň simulovat. Přesto se ale v přírodě takové systémy neustále bez problémů vyvíjejí podle zákonů kvantové mechaniky v blažené neznalosti naší neschopnosti realizovat a simulovat jejich vývoj běžným výpočetním výkonem.
 
-Toto pozorování vede ty, kdo jsou obdaření vizí kvantových výpočtů, k jednoduché, ale důležité otázce: můžeme tuto komplikaci změnit na příležitost?  Řečeno konkrétně: když se kvantová dynamika simuluje obtížně, co by se stalo, kdybychom měli vyrobit hardware, jehož základními operacemi by byly kvantové efekty?  Mohli bychom simulovat systémy interagujících částic pomocí systému využívajícího přesně tytéž zákony, které je řídí přirozeně? Mohli bychom prozkoumat úlohy, které se v přírodě naprosto nevyskytují, ale dodržují zákony kvantové mechaniky nebo by je mohly využívat?  Tyto otázky vedly ke zrodu kvantových výpočtů.
+Toto pozorování vedlo ty, kdo už měli o kvantových výpočtech představu, k jednoduché, ale důležité otázce: Může se z této komplikace stát nová příležitost?  Řečeno konkrétně: když se kvantová dynamika simuluje obtížně, co by se stalo, kdybychom měli vyrobit hardware, jehož základními operacemi by byly kvantové efekty?  Mohli bychom simulovat systémy interagujících částic pomocí systému využívajícího přesně tytéž zákony, které je řídí přirozeně? Mohli bychom prozkoumat úlohy, které se v přírodě naprosto nevyskytují, ale dodržují zákony kvantové mechaniky nebo by je mohly využívat?  Tyto otázky vedly ke zrodu kvantových výpočtů.
 
 Základem kvantových výpočtů je ukládání informací v kvantových stavech hmoty. K výpočtům s těmito informacemi se používají operace s kvantovými hradly, které ovládají kvantovou interferenci a učí se ji „programovat“.  S jedním z prvních příkladů naprogramování ovlivňování tak, aby řešilo problém, který byl u běžných počítačů považován za obtížný, přišel v roce 1994 [Peter Shor](https://en.wikipedia.org/wiki/Peter_Shor). Jednalo se o problém rozkladu.  Nalezení řešení pro rozklad přineslo i schopnost prolomit mnoho kryptografických systémů s veřejnými klíči, které tvoří základ dnešního elektronického obchodování, včetně šifrování RSA a ECC (Elliptic Curve Cryptography).  Od té doby byly pro mnohé z náročných klasických úloh vyvinuty rychlé a efektivní kvantové počítačové algoritmy: simulace fyzických systémů v oblasti chemie, fyziky a nauky o materiálech, hledání v neřazené databázi, řešení soustav lineárních rovnic a strojové učení.
 

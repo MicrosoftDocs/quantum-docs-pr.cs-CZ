@@ -1,0 +1,14 @@
+- name: 'Přehled programů v jazyce Q#'
+  href: file-structure.md
+- name: Operace a funkce
+  href: operations-and-functions.md
+- name: Místní proměnné
+  href: local-variables.md
+- name: Práce s qubity
+  href: working-with-qubits.md
+- name: Spojení všech součástí dohromady
+  href: putting-it-all-together.md
+- name: Další pokračování
+  href: going-further.md
+- name: Testování a ladění
+  href: testing-and-debugging.md

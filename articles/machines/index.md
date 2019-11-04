@@ -1,19 +1,19 @@
 ---
-title: Kvantové simulátory a klasické ovladače | Microsoft Docs
+title: Kvantové simulátory a hostitelské aplikace | Microsoft Docs
 description: Tento článek popisuje, jak ovládat kvantové simulátory z klasického jazyka .NET, obvykle buď C#, nebo Q#.
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: 5ac79280669ae0acfe993a1c2ae1c069b0c01848
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 14aed75ed0ed192f88699b1c7dbacfae23f74642
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035122"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442217"
 ---
-# <a name="classical-drivers-and-machines"></a>Klasické ovladače a počítače
+# <a name="quantum-simulators-and-host-applications"></a>Kvantové simulátory a hostitelské aplikace
 
 ## <a name="what-youll-learn"></a>Co se naučíte
 
@@ -52,7 +52,7 @@ Všechny jsou definovány v oboru názvů `Microsoft.Quantum.Simulation.Simulato
 * [Trasovací estimátor prostředků](xref:microsoft.quantum.machines.qc-trace-simulator.intro), třída `QCTraceSimulator` umožňuje pokročilejší analýzu vyžadovaných prostředků v rámci celého grafu volání.
 * [Simulátor Toffoli](xref:microsoft.quantum.machines.toffoli-simulator), třída `ToffoliSimulator`.
 
-## <a name="writing-a-classical-driver-program"></a>Psaní programu klasického ovladače
+## <a name="writing-a-host-application"></a>Vytvoření hostitelské aplikace
 
 V článku [Jak napsat kvantový program](xref:microsoft.quantum.write-program) jsme pro náš teleportovací algoritmus napsali jednoduchý ovladač v jazyce C#. Ovladač C# má 4 hlavní úkoly:
 
@@ -94,7 +94,7 @@ Při předávání argumentů metodě `Run` je třeba brát v úvahu určité de
 * Pole musí být vždy zabalena v objektu `Microsoft.Quantum.Simulation.Core.QArray<T>`.
     Třída `QArray` má konstruktor, kterému je možné předat jakoukoli uspořádanou kolekci vhodných objektů (`IEnumerable<T>`).
 * Prázdná řazená kolekce členů, `()` v jazyce Q#, je v C# reprezentována výrazem `QVoid.Instance`.
-* Neprázdné řazené kolekce členů jsou reprezentovány jako .NET instance `ValueType`.
+* Neprázdné řazené kolekce členů jsou reprezentovány jako .NET instance `ValueTuple`.
 * Uživatelem definované typy se v Q# předávají jako jejich základní typy.
 * Chcete-li metodě `Run` předat operaci nebo funkci, musíte získat instanci třídy operace nebo funkce pomocí metody `Get<>` simulátoru.
 

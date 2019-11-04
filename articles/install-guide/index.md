@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 3ec53934436b47908fd4d794a98933010f6059a7
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 090cf98612c6c549c733e54f9dcbf74442b30fbd
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035277"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442249"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Instalace sady Microsoft Quantum Development Kit (QDK)
 
@@ -26,11 +26,13 @@ V závislosti na zvoleném vývojovém prostředí se provádějí rozdílné kr
 
 ## <a name="develop-with-python"></a>Vývoj v Pythonu
 
+Balíček qsharp pro Python usnadňuje simulaci operací a funkcí jazyka Q# v rámci Pythonu. IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření primárně využívané Jupyterem a Pythonem, které poskytuje základní funkce pro kompilaci a simulaci operací v jazyce Q#.
+
 1. Požadavky
 
     - [Python](https://www.python.org/downloads/) 3.6 nebo novější
     - Správce balíčků Pythonu [PIP](https://pip.pypa.io/en/stable/installing)
-    - [.NET Core SDK 2.1 nebo novější](https://www.microsoft.com/net/download)
+    - [.NET Core SDK 3.0 nebo novější](https://www.microsoft.com/net/download)
 
 1. Nainstalujte balíček `iqsharp`.
 
@@ -87,11 +89,16 @@ V závislosti na zvoleném vývojovém prostředí se provádějí rozdílné kr
 
 ## <a name="develop-with-jupyter-notebooks"></a>Vývoj s využitím poznámkových bloků Jupyter
 
+Poznámkové bloky Jupyter, které jsou oblíbené v akademickém prostředí, vědeckých laboratořích a také v rámci programování založeného na online spolupráci, nabízejí kromě pokynů, poznámek a dalšího obsahu také možnost místního spouštění kódu, nově včetně kódu v jazyce Q#.  Podívejte se, co všechno k vytváření vlastních poznámkových bloků v Q# potřebujete.
+
+IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primárně využívané Jupyterem a Pythonem, které poskytuje základní funkce pro kompilaci a simulaci operací v jazyce Q#.
+
+
 1. Požadavky
 
     - [Python](https://www.python.org/downloads/) 3.6 nebo novější
     - [Poznámkový blok Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
-    - [.NET Core SDK 2.1 nebo novější](https://www.microsoft.com/net/download)
+    - [.NET Core SDK 3.0 nebo novější](https://www.microsoft.com/net/download)
 
 1. Nainstalujte balíček `iqsharp`.
 
@@ -120,11 +127,22 @@ V závislosti na zvoleném vývojovém prostředí se provádějí rozdílné kr
 
     - Spusťte tuto buňku poznámkového bloku:
 
-        ![Buňka poznámkového bloku Jupyter](~/media/install-guide-jupyter.png)
+        ![Buňka poznámkového bloku Jupyter s využitím kódu Q#](~/media/install-guide-jupyter.png)
 
         Ve výstupu buňky by se měl zobrazit text `SayHello`. Při spouštění v poznámkových blocích Jupyter se kompiluje kód v jazyku Q# a výstupem poznámkového bloku jsou názvy nalezených operací.
 
+
+    - V nové buňce simulujte spuštění právě vytvořené operace v kvantovém počítači, a to pomocí příkazu magic `%simulate`:
+
+        ![Buňka poznámkového bloku Jupyter s využitím příkazu magic %simulate](~/media/install-guide-jupyter-simulate.png)
+
+        Měla by se zobrazit zpráva na obrazovce spolu s výsledkem operace, kterou jste vyvolali (v tomto případě prázdným).
+
+
 ## <a name="develop-with-c-on-windows-using-visual-studio"></a>Vývoj v jazyku C# ve Windows s použitím sady Visual Studio
+
+Visual Studio nabízí bohaté prostředí pro vývoj programů v Q# se skvělými funkcemi, jako je dokončování kódu a zvýrazňování syntaxe, které vývojářům pomáhají při vytváření aplikací.  Rozšíření Q# Visual Studio obsahuje šablony pro projekty a soubory v Q# a také zvýrazňování syntaxe a podporu technologie IntelliSense.
+
 
 1. Požadavky
 
@@ -158,12 +176,16 @@ V závislosti na zvoleném vývojovém prostředí se provádějí rozdílné kr
 > [!NOTE]
 > * Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
 
-## <a name="develop-with-c-using-vs-code"></a>Vývoj v jazyku C# s využitím VS Code
+## <a name="develop-with-c-using-visual-studio-code"></a>Vývoj s využitím C# v editoru Visual Studio Code
+
+Visual Studio Code (VS Code) nabízí bohaté prostředí pro vývoj programů v Q# napříč různými výpočetními prostředími, včetně systémů Windows, Linux a Mac, a poskytuje skvělé funkce, jako je dokončování kódu a zvýrazňování syntaxe, které vývojářům pomáhají při vytváření aplikací.  Rozšíření Q# VS Code obsahuje zvýrazňování syntaxe a fragmenty kódu v Q#.
+
+Visual Studio Code (VS Code) nabízí bohaté prostředí pro vývoj programů v Q# napříč různými výpočetními prostředími, včetně systémů Windows, Linux a Mac, a poskytuje skvělé funkce, jako je dokončování kódu a zvýrazňování syntaxe, které vývojářům pomáhají při vytváření aplikací.  Rozšíření Q# VS Code obsahuje zvýrazňování syntaxe a fragmenty kódu v Q#.
 
 1. Požadavky
 
    - [VS Code](https://code.visualstudio.com/download)
-   - [.NET Core SDK 2.1 nebo novější](https://www.microsoft.com/net/download)
+   - [.NET Core SDK 3.0 nebo novější](https://www.microsoft.com/net/download)
 
 1. Nainstalujte rozšíření VS Code pro kvantové programování.
 
@@ -195,9 +217,11 @@ V závislosti na zvoleném vývojovém prostředí se provádějí rozdílné kr
 
 ## <a name="develop-with-c-using-the-dotnet-command-line-tool"></a>Vývoj v jazyku C# s použitím nástroje pro příkazový řádek `dotnet`
 
+Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazového řádku. Stačí nainstalovat .NET Core SDK a šablony projektů QDK. 
+
 1. Požadavky
 
-    - [.NET Core SDK 2.1 nebo novější](https://www.microsoft.com/net/download)
+    - [.NET Core SDK 3.0 nebo novější](https://www.microsoft.com/net/download)
 
 1. Nainstalujte šablony kvantového projektu pro rozhraní .NET.
 

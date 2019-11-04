@@ -1,0 +1,4 @@
+name: "Poznámky k\_verzi"
+items:
+  - name: 0.3 Průvodce migrací
+    href: 0.3-migration.md

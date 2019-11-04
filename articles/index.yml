@@ -3,55 +3,91 @@ title: Dokumentace k Microsoft Quantum
 summary: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové algoritmy. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.
 metadata:
   title: Dokumentace k Microsoft Quantum – referenční materiály k rozhraní API Q#
-  description: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové algoritmy. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.
+  description: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové programování. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.  Projděte si bohaté nástroje a knihovny QDK.
   ms.prod: quantum
   ms.topic: landing-page
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
-  ms.date: 09/30/2019
-  ms.openlocfilehash: 692456cb6b117b206d202b01967202b7ac89e59d
-  ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+  ms.date: 10/21/2019
+  ms.openlocfilehash: f757c99b1f5b1a821c9c341c442e1080378949a8
+  ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/30/2019
-  ms.locfileid: "73065057"
+  ms.lasthandoff: 11/02/2019
+  ms.locfileid: "73442510"
 landingContent:
 - title: Začínáme s Microsoft Quantum
   linkLists:
   - linkListType: overview
     links:
-    - text: Vítá vás sada Microsoft Quantum Developer Kit
+    - text: Pět dotazů ke kvantovým výpočtům
       url: welcome.md
   - linkListType: get-started
     links:
-    - text: Instalace sady QDK
-      url: install-guide/index.md
-    - text: Aktualizace sady QDK
-      url: install-guide/update.md
-  - linkListType: quickstart
-    links:
-    - text: Vytvoření prvního kvantového programu
+    - text: Vytvoření generátoru kvantových náhodných čísel
+      url: quickstarts/qrng.md
+    - text: Základy kvantových výpočtů s využitím jazyka Q#
       url: quickstart.md
-- title: Informace o kvantových výpočtech
-  linkLists:
-  - linkListType: concept
+    - text: Další informace o účinných kvantových programech s využitím Q#
+      url: quickstarts/search.md
+    - text: Další informace o řešení nejnáročnějších úkolů v chemii
+      url: https://cloudblogs.microsoft.com/quantum/2018/12/04/simulating-nature-with-the-new-microsoft-quantum-development-kit-chemistry-library/
+  - linkListType: learn
     links:
-    - text: Co jsou kvantové výpočty?
-      url: concepts/index.md
-    - text: Vektory a matice
-      url: concepts/vectors-and-matrices.md
-    - text: Pokročilé koncepty matice
-      url: concepts/advanced-matrices.md
-    - text: Qubit
-      url: concepts/the-qubit.md
-    - text: Softwarový zásobník
-      url: concepts/software-stack.md
-- title: Techniky kvantového vývoje
+    - text: Studium s využitím kvantových kat
+      url: intro-to-katas.md
+    - text: 'Procházení ukázek Q #'
+      url: https://docs.microsoft.com/samples/browse/?languages=qsharp
+- title: Vývoj s využitím Q# a Pythonu nebo poznámkových bloků Jupyter
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Co je Q#?
+    - text: Instalace Pythonu
+      url: install-guide/index.md#develop-with-python
+    - text: Instalace Jupyteru
+      url: install-guide/index.md#develop-with-jupyter-notebooks
+  - linkListType: how-to-guide
+    links:
+    - text: 'Ukázky Q # s využitím Pythonu'
+      url: https://docs.microsoft.com/samples/browse/?languages=python&products=qdk
+    - text: Teleportování poznámkového bloku Jupyter v jazyce Q#
+      url: https://docs.microsoft.com/samples/microsoft/quantum/quantum-teleportation/
+    - text: Jak sestavovat poznámkové bloky Jupyter v jazyce Q#
+      url: https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/
+- title: Vývojová prostředí pro Q#
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Instalace sady Visual Studio
+      url: install-guide/index.md#develop-with-c-on-windows-using-visual-studio
+    - text: Instalace editoru Visual Studio Code
+      url: install-guide/index.md#develop-with-c-using-visual-studio-code
+- title: Ukázky Q#
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tři jednoduché algoritmy
+      url: https://docs.microsoft.com/samples/microsoft/quantum/simple-quantum-algorithms
+    - text: Hledání pomocí Groverova algoritmu
+      url: https://docs.microsoft.com/samples/microsoft/quantum/searching-with-grovers-algorithm
+    - text: Kvantová teleportace
+      url: https://docs.microsoft.com/samples/microsoft/quantum/quantum-teleportation/
+    - text: Všechny ukázky
+      url: https://docs.microsoft.com/samples/browse/?languages=qsharp
+- title: Jazyk Q# a techniky kvantového vývoje
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Úvod do jazyka Q#
+      url: language/index.md
+  - linkListType: how-to-guide
+    links:
+    - text: Kvantové simulátory a hostitelské aplikace
+      url: machines/index.md
+  - linkListType: how-to-guide
+    links:
+    - text: Přehled programů v jazyce Q#
       url: techniques/file-structure.md
     - text: Operace a funkce
       url: techniques/operations-and-functions.md
@@ -61,39 +97,51 @@ landingContent:
       url: techniques/working-with-qubits.md
     - text: 'Sestavení: Teleportace'
       url: techniques/putting-it-all-together.md
-- title: Správa počítačů a ovladačů
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Klasické ovladače a počítače
-      url: machines/index.md
-    - text: Simulátor celkového stavu QDK
-      url: machines/full-state-simulator.md
-    - text: Odhad prostředků
-      url: machines/resources-estimator.md
-    - text: Simulátor kvantového trasování
-      url: machines/qc-trace-simulator/index.md
-    - text: Simulátor QDK Toffoli
-      url: machines/toffoli-simulator.md
-- title: Jazyk Q# a knihovny
+- title: Koncepce kvantových výpočtů
   linkLists:
   - linkListType: concept
     links:
-    - text: Úvod do jazyka Q#
-      url: language/index.md
-    - text: Poznámky k verzi
-      url: relnotes/index.md
+    - text: Koncepce kvantových výpočtů
+      url: concepts/index.md
+    - text: Glosář
+      url: Glossary.md
+- title: Aplikace a algoritmy v Q#
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Zvětšování amplitudy
+      url: libraries/standard/algorithms.md
+    - text: Odhad kvantové fáze
+      url: libraries/standard/algorithms.md#quantum-phase-estimation
+    - text: Shorův algoritmus
+      url: libraries/standard/applications.md#shors-algorithm
+    - text: Hamiltoniánská simulace
+      url: libraries/standard/applications.md
+- title: Knihovny Q#
+  linkLists:
   - linkListType: reference
     links:
     - text: Standardní knihovny
       url: libraries/standard/index.md
-    - text: Chemické knihovny
-      url: libraries/chemistry/index.md
     - text: Numerické knihovny
       url: libraries/numerics/index.md
-  - linkListType: reference
+    - text: Chemické knihovny
+      url: libraries/chemistry/index.md
+    - text: Koncepty chemie
+      url: libraries/chemistry/concepts/quantum-dynamics.md
+  - linkListType: how-to-guide
     links:
-    - text: Referenční dokumentace k jazyku Q#
-      url: https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.bitwise?view=qsharp-preview
-    - text: Komponenty C#
-      url: https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators?view=quantum-dotnet-latest
+    - text: Ukázky Q# pro numerické výpočty
+      url: libraries/numerics/numerics.md
+    - text: Ukázky Q# pro chemii
+      url: libraries/chemistry/samples/index.md
+    - text: Kompletní použití NWChem
+      url: libraries/chemistry/samples/end-to-end.md
+- title: Komunita a příspěvky
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Přispívání do QDK
+      url: contributing/index.md
+    - text: Číst blok k Microsoft Quantu
+      url: https://cloudblogs.microsoft.com/quantum

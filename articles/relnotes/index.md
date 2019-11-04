@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 169a8ac31c53f2892624618a227d8bdbdc458458
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: f8d7071b4917aba7ba7eec4e84ba4f46dff3618a
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72958875"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442168"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -20,6 +20,19 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01019103107"></a>Verze 0.10.1910.3107
+
+*Datum vydání: 1. listopadu 2019*
+
+Tato verze obsahuje následující:
+
+- Aktualizace rozšíření editoru Visual Studio Code a sady Visual Studio pro nasazení jazykového serveru jako samostatného spustitelného souboru. Eliminuje se tak závislost na verzi sady .NET Core SDK.  
+- Migrace na .NET Core 3.0
+- Změna způsobující chybu pro Microsoft.Quantum.Simulation.Core.IOperationFactory se zavedením nové metody `Fail`. Má vliv jenom na vlastní simulátory, které nerozšiřují SimulatorBase. Další informace [najdete v žádosti o přijetí změn na GitHubu](https://github.com/microsoft/qsharp-runtime/pull/59).
+- Nová podpora pro zastaralé atributy
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0919093002"></a>Verze 0.9.1909.3002
 
@@ -448,7 +461,7 @@ Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 #### <a name="hardware-and-software-requirements"></a>Požadavky na hardware a software
 
 - Simulátor, který je součástí sady Quantum Development Kit, vyžaduje ke spuštění 64bitovou instalaci Microsoft Windows.
-- Kvantový simulátor Microsoftu, který se instaluje se sadou Quantum Development Kit, využívá rozšíření AVX (Advance Vector Extensions) a vyžaduje procesor s podporou AVX. Procesory Intel dodávané v 1. čtvrtletí 2011 (Sandy Bridge) nebo novější podporují AVX. Vyhodnocujeme podporu starších procesorů a můžeme později oznámit podrobnosti.
+- Kvantový simulátor Microsoftu, který se instaluje se sadou Quantum Development Kit, využívá rozšíření AVX (Advanced Vector Extension) a vyžaduje procesor s podporou AVX. Procesory Intel dodávané v 1. čtvrtletí 2011 (Sandy Bridge) nebo novější podporují AVX. Vyhodnocujeme podporu starších procesorů a můžeme později oznámit podrobnosti.
 
 #### <a name="project-creation"></a>Vytvoření projektu
 
