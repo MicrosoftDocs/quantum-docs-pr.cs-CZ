@@ -11,7 +11,7 @@ ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999086"
+ms.locfileid: "73056966"
 ---
 # <a name="q-standard-libraries"></a><span data-ttu-id="459c0-103">Standardní knihovny jazyka Q#</span><span class="sxs-lookup"><span data-stu-id="459c0-103">Q# standard libraries</span></span> #
 

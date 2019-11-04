@@ -1,4 +1,4 @@
-- name: Klasické počítače a ovladače
+- name: Přehled
   href: index.md
 - name: Kvantový simulátor
   href: full-state-simulator.md

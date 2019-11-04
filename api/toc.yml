@@ -1,0 +1,12 @@
+- name: Referenční informace
+  items:
+    - name: 'Knihovny Q#'
+      href: qsharp/toc.yml
+    - name: Knihovny .NET
+      items:
+        - name: Simulátor trasování
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
+        - name: Kvantová chemie
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.chemistry'
+    - name: Knihovny Pythonu
+      href: 'https://docs.microsoft.com/python/qsharp'

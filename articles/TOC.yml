@@ -1,0 +1,40 @@
+- name: Dokumentace k Microsoft Quantum
+  href: index.yml
+- name: Přehled
+  href: welcome.md
+- name: Šablony Rychlý start
+  items:
+    - name: Instalace sady QDK
+      href: install-guide/index.md
+    - name: Aktualizace sady QDK
+      href: install-guide/update.md
+    - name: Napište svůj první kvantový program
+      href: quickstart.md
+- name: Koncepty
+  items:
+    - name: Techniky kvantového vývoje
+      topicHref: techniques/index.md
+      href: techniques/toc.yml
+    - name: 'Programovací jazyk Q#'
+      topicHref: language/index.md
+      href: language/toc.yml
+    - name: 'Knihovny Q#'
+      href: libraries/toc.yml
+    - name: Koncepce kvantových výpočtů
+      href: concepts/toc.yml
+    - name: Jak hostovat kvantový počítač
+      href: machines/toc.yml
+- name: Zdroje a prostředky
+  items:
+    - name: "Poznámky k\_verzi QDK"
+      topicHref: relnotes/index.md
+      href: relnotes/toc.yml
+    - name: Přispívání do QDK
+      href: contributing/toc.yml
+      topicHref: contributing/index.md
+    - name: Glosář
+      href: Glossary.md
+    - name: Další informace
+      href: for-more-info.md
+    - name: Licence
+      href: license.md
