@@ -1,6 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.math
-name: Microsoft. neexistují. matematické
+name: Microsoft.Quantum.Math
 functions:
 - uid: microsoft.quantum.math.abscomplex
   summary: Vrátí absolutní hodnotu komplexního čísla typu `Complex`.
@@ -252,9 +252,10 @@ operations:
   summary: Vrátí náhodné reálné číslo v intervalu, který je větší nebo roven nule a menší než 1.
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Vrátí jednu z qubitch Pauliých operátorů s jednou náhodným rozsahem.
-ms.openlocfilehash: 7f30ee26a1155b64946e8fb16f5692ec602aa602
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73056302"
+metadata:
+  ms.openlocfilehash: 7f30ee26a1155b64946e8fb16f5692ec602aa602
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73056302"

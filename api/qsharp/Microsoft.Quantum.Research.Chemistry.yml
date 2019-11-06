@@ -15,9 +15,10 @@ operations:
   summary: Počítá rozdíl v paritě mezi předchozím PQRS... výrazy a další PQRS... doby. Tento rozdíl je vypočítán na základě pomocného qubitu.
 - uid: microsoft.quantum.research.chemistry.jwoptimizedstatepreparation
   summary: Jednoduchá příprava stavu zkušební verze pomocí číselníku orbitals
-ms.openlocfilehash: 8737229d1362a444f54d1a8d0791da9312923224
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73215944"
+metadata:
+  ms.openlocfilehash: 8737229d1362a444f54d1a8d0791da9312923224
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73215944"

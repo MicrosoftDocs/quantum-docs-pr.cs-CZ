@@ -7,9 +7,9 @@ summary: Použije operaci, která pro cílový registr typu <xref:microsoft.quan
 remarks: Registr se transformuje na `PhaseLittleEndian` pomocí <xref:microsoft.quantum.canon.qftle> a pak se vrátí do původní reprezentace po použití `op`.
 syntax: 'operation ApplyPhaseLEOperationOnLE (op : (Microsoft.Quantum.Arithmetic.PhaseLittleEndian => Unit), target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
-  content: '(op: (Microsoft. aritmetické PhaseLittleEndian = > Unit); target: Microsoft. aritmetický. LittleEndian)'
+  content: '(op : (Microsoft.Quantum.Arithmetic.PhaseLittleEndian => Unit), target : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
-  - name: evřít
+  - name: op
     summary: Operace, která se má použít.
     isOperation: true
     input:
@@ -19,11 +19,11 @@ input:
       types:
       - isPrimitive: true
         uid: Unit
-  - name: Cílové
+  - name: target
     summary: Registr, na který se operace používá
     uid: microsoft.quantum.arithmetic.littleendian
 output:
-  content: Jednotka
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -31,9 +31,10 @@ seeAlso:
 - microsoft.quantum.canon.applyphaseleoperationonlea
 - microsoft.quantum.canon.applyphaseleoperationonlea
 - microsoft.quantum.canon.applyphaseleoperationonleca
-ms.openlocfilehash: f610069706c06a3454c15b2f5170cce4b478530d
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73056989"
+metadata:
+  ms.openlocfilehash: f610069706c06a3454c15b2f5170cce4b478530d
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73056989"

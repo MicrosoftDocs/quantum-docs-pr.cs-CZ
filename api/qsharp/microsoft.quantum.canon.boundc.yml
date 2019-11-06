@@ -8,7 +8,7 @@ summary: >-
 
   Modifikátor `C` označuje, že všechny operace v poli jsou ovladatelné.
 examples: >-
-  The following are equivalent:
+  Následují ekvivalenty:
 
 
   ```qsharp
@@ -20,7 +20,7 @@ examples: >-
   ```
 
 
-  and
+  a
 
 
   ```qsharp
@@ -30,9 +30,9 @@ examples: >-
   ```
 syntax: "function BoundC (operations : ('T => Unit is Ctl)[]) : ('T => Unit is Ctl)"
 input:
-  content: '(operace: (t = > jednotka je CTL) [])'
+  content: "(operations : ('T => Unit is Ctl)[])"
   types:
-  - name: Operace
+  - name: operations
     summary: Posloupnost operací, které mají být provedeny na daném vstupu.
     isArray: true
     isOperation: true
@@ -47,7 +47,7 @@ input:
     functors:
     - Controlled
 output:
-  content: (T = > jednotka je seznam CTL)
+  content: ('T => Unit is Ctl)
   types:
   - summary: Nová operace, která každou danou operaci provede v pořadí podle jeho vstupu.
     isOperation: true
@@ -66,9 +66,10 @@ typeParameters:
   summary: Cíl, na kterém každá z operací v poli působí.
 seeAlso:
 - microsoft.quantum.canon.bound
-ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73068168"
+metadata:
+  ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73068168"
