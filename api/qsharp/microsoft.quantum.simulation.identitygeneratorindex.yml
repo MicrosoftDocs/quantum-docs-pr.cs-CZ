@@ -6,20 +6,21 @@ namespace: Microsoft.Quantum.Simulation
 summary: Vrátí index generátoru konzistentní s nulovým Hamiltonian, `H = 0`, který odpovídá operaci vývoje identity.
 syntax: 'function IdentityGeneratorIndex (idxTerm : Int) : Microsoft.Quantum.Simulation.GeneratorIndex'
 input:
-  content: '(idxTerm: int)'
+  content: '(idxTerm : Int)'
   types:
   - name: idxTerm
     summary: Tento vstup je ignorován a je definován pro konzistenci s <xref:microsoft.quantum.simulation.generatorsystem> uživatelsky definovaného typu.
     isPrimitive: true
     uid: Int
 output:
-  content: Microsoft. v. simulace. GeneratorIndex
+  content: Microsoft.Quantum.Simulation.GeneratorIndex
   types:
   - summary: Index generátoru představující vývoj pod Hamiltonian $H = $0.
     uid: microsoft.quantum.simulation.generatorindex
-ms.openlocfilehash: 004eea82988c6a4f6c776802d5f4634f600ed404
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73065584"
+metadata:
+  ms.openlocfilehash: 004eea82988c6a4f6c776802d5f4634f600ed404
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73065584"

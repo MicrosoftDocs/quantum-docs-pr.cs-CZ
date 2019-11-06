@@ -1,6 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.amplitudeamplification
-name: Microsoft. AmplitudeAmplification.
+name: Microsoft.Quantum.AmplitudeAmplification
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro provádění zesílení amplitud.\n\n # <a name=\"description\"></a>Popis\n Zesílení zesílení oblivious s částečnou odrazací je nejobecnější forma zesílení amplitud, které jsou zde implementovány.\n\n Tato funkce se volá prostřednictvím operace AmpAmpObliviousByReflectionPhases.\n\n Má dva Registry: `ancillaRegister` a `systemRegister`.\n\n To přijímá dva Oracle pro tyto odrazy typu `ReflectionOracle`, které fungují pouze v registru `ancillaRegister`.\n\n To přijímá speciální rozhraní Oracle pro oblivious amplitudy amplitud typu `ObliviousOracle` které společně v obou registrech fungují.\n\n U vstupního stavu na `ancillaRegister` se předpokládá, že se jedná o jedinečný $-$1 eigenstate prvního operátoru reflexe $I-2 \\ KET {s} \\ Bra {s} $.\n\n Odrazy týkající se cílového stavu se často implementují tím, že předpokládají přístup k Oracle, který tento stav připravuje z výpočetního základu $ \\ket{0\\cdots 0} $.\n\n Naše konvence pro tyto Oracle vyžaduje dva Registry: jeden qubit `flagQubit` registraci a registr pro všechno ostatní v registru ancillaRegister.\n\n Oracle typu `StateOracle` pracuje společně na obou registrech k vytvoření cílového stavu označeného $ \\ket{1}$ v registru `flagQubit` s určitou skutečnou amplitudou.\n\n Reflexe `ReflectionOracle` o stavu tohoto příznaku je vygenerována operací `TargetStateReflectionOracle`.\n\n Reflexe `ReflectionOracle` o vstupním stavu do `ancillaRegister` je vygenerována obráceným StateOracle a pak odráží přibližně $ \\ket{0\\cdots 0} $ s ReflectionStart ().\n\n Typ Oracle typu `DeterministicStateOracle` pracuje na `qubitState` registry a vytvoří cílový stav přesně bez příznaku.\n\n `AmpAmpObliviousByOraclePhases` je verze zesílení amplitud oblivious, která přijímá `StateOracle` Oracle a `ObliviousOracle` místo odrazů.\n\n Všimněte si, že zesílení amplitud je zvláštní případ zesílení amplitud oblivious, kde `ObliviousOracle` je operátorem identity a neexistuje qubits systému, tj. `systemRegister` je prázdný.\n\n Tato funkce se volá prostřednictvím `AmpAmByReflectionPhases` operace a `AmpAmpByOraclePhases`.\n\n Fáze pro částečné odrazy ve standardním případu hledání Grover jsou poskytovány funkcí AmpAmpPhasesStandard.\n\n Například máme následující závislosti: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
 functions:
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
@@ -35,9 +35,10 @@ newtypes:
   summary: Fáze pro sekvenci částečných odrazů v zesílení amplitudy.
 - uid: microsoft.quantum.amplitudeamplification.rotationphases
   summary: Fáze pro sekvenci qubit otočení v zesílení amplitudy.
-ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057130"
+metadata:
+  ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73057130"

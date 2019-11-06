@@ -6,17 +6,17 @@ namespace: Microsoft.Quantum.Canon
 summary: Vrátí operaci implementující integrátoru Trotter – Suzuki pro danou operaci.
 syntax: "function DecomposeIntoTimeStepsCA ((nSteps : Int, op : ((Int, Double, 'T) => Unit is Adj + Ctl)), trotterOrder : Int) : ((Double, 'T) => Unit is Adj + Ctl)"
 references: >-
-  We use the implementation in
+  Používáme implementaci v
 
 
-  - [ *D. W. Berry, G. Ahokas, R. Cleve, B. C. Sanders* ](https://arxiv.org/abs/quant-ph/0508139)
+  - [*D. W. bobulovina, G. Ahokas, R. Cleve, B. C. Sanders*](https://arxiv.org/abs/quant-ph/0508139)
 input:
-  content: '((nSteps: int, op: ((int, Double, t) = > jednotka je ADJ + CTL)), trotterOrder: int)'
+  content: "((nSteps : Int, op : ((Int, Double, 'T) => Unit is Adj + Ctl)), trotterOrder : Int)"
   types:
   - name: nSteps
     isPrimitive: true
     uid: Int
-  - name: evřít
+  - name: op
     isOperation: true
     input:
       types:
@@ -41,7 +41,7 @@ input:
     isPrimitive: true
     uid: Int
 output:
-  content: ((Double, t) = > jednotka je ADJ + CTL)
+  content: ((Double, 'T) => Unit is Adj + Ctl)
   types:
   - summary: Vrátí jednotnou implementaci integrátoru Trotter – Suzuki, kde první parametr `Double` je velikost kroku integrace a druhý parametr je cílem, na kterém se pracuje.
     isOperation: true
@@ -61,9 +61,10 @@ output:
 typeParameters:
 - uid: "'T"
   summary: Typ, na který má každý krok reagovat; obvykle buď `Qubit[]`, nebo `Qubit`.
-ms.openlocfilehash: 328db9b314320c724cf03adb19ee59d63a33e56e
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73067828"
+metadata:
+  ms.openlocfilehash: 328db9b314320c724cf03adb19ee59d63a33e56e
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73067828"

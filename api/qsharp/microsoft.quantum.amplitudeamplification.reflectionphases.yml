@@ -9,9 +9,10 @@ remarks: >-
 
   Obě pole musí mít stejnou délku. Všimněte si, že v mnoha případech první fáze týkající se počátečního stavu a poslední fáze týkající se cílového stavu zavádí globální fázi posunu a může být nastavená na $0 $.
 syntax: newtype ReflectionPhases = (Double[], Double[]);
-ms.openlocfilehash: ce9bab0540f70ac0115d5b7780437410e019a09b
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73215553"
+metadata:
+  ms.openlocfilehash: ce9bab0540f70ac0115d5b7780437410e019a09b
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73215553"
