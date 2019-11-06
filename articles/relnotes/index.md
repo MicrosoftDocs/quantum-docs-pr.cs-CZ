@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: f8d7071b4917aba7ba7eec4e84ba4f46dff3618a
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 868d256270516cf99c228a757a11c6dc1a6319df
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442168"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463338"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -21,7 +21,7 @@ Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
 
-## <a name="version-01019103107"></a>Verze 0.10.1910.3107
+## <a name="version-0101911307"></a>Verze 0.10.1911.307
 
 *Datum vydání: 1. listopadu 2019*
 
