@@ -6,18 +6,20 @@ ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: article
 uid: microsoft.quantum.overview.computers
-ms.openlocfilehash: d4be970c635ca090e8dcb1b58d5c840eebd4d110
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 9d8ba90a504f298f9465ebf564c43625a4d43168
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443830"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529952"
 ---
 # <a name="what-can-a-quantum-computer-do"></a>Co dokáže kvantový počítač?
 
 Co můžeme dělat s kvantovým počítačem, ale ne s klasickým?
 
-V případě některých z nejobtížnějších světových problémů, kdy by nalezení řešení trvalo současným počítačům miliardy let, by kvantový počítač mohl řešení najít za několik dnů, hodin nebo dokonce minut. Kvantové výpočty umožní výzkumníkům vyvíjet nové katalyzátory a materiály, vylepšovat léky, zrychlovat pokrok v oblasti umělé inteligence a odpovídat na základní otázky týkající se původu vesmíru.
+V případě některých z nejobtížnějších světových problémů, kdy by nalezení řešení trvalo současným počítačům miliardy let, by kvantový počítač mohl řešení najít za několik dnů, hodin nebo dokonce minut.
+
+Kvantové výpočty umožní výzkumníkům vyvíjet nové katalyzátory a materiály, vylepšovat léky, zrychlovat pokrok v oblasti umělé inteligence a odpovídat na základní otázky týkající se původu vesmíru.
 
 ## <a name="quantum-simulation"></a>Kvantová simulace
 
@@ -29,19 +31,25 @@ Chemické molekuly jsou kvantové systémy, a proto je možné analyzovat je tí
 
 ## <a name="cryptography"></a>Kryptografie
 
-Pravděpodobně nejpopulárnější aplikace kvantových výpočtů je v kryptografii, kde Petr Shor v roce 1994 ukázal, že škálovatelný kvantový počítač může prolomit všechny široce používané šifrovací techniky.  Klasická kryptografie spoléhá na úpornost operací s velkými čísly, jako je například faktorizace velkých čísel na dvě prvočísla.  S použitím kvantových výpočtů jsou tyto operace teoreticky proveditelné (pomocí Shorova algoritmu). Ačkoli implementace tohoto algoritmu není při současném rozsahu kvantového hardwaru fyzicky možná, byla impulzem k vývoji algoritmů odolných vůči kvantovému přístupu a zajišťujících zabezpečení dat v budoucnu. Patří mezi ně nové kvantové algoritmy pro šifrování a distribuci šifrovacích klíčů.  My tady v Microsoftu máme špičkový tým postkvantové kryptografie a zabezpečení, který vyvíjí algoritmy odolné i proti kvantovým výpočtům. 
+Pravděpodobně nejpopulárnější aplikace kvantových výpočtů je v kryptografii, kde Petr Shor v roce 1994 ukázal, že škálovatelný kvantový počítač může prolomit všechny široce používané šifrovací techniky.  Klasická kryptografie spoléhá na úpornost operací s velkými čísly, jako je například faktorizace velkých čísel na dvě prvočísla.
+
+S použitím kvantových výpočtů jsou tyto operace teoreticky proveditelné (pomocí Shorova algoritmu). Ačkoli implementace tohoto algoritmu není při současném rozsahu kvantového hardwaru fyzicky možná, byla impulzem k vývoji algoritmů odolných vůči kvantovému přístupu a zajišťujících zabezpečení dat v budoucnu. Patří mezi ně nové kvantové algoritmy pro šifrování a distribuci šifrovacích klíčů.
+
+My tady v Microsoftu máme špičkový tým postkvantové kryptografie a zabezpečení, který vyvíjí algoritmy odolné i proti kvantovým výpočtům.
 
 ## <a name="optimization"></a>Optimalizace
 
-Optimalizace je úloha, kdy se provádí velké hledání ve vysoce rozměrném prostoru skutečně dobrého řešení, které minimalizuje danou nákladovou funkci.   V kvantovém počítači můžeme zrychlit algoritmy optimalizace a umožnit hledání řešení, která by jinak nebyla možná. Aplikace se uplatní v mnoha oborech, v přepravě a logistice, zdravotní péči, diagnostice nebo materiálových vědách. Může to výrazně ovlivnit, jak můžou být tyto obory efektivnější. 
+Optimalizace je úloha, kdy se provádí ve vysoce rozměrném prostoru velké hledání řešení, které minimalizuje danou nákladovou funkci.   V kvantovém počítači můžeme zrychlit algoritmy optimalizace a umožnit hledání řešení, která by jinak nebyla možná. Aplikace se uplatní v mnoha oborech, v přepravě a logistice, zdravotní péči, diagnostice nebo materiálových vědách. Může to výrazně ovlivnit, jak můžou být tyto obory efektivnější.
 
-Optimalizace s využitím kvantových výpočtů nám umožňuje inovovat v oblasti přepravy a logistiky způsobem, který není u dnešních klasických systémů možný. Optimalizace dopravních toků může snížit zácpy.  Kromě plánování trasy jde o přiřazování stojánek letadlům, doručování balíčků, plánování úloh a další.  Zásadní objevy v oblasti materiálové vědy můžou vést k novým formám energie, bateriím s větší kapacitou nebo lehčím a pevnějším materiálům. 
+Optimalizace s využitím kvantových výpočtů nám umožňuje inovovat v oblasti přepravy a logistiky způsobem, který není u dnešních klasických systémů možný.
+
+Optimalizace dopravních toků může snížit zácpy.  Kromě plánování trasy jde o přiřazování stojánek letadlům, doručování balíčků, plánování úloh a další. Zásadní objevy v oblasti materiálové vědy můžou vést k novým formám energie, bateriím s větší kapacitou nebo lehčím a pevnějším materiálům.
 
 ## <a name="machine-learning"></a>Strojové učení
 
-Velké množství numerických výpočtů v klasických výpočetních postupech spočívá zejména v řešení soustav lineárních rovnic. Platí to především v oblasti strojového učení, kde většina nákladů na výpočet vzniká výpočtem inverzních matic k velkým regulárním maticím.
+Velký počet numerických výpočtů na klasických výpočetních prostředcích sestává hlavně z řešení soustav lineárních rovnic, zejména v oblasti strojového učení, kde většinu výpočetních nákladů tvoří výpočet rozsáhlých inverzních matric.
 
-Naštěstí však existuje kvantový algoritmus, který nám umožňuje najít přibližné řešení soustavy exponenciálně rychleji než klasický počítač. Tím se otvírá cesta ke značnému zrychlení u všech problémů, které vyžadují řešení soustav lineárních rovnic.
+Naštěstí však existuje kvantový algoritmus, který nám umožňuje najít přibližné řešení soustavy exponenciálně rychleji než klasický počítač. Tento algoritmus otvírá cestu ke značnému zrychlení u všech problémů, které vyžadují řešení soustav lineárních rovnic.
 
 Řešení problémů v těchto oblastech pomůžou řešit energetické krize, klimatické změny, nedostatek potravin a přesnou lékařskou diagnostiku.
 

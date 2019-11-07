@@ -6,20 +6,22 @@ ms.author: nakersha
 ms.date: 10/16/2019
 ms.topic: article
 uid: microsoft.quantum.overview.why
-ms.openlocfilehash: 1ccf21aad9473f18a33bf6b12e14b021ac159cbb
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 389b745a9f19caa6272e7d537e3ee5f884cec36b
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443898"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529914"
 ---
 # <a name="why-learn-quantum-computing"></a>Proč se učit provádět kvantové výpočty?
 
-Kvantové počítače jsou zajímavé, ale proč byste se měli učit provádět kvantové výpočty? V této části uvedeme několik důvodů, proč byste se měli učit provádět kvantové výpočty už dnes.
+Kvantové počítače jsou zajímavé, ale proč byste se měli učit provádět kvantové výpočty?
+
+V této části uvedeme několik důvodů, proč byste se měli učit provádět kvantové výpočty už dnes.
 
 ## <a name="join-the-quantum-revolution"></a>Zapojte se do kvantové revoluce
 
-Výzkumníci právě začali promýšlet možnosti budoucích kvantových technologií. V současnosti jsme svědky zahájení toho, čemu někteří říkají druhá kvantová revoluce. První revoluce spočívala ve využití kvantové fyziky k vytvoření zcela převratných vynálezů, jako byl laser a tranzistor. V posledním desetiletí věda začala získávat kontrolu nad kvantovými systémy na úrovni jednotlivých částic. Otevírají se tak obrovské možnosti, z nichž většinu teprve musíme objevit. Už nestůjte stranou a zapojte se! Už dnes můžete začít přispívat k technologii, která bude formovat budoucí svět.
+Výzkumníci právě začali promýšlet možnosti budoucích kvantových technologií. V současnosti jsme svědky zahájení toho, čemu někteří říkají druhá kvantová revoluce. První revoluce spočívala ve využití kvantové fyziky k vytvoření zcela převratných vynálezů, jako byl laser a tranzistor. V poslední desetiletí začala věda získat kontrolu nad kvantovými systémy na úrovni jednotlivých částic a otevřela tak dveře k obrovským možnostem, z nichž většina teprve čeká na objevení. Už nestůjte stranou a zapojte se! Už dnes můžete začít přispívat k technologii, která bude formovat budoucí svět.
 
 ## <a name="solving-great-challenges-requires-diverse-communities"></a>Řešení náročných úkolů vyžaduje různorodé komunity
 

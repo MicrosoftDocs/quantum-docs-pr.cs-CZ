@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: a7c077eda3e46430cbe6598cb899adb460451f75
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: c3039b92c4b3235a397d5cf31280ac2673706e9d
+ms.sourcegitcommit: 2ca4755d1a63431e3cb2d2918a10ad477ec2e368
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443915"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73462835"
 ---
 # <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Rychlý start: Implementace kvantového generátoru náhodných čísel v jazyku Q#
 Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je kvantový generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo. 
@@ -69,4 +69,4 @@ Tuto reprezentaci můžeme použít k vizualizaci toho, co kód dělá:
 
 <img src="./Measurement2.svg" width="450">
 
-Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Pokud chceme generovat celá čísla, můžeme tuto funkci volat vícekrát. Pokud například budeme tuto funkci volat třikrát a získáme tři náhodné bity, můžeme generovat náhodná 3-bitová čísla (tedy náhodné číslo v rozsahu 0 až 7).
+Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Pokud chceme generovat celá čísla, můžeme tuto operaci volat vícekrát. Pokud například budeme tuto operaci volat třikrát a získáme tři náhodné bity, můžeme generovat náhodná 3-bitová čísla (tedy náhodné číslo v rozsahu 0 až 7).
