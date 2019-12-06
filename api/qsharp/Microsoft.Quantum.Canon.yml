@@ -3,85 +3,37 @@ uid: microsoft.quantum.canon
 name: Microsoft.Quantum.Canon
 functions:
 - uid: microsoft.quantum.canon.asqubitarray
-  summary: >-
-    > [!WARNING]
-
-    > Tato funkce byla odebrána jako zastaralá.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAsQubitArray se už nepoužívá.\nTato funkce byla odebrána."
 - uid: microsoft.quantum.canon.assertalmostequal
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.NearEqualityFactD".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAlmostEqual se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.nearequalityfactd\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.NearEqualityFactD\"."
 - uid: microsoft.quantum.canon.assertalmostequaltol
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAlmostEqualTol se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.equalitywithintolerancefact\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact\"."
 - uid: microsoft.quantum.canon.assertboolarrayequal
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.AllEqualityFactB".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertBoolArrayEqual se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.allequalityfactb\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.AllEqualityFactB\"."
 - uid: microsoft.quantum.canon.assertboolequal
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.EqualityFactB".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertBoolEqual se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.equalityfactb\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.EqualityFactB\"."
 - uid: microsoft.quantum.canon.assertintequal
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.EqualityFactI".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertIntEqual se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.equalityfacti\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.EqualityFactI\"."
 - uid: microsoft.quantum.canon.assertresultequal
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.EqualityFactR".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertResultEqual se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.equalityfactr\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.EqualityFactR\"."
 - uid: microsoft.quantum.canon.bigendiantolittleendian
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBigEndianToLittleEndian se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.bigendianaslittleendian\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian\"."
 - uid: microsoft.quantum.canon.bind
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.bound".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nVazba je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.canon.bound\".\nPoužijte prosím @\"microsoft.quantum.canon.bound\"."
 - uid: microsoft.quantum.canon.binda
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.bounda".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nVazba-je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.canon.bounda\".\nPoužijte prosím @\"microsoft.quantum.canon.bounda\"."
 - uid: microsoft.quantum.canon.bindc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.boundc".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBindC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.boundc\".\nPoužijte prosím @\"microsoft.quantum.canon.boundc\"."
 - uid: microsoft.quantum.canon.bindca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.boundca".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBindCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.boundca\".\nPoužijte prosím @\"microsoft.quantum.canon.boundca\"."
 - uid: microsoft.quantum.canon.bitsize
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.bitsizei".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBitSize se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.bitsizei\".\nPoužijte prosím @\"microsoft.quantum.math.bitsizei\"."
 - uid: microsoft.quantum.canon.boolarrfrompositiveint
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.intasboolarray".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBoolArrFromPositiveInt se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.intasboolarray\".\nPoužijte prosím @\"microsoft.quantum.convert.intasboolarray\"."
 - uid: microsoft.quantum.canon.boolarrfromresultarr
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.resultarrayasboolarray".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBoolArrFromResultArr se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.resultarrayasboolarray\".\nPoužijte prosím @\"microsoft.quantum.convert.resultarrayasboolarray\"."
 - uid: microsoft.quantum.canon.boolfromresult
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.resultasbool".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBoolFromResult se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.resultasbool\".\nPoužijte prosím @\"microsoft.quantum.convert.resultasbool\"."
 - uid: microsoft.quantum.canon.bound
   summary: Vzhledem k poli operací, které fungují na jednom vstupu, vytvoří nová operace, která provede každou danou operaci v pořadí.
 - uid: microsoft.quantum.canon.bounda
@@ -131,10 +83,7 @@ functions:
 - uid: microsoft.quantum.canon.conjugatedbyca
   summary: Pro dané vnější a vnitřní operace vrátí novou operaci, která přijedná vnitřní operaci do sdružené operace vnější operací.
 - uid: microsoft.quantum.canon.continuedfractionconvergent
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.continuedfractionconvergenti".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nContinuedFractionConvergent se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.continuedfractionconvergenti\".\nPoužijte prosím @\"microsoft.quantum.math.continuedfractionconvergenti\"."
 - uid: microsoft.quantum.canon.controlledonbitstring
   summary: Vrátí operátor s jednotkou, který používá Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
 - uid: microsoft.quantum.canon.controlledonint
@@ -146,10 +95,7 @@ functions:
 
     To znamená, že vzhledem k operaci se dvěma vstupy Tato funkce použije Curry isomorphism $f (x, y) \equiv f (x) (y) $ a vrátí operaci jednoho vstupu, který vrátí operaci jednoho vstupu.
 - uid: microsoft.quantum.canon.curryop
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.curriedop".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCurryOp se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.curriedop\".\nPoužijte prosím @\"microsoft.quantum.canon.curriedop\"."
 - uid: microsoft.quantum.canon.decomposeintotimestepsca
   summary: Vrátí operaci implementující integrátoru Trotter – Suzuki pro danou operaci.
 - uid: microsoft.quantum.canon.delayed
@@ -163,105 +109,57 @@ functions:
 - uid: microsoft.quantum.canon.embedpauli
   summary: Po předaném operátoru qubit Pauli a indexu qubit vrátí operátor multi-qubit Pauli se zadaným operátorem s jedním qubit v tomto indexu a `PauliI` v každém dalším indexu.
 - uid: microsoft.quantum.canon.expmod
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.expmodi".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nExpMod se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.expmodi\".\nPoužijte prosím @\"microsoft.quantum.math.expmodi\"."
 - uid: microsoft.quantum.canon.extendedgcd
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.extendedgreatestcommondivisori".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nExtendedGCD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.extendedgreatestcommondivisori\".\nPoužijte prosím @\"microsoft.quantum.math.extendedgreatestcommondivisori\"."
 - uid: microsoft.quantum.canon.filter
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Filtered".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nFiltr je zastaralý. Místo toho prosím použijte @\"microsoft.quantum.arrays.filtered\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Filtered\"."
 - uid: microsoft.quantum.canon.forall
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.All".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nForAll se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arrays.all\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.All\"."
 - uid: microsoft.quantum.canon.forany
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Any".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nForAny se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arrays.any\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Any\"."
 - uid: microsoft.quantum.canon.fst
   summary: V případě páru vrátí jeho první prvek.
 - uid: microsoft.quantum.canon.gcd
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.greatestcommondivisori".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nGCD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.greatestcommondivisori\".\nPoužijte prosím @\"microsoft.quantum.math.greatestcommondivisori\"."
 - uid: microsoft.quantum.canon.ignore
   summary: Ignoruje výstup operace nebo funkce.
 - uid: microsoft.quantum.canon.intabs
-  summary: >-
-    > [!WARNING]
-
-    > Tato funkce byla odebrána jako zastaralá.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nZáložka je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.absi\".\nTato funkce byla odebrána."
 - uid: microsoft.quantum.canon.intarrayfromrange
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.rangeasintarray".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIntArrayFromRange se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.rangeasintarray\".\nPoužijte prosím @\"microsoft.quantum.convert.rangeasintarray\"."
 - uid: microsoft.quantum.canon.intmax
-  summary: >-
-    > [!WARNING]
-
-    > Tato funkce byla odebrána jako zastaralá.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIntMax se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.maxi\".\nTato funkce byla odebrána."
 - uid: microsoft.quantum.canon.inversemod
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.inversemodi".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nInverseMod se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.inversemodi\".\nPoužijte prosím @\"microsoft.quantum.math.inversemodi\"."
 - uid: microsoft.quantum.canon.iscoprime
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.greatestcommondivisori".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIsCoprime se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.iscoprimei\".\nPoužijte prosím @\"microsoft.quantum.math.greatestcommondivisori\"."
 - uid: microsoft.quantum.canon.isresultone
   summary: Testuje, zda je daná hodnota výsledku rovna hodnotě `One`.
 - uid: microsoft.quantum.canon.isresultzero
   summary: Testuje, zda je daná hodnota výsledku rovna hodnotě `Zero`.
 - uid: microsoft.quantum.canon.littleendiantobigendian
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nLittleEndianToBigEndian se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.littleendianasbigendian\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian\"."
 - uid: microsoft.quantum.canon.map
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Mapped".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMapa je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.arrays.mapped\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Mapped\"."
 - uid: microsoft.quantum.canon.mapindex
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.MappedByIndex".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMapIndex se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arrays.mappedbyindex\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.MappedByIndex\"."
 - uid: microsoft.quantum.canon.modulus
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.modulusi".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModulus byl zastaralý. Místo toho prosím použijte @\"microsoft.quantum.math.modulusi\".\nPoužijte prosím @\"microsoft.quantum.math.modulusi\"."
 - uid: microsoft.quantum.canon.multiplexerbruteforcefromgenerator
   summary: >-
-    Vrátí jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _J $, pokud je kontrolována stavem n-qubit čísla $ \ket{j} $.
+    Vrátí jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $, pokud je kontrolována v n-qubit čísle stavu $ \ket{j} $.
 
 
     $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.multiplexerfromgenerator
   summary: >-
-    Vrátí jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _J $, pokud je kontrolována stavem n-qubit čísla $ \ket{j} $.
+    Vrátí jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $, pokud je kontrolována v n-qubit čísle stavu $ \ket{j} $.
 
 
     $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.nearequalityfact
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Diagnostics.NearEqualityFactD".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nNearEqualityFact se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.nearequalityfactd\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Diagnostics.NearEqualityFactD\"."
 - uid: microsoft.quantum.canon.operationpow
   summary: >-
     Vyvolá operaci s napájením.
@@ -293,30 +191,15 @@ functions:
 
     To znamená, že vzhledem k operaci, která představuje bránu $U $, vrátí novou operaci $U ^ m $ pro $m pro napájení $.
 - uid: microsoft.quantum.canon.pad
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Padded".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPlocha je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.arrays.padded\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Padded\"."
 - uid: microsoft.quantum.canon.paulifrombitstring
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.boolarrayaspauli".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPauliFromBitString se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.boolarrayaspauli\".\nPoužijte prosím @\"microsoft.quantum.convert.boolarrayaspauli\"."
 - uid: microsoft.quantum.canon.pnormalize
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.math.pnormalized".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPNormalize se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.pnormalized\".\nPoužijte prosím @\"microsoft.quantum.math.pnormalized\"."
 - uid: microsoft.quantum.canon.positiveintfromboolarr
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.boolarrayasint".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPositiveIntFromBoolArr se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.boolarrayasint\".\nPoužijte prosím @\"microsoft.quantum.convert.boolarrayasint\"."
 - uid: microsoft.quantum.canon.positiveintfromresultarr
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.resultarrayasint".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPositiveIntFromResultArr se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.resultarrayasint\".\nPoužijte prosím @\"microsoft.quantum.canon.resultarrayasint\"."
 - uid: microsoft.quantum.canon.restrictedtosubregister
   summary: Omezí operaci na pole indexů registru, tj. na podregistr.
 - uid: microsoft.quantum.canon.restrictedtosubregistera
@@ -335,52 +218,25 @@ functions:
 
     Modifikátor `CA` označuje, že operace je ovladatelné a s sousedními poli.
 - uid: microsoft.quantum.canon.restricttosubregister
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.restrictedtosubregister".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRestrictToSubregister se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.restrictedtosubregister\".\nPoužijte prosím @\"microsoft.quantum.canon.restrictedtosubregister\"."
 - uid: microsoft.quantum.canon.restricttosubregistera
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.restrictedtosubregistera".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRestrictToSubregisterA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.restrictedtosubregistera\".\nPoužijte prosím @\"microsoft.quantum.canon.restrictedtosubregistera\"."
 - uid: microsoft.quantum.canon.restricttosubregisterc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.restrictedtosubregisterc".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRestrictToSubregisterC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.restrictedtosubregisterc\".\nPoužijte prosím @\"microsoft.quantum.canon.restrictedtosubregisterc\"."
 - uid: microsoft.quantum.canon.restricttosubregisterca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.restrictedtosubregisterca".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRestrictToSubregisterCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.restrictedtosubregisterca\".\nPoužijte prosím @\"microsoft.quantum.canon.restrictedtosubregisterca\"."
 - uid: microsoft.quantum.canon.resultarrfromboolarr
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.resultarrayasboolarray".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nResultArrFromBoolArr se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.boolarrayasresultarray\".\nPoužijte prosím @\"microsoft.quantum.convert.resultarrayasboolarray\"."
 - uid: microsoft.quantum.canon.resultasint
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.resultarrayasint".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nResultAsInt se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.resultarrayasint\".\nPoužijte prosím @\"microsoft.quantum.convert.resultarrayasint\"."
 - uid: microsoft.quantum.canon.resultfrombool
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.boolasresult".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nResultFromBool se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.boolasresult\".\nPoužijte prosím @\"microsoft.quantum.convert.boolasresult\"."
 - uid: microsoft.quantum.canon.reverse
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Reversed".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nReverzní je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.arrays.reversed\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Reversed\"."
 - uid: microsoft.quantum.canon.snd
   summary: S ohledem na pár vrátí jeho druhý prvek.
 - uid: microsoft.quantum.canon.splitarray
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá prosím použijte místo toho @"Microsoft.Quantum.Arrays.Partitioned".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nSplitArray se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arrays.partitioned\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Partitioned\"."
 - uid: microsoft.quantum.canon.stackcapacity
   summary: Načte kapacitu <xref:microsoft.quantum.canon.resultstack>.
 - uid: microsoft.quantum.canon.stacklength
@@ -394,10 +250,7 @@ functions:
 - uid: microsoft.quantum.canon.stackpush
   summary: Vloží nový prvek do <xref:microsoft.quantum.canon.resultstack>.
 - uid: microsoft.quantum.canon.tooperation
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.convert.functionasoperation".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToOperation se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.functionasoperation\".\nPoužijte prosím @\"microsoft.quantum.convert.functionasoperation\"."
 - uid: microsoft.quantum.canon.transformedoperation
   summary: Výsledkem funkce a operace je nová operace, jejíž vstup je transformovaná pomocí dané funkce.
 - uid: microsoft.quantum.canon.transformedoperationa
@@ -424,50 +277,35 @@ functions:
 
     Modifikátor `CA` označuje, že operace lze řídit a přiléhající.
 - uid: microsoft.quantum.canon.uncurryop
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.uncurriedop".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nUncurryOp se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.uncurriedop\".\nPoužijte prosím @\"microsoft.quantum.canon.uncurriedop\"."
 - uid: microsoft.quantum.canon.uncurryopa
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.uncurriedopa".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nUncurryOpA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.uncurriedopa\".\nPoužijte prosím @\"microsoft.quantum.canon.uncurriedopa\"."
 - uid: microsoft.quantum.canon.uncurryopc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.uncurriedopc".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nUncurryOpC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.uncurriedopc\".\nPoužijte prosím @\"microsoft.quantum.canon.uncurriedopc\"."
 - uid: microsoft.quantum.canon.uncurryopca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.canon.uncurriedopca".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nUncurryOpCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.uncurriedopca\".\nPoužijte prosím @\"microsoft.quantum.canon.uncurriedopca\"."
 - uid: microsoft.quantum.canon.weightonepaulis
   summary: Vrátí pole všech Paulich operátorů Weight-1 na daném počtu qubits.
 - uid: microsoft.quantum.canon.xor
   summary: Tato operace vypočítá exkluzivní nebo ze dvou bitů.
 operations:
 - uid: microsoft.quantum.canon.adiabaticstateenergyunitary
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"microsoft.quantum.simuilation.pnormalized".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAdiabaticStateEnergyUnitary se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.simulation.estimateenergywithadiabaticevolution\".\nPoužijte prosím @\"microsoft.quantum.simuilation.pnormalized\"."
 - uid: microsoft.quantum.canon.andladder
   summary: >-
     Provede na cílovém qubits řízený "a žebřík".
 
 
-    To se vztahuje na jednu z nich na základě následující mapy na výpočetních vektorech: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1 , \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
+    To platí pro konkrétní vektory výpočetního základu, které je uvedené v následující mapě: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
 - uid: microsoft.quantum.canon.applydiagonalunitary
   summary: >-
     Aplikuje pole komplexních fází na číselné stavy registru qubits.
 
 
-    To znamená, že implementuje operaci diagonální čárky $U $, která aplikuje komplexní fázi $e ^ {i \theta_j} $ ve stavu $n $ qubit Number $ \ket{j} $.
+    To znamená, že implementuje operaci diagonální čárky $U $, která aplikuje komplexní fázi $e ^ {i \ theta_j} $ ve stavu $n $-qubit Number $ \ket{j} $.
 
 
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} e ^ {i\theta_j} \ KET {j} \ Bra {j} $.
+    $U = \sum ^ {2 ^ n-1} _ {j = 0} e ^ {i \ theta_j} \ket{j}\bra{j} $.
 - uid: microsoft.quantum.canon.applyfermionicswap
   summary: Použije prohození Fermionic.
 - uid: microsoft.quantum.canon.applyif
@@ -520,6 +358,14 @@ operations:
     Aplikuje vynásobení kontrolované verze samostatně kontrolované operace.
 
     Modifikátor `CA` označuje, že operace s jedním qubit je ovladatelné a sousedící.
+- uid: microsoft.quantum.canon.applyoprepeatedlyover
+  summary: Aplikuje stejnou operaci op přes qubit registr několikrát.
+- uid: microsoft.quantum.canon.applyoprepeatedlyovera
+  summary: Aplikuje stejnou operaci op přes qubit registr několikrát.
+- uid: microsoft.quantum.canon.applyoprepeatedlyoverc
+  summary: Aplikuje stejnou operaci op přes qubit registr několikrát.
+- uid: microsoft.quantum.canon.applyoprepeatedlyoverca
+  summary: Aplikuje stejnou operaci op přes qubit registr několikrát.
 - uid: microsoft.quantum.canon.applypauli
   summary: Pomocí operátoru qubit Pauli použije odpovídající operaci na registraci.
 - uid: microsoft.quantum.canon.applypaulifrombitstring
@@ -527,62 +373,37 @@ operations:
 - uid: microsoft.quantum.canon.applyquantumfouriertransform
   summary: Provádí operaci Fourierova transformace v registru s jednou hodnotou, která obsahuje celé číslo v reprezentaci Little-endian.
 - uid: microsoft.quantum.canon.applyquantumfouriertransformbe
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá Tato operace byla odebrána.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyQuantumFourierTransformBE se už nepoužívá. Místo toho použijte @ \"applyquantumfouriertransform (bigendianaslittleendian (QS))\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.applyquantumfouriertransformle
-  summary: ''
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyQuantumFourierTransformLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applyquantumfouriertransform\".\nPoužijte prosím @\"microsoft.quantum.canon.applyquantumfouriertransform\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendian
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpBE".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpBigEndian se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedopbe\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBE\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendiana
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpBigEndianA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedopbea\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendianc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpBigEndianC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedopbec\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC\"."
 - uid: microsoft.quantum.canon.applyreversedopbigendianca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpBigEndianCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedopbeca\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendian
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpLE".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpLittleEndian se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedople\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLE\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendiana
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEA".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpLittleEndianA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedoplea\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEA\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendianc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpLittleEndianC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedoplec\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC\"."
 - uid: microsoft.quantum.canon.applyreversedoplittleendianca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyReversedOpLittleEndianCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applyreversedopleca\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC\"."
 - uid: microsoft.quantum.canon.applyripplecarrycomparatorbe
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá Tato operace byla odebrána.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyRippleCarryComparatorBE se už nepoužívá. Místo toho prosím použijte @ \"compareusingripplecarry (bigendianaslittleendian (x), bigendianaslittleendian (y), Output)\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.applyripplecarrycomparatorle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.CompareUsingRippleCarry".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nApplyRippleCarryComparatorLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.compareusingripplecarry\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.CompareUsingRippleCarry\"."
+- uid: microsoft.quantum.canon.applyseriesofops
+  summary: Aplikuje seznam operací OPS a jejich cílů postupně na pole.
+- uid: microsoft.quantum.canon.applyseriesofopsa
+  summary: Aplikuje seznam operací OPS a jejich cílů postupně na pole. (Sousednít)
+- uid: microsoft.quantum.canon.applyseriesofopsc
+  summary: Aplikuje seznam operací OPS a jejich cílů postupně na pole. Kontrol
+- uid: microsoft.quantum.canon.applyseriesofopsca
+  summary: Aplikuje seznam operací OPS a jejich cílů postupně na pole. (Sousední a řízený)
 - uid: microsoft.quantum.canon.applytoeach
   summary: Aplikuje jednu qubit operaci na každý prvek v registru.
 - uid: microsoft.quantum.canon.applytoeacha
@@ -721,15 +542,9 @@ operations:
 - uid: microsoft.quantum.canon.approximateqft
   summary: Použijte přibližnou neAQFTnou hodnotu Fourierova transformace () na registrační pokladnu.
 - uid: microsoft.quantum.canon.asserthighestbit
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.AssertMostSignificantBit".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertHighestBit se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.assertmostsignificantbit\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.AssertMostSignificantBit\"."
 - uid: microsoft.quantum.canon.assertlessthanphasele
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.AssertPhaseLessThan".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertLessThanPhaseLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.assertphaselessthan\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.AssertPhaseLessThan\"."
 - uid: microsoft.quantum.canon.assertphase
   summary: >-
     Vyhodnotí, že fáze rovného stavu pozice má očekávanou hodnotu.
@@ -737,45 +552,39 @@ operations:
 
     Konkrétně vyhodnotí, že fáze $ \phi $ pro stav, který může být vyjádřen jako $ \frac{e ^ {i t}} {\sqrt{2}} (e ^ {i\phi} \ KET{0} + e ^ {-i\phi} \ KET{1}) $ pro libovolnou skutečnou hodnotu t má očekávanou hodnotu.
 - uid: microsoft.quantum.canon.assertprobintbe
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá Tato operace byla odebrána.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertProbIntBE se už nepoužívá. Místo toho použijte @ \"assertprobint (stateindex, test, bigendianaslittleendian (qubits), tolerance)\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.cnotchain
   summary: >-
     Vypočítá paritu pole qubits na místě.
 
 
-    Postupuje podle vzoru $ \ket{q_0} \ket{q_0 \oplus q_1} \ket{q_0 \oplus q_1 \oplus q_2} \cdots $.
+    Následuje vzor $ \ket{q_0} \ket{q_0 \oplus q_1} \ket{q_0 \oplus q_1 \oplus q_2} \cdots $.
 - uid: microsoft.quantum.canon.cnotchaintarget
   summary: >-
     Vypočítá paritu pole qubits do cílového qubit.
 
 
-    Pokud je pole zpočátku ve stavu $ \ket{q_0} \ket{q_1} \cdots \ket{q_{\Text{Target}}} $, konečný stav je dán $ \ket{q_0} \ket{q_1 \oplus q_0} \cdots \ket{q_{n-1} \oplus \cdots \oplus q_0 \oplus q_ {\Text{Target}}} $.
+    Pokud je pole zpočátku ve stavu $ \ket{q_0} \ket{q_1} \cdots \ket{q_ {\Text{Target}}} $, konečný stav je dán v $ \ket{q_0} \ket{q_1 \oplus q_0} \cdots \ket{q_ {n-1} \oplus \cdots \oplus q_0 \oplus q_ {\Text{Target}}} $.
 - uid: microsoft.quantum.canon.copymostsignificantbitle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.CopyMostSignificantBit".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCopyMostSignificantBitLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.copymostsignificantbit\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.CopyMostSignificantBit\"."
 - uid: microsoft.quantum.canon.cx
   summary: >-
     Aplikuje bránu řízená – X (CX) na pár qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{align} , $ $ kde jsou řádky a sloupce uspořádané jako v průvodci koncepcemi.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{align}, $ $ kde jsou řádky a sloupce uspořádány jako v průvodci koncepcemi.
 - uid: microsoft.quantum.canon.cy
   summary: >-
     Aplikuje bránu řízená na Y (CY) na pár qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 &-i \\\\ 0 & 0 & i & 0 \end{align} , $ $ kde jsou řádky a sloupce uspořádané jako v průvodci koncepcemi.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 &-i \\\\ 0 & 0 & i & 0 \end{align}, $ $, kde jsou řádky a sloupce uspořádány jako v průvodci koncepty.
 - uid: microsoft.quantum.canon.cz
   summary: >-
     Aplikuje bránu řízená – Z (CZ) na pár qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 &-1 \end{align} , $ $ kde jsou řádky a sloupce uspořádané jako v průvodci koncepcemi.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 &-1 \end{align}, $ $, kde jsou řádky a sloupce uspořádány jako v průvodci koncepcemi.
 - uid: microsoft.quantum.canon.delay
   summary: Aplikuje danou operaci na zpoždění.
 - uid: microsoft.quantum.canon.delaya
@@ -789,84 +598,54 @@ operations:
     Aplikuje na transformaci Hadamard, která přemění osy Z a Y, na bázi Y.
 
 
-    Transformace Y Hadamard $H _Y = S H $ na jednom qubit je:
+    Transformace Y Hadamard $H _Y = S H $ v jednom qubit je:
 
 
     \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ i &-i \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.canon.inplacexorbe
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá Tato operace byla odebrána.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nInPlaceXorBE se už nepoužívá. Místo toho prosím použijte @ \"applyreversedopleca (applyxorinplace (Value, _), Target)\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.inplacexorle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Measurement.ApplyXorInPlace".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nInPlaceXorLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.measurement.applyxorinplace\".\nPoužijte prosím @\"Microsoft.Quantum.Measurement.ApplyXorInPlace\"."
 - uid: microsoft.quantum.canon.integerincrementle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.IncrementByInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIntegerIncrementLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.incrementbyinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.IncrementByInteger\"."
 - uid: microsoft.quantum.canon.integerincrementphasele
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIntegerIncrementPhaseLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.incrementphasebyinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger\"."
 - uid: microsoft.quantum.canon.iteratethroughcartesianpower
   summary: Opakuje proměnnou, řekněme, že prostřednictvím produktu kartézském [0, Bound-1] x [0, Bound-1] x [0, Bound-1] a volání op (ARR) pro každý prvek produktu kartézském.
 - uid: microsoft.quantum.canon.iteratethroughcartesianproduct
   summary: Provede iteraci proměnné, řekněme `arr`, prostřednictvím produktu kartézském [0, Bounds [0]-1] × [0, meze [1]-1] × [0, meze [Length (meze)-1]-1] a volání op (ARR) pro každý prvek produktu kartézském.
 - uid: microsoft.quantum.canon.measureintegerbe
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralá Tato operace byla odebrána.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureIntegerBE se už nepoužívá. Místo toho prosím použijte @ \"measureinteger (bigendianaslittleendian (Target))\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.modularaddproductle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModularAddProductLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.multiplyandaddbymodularinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger\"."
 - uid: microsoft.quantum.canon.modularaddproductphasele
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.MultiplyAndAddPhaseByModularInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModularAddProductPhaseLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.MultiplyAndAddPhaseByModularInteger\"."
 - uid: microsoft.quantum.canon.modularincrementle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.ModularIncrementByInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModularIncrementLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.modularincrementbyinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.ModularIncrementByInteger\"."
 - uid: microsoft.quantum.canon.modularincrementphasele
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.IncrementPhaseByModularInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModularIncrementPhaseLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.incrementphasebymodularinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.IncrementPhaseByModularInteger\"."
 - uid: microsoft.quantum.canon.modularmultiplybyconstantle
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Arithmetic.MultiplyByModularInteger".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModularMultiplyByConstantLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.multiplybymodularinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.MultiplyByModularInteger\"."
 - uid: microsoft.quantum.canon.multiplexoperations
   summary: >-
     Použije pole operací řízené polem číselných stavů.
 
 
-    To znamená, že aplikuje jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _J $, pokud je ovládána $n $-qubit Number State $ \ket{j} $.
+    To znamená, že aplikuje jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _j $, pokud je kontrolována $n $-qubit Number State $ \ket{j} $.
 
 
     $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.multiplexoperationsbruteforcefromgenerator
   summary: >-
-    Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _J $, pokud se řídí stavem n-qubit číslo $ \ket{j} $.
+    Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $ při kontrole pomocí n-qubit čísla stavu $ \ket{j} $.
 
 
     $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.multiplexoperationsfromgenerator
   summary: >-
-    Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _J $, pokud se řídí stavem n-qubit čísla $ \ket{j} $.
+    Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $, pokud se řídí hodnotou n-qubit Number State $ \ket{j} $.
 
 
     $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
@@ -875,21 +654,23 @@ operations:
     Použije Pauli rotaci v poli qubits.
 
 
-    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \theta_j $ o qubit Pauli $P $, pokud se řídí stavem $n $-qubit číslo $ \ket{j} $.
+    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \ theta_j $ o qubit Pauli operator $P $, pokud se řídí $n $-qubit Number State $ \ket{j} $.
 
 
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \theta_j} $.
+    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \ theta_j} $.
 - uid: microsoft.quantum.canon.multiplexz
   summary: >-
     Použije rotaci Pauli Z, která je splněná na poli qubits.
 
 
-    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \theta_j $ o qubit Pauli $Z $, pokud se řídí stavem $n $-qubit číslo $ \ket{j} $.
+    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \ theta_j $ o qubit Pauli operator $Z $, pokud se řídí $n $-qubit Number State $ \ket{j} $.
 
 
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i Z \theta_j} $.
+    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i Z \ theta_j} $.
 - uid: microsoft.quantum.canon.noop
   summary: Provede v argumentu operaci identity (No-OP).
+- uid: microsoft.quantum.canon.permutequbits
+  summary: Permutes qubits pomocí operace SWAP.
 - uid: microsoft.quantum.canon.qft
   summary: Provádí operaci Fourierova transformace v rámci registru s velkým objemem, který obsahuje celé číslo v reprezentaci big-endian.
 - uid: microsoft.quantum.canon.qftle
@@ -909,25 +690,13 @@ operations:
 - uid: microsoft.quantum.canon.swapreverseregister
   summary: Používá zahození bran k obrácení pořadí qubits v registru.
 - uid: microsoft.quantum.canon.with
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Canon.ApplyWith".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nS už je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.canon.applywith\".\nPoužijte prosím @\"Microsoft.Quantum.Canon.ApplyWith\"."
 - uid: microsoft.quantum.canon.witha
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Canon.ApplyWithA".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nS nástrojem se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applywitha\".\nPoužijte prosím @\"Microsoft.Quantum.Canon.ApplyWithA\"."
 - uid: microsoft.quantum.canon.withc
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Canon.ApplyWithC".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nWithC se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applywithc\".\nPoužijte prosím @\"Microsoft.Quantum.Canon.ApplyWithC\"."
 - uid: microsoft.quantum.canon.withca
-  summary: >-
-    > [!WARNING]
-
-    > Zastaralé prosím, použijte @"Microsoft.Quantum.Canon.ApplyWithCA".
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nWithCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applywithca\".\nPoužijte prosím @\"Microsoft.Quantum.Canon.ApplyWithCA\"."
 newtypes:
 - uid: microsoft.quantum.canon.ccnotop
   summary: Typ podpisu brány CCNOT
@@ -937,9 +706,9 @@ newtypes:
 
     Zásobník obsahuje celočíselnou kapacitu, ukazatel zásobníku a pole `Result`.
 metadata:
-  ms.openlocfilehash: 8767d438adcecd7ccbd539d7c123ac42cfb8c295
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 457d211ace716ddc09ebcd94c5cbc3c33b42d704
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73065159"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858543"

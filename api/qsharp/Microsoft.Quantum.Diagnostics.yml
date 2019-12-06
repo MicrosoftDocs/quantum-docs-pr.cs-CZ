@@ -40,7 +40,7 @@ operations:
     Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
 
 
-    Tento kontrolní výraz je implementován kontrolou akce operací ve všech stavech formuláře $V _0 \otimes... \otimes v_ {n-1} $, kde $V _k $ je jedním ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
+    Tento kontrolní výraz je implementován pomocí kontroly akce operací ve všech stavech formuláře $V _0 \otimes... \otimes V_ {n-1} $, kde $V _k $ je jedna ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
 
 
     Tento kontrolní výraz používá $n $ qubits a vyžaduje více volání operací, které jsou porovnány.
@@ -73,11 +73,14 @@ operations:
     Poslední argument definuje toleranci, se kterou je proveden kontrolní výraz.
 - uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
   summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli Z až do dané tolerance.
+newtypes:
+- uid: microsoft.quantum.diagnostics.test
+  summary: Rozpoznaný atribut kompilátoru použitý k označení testu jednotky.
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace, které jsou užitečné pro diagnostické účely, včetně operací Assert a funkcí deklarací identity."
 metadata:
-  ms.openlocfilehash: c387a7dc3b2e997d00d54457b0af89a04fa918d3
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a633a9555f380e6aa6c6701d277d026c58130ff2
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056862"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858271"
