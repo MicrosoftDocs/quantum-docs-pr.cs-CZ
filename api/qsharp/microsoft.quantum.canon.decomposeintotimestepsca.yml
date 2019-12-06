@@ -37,7 +37,7 @@ input:
     summary: >-
       Vybere pořadí, ve kterém se má použít integrátor Trotter-Suzuki.
 
-      Pořadí 1 a 2 jsou aktuálně podporovány.
+      Objednávka 1 a dokonce i objednávky 2, 4, 6,... jsou aktuálně podporovány.
     isPrimitive: true
     uid: Int
 output:
@@ -62,9 +62,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ, na který má každý krok reagovat; obvykle buď `Qubit[]`, nebo `Qubit`.
 metadata:
-  ms.openlocfilehash: 328db9b314320c724cf03adb19ee59d63a33e56e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ac9e4b4359c77205b7a823c334222a049ff49c10
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067828"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74863960"

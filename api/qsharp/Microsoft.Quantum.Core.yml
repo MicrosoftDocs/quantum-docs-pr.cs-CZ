@@ -3,6 +3,8 @@ uid: microsoft.quantum.core
 name: Microsoft.Quantum.Core
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů zahrnuje Q # Core functions a Operations.\n\n # <a name=\"remarks\"></a>Poznámky\n Tento obor názvů je automaticky otevřen kompilátorem Q #, takže všechny prvky tohoto oboru názvů jsou vždy k dispozici."
 functions:
+- uid: microsoft.quantum.core.default
+  summary: Vrátí výchozí instanci zadaného typu.
 - uid: microsoft.quantum.core.length
   summary: Vrátí počet prvků v poli.
 - uid: microsoft.quantum.core.rangeend
@@ -13,10 +15,17 @@ functions:
   summary: Vrátí definovanou počáteční hodnotu daného rozsahu.
 - uid: microsoft.quantum.core.rangestep
   summary: Vrátí celé číslo, které určuje, jak se počítá další hodnota rozsahu.
+newtypes:
+- uid: microsoft.quantum.core.attribute
+  summary: Rozpoznaný atribut kompilátoru, který slouží k označení uživatelsky definovaných typů jako atributů.
+- uid: microsoft.quantum.core.deprecated
+  summary: Rozpoznaný atribut kompilátoru, který se používá k označení typu nebo ho můžete volat jako zastaralou.
+- uid: microsoft.quantum.core.entrypoint
+  summary: Rozpoznaný atribut kompilátoru, který slouží k označení vstupního bodu spustitelného souboru.
 metadata:
-  ms.openlocfilehash: 41c28f8e8e11990ec1cf9b315478996a1e0811f4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 6391521907deddbf4425b927b1dec12e73f0ee5d
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056891"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858577"
