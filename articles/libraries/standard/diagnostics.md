@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: b59f91b660281167eab182529b415b6d379e3d63
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: d5889b8d5a92801b0ada65f7a17c655c959fc57f
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184487"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864334"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
@@ -42,7 +42,7 @@ Porovnáním je cílový počítač [simulátoru Toffoli](xref:microsoft.quantum
 
 ## <a name="facts-and-assertions"></a>Fakta a kontrolní výrazy ##
 
-Jak je popsáno v tématu [testování a ladění](xref:microsoft.quantum.techniques.testing-and-debugging), funkce nebo operace s podpisem `Unit -> Unit` nebo `Unit => Unit`, v uvedeném pořadí, lze volat jako *Test jednotky*.
+Jak je popsáno v tématu [testování a ladění](xref:microsoft.quantum.techniques.testing-and-debugging), funkce nebo operace s podpisem `Unit -> Unit` nebo `Unit => Unit`, v uvedeném pořadí, mohou být označeny jako *Test jednotky*.
 Každý test jednotek se obvykle skládá z malého programu v řádu a jedné nebo více podmínek, které kontrolují správnost tohoto programu.
 Tyto podmínky můžou být ve formě obou _skutečností_, které kontrolují hodnoty jejich vstupů nebo _kontrolních výrazů_, které kontrolují stavy jednoho nebo více qubits předaných jako vstup.
 
@@ -109,7 +109,7 @@ V důsledku globální fáze ale můžeme zvolit $a\_i = $0, takže potřebujeme
 Proto je potřeba zadat tři kontrolní výrazy, které jsou vzájemně nezávislé, aby bylo možné vyhodnotit stav, který očekáváme.
 Provedeme to tak, že vyhledáme pravděpodobnost pozorování `Zero` pro každé měření Pauliy uvedené na hodnotu $ \Alpha $ a $ \beta $ a každý z nich se vyhodnotí jako nezávisle.
 V uvedeném pořadí $x $, $y $ a $z $ budou `Result` hodnoty pro Pauli $X $, $Y $ a $Z $.
-Pak použijte funkci pravděpodobnosti pro měření doby využívání hodnot \begin{align} \Pr (x = \texttt{Zero} | \Alpha, \beta) & = \frac12 + a\_r b\_r + a\_i b\_i \\\Pr (y = \texttt{Zero} | \Alpha \beta) & = \frac12 +\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \Alpha, \beta) & = \frac12\left (1 +\_r ^ 2 +\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).
+Pak použijte funkci pravděpodobnosti pro měření doby využívání hodnot \begin{align} \Pr (x = \texttt{Zero} | \Alpha, \beta) & = \frac12 +\_r b\_r + a\_i b\_i \\\Pr (y = \texttt{Zero} | \Alpha, \beta) & = \frac12 + a\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \Alpha, \beta) & = \frac12\left (1 +\_r ^ 2 + a\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).
 \end{align}
 
 Operace <xref:microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance> implementuje tyto kontrolní výrazy s ohledem na reprezentace $ \Alpha $ a $ \beta $ jako hodnoty typu <xref:microsoft.quantum.math.complex>.
@@ -129,7 +129,7 @@ Tyto strategie jsou implementovány pomocí operací Canon <xref:microsoft.quant
 
 > [!NOTE]
 > Odkazovaný kontrolní výraz uvedený výše funguje na základě [Choi – Jamiłkowski isomorphism](https://en.wikipedia.org/wiki/Channel-state_duality), matematického rozhraní, které souvisí s operacemi $n $ qubits až entangled stavy na $2N $ qubits.
-> Konkrétně operace identity na $n $ qubits představuje $n $ kopie stavu entangled $ \ket{\beta_{00}} \mathrel{: =} (\ket{00} + \ket{11})/\sqrt{2}$.
+> Konkrétně operace identity na $n $ qubits představuje $n $ kopie stavu entangled $ \ket{\ beta_{00}} \mathrel{: =} (\ket{00} + \ket{11})/\sqrt{2}$.
 > Operace <xref:microsoft.quantum.preparation.preparechoistate> implementuje tuto isomorphism a připraví stav, který představuje danou operaci.
 
 Zhruba tyto strategie jsou odlišené o kompromisech podle času.

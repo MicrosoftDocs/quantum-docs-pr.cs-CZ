@@ -5,18 +5,17 @@ author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4677b0f9c4f64a9c1bc46d34e8a883dc006ba8f0
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: c079364f8808304e0132fa2a4226cd6400e81339
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183297"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863142"
 ---
 # <a name="going-further"></a>Dál #
 
 Teď, když jste se seznámili s tím, jak psát zajímavé programy v Q #, se tato část doplní o několik pokročilých témat, která by se měla ukázat jako užitečná.
 
-<!-- Moved Debugging and Testing Quantum Programs section to a separate article -->
 
 ## <a name="generic-operations-and-functions"></a>Obecné operace a funkce ##
 
@@ -119,7 +118,7 @@ function Compose(outerFn : (B -> C), innerFn : (A -> B)) : (A -> C) {
 
 V tomto případě je nutné přesně zadat, co `A`, `B`a `C` jsou, proto vážně omezují nástroj naší nové `Compose` funkce.
 Po všech `Compose` závisí jenom na `A`, `B`a `C` *prostřednictvím* `innerFn` a `outerFn`.
-Alternativně můžeme přidat parametry typu do `Compose`, které naznačují, že funguje pro *všechny* `A`, `B`a `C`, pokud se tyto parametry shodují s hodnotami, které očekává `innerFn` a `outerFn`:
+Alternativně můžeme přidat parametry typu do `Compose`, které naznačují, že funguje pro *všechny* `A`, `B`a `C`, pokud tyto parametry odpovídají následujícím parametrům, které očekává `innerFn` a `outerFn`:
 
 ```qsharp
 function ComposeImpl<'A, 'B, 'C>(outerFn : ('B -> 'C), innerFn : ('A -> 'B), input : 'A) : 'C {
@@ -178,6 +177,6 @@ is Adj + Ctl {
 }
 ```
 
-Všimněte si, že rozsáhlé použití `With` kombinátorem---ve své podobě, které platí pro operace, které podporují sousední, tj. `WithA`---byly v tomto příkladu, což je dobrý způsob programování při přidávání ovládacího prvku do struktur zahrnující pouze `With`. rozšíří řízení na vnitřní operaci. Dále si všimněte, že kromě `body` operace byla explicitně poskytnuta implementace `controlled` těla operace, nikoli použití příkazu `controlled auto`. Důvodem je to, že ví od struktury okruhu, jak snadno přidat další ovládací prvky, které jsou ve srovnání s přidáním ovládacího prvku do každé a každé samostatné brány v `body`vhodné. 
+Všimněte si, že rozsáhlé použití `With` kombinátorem---ve formuláři, které platí pro operace, které podporují sousední, tj. `WithA`---byly provedeny v tomto příkladu, což je dobrý programovací styl jako přidání ovládacího prvku do struktur zahrnující `With` pouze rozšíření ovládacího prvku do vnitřní operace. Dále si všimněte, že kromě `body` operace byla explicitně poskytnuta implementace `controlled` těla operace, nikoli použití příkazu `controlled auto`. Důvodem je to, že ví od struktury okruhu, jak snadno přidat další ovládací prvky, které jsou ve srovnání s přidáním ovládacího prvku do každé a každé samostatné brány v `body`vhodné. 
 
 Tento kód se dá porovnávat s jinou funkcí Canon `MultiControlledXClean`, která dosahuje stejného cíle implementace `X` operace řízené vynásobením, ale používá několik čistých qubits pomocí mechanismu `using`. 

@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: cca50e6c63d4bb982aa5f0a59fc19d08ecbec508
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3ff15a744bf15924564d5a8fee54f4fbce4c04ee
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185898"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864419"
 ---
-# <a name="contributing-code"></a>Přispívání kódu #
+# <a name="contributing-code"></a>Přispívání do kódu #
 
 Kromě vytváření sestav a vylepšení dokumentace může být přispívat kód do vývojové sady pro plnění kódu velmi přímým způsobem, jak pomáhat vašim partnerům v komunitě programování.
 Díky přispívání kódu vám může pomoct opravit problémy, poskytnout nové příklady, usnadnit používání stávajících knihoven nebo dokonce přidat zcela nové funkce.
@@ -26,17 +26,18 @@ Ideální příspěvek v kódu staví na stávající práci v úložišti pro v
 Když přijmeme příspěvek kódu, bude se jednat o součást samotného vývojového prostředí, takže nové funkce budou zveřejněny, udržovány a vyvíjeny stejným způsobem jako zbytek vývojové sady pro plnění.
 Proto je užitečné, pokud je funkce přidaná v příspěvku dobře testována a je dokumentována.
 
-### <a name="unit-tests"></a>Testování částí ###
+### <a name="unit-tests"></a>Testy jednotek ###
 
 Funkce Q #, operace a uživatelsky definované typy, které vytvářejí knihovny, jako je například Canon, se automaticky testují jako součást vývoje v úložišti [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Když se otevře nová žádost o přijetí změn, například naše konfigurace [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) ověří, že změny v žádosti o přijetí změn neruší žádné stávající funkce, na kterých je komunita programování.
-Tyto testy jsou napsány pomocí balíčku Microsoft. probíhající [. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zpřístupňuje funkce Q # a jako testy pro [xUnit](https://xunit.github.io/) Framework.
 
-[`Standard/tests/Standard.Tests.csproj`](https://github.com/microsoft/QuantumLibraries/blob/master/Standard/tests/Standard.Tests.csproj) používá tuto integraci xUnit ke spuštění jakýchkoli funkcí nebo operací končících `Test`.
-Například následující funkce se používá k zajištění, že funkce <xref:microsoft.quantum.canon.fst> a <xref:microsoft.quantum.canon.snd> vrátí v reprezentativním příkladu správné výstupy.
+S nejnovější verzí Q # je test jednotek definován pomocí atributu `@Test("QuantumSimulator")`. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému vyžádání může být připojeno několik atributů definujících různé cíle provádění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zveřejňuje všechny funkce Q # a operace končící na `Test` rozhraní [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
+
+Následující funkce se používá k zajištění, že funkce <xref:microsoft.quantum.canon.fst> a <xref:microsoft.quantum.canon.snd> vrátí v reprezentativním příkladu správné výstupy.
 Pokud je výstup `Fst` nebo `Snd` nesprávný, je příkaz `fail` použit k selhání testu.
 
 ```qsharp
+@Test("QuantumSimulator")
 function PairTest () : Unit {
     let pair = (12, PauliZ);
 
@@ -56,6 +57,7 @@ Složitější podmínky lze kontrolovat pomocí postupů v [části testování
 Například následující test kontroluje, že `H(q); X(q); H(q);` jako volaný <xref:microsoft.quantum.canon.applywith> funguje stejně jako `Z(q)`.
 
 ```qsharp
+@Test("QuantumSimulator")
 operation WithTest () : Unit {
     let actual = ApplyWith(H, X, _);
     let expected = Z;

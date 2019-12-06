@@ -6,12 +6,12 @@ ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.techniques.qubits
-ms.openlocfilehash: d1a8ccc9423a9a04e12bc98e3783790232b2f5d8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 477b358c3eba58b62926b4e9094770c9741cac92
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183467"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864249"
 ---
 # <a name="working-with-qubits"></a>Práce s Qubits #
 
@@ -43,7 +43,7 @@ Tyto operace podrobněji uvidíme v [vnitřních operacích a funkcích](xref:mi
 
 Za prvé, qubit Pauli Operators $X $, $Y $ a $Z $ jsou v Q # reprezentovány vnitřními operacemi `X`, `Y`a `Z`, z nichž každý má typ `(Qubit => Unit is Adj + Ctl)`.
 Jak je popsáno v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude), můžeme si představit $X $ a proto se `X` jako operace překlápění nebo ne jako hradlo.
-To nám umožní připravit stavy formuláře $ \ket{s_0 S_1 \dots S_N} $ pro některý z klasických bitových řetězců $s $:
+To umožňuje připravit stavy formuláře $ \ket{s_0 s_1 \dots s_n} $ pro některý z klasických bitových řetězců $s $:
 
 ```qsharp
 operation PrepareBitString(bitstring : Bool[], register : Qubit[]) : Unit 
@@ -72,7 +72,7 @@ operation Example() : Unit {
 > [!TIP]
 > Později se zobrazí více kompaktních způsobů psaní této operace, která nevyžaduje ruční řízení toku.
 
-Můžeme také připravit stavy, jako je $ \ket{+} = \left (\ket{0} + \ket{1}\right)/\sqrt{2}$ a $ \ket{-} = \left (\ket{0}-\ket{1}\right)/\sqrt{2}$ pomocí transformace Hadamard $H $ , který je reprezentován v Q # vnitřní operací `H : (Qubit => Unit is Adj + Ctl)`:
+Také je možné připravit stavy, jako je $ \ket{+} = \left (\ket{0} + \ket{1}\right)/\sqrt{2}$ a $ \ket{-} = \left (\ket{0}-\ket{1}\right)/\sqrt{2}$ pomocí Hadamard Transform $H $, který je reprezentován v Q # vnitřní operací `H : (Qubit => Unit is Adj + Ctl)`:
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -90,7 +90,7 @@ operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
 
 ## <a name="measurements"></a>Měření ##
 
-Pomocí operace `Measure`, která je vestavěnou vnitřní nejednotkovou operací, můžeme extrahovat klasické informace z objektu typu `Qubit` a přiřadit klasický údaj jako výsledek, který má rezervovaný typ `Result`, což značí, že výsledek není. delší stav Vstup pro `Measure` je Pauli osa v koule Bloch, reprezentovaná objektem typu `Pauli` (tj. pro instanci `PauliX`) a objektem typu `Qubit`. 
+Pomocí operace `Measure`, která je vestavěnou vnitřní nejednotkovou operací, můžeme extrahovat klasické informace z objektu typu `Qubit` a přiřadit klasický údaj jako výsledek, který má rezervovaný typ `Result`, což značí, že výsledek již není v nestránkovaném stavu. Vstup pro `Measure` je Pauli osa v koule Bloch, reprezentovaná objektem typu `Pauli` (tj. pro instanci `PauliX`) a objektem typu `Qubit`. 
 
 Jednoduchým příkladem je následující operace, která vytvoří jeden qubit ve stavu $ \ket{0}$, pak na něj použije ``H`` bránu Hadamard a pak výsledek měří na základě `PauliZ`. 
 
@@ -129,7 +129,7 @@ operation AllMeasurementsZero (qs : Qubit[], pauli : Pauli) : Bool {
 }
 ```
 
-Jazyk Q # umožňuje závislosti toku klasického řízení při měření výsledků qubits. To zase umožňuje implementovat výkonné pravděpodobnostní miniaplikace, které mohou snížit výpočetní náklady na implementaci unitaries. Jako příklad je možné ji snadno implementovat *tak, aby se v Q* # pravděpodobnostní okruhy, které mají *očekávané* nízké náklady, ale na základě základních bran, ale pravdivé náklady závisí na skutečném běhu a skutečném prokládání různých možných rozvětvení. 
+Jazyk Q # umožňuje závislosti toku klasického řízení při měření výsledků qubits. To zase umožňuje implementovat výkonné pravděpodobnostní miniaplikace, které mohou snížit výpočetní náklady na implementaci unitaries. Jako příklad se dá snadno implementovat volání *Repeat-to-do-* v Q #, které představují pravděpodobnostní okruhy s *očekávanými* nízkými náklady z hlediska základních bran, ale u kterých skutečné náklady závisí na skutečném běhu a skutečném prochodu různých možných rozvětvení. 
 
 Aby bylo možné zjednodušit vzorce opakování až do úspěchu (ru), Q # podporuje konstrukt.
 ```qsharp
@@ -167,7 +167,7 @@ operation RUScircuit (qubit : Qubit) : Unit {
 
 Tento příklad ukazuje použití proměnlivé proměnné `finished`, která je v rozsahu celého cyklu opakování až do opravy a která je inicializována před smyčkou a aktualizována v kroku opravy.
 
-Nakonec ukážeme příklad ru vzoru pro přípravu stavového pole $ \frac{1}{\sqrt{3}} \left (\sqrt{2}\ket{0}+ \ket{1}\right) $, počínaje ze stavu $ \ket{+} $. Viz také [ukázkový test jednotek, který je součástí standardní knihovny](https://github.com/Microsoft/Quantum/blob/master/Samples/src/UnitTesting/RepeatUntilSuccessCircuits.qs): 
+Nakonec ukážeme příklad ru vzoru pro přípravu stavového pole $ \frac{1}{\sqrt{3}} \left (\sqrt{2}\ket{0}+ \ket{1}\right) $, počínaje ze stavu $ \ket{+} $. Viz také [ukázkový test jednotek, který je součástí standardní knihovny](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs): 
 
 ```qsharp
 operation RepeatUntilSuccessStatePreparation( target : Qubit ) : Unit {
@@ -212,4 +212,4 @@ operation RepeatUntilSuccessStatePreparation( target : Qubit ) : Unit {
 }
 ```
  
-Důležité programové funkce uvedené v této operaci jsou složitější `fixup` součástí smyčky, která zahrnuje operace s nenáročnými na sebe, a použití příkazů `AssertProb` k zjištění pravděpodobnosti měření stavu nečinnosti v určitých bodech v editoru. Další informace o `Assert` a `AssertProb`ch příkazech naleznete v tématu [testování a ladění](xref:microsoft.quantum.techniques.testing-and-debugging) . 
+Významné programové funkce uvedené v této operaci jsou složitější `fixup` součástí smyčky, která zahrnuje operace s nenáročnými na sebe, a použití příkazů `AssertProb` k zjištění pravděpodobnosti měření stavu nečinnosti v určitých bodech v programu. Další informace o `Assert` a `AssertProb`ch příkazech naleznete v tématu [testování a ladění](xref:microsoft.quantum.techniques.testing-and-debugging) . 

@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5aac40686ba9b45a51e0274a1828f2ff7cce6fc3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: e1b78cf94ae0a043ad275d4cb06b230eafd7fc85
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184436"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863193"
 ---
 # <a name="error-correction"></a>Oprava chyb #
 
@@ -28,7 +28,7 @@ V nastavení pro stavové pole uvidíme, že měření je problematické. Přest
 To je užitečné, pokud chcete zjistit, jak můžeme provést generalizaci opravy chyb na případ.
 Proto je nechte $ \ket{\overline{0}} = \ket{000} = \ket{0} \otimes \ket{0} \otimes \ket{0}$ a let $ \ket{\overline{1}} = \ket{111}$.
 Po linearitě jsme pro všechny vstupy definovali náš kód opakování. např. $ \ket{\overline{+}} = (\ket{\overline{0}} + \ket{\overline{1}})/\sqrt{2} = (\ket{000} + \ket{111})/\sqrt{2}$.
-Konkrétně při převrácení $X _1 $ Act na střední qubit jsme zjistili, že oprava potřebná v obou větvích je přesně $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket @no__ t_3_ \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} + \ket{101} \right).
+Konkrétně v případě chyby $X _1 $ Act v prostředních qubit jsme zjistili, že oprava potřebná v obou větvích je přesně $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket{111} \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} + \ket{101} \right).
 \end{align} $ $
 
 Pokud se chcete podívat, jak můžeme zjistit, že se jedná o tento případ bez měření velmi velkého stavu, který se snažíme chránit, je užitečné, abyste si vyzkoušeli, co každá z různých bitových překlopných chyb dělá u našich logických stav
@@ -43,11 +43,11 @@ Pokud se chcete podívat, jak můžeme zjistit, že se jedná o tento případ b
 Abychom chránili stav, který kódujeme, musíme být schopni odlišit tři chyby od sebe navzájem a z identity $ \boldone $ bez rozlišení mezi $ \ket{\overline{0}} $ a $ \ket{\overline{1}} $.
 Pokud například měříme $Z _0 $, získáme jiný výsledek pro $ \ket{\overline{0}} $ a $ \ket{\overline{1}} $ v případu No-Error, takže se sbalí kódovaný stav.
 Na druhé straně zvažte měření $Z _0 Z_1 $, paritu prvních dvou bitů v každém výpočetním stavu.
-Načtěte si, že každé měření operátoru Pauli zkontroluje, které eigenvalue se v tabulce výše shoduje, takže pro každý stav $ \ket{\psi} $ v tabulce výše můžeme vypočítat $Z _0 Z_1 \ket{\psi} $ a zjistit, jestli se vám vrátí $ \pm\ket{\psi} $.
+Načtěte si, že každé měření Pauli operátoru kontroluje, které eigenvalue se má měřit, takže pro každý stav $ \ket{\psi} $ v tabulce výše můžeme vypočítat $Z _0 Z_1 \ket{\psi} $, abyste zjistili, jestli se vrátíme $ \pm\ket{\psi} $.
 Všimněte si, že $Z _0 Z_1 \ket{000} = \ket{000}$ a $Z _0 Z_1 \ket{111} = \ket{111}$, takže jsme uzavřeli, že toto měření bude stejné jako u kódovaných stavů.
 Na druhé straně $Z _0 Z_1 \ket{100} =-\ket{100}$ a $Z _0 Z_1 \ket{011} =-\ket{011}$, takže výsledek měření $Z _0 Z_1 $ odhalí užitečné informace o tom, která chyba nastala.
 
-Pokud to chcete zdůraznit, opakujeme tabulku výše, ale do každého řádku přidejte výsledky měření $Z _0 Z_1 $ a $Z _1 Z_2 $.
+Pokud to chcete zdůraznit, opakujeme tabulku výše, ale do každého řádku přidejte výsledky měření $Z _0 Z_1 $ a $Z _1y Z_2 $.
 Poznamenejte si výsledky každého měření pomocí znaménka eigenvalueu, která je pozorována, buď $ + $ nebo $-$, které odpovídají hodnotám Q # `Result` `Zero` a `One`.
 
 | Chyba $E $ | $E \ket{\overline{0}} $ | $E \ket{\overline{1}} $ | Výsledek $Z _0 Z_1 $ | Výsledek $Z _1 Z_2 $ |
@@ -67,7 +67,7 @@ Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který
 > Podobně se při použití operace překlopení fáze `Z` namapuje $ \ket{\overline{1}} $ na $-\ket{\overline{1}} $, a proto se namapuje $ \ket{\overline{+}} $ na $ \ket{\overline{-}} $.
 > Obecněji je možné vytvářet kódy pro zpracování většího počtu chyb a zpracovávat chyby $Z $ a také chyby $X $.
 
-Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je Essenu *formalit na stabilizaci*.
+Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci*.
 Q # Canon poskytuje rozhraní pro popis kódování a dekódování z kódů stabilizace a pro popis toho, jak se jedno obnovuje z chyb.
 V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduchých chybných procesorů.
 
@@ -117,6 +117,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Podrobněji o tom prozkoumáme v [ukázce bitové překlopení kódu](https://github.com/Microsoft/Quantum/tree/master/Samples/src/BitFlipCode).
+Podrobněji o tom prozkoumáme v [ukázce bitové překlopení kódu](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
 
-Kromě překlápění kódu je k dispozici Q # Canon s implementacemi [qubit dokonalého kódu](https://arxiv.org/abs/1305.08)a [sedmi qubit kódem](https://arxiv.org/abs/quant-ph/9705052), který může opravit libovolnou chybu s jedním qubit.
+Kromě překlápění kódu je k dispozici Q # Canon s implementacemi [qubit dokonalého kódu](https://arxiv.org/abs/quant-ph/9602019)a [sedmi qubit kódem](https://arxiv.org/abs/quant-ph/9705052), který může opravit libovolnou chybu s jedním qubit.

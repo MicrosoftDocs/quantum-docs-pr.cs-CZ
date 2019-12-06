@@ -1,21 +1,21 @@
 ---
 title: 'Q # standardní knihovny – aplikace | Microsoft Docs'
-description: 'Q # standardní knihovny'
+description: Standardní knihovny jazyka Q#
 author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e6eca45dd67b3566340c2a2a4fded0f6e7c3c5c3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ef22460a5bca63ebaf32c0ba21984e103ec8ebdd
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185167"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864385"
 ---
 # <a name="applications"></a>Aplikace #
 
-## <a name="hamiltonian-simulation"></a>Simulace Hamiltonian ##
+## <a name="hamiltonian-simulation"></a>Hamiltoniánská simulace ##
 
 Simulace systémů pro plnění je jedním z nejzajímavějších aplikací výpočetních případů.
 V klasickém počítači se při simulaci nenáročného navýšení na procesory škálují s dimenzí $N $ jeho reprezentace jeho stavu.
@@ -24,13 +24,13 @@ Vzhledem k tomu, že se tato reprezentace rozroste exponenciálně s počtem $n 
 Nicméně tato situace může být velmi odlišná na hardwaru s nárokem na stav. Nejběžnější variace simulace nedostatku času se nazývá problém nezávisle na Hamiltonian simulace. K dispozici je jedna z popisů systému Hamiltonian $H $, což je Hermitian matice, a některé počáteční stavové stavy $ \ket{\psi (0)} $, které jsou v některých případech kódované v $n $ qubits v počítači s procesorem. V případě stavových stavů v uzavřených systémech se vyvíjí v rámci rovnice Schrödinger $ $ \begin{align} i\frac {d \ket{\psi (t)} {d t} & = H \ket{\psi (t)}, \end{align} $ $. cílem je implementovat dlouhodobý operátor pro vývoj času $U (t) = e ^ {-iHt} $ v nějakém pevném čase $t $ , kde $ \ket{\psi (t)} = U (t) \ket{\psi (0)} $ vyřeší rovnici Schrödinger.
 Obdobně problém s simulací Hamiltonian závislé na čase vyřeší stejnou rovnici, ale s $H (t) $ nyní může být funkce času.
 
-Simulace Hamiltonian je hlavní součástí mnoha dalších problémů s simulací doby plnění a řešení problémů s simulací Hamiltonian jsou algoritmy, které popisují sekvenci primitivních bran s chybou $\\| \tilde{U}-U (t)\\| \le \epsilon $ v [spektrální normě](xref:microsoft.quantum.concepts.matrix-advanced). Složitost těchto algoritmů závisí velmi silně na tom, jak je popis Hamiltonian zájmu přístupný pro počítač ve velkém počtu. Například v nejhorším případě, pokud $H $ v $n $ qubits byly poskytnuty jako seznam hodnot $2 ^ n \times 2 ^ n $, jeden pro každý prvek matice, jednoduše čtená data již vyžadují exponenciální čas. V nejlepším případě by jeden mohl předpokládat přístup k černému poli, který $O \ket{t}\ket{\psi (0)} = \ket{t}U (t) \ket{\psi (0)} $ triviální problém vyřeší. Ani jeden z těchto vstupních modelů není obzvlášť zajímavý – bývalé, protože není lepší než klasický přístup a druhá jako černý rámeček skrývá základní bránu své implementace, což může být exponenciální v počtu qubits.
+Simulace Hamiltonian je hlavní součástí mnoha dalších problémů s simulací doby plnění a řešení problémů s simulací Hamiltonian jsou algoritmy, které popisují sekvenci primitivních předpisů pro syntetizaci velkých a velkých a velkých procesorů $ \tilde{U} $ s chybou $\\| \tilde{U}-U (t)\\| \le \epsilon $ v [spektrální normě](xref:microsoft.quantum.concepts.matrix-advanced). Složitost těchto algoritmů závisí velmi silně na tom, jak je popis Hamiltonian zájmu přístupný pro počítač ve velkém počtu. Například v nejhorším případě, pokud $H $ v $n $ qubits byly poskytnuty jako seznam hodnot $2 ^ n \times 2 ^ n $, jeden pro každý prvek matice, jednoduše čtená data již vyžadují exponenciální čas. V nejlepším případě by jeden mohl předpokládat přístup k černému poli, který $O \ket{t}\ket{\psi (0)} = \ket{t}U (t) \ket{\psi (0)} $ triviální problém vyřeší. Ani jeden z těchto vstupních modelů není obzvlášť zajímavý – bývalé, protože není lepší než klasický přístup a druhá jako černý rámeček skrývá základní bránu své implementace, což může být exponenciální v počtu qubits.
 
 ### <a name="descriptions-of-hamiltonians"></a>Popisy Hamiltonians ###
 
 Jsou proto vyžadovány další předpoklady formátu vstupu. Jemné vyvážení musí být prolomeno mezi vstupními modely, které jsou dostatečně popisné, aby zahrnovaly zajímavé Hamiltonians, jako jsou například pro reálné fyzické systémy nebo zajímavé výpočetní problémy, a vstupní modely, které jsou dostatečně omezující. aby bylo možné je efektivně implementovat na počítač s nárokem na více počítačů. V této literatuře se může najít celá řada netriviálních vstupních modelů a jejich rozsah od až po klasický. 
 
-Jako příklad u vstupních modelů pro [procesory předpokládá Hamiltonian simulace](http://www.nature.com/articles/s41534-017-0013-7) přístup k operacím s černým přístavem, který vytváří kopie matrice hustoty $ \rho $, které se považují za Hamiltonian $H $. V jednom [modelu pro přístup k jednomu přístupu](https://arxiv.org/abs/1202.5822) předpokládá, že Hamiltonian místo toho předává součet unitaries $ $ \begin{align} H & = \sum ^ {d-1}\_{j = 0} a\_j \hat{U}\_j, \end{align} $ $, kde $a\_j > 0 $ jsou koeficienty a $ \hat{U}\_j $ jsou unitaries. Pak se předpokládá, že má k dispozici černý přístup k jednotkám Oracle $V = \sum ^ {d-1}\_{j = 0} \ket{j}\bra{j}\otimes \hat{U}\_j $, která vybere požadované $ \hat{U}\_j $ a Oracle $A \ket{0}= \sum ^ {d-1}\_{ j = 0} \sqrt{a\_j/\ Sum ^ {d-1}\_{k = 0} \Alpha\_j} \ket{j} $, které vytvářejí tyto koeficienty pro kódování stavových procesorů. V případě [simulace zhuštěných Hamiltonian](https://arxiv.org/abs/quant-ph/0301023)se předpokládá, že Hamiltonian je zhuštěná matice s pouze $d = \mathcal{O} (\Text{polylog} (N)) $ nenulového prvku v každém řádku. Kromě toho předpokládá, že existence efektivních okruhů na více procesorech vychází z umístění těchto nenulových prvků, jakož i jejich hodnot. Složitost [algoritmů simulace Hamiltonian](xref:microsoft.quantum.more-information) je vyhodnocována v podobě počtu dotazů do těchto černých polí a základní složitost brány pak závisí hodně na obtížnosti implementace těchto černých polí.
+Jako příklad u vstupních modelů pro [procesory předpokládá Hamiltonian simulace](http://www.nature.com/articles/s41534-017-0013-7) přístup k operacím s černým přístavem, který vytváří kopie matrice hustoty $ \rho $, které se považují za Hamiltonian $H $. [V jednom z](https://arxiv.org/abs/1202.5822) nich předpokládáme, že Hamiltonian místo toho předává součet unitaries $ $ \begin{align} H & = \sum ^ {d-1}\_{j = 0} a\_j \hat{U}\_j, \end{align} $ $, kde $a\_j > 0 $ jsou a $ \hat{U}\_j $ jsou unitaries. Pak se předpokládá, že má k dispozici černý přístup k jednotkám Oracle $V = \sum ^ {d-1}\_{j = 0} \ket{j}\bra{j}\otimes \hat{U}\_j $, která vybere požadované $ \hat{U}\_j $, a Oracle $A \ket{0}= \sum ^ {d-1}\_{j = 0} \sqrt{a\_j/\ suma ^ {d-1}\_{k = 0} \Alpha\_j} \ket{j} $, které vytvářejí tyto koeficienty pro kódování stavových procesorů. V případě [simulace zhuštěných Hamiltonian](https://arxiv.org/abs/quant-ph/0301023)se předpokládá, že Hamiltonian je zhuštěná matice s pouze $d = \mathcal{O} (\Text{polylog} (N)) $ nenulového prvku v každém řádku. Kromě toho předpokládá, že existence efektivních okruhů na více procesorech vychází z umístění těchto nenulových prvků, jakož i jejich hodnot. Složitost [algoritmů simulace Hamiltonian](xref:microsoft.quantum.more-information) je vyhodnocována v podobě počtu dotazů do těchto černých polí a základní složitost brány pak závisí hodně na obtížnosti implementace těchto černých polí.
 
 > [!NOTE]
 > Notaci Big-O se běžně používá k popisu škálování algoritmů složitosti algoritmů. Zadané dvě reálné funkce $f, g $, výraz $g (x) = \mathcal{O} (f)) $ znamená, že existuje absolutní kladná konstanta $x\_0, c > 0 $, což $g (x) \le c f (x) $ pro všechny $x \ge x\_$0. 
@@ -45,21 +45,21 @@ U většiny praktických aplikací, které se mají implementovat na počítač 
 
 Algoritmus pro simulaci doby provozu Převede daný popis Hamiltonian na sekvenci primitivních procesorových vratů, které jsou v rámci celého přibližného vývoje času pomocí zmíněného Hamiltonian.
 
-Ve speciálním případě, kdy Hamiltonian založí do součtu Hermitian částí, je dekompozice Trotter-Suzuki obzvláště jednoduchý a intuitivní algoritmus pro simulaci Hamiltonians, která se rozloží na součet Hermitian komponent. Například první vydaný integrátor této rodiny je přibližně $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \max_j\\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $ s použitím produktu $r d $ terms. 
+Ve speciálním případě, kdy Hamiltonian založí do součtu Hermitian částí, je dekompozice Trotter-Suzuki obzvláště jednoduchý a intuitivní algoritmus pro simulaci Hamiltonians, která se rozloží na součet Hermitian komponent. Například první vydaný integrátor této rodiny je přibližně $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j\\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $ s použitím produktu $r d $ terms. 
 
 > [!TIP]
 > V ukázkách jsou pokryté aplikace algoritmu simulace Trotter-Suzuki.
-> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/SimpleIsing).
-> Pro model Ising pomocí struktury ovládacích prvků knihovny Trotter-Suzuki se podívejte na [ukázku **IsingTrotter** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingTrotterEvolution).
-> Pro molekulovou vodík pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **simulace H2** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine).
+> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing** ](https://github.com/microsoft/Quantum/blob/master/samples/simulation/ising/simple).
+> Pro model Ising pomocí struktury ovládacích prvků knihovny Trotter-Suzuki se podívejte na [ukázku **IsingTrotter** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/trotter-evolution).
+> Pro molekulovou vodík pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **simulace H2** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line).
 
-V mnoha případech bychom chtěli implementovat algoritmus simulace, ale neuvažujete o jeho implementaci. Například integrátor druhého řádu se blíží $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/2R} e ^ {-iH\_1 t/2R} \cdots e ^ {-iH\_{d-1} t/2R} e ^ {-iH\_{d-1} t/2R} \cdots e ^ {-iH\_1 t/2R} e ^ {- iH\_0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \max_j\\| H\_j\\| ^ 3 t ^ 3/r ^ 2), \end{align} $ $ za použití podmínek $2RD $. Větší objednávky budou zahrnovat ještě víc podmínek a optimalizované varianty můžou pro exponenciální hodnoty vyžadovat vysoce triviální řazení. Další pokročilé algoritmy můžou také zahrnovat použití ancilla qubits v rámci mezipostupných kroků. Proto se jako uživatelsky definovaný typ zabalí algoritmy simulace ve Canon.
+V mnoha případech bychom chtěli implementovat algoritmus simulace, ale neuvažujete o jeho implementaci. Například integrátor druhého řádu se blíží $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/2R} e ^ {-iH\_1 t/2R} \cdots e ^ {-iH\_{d-1} t/2R} e ^ {-iH\_{d-1} t/2R} \cdots e ^ {-iH\_1 t/2R} e ^ {-iH\_0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j\\| H\_j\\| ^ 3 t ^ 3/r ^ 2), \end{align} $ $ za použití podmínek $2RD $. Větší objednávky budou zahrnovat ještě víc podmínek a optimalizované varianty můžou pro exponenciální hodnoty vyžadovat vysoce triviální řazení. Další pokročilé algoritmy můžou také zahrnovat použití ancilla qubits v rámci mezipostupných kroků. Proto se jako uživatelsky definovaný typ zabalí algoritmy simulace ve Canon.
 
 ```qsharp
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
 ```
 
-První parametr `Double` je čas simulace, druhý parametr `EvolutionGenerator`, který je popsán v části dynamické reprezentace generátoru [datových struktur](xref:microsoft.quantum.libraries.data-structures), je klasický popis časově nezávislého Hamiltonian zabaleného s pokyny, jak jednotlivé termíny v Hamiltonian mohou být simulované okruhem. Typy tohoto formuláře se blíží jednotkové operaci $e ^ {-iHt} $ na třetím parametru `Qubit[]`, což je registr, který ukládá stav nečinnosti simulovaného systému. Podobně jako v případě závislého na čase definujeme místo toho uživatelem definovaný typ s typem `EvolutionSchedule`, což je klasický popis Hamiltonian závislého na čase.
+První parametr `Double` je čas simulace, druhý parametr `EvolutionGenerator`, který je popsán v části dynamické reprezentace generátoru [datových struktur](xref:microsoft.quantum.libraries.data-structures), je klasický popis Hamiltonian zabaleného času s pokyny, jak mohou být jednotlivé podmínky v Hamiltonian simulované okruhem. Typy tohoto formuláře se blíží jednotkové operaci $e ^ {-iHt} $ na třetím parametru `Qubit[]`, což je registr, který ukládá stav nečinnosti simulovaného systému. Podobně jako v případě závislého na čase definujeme místo toho uživatelem definovaný typ s typem `EvolutionSchedule`, což je klasický popis Hamiltonian závislého na čase.
 
 ```qsharp
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
@@ -83,13 +83,13 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Aplikace knihovny simulace jsou pokryté v ukázkách. V případě odhadu fáze v modelu Ising pomocí `SimulationAlgorithm`se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
-> Pro přípravu stavu adiabatic v modelu Ising pomocí `TimeDependentSimulationAlgorithm`se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/AdiabaticIsing).
+> Aplikace knihovny simulace jsou pokryté v ukázkách. V případě odhadu fáze v modelu Ising pomocí `SimulationAlgorithm`se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> Pro přípravu stavu adiabatic v modelu Ising pomocí `TimeDependentSimulationAlgorithm`se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Odhad stavu Adiabatic & fáze ###
 
-Jednou z běžných aplikací simulace Hamiltonian je adiabatic stavový přípravek. V takovém případě je k dispozici se dvěma Hamiltonians $H\_{\Text{Start}} $ a $H\_{\Text{end}} $ a stavovou hodnotu $ \ket{\psi (0)} $, což je základní stav spouštěcího Hamiltonian $H\_{\Text{Start}} $. Obvykle je zvolena možnost $H\_{\Text{Start}} $, což znamená, že $ \ket{\psi (0)} $ se snadno připravuje z výpočetního stavu na výpočetní úrovni $ \ket{0\cdots 0} $. Díky interpolaci mezi těmito Hamiltoniansy v případě problémů s simulací závislé na čase, který je dostatečně pomalý, je možné ukončit s vysokou pravděpodobností v zemi konečného stavu Hamiltonian $H\_{\Text{end}} $. I když Příprava dobrých odhadů na Hamiltonian země by mohla tímto způsobem probíhat voláním algoritmů simulace Hamiltonian, které jsou závislé na čase, jako dílčí rutina, dalších koncepčních různých přístupů, jako je variace. eigensolver je možné.
+Jednou z běžných aplikací simulace Hamiltonian je adiabatic stavový přípravek. V takovém případě je k dispozici se dvěma Hamiltonians $H\_{\Text{Start}} $ a $H\_{\Text{end}} $ a stavovou hodnotu $ \ket{\psi (0)} $, což je základní stav spouštěcího Hamiltonian $H\_{\Text{Start}} $. Obvykle je zvolena možnost $H\_{\Text{Start}} $, což znamená, že $ \ket{\psi (0)} $ se snadno připravuje z výpočetního stavu na výpočetní úrovni $ \ket{0\cdots 0} $. Díky interpolaci mezi těmito Hamiltoniansy v případě problémů s simulací závislé na čase je možné ukončit s vysokou pravděpodobností v zemi konečného stavu Hamiltonian $H\_{\Text{end}} $. I když Příprava dobrých odhadů na Hamiltonian země by mohla tímto způsobem probíhat voláním algoritmů simulace Hamiltonian, které jsou závislé na čase, jako dílčí rutina, dalších koncepčních různých přístupů, jako je variace. eigensolver je možné.
 
 Ještě další všudypřítomný aplikace v chemii v terénu odhaduje stavovou energii Hamiltonians, která představuje mezilehlé kroky chemické reakce. Takové schéma může například spoléhat na přípravu stavu adiabatic, aby vytvořilo základní stav a pak zahrnulo nezávislá časová simulace Hamiltonian jako dílčí rutinu v popisu fáze odhadu pro extrakci této energie s určitou konečnou chybou a pravděpodobnost úspěchu 
 
@@ -128,13 +128,13 @@ operation AdiabaticStateEnergyEstimate(
 `nQubits` je počet qubits, který se používá ke kódování počátečního stavu. `statePrepUnitary` připraví počáteční stav z výpočetního základu $ \ket{0\cdots 0} $. `adiabaticUnitary` je jednotná operace, která implementuje přípravu stavu adiabatic, například vytvořenou funkcí `InterpolatedEvolution`. `qpeUnitary` je jednotná operace, která se používá k provádění odhadu fáze ve výsledném stavu nečinnosti. `phaseEstAlgorithm` je naše volba algoritmu odhadu fází.
 
 > [!TIP]
-> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising pomocí ruční implementace přípravných stavů adiabatic a pomocí funkce `AdiabaticEvolution` se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/AdiabaticIsing).
-> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
+> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising pomocí ruční implementace přípravných stavů adiabatic a pomocí funkce `AdiabaticEvolution` se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
+> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simulace molekulové vodíku](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má ve tvaru $ \hat H = g\_{0}I\_0I\_1 + g\_1 {Z\_0} + g\_2 {Z\_1} + g\_3 Z\_0} {Z\_1} + g\_4 {Y\_0} {Y\_1} + g\_5 {X\_0} {X\_1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Pauls převede na unitaries a pak se postupně vyvinuly v krátkém časovém úseku pomocí dekompozice Trotter-Suzuki. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
+> [Simulace molekulové vodíku](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má ve tvaru $ \hat H = g\_{0}I\_0I\_1 + g\_1 {Z\_0} + g\_2 {Z\_1} + g\_3. {Z\_0} {Z\_1} + g\_4 {Y\_0} {Y\_1} + g\_5 {X\_0} {X\_1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Pauls převede na unitaries a pak se postupně vyvinuly v krátkém časovém úseku pomocí dekompozice Trotter-Suzuki. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
 
-## <a name="shors-algorithm"></a>Shor algoritmus ##
+## <a name="shors-algorithm"></a>Shorův algoritmus ##
 Shor algoritmus zůstává jedním z nejvýznamnějších vývojů ve výpočetním prostředí, protože ukázalo, že by se počítače mohly použít k řešení důležitých, aktuálně nerušivých problémů.
 Algoritmus Shor poskytuje rychlý způsob, jak rychle vyhodnotit Velká čísla pomocí počítače s velkým množstvím, což je problém s názvem *faktoringu*.
 Zabezpečení mnoha současných cryptosystemsch dnů vychází z předpokladu, že pro účely faktoringu neexistuje žádný rychlý algoritmus.
@@ -151,8 +151,8 @@ Zjistili jsme, jak funkce Fourierova transformace a odhad fáze funguje (viz [al
 
 Zadaná dvě celá čísla $a $ a $N $, kde $a < N $, cílem hledání období, označovaného také jako hledání objednávek, je najít _objednávku_ $r $ z $a $ modulo $N $, kde $r $ je definováno jako nejmenší kladné celé číslo tak, aby $a ^ r \equiv 1 \Text{mod} N $.  
 
-Pokud chcete zjistit pořadí pomocí počítače s více procesory, můžeme použít algoritmus odhadu fáze, který se používá pro následující samostatný operátor $U _a $: $ $ U_a\ket {x} \equiv \ket{(AX) \Text{mod} N}. $ $ eigenvectors $U _a $ jsou pro celočíselnou $s $ a $0 \ LEQ s \leq r-$1. , $ $ \ket{x_s} \equiv 1/\sqrt{r} \sum\_{k = 0} ^ {r-1} e ^ {\frac{-2\pi i SK} {r}} \ket{a ^ k\text {mod} N}, $ $ jsou _eigenstates_ z $U _a $.
-Eigenvalues $U _a $ je $ $ U\_a \ket{x\_s} = e ^ {2 \ PI i/r} \ket{x\_s}. $$
+Pokud chcete zjistit pořadí pomocí počítače s více poli, můžeme použít algoritmus odhadu fáze použitý u následujícího operátoru s jednou jednotkou $U _a $: $ $ U_a \ket{x} \equiv \ket{(AX) \Text{mod} N}. $ $ eigenvectors $U _a $ jsou pro celočíselné $s $ a $0 \ LEQ s \leq r-$1, $ $ \ket{x_s} \equiv 1/\sqrt{r} \sum\_{k = 0} ^ {r-1} e ^ {\frac{-2\pi i SK} {r}} \ket{a ^ k\text {mod} N}, $ $ jsou _eigenstates_ $U _a $.
+Eigenvalues $U _a $ $ U\_\ket{x\_s} = e ^ {2 \ PI i s/r} \ket{x\_s}. $$
 
 Odhad fáze tak má za výstupem eigenvalues $e ^ {2 \ PI i/r} $, z nichž lze $r $ zjistit efektivně pomocí dalších [zlomků](https://en.wikipedia.org/wiki/Continued_fraction) z $s/r $.
 
@@ -162,14 +162,14 @@ Diagram okruhu pro zjištění doby trvání:
 
 Zde $2N $ qubits jsou inicializovány do $ \ket{0}$ a $n $ qubits jsou inicializovány do $ \ket{1}$.
 Čtenář se znovu může zajímat, proč se v registru eigenstates inicializuje do $ \ket{1}$.
-Vzhledem k tomu, že jedna z těchto informací neví $r $, nemůžeme ve skutečnosti připravit stav $ \ket{x_s} $ přímo.
+Vzhledem k tomu, že jedna z těchto informací neví, že pořadí $r $ předem nemůžeme přímo připravit stavy $ \ket{x_s} $.
 Donovanovo, zapíná se $1/\ sqrt {r} \sum\_{s = 0} ^ {r-1} \ket{x\_s} = \ket{1}$.
 Nemusíte ve skutečnosti připravovat $ \ket{x} $!
 Můžeme pouze připravit registraci $n $ qubits ve stavu $ \ket{1}$. 
 
 Okruh obsahuje QFT a několik řízených bran.
 Brána QFT byla popsána [dříve](xref:microsoft.quantum.libraries.standard.algorithms).
-Řízená $U _a $ Branch $ \ket{x} $ to $ \ket{(AX) \Text{mod} N} $, pokud je ovládací prvek qubit $ \ket{1}$ a map $ \ket{x} $ to $ \ket{x} $, jinak.
+Řízená $U _a $ \ket{x} $ to $ \ket{(AX) \Text{mod} N} $, pokud je ovládací prvek qubit $ \ket{1}$ a map $ \ket{x} $ na $ \ket{x} $, jinak.
 
 Pokud chcete dosáhnout $ (a ^ NX) \Text{mod} N $, můžeme jednoduše použít řízené $U _ {a ^ N} $, kde vypočítáme $a ^ n \Text{mod} N $ Classic, aby se mohl připojit k okruhu.  
 Okruhy, které by se dosáhly těchto modulárních aritmetických výpočtů, jsou popsané v [aritmetické dokumentaci](./algorithms.md#arithmetic)pro procesory, konkrétně vyžadujeme modulární okruh umocnění k implementaci $U\_{a ^ i} $.

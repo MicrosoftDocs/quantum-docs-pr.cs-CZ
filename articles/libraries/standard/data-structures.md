@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e8b28561f1aba37cb5bf41c6176386d19bfacf06
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 6eb47de84fdfbb9d35fdfc2988883f8e1cffa332
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184504"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864351"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
@@ -20,7 +20,7 @@ ms.locfileid: "73184504"
 Společně s uživatelsky definovanými typy pro reprezentaci konceptů, Canon také poskytuje operace, funkce a typy pro práci s klasickými daty používanými v řízení systémů.
 Například funkce <xref:microsoft.quantum.arrays.reversed> přebírá pole jako vstup a vrací stejné pole v opačném pořadí.
 Tato možnost se pak dá použít na pole typu `Qubit[]`, abyste se vyhnuli nutnosti použít při převodu mezi reprezentovatcí hodnoty typu Integer nepotřebné brány $ \operatorname{SWAP} $.
-Podobně jsme viděli v předchozí části, že typy `(Int, Int -> T)` formuláře mohou být užitečné pro reprezentaci kolekce s náhodným přístupem, takže funkce <xref:microsoft.quantum.arrays.lookupfunction> poskytuje convienent způsob konstrukce takových typů z typů polí.
+Podobně jsme viděli v předchozí části, že typy `(Int, Int -> T)` formuláře mohou být užitečné pro reprezentaci kolekce s náhodným přístupem, takže funkce <xref:microsoft.quantum.arrays.lookupfunction> poskytuje pohodlný způsob konstrukce takových typů z typů pole.
 
 ### <a name="pairs"></a>Spár ###
 
@@ -31,7 +31,7 @@ let pair = (PauliZ, register); // type (Pauli, Qubit[])
 ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ```
 
-### <a name="arrays"></a>řadách ###
+### <a name="arrays"></a>Pole ###
 
 Canon nabízí několik funkcí pro manipulaci s poli.
 Tyto funkce jsou typově parametrizované a dají se použít s poli typu Q #.
@@ -73,11 +73,11 @@ V tomto případě se pojem Oracle vztahuje na podprogramovou rutinu Blackbox, k
 Tato podrutina se často může považovat za vstup do algoritmu pro plnění hodnoty, který přijímá Oracle, kromě některých dalších parametrů a používá řadu operací po sobě a zpracovává volání této podprocesu, jako by šlo o základní bránu.
 Aby bylo možné skutečně implementovat větší algoritmus, je nutné poskytnout konkrétní rozložené rozhraní Oracle do základních bran, ale takové rozložené není nutné, aby bylo možné pochopit algoritmus, který volá Oracle.
 V Q # je tato abstrakce reprezentována pomocí těchto operací, které představují hodnoty první třídy, což znamená, že operace mohou být předány do implementace algoritmů pro plnění v černém poli.
-Kromě toho uživatelsky definované typy se používají k označení různých reprezentace Oracle bezpečným způsobem, což ztěžuje náhodnému rozplochení různých druhů operací černého boxu.
+Kromě toho uživatelsky definované typy se používají k označení různých reprezentace Oracle bezpečným způsobem, což ztěžuje náhodné rozlišit různé druhy operací černého boxu.
 
 Tyto Oracle se zobrazují v řadě různých kontextů, včetně slavnýchch příkladů, jako jsou například [Grover vyhledávání](https://en.wikipedia.org/wiki/Grover%27s_algorithm) a simulace.
 Tady se zaměříme na Oracle, které potřebuje jenom dvě aplikace: zesílení amplitud a odhad fáze.
-Před přestupným odhadem fáze budeme nejdřív projednávat amplituda zesílení Oracle.
+Před pokračováním odhadu fáze budeme nejdřív projednávat amplituda zesílení Oracle.
 
 ### <a name="amplitude-amplification-oracles"></a>Amplituda zesílení pro Oracle ###
 
@@ -145,20 +145,20 @@ is Adj + Ctl {
 }
 ```
 
-Pak můžeme kombinovat tyto dva společnosti Oracle, aby je bylo možné otočit mezi oběma stavy a deterministické transformaci $ \ket{+} ^ {\otimes n} $ na $ \ket{0}$ pomocí několika vrstev ch bran, které jsou úměrné $ \sqrt{2 ^ n} $ (IE $m \propto \sqrt{2 ^ n} $) oproti přibližně $2 ^ n $ vrstvám, které by byly potřeba pro nedeterministické přípravu $ \ket{0}$, připravujeme a měříme počáteční stav, dokud se nepozoruje výsledek $0 $.
+Pak můžeme kombinovat tyto dva společnosti Oracle, aby je bylo možné otočit mezi oběma stavy a deterministické transformaci $ \ket{+} ^ {\otimes n} $ na $ \ket{0}$ pomocí několika vrstev ch bran, které jsou úměrné $ \sqrt{2 ^ n} $ (IE $m \propto \sqrt{2 ^ n} $) oproti přibližně $2 ^ n $ vrstvám, které by byly potřeba pro nedeterministické přípravu $ \ket{0}$ State tím, že se připraví a měří počáteční stav, dokud se nezjistí výsledek $0 $.
 
 ### <a name="phase-estimation-oracles"></a>Odhad fáze Oracle ###
 
 V případě odhadu fáze jsou Oracle trochu přirozenější.
 Cílem ve fázi odhadu je návrh dílčí rutiny, která je schopná vzorkování z eigenvalues matice s jednou jednotkou.
-Tato metoda je indispensible v simulaci doby provozu, protože pro mnoho fyzických problémů v chemii a materiálové vědy poskytují tyto eigenvalues základní Energies systémy, které nám poskytují cenné informace o fázích. materiály a reakce v dynamikě pro molekuly.
+Tato metoda je nepostradatelná v simulaci vozového provozu, protože pro mnoho fyzických problémů v chemii a materiálové vědy poskytují tyto eigenvalues základní Energies systémy, které poskytují cenné informace o fázích. materiály a reakce v dynamikě pro molekuly.
 Každý charakter odhadu fáze vyžaduje vstup s jednou jednotkou.
 Tato jednotná část je obvykle popsána jedním ze dvou typů Oracle.
 
 > [!TIP]
 > Oba typy Oracle popsané níže jsou uvedené v ukázkách.
-> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/PhaseEstimation).
-> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
+> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation).
+> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
 
 První typ Oracle, který volá diskrétní dotaz Oracle a představuje uživatelsky definovaný typ <xref:microsoft.quantum.oracles.discreteoracle>, jednoduše zahrnuje jednotnou matici.
 Pokud je $U $ jednotkou, jejíž eigenvalues chceme odhadnout, je Oracle pro $U $ jednoduše samostatným předpokladem pro podprogram, který implementuje $U $.
@@ -166,8 +166,8 @@ Například jedna může trvat $U $ to je, že pro odhad amplitud se výše defi
 Eigenvalues této matice se dá použít k odhadu překrytí mezi počátečními a cílovými stavy, $ \sin ^ 2 (\theta) $, a to za použití kvadratickě méně vzorků, než je třeba v případě, že by to vyžadovalo jinak.
 Tím se vyrozumí použití odhadu fáze pomocí Grover Oracle $Q $ jako zadání monikeru odhadu amplitudy.
 Další běžnou aplikací, která se běžně používá v rozsahu metrologie, zahrnuje odhad malého úhlu otočení.
-Jinými slovy chceme odhadnout $ \theta $ pro neznámou rotující bránu formuláře $R _Z (\theta) $.
-V takových případech by podprogram, se kterým by se vám měla tato pevná hodnota $ \theta $ pro bránu naučit, byla $ $ \begin{align} U & = R_z (\theta) \\\\ & = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\\\ 0 & e ^ {i \ théta/2} \end{bmatrix}.
+Jinými slovy chceme odhadnout $ \theta $ pro neznámou rotující bránu formuláře $R _z (\theta) $.
+V takových případech by podprogram, se kterým by se vám měla tato pevná hodnota $ \theta $ pro bránu naučit, je $ $ \begin{align} U & = R_z (\theta) \\\\ & = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\\\ 0 & e ^ {i \ théta/2} \end{bmatrix}.
 \end{align} $ $
 
 Druhým typem Oracle použitým ve odhadu fáze je průběžný dotaz Oracle, reprezentovaný typem <xref:microsoft.quantum.oracles.continuousoracle>.
@@ -186,7 +186,7 @@ To je důležité pro stlačení každé poslední unce v algoritmech odhadu fá
 
 Jako konkrétní příklad tohoto problému zvažte, jak se při odhadování nejedná o úhel otočení brány, ale frekvence procesu rotujícího systému.
 Jednotná, která popisuje takové pole s dobou provozu, je $U (t) = R_z (2 \ Omega t) $ pro dobu vývoje $t $ a neznámá frekvence $ \omega $.
-V tomto kontextu můžeme simulovat $U (t) $ pro všechny $t $ pomocí jedné $R brány _Z $ a jako takové nemusíte dodržovali jenom na samostatné dotazy, které jsou v jednotném případě.
+V tomto kontextu můžeme simulovat $U (t) $ pro všechny $t $ pomocí jedné $R _z $ a nemusíte tak omezovat dodržovali jenom na diskrétní dotazy.
 Tento souvislý model má také vlastnost, že frekvence větší než $2 \ PI $ se dají poznat z procesů odhadu fází, které používají průběžné dotazy, protože informace o fázi, které by jinak byly maskovány pomocí děleného průřezu funkce logaritmus, můžou bude odhaleno z výsledků experimentů provedených na neúměrných hodnotách $t $.
 Proto jsou problémy, jako jsou tyto průběžné modely dotazů pro fáze odhadující fáze Oracle, nejen vhodné, ale jsou také vhodnější pro diskrétní model dotazů.
 Z tohoto důvodu má Q # funkci pro obě formy dotazů a zároveň ji ponechat uživateli k rozhodnutí o algoritmu odhadu fáze podle svých potřeb a typu Oracle, který je k dispozici.
@@ -199,17 +199,17 @@ Hlavním cílem dynamické simulace je implementace operátoru pro vývoj času 
 
 $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} H_j, \end{align} $ $
 
-v případě, že je v počítači s procesorem na více procesorech snadné implementovat čas v každém termínu. Například pokud $H _J $ je Pauli $X _1X_2 $, který působí na první a druhý prvek registru qubit `qubits`, může být implementováno v čase $t $, a to jednoduše voláním operace `Exp([PauliX,PauliX], t, qubits[1..2])`, která má `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)`podpisu. Jak je popsáno dále v simulaci Hamiltonian, jedno řešení pak bude přibližný vývoj času pomocí $H $ se sekvencí jednodušších operací.
+v případě, že je v počítači s procesorem na více procesorech snadné implementovat čas v každém termínu. Například pokud $H _j $ je Pauli $X _1X_2 $, který vychází z prvních a druhých prvků qubit registru Register `qubits`, může být implementováno jednoduše voláním operace $t, která má `Exp([PauliX,PauliX], t, qubits[1..2])`podpisu. Jak je popsáno dále v simulaci Hamiltonian, jedno řešení pak bude přibližný vývoj času pomocí $H $ se sekvencí jednodušších operací.
 
-$ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \max_j \\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $
+$ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $
 
 kde celé číslo $r > $0 řídí chybu aproximace.
 
 Knihovna modelování dynamického generátoru poskytuje rozhraní pro systematické kódování složitých generátorů z pohledu jednodušších generátorů. Tento popis může být předán do, řekněme, že knihovna simulace implementuje časový vývoj pomocí algoritmu simulace výběru, přičemž mnoho podrobností automaticky postará o.
 
 > [!TIP]
-> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingGenerators).
-> Příklad založený na molekulovém vodíku najdete v ukázkách [**H2SimulationCmdLine**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine) a [**H2SimulationGUI**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationGUI) .
+> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/generators).
+> Příklad založený na molekulovém vodíku najdete v ukázkách [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) a [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Úplný popis generátoru ###
 
@@ -225,7 +225,7 @@ newtype EvolutionGenerator = (EvolutionSet, GeneratorSystem);
 newtype GeneratorSystem = (Int, (Int -> GeneratorIndex));
 ```
 
-První prvek `Int` v řazené kolekci členů ukládá počet podmínek $d $ v Hamiltonian a druhý prvek `(Int -> GeneratorIndex)` je funkce, která mapuje celočíselný index v $\{0, 1,..., d-1\}$ na `GeneratorIndex` uživatelem definovaný typ, který jedinečně identifikuje každý primitivní výraz v Hamiltonian. Všimněte si, že vyjádřením shromažďování podmínek ve Hamiltonian jako funkce, nikoli jako `GeneratorIndex[]`pole, to umožňuje průběžné výpočty `GeneratorIndex`, které jsou obzvláště užitečné při popisu Hamiltonians s velkým počtem podmínek.
+První prvek `Int` v řazené kolekci členů ukládá počet podmínek $d $ v Hamiltonian a druhý prvek `(Int -> GeneratorIndex)` je funkce, která mapuje celočíselný index v $\{0, 1,..., d-1\}$ na `GeneratorIndex` uživatelem definovaný typ, který jednoznačně identifikuje jednotlivé primitivní podmínky v Hamiltonian. Všimněte si, že vyjádřením shromažďování podmínek ve Hamiltonian jako funkce, nikoli jako `GeneratorIndex[]`pole, to umožňuje průběžné výpočty `GeneratorIndex`, které jsou obzvláště užitečné při popisu Hamiltonians s velkým počtem podmínek.
 
 V nenáročném případě nestanovíme konvenci, jaké primitivní výrazy identifikované `GeneratorIndex` jsou snadno simulovatelné. Například primitivní výrazy by mohly být Pauli operátory, jak je popsáno výše, ale mohou být také Fermionic Annihilation a operátory vytváření běžně používané v simulaci přístupnosti. Sám o sobě `GeneratorIndex` nemá význam, protože nepopisuje, jak se má v době, kdy to říká, implementovat časový okruh.
 
@@ -238,13 +238,13 @@ newtype EvolutionSet = (GeneratorIndex -> EvolutionUnitary);
 ### <a name="pauli-operator-generators"></a>Generátory operátorů Pauli ###
 
 Konkrétní a užitečný příklad generátorů jsou Hamiltoniansy, které jsou součtem operátorů Pauli, z nichž každá může s jiným koeficientem.
-$ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} a_j H_j, \end{align} $ $, kde každá $ \hat H_j $ je nyní vykreslena z Pauli skupiny. Pro tyto systémy poskytujeme `PauliEvolutionSet()` typu `EvolutionSet`, který definuje konvenci pro způsob, jakým je možné identifikovat prvek skupiny Pauli a koeficient pomocí `GeneratorIndex`, který má následující signaturu.
+$ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} a_j H_j, \end{align} $ $, kde každá skupina $ \hat H_j $ je nyní vykreslena z Pauli skupiny. Pro tyto systémy poskytujeme `PauliEvolutionSet()` typu `EvolutionSet`, který definuje konvenci pro způsob, jakým je možné identifikovat prvek skupiny Pauli a koeficient pomocí `GeneratorIndex`, který má následující signaturu.
 
 ```qsharp
 newtype GeneratorIndex = ((Int[], Double[]), Int[]);
 ```
 
-V našem kódování první parametr `Int[]` určuje řetězec Pauli, kde $ \hat I\rightarrow $0, $ \hat X\rightarrow $1, $ \hat Y\rightarrow $2 a $ \hat Z\rightarrow $3. Druhý parametr `Double[]` ukládá koeficient Pauli řetězce v Hamiltonian. Všimněte si, že je použit pouze první prvek tohoto pole. Třetí parametr `Int[]` indexuje qubits, na kterém tento řetězec Pauli funguje, a nesmí mít žádné duplicitní prvky. Proto Hamiltonian Term $0,4 \hat X_0 \hat Y_8\hat I_2\hat Z_1 $ může být reprezentován jako
+V našem kódování první parametr `Int[]` určuje řetězec Pauli, kde $ \hat I\rightarrow $0, $ \hat X\rightarrow $1, $ \hat Y\rightarrow $2 a $ \hat Z\rightarrow $3. Druhý parametr `Double[]` ukládá koeficient Pauli řetězce v Hamiltonian. Všimněte si, že je použit pouze první prvek tohoto pole. Třetí parametr `Int[]` indexuje qubits, na kterém tento řetězec Pauli funguje, a nesmí mít žádné duplicitní prvky. Proto Hamiltonian Term $0,4 \hat X_0 \hat Y_8 \hat I_2 \hat Z_1 $ může být reprezentován jako
 
 ```qsharp
 let generatorIndexExample = GeneratorIndex(([1,2,0,3], [0.4]]), [0,8,2,1]);

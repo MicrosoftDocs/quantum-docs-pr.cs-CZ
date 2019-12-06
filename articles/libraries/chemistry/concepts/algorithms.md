@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: 905b03478d453e475fc1e49ea5f88dd0cd2704bc
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 4d1924386eadb427e8f53bc0a177453a341f185f
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184062"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864453"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulace Hamiltonian Dynamics
 
@@ -22,23 +22,23 @@ Tyto tři níže uvedené postupy uvádíme níže a poskytnou konkrétní pří
 
 ## <a name="trottersuzuki-formulas"></a>Trotter – vzorce Suzuki
 Vzorec na pozadí Trotter – vzorce Suzuki jsou jednoduché: vyjádřete Hamiltonian jako součet jednoduchého simulace Hamiltonians a pak přibližný celkový vývoj jako sekvence těchto jednodušších vývojů.
-Konkrétně je potřeba dát $H = \sum_{j = 1} ^ m H_j $ Hamiltonian.
-Pak $ $ e ^ {-i\sum_ {j = 1} ^ m H_j t} = \prod_{j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $ to znamená, že pokud $t \ll $1, bude chyba v této aproximaci zanedbatelná.
+Konkrétně dejte $H = \ sum_ {j = 1} ^ m H_j $ být Hamiltonian.
+Pak $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $ to znamená, že pokud $t \ll $1, bude chyba v této aproximaci zanedbatelná.
 Všimněte si, že pokud $e ^ {-i H} $ byly normální exponenciální, chyba v této aproximaci nebude $O (m ^ 2 t ^ 2) $: by to bylo nula.
-K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ terms not dostávají (*tj.* $H _J H_k \Ne H_k H_j $ všeobecně).
+K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění (*tj.* $H _J H_k \Ne H_k H_j $ všeobecně).
 
 Pokud je $t $ velké, Trotter vzorce Suzuki se dají použít k tomu, aby se tento dynamika přesně simulovaly tím, že se rozbalí do sekvence krátkého časového intervalu.
 Nechť $r $ je počet kroků provedených v čase vývoje.
-Potom máme $ $ e ^ {-i\sum_ {j = 1} ^ m H_j t} = \left (\prod_{j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon > 0 $.
+Potom máme $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon > 0 $.
 
 Přesnější sblížení lze sestavit pomocí sekvence exponenciálních exponenciálních operátorů, aby se chybové výrazy zrušily.
-Nejjednodušší vzorec, symetrický vzorec Trotter nebo rozdělení Strang, má formu $ $ U_1 (t) = \prod_{j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ dá se udělat méně než $ \epsilon $ pro všechny $ \epsilon > 0 $ kliknutím na $ r $ pro horizontální navýšení kapacity $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+Nejjednodušším takový vzorec, symetrický vzorec Trotter nebo rozdělení Strang, má formu $ $ U_1 (t) = \ prod_ {j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ může být menší než $ \epsilon $ pro jakékoli $ \epsilon > 0 $ tak, že vyberete $r $ pro škálování jako $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
 I vyšší pořadí vzorců Trotter lze vytvořit na základě $U _1 $.
-Nejjednodušší je následující vzorec čtvrté objednávky, původně představeno pomocí Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (S_1 t) = e ^ {-iHt} + O (m ^ 5t ^ 5), $ $ WHERE $s _1 = (4-4 ^ {1/3}) ^{-1}$.
+Nejjednodušší je následující vzorec čtvrté objednávky, původně představeno pomocí Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5t ^ 5), $ $ kde $s _1 = (4-4 ^ {1/3}) ^{-1}$.
 Obecně platí, že je možné podobně vytvořit libovolně vyšší pořadí vzorců; Nicméně náklady vyplývající z použití složitějších integrátorů často převažují nad rámec čtvrtého řádu pro většinu praktických problémů.
 
-Aby výše uvedené strategie fungovaly, potřebujeme metodu pro simulaci třídy $e ^ {-iH_j t.
+Aby výše uvedené strategie fungovaly, potřebujeme metodu pro simulaci třídy typu "$e ^ {-iH_j t} $".
 Nejjednodušší rodina Hamiltonians a pravděpodobně je nejužitečnější, kterou bychom mohli použít tady jsou Pauli operátory.
 Operátory Pauli je možné snadno simulovat, protože je možné je diagonální pomocí operací Clifford (což jsou standardní brány ve výpočetním prostředí).
 Po jejich objasnění můžete jejich eigenvalues najít vynásobením parity qubits, na které jednají.
@@ -86,7 +86,7 @@ Náš výchozí bod je [Jordánsko – Wigner kódování](xref:microsoft.quantu
     var qSharpData = jordanWignerEncoding.ToQSharpFormat();
 ```
 
-Tento formát Jordánska – Wigner reprsentation, který je spotřební pro simulace Q #, je uživatelsky definovaný typ `JordanWignerEncodingData`.
+Tento formát Jordánska – Wigner reprezentace, kterou jsou spotřebními algoritmy Q #, je uživatelsky definovaný typ `JordanWignerEncodingData`.
 V rámci Q # se tento formát předává do funkce usnadnění `TrotterStepOracle`, která vrací operátor přibližného vývoje času pomocí Trotter – integrátor Suzuki, kromě dalších parametrů požadovaných pro jeho spuštění.
 
 ```qsharp
@@ -101,7 +101,7 @@ let integratorOrder = 4;
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 
 // Let us now apply a single time-step.
@@ -115,7 +115,7 @@ using(qubits = Qubit[nQubits]){
 }
 ```
 
-Důležité je, že tato implementace používá několik optimalizací popsaných v [simulaci elektronické struktury Hamiltonians s využitím počítačů](https://arxiv.org/abs/1001.3855) s více než jednou a [lepšími algoritmy](https://arxiv.org/abs/1403.1539) vyžadují se qubit natočení a také zkrácení chyb simulace.
+Důležité: Tato implementace používá několik optimalizací popsaných v [simulaci elektronické struktury Hamiltonians s využitím počítačů](https://arxiv.org/abs/1001.3855) s více procesory a [vylepšením](https://arxiv.org/abs/1403.1539) procesorových procesorů pro účely minimalizace počtu požadovaných rotací s jedním qubit, jakož i k omezení chyb simulace.
 
 ## <a name="qubitization"></a>Qubitization
 
@@ -124,8 +124,8 @@ I když qubitization vyžaduje více qubits než Trotter vzorce, metoda přísli
 Z těchto důvodů se stala přizpůsobenou metodou pro simulaci Hamiltonian Dynamics v obecném a pro řešení potíží s elektronickými strukturami, konkrétně.
 
 Na vysoké úrovni to qubitization provádí pomocí následujících kroků.
-Nejdřív dejte $H = \sum_j h_j H_j $ pro každou jednotkovou a Hermitian $H _J $ a $h _J \ GE $0.
-Provedením dvojice odrazů qubitization implementuje operátor, který je ekvivalentní $ $W = e ^ {\Pm i \cos ^{-1}(H/| H | _1)}, $ $ WHERE $ | H | _1 = \sum_j | h_j | $.
+Nejdřív dejte $H = \ sum_j h_j H_j $ pro jednotkové a Hermitian $H _J $ a $h _j \ge $0.
+Provedením dvojice odrazů qubitization implementuje operátor, který je ekvivalentní $ $W = e ^ {\Pm i \cos ^{-1}(H/| H | _1)}, $ $ WHERE $ | H | _1 = \ sum_j | h_j | $.
 Další krok zahrnuje transformaci eigenvalues operátoru průchodu z $e ^ {i\pm \cos ^{-1}(E_k/| h | _1)} $, kde $E _k $ jsou eigenvalues $H $ to $e ^ {-iE_k t} $.
 To je možné dosáhnout použitím celé řady metod transformace hodnot v jednotném provozu, včetně [zpracování signálu](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.010501).
 
@@ -135,26 +135,26 @@ To je důležité, protože umožňuje, aby se spektrální transformace provád
 Na podrobnější úrovni implementace qubitization vyžaduje dvě podrutiny, které poskytují rozhraní pro Hamiltonian.
 Na rozdíl od metod Trotter – Suzuki jsou tyto podrutiny bez klasických procesorů a jejich implementace bude vyžadovat použití logarithmically více qubits, než by bylo nutné pro simulaci založenou na Trotter.
 
-První podprogram počátečních operací, který qubitization používá, se nazývá $ \operatorname{Select} $ a je přislíbena, aby \begin{Equation} \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi}, \end{Equation} kde každá $H _J $ je považována za Hermitian a jednotná.
+První podprogram počátečních operací, který qubitization používá, se nazývá $ \operatorname{Select} $ a je přislíbena, aby \begin{Equation} \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi}, \end{Equation} kde každý $H _j $ se předpokládá jako Hermitian a jednotná.
 I když se to může zdát být omezující, odvolat, že Pauli operátory jsou Hermitian a jednotná, takže aplikace, jako je například, nespadají do této architektury přirozeně.
 Operace $ \operatorname{Select} $, třeba překvapivě, je ve skutečnosti operace reflexe.
-To může být patrné ze skutečnosti, že $ \operatorname{Select} ^ 2 \ KET {j} \ket{\psi} = \ket{j} \ket{\psi} $, protože každá $H _J $ je jednotná a Hermitian a má tedy eigenvalues $ \Pm $1.
+To může být patrné ze skutečnosti, že $ \operatorname{Select} ^ 2 \ KET {j} \ket{\psi} = \ket{j} \ket{\psi} $, protože každá $H _j $ je jednotná a Hermitian a má tedy eigenvalues $ \Pm $1.
 
 Druhá podrutina se nazývá $ \operatorname{Prepare} $.
-Zatímco operace Select poskytuje prostředky pro soudržný přístup k jednotlivým Hamiltonian podmínkám $H _J $ Příprava dílčí rutiny poskytuje metodu pro přístup k koeficientům $h _J $, \begin{Equation} \operatorname{Prepare}\ket{0} = \sum_j \sqrt{\frac{h_j}{ | h | _1}} \ket{j}.
+Zatímco operace Select poskytuje prostředky pro soudržný přístup ke každému Hamiltonian podmínkám $H _j $ přípravná subrutina poskytuje metodu pro přístup k koeficientům $h _j $, \begin{Equation} \operatorname{Prepare}\ket{0} = \ sum_j \sqrt{\frac{h_j} {| H | _1}} \ket{j}.
 \end{Equation} se pak pomocí brány řízených fází vynásobení zobrazuje $ $ \Lambda\ket{0}^ {\otimes n} = \begin{Cases} \-\ket{x} & \Text{if} x = 0 \\\
         \ket{x} & \Text{Otherwise} \end{Cases}.
 $$
 
-Operace $ \operatorname{Prepare} $ se nepoužívá přímo v qubitization, ale místo toho se používá k implementaci reflexe stavu, který $ \operatorname{Prepare} $ vytvoří $ $ \begin{align} R &amp; = 1-2 \ operátor {Prepare} \ket{0}\bra @no_ _t_2_ \operatorname{Prepare} ^{-1} \\\\ &amp; = \operatorname{Prepare} \Lambda \operatorname{Prepare} ^{-1}.
+Operace $ \operatorname{Prepare} $ se nepoužívá přímo v qubitization, ale místo toho se používá k implementaci reflexe o stavu, který $ \operatorname{Prepare} $ vytvoří $ $ \begin{align} R &amp; = 1-2 \ operátor {Prepare} \ket{0}\bra{0} \operatorname{Prepare} ^{-1} \\\\ &amp; = \operatorname{Prepare} \Lambda \operatorname{Prepare} ^{-1}.
 \end{align} $ $
 
 Operátor průchodu $W $, může být vyjádřen v souvislosti s $ \operatorname{Select} $ a $R $ Operations jako $ $ W = \operatorname{Select} R, $ $, které se znovu dají použít k implementaci operátoru, který je ekvivalentní (až do Isometry), do $e ^ {\Pm i \cos ^{-1}(H/| H | _1)} $.
 
 Tyto podrutiny se dají snadno nastavit v Q #.
-Jako příklad zvažte jednoduché qubit příčné Ising Hamiltonian, kde $H = X_1 + X_2 + Z_1 Z_2 $.
+Zvažte například jednoduché qubit příčné Ising Hamiltonian, kde $H = X_1 + X_2 + Z_1 Z_2 $.
 V tomto případě je možné pomocí <xref:microsoft.quantum.canon.multiplexoperations>vyvolat kód Q #, který by implementoval operaci $ \operatorname{Select} $, zatímco operaci $ \operatorname{Prepare} $ lze implementovat pomocí <xref:microsoft.quantum.preparation.preparearbitrarystate>.
-Příklad, který zahrnuje simulaci modelu Hubbard, najdete jako [ukázku Q](https://github.com/Microsoft/Quantum/tree/master/Samples/src/HubbardSimulation).
+Příklad, který zahrnuje simulaci modelu Hubbard, najdete jako [ukázku Q](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
 
 Ruční určení těchto kroků pro jakékoli problémy chemického složení by vyžadovalo mnohem úsilí, které se vyhne použití knihovny složení.
 Podobně jako u algoritmu simulace Trotter-Suzuki výše se `JordanWignerEncodingData` předává do funkce usnadnění `QubitizationOracle`, která vrací operátor Pass-kromě dalších parametrů požadovaných pro jeho spuštění.
@@ -165,7 +165,7 @@ let qSharpData = ...
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/oneNorm`, where oneNorm is the sum of absolute values of all probabilities in state prepared by `Prepare`.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  QubitizationOracle (qSharpData, stepSize, integratorOrder);
 
 // Let us now apply a single step of the quantum walk.

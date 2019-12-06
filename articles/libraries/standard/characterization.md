@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: d77085aa8aa83c18858056bab1858d990efdb36e
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 1eb48da9d4ae2a730019e2707dcb2c69b998491e
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185558"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864368"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -30,7 +30,7 @@ Tyto knihovny musí proto prolnout klasické i výpočetní zpracování informa
 ## <a name="iterative-phase-estimation"></a>Odhad iterační fáze ##
 
 Zobrazení doby plnění v programování v souvislosti s popisem doby použitelnosti naznačuje užitečnou alternativu k odhadu fáze.
-To znamená, že místo přípravy $n $-qubit zaregistrovat, aby obsahovala binární reprezentaci fáze jako ve fázi odhadu doby platnosti, můžeme zobrazit odhad fáze jako proces, podle kterého se *klasický* agent učí vlastnosti systému v inventáři prostřednictvím jednotek.
+To znamená, že místo přípravy $n $-qubit registrovat, aby obsahovala binární reprezentaci fáze ve fázi odhadu doby plnění, můžeme zobrazit odhad fáze jako proces, při kterém se *klasický* agent seznámí s vlastnostmi systému v inventáři pomocí měření.
 V případě použití fáze Kickback se podíváme na velká a malá písmena, aby se v případě neznámého úhlu přepnuly aplikace černého pole na rotace. tím se ale změří ancilla qubit, který v každém kroku otočíte hned po otočení.
 To má výhodu, že pro provedení fáze kickbacku, která je popsaná v případě případu, potřebujeme jenom jeden další qubit, jak se pak postupně učí fáze z výsledků měření v jednotlivých krocích.  
 Každá z metod navrhovaných níže používá jinou strategii pro navrhování experimentů a různé metody zpracování dat pro učení fáze.  Každá z nich má jedinečné výhody od dodržování přísných chybových vazeb, k schopnostem začlenit předchozí informace, tolerovat chyby nebo spouštět na paměťově limitted klasických počítačích.
@@ -39,7 +39,7 @@ V diskuzi za iterativní fázi odhad budeme uvažovat o $U $, který je zadaný 
 Jak je popsáno v části pro Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q # Canon odkazuje na operace <xref:microsoft.quantum.oracles.discreteoracle> uživatelsky definovaného typu, který je definovaný typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Pokud `U : DiscreteOracle`, `U(m)` implementuje $U ^ m $ pro `m : Int`.
 
-V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že připraví auxillary qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ket{\phi} $.  
+V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že připraví auxillary qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ KET {\ fí} $.  
 Pak se použije řízená aplikace `U(m)`, která připraví stav $ \left (R\_1 (m \phi) \ket{+} \right) \ket{\phi} $.
 Stejně jako u případných jader je účinek kontrolované aplikace `U(m)` Oracle přesně stejný jako účinek použití $R _1 $ pro neznámou fázi na $ \ket{+} $, takže můžeme jednodušším způsobem popsat účinky $U $.
 Volitelně algoritmus poté otočí ovládací prvek qubit pomocí $R _1 (-m\theta) $ k získání stavu $ \ket{\psi} = \left (R\_1 (m [\phi-\theta]) \ket{+} \right) \ket{\phi} $ $.
@@ -47,17 +47,17 @@ Auxillary qubit, který se používá jako ovládací prvek pro `U(m)`, se pak z
 
 V tomto okamžiku je rekonstrukce fáze z hodnot `Result` získaných pomocí iterativní fáze odhadu klasický problém při odvozování.
 Hledání hodnoty $m $, která získala získané informace, s ohledem na pevnou odvozenou metodu, je jednoduše problémem ve statistice.
-Zdůrazňujeme to tak, že stručně popisuje odhad iterativní fáze na teoretickou úroveň v parametru bayesovského rozhodování, který provede odhad formalit, než budete pokračovat v popisu statistických algoritmů, které jsou k dispozici v Q # Canon pro řešení tohoto klasického odvození. řešení.
+Zdůrazňujeme to stručně popisující odhad iterativní fáze na teoretické úrovni v parametru bayesovského rozhodování, který se odhaduje formalitou před tím, než budete pokračovat v popisu statistických algoritmů, které jsou k dispozici v Q # Canon pro řešení problému s klasickým odvozem.
 
 ### <a name="iterative-phase-estimation-without-eigenstates"></a>Odhad iterační fáze bez Eigenstates ###
 
 Pokud je k dispozici vstupní stav, který není eigenstate, což znamená, že pokud $U (m) \ket{\phi\_j} = e ^ {im\phi\_j} $, proces odhadu fáze se nedeterministickém způsobem přesměruje na stav s jednou energií eigenstate.  Eigenstate, na který se nakonec konverguje, je eigenstate, který nejpravděpodobněji vyprodukuje pozorovanou `Result`.
 
-Konkrétně jeden krok PE provádí následující nejednotnou transformaci stavu \begin{align} \sum_j \sqrt{\Pr (\phi\_j)} \ket{\phi\_j} \mapsto \sum\_j\frac {\ sqrt {\ PR (\phi\_j)} \sqrt{\Pr (\text{Result} | \ fí\_j)} \ket{\phi\_j}} {\sqrt{\Pr (\phi\_j) \sum\_j \Pr (\text{Result} | \phi\_j)}}.
-\end{align} v případě, že se tento proces projde více hodnotami `Result`, eigenstates, které nemají maximální hodnoty $ \prod_k\Pr (\text{Result}\_k | \phi\_j) $, budou exponenciálně potlačeny.
+Konkrétně jeden krok PE provádí následující nejednotnou transformaci stavu \begin{align} \ sum_j \sqrt{\Pr (\phi\_j)} \ket{\phi\_j} \mapsto \sum\_j\frac {\ sqrt {\ PR (\phi\_j)} \sqrt{\Pr (\text{Result} | \phi\_j)} \ket{\phi\_j}} {\sqrt{\Pr (\phi\_j) \sum\_j \Pr (\text{Result} | \phi\_j)}}.
+\end{align} v případě, že se tento proces projde více hodnotami `Result`, eigenstates, které nemají maximální hodnoty $ \ prod_k \Pr (\text{Result}\_k | \phi\_j) $, budou exponenciálně potlačeny.
 V důsledku toho proces odvození bude v úmyslu v případě, že jsou experimenty zvoleni správně, sblížen do stavů s jediným eigenvalue.
 
-Bayes ' věta dále navrhuje, že stav, který je výsledkem odhadu fáze, je zapsán ve tvaru \begin{align} \frac{\sqrt{\Pr (\phi\_j)} \sqrt{\Pr (\text{Result} | \phi\_j)} \ket{\phi\_j}} {\sqrt{\Pr (\phi\_j) \sum\_j \Pr (\text{Result} | \phi\_j)}} = \sum_j \sqrt{\Pr (\phi\_j | \text{Result})} \ket{\phi\_j}.
+Bayes ' věta dále navrhuje, že stav, který je výsledkem odhadu fáze, je zapsán ve tvaru \begin{align} \frac{\sqrt{\Pr (\phi\_j)} \sqrt{\Pr (\text{Result} | \phi\_j)} \ket{\phi\_j}} {\sqrt{\Pr (\phi\_j) \sum\_j \Pr (\text{Result} | \phi\_j)} = \ sum_j \sqrt{\Pr (\phi\_j | \text{Result})} \ket{\phi\_j}.
 \end{align} sem $ \Pr (\phi\_j | \text{Result}) $ může být interpretted jako pravděpodobnost, že by jedna z předpokladů znamenala daný eigenstates:
 
 1. znalosti stavu nestavení před měřením,
@@ -71,7 +71,7 @@ Odhad fáze z tohoto důvodu se zobrazí v rámci řady algoritmů doby, které 
 ### <a name="bayesian-phase-estimation"></a>Odhad fáze bayesovského rozhodování ###
 
 > [!TIP]
-> Další podrobnosti o odhadu fáze bayesovského rozhodování v praxi najdete v ukázce [**PhaseEstimation**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/PhaseEstimation) .
+> Další podrobnosti o odhadu fáze bayesovského rozhodování v praxi najdete v ukázce [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) .
 
 Odhad fáze bayesovského rozhodování je jednoduchý.
 Shromáždíte statistiku měření z protokolu odhadu fáze a potom výsledky zpracujete pomocí odvození bayesovského rozhodování a zadáním odhadu parametru.
@@ -87,10 +87,10 @@ Pravděpodobnost pozorování `Zero` pro [`PauliX` měření](xref:microsoft.qua
 Následující tradiční klasická terminologie volá $ \eqref{EQ: fáze-Est-pravděpodobnost} $ *pravděpodobnost* pro odhad iterativní fáze.
 
 Zjistili jsme `Result` z pravděpodobnosti odhadu iterační fáze, můžeme pak použít pravidlo Bayes a určit, co by se mělo domnívat, že se má fáze sledovat.
-Betonně \begin{Equation} \Pr (\phi | d) = \frac{\Pr (d | \phi) \Pr (\phi)} {\int \Pr (d | \phi) \Pr (\phi) {\mathrm d} \phi} \Pr (\phi), \end{Equation} kde $d \in \\{\texttt{Zero}, \texttt{One}\\} $ je `Result`a WHERE $ \Pr (\phi) $ Popisuje naše předchozí přesvědčení o $ \phi $.
+Betonně \begin{Equation} \Pr (\phi | d) = \frac{\Pr (d | \phi) \Pr (\phi)} {\int \Pr (d | \phi) \Pr (\phi) {\mathrm d} \phi} \Pr (\phi), \end{Equation} kde $d \in \\{\texttt{Zero}, \texttt{One}\\} $ je `Result`a WHERE $ \Pr (\phi) $ popisuje náš předchozí přesvědčení o $ \phi $.
 To pak provede iterativní povýšení iterativní fáze odhadu, jako bezprostřední distribuce $ \Pr (\phi | d) $ popisuje naše přesvědčení hned po našem sledování dalšího `Result`.
 
-V jakémkoli okamžiku tohoto postupu můžeme ohlásit fázi $ \hat{\phi} $ odvozenou klasickým kontrolérem jako \begin{Equation} \hat{\phi} \mathrel{: =} \expect [\phi | \Text{data}] = \int \phi \Pr (\phi | \Text{data}) {\mathrm d} \phi, \end{Equation}, kde $ \ text {data} $ představuje celý záznam všech získaných `Result`ch hodnot.
+V jakémkoli okamžiku tohoto postupu můžeme ohlásit fázi $ \hat{\phi} $ odvozenou klasickým kontrolérem jako \begin{Equation} \hat{\phi} \mathrel{: =} \expect [\phi | \Text{data}] = \int \phi \Pr (\phi | \Text{data}) {\mathrm d} \phi, \end{Equation} kde $ \Text{data} $ představuje celý záznam všech získaných hodnot `Result`.
 
 Přesné odvození bayesovského rozhodování je v praxi nevolatelné.
 Pokud se chcete podívat na tento příklad, chtěli bychom se naučit $n $-bitovou proměnnou $x $.
@@ -104,12 +104,12 @@ Maximálně *dodatečná* bayesovského rozhodování rekonstrukce odhadu fáze 
 
 Jedním z takových příkladů s efektivním krokem po zpracování klasického zpracování je [spolehlivý algoritmus odhadu fáze](https://arxiv.org/abs/1502.02677)s jeho podpisem a vstupy uvedenými nahoře. Předpokládá, že vstupní $U $ se zabalí jako `DiscreteOracle` typ, a proto se jenom dotazují jenom celá čísla řízených $U $. Pokud je stav vstupu v registru `Qubit[]` eigenstate $U \ket{\psi} = e ^ {i\phi} \ KET {\ psí} $, algoritmus stabilní fáze odhadování vrátí odhad $ \hat{\phi}\in [-\pi, \pi) $ $ \phi $ jako `Double`.
 
-Nejdůležitější funkcí odhadu robustní fáze, která je sdílena s většinou dalšími užitečnými variantami, je, že kvalita rekonstrukce $ \hat{\phi} $ je v některém smyslu Heisenberg – omezeno. To znamená, že pokud je odchylka $ \hat{\phi} $ od hodnoty true $ \sigma $, pak $ \sigma $ se škáluje v poměru k celkovému počtu dotazů $Q $ provedených na řízená – $U $, tj. $ \sigma = \mathcal{O} (1/Q) $. Nyní se definice odchylek liší mezi různými algoritmy odhadu. V některých případech to může znamenat, že s minimálně $ \mathcal{O} (1) $ pravděpodobností je chyba odhadu $ | \hat{\phi}-\phi |\_\circ\le \sigma $ u některé cyklické míry $ \circ $. U stabilního odhadu fáze je odchylka přesnější odchylkou $ \sigma ^ 2 = \mathbb{E}\_\hat{\phi} [(\mod\_{2 \ PI} (\hat{\phi}-\phi + \pi)-\pi) ^ 2] $, pokud rozbalíme pravidelné fáze do jednoho omezeného intervalu $ (-\pi, \pi] $. Směrodatná odchylka v robustním odhadu fáze je přesnější a splňuje hodnoty nerovnosti $ $ \begin{align} 2,0 \pi/Q \le \sigma \le 2 \ pi/2 ^ {n} \le 10.7 \ PI/Q, \end{align} $ $, kde dolní mez dosáhla limitu limitně velkých $Q $ a horní vázání je zaručeno i pro malé vzorky velikosti.  Všimněte si, že $n $ vybrané `bitsPrecision` vstupu, který implicitně definuje $Q $.
+Nejdůležitější funkcí odhadu robustní fáze, která je sdílena s většinou dalšími užitečnými variantami, je, že kvalita rekonstrukce $ \hat{\phi} $ je v některém smyslu Heisenberg – omezeno. To znamená, že pokud je odchylka $ \hat{\phi} $ od hodnoty true $ \sigma $, pak $ \sigma $ se škáluje v poměru k celkovému počtu dotazů $Q $ provedených na řízená – $U $, tj. $ \sigma = \mathcal{O} (1/Q) $. Nyní se definice odchylek liší mezi různými algoritmy odhadu. V některých případech to může znamenat, že s minimálně $ \mathcal{O} (1) $ pravděpodobností je chyba odhadu $ | \hat{\phi}-\phi |\_\circ\le \sigma $ u některé cyklické míry $ \circ $. U stabilního odhadu fáze je odchylka přesnější odchylkou $ \sigma ^ 2 = \mathbb{E}\_\hat{\phi} [(\mod\_{2 \ PI} (\hat{\phi}-\phi + \pi)-\pi) ^ 2] $, pokud rozbalíme pravidelné fáze do jednoho omezeného intervalu $ (-\pi, \pi] $. Směrodatná odchylka v robustním odhadu fáze je přesnější a splňuje nerovnosti $ $ \begin{align} 2,0 \pi/Q \le \sigma \le 2 \ pi/2 ^ {n} \le 10.7 \ PI/Q, \end{align} $ $, kde spodní mez dosáhla limitu maximálního množství $Q $, a horní mez je zaručená i pro malá velikost vzorků.  Všimněte si, že $n $ vybrané `bitsPrecision` vstupu, který implicitně definuje $Q $.
 
 K dalším důležitým podrobnostem patří například malý počet režijních nákladů jenom $1 $ ancilla qubit, nebo že postup není adaptivní, což znamená, že požadovaná posloupnost experimentů na základě doby nezávisí na výsledcích mezilehlého měření. V tomto a nadcházejících příkladech, kde je důležité zvolit algoritmus odhadu fáze, by měl jedna z nich odkazovat na dokumentaci, jako je @"microsoft.quantum.canon.robustphaseestimation", a na odkazované publikace, kde najdete další informace a jejich implementaci.
 
 > [!TIP]
-> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine), [vzorek **SimpleIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/SimpleIsing)a [ukázkový **model Hubbard** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/HubbardSimulation).
+> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), [vzorek **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)a [ukázkový **model Hubbard** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Kontinuální Oracle ###
@@ -121,7 +121,7 @@ Jedná se o slabší příkaz, než v samostatném případě, protože je možn
 Eigenstate $ \ket{\phi} $ of $H $, jako je $H \ket{\phi} = \phi \ket{\phi} $, pak také eigenstate $U (t) $ pro všechny $t $, \begin{Equation} U (t) \ket{\phi} = e ^ {i \phi t} \ket{\phi}.
 \end{equation}
 
-Přesnou stejnou analýzu, kterou popisuje [odhad fáze bayesovského rozhodování](#bayesian-phase-estimation) , lze použít a funkce pravděpodobnosti je pro tento obecnější model Oracle naprosto stejná: $ $ \Pr (\texttt{Zero} | \phi; t, \theta) = \cos ^ 2 \ Left (\frac{t [\phi-\theta]} @no__ t_1_ \right).
+Stejnou analýzu, kterou popisuje [odhad fáze bayesovského rozhodování](#bayesian-phase-estimation) , lze použít a funkce pravděpodobnosti je pro tento obecnější model Oracle naprosto stejná: $ $ \Pr (\texttt{Zero} | \phi; t, \theta) = \cos ^ 2 \ Left (\frac{t [\phi-\theta]}{2}\right).
 Pokud je navíc $U $ Simulace dynamického generátoru, stejně jako v případě [simulace Hamiltonian](xref:microsoft.quantum.libraries.applications#hamiltonian-simulation), budeme interpretovat $ \phi $ jako energii.
 Proto použití fáze odhadu se souvislými dotazy nám umožní zjistit simulované [energetická spektrum molekul](https://arxiv.org/abs/quant-ph/0604193), [materiálů](https://arxiv.org/abs/1510.03859) nebo [polí teorie](https://arxiv.org/abs/1111.3633v2) bez nutnosti narušit náš výběr experimentů tím, že vyžaduje, $t $ jako celé číslo.
 
