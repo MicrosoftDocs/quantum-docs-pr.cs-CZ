@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 90fd8ad455702ef4f962e1b3291c650eb0afea2e
-ms.sourcegitcommit: 87dd450cea5bcac76a42f0bdc224bfae712efdde
+ms.openlocfilehash: c709f1eb130d37f930ffc4acc4bd663b8b8ba24a
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74153325"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863159"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -20,6 +20,18 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01019120501"></a>Verze 0.10.1912.0501
+
+*Datum vydání: 5. prosince 2019*
+
+Tato verze obsahuje následující:
+
+- Nový atribut Test pro test jednotek Q#, viz aktualizovaná dokumentace k API [zde](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizovaný průvodce testováním a laděním [zde](xref:microsoft.quantum.techniques.testing-and-debugging)
+- Přidání trasování zásobníku v případě chyby spuštění programu v jazyku Q#
+- Podpora zarážek v editoru Visual Studio Code vzhledem k aktualizaci [rozšíření OmniSharp C# Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01019111607"></a>Verze 0.10.1911.1607
 
@@ -205,7 +217,7 @@ Tato verze obsahuje následující:
 
 - Přidává podporu pro Jupyter Notebook, která nabízí skvělý způsob, jak se o jazyku Q# dozvědět víc.  [Podívejte se na nové ukázky Jupyter Notebook a naučte se psát vlastní poznámkové bloky](xref:microsoft.quantum.install). 
 
-- Přidává do knihovny Quantum Canon aritmetiku celočíselné sčítačky.  Projděte si také Jupyter Notebook, který [popisuje způsob použití nových celočíselných sčítaček](https://github.com/Microsoft/Quantum/blob/master/Samples/src/Arithmetic/Adder%20Example.ipynb).
+- Přidává do knihovny Quantum Canon aritmetiku celočíselné sčítačky.  Projděte si také Jupyter Notebook, který [popisuje způsob použití nových celočíselných sčítaček](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
 
 - Oprava chyby pro problém DumpRegister hlášených komunitou ([č. 148](https://github.com/Microsoft/Quantum/issues/148)).
 

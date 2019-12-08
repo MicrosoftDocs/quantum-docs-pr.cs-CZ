@@ -73,7 +73,15 @@
 - uid: microsoft.quantum.core
   name: Microsoft.Quantum.Core
   items:
-    - name: Length
+    - name: Atribut
+      uid: microsoft.quantum.core.attribute
+    - name: Výchozí
+      uid: microsoft.quantum.core.default
+    - name: Zastaralé
+      uid: microsoft.quantum.core.deprecated
+    - name: EntryPoint
+      uid: microsoft.quantum.core.entrypoint
+    - name: Délka
       uid: microsoft.quantum.core.length
     - name: RangeEnd
       uid: microsoft.quantum.core.rangeend
@@ -106,6 +114,8 @@
       uid: microsoft.quantum.diagnostics.dumpmachine
     - name: DumpRegister
       uid: microsoft.quantum.diagnostics.dumpregister
+    - name: Test
+      uid: microsoft.quantum.diagnostics.test
     - name: AllEqualityFactB
       uid: microsoft.quantum.diagnostics.allequalityfactb
     - name: EqualityFactB
@@ -144,7 +154,7 @@
       uid: microsoft.quantum.extensions.bitwise.and
     - name: Not
       uid: microsoft.quantum.extensions.bitwise.not
-    - name: Or
+    - name: Nebo
       uid: microsoft.quantum.extensions.bitwise.or
     - name: Parity
       uid: microsoft.quantum.extensions.bitwise.parity
@@ -217,7 +227,7 @@
       uid: microsoft.quantum.extensions.math.floor
     - name: IEEERemainder
       uid: microsoft.quantum.extensions.math.ieeeremainder
-    - name: Log
+    - name: Protokol
       uid: microsoft.quantum.extensions.math.log
     - name: Log10
       uid: microsoft.quantum.extensions.math.log10
@@ -301,7 +311,7 @@
       uid: microsoft.quantum.intrinsic.m
     - name: Measure
       uid: microsoft.quantum.intrinsic.measure
-    - name: Message
+    - name: Zpráva
       uid: microsoft.quantum.intrinsic.message
     - name: R
       uid: microsoft.quantum.intrinsic.r
@@ -309,9 +319,9 @@
       uid: microsoft.quantum.intrinsic.r1
     - name: R1Frac
       uid: microsoft.quantum.intrinsic.r1frac
-    - name: Random
+    - name: Náhodné
       uid: microsoft.quantum.intrinsic.random
-    - name: Reset
+    - name: Resetovat
       uid: microsoft.quantum.intrinsic.reset
     - name: ResetAll
       uid: microsoft.quantum.intrinsic.resetall
@@ -329,9 +339,9 @@
       uid: microsoft.quantum.intrinsic.swap
     - name: T
       uid: microsoft.quantum.intrinsic.t
-    - name: X
+    - name: ×
       uid: microsoft.quantum.intrinsic.x
-    - name: 'Y'
+    - name: Ano
       uid: microsoft.quantum.intrinsic.y
     - name: Z
       uid: microsoft.quantum.intrinsic.z
@@ -370,7 +380,7 @@
       uid: microsoft.quantum.math.floor
     - name: IEEERemainder
       uid: microsoft.quantum.math.ieeeremainder
-    - name: Log
+    - name: Protokol
       uid: microsoft.quantum.math.log
     - name: Log10
       uid: microsoft.quantum.math.log10
@@ -486,9 +496,9 @@
       uid: microsoft.quantum.math.lg
     - name: LogOf2
       uid: microsoft.quantum.math.logof2
-    - name: Max
+    - name: Maximum
       uid: microsoft.quantum.math.max
-    - name: Min
+    - name: Minimum
       uid: microsoft.quantum.math.min
     - name: MinusC
       uid: microsoft.quantum.math.minusc
@@ -585,7 +595,7 @@
       uid: microsoft.quantum.primitive.m
     - name: Measure
       uid: microsoft.quantum.primitive.measure
-    - name: Message
+    - name: Zpráva
       uid: microsoft.quantum.primitive.message
     - name: MultiX
       uid: microsoft.quantum.primitive.multix
@@ -595,9 +605,9 @@
       uid: microsoft.quantum.primitive.r1
     - name: R1Frac
       uid: microsoft.quantum.primitive.r1frac
-    - name: Random
+    - name: Náhodné
       uid: microsoft.quantum.primitive.random
-    - name: Reset
+    - name: Resetovat
       uid: microsoft.quantum.primitive.reset
     - name: ResetAll
       uid: microsoft.quantum.primitive.resetall
@@ -615,9 +625,9 @@
       uid: microsoft.quantum.primitive.swap
     - name: T
       uid: microsoft.quantum.primitive.t
-    - name: X
+    - name: ×
       uid: microsoft.quantum.primitive.x
-    - name: 'Y'
+    - name: Ano
       uid: microsoft.quantum.primitive.y
     - name: Z
       uid: microsoft.quantum.primitive.z
@@ -759,7 +769,7 @@
       uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
     - name: RippleCarryAdderTTK
       uid: microsoft.quantum.arithmetic.ripplecarryadderttk
-    - name: Sum
+    - name: Součet
       uid: microsoft.quantum.arithmetic.sum
     - name: AddConstantFxP
       uid: microsoft.quantum.arithmetic.addconstantfxp
@@ -816,9 +826,9 @@
 - uid: microsoft.quantum.arrays
   name: Microsoft.Quantum.Arrays
   items:
-    - name: All
+    - name: Vše
       uid: microsoft.quantum.arrays.all
-    - name: Any
+    - name: Všechny
       uid: microsoft.quantum.arrays.any
     - name: ConstantArray
       uid: microsoft.quantum.arrays.constantarray
@@ -850,7 +860,7 @@
       uid: microsoft.quantum.arrays.padded
     - name: Partitioned
       uid: microsoft.quantum.arrays.partitioned
-    - name: Rest
+    - name: REST
       uid: microsoft.quantum.arrays.rest
     - name: Reversed
       uid: microsoft.quantum.arrays.reversed
@@ -860,9 +870,13 @@
       uid: microsoft.quantum.arrays.sequencel
     - name: Subarray
       uid: microsoft.quantum.arrays.subarray
-    - name: Tail
+    - name: Swapped
+      uid: microsoft.quantum.arrays.swapped
+    - name: Koncová část
       uid: microsoft.quantum.arrays.tail
-    - name: Zip
+    - name: TupleArrayAsNestedArray
+      uid: microsoft.quantum.arrays.tuplearrayasnestedarray
+    - name: ZIP
       uid: microsoft.quantum.arrays.zip
     - name: Zip3
       uid: microsoft.quantum.arrays.zip3
@@ -923,6 +937,14 @@
       uid: microsoft.quantum.canon.applymulticontrolledc
     - name: ApplyMultiControlledCA
       uid: microsoft.quantum.canon.applymulticontrolledca
+    - name: ApplyOpRepeatedlyOver
+      uid: microsoft.quantum.canon.applyoprepeatedlyover
+    - name: ApplyOpRepeatedlyOverA
+      uid: microsoft.quantum.canon.applyoprepeatedlyovera
+    - name: ApplyOpRepeatedlyOverC
+      uid: microsoft.quantum.canon.applyoprepeatedlyoverc
+    - name: ApplyOpRepeatedlyOverCA
+      uid: microsoft.quantum.canon.applyoprepeatedlyoverca
     - name: ApplyPauli
       uid: microsoft.quantum.canon.applypauli
     - name: ApplyPauliFromBitString
@@ -953,6 +975,14 @@
       uid: microsoft.quantum.canon.applyripplecarrycomparatorbe
     - name: ApplyRippleCarryComparatorLE
       uid: microsoft.quantum.canon.applyripplecarrycomparatorle
+    - name: ApplySeriesOfOps
+      uid: microsoft.quantum.canon.applyseriesofops
+    - name: ApplySeriesOfOpsA
+      uid: microsoft.quantum.canon.applyseriesofopsa
+    - name: ApplySeriesOfOpsC
+      uid: microsoft.quantum.canon.applyseriesofopsc
+    - name: ApplySeriesOfOpsCA
+      uid: microsoft.quantum.canon.applyseriesofopsca
     - name: ApplyToEach
       uid: microsoft.quantum.canon.applytoeach
     - name: ApplyToEachA
@@ -1051,7 +1081,7 @@
       uid: microsoft.quantum.canon.assertresultequal
     - name: BigEndianToLittleEndian
       uid: microsoft.quantum.canon.bigendiantolittleendian
-    - name: Bind
+    - name: Vytvořit vazbu
       uid: microsoft.quantum.canon.bind
     - name: BindA
       uid: microsoft.quantum.canon.binda
@@ -1089,7 +1119,7 @@
       uid: microsoft.quantum.canon.cnotchain
     - name: CNOTChainTarget
       uid: microsoft.quantum.canon.cnotchaintarget
-    - name: Compose
+    - name: Vytvořit
       uid: microsoft.quantum.canon.compose
     - name: ConjugatedBy
       uid: microsoft.quantum.canon.conjugatedby
@@ -1119,7 +1149,7 @@
       uid: microsoft.quantum.canon.cz
     - name: DecomposeIntoTimeStepsCA
       uid: microsoft.quantum.canon.decomposeintotimestepsca
-    - name: Delay
+    - name: Zpoždění
       uid: microsoft.quantum.canon.delay
     - name: DelayA
       uid: microsoft.quantum.canon.delaya
@@ -1141,7 +1171,7 @@
       uid: microsoft.quantum.canon.expmod
     - name: ExtendedGCD
       uid: microsoft.quantum.canon.extendedgcd
-    - name: Filter
+    - name: Filtr
       uid: microsoft.quantum.canon.filter
     - name: ForAll
       uid: microsoft.quantum.canon.forall
@@ -1153,7 +1183,7 @@
       uid: microsoft.quantum.canon.gcd
     - name: HY
       uid: microsoft.quantum.canon.hy
-    - name: Ignore
+    - name: Ignorovat
       uid: microsoft.quantum.canon.ignore
     - name: InPlaceXorBE
       uid: microsoft.quantum.canon.inplacexorbe
@@ -1183,7 +1213,7 @@
       uid: microsoft.quantum.canon.iteratethroughcartesianproduct
     - name: LittleEndianToBigEndian
       uid: microsoft.quantum.canon.littleendiantobigendian
-    - name: Map
+    - name: Mapa
       uid: microsoft.quantum.canon.map
     - name: MapIndex
       uid: microsoft.quantum.canon.mapindex
@@ -1231,6 +1261,8 @@
       uid: microsoft.quantum.canon.pad
     - name: PauliFromBitString
       uid: microsoft.quantum.canon.paulifrombitstring
+    - name: PermuteQubits
+      uid: microsoft.quantum.canon.permutequbits
     - name: PNormalize
       uid: microsoft.quantum.canon.pnormalize
     - name: PositiveIntFromBoolArr
@@ -1395,7 +1427,7 @@
       uid: microsoft.quantum.errorcorrection.measurestabilizergenerators
     - name: QECC
       uid: microsoft.quantum.errorcorrection.qecc
-    - name: Recover
+    - name: Zotavit
       uid: microsoft.quantum.errorcorrection.recover
     - name: RecoverCSS
       uid: microsoft.quantum.errorcorrection.recovercss
@@ -1480,7 +1512,7 @@
       uid: microsoft.quantum.logical.notequall
     - name: NotEqualR
       uid: microsoft.quantum.logical.notequalr
-    - name: Or
+    - name: Nebo
       uid: microsoft.quantum.logical.or
     - name: Xor
       uid: microsoft.quantum.logical.xor
