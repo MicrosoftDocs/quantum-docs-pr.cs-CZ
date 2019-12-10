@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.qsharp
-ms.openlocfilehash: 3fd288439c7db7f939240b4388c9cdb114b6535c
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: e04d72bafe390ff5c79af408db1d9400754b06ce
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73529975"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864283"
 ---
 # <a name="what-is-q"></a>Co je Q#?
 
@@ -25,12 +25,11 @@ Programovací jazyk Q# přináší intuitivní sadu typů, operací a logických
 
 V počátcích kvantových výpočtů se algoritmy vizualizovaly ve formě schémat, podobně jako u schémat obvodů v klasických výpočtech.  I když byl při výzkumu kvantových výpočtů řadu let užitečný model obvodů, domníváme se v Microsoftu, že vývojáři můžou jít ještě dál, než jim umožňují kvantové obvody, a vyvíjet kvantové algoritmy a aplikace s použitím jazyka Q#. Jazyk Q# byl vytvořen tak, aby využíval znalosti získané desetiletími vývoje klasického softwaru a umožňoval kvantovým vývojářům pracovat s funkcemi jazyka vysoké úrovně cílenými na kvantové výpočty.
 
-
 ## <a name="how-does-q-work"></a>Jak jazyk Q# funguje?
 
 Jedním ze základních stavebních bloků jazyka Q# je typ `Qubit`, který není možné zkopírovat ani k němu přistupovat přímo – stejně jako u skutečného qubitu. Místo toho ho můžeme změřit a uložit výsledek měření do proměnné `Result`, což je typ v jazyku Q#, který může mít dvě hodnoty: `Zero` a `One`. Konstrukty jako tento zaručují, že algoritmy vždy respektují zákony o kvantové fyziky a na kvantových počítačích nebo simulátorech můžou běžet správně.
 
-Jazyk Q# obsahuje i klasické funkce logiky, jako jsou podmíněné výrazy nebo cykly s drobnými odlišnostmi, díky nimž je zajištěno dodržování všech kvantových pravidel. Například omezením způsobu provádění smyček, aby bylo zajištěno, že dojde ke kvantovým operacím.
+Jazyk Q# obsahuje i klasické funkce logiky, jako jsou podmíněné výrazy nebo cykly s drobnými odlišnostmi, díky nimž je zajištěno dodržování všech kvantových pravidel. Například omezení způsobu spouštění smyček, aby se zajistilo, že kvantové operace se nevolají uvnitř funkcí, které mohou obsahovat jenom deterministické klasické subrutiny.
 
 Programy v jazyku Q# jsou často sdružené s hostitelským programem napsaným v C# nebo Pythonu. Tím je umožněno pohodlné uspořádání klasického a kvantového kódu. Kromě podpory jazyků, jako je C# a Python, poskytuje sada QDK podporu pro Jupyter Notebook díky použití jádra IQ# Jupyter.
 
