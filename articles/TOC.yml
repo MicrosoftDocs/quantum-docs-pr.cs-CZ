@@ -18,18 +18,26 @@
           href: overview/how-to-learn-quantum-computing.md
     - name: Studium s využitím kvantových kat
       href: intro-to-katas.md
-- name: Šablony Rychlý start
+- name: Rychlé starty
   items:
     - name: Generátor kvantových náhodných čísel
       href: quickstarts/qrng.md
-    - name: 'Základy kvantových výpočtů s využitím jazyka Q#'
+    - name: 'Základy kvantových výpočtů v Q#'
       href: quickstart.md
     - name: Implementace Groverova vyhledávacího algoritmu
       href: quickstarts/search.md
 - name: Návody
   items:
     - name: Instalace sady QDK
-      href: install-guide/index.md
+      items:
+        - name: Přehled instalace
+          href: install-guide/index.md
+        - name: 'Q# + C#'
+          href: install-guide/csinstall.md
+        - name: 'Q# + Python'
+          href: install-guide/pyinstall.md
+        - name: 'Poznámkové bloky Jupyter v Q#'
+          href: install-guide/qjupyter.md
     - name: Aktualizace sady QDK
       href: install-guide/update.md
     - name: 'Vytvoření projektu v Q#'
