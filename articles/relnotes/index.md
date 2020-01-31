@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: c709f1eb130d37f930ffc4acc4bd663b8b8ba24a
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: c135dacb2fc305fa97874cb4abcf4e2ac489b9e4
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863159"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871613"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -20,6 +20,19 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01020012831"></a>Verze 0.10.2001.2831
+
+*Datum vydání: 29. ledna 2020*
+
+Tato verze obsahuje následující:
+
+- Nový balíček NuGet Microsoft.Quantum.SDK, další podrobnosti najdete v souboru [README](https://github.com/microsoft/qsharp-compiler/blob/master/src/QuantumSdk/README.md)
+- Přidání podpory pro .NET Core 3.1 – důrazně doporučujeme mít nainstalovanou verzi 3.1.100, protože sestavování se staršími verzemi .NET Core SDK může způsobovat problémy
+- Nové transformace kompilátoru dostupné v oboru názvů Microsoft.Quantum.QsCompiler.Experimental
+- Nová funkce pro vystavení vektorů výstupního stavu ve formátu HTML v IQ#
+- Přidání podpory pro EstimateFrequencyA do oboru názvů Microsoft.Quantum.Characterization kvůli Hadamardovu a SWAP testu
+- Obor názvů AmplitudeAmplification teď používá průvodce stylem Q#
 
 ## <a name="version-01019120501"></a>Verze 0.10.1912.0501
 
@@ -512,7 +525,7 @@ Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 - Testy musí být spuštěny v 64bitovém režimu. Pokud testy selžou s výjimkou BadImageFormatException, přejděte do nabídky Test a vyberte Nastavení testu > Výchozí architektura procesoru > x64.
 - Některým testům trvá spuštění dlouhou dobu (až 5 minut v závislosti na vašem počítači). To je normální, protože některé využívají víc než dvacet qubitů. Náš největší test aktuálně běží na 23 qubitech.
 
-#### <a name="samples"></a>Ukázky
+#### <a name="samples"></a>ukázky
 
 - Na některých počítačích můžou některé malé ukázky běžet pomalu, pokud není proměnná prostředí OMP_NUM_THREADS nastavená na 1. Viz také poznámka k verzi v části Simulace.
 
