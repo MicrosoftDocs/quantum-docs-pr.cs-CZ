@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 40b2e7ddf5def6285250dffe130b152429dce1f8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185184"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821078"
 ---
 # <a name="file-structure"></a>Struktura souborů
 
@@ -84,7 +84,7 @@ Každý zdrojový soubor Q # může definovat libovolný počet operací.
 
 Názvy operací musí být v rámci oboru názvů jedinečné a nemusí být v konfliktu s názvy typu a funkce.
 
-Deklarace operací se skládají z klíčového slova `operation`následovaný symbolem, který je název operace, typové řazené kolekce členů definující argumenty operace, dvojtečka `:`, anotace typu, která popisuje typ výsledku operace, Volitelně můžete použít poznámku s charakteristikou operace, levou složenou závorku `{`, tělo deklarace operace a Poslední uzavírací složenou závorku `}`.
+Deklarace operací se skládají z klíčového slova `operation`následovaný symbolem, který představuje název operace, typ řazené kolekce členů definující argumenty operace, dvojtečku `:`, anotaci typu, která popisuje typ výsledku operace, volitelně poznámku s charakteristikou operace, levou složenou závorku `{`, tělo deklarace operace a Poslední uzavírací závorku `}`.
 
 Tělo deklarace operace se skládá buď z výchozí implementace, nebo ze seznamu specializací.
 Výchozí implementaci lze zadat přímo v rámci deklarace, pokud je nutné explicitně zadat pouze implementaci výchozí specializace těla.
@@ -138,7 +138,7 @@ is Ctl + Adj {
 }
 ```
 
-V příkladu výše `adjoint invert;` označuje, že specializace sousednít má být vygenerována vrácením implementace těla a `controlled adjoint invert;` označuje, že řízená specializace, která je řízena, by měla být vygenerována obrácením dané implementace řízená specializace.
+Ve výše uvedeném příkladu `adjoint invert;` označuje, že specializace sousedící-by měla být vygenerována vrácením implementace těla a `controlled adjoint invert;` označuje, že řízená specializace, která je řízena, je vygenerována obrácením dané implementace řízené specializace.
 
 Aby operace podporovala použití `Adjoint` a/nebo `Controlled` funktor, musí být jeho návratový typ nutně `Unit`. 
 
@@ -187,12 +187,12 @@ Pro `body` a `adjoint`by měl být seznam argumentů vždy `(...)`; v případě
 Pokud je nutné explicitně deklarovat jednu nebo více specializací, než je výchozí tělo, musí být implementace pro výchozí tělo zabalena do vhodné deklarace specializace:
 
 ```qsharp
-operation CountOnes(qs: Qubit[]) : Int {
+operation CountOnes(qubits: Qubit[]) : Int {
 
     body (...) // default body specialization
     {
         mutable n = 0;
-        for (q in qs) {
+        for (qubit in qubits) {
             set n += M(q) == One ? 1 | 0;
         }
         return n;
@@ -208,7 +208,7 @@ Je právní určení operace bez souseda; například operace měření nemají 
 Operace podporuje `Adjoint` funktor, pokud jeho deklarace obsahuje implicitní nebo explicitní deklaraci sousední specializace.
 Explicitně deklarovaná řízená specializace typu předpokládá existenci sousedící specializace. 
 
-Pro operaci, jejíž tělo obsahuje smyčky Repeat-do-úspěch, nastavte příkazy, měření, příkazy Return nebo volání jiných operací, které nepodporují `Adjoint` funktor, automatické generování sousední specializace po `invert` nebo @no__ Direktiva t_2_ není možná.
+Pro operaci, jejíž tělo obsahuje smyčky Repeat-do-úspěch, nastavte příkazy, měření, příkazy Return nebo volání jiných operací, které nepodporují `Adjoint` funktor, automatické generování sousední specializace ' po `invert` nebo `auto` direktivy není možné.
 
 ### <a name="controlled"></a>Kontrol
 
@@ -236,7 +236,7 @@ Pro operaci, jejíž tělo obsahuje volání na jiné operace, které nemají ř
 Deklarace operace může být jednoduchá, jak je uvedeno níže, což definuje primitivní operaci Pauli X:
 
 ```qsharp
-operation X (q : Qubit) : Unit
+operation X (qubit : Qubit) : Unit
 is Adj + Ctl {
     body intrinsic;
     adjoint self;
@@ -282,7 +282,7 @@ operation Teleport (source : Qubit, target : Qubit) : Unit {
 Funkce jsou čistě klasickými rutinami v Q #.
 Každý zdrojový soubor Q # může definovat libovolný počet funkcí.
 
-Deklarace funkce se skládá z klíčového slova `function`následovaný symbolem, který je název funkce, typ řazené kolekce členů, anotace typu, která popisuje návratový typ funkce, a blok příkazu, který popisuje implementaci slouží.
+Deklarace funkce se skládá z klíčového slova `function`následovaný symbolem, který je název funkce, typ řazené kolekce členů, anotace typu, která popisuje návratový typ funkce, a blok příkazu, který popisuje implementaci funkce.
 
 Blok příkazů definující funkci musí být uzavřený v `{` a `}` jako jakýkoli jiný blok příkazů.
 
