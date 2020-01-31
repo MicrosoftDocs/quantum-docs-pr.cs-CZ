@@ -7,11 +7,13 @@ summary: >-
   Provede modulární přírůstek qubit registru pomocí celočíselné konstanty.
 
 
-  Poznamenejte si `increment` pomocí, `modulus` pomocí N a celého čísla kódovaného v `target` pomocí y, operace provede následující transformaci: | y ⟩ ↦ | y + a (mod N) ⟩ celá čísla ve formátu Little endian v QFT
+  Poznamenejte si `increment` pomocí $a $, `modulus` $N $ a celého čísla kódovaného `target` $.
+
+  Operace pak provede následující transformaci: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} v \end{align} se ve formátu Little endian kódují.
 remarks: >-
   Předpokládá, že `target` má nejvyšší bit nastavený na hodnotu 0.
 
-  Také předpokládá, že hodnota cíle je menší než N.
+  Také předpokládá, že hodnota cíle je menší než $N $.
 
 
   V diagramu okruhu a vysvětlení, viz obrázek 5 na [stránce 5 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=5).
@@ -20,12 +22,15 @@ input:
   content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
   types:
   - name: increment
+    summary: Celočíselný přírůstek $a $ se přidá do $y $.
     isPrimitive: true
     uid: Int
   - name: modulus
+    summary: Integer $N $, který mods $y + a $.
     isPrimitive: true
     uid: Int
   - name: target
+    summary: Celé číslo $y $ ve formátu Little-endian, který je zakódovaný do `increment` $a $ je přidán do.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -36,11 +41,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- microsoft.quantum.canon.modularincrementle
+- microsoft.quantum.arithmetic.incrementbymodularinteger
 metadata:
-  ms.openlocfilehash: 897e46cca640e714e1f000548ffd3226e8e27fa4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 69240c9ecac0917f8f2a6d1f6a3554cc93269cbd
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219021"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871409"

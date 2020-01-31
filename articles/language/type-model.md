@@ -1,17 +1,17 @@
 ---
 title: 'Typ Q # model | Microsoft Docs'
-description: 'Typ Q # – model'
+description: Model typu Q#
 author: QuantumWriter
 uid: microsoft.quantum.language.type-model
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4e251053d1b8306bf8956314d8099e95c56bce55
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 0aabb144779da301b71ad215c8e975cc29b4dcce
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184742"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871630"
 ---
 # <a name="the-type-model"></a>Model typu
 
@@ -120,7 +120,7 @@ Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singlet
 
 Soubor Q # může definovat nový pojmenovaný typ obsahující jednu hodnotu jakéhokoli právního typu.
 Pro jakýkoli typ řazené kolekce členů `T`můžeme deklarovat nový uživatelsky definovaný typ, který je podtypem `T` pomocí příkazu `newtype`.
-V oboru názvů @"microsoft.quantum.canon" jsou například komplexní čísla definovány jako uživatelsky definovaný typ:
+V oboru názvů @"microsoft.quantum.math" jsou například komplexní čísla definovány jako uživatelsky definovaný typ:
 
 ```qsharp
 newtype Complex = (Double, Double);
@@ -141,7 +141,7 @@ newtype Nested = (Double, (ItemName : Int, String));
 Pojmenované položky mají výhodu, ke kterým lze přistupovat přímo prostřednictvím operátoru přístupu `::`. 
 
 ```qsharp
-function Addition (c1 : Complex, c2 : Complex) : Complex {
+function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
     return Complex(c1::Re + c2::Re, c1::Im + c2::Im);
 }
 ```
@@ -151,7 +151,7 @@ Operátor "Unwrap", `!`umožňuje extrahovat hodnotu obsaženou v uživatelsky d
 Typ takového výrazu "Unwrap" je základní typ uživatelsky definovaného typu. 
 
 ```qsharp
-function PrintMsg (value : Nested) : Unit {
+function PrintedMessage(value : Nested) : Unit {
     let (d, (_, str)) = value!;
     Message ($"{str}, value: {d}");
 }
@@ -160,7 +160,7 @@ function PrintMsg (value : Nested) : Unit {
 Operátor rozbalení rozbalí právě jednu vrstvu obtékání.
 Pro přístup k hodnotě zabalené na násobení lze použít více operátorů rozbalení.
 
-Např.:
+Příklad:
 
 ```qsharp
 newtype WrappedInt = Int;
@@ -227,7 +227,7 @@ Tímto způsobem mají uživatelsky definované typy podobnou roli jako záznamy
 ## <a name="operation-and-function-types"></a>Typy operací a funkcí
 
 _Operace_ Q # je podprogram.
-To znamená, že se jedná o volanou rutinu, která obsahuje operace.
+To znamená, že se jedná o volanou rutinu, která obsahuje kvantové operace.
 
 _Funkce_ Q # je klasická subrutina používaná v rámci algoritmu pro každé z nich.
 Může obsahovat klasický kód, ale žádné nečinnosti.
@@ -286,27 +286,28 @@ Q # je kontravariantní s ohledem na typy vstupu: dá se volat, který přebír�
 To znamená s ohledem na následující definice:
 
 ```qsharp
-operation Invertible (qs : Qubit[]) : Unit 
+operation Invert(qubits : Qubit[]) : Unit 
 is Adj {...} 
-operation Unitary (qs : Qubit[]) : Unit 
+
+operation ApplyUnitary(qubits : Qubit[]) : Unit 
 is Adj + Ctl {...} 
 
-function ConjugateInvertibleWith (
-   inner: (Qubit[] => Unit is Adj),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateInvertWith(
+    inner : (Qubit[] => Unit is Adj),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj) {...}
 
-function ConjugateUnitaryWith (
-   inner: (Qubit[] => Unit is Adj + Ctl),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateUnitaryWith(
+    inner : (Qubit[] => Unit is Adj + Ctl),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj + Ctl) {...}
 ```
 
 platí následující:
 
-- Operaci `ConjugateInvertibleWith` lze vyvolat pomocí `inner` argumentu buď `Invertible`, nebo `Unitary`.
-- Operaci `ConjugateUnitaryWith` lze vyvolat pomocí `inner` argumentu `Unitary`, ale ne `Invertible`.
-- Z `ConjugateInvertibleWith`může být vrácena hodnota typu `(Qubit[] => Unit is Adj + Ctl)`.
+- Funkci `ConjugateInvertWith` lze vyvolat pomocí `inner` argumentu buď `Invert`, nebo `ApplyUnitary`.
+- Funkci `ConjugateUnitaryWith` lze vyvolat pomocí argumentu `inner` `ApplyUnitary`, ale ne `Invert`.
+- Z `ConjugateInvertWith`může být vrácena hodnota typu `(Qubit[] => Unit is Adj + Ctl)`.
 
 > [!IMPORTANT]
 > Q # 0,3 zavádí značný rozdíl v chování uživatelsky definovaných typů.
@@ -377,14 +378,12 @@ Tento příklad operace Q # přichází z ukázky [měření](https://github.com
 ```qsharp
 /// # Summary
 /// Prepares a state and measures it in the Pauli-Z basis.
-operation MeasureOneQubit () : Result {
+operation MeasureOneQubit() : Result {
         mutable result = Zero;
 
         using (qubit = Qubit()) { // Allocate a qubit
             H(qubit);               // Use a quantum operation on that qubit
-
             set result = M(qubit);      // Measure the qubit
-
             if (result == One) {    // Reset the qubit so that it can be released
                 X(qubit);
             }
@@ -396,12 +395,11 @@ operation MeasureOneQubit () : Result {
 
 Tento příklad funkce pochází z ukázky [PhaseEstimation](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) . Obsahuje čistě klasický kód. Můžete vidět, že na rozdíl od výše uvedeného příkladu nejsou přiděleny žádné qubits a nepoužívají se žádné operace.
 
-
 ```qsharp
 /// # Summary
 /// Given two arrays, returns a new array that is the pointwise product
 /// of each of the given arrays.
-function MultiplyPointwise (left : Double[], right : Double[]) : Double[] {
+function PointwiseProduct(left : Double[], right : Double[]) : Double[] {
     mutable product = new Double[Length(left)];
 
     for (idxElement in IndexRange(left)) {
@@ -417,7 +415,10 @@ Je také možné předat funkci qubits ke zpracování, jako v tomto příkladu 
 /// # Summary
 /// Translate MCT masks into multiple-controlled Toffoli gates (with single
 /// targets).
-function GateMasksToToffoliGates (qubits : Qubit[], masks : MCMTMask[]) : MCTGate[] {
+function GateMasksToToffoliGates(
+    qubits : Qubit[], 
+    masks : MCMTMask[]) 
+: MCTGate[] {
 
     mutable result = new MCTGate[0];
     let n = Length(qubits);

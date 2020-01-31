@@ -1,17 +1,17 @@
 ---
-title: 'Techniky Q # – testování a ladění | Microsoft Docs'
-description: 'Techniky Q # – testování a ladění'
+title: 'Testování a ladění – Q # techniky | Microsoft Docs'
+description: 'Testování a ladění – techniky Q #'
 author: tcNickolas
 ms.author: mamykhai@microsoft.com
 uid: microsoft.quantum.techniques.testing-and-debugging
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: d352ffa315b654cfcf8991fa116465d3dad49f0a
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: cfc71f08be0f190d9f5f4a48796e3d0ad06d6107
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864266"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820109"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -50,8 +50,8 @@ Zpočátku tento soubor obsahuje jeden vzorový test jednotek `AllocateQubit`, k
     @Test("QuantumSimulator")
     operation AllocateQubit () : Unit {
 
-        using (q = Qubit()) {
-            Assert([PauliZ], [q], Zero, "Newly allocated qubit must be in the |0⟩ state.");
+        using (qubit = Qubit()) {
+            Assert([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
         }
         
         Message("Test passed");
@@ -360,7 +360,7 @@ namespace app
 }
 ```
 
-## <a name="debugging"></a>Ladění
+## <a name="debugging"></a>ladění
 
 Na začátku `Assert` a `Dump` funkce a operace Q # podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno možné během provádění kódu v simulátoru.
 

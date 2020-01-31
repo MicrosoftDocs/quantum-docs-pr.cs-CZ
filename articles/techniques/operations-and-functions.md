@@ -1,17 +1,17 @@
 ---
-title: 'Q # – techniky – operace a funkce | Microsoft Docs'
-description: 'Q # – techniky – operace a funkce'
+title: 'Operace a funkce – Q # – techniky | Microsoft Docs'
+description: 'Operace a funkce – Q # – techniky'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 06da09dc9c6e0ba0331db6bc0cd3d2ddeb287113
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183450"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820772"
 ---
 # <a name="q-operations-and-functions"></a>Operace a funkce Q #
 
@@ -66,7 +66,7 @@ Pokud operace implementuje jednotnou transformaci, je možné definovat způsob,
 Existence těchto specializací se dá deklarovat jako součást signatury operace: `is Adj + Ctl` v následujícím příkladu. Odpovídající implementace pro každou takovou implicitně deklarovanou specializaci je následně vygenerována kompilátorem. 
 
 ```qsharp
-operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit {
+operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit
 is Adj + Ctl { // implies the existence of an adjoint, a controlled, and a controlled adjoint specialization
     H(here);
     CNOT(here, there);
@@ -111,7 +111,7 @@ is Ctl + Adj {
     controlled adjoint invert; 
 }
 ```
-V příkladu výše `adjoint invert;` označuje, že specializace sousednít má být vygenerována vrácením implementace těla a `controlled adjoint invert;` označuje, že řízená specializace, která je řízena, by měla být vygenerována obrácením dané implementace řízená specializace.
+Ve výše uvedeném příkladu `adjoint invert;` označuje, že specializace sousedící-by měla být vygenerována vrácením implementace těla a `controlled adjoint invert;` označuje, že řízená specializace, která je řízena, je vygenerována obrácením dané implementace řízené specializace.
 
 V [toku řízení v horním řádu](xref:microsoft.quantum.concepts.control-flow)se zobrazí další příklady.
 
@@ -141,7 +141,7 @@ V důsledku toho jsou funkce Q # *čisté*, v tom, že vždycky mapují stejné 
 Kompilátor Q # umožňuje bezpečně změnit pořadí, jak a kdy jsou funkce volány při generování specializací operace.
 
 Definování funkce funguje podobně jako při definování operace s tím rozdílem, že pro funkci nelze definovat žádné sousedící a řízené specializace.
-Např.:
+Příklad:
 
 ```qsharp
 function Square(x : Double) : (Double) {
@@ -163,7 +163,7 @@ operation U(target : Qubit) : Unit {
 
 Pokaždé, když se zavolá `U`, bude mít při `target`jinou akci.
 Konkrétně kompilátor nemůže zaručit, že pokud jsme do `U`přidali deklaraci specializace `adjoint auto`, pak `U(target); Adjoint U(target);` fungovat jako identita (to znamená No-OP).
-To je v rozporu s definicí sousedícího, které jsme viděli v [vektorech a maticích](xref:microsoft.quantum.concepts.vectors), což umožňuje automatické generování sousední specializace v rámci operace, kde jsme volali operaci <xref:microsoft.quantum.math.randomreal> by se přerušily záruky poskytované kompilátorem. ; <xref:microsoft.quantum.math.randomreal> je operace, pro kterou neexistuje žádná sousední nebo řízená verze.
+To je v rozporu s definicí sousedícího, které jsme viděli v [vektorech a maticích](xref:microsoft.quantum.concepts.vectors), což umožňuje automatické generování sousední specializace v rámci operace, kde jsme volali operaci <xref:microsoft.quantum.math.randomreal> by se přerušily záruky poskytované kompilátorem. <xref:microsoft.quantum.math.randomreal> je operace, pro kterou neexistuje žádná sousední nebo řízená verze.
 
 Na druhé straně, povolení volání funkcí, jako je například `Square`, je bezpečné, v tom, že kompilátor může mít jistotu, že musí zachovávat vstup pouze pro `Square`, aby bylo možné zachovat stabilní výstup.
 Proto izolování co nejvíc klasických logických funkcí do funkcí umožňuje snadno znovu použít tuto logiku v jiných funkcích a operacích.

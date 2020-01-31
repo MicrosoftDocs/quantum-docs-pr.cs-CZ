@@ -6,12 +6,12 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 591e306b3001934bd81342a533e3f6ca25129781
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184980"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820857"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Cílový počítač ResourcesEstimator
 
@@ -97,37 +97,37 @@ Níže je seznam metrik odhadovaných `ResourcesEstimator`:
 * __QubitClifford__: počet spuštěných jednotlivých bran qubit Clifford a Pauli.
 * __Measure__: počet provedených měření.
 * __R__: počet spuštěných jednoduchých qubit otočení s výjimkou bran T, Clifford a Pauli.
-* __T__: Počet bran t a jejich sdružených, včetně brány T, T_x = H. T. H a T_y = hy. T. hy, spuštěno.
+* __T__: Počet bran t a jejich sdružených, včetně brány T, T_x = H. t. H a T_y = hy. T. hy, proveden.
 * __Hloubka__: Hloubka okruhu nečinnosti, kterou provede operace Q #. Ve výchozím nastavení se tato hloubka počítá jenom u bran T. Podrobnosti najdete v části s informacemi o [čítači hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
 * __Width__: maximální počet qubits přidělených během provádění operace Q #.
 * __BorrowedWidth__: maximální počet qubitsů v rámci operace Q # byl vypůjčen.
 
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Zajištění pravděpodobnosti výsledků měření
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
 
-<xref:microsoft.quantum.primitive.assertprob> z oboru názvů <xref:microsoft.quantum.primitive> lze použít k poskytnutí informací o očekávané pravděpodobnosti měření, které vám pomůžou při provádění programu Q #. Následující příklad znázorňuje toto:
+<xref:microsoft.quantum.intrinsic.assertprob> z oboru názvů <xref:microsoft.quantum.intrinsic> lze použít k poskytnutí informací o očekávané pravděpodobnosti měření, které vám pomůžou při provádění programu Q #. Ilustruje to následující příklad:
 
 ```qsharp
-operation Teleportation (source : Qubit, target : Qubit) : Unit {
+operation Teleport(source : Qubit, target : Qubit) : Unit {
 
-    using (ancilla = Qubit()) {
+    using (qubit = Qubit()) {
 
-        H(ancilla);
-        CNOT(ancilla, target);
+        H(q);
+        CNOT(qubit, target);
 
-        CNOT(source, ancilla);
+        CNOT(source, qubit);
         H(source);
 
         AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [ancilla], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertProb([PauliZ], [qubit], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
         if (M(source) == One)  { Z(target); X(source); }
-        if (M(ancilla) == One) { X(target); X(ancilla); }
+        if (M(qubit) == One) { X(target); X(qubit); }
     }
 }
 ```
 
-Když `ResourcesEstimator` narazí `AssertProb`, bude nahrávat `PauliZ` na `source` a `ancilla` by měl být uveden výsledek `Zero` s pravděpodobností 0,5. Když se spustí `M` později, nalezne zaznamenané hodnoty pravděpodobnosti výsledku a `M` vrátí `Zero` nebo `One` s pravděpodobností 0,5.
+Když `ResourcesEstimator` narazí `AssertProb`, bude nahrávat `PauliZ` na `source` a `q` by měl být uveden výsledek `Zero` s pravděpodobností 0,5. Když se spustí `M` později, nalezne zaznamenané hodnoty pravděpodobnosti výsledku a `M` vrátí `Zero` nebo `One` s pravděpodobností 0,5.
 
 
 ## <a name="see-also"></a>Další informace najdete v tématech

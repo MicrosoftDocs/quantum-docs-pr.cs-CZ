@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: ce15fee2be68d41f0b806be50320b562a749c3b7
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 5c7f2c4a572f6194ee846f056016a25b8c5303a2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442548"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820755"
 ---
 # <a name="quantum-computing-glossary"></a>Glosář pro výpočetní výkon
 
@@ -30,7 +30,7 @@ ms.locfileid: "73442548"
 | <a id="global-phase"></a>Globální fáze | Dva stavy, které jsou identické až na násobek komplexního čísla $e ^ {i\phi} $, se říká, že se liší až do globální fáze. Na rozdíl od místních fází nelze globální fáze dodržet prostřednictvím žádné míry. Další podrobnosti najdete v tématu věnovaném [měřením Pauli](xref:microsoft.quantum.concepts.pauli) . |
 |Měření|Získání klasického bitu z qubit (nebo sady qubits). Další podrobnosti najdete v části věnované [konceptům qubit](xref:microsoft.quantum.concepts.qubit) .|
 |Měnitelné|Proměnná, jejíž hodnota může být po vytvoření změněna.|
-|hosting|Popisek pro kolekci souvisejících názvů (typicky operace, funkce a typy). Obor názvů například [`Microsoft.Quantum.Preparation`](xref:microsoft.quantum.preparation) popisky všech symbolů definovaných ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.|
+|Obor názvů|Popisek pro kolekci souvisejících názvů (typicky operace, funkce a typy). Obor názvů například [`Microsoft.Quantum.Preparation`](xref:microsoft.quantum.preparation) popisky všech symbolů definovaných ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.|
 |Operace|Základní jednotka provádění ve službě Q #. Zhruba odpovídá funkci v C, C++ nebo Pythonu, případně statické metodě v C# nebo Javě.|
 |Aplikace operátora|Provádění operací s více operačními operacemi. To obvykle platí jednotnou matici s aktuálním vektorem stavu. Další podrobnosti najdete v tématu [Úvod do konceptů](xref:microsoft.quantum.concepts.intro) .|
 |Oracle|Podprogram, který poskytuje informace závislé na datech pro algoritmus v době běhu. Cílem je obvykle poskytnout nadmnožinu výstupů odpovídajících vstupům, které jsou umístěny na pozici.   |
@@ -38,10 +38,9 @@ ms.locfileid: "73442548"
 |Pauli operátory|`X`, `Y` a `Z`.|
 |Předehru|Sada primitivních a klasických operací a funkcí definovaných jednotlivými cílovými počítači místo na úrovni Q #.|
 |Okruh|Reprezentace programu pro počítač s přísystémem na více počítačů. Další podrobnosti najdete v části <xref:microsoft.quantum.concepts.circuits>.|
-|Stav pro stav|Reprezentace qubits v systému. To je obvykle označeno jako složitý vektor sloupce. Další informace najdete v tématu <xref:microsoft.quantum.concepts.vectors>. |
-|qubit|Jednotka úložiště. Další podrobnosti najdete v části <xref:microsoft.quantum.concepts.qubit>.|
+|Stav pro stav|Reprezentace qubits v systému. To je obvykle označeno jako složitý vektor sloupce. Další informace naleznete v tématu <xref:microsoft.quantum.concepts.vectors>. |
+|Qubit|Jednotka úložiště. Další podrobnosti najdete v části <xref:microsoft.quantum.concepts.qubit>.|
 |Opakovat až do – úspěšné|Algoritmus pro všechna ta, který se probabilistically úspěšně. Po selhání rutina zopakuje pokus, dokud neproběhne úspěšně (nebo bylo dosaženo limitu). |
-|Softwarový zásobník|Kompletní sada klasických a stavových softwaru, jakož i kompilátory, simulátory a moduly runtime potřebné k provozu počítače se stavem. Další podrobnosti najdete v části <xref:microsoft.quantum.concepts.software-stack>. |
 |Cílový počítač|Cíl kompilace, který snižuje abstraktní program pro plnění do hardwaru nebo simulace. To obvykle zahrnuje opakované zápisy pro mnoho účelů, včetně nahrazení brány, kódování pro korekci chyb, geometrické rozložení a další.|
 |Řazené kolekce členů|Typy oddělené čárkami se seskupují společně prostřednictvím závorek. |
 |Uživatelem definovaný typ|Kolekce předdefinovaných nebo dříve definovaných typů, které mohou být označovány jako jedna jednotka.|

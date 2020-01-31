@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5e865dbb48029724b6f507ecb63b85d10d80c9a7
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ff73cef12a3b8c2a6559308dc244c7c2e865ba9f
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185643"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820449"
 ---
 # <a name="higher-order-control-flow"></a>Tok řízení vyššího řádu #
 
@@ -52,9 +52,9 @@ V Q # můžeme použít <xref:microsoft.quantum.arrays.indexrange> k tomu, aby p
 ```qsharp
 /// # Summary
 /// Applies $H$ to all qubits in a register.
-operation HAll(register : Qubit[]) : Unit 
-is Adj + Ctl {
-
+operation ApplyHadamardToAll(
+    register : Qubit[])
+: Unit is Adj + Ctl {
     for (qubit in register) {
         H(qubit);
     }
@@ -108,9 +108,9 @@ Konstrukce toku řízení nabízené službou Canon využívají operace a fungu
 Například vzor $UVU ^ {\dagger} $ je mimořádně běžný při programování, což znamená, že Canon poskytuje operaci <xref:microsoft.quantum.canon.applywith> jako abstrakci pro tento model.
 Tato abstrakce také umožňuje efektivnější compliation do okruhů, protože `Controlled` pracující na sekvenci `U(qubit); V(qubit); Adjoint U(qubit);` nemusí jednat u každého `U`.
 Pokud to chcete vidět, nechť $c (U) $ být jednotkou reprezentující `Controlled U([control], target)` a nechte $c (V) $ definovat stejným způsobem.
-Pak pro libovolný stav $ \ket{\psi} $, \begin{align} c (U) c (V) c (U) ^ \dagger \ket{1} \otimes \ket{\psi} & = \ket{1} \otimes (UVU ^ {\dagger} \ket{\psi}) \\\\ & = (\boldone \otimes U) (c (V)) (\boldone \otimes U ^ \dagger) \ KET{1} \otimes \ket{\psi}.
+Pak pro libovolný stav $ \ket{\psi} $, \begin{align} c (U) c (V) c (U) ^ \dagger \ket{1} \otimes \ket{\psi} & = \ket{1} \otimes (UVU ^ {\dagger} \ket{\psi}) \\\\ & = (\boldone \otimes U) (c (V)) (\boldone \otimes U ^ \dagger) \ket{1} \otimes \ket{\psi}.
 \end{align} podle definice `Controlled`.
-Na druhé straně \begin{align} c (U) c (V) c (U) ^ \dagger \ket{0} \otimes \ket{\psi} & = \ket{0} \otimes \ket{\psi} \\\\ & = \ket{0} \otimes (UU ^ \dagger \ket{\psi}) \\\\ & = (\boldone \otimes U) (c ( V)) (\boldone \otimes U ^ \dagger) \ket{0} \otimes \ket{\psi}.
+Na druhé straně \begin{align} c (U) c (V) c (U) ^ \dagger \ket{0} \otimes \ket{\psi} & = \ket{0} \otimes \ket{\psi} \\\\ & = \ket{0} \otimes (UU ^ \dagger \ket{\psi}) \\\\ & = (\boldone \otimes U) (c (V)) (\boldone \otimes U ^ \dagger) \ket{0} \otimes \ket{\psi}.
 \end{align} podle linearity můžeme uzavřít, že tento způsob je možné pro všechny vstupní stavy $U $ out.
 To znamená, $c (UVU ^ \dagger) = U c (V) U ^ \dagger $.
 Vzhledem k tomu, že řízení operací může být všeobecně náročné, pomocí kontrolovaných variant, jako je například `WithC` a `WithCA` může pomoci snížit počet funktory ovládacího prvku, který je třeba použít.
@@ -123,30 +123,30 @@ Vzhledem k tomu, že řízení operací může být všeobecně náročné, pomo
 >     ('T => Unit is Adj + Ctl), 'T) => Unit
 > ```
 
-Podobně <xref:microsoft.quantum.canon.bind> vytváří operace, které používají sekvenci dalších operací.
+Podobně <xref:microsoft.quantum.canon.bound> vytváří operace, které používají sekvenci dalších operací.
 Například následující jsou ekvivalentní:
 
 ```qsharp
 H(qubit); X(qubit);
-Bind([H, X], qubit);
+Bound([H, X], qubit);
 ```
 
 Kombinování se vzorci iterace může udělat tento význam hlavně:
 
 ```qsharp
 // Bracket the quantum Fourier transform with $XH$ on each qubit.
-ApplyWith(ApplyToEach(Bind([H, X]), _), QFT, _);
+ApplyWith(ApplyToEach(Bound([H, X]), _), QFT, _);
 ```
 
 ### <a name="time-ordered-composition"></a>Kompozice časově uspořádaných ###
 
 Dál se můžeme dál domyslet z řízení toku v souvislosti s částečnými aplikacemi a klasickými funkcemi a můžete modelovat dokonce poměrně sofistikované koncepty řízení toku v podobě klasického řízení toku.
 Tato analogie je přesnější rozpoznáváním, že jednotní operátoři odpovídají přesně vedlejším účinkům operací volání, což znamená, že jakékoliv dekompozice operátorů s jednou jednotkou, která je v souladu s jinými stejnými operátory, odpovídá vytvoření konkrétního sekvence volání pro klasické podrutiny, které generují pokyny, aby fungovaly jako konkrétní jednotkové operátory.
-V tomto zobrazení je `Bind` přesně reprezentace maticového produktu, protože `Bind([A, B])(target)` je ekvivalentem `A(target); B(target);`, což zase volá sekvenci, která odpovídá $BA $.
+V tomto zobrazení je `Bound` přesně reprezentace maticového produktu, protože `Bound([A, B])(target)` je ekvivalentem `A(target); B(target);`, což zase volá sekvenci, která odpovídá $BA $.
 
 Propracovanější příklad je [rozšíření Trotter – Suzuki](https://arxiv.org/abs/math-ph/0506007v1).
 Jak je popsáno v části dynamické reprezentace generátoru [datových struktur](xref:microsoft.quantum.libraries.data-structures), rozšíření Trotter – Suzuki poskytuje obzvláště užitečný způsob vyjádření exponenciálních exponenciálních čísel matic.
-Například použití rozšíření v jeho nejnižší objednávce znamená, že pro všechny operátory $A $ a $B $, například $A = ^ \dagger $ a $B = B ^ \dagger $, \begin{align} \tag{★} \label{EQ: Trotter-Suzuki-0} \exp (i [A + B] t) = \lim_{n\to\infty} \left (\exp (i t/n) \exp (i B t/n ) \right) ^ n.
+Například použití rozšíření v jeho nejnižší objednávce znamená, že pro všechny operátory $A $ a $B $ tak, aby $A = A ^ \dagger $ a $B = B ^ \dagger $, \begin{align} \tag{★} \label{EQ: Trotter-Suzuki-0} \exp (i [A + B] t) = \ lim_ {n\to\infty} \left (\exp (i t/n) \exp (i B t/n) \right) ^ n.
 \end{align} Colloquially to říká, že můžeme přibližně vyvíjet stav v části $A + B $ střídavě vyvíjené pomocí $A $ a $B $ samostatně.
 Pokud reprezentujeme vývoj v rámci $A $ podle operace `A : (Double, Qubit[]) => Unit`, která platí $e ^ {i t A} $, pak je reprezentace rozšíření Trotter – Suzuki v souvislosti se změnou uspořádání volacích sekvencí jasné.
 V důsledku konkrétní operace `U : ((Int, Double, Qubit[]) => Unit is Adj + Ctl` tak, že `A = U(0, _, _)` a `B = U(1, _, _)`můžeme definovat novou operaci reprezentující celočíselnou `U` v čase $t $ vygenerováním sekvencí formuláře.
@@ -183,12 +183,11 @@ Tuto operaci nebudeme volat přímo, ale přidáme `_` na začátek názvu, abyc
 
 ```qsharp
 operation _ControlledOnBitString(
-        bits : Bool[],
-        oracle: (Qubit[] => Unit is Adj + Ctl),
-        controlRegister : Qubit[],
-        targetRegister: Qubit[]) 
-: Unit 
-is Adj + Ctl {
+    bits : Bool[],
+    oracle: (Qubit[] => Unit is Adj + Ctl),
+    controlRegister : Qubit[],
+    targetRegister: Qubit[])
+: Unit is Adj + Ctl
 ```
 
 Všimněte si, že bereme řetězec bitů, který je reprezentován jako `Bool` pole, které používáme k určení podmíněného nastavování, které chceme použít pro danou operaci `oracle`.
@@ -201,6 +200,7 @@ Proto můžeme použít $P = X ^ {s\_0} \otimes X ^ {s\_1} \otimes \cdots \otime
 Tato konstrukce je přesně `ApplyWith`, proto zapište text naší nové operace odpovídajícím způsobem:
 
 ```qsharp
+{
     ApplyWithCA(
         ApplyPauliFromBitString(PauliX, false, bits, _),
         (Controlled oracle)(_, targetRegister),
@@ -219,8 +219,8 @@ Díky tomu naše nová funkce vypadá a je příliš velká, jako `Controlled`, 
 
 ```qsharp
 function ControlledOnBitString(
-        bits : Bool[],
-        oracle: (Qubit[] => Unit is Adj + Ctl)) 
+    bits : Bool[],
+    oracle: (Qubit[] => Unit is Adj + Ctl))
 : ((Qubit[], Qubit[]) => Unit is Adj + Ctl) {
     return _ControlledOnBitString(bits, oracle, _, _);
 }

@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: 332781a4356015461426ee7640fd931a41450367
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ca24ff60cd9ae5077c7f4bae0012fe1180d7e6d4
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184606"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821027"
 ---
 # <a name="using-the-numerics-library"></a>Použití knihovny numerických knihoven
 
@@ -28,7 +28,7 @@ Všechny tyto součásti jsou k dispozici pomocí jednoho příkazu `open`:
 open Microsoft.Quantum.Arithmetic;
 ```
 
-## <a name="types"></a>Druhy
+## <a name="types"></a>Typy
 
 Knihovna numerických hodnot podporuje následující typy.
 
@@ -64,7 +64,7 @@ Pro každý ze tří typů uvedených výše je k dispozici celá řada operací
     - Oboustranný (1/x)
     - Měření (klasická dvojitá přesnost)
 
-Další informace a podrobnou dokumentaci ke každé z těchto operací najdete v tématu Referenční dokumentace knihovny Q # na adrese [docs.Microsoft.com](https://docs.microsoft.com/en-us/quantum) .
+Další informace a podrobnou dokumentaci ke každé z těchto operací najdete v tématu Referenční dokumentace knihovny Q # na adrese [docs.Microsoft.com](https://docs.microsoft.com/quantum) .
 
 ## <a name="sample-integer-addition"></a>Ukázka: sčítání celých čísel
 
@@ -72,15 +72,14 @@ Jako základní příklad zvažte operaci $ $ \ket x\ket y\mapsto \ket x\ket {x 
 
 Pomocí vývojové sady pro práci s více operačními systémem můžete tuto operaci použít takto:
 ```qsharp
-operation MyAdditionTest (xInt : Int, yInt : Int, n : Int) : Unit
-{
+operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
     using ((xQubits, yQubits) = (Qubit[n], Qubit[n]))
     {
         x = LittleEndian(xQubits); // define bit order
         y = LittleEndian(yQubits);
         
-        ApplyXorInPlace(xInt, x); // initialize values
-        ApplyXorInPlace(yInt, y);
+        ApplyXorInPlace(xValue, x); // initialize values
+        ApplyXorInPlace(yValue, y);
         
         AddI(x, y); // perform addition x+y into y
         
@@ -93,20 +92,20 @@ operation MyAdditionTest (xInt : Int, yInt : Int, n : Int) : Unit
 
 Aby bylo možné vyhodnotit plynulé funkce, jako je $ \sin (x) $, na počítači s procesorem, kde $x $ je `FixedPoint` `Evaluate[Even/Odd]PolynomialFxP``EvaluatePolynomialFxP` číslo?
 
-První `EvaluatePolynomialFxP`umožňuje vyhodnotit polynomu ve tvaru $ $ P (x) = A_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $, kde $d $ označuje *stupeň*. To provedete tak, že všechno, co je potřeba, jsou polynomické koeficienty `[a_0,..., a_d]` (typu `Double[]`), vstupní `x : FixedPoint` a výstupní `y : FixedPoint` (zpočátku nula):
+První `EvaluatePolynomialFxP`umožňuje vyhodnotit polynomu ve tvaru $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $, kde $d $ označuje *stupeň*. To provedete tak, že všechno, co je potřeba, jsou polynomické koeficienty `[a_0,..., a_d]` (typu `Double[]`), vstupní `x : FixedPoint` a výstupní `y : FixedPoint` (zpočátku nula):
 ```qsharp
-EvaluatePolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
 Výsledek, $P (x) = 1 + 2x $, bude uložen v `yFxP`.
 
-Druhý, `EvaluateEvenPolynomialFxP`a třetí `EvaluateOddPolynomialFxP`, jsou specializace pro případy, které jsou i pro jiné funkce, v uvedeném pořadí. To znamená, že pro sudé/liché funkce $f (x) $ a $ $ P_ {sudý} (x) = A_0 + A_1 x ^ 2 + A_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ je přibližná, že $P _ {sudý} (x) $ nebo $P _ {liché} (x): = x\cdot P_ {sudý} (x) $ přestup.
+Druhý, `EvaluateEvenPolynomialFxP`a třetí `EvaluateOddPolynomialFxP`, jsou specializace pro případy, které jsou i pro jiné funkce, v uvedeném pořadí. To znamená, že pro sudé/liché funkce $f (x) $ a $ $ P_ {sudý} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ je přibližná, že $P _ {sudý} (x) $ nebo $P _ {lichý} (x): = x\cdot P_ {sudý} (x) $, v uvedeném pořadí.
 V Q # lze tyto dva případy zpracovat následujícím způsobem:
 ```qsharp
-EvaluateEvenPolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
 ```
 který vyhodnocuje $P _ {sudý} (x) = 1 + 2x ^ 2 $ a
 ```qsharp
-EvaluateOddPolynomialFxP([1.0, 2.0], xFxP, yFxP);
+EvaluateOddPolynomialFxP([1.0, 2.0], x, y);
 ```
 který vyhodnocuje $P _ {liché} (x) = x + 2x ^ 3 $.
 

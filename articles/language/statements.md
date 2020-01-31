@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.statements
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5bcbee868c76aaf53d0b7969e6e634da62689aaa
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 9157cf3336ce0894816dbfbaf13ce0e712a6b096
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184861"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821061"
 ---
 # <a name="statements-and-other-constructs"></a>Příkazy a další konstrukce
 
@@ -54,8 +54,7 @@ Například:
 ///
 /// # See Also
 /// - Microsoft.Quantum.Intrinsic.H
-operation ApplyTwice<'T>(op : ('T => Unit), target : 'T) : Unit
-{
+operation ApplyTwice<'T>(op : ('T => Unit), target : 'T) : Unit {
     op(target);
     op(target);
 }
@@ -90,7 +89,6 @@ Pokud byl v tomto oboru názvů a souboru definován krátký název `Z` pro `X.
 
 ```qsharp
 namespace NS {
-
     open Microsoft.Quantum.Intrinsic; // opens the namespace
     open Microsoft.Quantum.Math as Math; // defines a short name for the namespace
 }
@@ -181,7 +179,7 @@ for (i in 1 .. 2 .. 10) {
 Podobné příkazy jsou k dispozici pro všechny binární operátory, ve kterých typ levé strany odpovídá typu výrazu. To poskytuje například pohodlný způsob, jak shromáždit hodnoty:
 ```qsharp
 mutable results = new Result[0];
-for (q in qubits) {
+for (qubit in qubits) {
     set results += [M(q)];
     // ...
 }
@@ -193,7 +191,7 @@ Pro výrazy kopírování a aktualizace na pravé straně existuje podobný zře
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
 
-function AddAll (reals : Double[], ims : Double[]) : Complex[] {
+function ElementwisePlus(reals : Double[], ims : Double[]) : Complex[] {
     mutable res = Complex(0.,0.);
 
     for (r in reals) {
@@ -209,19 +207,17 @@ function AddAll (reals : Double[], ims : Double[]) : Complex[] {
 V případě polí mají naše standardní knihovny k disměrnému nástroji pro řadu běžných požadavků na inicializaci a manipulaci s poli, takže se tak můžou vyhnout nutnosti aktualizovat položky pole na prvním místě. Příkazy Update a Reassign poskytují v případě potřeby alternativu:
 
 ```qsharp
-operation RandomInts(maxInt : Int, nrSamples : Int) : Int[] {
-
+operation GenerateRandomInts(max : Int, nSamples : Int) : Int[] {
     mutable samples = new Double[0];
-    for (i in 1 .. nrSamples) {
-        set samples += [RandomInt(maxInt)];
+    for (i in 1 .. nSamples) {
+        set samples += [RandomInt(max)];
     }
     return samples;
 }
 
-operation SampleUniformDistr(nrSamples : Int, prec : Int) : Double[] {
-
-    let normalization = 1. / IntAsDouble(prec);
-    mutable samples = RandomInts(prec, nrSamples);
+operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
+    let normalization = 1. / IntAsDouble(nSteps);
+    mutable samples = GenerateRandomInts(nSteps, nSamples);
     
     for (i in IndexRange(samples) {
         let value = IntAsDouble(samples[i]);
@@ -236,10 +232,9 @@ operation SampleUniformDistr(nrSamples : Int, prec : Int) : Double[] {
 
 Funkce
 ```qsharp
-function EmbedPauli (pauli : Pauli, location : Int, n : Int) : Pauli[]
-{
-    mutable pauliArray = new Pauli[n];
-    for (index in 0 .. n - 1) {
+function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
+    mutable pauliArray = new Pauli[length];
+    for (index in 0 .. length - 1) {
         set pauliArray w/= index <- 
             index == location ? pauli | PauliI;
     }    
@@ -249,8 +244,8 @@ function EmbedPauli (pauli : Pauli, location : Int, n : Int) : Pauli[]
 Například je možné jednoduše zjednodušit pomocí funkce `ConstantArray` v `Microsoft.Quantum.Arrays`a vrácení výrazu Copy-and-Update:
 
 ```qsharp
-function EmbedPauli (pauli : Pauli, i : Int, n : Int) : Pauli[] {
-    return ConstantArray(n, PauliI) w/ i <- pauli;
+function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
+    return ConstantArray(length, PauliI) w/ location <- pauli;
 }
 ```
 
@@ -330,8 +325,8 @@ Například:
 
 ```qsharp
 // ...
-for (qb in qubits) { // qubits contains a Qubit[]
-    H(qb);
+for (qubit in qubits) { // qubits contains a Qubit[]
+    H(qubit);
 }
 
 mutable results = new (Int, Results)[Length(qubits)];
@@ -359,13 +354,13 @@ Tělo smyčky, podmínka a oprava jsou považovány za jeden obor, takže symbol
 ```qsharp
 mutable iter = 1;
 repeat {
-    ProbabilisticCircuit(qs);
-    let success = ComputeSuccessIndicator(qs);
+    ProbabilisticCircuit(qubits);
+    let success = ComputeSuccessIndicator(qubits);
 }
 until (success || iter > maxIter)
 fixup {
     iter += 1;
-    ComputeCorrection(qs);
+    ComputeCorrection(qubits);
 }
 ```
 
@@ -374,25 +369,25 @@ Pokud je podmínka pravdivá, je příkaz dokončen; v opačném případě se o
 Všimněte si, že dokončení provádění opravy končí rozsahem příkazu, takže vazby symbolů provedené během těla nebo opravy nejsou k dispozici v následných opakováních.
 
 Například následující kód je okruh pravděpodobnostní, který implementuje důležitou bránu pro otočení $V _3 = (\boldone + 2 i Z)/\sqrt{5}$ pomocí brány Hadamard a T.
-V průměru končí smyčka v 8/5 opakování.
+V průměru končí smyčka v $ \frac{8}{5}$.
 Podrobnosti najdete v tématu [*opakování až po úspěch: nedeterministické rozklady Single-qubit unitaries*](https://arxiv.org/abs/1311.1074) (Paetznick a Svore, 2014).
 
 ```qsharp
-using (anc = Qubit()) {
+using (qubit = Qubit()) {
     repeat {
-        H(anc);
-        T(anc);
-        CNOT(target,anc);
-        H(anc);
-        Adjoint T(anc);
-        H(anc);
-        T(anc);
-        H(anc);
-        CNOT(target,anc);
-        T(anc);
+        H(qubit);
+        T(qubit);
+        CNOT(target, qubit);
+        H(qubit);
+        Adjoint T(qubit);
+        H(qubit);
+        T(qubit);
+        H(qubit);
+        CNOT(target, qubit);
+        T(qubit);
         Z(target);
-        H(anc);
-        let result = M(anc);
+        H(qubit);
+        let result = M(qubit);
     } until (result == Zero);
 }
 ```
@@ -438,7 +433,7 @@ if (result == One) {
 } 
 ```
 
-nebo
+– nebo –
 
 ```qsharp
 if (i == 1) {
@@ -468,19 +463,19 @@ Například:
 return 1;
 ```
 
-nebo
+– nebo –
 
 ```qsharp
 return ();
 ```
 
-nebo
+– nebo –
 
 ```qsharp
 return (results, qubits);
 ```
 
-### <a name="fail"></a>Proběhne
+### <a name="fail"></a>Chyba
 
 Příkaz selhání ukončí provádění operace a vrátí volajícímu hodnotu chyby.
 Skládá se z klíčového slova `fail`následovaný řetězcem a zakončeným středníkem.
@@ -495,7 +490,7 @@ Například:
 fail $"Impossible state reached";
 ```
 
-nebo
+– nebo –
 
 ```qsharp
 fail $"Syndrome {syn} is incorrect";
@@ -519,15 +514,15 @@ Inicializátory jsou k dispozici buď pro jeden qubit, který je označen jako `
 Například:
 
 ```qsharp
-using (q = Qubit()) {
+using (qubit = Qubit()) {
     // ...
 }
-using ((ancilla, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
+using ((auxiliary, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
     // ...
 }
 ```
 
-### <a name="dirty-qubits"></a>Nečistý Qubits
+### <a name="borrowed-qubits"></a>Vypůjčený Qubits
 
 Příkaz `borrowing` slouží k získání qubits pro dočasné použití. Příkaz se skládá z klíčového slova `borrowing`následovaný levou kulatou závorkou `(`, vazbou, uzavírací závorkou `)`a blok příkazů, ve kterém bude qubits k dispozici.
 Vazba následuje stejný vzor a pravidla jako ta v příkazu `using`.
@@ -535,10 +530,10 @@ Vazba následuje stejný vzor a pravidla jako ta v příkazu `using`.
 Například:
 
 ```qsharp
-borrowing (q = Qubit()) {
+borrowing (qubit = Qubit()) {
     // ...
 }
-borrowing ((ancilla, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
+borrowing ((auxiliary, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
     // ...
 }
 ```
@@ -547,8 +542,7 @@ Vypůjčený qubits je v neznámém stavu a na konci bloku příkazu se překro�
 Dlužník se zavazuje, že opustí qubits ve stejném stavu, ve kterém byly ve chvíli, kdy byly vypůjčené, tj. jejich stav na začátku a na konci bloku příkazu by měl být stejný.
 Konkrétně se nejedná o klasický stav, což znamená, že ve většině případů by výpůjční rozsahy neměly obsahovat měření. 
 
-Takové qubits se často označují jako "nečistý ancilla".
-Příklad nešifrovaného Roettelerho použití naleznete v tématu [*faktoringování pomocí 2n + 2 qubits s Toffoli modulárním násobení*](https://arxiv.org/abs/1611.07995) (Haner, Svore a ancilla 2017).
+Příklad vypůjčeného Roettelerho použití najdete v tématu věnovaném [*faktorování pomocí 2n + 2 qubits s Toffoli modulárním násobení*](https://arxiv.org/abs/1611.07995) (Haner, Svore a qubit 2017).
 
 Při výpůjční qubits se systém nejprve pokusí vyplňovat požadavek z qubits, které se používají, ale nejsou k dispozici během těla `borrowing`ho příkazu.
 Pokud není dostatečná taková qubits, přidělí se nové qubits, aby se žádost dokončila.

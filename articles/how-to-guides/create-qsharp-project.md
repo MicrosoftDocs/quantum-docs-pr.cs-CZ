@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: 10b1048501c2de055f5711fc0fdbc4bac76e8f77
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 5fa32f14291fa2070b49e4bb3b720cbf31ee614b
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864402"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76819888"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Vytvoření projektu Q # ve vývojovém prostředí
 
@@ -23,7 +23,7 @@ Projekt Q # obsahuje soubory Q #, které obsahují kód doby a hostitelský prog
 Vyberte vývojové prostředí a jazyk z následujících částí:
 
 * [Python](#create-a-python-project)
-* [Poznámkové bloky Jupyter](#create-a-jupyter-notebook-project)
+* [Notebooky Q # Jupyter](#create-a-q-jupyter-notebook-project)
 * [C#se sadou Visual Studio](#create-a-c-project-on-windows-using-visual-studio)
 * [C#s VS Code](#create-a-c-project-using-vs-code)
 * [C#pomocí příkazového řádku](#create-a-c-project-using-the-dotnet-command-line-tool)
@@ -32,11 +32,11 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 1. Požadavky
 
-     * [Sada pro vývoj pro](xref:microsoft.quantum.install#develop-with-python) všechna tato prostředí pro Python
+     * Instalace [sady pro vývoj pro](xref:microsoft.quantum.install.python) všechna tato prostředí pro Python
 
 1. Vytvořte složku pro váš projekt a přejděte do této složky.
 
-1. Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #. Například:
+1. Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #. Příklad:
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
     }
     ```
 
-1. Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #. Například:
+1. Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #. Příklad:
 
     ```python
     import qsharp
@@ -75,11 +75,11 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 Nyní můžete pokračovat v vývoji programu pro práci s více.
 
-## <a name="create-a-jupyter-notebook-project"></a>Vytvoření projektu Jupyter Notebook
+## <a name="create-a-q-jupyter-notebook-project"></a>Vytvoření projektu Q # Jupyter Notebook
 
 1. Požadavky
 
-    * [Vývojová sada pro všechna ta – Jupyter poznámkové bloky](xref:microsoft.quantum.install#develop-with-jupyter-notebooks)
+    * Nainstalujte si [pro Jupyter poznámkové bloky pro vývoj pro](xref:microsoft.quantum.install.jupyter) všechna ta.
 
 1. Spusťte následující příkaz, kterým se spustí server poznámkového bloku:
 
@@ -115,11 +115,11 @@ Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji 
 
 1. Požadavky
 
-    * [Sada pro vývoj pro všechna tato prostředí pro Visual Studio](xref:microsoft.quantum.install#develop-with-c-on-windows-using-visual-studio)
+    * Instalace [rozšíření pro vývojovou sadu pro Visual Studio](xref:microsoft.quantum.install.cs)
 
 1. Vytvořte novou aplikaci v jazyku Q#.
 
-    * Přejděte do části **Soubor**  ->  **Nový**  ->  **Projekt**.
+    * Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
     * Do vyhledávacího pole zadejte `Q#`.
     * Vyberte **Aplikace Q#** .
     * Vyberte **Další**.
@@ -144,7 +144,7 @@ Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady 
 
 1. Požadavky
 
-    * [Vývojová sada pro](xref:microsoft.quantum.install#develop-with-c-using-visual-studio-code) všechna tato prostředí pro vs Code
+    * Instalace [rozšíření pro vývojovou sadu pro vs Code](xref:microsoft.quantum.install.cs)
 
 1. Vytvořte nový projekt:
 
@@ -169,7 +169,7 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 1. Požadavky
 
-    * [Sada pro vývoj pro](xref:microsoft.quantum.install#develop-with-c-using-the-dotnet-command-line-tool) všechna ta na příkazovém řádku
+    * Instalace [sady pro vývoj pro všechna ta v příkazovém řádku](xref:microsoft.quantum.install.cs)
 
 1. Vytvoření nové aplikace
 

@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: ef22460a5bca63ebaf32c0ba21984e103ec8ebdd
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 3e629e095bd2ee492496066710ef6fd4e578a543
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864385"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868964"
 ---
 # <a name="applications"></a>Aplikace #
 
@@ -69,15 +69,16 @@ Jako příklad může být dekompozice Trotter-Suzuki volána pomocí následuj�
 
 ```qsharp
 function TrotterSimulationAlgorithm(
-    trotterStepSize: Double, 
-    trotterOrder: Int) 
-    : SimulationAlgorithm {
+    trotterStepSize : Double, 
+    trotterOrder : Int) 
+: SimulationAlgorithm {
     ...
 }
+
 function TimeDependentTrotterSimulationAlgorithm(
-    trotterStepSize: Double, 
-    trotterOrder: Int) 
-    : TimeDependentSimulationAlgorithm {
+    trotterStepSize : Double, 
+    trotterOrder : Int) 
+: TimeDependentSimulationAlgorithm {
     ...
 }
 ```
@@ -99,11 +100,11 @@ Proto definujeme pohodlnou funkci
 
 ```qsharp
 function InterpolatedEvolution(
-        interpolationTime: Double, 
-        evolutionGeneratorStart: EvolutionGenerator,
-        evolutionGeneratorEnd: EvolutionGenerator,
-        timeDependentSimulationAlgorithm: TimeDependentSimulationAlgorithm)
-        : (Qubit[] => Unit is Adj + Ctl) {
+        interpolationTime : Double, 
+        evolutionGeneratorStart : EvolutionGenerator,
+        evolutionGeneratorEnd : EvolutionGenerator,
+        timeDependentSimulationAlgorithm : TimeDependentSimulationAlgorithm)
+: (Qubit[] => Unit is Adj + Ctl) {
         ...
 }
  
@@ -114,13 +115,13 @@ Vrátí se tak jednotná operace, která implementuje všechny kroky adiabatic s
 Také definujeme užitečnou operaci, která automaticky provádí všechny kroky typického experimentu pro práci s více operačními systémem. Například máme následující, které vrací odhad energie stavu, který vytvořila Příprava stavu adiabatic:
 
 ```qsharp
-operation AdiabaticStateEnergyEstimate( 
-    nQubits : Int, 
-    statePrepUnitary: (Qubit[] => Unit),
-    adiabaticUnitary: (Qubit[] => Unit),
+operation EstimateAdiabaticStateEnergy(
+    nQubits : Int,
+    statePrepUnitary : (Qubit[] => Unit),
+    adiabaticUnitary : (Qubit[] => Unit),
     qpeUnitary: (Qubit[] => Unit is Adj + Ctl),
-    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double)) 
-    : Double {
+    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double))
+: Double {
 ...
 }
 ```
@@ -174,7 +175,7 @@ Brána QFT byla popsána [dříve](xref:microsoft.quantum.libraries.standard.alg
 Pokud chcete dosáhnout $ (a ^ NX) \Text{mod} N $, můžeme jednoduše použít řízené $U _ {a ^ N} $, kde vypočítáme $a ^ n \Text{mod} N $ Classic, aby se mohl připojit k okruhu.  
 Okruhy, které by se dosáhly těchto modulárních aritmetických výpočtů, jsou popsané v [aritmetické dokumentaci](./algorithms.md#arithmetic)pro procesory, konkrétně vyžadujeme modulární okruh umocnění k implementaci $U\_{a ^ i} $.
 
-Zatímco okruh výše odpovídá [odhadu fáze](xref:microsoft.quantum.characterization.quantumphaseestimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání v pořadí, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft. stránkovaných. Canon. Například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation) také používá jednu další qubit.
+Zatímco okruh výše odpovídá [odhadu fáze](xref:microsoft.quantum.characterization.quantumphaseestimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání objednávek, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft. Například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation) také používá jednu další qubit.
  
 ### <a name="factoring"></a>Které budou zohledňovat ###
 Cílem faktoringu je určit dva základní faktory typu Integer $N $, kde $N $ je $n číslo bitu.  

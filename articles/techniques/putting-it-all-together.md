@@ -1,23 +1,23 @@
 ---
-title: 'Q # – techniky – všechno dohromady | Microsoft Docs'
-description: 'Metody Q # – všechny společně umísťují'
+title: 'Vše dohromady – techniky Q # | Microsoft Docs'
+description: 'Vše dohromady – techniky Q #'
 uid: microsoft.quantum.techniques.puttingittogether
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f65b3e260f98a7a90da13b62edd6cc63d200f5af
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3605826da159757d4b321dbf4ec6acd7f4e6be05
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183263"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820160"
 ---
 # <a name="putting-it-all-together-teleportation"></a>Vše dohromady: při přenosu #
 Pojďme se vrátit na příklad okruhu přenosu definovaného v [okruhech](xref:microsoft.quantum.concepts.circuits). Budeme k tomu využít k ilustraci konceptů, které jsme doposud dozvěděli. Pro uživatele, kteří nejsou obeznámeni s teoretickou, je níže uveden výklad doby použitelnosti, za kterou následuje návod implementace kódu v Q #. 
 
 ## <a name="quantum-teleportation-theory"></a>Vystavení za sebou: teorie
-Jednosměrné navýšení je technika pro posílání neznámého stavového stavu (to znamená "__zpráva__") z qubit v jednom umístění do qubit v jiném umístění (na tyto qubits odkazujeme jako__na this a__ __tam__). v uvedeném pořadí). Naši __zprávu__ můžeme znázornit jako vektor pomocí zápisu Dirac: 
+Jednosměrné navýšení má za následek odeslání neznámého stavového stavu (to znamená "__zpráva__") z qubit v jednom umístění do qubit v jiném umístění (na tyto qubits odkazujeme jako__na this a__v uvedeném pořadí). Naši __zprávu__ můžeme znázornit jako vektor pomocí zápisu Dirac: 
 
 $ $ \ket{\psi} = \alpha\ket{0} + \beta\ket{1} $ $
 
@@ -56,7 +56,7 @@ $ \ket{1}$  | $ \frac{1}{\sqrt{2}} (\ket{0}-\ket{1}) $
 
 Pokud použijeme bránu Hadamard na první qubit každého předplatného našeho výstupu, získáme následující výsledek:
 
-$ $ \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{ \sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
+$ $ \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\Alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
 
 Všimněte si, že každý výraz má $2 \frac{1}{\sqrt{2}} $ faktorů. Tyto výsledky můžeme vynásobit následujícím výsledkům:
 
@@ -125,7 +125,7 @@ Také je potřeba přidělit qubit `here`, které máme `using` blok:
 ```
 
 ### <a name="step-1-create-an-entangled-state"></a>Krok 1: vytvoření stavu entangled
-Pak můžeme vytvořit pár entangled mezi `here` a `there` pomocí operací @"microsoft.quantum.primitive.h" a @"microsoft.quantum.primitive.cnot":
+Pak můžeme vytvořit pár entangled mezi `here` a `there` pomocí operací @"microsoft.quantum.intrinsic.h" a @"microsoft.quantum.intrinsic.cnot":
 
 ```qsharp
         H(here);
@@ -141,7 +141,7 @@ Pak použijeme další brány $ \operatorname{CNOT} $ a $H $ k přesunutí naše
 ```
 
 ### <a name="step-3--4-measuring-and-interpreting-the-result"></a>Krok 3 & 4: měření a interpretace výsledku
-Nakonec používáme @"microsoft.quantum.primitive.m" k provádění měření a k provedení potřebných operací brány k získání požadovaného stavu, jak je označený `if` příkazy:
+Nakonec používáme @"microsoft.quantum.intrinsic.m" k provádění měření a k provedení potřebných operací brány k získání požadovaného stavu, jak je označený `if` příkazy:
 
 ```qsharp
         // Measure out the entanglement

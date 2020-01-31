@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation
+name: ObliviousAmplitudeAmplificationFromStatePreparation
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Oblivious zesílení amplitudy od Oracle po částečné odrazy.
+remarks: >-
+  Tato operace ukládá přísnější podmínky pro formu pomocných stavů Start a target než v `AmpAmpObliviousByReflectionPhases`.
+
+  Předpokládá se, že $A \ket{0}\_f\ket{0}\_A = \ket{\Text{Start}}\_{FA} $ připraví pomocný stav Start $ \ket{\Text{Start}}\_{FA} $ z výpočetního základu $ \ket{0}\_f\ket{0}$.
+
+  Předpokládá se, že cílový stav je označený jako $ \ket{1}\_f $.
+
+  Předpokládá se, že \begin{align} O\ket {\ text {Start}}\_{FA} \ket{\psi}\_s = \lambda\ket{1}\_f\ket {\ text {cokoli}}\_a\ket {\ text {Target}}\_s U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots, \end{align} pro některé jednotkové $U $.
+syntax: 'function ObliviousAmplitudeAmplificationFromStatePreparation (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int)'
+  types:
+  - name: phases
+    summary: Fáze částečných odrazů
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateOracle
+    summary: Jednotková databáze Oracle $A $, která připraví pomocný stav spuštění
+    uid: microsoft.quantum.oracles.deterministicstateoracle
+  - name: signalOracle
+    summary: Jednotková `ObliviousOracle` typu $O $, která funguje společně s pomocným a systémovým registrem
+    uid: microsoft.quantum.oracles.obliviousoracle
+  - name: idxFlagQubit
+    summary: Index do registru příznaků s jedním qubit
+    isPrimitive: true
+    uid: Int
+output:
+  content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
+  types:
+  - summary: Operace, která implementuje zesílení oblivious amplitud na základě částečných odrazů.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+metadata:
+  ms.openlocfilehash: fa44068c55a1bb92f8827095889f9c3b4d6f1011
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872440"

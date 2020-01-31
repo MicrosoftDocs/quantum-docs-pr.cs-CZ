@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 1eb48da9d4ae2a730019e2707dcb2c69b998491e
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 51124dc78feedf6d5c85fe224898e66a1c5ed459
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864368"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76870344"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -39,11 +39,11 @@ V diskuzi za iterativní fázi odhad budeme uvažovat o $U $, který je zadaný 
 Jak je popsáno v části pro Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q # Canon odkazuje na operace <xref:microsoft.quantum.oracles.discreteoracle> uživatelsky definovaného typu, který je definovaný typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Pokud `U : DiscreteOracle`, `U(m)` implementuje $U ^ m $ pro `m : Int`.
 
-V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že připraví auxillary qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ KET {\ fí} $.  
+V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že se připraví pomocná qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ KET {\ fí} $.  
 Pak se použije řízená aplikace `U(m)`, která připraví stav $ \left (R\_1 (m \phi) \ket{+} \right) \ket{\phi} $.
 Stejně jako u případných jader je účinek kontrolované aplikace `U(m)` Oracle přesně stejný jako účinek použití $R _1 $ pro neznámou fázi na $ \ket{+} $, takže můžeme jednodušším způsobem popsat účinky $U $.
 Volitelně algoritmus poté otočí ovládací prvek qubit pomocí $R _1 (-m\theta) $ k získání stavu $ \ket{\psi} = \left (R\_1 (m [\phi-\theta]) \ket{+} \right) \ket{\phi} $ $.
-Auxillary qubit, který se používá jako ovládací prvek pro `U(m)`, se pak změří v $X $ základu a získá jednu z klasických `Result`.
+Pomocný qubit použitý jako ovládací prvek pro `U(m)` se pak měří v $X $ a získá jednu klasický `Result`.
 
 V tomto okamžiku je rekonstrukce fáze z hodnot `Result` získaných pomocí iterativní fáze odhadu klasický problém při odvozování.
 Hledání hodnoty $m $, která získala získané informace, s ohledem na pevnou odvozenou metodu, je jednoduše problémem ve statistice.
@@ -106,7 +106,7 @@ Jedním z takových příkladů s efektivním krokem po zpracování klasického
 
 Nejdůležitější funkcí odhadu robustní fáze, která je sdílena s většinou dalšími užitečnými variantami, je, že kvalita rekonstrukce $ \hat{\phi} $ je v některém smyslu Heisenberg – omezeno. To znamená, že pokud je odchylka $ \hat{\phi} $ od hodnoty true $ \sigma $, pak $ \sigma $ se škáluje v poměru k celkovému počtu dotazů $Q $ provedených na řízená – $U $, tj. $ \sigma = \mathcal{O} (1/Q) $. Nyní se definice odchylek liší mezi různými algoritmy odhadu. V některých případech to může znamenat, že s minimálně $ \mathcal{O} (1) $ pravděpodobností je chyba odhadu $ | \hat{\phi}-\phi |\_\circ\le \sigma $ u některé cyklické míry $ \circ $. U stabilního odhadu fáze je odchylka přesnější odchylkou $ \sigma ^ 2 = \mathbb{E}\_\hat{\phi} [(\mod\_{2 \ PI} (\hat{\phi}-\phi + \pi)-\pi) ^ 2] $, pokud rozbalíme pravidelné fáze do jednoho omezeného intervalu $ (-\pi, \pi] $. Směrodatná odchylka v robustním odhadu fáze je přesnější a splňuje nerovnosti $ $ \begin{align} 2,0 \pi/Q \le \sigma \le 2 \ pi/2 ^ {n} \le 10.7 \ PI/Q, \end{align} $ $, kde spodní mez dosáhla limitu maximálního množství $Q $, a horní mez je zaručená i pro malá velikost vzorků.  Všimněte si, že $n $ vybrané `bitsPrecision` vstupu, který implicitně definuje $Q $.
 
-K dalším důležitým podrobnostem patří například malý počet režijních nákladů jenom $1 $ ancilla qubit, nebo že postup není adaptivní, což znamená, že požadovaná posloupnost experimentů na základě doby nezávisí na výsledcích mezilehlého měření. V tomto a nadcházejících příkladech, kde je důležité zvolit algoritmus odhadu fáze, by měl jedna z nich odkazovat na dokumentaci, jako je @"microsoft.quantum.canon.robustphaseestimation", a na odkazované publikace, kde najdete další informace a jejich implementaci.
+K dalším důležitým podrobnostem patří například malý počet režijních nákladů jenom $1 $ ancilla qubit, nebo že postup není adaptivní, což znamená, že požadovaná posloupnost experimentů na základě doby nezávisí na výsledcích mezilehlého měření. V tomto a nadcházejících příkladech, kde je důležité zvolit algoritmus odhadu fáze, by měl jedna z nich odkazovat na dokumentaci, jako je @"microsoft.quantum.characterization.robustphaseestimation", a na odkazované publikace, kde najdete další informace a jejich implementaci.
 
 > [!TIP]
 > Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), [vzorek **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)a [ukázkový **model Hubbard** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
@@ -154,25 +154,27 @@ Proto, jak je vidět v **H2Sample**, může operace přijmout algoritmus odhadu 
 
 ```qsharp
 operation H2EstimateEnergy(
-    idxBondLength : Int, 
+    idxBondLength : Int,
     trotterStepSize : Double,
-    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double)) 
+    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double))
 : Double
 ```
 
-Tyto algoritmy odhadu fáze nesčetných jsou optimalizované pro různé vlastnosti a vstupní parametry, které je potřeba pochopit, aby se pro cílovou aplikaci zajistila nejlepší volba. Například některé algoritmy odhadu fází jsou adaptivní, což znamená, že budoucí kroky jsou classicně kontrolovány pomocí výsledků měření předchozích kroků. Některá z možností vyžadují, aby bylo možné exponentiate své černé části s jednotkou Oracle podle libovolných skutečných pravomocí, a jiné vyžadují jenom celočíselné pravomoci, ale dají se jenom vyřešit odhad fáze s hodnotou modulo $2 \ PI $. Některé vyžadují mnoho auxillarych qubits a další vyžadují jenom jeden.
+Tyto algoritmy odhadu fáze nesčetných jsou optimalizované pro různé vlastnosti a vstupní parametry, které je potřeba pochopit, aby se pro cílovou aplikaci zajistila nejlepší volba. Například některé algoritmy odhadu fází jsou adaptivní, což znamená, že budoucí kroky jsou classicně kontrolovány pomocí výsledků měření předchozích kroků. Některá z možností vyžadují, aby bylo možné exponentiate své černé části s jednotkou Oracle podle libovolných skutečných pravomocí, a jiné vyžadují jenom celočíselné pravomoci, ale dají se jenom vyřešit odhad fáze s hodnotou modulo $2 \ PI $. Některé vyžadují mnoho pomocných qubits a jiné vyžadují jenom jeden.
 
 Podobně použití odhadu náhodné fáze procházení pokračuje mnohem stejným způsobem jako u jiných algoritmů dodaných s Canon:
 
 ```qsharp
-operation ExampleOracle(eigenphase : Double, time : Double, register : Qubit[]) : Unit
-is Adj + Ctl {
+operation ApplyExampleOracle(
+    eigenphase : Double,
+    time : Double,
+    register : Qubit[])
+: Unit is Adj + Ctl {
     Rz(2.0 * eigenphase * time, register[0]);
 }
 
-operation BayesianPhaseEstimationCanonSample(eigenphase : Double) : Double {
-
-    let oracle = ContinuousOracle(ExampleOracle(eigenphase, _, _));
+operation EstimateBayesianPhase(eigenphase : Double) : Double {
+    let oracle = ContinuousOracle(ApplyExampleOracle(eigenphase, _, _));
     using (eigenstate = Qubit()) {
         X(eigenstate);
         // The additional inputs here specify the mean and variance of the prior, the number of

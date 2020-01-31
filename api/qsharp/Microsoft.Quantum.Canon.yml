@@ -69,11 +69,7 @@ functions:
 
     Modifikátor `CA` označuje, že operace je ovladatelné a s sousedními poli.
 - uid: microsoft.quantum.canon.compose
-  summary: >-
-    Generuje složení dvou funkcí.
-
-
-    To znamená, že zadané dvě funkce $f $ a $g $, vrátí novou funkci reprezentující $f \circ g $.
+  summary: Vrátí kompozici dvou funkcí.
 - uid: microsoft.quantum.canon.conjugatedby
   summary: Pro dané vnější a vnitřní operace vrátí novou operaci, která přijedná vnitřní operaci do sdružené operace vnější operací.
 - uid: microsoft.quantum.canon.conjugatedbya
@@ -96,8 +92,10 @@ functions:
     To znamená, že vzhledem k operaci se dvěma vstupy Tato funkce použije Curry isomorphism $f (x, y) \equiv f (x) (y) $ a vrátí operaci jednoho vstupu, který vrátí operaci jednoho vstupu.
 - uid: microsoft.quantum.canon.curryop
   summary: "\n> [!WARNING]\n> Zastaralé\n\nCurryOp se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.curriedop\".\nPoužijte prosím @\"microsoft.quantum.canon.curriedop\"."
-- uid: microsoft.quantum.canon.decomposeintotimestepsca
+- uid: microsoft.quantum.canon.decomposedintotimestepsca
   summary: Vrátí operaci implementující integrátoru Trotter – Suzuki pro danou operaci.
+- uid: microsoft.quantum.canon.decomposeintotimestepsca
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nDecomposeIntoTimeStepsCA se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.decomposedintotimestepsca\"."
 - uid: microsoft.quantum.canon.delayed
   summary: Vrátí operaci, která aplikuje danou operaci s daným argumentem.
 - uid: microsoft.quantum.canon.delayeda
@@ -238,17 +236,17 @@ functions:
 - uid: microsoft.quantum.canon.splitarray
   summary: "\n> [!WARNING]\n> Zastaralé\n\nSplitArray se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arrays.partitioned\".\nMísto toho prosím použijte @\"Microsoft.Quantum.Arrays.Partitioned\"."
 - uid: microsoft.quantum.canon.stackcapacity
-  summary: Načte kapacitu <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackCapacity se už nepoužívá."
 - uid: microsoft.quantum.canon.stacklength
-  summary: Načte počet prvků uložených v <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackLength se už nepoužívá."
 - uid: microsoft.quantum.canon.stacknew
-  summary: Vytvoří novou prázdnou <xref:microsoft.quantum.canon.resultstack> s danou kapacitou.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackNew se už nepoužívá."
 - uid: microsoft.quantum.canon.stackpeek
-  summary: Načte nejvyšší prvek <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackPeek se už nepoužívá."
 - uid: microsoft.quantum.canon.stackpop
-  summary: Odebere nejvyšší prvek z <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackPop se už nepoužívá."
 - uid: microsoft.quantum.canon.stackpush
-  summary: Vloží nový prvek do <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStackPush se už nepoužívá."
 - uid: microsoft.quantum.canon.tooperation
   summary: "\n> [!WARNING]\n> Zastaralé\n\nToOperation se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.convert.functionasoperation\".\nPoužijte prosím @\"microsoft.quantum.convert.functionasoperation\"."
 - uid: microsoft.quantum.canon.transformedoperation
@@ -287,16 +285,18 @@ functions:
 - uid: microsoft.quantum.canon.weightonepaulis
   summary: Vrátí pole všech Paulich operátorů Weight-1 na daném počtu qubits.
 - uid: microsoft.quantum.canon.xor
-  summary: Tato operace vypočítá exkluzivní nebo ze dvou bitů.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nOperace XOR je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.logical.xor\".\nPoužijte prosím @\"microsoft.quantum.logical.xor\"."
 operations:
 - uid: microsoft.quantum.canon.adiabaticstateenergyunitary
   summary: "\n> [!WARNING]\n> Zastaralé\n\nAdiabaticStateEnergyUnitary se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.simulation.estimateenergywithadiabaticevolution\".\nPoužijte prosím @\"microsoft.quantum.simuilation.pnormalized\"."
 - uid: microsoft.quantum.canon.andladder
-  summary: >-
-    Provede na cílovém qubits řízený "a žebřík".
-
-
-    To platí pro konkrétní vektory výpočetního základu, které je uvedené v následující mapě: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
+  summary: Provede řízený "a žebřík" v registru cílového qubits.
+- uid: microsoft.quantum.canon.applyand
+  summary: Invertuje zadaný cílový qubit, pokud jsou oba ovládací prvky qubits ve 1 stavu, přičemž pomocí měření provede operaci sousedících operací.
+- uid: microsoft.quantum.canon.applycnotchain
+  summary: Vypočítá paritu registru qubits na místě.
+- uid: microsoft.quantum.canon.applycnotchainwithtarget
+  summary: Vypočítá paritu pole qubits do cílového qubit.
 - uid: microsoft.quantum.canon.applydiagonalunitary
   summary: >-
     Aplikuje pole komplexních fází na číselné stavy registru qubits.
@@ -348,6 +348,8 @@ operations:
   summary: Aplikuje přizpůsobitelné operace s podmínkou pro klasický výsledek s hodnotou nula.
 - uid: microsoft.quantum.canon.applyifzeroca
   summary: Aplikuje jednotnou operaci s podmínkou pro klasický výsledek s hodnotou nula.
+- uid: microsoft.quantum.canon.applylowdepthand
+  summary: Invertuje daný cílový qubit, pokud je a pouze v případě, že oba ovládací prvky qubits jsou v 1 stavu s T-hloubkou 1, pomocí měření k provedení sousedící operace.
 - uid: microsoft.quantum.canon.applymulticontrolledc
   summary: >-
     Aplikuje vynásobení kontrolované verze samostatně kontrolované operace.
@@ -528,7 +530,7 @@ operations:
 - uid: microsoft.quantum.canon.applywitha
   summary: Dané dvě operace platí pro sebe jako sdružené s druhou.
 - uid: microsoft.quantum.canon.applywithc
-  summary: ''
+  summary: Dané dvě operace platí pro sebe jako sdružené s druhou.
 - uid: microsoft.quantum.canon.applywithca
   summary: Dané dvě operace platí pro sebe jako sdružené s druhou.
 - uid: microsoft.quantum.canon.applywithinputtransformation
@@ -553,18 +555,12 @@ operations:
     Konkrétně vyhodnotí, že fáze $ \phi $ pro stav, který může být vyjádřen jako $ \frac{e ^ {i t}} {\sqrt{2}} (e ^ {i\phi} \ KET{0} + e ^ {-i\phi} \ KET{1}) $ pro libovolnou skutečnou hodnotu t má očekávanou hodnotu.
 - uid: microsoft.quantum.canon.assertprobintbe
   summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertProbIntBE se už nepoužívá. Místo toho použijte @ \"assertprobint (stateindex, test, bigendianaslittleendian (qubits), tolerance)\".\nTato operace byla odebrána."
+- uid: microsoft.quantum.canon.cascadecnot
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCascadeCNOT se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applycnotchain\".\nPoužijte prosím @\"microsoft.quantum.canon.applycnotchain\"."
 - uid: microsoft.quantum.canon.cnotchain
-  summary: >-
-    Vypočítá paritu pole qubits na místě.
-
-
-    Následuje vzor $ \ket{q_0} \ket{q_0 \oplus q_1} \ket{q_0 \oplus q_1 \oplus q_2} \cdots $.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCNOTChain se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applycnotchain\"."
 - uid: microsoft.quantum.canon.cnotchaintarget
-  summary: >-
-    Vypočítá paritu pole qubits do cílového qubit.
-
-
-    Pokud je pole zpočátku ve stavu $ \ket{q_0} \ket{q_1} \cdots \ket{q_ {\Text{Target}}} $, konečný stav je dán v $ \ket{q_0} \ket{q_1 \oplus q_0} \cdots \ket{q_ {n-1} \oplus \cdots \oplus q_0 \oplus q_ {\Text{Target}}} $.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCNOTChainTarget se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.canon.applycnotchainwithtarget\"."
 - uid: microsoft.quantum.canon.copymostsignificantbitle
   summary: "\n> [!WARNING]\n> Zastaralé\n\nCopyMostSignificantBitLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.copymostsignificantbit\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.CopyMostSignificantBit\"."
 - uid: microsoft.quantum.canon.cx
@@ -604,6 +600,8 @@ operations:
     \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ i &-i \end{bmatrix}.
 
     \end{align}
+- uid: microsoft.quantum.canon.inplacemajority
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nInPlaceMajority se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.applymajorityinplace\".\nPoužijte prosím @\"microsoft.quantum.arithmetic.applymajorityinplace\"."
 - uid: microsoft.quantum.canon.inplacexorbe
   summary: "\n> [!WARNING]\n> Zastaralé\n\nInPlaceXorBE se už nepoužívá. Místo toho prosím použijte @ \"applyreversedopleca (applyxorinplace (Value, _), Target)\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.inplacexorle
@@ -613,9 +611,9 @@ operations:
 - uid: microsoft.quantum.canon.integerincrementphasele
   summary: "\n> [!WARNING]\n> Zastaralé\n\nIntegerIncrementPhaseLE se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.arithmetic.incrementphasebyinteger\".\nPoužijte prosím @\"Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger\"."
 - uid: microsoft.quantum.canon.iteratethroughcartesianpower
-  summary: Opakuje proměnnou, řekněme, že prostřednictvím produktu kartézském [0, Bound-1] x [0, Bound-1] x [0, Bound-1] a volání op (ARR) pro každý prvek produktu kartézském.
+  summary: Aplikuje operaci pro každý index v kartézském výkonu rozsahu celého čísla.
 - uid: microsoft.quantum.canon.iteratethroughcartesianproduct
-  summary: Provede iteraci proměnné, řekněme `arr`, prostřednictvím produktu kartézském [0, Bounds [0]-1] × [0, meze [1]-1] × [0, meze [Length (meze)-1]-1] a volání op (ARR) pro každý prvek produktu kartézském.
+  summary: Aplikuje operaci pro každý index v kartézském produktu v několika oblastech.
 - uid: microsoft.quantum.canon.measureintegerbe
   summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureIntegerBE se už nepoužívá. Místo toho prosím použijte @ \"measureinteger (bigendianaslittleendian (Target))\".\nTato operace byla odebrána."
 - uid: microsoft.quantum.canon.modularaddproductle
@@ -701,14 +699,11 @@ newtypes:
 - uid: microsoft.quantum.canon.ccnotop
   summary: Typ podpisu brány CCNOT
 - uid: microsoft.quantum.canon.resultstack
-  summary: >-
-    Zásobník `Result` proměnných, který se nachází v prvním balení.
-
-    Zásobník obsahuje celočíselnou kapacitu, ukazatel zásobníku a pole `Result`.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nResultStack se už nepoužívá."
 metadata:
-  ms.openlocfilehash: 457d211ace716ddc09ebcd94c5cbc3c33b42d704
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 8d54303daeb32281b1e531fce50443c132c14093
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858543"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870720"

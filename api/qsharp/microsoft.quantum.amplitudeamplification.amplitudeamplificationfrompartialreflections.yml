@@ -1,0 +1,47 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections
+name: AmplitudeAmplificationFromPartialReflections
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Amplituda amplitud na základě částečných odrazů
+remarks: >-
+  Zesílení amplitud je zvláštní případ oblivious zesílení amplitud, kde nejsou žádné systémové qubits a oblivious Oracle je nastavená na identity.
+
+  Ve většině případů je `startQubits` inicializován ve stavu $ \ket{\Text{Start}}\_$1, což je eigenstate v `startStateReflection`$-$1.
+syntax: 'function AmplitudeAmplificationFromPartialReflections (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle) : (Qubit[] => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle)'
+  types:
+  - name: phases
+    summary: Fáze částečných odrazů
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateReflection
+    summary: Operátor reflexe o počátečním stavu
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: targetStateReflection
+    summary: Operátor reflexe pro cílový stav
+    uid: microsoft.quantum.oracles.reflectionoracle
+output:
+  content: (Qubit[] => Unit is Adj + Ctl)
+  types:
+  - summary: Operace, která implementuje zesílení amplitud pomocí částečných odrazů.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+metadata:
+  ms.openlocfilehash: 8fd7ecce6a7623158e26ec4db6732daf114490af
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872304"
