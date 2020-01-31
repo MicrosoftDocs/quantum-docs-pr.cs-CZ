@@ -11,12 +11,14 @@ operations:
   summary: S ohledem na přípravu a měření vyhodnotí četnost, s jakou je měření úspěšná (vrátí `Zero`) provedením daného počtu testů.
 - uid: microsoft.quantum.characterization.estimatefrequencya
   summary: Vzhledem k přípravě, která je sousední a měření, odhadne četnost, s jakou je měření úspěšné (vrátí `Zero`), a to provedením daného počtu zkušebních hodnot.
+- uid: microsoft.quantum.characterization.estimateimagoverlapbetweenstates
+  summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne imaginární část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
+- uid: microsoft.quantum.characterization.estimateoverlapbetweenstates
+  summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhaduje se čtvercový překryv mezi stavy, které jsou připraveny jednotlivými operacemi.
+- uid: microsoft.quantum.characterization.estimaterealoverlapbetweenstates
+  summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne skutečnou část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
 - uid: microsoft.quantum.characterization.measureallz
-  summary: >-
-    Společně měří Registry qubits v Pauli Z.
-
-
-    Jinými slovy, měří operaci $Z \otimes Z \otimes \cdots \otimes Z $ v daném registru.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureAllZ se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.measurement.measureallz\".\nPoužijte prosím @\"microsoft.quantum.measurement.measureAllZ\"."
 - uid: microsoft.quantum.characterization.measureidentity
   summary: Měří operátor identity v registru qubits.
 - uid: microsoft.quantum.characterization.quantumphaseestimation
@@ -26,9 +28,9 @@ operations:
 - uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
   summary: Provede qubit proces tomography měření v Pauli, a to s ohledem na konkrétní kanál zájmu.
 metadata:
-  ms.openlocfilehash: f6ca8c97c1e44950fb87da8ed7335c885cabc425
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ff2bee3d5885c4b83a7ba17eeaf578c226dbbf20
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056950"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870677"

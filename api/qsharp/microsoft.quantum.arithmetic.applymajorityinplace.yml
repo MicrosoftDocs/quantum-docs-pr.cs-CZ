@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applymajorityinplace
+name: ApplyMajorityInPlace
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Aplikuje operaci se třemi qubity na místě v registru qubits.
+
+
+  Tato operace vypočítá funkci většina místa na 3 qubits.
+
+
+  Pokud si vyhledáme výstup qubit jako $z $ a vstupní qubits jako $x $ a $y $, operace provede následující transformaci: $ \ket{XYZ} \rightarrow \ket{x \oplus z} \ket{y \oplus z} \ket{\operatorname{maj} (x, y, z)} $.
+syntax: 'operation ApplyMajorityInPlace (output : Qubit, input : Qubit[]) : Unit'
+input:
+  content: '(output : Qubit, input : Qubit[])'
+  types:
+  - name: output
+    summary: První vstupní qubit Všimněte si, že výstup je vypočítán místně a je uložený v tomto qubit.
+    isPrimitive: true
+    uid: Qubit
+  - name: input
+    summary: Druhé a třetí vstupní qubits.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: 3ebe5c3b9c1ac8b4b667d0b02e234ac2fa14bd7b
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872814"

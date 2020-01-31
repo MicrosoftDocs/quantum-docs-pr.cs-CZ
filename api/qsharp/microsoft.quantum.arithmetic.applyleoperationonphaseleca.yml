@@ -3,11 +3,14 @@ uid: microsoft.quantum.arithmetic.applyleoperationonphaseleca
 name: ApplyLEOperationOnPhaseLECA
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
+summary: Použije operaci, která pro cílový registr typu <xref:microsoft.quantum.arithmetic.littleendian>používá jako vstup registraci <xref:microsoft.quantum.arithmetic.phaselittleendian>.
+remarks: Registr se transformuje na `LittleEndian` pomocí <xref:microsoft.quantum.canon.qftle> a pak se vrátí do původní reprezentace po použití `op`.
 syntax: 'operation ApplyLEOperationOnPhaseLECA (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Adj + Ctl), target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
 input:
-  content: '(op: (Microsoft. aritmetické LittleEndian = > jednotka je ADJ + CTL), target: Microsoft. aritmetický PhaseLittleEndian)'
+  content: '(op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Adj + Ctl), target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
   types:
-  - name: evřít
+  - name: op
+    summary: Operace, která se má použít.
     isOperation: true
     input:
       types:
@@ -19,10 +22,11 @@ input:
     functors:
     - Adjoint
     - Controlled
-  - name: Cílové
+  - name: target
+    summary: Registr, na který se operace používá
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
-  content: Jednotka
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -31,9 +35,12 @@ functors:
 - Controlled
 seeAlso:
 - microsoft.quantum.canon.applyleoperationonphasele
-ms.openlocfilehash: e846eb88b20af7714a28e30d72b45c7e71aa75c6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057150"
+- microsoft.quantum.canon.applyleoperationonphaselea
+- microsoft.quantum.canon.applyleoperationonphaselec
+metadata:
+  ms.openlocfilehash: 199458274bd1238211058e7ed993a9d497af9d80
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871137"

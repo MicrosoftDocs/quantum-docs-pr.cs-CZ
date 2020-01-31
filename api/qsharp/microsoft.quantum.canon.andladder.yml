@@ -4,10 +4,10 @@ name: AndLadder
 type: operation
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Provede na cílovém qubits řízený "a žebřík".
+  Provede řízený "a žebřík" v registru cílového qubits.
 
 
-  To se vztahuje na jednu z nich na základě následující mapy na výpočetních vektorech: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1 , \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
+  Tato operace používá transformaci popsanou následujícím mapováním výpočetního základu, $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
 remarks: >-
   - Slouží jako součást <xref:microsoft.quantum.canon.applymulticontrolledc> a <xref:microsoft.quantum.canon.applymulticontrolledca>.
 
@@ -43,9 +43,9 @@ output:
 functors:
 - Adjoint
 metadata:
-  ms.openlocfilehash: 2970f9c783ea233f2f1ceb4089802320efe82602
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bf5b262ca55bea542218356918cf36eb95502967
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217712"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871035"

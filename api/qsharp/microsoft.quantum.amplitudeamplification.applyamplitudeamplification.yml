@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.applyamplitudeamplification
+name: ApplyAmplitudeAmplification
+type: operation
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: U daného registru aplikuje zesílení amplitud pomocí dané sady fází a Oracle, aby odrážely počáteční a konečné stavy.
+syntax: 'operation ApplyAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[]) : Unit'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[])'
+  types:
+  - name: phases
+    summary: Sada fází popisujících částečné odrazy u každého kroku algoritmu zesílení amplitud. Příklad najdete v tématu @"microsoft.quantum.amplitudeamplification.standardreflectionphases".
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateReflection
+    summary: Oracle, který odpovídá počátečnímu stavu.
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: targetStateReflection
+    summary: Oracle, který odráží informace o požadovaném konečném stavu.
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: target
+    summary: Registrace, na které se má provést zesílení amplitudy
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: 36b58c7b553c225c022e44d6c7257ab92a280807
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872474"

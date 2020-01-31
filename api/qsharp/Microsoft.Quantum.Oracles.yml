@@ -10,11 +10,7 @@ functions:
 - uid: microsoft.quantum.oracles.oracletodiscrete
   summary: Vzhledem k tomu, že operace představující "černé pole" je Oracle, vrátí nediskrétní Oracle, který představuje "černý rámeček" Oracle se opakuje několikrát.
 - uid: microsoft.quantum.oracles.reflectionoraclefromdeterministicstateoracle
-  summary: >-
-    Sestaví reflexi o daném stavu od Oracle.
-
-
-    Vzhledem k tomu, že <xref:microsoft.quantum.oracles.deterministicstateoracle>typu Oracle $O $ je výsledkem této funkce odraz kolem stavu $ \ket{\psi} $, kde $O \ket{0} = \ket{\psi} $.
+  summary: Sestaví reflexi o daném stavu od Oracle.
 - uid: microsoft.quantum.oracles.stateoraclefromdeterministicstateoracle
   summary: Převede Oracle typu `DeterministicStateOracle` na `StateOracle`.
 newtypes:
@@ -73,9 +69,9 @@ newtypes:
 
     - Registr systému $s $, ve kterém bude uložen požadovaný stav pro \ket{\psi},\_s $.
 metadata:
-  ms.openlocfilehash: 10eb2c7acebf805b955816abe2bf1cabb95ce059
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7e582286b69563bc4baa856f5236e5c2bd292ae0
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216097"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76869999"
