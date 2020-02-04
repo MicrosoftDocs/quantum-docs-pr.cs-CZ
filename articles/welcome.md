@@ -6,16 +6,18 @@ author: natke
 ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: overview
-ms.openlocfilehash: 8fb3b7181632bd6f2b562735546adbf4b461a1b6
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: 4308bf7e0e48e5735419fab836e479641455e9a5
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73530024"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76819923"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Začínáme se sadou Quantum Development Kit (QDK)
 
-Vítejte u sady Microsoft Quantum Development Kit!  Najdete tady všechny nástroje, které budete potřebovat ke studiu kvantového programování s použitím jazyka Q#.  Jako pomůcku při seznamování s kvantovými výpočty v jazyku Q# vám nabízíme tuto příručku Začínáme – průvodce pro ty, kdo chtějí začít psát kvantové programy, i pro ty, kdo na to ještě nejsou připravení, ale chtějí se dozvědět víc o jazyku Q# a kvantovém programování.
+Vítejte u sady Microsoft Quantum Development Kit!  Najdete tady všechny nástroje, které budete potřebovat ke studiu kvantového programování s použitím jazyka Q#.  Jako pomůcku při seznamování s kvantovými výpočty v jazyku Q# vám nabízíme tuto příručku Začínáme – průvodce pro ty, kdo chtějí začít psát kvantové programy, i pro ty, kdo na to ještě nejsou připravení, ale chtějí se dozvědět víc o jazyku Q# a kvantovém programování. 
+
+Pokud jste připraveni začít s kódováním, [nainstalujte si QDK](xref:microsoft.quantum.install).
 
 ## <a name="questions-about-quantum-computing"></a>Otázky ke kvantovým výpočtům
 
@@ -54,9 +56,8 @@ Uvedené úvodní příručky a články mají sloužit jako průvodce programá
 * Prozkoumejte naše [ukázky v jazyku Q#](https://docs.microsoft.com/samples/browse/?languages=qsharp) a objevte problémy, které můžete řešit prováděním kvantových výpočtů.
 
 * Vývoj provádějte na místním počítači s hostitelským programovacím jazykem a vývojovým prostředím, které si zvolíte:
-  * Vývoj v [Pythonu](xref:microsoft.quantum.install#develop-with-python)
-  * Vývoj ve [Visual Studiu](xref:microsoft.quantum.install#develop-with-c-on-windows-using-visual-studio)
-  * Vývoj s využitím [Visual Studio Code](xref:microsoft.quantum.install#develop-with-c-using-visual-studio-code)
-  * Vývoj s využitím [poznámkových bloků Jupyter](xref:microsoft.quantum.install#develop-with-jupyter-notebooks)
+  * Vývoj s využitím [Q# a Pythonu](xref:microsoft.quantum.install.python)
+  * Vývoj s využitím [Q# a C#](xref:microsoft.quantum.install.cs)
+  * Vývoj s využitím [poznámkových bloků Jupyter v Q#](xref:microsoft.quantum.install.jupyter)
 
 * Staňte se součástí komunity Microsoft Quantum díky zapojení do opensourcového projektu [QDK](xref:microsoft.quantum.contributing).
