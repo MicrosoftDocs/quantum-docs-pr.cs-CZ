@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: 5fa32f14291fa2070b49e4bb3b720cbf31ee614b
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: c093284f1ea33b72d4d264992b0ba6bf6bc72782
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819888"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036436"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Vytvoření projektu Q # ve vývojovém prostředí
 
@@ -36,7 +36,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 1. Vytvořte složku pro váš projekt a přejděte do této složky.
 
-1. Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #. Příklad:
+1. Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #. Například:
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
     }
     ```
 
-1. Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #. Příklad:
+1. Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #. Například:
 
     ```python
     import qsharp
@@ -87,7 +87,7 @@ Nyní můžete pokračovat v vývoji programu pro práci s více.
     jupyter notebook
     ```
 
-1. Přejděte na adresu URL zobrazenou na příkazovém řádku. Příklad: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85 ]
+1. Přejděte na adresu URL zobrazenou na příkazovém řádku. Příklad: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]
 
 1. V prohlížeči se zobrazí stránka Jupyter. Na kartě **soubory** vyberte **Nový** > **Q #** a vytvořte Poznámkový blok Jupyter s jádrem Q #. Do první buňky poznámkového bloku přidejte následující kód:
 
@@ -173,7 +173,7 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 1. Vytvoření nové aplikace
 
-    ```bash
+    ```dotnetcli
     dotnet new console -lang Q# -o <project name>
     ```
 
@@ -187,7 +187,7 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 1. Spuštění aplikace
 
-    ```bash
+    ```dotnetcli
     dotnet run
     ```
 
@@ -195,6 +195,6 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 Teď budete pokračovat ve vývoji ve vaší práci pomocí nástrojů příkazového řádku.
 
-## <a name="whats-next"></a>A co dál?
+## <a name="whats-next"></a>Co dále?
 
 Teď, když jste vytvořili projekt v upřednostňovaném prostředí, můžete pokračovat ve vývoji vašeho vlastního navýšení.

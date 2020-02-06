@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 51124dc78feedf6d5c85fe224898e66a1c5ed459
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: 0c347113339a77e9eaf63dc0967c320f8b063a0e
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76870344"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036249"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -88,7 +88,7 @@ Následující tradiční klasická terminologie volá $ \eqref{EQ: fáze-Est-pr
 
 Zjistili jsme `Result` z pravděpodobnosti odhadu iterační fáze, můžeme pak použít pravidlo Bayes a určit, co by se mělo domnívat, že se má fáze sledovat.
 Betonně \begin{Equation} \Pr (\phi | d) = \frac{\Pr (d | \phi) \Pr (\phi)} {\int \Pr (d | \phi) \Pr (\phi) {\mathrm d} \phi} \Pr (\phi), \end{Equation} kde $d \in \\{\texttt{Zero}, \texttt{One}\\} $ je `Result`a WHERE $ \Pr (\phi) $ popisuje náš předchozí přesvědčení o $ \phi $.
-To pak provede iterativní povýšení iterativní fáze odhadu, jako bezprostřední distribuce $ \Pr (\phi | d) $ popisuje naše přesvědčení hned po našem sledování dalšího `Result`.
+To pak provede iterativní povýšení iterativní fáze odhadu, jako bezprostřední distribuce $ \Pr (\phi | d) $ popisuje naše přesvědčení hned před sledováním dalšího `Result`.
 
 V jakémkoli okamžiku tohoto postupu můžeme ohlásit fázi $ \hat{\phi} $ odvozenou klasickým kontrolérem jako \begin{Equation} \hat{\phi} \mathrel{: =} \expect [\phi | \Text{data}] = \int \phi \Pr (\phi | \Text{data}) {\mathrm d} \phi, \end{Equation} kde $ \Text{data} $ představuje celý záznam všech získaných hodnot `Result`.
 

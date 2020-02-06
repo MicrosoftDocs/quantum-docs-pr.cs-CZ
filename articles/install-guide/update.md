@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: ed2a90749bbe245dde97424fc3191682f995d85b
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: f19285ae0e008b3460d06430a236f098d716e268
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819735"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036303"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace Microsoft Quantum Development Kit (QDK)
 
@@ -28,10 +28,12 @@ Doporučujeme, abyste si zachovali aktuálnost nejnovější verze QDK. Postupuj
 Bez ohledu na to, jestli používáte C# nebo Python k hostování operací q #, postupujte podle těchto pokynů a aktualizujte své projekty q #.
 
 1. Nejdřív ověřte, že máte nejnovější verzi [.NET Core SDK 3,1](https://dotnet.microsoft.com/download). Spusťte na příkazovém řádku následující příkaz:
-    ```bash
+
+    ```dotnetcli
     dotnet --version
     ```
-Ověřte, že výstup je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkuste to znovu. Pak postupujte podle pokynů níže v závislosti na instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
+
+    Ověřte, že výstup je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkuste to znovu. Pak postupujte podle pokynů níže v závislosti na instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
 
 ### <a name="update-q-projects-in-visual-studio"></a>Aktualizace projektů Q # v aplikaci Visual Studio
  
@@ -40,18 +42,22 @@ Ověřte, že výstup je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnov
 3. V nabídce vyberte **sestavení** -> **Vyčistit řešení** .
 4. V každém z vašich souborů. csproj aktualizujte cílovou verzi rozhraní .NET Framework na `netcoreapp3.0` (nebo `netstandard2.1`, pokud se jedná o projekt knihovny).
     To znamená upravit řádky formuláře:
+
     ```xml
     <TargetFramework>netcoreapp3.0</TargetFramework>
     ```
+
     Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 5. Uložit a zavřít všechny soubory ve vašem řešení
 6. Vyberte **nástroje** -> **příkazového řádku** -> **Developer Command Prompt**
 7. Pro každý projekt v řešení spusťte následující příkaz:
-    ```bash
+
+    ```dotnetcli
     dotnet add [project_name].csproj package Microsoft.Quantum.Development.Kit
     ```
-    Pokud vaše projekty používají jiné balíčky Microsoft. (např. Microsoft. probíhat. NUMERIC), spusťte příkaz i pro tyto.
-8. Zavřete příkazový řádek a vyberte **sestavení** Build -> **Build** ( *nevybírejte znovu* sestavit řešení, protože opětovné sestavení se zpočátku nezdaří)
+
+   Pokud vaše projekty používají jiné balíčky Microsoft. (např. Microsoft. probíhat. NUMERIC), spusťte příkaz i pro tyto.
+8. Zavřete příkazový řádek a vyberte **sestavit** -> **Sestavit řešení** ( *nevybírejte znovu* sestavit řešení).
 
 Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](#update-visual-studio-qdk-extension).
 
@@ -66,24 +72,30 @@ Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](
 
 1. Přejděte do složky, která obsahuje soubor projektu.
 2. Spusťte následující příkaz:
-    ```bash
+
+    ```dotnetcli
     dotnet clean [project_name].csproj
     ```
 
 3. V každém z vašich souborů. csproj aktualizujte cílovou verzi rozhraní .NET Framework na `netcoreapp3.0` (nebo `netstandard2.1`, pokud se jedná o projekt knihovny).
     To znamená upravit řádky formuláře:
+
     ```xml
     <TargetFramework>netcoreapp3.0</TargetFramework>
     ```
+
     Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 4. Spusťte následující příkaz:
-    ```bash
+
+    ```dotnetcli
     dotnet add package Microsoft.Quantum.Development.Kit
     ```
+
     Pokud váš projekt používá jiné balíčky Microsoft. prokládání (např. Microsoft. prohodně. Numerics), spusťte příkaz i pro tyto účely.
 5. Uložte a zavřete všechny soubory.
 6. Opakujte 1-4 pro každou závislost projektu a pak přejděte zpátky do složky, která obsahuje váš hlavní projekt, a spusťte:
-    ```bash
+
+    ```dotnetcli
     dotnet build [project_name].csproj
     ```
 
@@ -105,14 +117,14 @@ Níže vyberte vývojové prostředí.
 
 1. Aktualizace jádra `iqsharp` 
 
-    ```bash
+    ```dotnetcli
     dotnet tool update -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
 
 2. Ověření verze `iqsharp`
 
-    ```bash
+    ```dotnetcli
     dotnet iqsharp --version
     ```
 
@@ -122,6 +134,7 @@ Níže vyberte vývojové prostředí.
     iqsharp: 0.10.1912.501
     Jupyter Core: 1.2.20112.0
     ```
+
     Nedělejte si starosti, pokud je verze `iqsharp` vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
 3. Aktualizace balíčku `qsharp`
@@ -144,7 +157,9 @@ Níže vyberte vývojové prostředí.
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
+
 5. Z umístění souborů `.qs` spusťte následující příkaz
+
     ```bash
     python -c "import qsharp; qsharp.reload()"
     ```
@@ -155,14 +170,14 @@ Níže vyberte vývojové prostředí.
 
 1. Aktualizace jádra `iqsharp`
 
-    ```bash
+    ```dotnetcli
     dotnet tool update -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
 
 2. Ověření verze `iqsharp`
 
-    ```bash
+    ```dotnetcli
     dotnet iqsharp --version
     ```
 
@@ -172,9 +187,11 @@ Níže vyberte vývojové prostředí.
     iqsharp: 0.10.1912.501
     Jupyter Core: 1.2.20112.0
     ```
+
     Nedělejte si starosti, pokud je verze `iqsharp` vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
 3. Z buňky v Jupyter Notebook spusťte následující příkaz:
+
     ```
     %workspace reload
     ```
@@ -210,10 +227,10 @@ Níže vyberte vývojové prostředí.
 
 1. Aktualizace šablon projektů pro každý produkt pro .NET
 
-    ```bash
+    ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
 
-## <a name="whats-next"></a>A co dál?
+## <a name="whats-next"></a>Co dále?
 
 Teď, když jste v upřednostňovaném prostředí aktualizovali sadu pro vývoj pro práci s více operačními systémy, můžete pokračovat v vývoji a spouštění programů pro práci s více poli. Pokud jste ještě nezapsali program, můžete začít s [prvním programem pro práci](xref:microsoft.quantum.write-program)za sebou.

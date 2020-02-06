@@ -6,12 +6,12 @@ ms.author: gulow
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.chemistry.concepts.installation
-ms.openlocfilehash: fd43c783fa82c7219e143a57759919606fdd197f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: de13d1814821c612ed74a347dc8ffb5881063576
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184198"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036470"
 ---
 # <a name="chemistry-library-installation-and-validation"></a>Instalace a ověření knihovny chemie
 
@@ -51,18 +51,18 @@ Další podrobnosti najdete v [Průvodci konzolou správce balíčků](https://d
 
 **Příkazový řádek nebo Visual Studio Code:** Pomocí příkazového řádku na svém vlastním nebo z Visual Studio Code můžete pomocí příkazu `dotnet` přidat do projektu odkaz na balíček NuGet:
 
-```bash
+```dotnetcli
 dotnet add package Microsoft.Quantum.Chemistry
 ```
 
 ## <a name="verifying-your-installation"></a>Ověření instalace 
 
 Podobně jako v ostatních částech vývojové sady pro práci s více operačními systémy obsahuje knihovna složení množství plně dokumentovaných ukázek, které vám pomůžou rychle začít pracovat.
-K otestování instalace pomocí těchto ukázek naklonujte [hlavní úložiště ukázek](https://github.com/Microsoft/Quantum)a pak spusťte jednu z ukázek.  Například pro spuštění ukázky [`MolecularHydrogen`](https://github.com/Microsoft/Quantum/tree/master/Chemistry/MolecularHydrogen) :
+K otestování instalace pomocí těchto ukázek naklonujte [hlavní úložiště ukázek](https://github.com/Microsoft/Quantum)a pak spusťte jednu z ukázek.  Například pro spuštění ukázky [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) :
 
 ```bash
 git clone https://github.com/Microsoft/Quantum.git
-cd Quantum/Chemistry/MolecularHydrogen
+cd Quantum/samples/chemistry/MolecularHydrogen
 dotnet run
 ```
 
@@ -78,11 +78,11 @@ Další informace o odhadu hodnot úrovní energie najdete v tématu [získání
 
 Ukázka MolecularHydrogen používá molekulová vstupní data, která jsou konfigurována ručně.  I když je to v malých příkladech jemné, je chemie ve velkém měřítku vyžadovat Hamiltonians s miliony nebo miliardami podmínek. Takové Hamiltonians, generované škálovatelnými výpočetními složeními, jsou příliš velké pro import rukou. 
 
-Knihovna složení termínů pro prostředí pro vývoj pro práci s více procesory je navržená tak, aby dobře spolupracovala s výpočetními balíčky, zejména s výpočetními platformami [**NWChem**](http://www.nwchem-sw.org/) výpočetního prostředí vyvinutým laboratoří pro molekulární vědy EMSL) v oblasti Tichomoří – severozápadní v národní laboratoři.
+Knihovna chemickéch procesorů pro práci s aplikacemi pro vývoj po závažnosti je navržená tak, aby dobře spolupracovala s výpočetními balíčky, zejména s výpočetními platformami [**NWChem**](http://www.nwchem-sw.org/) , které vyvinula laboratoř pro molekulární vědy (EMSL) v oblasti Tichomoří – severozápadní v národní laboratoři.
 Konkrétně balíček `Microsoft.Quantum.Chemistry` poskytuje nástroje pro načítání instancí chemického plnění, které představují problémy s simulací ve [schématu Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge), podporované také pro export pomocí nejnovějších verzí NWChem.
 
 Pokud chcete začít pracovat s NWChem společně s vývojovou sadou pro práci s více operačními systémy, doporučujeme jednu z následujících metod:
-- Začněte používat stávající soubory Broombridge dodávané s ukázkami v [IntegralData/YAML](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML).
+- Začněte používat stávající soubory Broombridge dodávané s ukázkami v [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML).
 - Pro Microsoft Quantum Development Kit, což je webový front-end pro NWChem, můžete pomocí [Tvůrce šipek EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) vygenerovat nové Broombridge naformátované molekulární vstupní soubory.  
 - Použijte k spuštění NWChem [Image Docker](https://hub.docker.com/r/nwchemorg/nwchem-qc/) , kterou poskytuje PNNL, nebo
 - [Zkompilujte NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) pro vaši platformu.
@@ -90,9 +90,10 @@ Pokud chcete začít pracovat s NWChem společně s vývojovou sadou pro práci 
 Další informace o tom, jak pracovat s NWChem pro chemické modely a analyzovat pomocí knihovny programu pro vytváření více koncových procesorů, najdete v článku [komplexním s NWChem](xref:microsoft.quantum.chemistry.examples.endtoend) .
 
 ### <a name="getting-started-using-broombridge-files-provided-with-the-samples"></a>Začínáme s používáním souborů Broombridge poskytovaných v ukázkách
-Ve složce [IntegralData/YAML](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML) v úložišti pro všechny procesory pro vývoj z více procesorů najdete datové soubory molekul s Broombridge formátem.  
 
-V jednoduchém příkladu můžete použít ukázku knihovny chemie, [GetGateCount](https://github.com/Microsoft/Quantum/tree/master/Chemistry/GetGateCount) načíst Hamiltonian z jednoho ze souborů Broombridge a provést odhady brány pro simulaci nezatížených nákladů algorigthms:
+Ve složce [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML) v úložišti pro všechny procesory pro vývoj z více procesorů najdete datové soubory molekul s Broombridge formátem.  
+
+V jednoduchém příkladu můžete použít ukázku knihovny chemie, [GetGateCount](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/GetGateCount) načíst Hamiltonian z jednoho ze souborů Broombridge a provést odhady brány pro simulaci nezatížených nákladů algorigthms:
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
@@ -171,5 +172,3 @@ Další informace lze získat pomocí integrované funkce pomoci prostředí Pow
 Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
 ```
-
-

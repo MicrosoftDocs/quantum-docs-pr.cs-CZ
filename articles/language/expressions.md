@@ -6,16 +6,16 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 09d493df4e1178fee1f7a5946cfda2f411111006
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185201"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036305"
 ---
 # <a name="expressions"></a>Výrazy
 
-## <a name="grouping"></a>Sloučení
+## <a name="grouping"></a>Seskupování
 
 V případě libovolného výrazu je stejný výraz uzavřený v závorkách výraz stejného typu.
 `(7)` je například výraz `Int`, `([1,2,3])` je výraz typu `Int`s a `((1,2))` je výraz typu `(Int, Int)`.
@@ -61,7 +61,7 @@ V takovém případě se druhý parametr musí vejít do 32 bitů; v takovém p�
 
 Předané dva celočíselné nebo velké celočíselné výrazy mohou být tvořeny výrazem `%` (modulo), `&&&` (bitových a), `|||` (bitových nebo) nebo `^^^` (bitových operátorů XOR).
 
-Pro vytvoření nového výrazu stejného typu, který je na levé straně, se dá použít buď výraz celého čísla nebo Big Integer, a na pravé straně výraz typu Integer vpravo, `<<<` (aritmetický levý SHIFT) nebo `>>>` (aritmetický posun). vyjádření.
+Pro vytvoření nového výrazu stejného typu, jako je výraz na levé straně, je možné použít buď celočíselný nebo velký výraz celého čísla na levé straně, a výraz typu Integer na pravé straně, operátor `<<<` (aritmetický posun doleva) nebo `>>>` (aritmetický posun).
 
 Druhý parametr (velikost posunu) pro operaci posunu musí být větší nebo roven nule. chování pro záporné hodnoty posunutí není definováno.
 Velikost SHIFT pro buď operaci posunutí musí být také do 32 bitů. v takovém případě se vyvolá Běhová chyba.
@@ -77,10 +77,10 @@ Například:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
- 5 | 2 | 2 | 1\. místo
- 5 | – 2 | – 2 | 1\. místo
- -5 | 2 | – 2 | – 1
- -5 | – 2 | 2 | – 1
+ 5 | 2 | 2 | 1
+ 5 | -2 | -2 | 1
+ -5 | 2 | -2 | -1
+ -5 | -2 | 2 | -1
 
 Dělení velkých celých čísel a Modulus funguje stejným způsobem.
 
@@ -89,14 +89,14 @@ Nový výraz bude stejného typu jako výraz prvku.
 
 S ohledem na libovolný celočíselný nebo velký celočíselný výraz může být nový výraz stejného typu vytvořen pomocí unárního operátoru `~~~` (bitový doplněk).
 
-## <a name="boolean-expressions"></a>Logické výrazy
+## <a name="boolean-expressions"></a>Výrazy logických hodnot
 
 Dvě `Bool` hodnoty literálu jsou `true` a `false`.
 
 Vzhledem k jakýmkoli dvěma výrazům stejného primitivního typu lze použít binární operátory `==` a `!=` k vytvoření výrazu `Bool`.
-Výraz bude true, pokud jsou dva výrazy (odp.) stejné.
+Výraz bude true, pokud jsou dva výrazy stejné, a false, pokud ne.
 
-Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich hodnoty. Například:
+Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty. Například použití operátoru "Unwrap" `!` (vysvětleno na [stránce modelu typu Q #](xref:microsoft.quantum.language.type-model#user-defined-types)),
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -112,7 +112,7 @@ Stav obou qubits se neshoduje, nepoužívá se, neměří ani nemění pomocí t
 Porovnání rovnosti pro hodnoty `Double` může být zavádějící z důvodu zaoblení efektů.
 `49.0 * (1.0/49.0) != 1.0`například.
 
-V případě jakýchkoli dvou číselných výrazů lze použít binární operátory `>`, `<`, `>=`a `<=` k vytvoření nového logického výrazu, který má hodnotu true, pokud je první výraz v tomto pořadí větší než, menší než, větší než nebo rovno nebo je menší nebo rovno druhému výrazu.
+Vzhledem k tomu, že jsou zadány dva číselné výrazy, binární operátory `>`, `<`, `>=`a `<=` lze použít k vytvoření nového logického výrazu, který má hodnotu true, pokud je první výraz v tomto pořadí větší než, menší než, větší nebo roven nebo menší nebo roven druhému výrazu.
 
 V případě jakýchkoli dvou logických výrazů lze použít binární operátory `and` a `or` k vytvoření nového logického výrazu, který má hodnotu true, pokud jsou oba výrazy (odp. buď nebo oba) pravdivé.
 
@@ -125,7 +125,7 @@ Q # povoluje použití řetězců v příkazu `fail` a ve funkci `Log` Standard.
 Řetězce v Q # jsou buď literály nebo interpolované řetězce.
 Řetězcové literály jsou podobně jako jednoduché řetězcové literály ve většině jazyků: sekvence znaků Unicode uzavřená v dvojitých uvozovkách, `"`.
 Uvnitř řetězce je možné znak zpětného lomítka `\` použít k úniku znaku dvojité uvozovky a vložení nového řádku jako `\n`, návratu na začátek jako `\r`a kartu jako `\t`.
-Např.:
+Příklad:
 
 ```qsharp
 "\"Hello world!\", she said.\n"
@@ -229,7 +229,7 @@ To je obvykle zbytečné, protože kompilátor Q # odvodí skutečné typy.
 Je vyžadován pro částečnou aplikaci (viz níže), pokud je argument typu bez parametrů ponechán neurčen.
 Někdy je to užitečné i při předávání operací s různými funktory, které jsou schopné volat.
 
-Pokud má například `Func` `('T1, 'T2, 'T1) -> 'T2`signatury, `Op1` a `Op2` mají podpis `(Qubit[] => Unit is Adj)`a `Op3` má `(Qubit[] => Unit)`signatury, aby vyvolal `Func` s `Op1` jako první argument, `Op2` jako druhý a `Op3` jako třetí:
+Pokud má například `Func` signatura `('T1, 'T2, 'T1) -> 'T2`, `Op1` a `Op2` mají signatury `(Qubit[] => Unit is Adj)`a `Op3` má podpis `(Qubit[] => Unit)`, k vyvolání `Func` s `Op1` jako první argument, `Op2` jako druhé a `Op3` jako třetí:
 
 ```qsharp
 let combinedOp = Func<(Qubit[] => Unit), (Qubit[] => Unit is Adj)>(Op1, Op2, Op3);
@@ -491,18 +491,18 @@ Operátory v pořadí podle priority, od nejvyšších po nejnižší:
 Operátor | Aritou | Popis | Typy operandů
 ---------|----------|---------|---------------
  koncový `!` | Unární | Rozbalení | Libovolný uživatelsky definovaný typ
- `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, `BigInt` nebo `Double` pro `-`, `Int` nebo `BigInt` pro `~~~``Bool`
- `^` | Tvaru | Celočíselný výkon | `Int` nebo `BigInt` pro základní `Int` pro exponent
- `/`, `*`, `%` | Tvaru | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*``Int` nebo `BigInt` pro `%`
- `+`, `-` | Tvaru | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double`, navíc `String` nebo libovolný typ pole pro `+`
- `<<<`, `>>>` | Tvaru | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
- `<`, `<=`, `>``>=` | Tvaru | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo `Double`
- `==`, `!=` | Tvaru | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
- `&&&` | Tvaru | Bitový operátor AND | `Int` nebo `BigInt`
- `^^^` | Tvaru | Bitový operátor XOR | `Int` nebo `BigInt`
- <code>\|\|\|</code> | Tvaru | Bitový operátor OR | `Int` nebo `BigInt`
- `and` | Tvaru | Logický operátor AND | `Bool`
- `or` | Tvaru | Logický operátor OR | `Bool`
+ `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, `BigInt` nebo `Double` pro `-`, `Int` nebo `BigInt` pro `~~~``Bool``not`
+ `^` | Binární hodnota | Celočíselný výkon | `Int` nebo `BigInt` pro základní `Int` pro exponent
+ `/`, `*`, `%` | Binární hodnota | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*``Int` nebo `BigInt` pro `%`
+ `+`, `-` | Binární hodnota | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double`, navíc `String` nebo libovolný typ pole pro `+`
+ `<<<`, `>>>` | Binární hodnota | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
+ `<`, `<=`, `>`, `>=` | Binární hodnota | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo `Double`
+ `==`, `!=` | Binární hodnota | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
+ `&&&` | Binární hodnota | Bitový operátor AND | `Int` nebo `BigInt`
+ `^^^` | Binární hodnota | Bitový operátor XOR | `Int` nebo `BigInt`
+ <code>\|\|\|</code> | Binární hodnota | Bitový operátor OR | `Int` nebo `BigInt`
+ `and` | Binární hodnota | Logický operátor AND | `Bool`
+ `or` | Binární hodnota | Logický operátor OR | `Bool`
  `..` | Binární/Ternární | Operátor rozsahu | `Int`
  `?` `|` | Ternární | Podmíněné | `Bool` na levé straně
 `w/` `<-` | Ternární | Kopírování a aktualizace | viz [výrazy pro kopírování a aktualizaci](#copy-and-update-expressions)

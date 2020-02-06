@@ -6,12 +6,12 @@ ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 91f65b05c83367c2d2ece93212369dc448d8c2a8
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 1c45808207a2020f603448eba05900cdc40b4916
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821010"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036351"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
@@ -48,7 +48,8 @@ Kromě toho efektivita aplikace *Fourierova transformace* (QFT) daleko přebír�
 
 Jako přibližné generalizace QFT poskytujeme operaci <xref:microsoft.quantum.canon.approximateqft>, která umožňuje další optimalizace vyřazením rotací, které nejsou bezpodmínečně nutné pro požadovanou přesnost algoritmu.
 Přibližná QFT vyžaduje operaci otočení dyadic $Z $-<xref:microsoft.quantum.intrinsic.rfrac> a operaci <xref:microsoft.quantum.intrinsic.h>.
-Předpokládá se, že vstup a výstup mají kódování ve formátu big endian (nejnižší bitů/qubit je vlevo, totéž jako [KET Notation](xref:microsoft.quantum.concepts.dirac)).
+Předpokládá se, že vstup a výstup se zakódují do kódování big endian---to znamená, že qubit s indexovým `0` je zakódovaný v binárním (nejvyšším) formátu binárního typu celého čísla.
+Tím se zarovnává s [KET Notation](xref:microsoft.quantum.concepts.dirac)jako registr tří qubits ve stavu $ \ket{100}$ odpovídá $q _0 $ ve stavu $ \ket{1}$, zatímco $q _1 $ a $q _2 $ jsou ve stavu $ \ket{0}$.
 Parametr aproximace $a $ určuje úroveň vyřazení $Z $-rotace, tj. $a \in [0.. n] $.
 V tomto případě všechny $Z $-rotace $2 \ pi/2 ^ k $, kde $k > a $, se odeberou z okruhu QFT.
 Je známo, že pro $k \ge \ log_2 (n) + \ log_2 (1/\epsilon) + $3. jedna může být vázaná na $\\| \operatorname{QFT}-\operatorname{AQFT} \\| < \epsilon $.
@@ -56,7 +57,7 @@ Tady $\\| \cdot\\| $ je norma operátoru, která v tomto případě je druhá od
 
 ## <a name="arithmetic"></a>Aritmetické operace ##
 
-Stejně jako aritmetická role hraje centrální roli v klasickém výpočetním prostředí, je také indispensible ve výpočetním prostředí.  Algoritmy jako algoritmus pro simulaci Shor, metody simulace a také mnoho algoritmů oracular spoléhají na souvislé aritmetické operace.  Nejvíc přístupů k aritmetickému sestavování po okruhech přidávání  Nejjednodušší přizpůsobování přebírá klasický vstup $b $ a přidává hodnotu do stavového pole s celým číslem $ \ket{a} $.  Matematicky, přidávání (což znamená, že Poznámka $ \operatorname{Add} (b) $ pro klasický vstup $b $) má vlastnost, která
+Stejně jako aritmetická role hraje centrální roli v klasickém výpočetním prostředí, je také nepostradatelná pro výpočetní výkon.  Algoritmy jako algoritmus pro simulaci Shor, metody simulace a také mnoho algoritmů oracular spoléhají na souvislé aritmetické operace.  Nejvíc přístupů k aritmetickému sestavování po okruhech přidávání  Nejjednodušší přizpůsobování přebírá klasický vstup $b $ a přidává hodnotu do stavového pole s celým číslem $ \ket{a} $.  Matematicky, přidávání (což znamená, že Poznámka $ \operatorname{Add} (b) $ pro klasický vstup $b $) má vlastnost, která
 
 $ $ \operatorname{Add} (b) \ket{a} = \ket{a + b}.
 $ $ Tento okruh základního přidaných je více než přidaným objektem pro přidání.
