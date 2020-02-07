@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: b209f0b600d973c3870c66060e1b484ec519322f
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 0e9dd1c74316eeb1fa7bbbf657d2e78231ee4294
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820704"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036504"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Instalace sady Microsoft Quantum Development Kit (QDK)
 
@@ -19,7 +19,7 @@ Naučte se nainstalovat sadu Microsoft Quantum Development Kit (QDK), abyste moh
 
 - Programovací jazyk Q#
 - Sada knihoven s abstraktními komplexními funkcemi v jazyku Q#
-- Rozhraní API pro jazyky Python a .NET (tj. C#, F# a VB.NET) pro spouštění kvantových programů napsaných v Q#
+- Rozhraní API pro jazyky Python a .NET (C#, F# a VB.NET) pro spouštění kvantových programů napsaných v Q#
 - Nástroje pro usnadnění vývoje
 
 Programy v Q# jsou často spárovány s hostitelským programem napsaným v jazyce .NET (obvykle C#) nebo Pythonu. Díky tomu můžeme volat kvantové operace v rámci klasického programu.
