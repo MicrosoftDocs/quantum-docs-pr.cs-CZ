@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 1fd829c684502092bb7491b0f46b5f690320c941
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76831014"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036283"
 ---
 # <a name="develop-with-q--c"></a>Vývoj s Q # +C#
 
@@ -23,7 +23,7 @@ Q # je sestavený tak, aby se dobře hrál s jazyky C#.NET – konkrétně. S t�
 - [Q # + C# použití Visual Studio Code (Windows, Linux a Mac)](#VSC)
 - [Q # + C# použití nástroje příkazového řádku `dotnet`](#command)
 
-## Vývoj pomocí Q # + C# pomocí sady Visual Studio<a name="VS"></a>
+## Vývoj pomocí Q # + C# pomocí sady Visual Studio <a name="VS"></a>
 
 Visual Studio nabízí bohatá prostředí pro vývoj programů Q #. Rozšíření Visual Studio Q # obsahuje šablony pro soubory a projekty Q # a také zvýrazňování syntaxe, dokončování kódu a podporu technologie IntelliSense.
 
@@ -59,7 +59,7 @@ Visual Studio nabízí bohatá prostředí pro vývoj programů Q #. Rozšířen
 > [!NOTE]
 > * Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
 
-## Vývoj pomocí Q # + C# pomocí Visual Studio Code<a name="VSC"></a>
+## Vývoj pomocí Q # + C# pomocí Visual Studio Code <a name="VSC"></a>
 
 Visual Studio Code (VS Code) nabízí bohatý prostředí pro vývoj programů Q # v systémech Windows, Linux a Mac.  Rozšíření Q # VS Code zahrnuje podporu zvýrazňování syntaxe Q #, dokončování kódu a fragmentů kódu Q #.
 
@@ -111,7 +111,7 @@ Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazové
 
 1. Nainstalujte šablony kvantového projektu pro rozhraní .NET.
 
-    ```bash
+    ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
 
@@ -121,8 +121,8 @@ Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazové
 
     - Vytvoření nové aplikace
 
-       ```bash
-       dotnet new console -lang Q# -o runSayHello
+       ```dotnetcli
+       dotnet new console -lang "Q#" -o runSayHello
        ```
 
     - Přejděte do adresáře nové aplikace.
@@ -135,13 +135,13 @@ Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazové
 
     - Spuštění aplikace
 
-        ```bash
+        ```dotnetcli
         dotnet run
         ```
 
         Měl by se zobrazit následující výstup: `Hello quantum world!`
 
     
-## <a name="whats-next"></a>A co dál?
+## <a name="whats-next"></a>Co dále?
 
 Teď máte sadu Quantum Development Kit nainstalovanou v upřednostňovaném prostředí a můžete napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.write-program).
