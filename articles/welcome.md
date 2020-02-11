@@ -6,58 +6,77 @@ author: natke
 ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: overview
-ms.openlocfilehash: 4308bf7e0e48e5735419fab836e479641455e9a5
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 066981e3e2fb468c1ff2a4cf4d3e7cff057772ab
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819923"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036334"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Začínáme se sadou Quantum Development Kit (QDK)
 
-Vítejte u sady Microsoft Quantum Development Kit!  Najdete tady všechny nástroje, které budete potřebovat ke studiu kvantového programování s použitím jazyka Q#.  Jako pomůcku při seznamování s kvantovými výpočty v jazyku Q# vám nabízíme tuto příručku Začínáme – průvodce pro ty, kdo chtějí začít psát kvantové programy, i pro ty, kdo na to ještě nejsou připravení, ale chtějí se dozvědět víc o jazyku Q# a kvantovém programování. 
+Vítejte u sady Microsoft Quantum Development Kit!  
+Sada QDK obsahuje všechny nástroje, které budete potřebovat k vytváření vlastních kvantových programů a experimentů s využitím Q#, programovacího jazyka navrženého speciálně pro vývoj kvantových aplikací. 
 
-Pokud jste připraveni začít s kódováním, [nainstalujte si QDK](xref:microsoft.quantum.install).
+Pokud chcete rovnou začít, můžete přejít k [průvodci instalací sady QDK](xref:microsoft.quantum.install).
+Provede vás instalací sady Quantum Development Kit na počítačích se systémem Windows, Linux nebo MacOS, abyste mohli psát své vlastní kvantové programy.
 
-## <a name="questions-about-quantum-computing"></a>Otázky ke kvantovým výpočtům
+Pokud si ještě nepřipadáte dost připraveni na to, abyste začali s kódováním, ale chcete získat další informace o kvantových výpočtech a jazyce Q#, doporučujeme, abyste si tento článek přečetli a seznámili se s prostředky, které máte k dispozici. V části [Pět dotazů ke kvantovým výpočtům](#five-questions-about-quantum-computing) najdete přesně ty odkazy, které hledáte!
 
-Začneme sérií krátkých článků, ve kterých jsou shrnuté _otázky ke kvantovým výpočtům_. Tyto krátké články nabízejí rychlý přehled v oblasti kvantových výpočtů pro nového studenta.
+## <a name="get-started-programming"></a>Začínáme s programováním
 
-[Co jsou kvantové výpočty?](xref:microsoft.quantum.overview.what)
+Sada Quantum Development Kit nabízí řadu způsobů, jak se naučit vyvíjet kvantové programy s využitím Q#.
+Pokud si chcete zajistit rychlé zprovoznění kvantových technologií, můžete vyzkoušet naše *rychlá zprovoznění*:
 
-[Co dokážou kvantové počítače?](xref:microsoft.quantum.overview.computers)
+* [Generátor kvantových náhodných čísel](xref:microsoft.quantum.quickstarts.qrng) je aplikace stylu „Q# Hello World“, která vám zajistí stručné seznámení s koncepcí kvantových výpočtů a umožní sestavit a spustit kvantovou aplikaci během několika minut.
+* Příručka [Základy kvantových výpočtů s využitím jazyka Q#](xref:microsoft.quantum.write-program) vás provede napsáním programu v Q#, který ukazuje některé ze základních konceptů kvantového programování. 
+    Pokud na programování nejste připravení, můžete pokračovat i bez instalace sady QDK. Získáte přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
+* [Groverův vyhledávací algoritmus](xref:microsoft.quantum.quickstarts.search) nabízí příklad programu v Q#, který vám dá představu o síle jazyka Q# při vyjádření kvantového algoritmu způsobem abstrahujícím od kvantových operací nízké úrovně. 
+    Toto rychlé zprovoznění vás provede vývojem tohoto programu s využitím mnoha programovacích prostředí (s hostitelem jazyka Python nebo s hostitelem jazyka .NET a sadou Visual Studio nebo editorem Visual Studio Code).
 
-[Proč se učit provádět kvantové výpočty?](xref:microsoft.quantum.overview.why)
+### <a name="learning-further"></a>Získávání dalších informací
+* Pokud se chcete do programování v Q# ponořit hlouběji, projděte si [kvantové katy](https://github.com/Microsoft/QuantumKatas). Tato kolekce programovacích cvičení umožňujících postupovat vlastním tempem vám představí kvantové výpočetní funkce prostřednictvím programování v jazyce Q#.
+    Mnohé z těchto kat jsou k dispozici také jako poznámkové bloky v Q#. 
+* Naše [úložiště ukázek](https://github.com/Microsoft/Quantum) předvádí několik příkladů, jak psát kvantové programy s využitím Q#. Řada těchto příkazů je napsaná s využitím našich opensourcových [kvantových knihoven](https://github.com/Microsoft/QuantumLibraries), včetně naší [standardní](xref:microsoft.quantum.libraries.standard.intro) knihovny a knihovny pro [chemii](xref:microsoft.quantum.chemistry.concepts.intro) (další informace o těchto knihovnách najdete níž).
 
-[Co je Q#?](xref:microsoft.quantum.overview.qsharp)
+## <a name="five-questions-about-quantum-computing"></a>Pět dotazů ke kvantovým výpočtům
 
-## <a name="how-to-learn-quantum-computing-with-q"></a>Jak se naučit provádět kvantové výpočty s využitím jazyka Q#?
+Uvědomujeme si, že pokud s kvantovým vývojem teprve začínáte, může vám to všechno připadat poněkud náročné. Zajistili jsme proto materiály, které vám pomohou začít se seznamovat s kvantovými výpočty. Jsme si jistí, že s pomocí těchto krátkých článků dostanete chuť pustit se do programování bez dalších odkladů.
+* [Co jsou kvantové výpočty?](xref:microsoft.quantum.overview.what)
+* [Co dokážou kvantové počítače?](xref:microsoft.quantum.overview.computers)
+* [Proč se učit provádět kvantové výpočty?](xref:microsoft.quantum.overview.why)
+* [Co je Q#?](xref:microsoft.quantum.overview.qsharp)
+* [Jak se naučit provádět kvantové výpočty s využitím jazyka Q#?](xref:microsoft.quantum.overview.learn)
 
-Jazyk Q# a sada Quantum Development Kit vám poskytují nástroje potřebné k vývoji programů pro kvantové výpočty, které vyřeší vaše nejsložitější výpočetní problémy.
+## <a name="quantum-development-kit-documentation"></a>Dokumentace k sadě Quantum Development Kit
 
-Co se týká páté otázky:  _Jak se naučit provádět kvantové výpočty s využitím jazyka Q#?_ , začneme poskytnutím těchto přehledů:
+Aktuální dokumentace obsahuje následující dodatečná témata.
 
-* úvodní příručka k sestavení [kvantového generátoru náhodných čísel](xref:microsoft.quantum.quickstarts.qrng) vás seznámí s instalací sady QDK a napsáním prvního programu v Q# spolu se stručným úvodem do kvantových konceptů. Generátor náhodných čísel je aplikace stylu „Q# Hello World“, která vám umožní sestavit a spustit kvantovou aplikaci během pár minut.
+### <a name="using-q"></a>Použití Q#
+* Oddíl [Techniky kvantového vývoje](xref:microsoft.quantum.techniques.intro) představuje základní koncepce vytváření kvantových programů v jazyce Q#. Jednotlivá témata se zaměřují na struktury souborů, operace a funkce a práci s qubity a k dispozici je i pár pokročilých témat.
+* Oddíl [Referenční příručka jazyka Q#](xref:microsoft.quantum.language.intro) podrobně popisuje jazyk Q#, včetně modelu typů, výrazů, příkazů a využití kompilátoru.
+* Oddíl [Kvantové simulátory a hostitelské aplikace](xref:microsoft.quantum.machines) popisuje, jak se spouštějí kvantové algoritmy, jaké kvantové počítače jsou k dispozici a jak napsat ovladač pro kvantový program v jiném jazyce než Q#.
 
-* úvodní příručka ke [kvantovým základům v jazyce Q#](xref:microsoft.quantum.write-program) vás provede napsáním programu v Q#, který předvádí některé z základních konceptů kvantového programování. Pokud na programování nejste připravení, můžete pokračovat i bez instalace sady QDK. Získáte přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
+### <a name="q-libraries"></a>Knihovny Q#
+* Oddíl [Standardní knihovny Q#](xref:microsoft.quantum.libraries.standard.intro) popisuje operace a funkce, které podporují jak požadavky řízení klasických jazyků, tak kvantové algoritmy v jazyce Q#. 
+    Jednotlivá témata se zaměřují na tok řízení, datové struktury, opravy chyb, testování a ladění. 
+* Oddíl [Chemické knihovny Q#](xref:microsoft.quantum.chemistry.concepts.intro) popisuje operace a funkce, které podporují simulaci kvantové chemie, která představuje stěžejní oblast využití kvantových výpočtů. Jednotlivá témata se zaměřují mimo jiné na simulaci hamiltoniánské dynamiky a odhady kvantové fáze.
+* Oddíl [Numerické knihovny Q#](xref:microsoft.quantum.numerics.intro) popisuje operace a funkce, které podporují vyjadřování složitých aritmetických funkcí v nativních operacích cílových počítačů.
+* Oddíl [Referenční dokumentace knihoven Q#](xref:microsoft.quantum.standardlibsintro) obsahuje referenční informace k jednotlivým knihovním entitám podle oboru názvů.
 
-* úvodní příručka ke [Groverově vyhledávání](xref:microsoft.quantum.quickstarts.search) nabízí příklad programu v Q#, který vám dá představu o síle jazyka Q# při vyjádření kvantového algoritmu způsobem, který abstrahuje od kvantových operací nízké úrovně.  Rychlý start ke Groverově vyhledávání vás provede vývojem programu s využitím mnoha programovacích prostředí (s hostitelem jazyka Python nebo s hostitelem jazyka .NET a sadou Visual Studio nebo editorem Visual Studio Code).
+### <a name="general-quantum-computing"></a>Obecné kvantové výpočty
+* Oddíl [Koncepce kvantových výpočtů](xref:microsoft.quantum.concepts.intro) zahrnuje témata, jako je relevance lineární algebry pro kvantové výpočty, povaha a využití qubitu, vysvětlení kvantového obvodu a další.
+* [Slovníček kvantových výpočtů](xref:microsoft.quantum.glossary) je slovník obsahující některé důležité termíny z oblasti kvantových výpočtů a vývoje programů. 
+    Pokud s touto problematikou teprve začínáte, mohl by pro vás být užitečnou pomůckou při pročítání naší dokumentace.
+* Oddíl [Další čtení](xref:microsoft.quantum.more-information) obsahuje speciálně vybrané reference pro podrobnější pokrytí témat kvantových výpočtů.
 
-* [video](https://www.microsoft.com/videoplayer/embed/RE2JOJf), kde najdete další informace o sestavování kvantových programů pomocí knihoven jazyka Q#.  Sada QDK se dodává se standardní knihovnou jazyka Q# a s knihovnou numerics. Tyto knihovny umožňují provádět výkonné výpočetní abstrakce, které vám pomůžou při vývoji řešení. Nabízíme také knihovnu Quantum Chemistry Library, což je knihovna jazyka Q# pro modelování chemických procesů na kvantové úrovni.
+### <a name="additional-info"></a>Další informace
+* [Poznámky k verzi sady Microsoft Quantum Development Kit](xref:microsoft.quantum.relnotes)
 
-## <a name="next-steps"></a>Další kroky
 
-Uvedené úvodní příručky a články mají sloužit jako průvodce programátorů i neprogramátorů úvodem do kvantových výpočtů a jazyka Q#.  Pokud chcete pokračovat ve studiu, jak programovat kvantové počítače pomocí Q#, máte tyto možnosti:
+## <a name="be-a-part-of-the-q-open-source-community"></a>Staňte se součástí opensourcové komunity Q#
+Quantum Development Kit je opensourcová vývojářská sada, která umožňuje vývojářům zpřístupnit kvantové výpočty všem, abychom mohli začít řešit některé z nejnáročnějších výzev dnešní doby.  Akademické instituce, které vyžadují opensourcový software, budou schopné nasadit Q# pro svoji kvantovou výuku a vývoj. Skutečnost, že se tato vývojářská sada poskytuje jako open source, také dává vývojářům a odborníkům v jednotlivých oblastech příležitost, aby prostřednictvím svého kódu přispívali svými nápady a vylepšeními.
 
-* [Jak se naučit provádět kvantové výpočty pomocí Q#](xref:microsoft.quantum.overview.learn) poskytuje asistenci při studiu koncepcí kvantových výpočtů pomocí jazyka Q#.
+Vaše názory, angažovanost a příspěvky k sadě Quantum Development Kit jsou důležité.  Pokud se chcete dovědět víc o zdrojích sady Quantum Development Kit, poskytnout zpětnou vazbu a zjistit, jak se dá zapojit do rozhodování a přispívání k této rozvíjející se platformě pro kvantový vývoj, projděte si téma věnované [příspěvkům k sadě Quantum Development Kit](xref:microsoft.quantum.contributing).
 
-* Naučte se kvantové programování díky našim [kvantovým katám umožňujícím postupovat vlastním tempem](https://aka.ms/try-quantum-katas). Tato posloupnost krátkých tréninkových cvičení vás naučí programovat v jazyky Q# a seznámí vás s kvantovými výpočty.
-
-* Prozkoumejte naše [ukázky v jazyku Q#](https://docs.microsoft.com/samples/browse/?languages=qsharp) a objevte problémy, které můžete řešit prováděním kvantových výpočtů.
-
-* Vývoj provádějte na místním počítači s hostitelským programovacím jazykem a vývojovým prostředím, které si zvolíte:
-  * Vývoj s využitím [Q# a Pythonu](xref:microsoft.quantum.install.python)
-  * Vývoj s využitím [Q# a C#](xref:microsoft.quantum.install.cs)
-  * Vývoj s využitím [poznámkových bloků Jupyter v Q#](xref:microsoft.quantum.install.jupyter)
-
-* Staňte se součástí komunity Microsoft Quantum díky zapojení do opensourcového projektu [QDK](xref:microsoft.quantum.contributing).
+Pokud vás zajímají obecnější informace o iniciativě Microsoftu v oblasti kvantových výpočtů, projděte si [Microsoft Quantum](https://www.microsoft.com/en-us/quantum/).
