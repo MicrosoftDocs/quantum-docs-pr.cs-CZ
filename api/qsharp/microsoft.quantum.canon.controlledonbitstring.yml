@@ -3,18 +3,73 @@ uid: microsoft.quantum.canon.controlledonbitstring
 name: ControlledOnBitString
 type: function
 namespace: Microsoft.Quantum.Canon
-summary: Vrátí operátor s jednotkou, který používá Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
+summary: >-
+  Vrátí operátor s jednotkou, který používá Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
+
+
+  Výstup této funkce může být reprezentován jednotnou transformační $U $ tak, že \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{if} (b_0 b_1 \cdots b_ {n-1}) = \texttt{BITS} \\\\ \ket{\psi} & \textrm{Otherwise} \end{Cases}, \end{align}, kde $V $ je jednotná transformace, která představuje akci operace `oracle`.
+remarks: >-
+  Délka `bits` a `controlRegister` musí být rovna.
+
+
+  Vzhledem k logickému poli `bits` a jednotkovým `oracle`m provozu je výstup této funkce operace, která provede následující kroky:
+
+
+  * použijte operaci `X` u každého qubit registru ovládacího prvku, který odpovídá `false` elementu `bits`;
+
+  * Použijte `Controlled oracle` pro Registry Control a target;
+
+  * použijte operaci `X` u každého qubit registru ovládacího prvku, který odpovídá `false` elementu `bits` znovu pro vrácení registru ovládacího prvku do původního stavu.
+
+
+  Výstupem `Controlled` funktor je zvláštní případ `ControlledOnBitString`, kde `bits` se rovná `[true, ..., true]`.
+examples: >-
+  Následující fragmenty kódu jsou ekvivalentní:
+
+
+  ```qsharp
+
+  (ControlledOnBitString(bits, oracle))(controlRegister, targetRegister);
+
+  ```
+
+
+  a
+
+
+  ```qsharp
+
+  within {
+      ApplyPauliFromBitString(PauliX, false, bits, controlRegister);
+  } apply {
+      Controlled oracle(controlRegister, targetRegister);
+  }
+
+  ```
+
+
+  Následující kód připraví stav $ \frac{1}{2}(\ket{00}-\ket{01} + \ket{10} + \ket{11}) $:
+
+
+  ```qsharp
+
+  using (register = Qubit[2]) {
+      ApplyToEach(H, register);
+      (ControlledOnBitString([false], Z))(register[0..0], register[1]);
+  }
+
+  ```
 syntax: "function ControlledOnBitString (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)"
 input:
   content: "(bits : Bool[], oracle : ('T => Unit is Adj + Ctl))"
   types:
   - name: bits
-    summary: Pole Boolean.
+    summary: Bitový řetězec pro řízení daného operátoru s jednou jednotkou.
     isArray: true
     isPrimitive: true
     uid: Bool
   - name: oracle
-    summary: Operátor s jednotkou.
+    summary: Operátor, který se má použít v cílovém registru
     isOperation: true
     input:
       types:
@@ -47,9 +102,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 1abe0f1abcbab06aa9821c52878cf85b03d2c592
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: dde246a6eb0cf5e278cd079ff52c3a0b0ff71120
+  ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227385"
+  ms.lasthandoff: 02/18/2020
+  ms.locfileid: "77441058"
