@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: c135dacb2fc305fa97874cb4abcf4e2ac489b9e4
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: be1eff8127be9fb024a1dc2de3ec82952ac2dc2b
+ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76871613"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441032"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -21,13 +21,14 @@ Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
 
+
 ## <a name="version-01020012831"></a>Verze 0.10.2001.2831
 
 *Datum vydání: 29. ledna 2020*
 
 Tato verze obsahuje následující:
 
-- Nový balíček NuGet Microsoft.Quantum.SDK, další podrobnosti najdete v souboru [README](https://github.com/microsoft/qsharp-compiler/blob/master/src/QuantumSdk/README.md)
+- Nový balíček NuGet Microsoft.Quantum.SDK
 - Přidání podpory pro .NET Core 3.1 – důrazně doporučujeme mít nainstalovanou verzi 3.1.100, protože sestavování se staršími verzemi .NET Core SDK může způsobovat problémy
 - Nové transformace kompilátoru dostupné v oboru názvů Microsoft.Quantum.QsCompiler.Experimental
 - Nová funkce pro vystavení vektorů výstupního stavu ve formátu HTML v IQ#
