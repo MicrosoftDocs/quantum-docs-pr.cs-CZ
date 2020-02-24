@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 134617455b720cc755b9ee9fb68fb59e624d3f1a
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: d1ad2c1153814e2fa19a38307b2c668c77eae4e3
+ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820900"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441077"
 ---
 # <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Rychlý start: Implementace kvantového generátoru náhodných čísel v jazyku Q#
 Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je kvantový generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo. 
@@ -28,20 +28,7 @@ Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je 
 
 1. Obsah souboru Operation.qs nahraďte následujícím kódem:
 
-    ```qsharp
-    namespace Quantum {
-        open Microsoft.Quantum.Intrinsic;
-
-        operation QuantumRandomNumberGenerator() : Result {
-            using(qubit = Qubit())  { // Allocate a qubit.
-                H(qubit);             // Put the qubit to superposition. It now has a 50% chance of being 0 or 1.
-                let r = M(v);     // Measure the qubit value.
-                Reset(qubit);
-                return r;
-            }
-        }
-    }
-    ```
+ :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-14":::
 
 Jak je uvedeno v článku [Co jsou kvantové výpočty?](xref:microsoft.quantum.overview.what), qubit je jednotka kvantových informací, které můžou být v superpozici. Při změření může mít qubit jenom hodnotu 0 nebo 1. Během zpracování však stav qubitu představuje pravděpodobnost přečtení hodnoty 0 anebo 1 při měření. Tento pravděpodobnostní stav se nazývá superpozice. Na základě této pravděpodobnosti můžeme generovat náhodná čísla.
 
@@ -75,7 +62,7 @@ Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Po
 
 Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel s využitím hostitelského programu.
 
- ### <a name="python-with-visual-studio-code-or-the-command-linetabtabid-python"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
+ ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
  
  Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
  
@@ -87,7 +74,7 @@ Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použí
  Preparing Q# environment...
  ..The random number generated is 42
  ```
- ### <a name="c-with-visual-studio-code-or-the-command-linetabtabid-csharp"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
+ ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
  
  Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
  
@@ -100,7 +87,7 @@ Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použí
  The random number generated is 42
  ```
 
- ### <a name="c-with-visual-studio-2019tabtabid-vs2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
+ ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
 
  Pokud chcete nový program v jazyku Q# spustit z C# v sadě Visual Studio, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
 
