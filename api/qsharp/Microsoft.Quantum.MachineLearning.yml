@@ -1,0 +1,72 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.machinelearning
+name: Microsoft.Quantum.MachineLearning
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů poskytuje funkce a operace používané v aplikacích strojového učení.\n\n # <a name=\"references\"></a>Odkazy\n - Marie Schuld, Alex Bocharov, Krysta Svore, Nathan Wiebe, \"klasifikátory orientované na okruhy\", https://arxiv.org/abs/1804.00633."
+functions:
+- uid: microsoft.quantum.machinelearning.approximateinputencoder
+  summary: Vzhledem k množině koeficientů a tolerance vrátí operaci přípravy stavu, která připraví každý koeficient jako odpovídající amplitudu výpočetního stavu až po danou toleranci.
+- uid: microsoft.quantum.machinelearning.combinedstructure
+  summary: Vzhledem k jedné nebo více vrstvám řízených otočení vrátí jednu vrstvu s indexem parametru, který je posunut tak, aby jednotlivé vrstvy byly parametrizované pomocí různých parametrů modelu.
+- uid: microsoft.quantum.machinelearning.cyclicentanglinglayer
+  summary: Vrátí pole jednotlivě řízených otočení podél dané osy uspořádané cyklicky v rámci registru qubits a parametrizované pomocí různých parametrů modelu.
+- uid: microsoft.quantum.machinelearning.defaulttrainingoptions
+  summary: Vrátí výchozí sadu možností pro účely školení klasifikátorů.
+- uid: microsoft.quantum.machinelearning.featureregistersize
+  summary: Vrátí počet qubits potřebných ke kódování konkrétního vektoru funkce.
+- uid: microsoft.quantum.machinelearning.inferredlabel
+  summary: S ohledem na pravděpodobnost klasifikace a bias vrátí popisek odvozený z této pravděpodobnosti.
+- uid: microsoft.quantum.machinelearning.inferredlabels
+  summary: Vzhledem k poli pravděpodobnosti klasifikace a posunu vrátí popisek odvozený od každé pravděpodobnosti.
+- uid: microsoft.quantum.machinelearning.inputencoder
+  summary: Vzhledem k sadě koeficientů a tolerance vrátí operaci přípravy stavu, která připraví každý koeficient jako odpovídající amplitudu výpočetního stavu.
+- uid: microsoft.quantum.machinelearning.localrotationslayer
+  summary: Vrátí pole neřízených (jednoduchých-qubit) otočení podél dané osy s jedním otočením pro každý qubit v registru, které je parametrizované pomocí různých parametrů modelu.
+- uid: microsoft.quantum.machinelearning.misclassifications
+  summary: Vzhledem k sadě odvozených popisků a sadě správných popisků vrátí indexy pro, kde se každá sada popisků liší.
+- uid: microsoft.quantum.machinelearning.nmisclassifications
+  summary: Vzhledem k sadě odvozených popisků a sadě správných popisků vrátí počet indexů, na kterých se každá sada popisků liší.
+- uid: microsoft.quantum.machinelearning.nqubitsrequired
+  summary: Vrátí počet qubits vyžadovaných k použití daného sekvenčního třídění.
+- uid: microsoft.quantum.machinelearning.partialrotationslayer
+  summary: Vrátí pole rotací s jednou qubit podél dané osy, parametrizované pomocí různých parametrů modelu.
+- uid: microsoft.quantum.machinelearning.sampled
+  summary: Vzorkuje dané pole pomocí zadaného plánu.
+- uid: microsoft.quantum.machinelearning.schedulelength
+  summary: Vrátí počet prvků v daném plánu vzorkování.
+operations:
+- uid: microsoft.quantum.machinelearning.applysequentialclassifier
+  summary: Vzhledem k struktuře a Parametrizace sekvenčního třídění aplikuje klasifikátor na registr qubits.
+- uid: microsoft.quantum.machinelearning.estimateclassificationprobabilities
+  summary: Vzhledem k sadě vzorků a sekvenčnímu třídění odhadne pravděpodobnost klasifikace těchto vzorků opakovaným měřením výstupu klasifikátoru v každé ukázce.
+- uid: microsoft.quantum.machinelearning.estimateclassificationprobability
+  summary: Vzhledem k ukázce a sekvenčnímu třídění odhadne pravděpodobnost klasifikace pro tento vzorek opakovaným měřením výstupu klasifikátoru v dané ukázce.
+- uid: microsoft.quantum.machinelearning.estimategradient
+  summary: Odhadne školicí přechod pro sekvenční třídění na konkrétním modelu a pro daný kódovaný vstup.
+- uid: microsoft.quantum.machinelearning.trainsequentialclassifier
+  summary: Vzhledem k struktuře sekvenčního klasifikátoru vlaky zajišťují třídění na dané sadě školení s označením.
+- uid: microsoft.quantum.machinelearning.trainsequentialclassifieratmodel
+  summary: Vzhledem k struktuře sekvenčního klasifikátoru vlaky klasifikuje v dané sadě školení s označením, počínaje z konkrétního modelu.
+- uid: microsoft.quantum.machinelearning.validatesequentialclassifier
+  summary: Ověří daný sekvenční klasifikátor proti dané sadě ukázek s předdefinovaným názvem.
+newtypes:
+- uid: microsoft.quantum.machinelearning.controlledrotation
+  summary: Popisuje řízené otočení z pohledu na své cílové a řídicí indexy, osu natočení a index do vektoru parametru modelu.
+- uid: microsoft.quantum.machinelearning.labeledsample
+  summary: Vzorek označený třídou, do které patří ukázka.
+- uid: microsoft.quantum.machinelearning.samplingschedule
+  summary: Plán pro vykreslování dávek ze sady vzorků.
+- uid: microsoft.quantum.machinelearning.sequentialmodel
+  summary: Popisuje model třídění podle počtu stavů sestávající z sekvence parametrizovaných a řízených otočení, přiřazení úhlů otočení a posunutí mezi dvěma třídami rozpoznávanými modelem.
+- uid: microsoft.quantum.machinelearning.stategenerator
+  summary: Popisuje operaci, která připraví daný vstup na sekvenční třídění.
+- uid: microsoft.quantum.machinelearning.trainingoptions
+  summary: Kolekce možností, které se mají použít při výuce klasifikátorů
+- uid: microsoft.quantum.machinelearning.validationresults
+  summary: Výsledky z ověření klasifikátoru proti sadě vzorků.
+metadata:
+  ms.openlocfilehash: be0c17b6f3e42c03bacadbf02c693980f89cbe39
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908306"

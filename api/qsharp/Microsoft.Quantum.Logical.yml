@@ -45,6 +45,8 @@ functions:
   summary: Vrátí hodnotu true pouze v případě, že je číslo menší nebo rovno jinému číslu.
 - uid: microsoft.quantum.logical.lessthanorequall
   summary: Vrátí hodnotu true pouze v případě, že je číslo menší nebo rovno jinému číslu.
+- uid: microsoft.quantum.logical.nearlyequald
+  summary: Vrátí hodnotu true pouze v případě, že dva vstupy jsou téměř stejné (tj. v rámci tolerance 1E-12).
 - uid: microsoft.quantum.logical.not
   summary: Vrátí logickou negaci hodnoty.
 - uid: microsoft.quantum.logical.notequalb
@@ -61,14 +63,16 @@ functions:
   summary: Vrátí hodnotu true pouze v případě, že se neshodují dva vstupy.
 - uid: microsoft.quantum.logical.notequalr
   summary: Vrátí hodnotu true pouze v případě, že se neshodují dva vstupy.
+- uid: microsoft.quantum.logical.notnearlyequald
+  summary: Vrátí hodnotu true pouze v případě, že dva vstupy nejsou téměř stejné (to znamená, že nejsou v rámci tolerance 1E-12).
 - uid: microsoft.quantum.logical.or
   summary: Vrátí logickou disjunkci dvou hodnot.
 - uid: microsoft.quantum.logical.xor
   summary: Vrátí logickou nevýlučnou disjunkci dvou hodnot.
 metadata:
-  ms.openlocfilehash: 12f462356dfe7ae4bf7c60110e71a9928bc8c178
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 356a31be888d7ed3a96e219f8f7b31151179d3eb
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056282"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905892"
