@@ -1,5 +1,3 @@
-- name: Licencování OSS
-  href: licensing.md
 - name: Úvod
   href: prelude.md
 - name: Klasická matematika
@@ -20,3 +18,5 @@
   href: error-correction.md
 - name: Aplikace
   href: applications.md
+- name: Licencování OSS
+  href: licensing.md

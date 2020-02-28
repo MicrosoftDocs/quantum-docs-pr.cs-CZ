@@ -1,4 +1,4 @@
-- name: Referenční informace
+- name: API – referenční informace
   items:
     - name: 'Knihovny Q#'
       href: qsharp/toc.yml
