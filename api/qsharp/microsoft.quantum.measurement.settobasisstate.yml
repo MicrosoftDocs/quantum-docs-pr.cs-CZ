@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.measurement.settobasisstate
+name: SetToBasisState
+type: operation
+namespace: Microsoft.Quantum.Measurement
+summary: Nastaví qubit na daný výpočetní stav na základě měření qubit a v případě potřeby použije bitovou překlopení.
+remarks: Jako invariantní této operace volá `M(q)` hned po `SetToBasisState(result, q)` vrátí `result`.
+syntax: 'operation SetToBasisState (desired : Result, target : Qubit) : Unit'
+input:
+  content: '(desired : Result, target : Qubit)'
+  types:
+  - name: desired
+    summary: Základní stav, na který má být qubit nastaven.
+    isPrimitive: true
+    uid: Result
+  - name: target
+    summary: Qubit, jehož stav má být nastaven.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+metadata:
+  ms.openlocfilehash: 977d0d5b55a9372a6e45e08cb89804e213ddd72c
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908425"

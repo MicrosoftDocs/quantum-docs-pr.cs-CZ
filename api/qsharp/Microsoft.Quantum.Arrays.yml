@@ -7,6 +7,8 @@ functions:
   summary: Předané pole a predikát, který je definován pro prvky pole a kontroluje, zda všechny prvky pole odpovídají predikátu.
 - uid: microsoft.quantum.arrays.any
   summary: V případě pole a predikátu, který je definován pro prvky pole, zkontroluje, zda alespoň jeden prvek pole splňuje predikát.
+- uid: microsoft.quantum.arrays.chunks
+  summary: Rozdělí pole na více částí stejné délky.
 - uid: microsoft.quantum.arrays.constantarray
   summary: Vytvoří pole s danou délkou se všemi elementy, které se rovnají dané hodnotě.
 - uid: microsoft.quantum.arrays.enumerated
@@ -23,6 +25,8 @@ functions:
   summary: Vrátí první index prvního prvku v poli, který splňuje daný predikát. Pokud žádný takový prvek neexistuje, vrátí hodnotu-1.
 - uid: microsoft.quantum.arrays.indexrange
   summary: V poli, vrátí rozsah v rámci indexů tohoto pole, který je vhodný pro použití ve smyčce for.
+- uid: microsoft.quantum.arrays.isempty
+  summary: Vrátí hodnotu true pouze v případě, že je pole prázdné.
 - uid: microsoft.quantum.arrays.lookupfunction
   summary: Předanému poli vrátí funkci, která vrátí prvky daného pole.
 - uid: microsoft.quantum.arrays.mapped
@@ -51,6 +55,8 @@ functions:
   summary: Vrátí poslední prvek pole.
 - uid: microsoft.quantum.arrays.tuplearrayasnestedarray
   summary: Zapíná seznam dvou řazených kolekcí členů do vnořeného pole.
+- uid: microsoft.quantum.arrays.where
+  summary: V případě predikátu a pole vrátí indexy tohoto pole, kde má predikát hodnotu true.
 - uid: microsoft.quantum.arrays.zip
   summary: Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
 - uid: microsoft.quantum.arrays.zip3
@@ -61,9 +67,9 @@ operations:
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: 12835bef2608d979809027cb9a271f2cda864b10
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 5cbe8e172fda72d1016b407656c75457526651aa
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858866"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905586"

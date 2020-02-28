@@ -4,6 +4,8 @@ name: Microsoft.Quantum.Diagnostics
 functions:
 - uid: microsoft.quantum.diagnostics.allequalityfactb
   summary: Vyhodnotí, že dvě pole logických hodnot jsou shodná.
+- uid: microsoft.quantum.diagnostics.allequalityfacti
+  summary: Vyhodnotí, že dvě pole celočíselných hodnot jsou shodná.
 - uid: microsoft.quantum.diagnostics.dumpmachine
   summary: Vypíše stav aktuálního cílového počítače.
 - uid: microsoft.quantum.diagnostics.dumpregister
@@ -78,9 +80,9 @@ newtypes:
   summary: Rozpoznaný atribut kompilátoru použitý k označení testu jednotky.
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace, které jsou užitečné pro diagnostické účely, včetně operací Assert a funkcí deklarací identity."
 metadata:
-  ms.openlocfilehash: a633a9555f380e6aa6c6701d277d026c58130ff2
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 353750a6714b1cdd54ff866657a39bb825e34425
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858271"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905909"

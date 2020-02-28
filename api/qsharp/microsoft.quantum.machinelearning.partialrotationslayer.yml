@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.partialrotationslayer
+name: PartialRotationsLayer
+type: function
+namespace: Microsoft.Quantum.MachineLearning
+summary: Vrátí pole rotací s jednou qubit podél dané osy, parametrizované pomocí různých parametrů modelu.
+syntax: 'function PartialRotationsLayer (idxsQubits : Int[], axis : Pauli) : Microsoft.Quantum.MachineLearning.ControlledRotation[]'
+input:
+  content: '(idxsQubits : Int[], axis : Pauli)'
+  types:
+  - name: idxsQubits
+    summary: Indexy pro qubits, které se mají použít jako cíle pro každé otočení.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: axis
+    summary: Osa otočení pro každé otočení v dané vrstvě
+    isPrimitive: true
+    uid: Pauli
+output:
+  content: Microsoft.Quantum.MachineLearning.ControlledRotation[]
+  types:
+  - summary: Pole řízených otočení o dané ose, jednu na každý `nQubits` qubits.
+    isArray: true
+    uid: microsoft.quantum.machinelearning.controlledrotation
+metadata:
+  ms.openlocfilehash: ece8381560c4d7501282eb909506a10e7ab1fe72
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908629"

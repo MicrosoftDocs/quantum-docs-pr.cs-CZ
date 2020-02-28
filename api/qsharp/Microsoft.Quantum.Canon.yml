@@ -81,7 +81,7 @@ functions:
 - uid: microsoft.quantum.canon.continuedfractionconvergent
   summary: "\n> [!WARNING]\n> Zastaralé\n\nContinuedFractionConvergent se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.continuedfractionconvergenti\".\nPoužijte prosím @\"microsoft.quantum.math.continuedfractionconvergenti\"."
 - uid: microsoft.quantum.canon.controlledonbitstring
-  summary: Vrátí operátor s jednotkou, který používá Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
+  summary: Vrátí jednotnou operaci, která použije Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
 - uid: microsoft.quantum.canon.controlledonint
   summary: Vrátí operátor s jednotkou, který používá Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadanému kladnému celému číslu.
 - uid: microsoft.quantum.canon.curriedop
@@ -298,14 +298,7 @@ operations:
 - uid: microsoft.quantum.canon.applycnotchainwithtarget
   summary: Vypočítá paritu pole qubits do cílového qubit.
 - uid: microsoft.quantum.canon.applydiagonalunitary
-  summary: >-
-    Aplikuje pole komplexních fází na číselné stavy registru qubits.
-
-
-    To znamená, že implementuje operaci diagonální čárky $U $, která aplikuje komplexní fázi $e ^ {i \ theta_j} $ ve stavu $n $-qubit Number $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} e ^ {i \ theta_j} \ket{j}\bra{j} $.
+  summary: Aplikuje pole komplexních fází na číselné stavy registru qubits.
 - uid: microsoft.quantum.canon.applyfermionicswap
   summary: Použije prohození Fermionic.
 - uid: microsoft.quantum.canon.applyif
@@ -440,6 +433,14 @@ operations:
     Aplikuje jednu operaci qubit na každý indexovaný element v registru.
 
     Modifikátor `CA` označuje, že operace s jedním qubit je sousední a ovladatelné.
+- uid: microsoft.quantum.canon.applytoelement
+  summary: Použije operaci na daný prvek pole.
+- uid: microsoft.quantum.canon.applytoelementa
+  summary: Použije operaci na daný prvek pole.
+- uid: microsoft.quantum.canon.applytoelementc
+  summary: Použije operaci na daný prvek pole.
+- uid: microsoft.quantum.canon.applytoelementca
+  summary: Použije operaci na daný prvek pole.
 - uid: microsoft.quantum.canon.applytofirstqubit
   summary: Použije operaci na první qubit v registru.
 - uid: microsoft.quantum.canon.applytofirstqubita
@@ -541,6 +542,12 @@ operations:
   summary: Vzhledem k operaci, která přijímá určitý vstup, funkce, která vrací výstup kompatibilní s touto operací, a vstup k této funkci, používá operaci pomocí funkce k transformaci vstupu na formulář očekávaný operací.
 - uid: microsoft.quantum.canon.applywithinputtransformationca
   summary: Vzhledem k operaci, která přijímá určitý vstup, funkce, která vrací výstup kompatibilní s touto operací, a vstup k této funkci, používá operaci pomocí funkce k transformaci vstupu na formulář očekávaný operací.
+- uid: microsoft.quantum.canon.approximatelyapplydiagonalunitary
+  summary: Aplikuje pole komplexních fází na číselné základní stavy registru qubits a zkrátí krátké úhly natočení podle dané tolerance.
+- uid: microsoft.quantum.canon.approximatelymultiplexpauli
+  summary: Aplikuje Pauli otočení na pole qubits a zkrátí krátké úhly natočení podle dané tolerance.
+- uid: microsoft.quantum.canon.approximatelymultiplexz
+  summary: Aplikuje Pauli Z rotace v poli qubits a zkrátí krátké úhly otočení na základě dané tolerance.
 - uid: microsoft.quantum.canon.approximateqft
   summary: Použijte přibližnou neAQFTnou hodnotu Fourierova transformace () na registrační pokladnu.
 - uid: microsoft.quantum.canon.asserthighestbit
@@ -648,23 +655,9 @@ operations:
 
     $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.multiplexpauli
-  summary: >-
-    Použije Pauli rotaci v poli qubits.
-
-
-    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \ theta_j $ o qubit Pauli operator $P $, pokud se řídí $n $-qubit Number State $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \ theta_j} $.
+  summary: Použije Pauli rotaci v poli qubits.
 - uid: microsoft.quantum.canon.multiplexz
-  summary: >-
-    Použije rotaci Pauli Z, která je splněná na poli qubits.
-
-
-    Tím se aplikuje Jednotková operace řízená pomocí vynásobení $U $, která provádí rotace podle úhlů $ \ theta_j $ o qubit Pauli operator $Z $, pokud se řídí $n $-qubit Number State $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i Z \ theta_j} $.
+  summary: Použije rotaci Pauli Z, která je splněná na poli qubits.
 - uid: microsoft.quantum.canon.noop
   summary: Provede v argumentu operaci identity (No-OP).
 - uid: microsoft.quantum.canon.permutequbits
@@ -701,9 +694,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Zastaralé\n\nResultStack se už nepoužívá."
 metadata:
-  ms.openlocfilehash: 8d54303daeb32281b1e531fce50443c132c14093
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: db3466b0e6fe493393f75bea85f9c91e2f56ec67
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870720"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905620"

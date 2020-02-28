@@ -16,10 +16,12 @@ operations:
   summary: Měří jeden qubit v `Z` a znovu ho nastaví na standardní základní stav | 0 〉 za měřením.
 - uid: microsoft.quantum.measurement.multim
   summary: Měří jednotlivé qubity v daném poli na úrovni Standard.
+- uid: microsoft.quantum.measurement.settobasisstate
+  summary: Nastaví qubit na daný výpočetní stav na základě měření qubit a v případě potřeby použije bitovou překlopení.
 metadata:
-  ms.openlocfilehash: 7964ab7b090fdff8f1a8af556e901dbab68cff9f
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: dc74db43b60728bf9924c05346bae4c6b329a265
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870026"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905756"
