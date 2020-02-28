@@ -1,17 +1,17 @@
 ---
-title: Qubit | Microsoft Docs
-description: Qubit
+title: Qubit ve výpočetním prostředí
+description: Seznamte se s qubits, základní jednotkou informací v výpočetním prostředí.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.qubit
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f29319c3ec19fecc45f5a9f7c16061b9aa9f71ec
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 770b739d95f5c1512234f6f7d2ca4544f1d80e64
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183637"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907524"
 ---
 # <a name="the-qubit"></a>Qubit
 
@@ -25,7 +25,7 @@ Stav jednoho qubit může být popsán dvourozměrným vektorem sloupce Jednotko
 
 Libovolný dvourozměrný vektor sloupce reálných nebo komplexních čísel s normou $1 $ představuje možný stav, který uchovává qubit. Takže $ \begin{bmatrix} \Alpha \\\\ \beta \end{bmatrix} $ představuje stav qubit, pokud $ \Alpha $ a $ \beta $ jsou komplexní čísla splňující $ | \Alpha | ^ 2 + | \beta | ^ 2 = $1. Některé příklady platných vektorů stavu, které představují qubits include
 
-$ $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\\\ 1 \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{1}{\sqrt{2}} \end{bmatrix} \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{-1}{\sqrt{2}} \end{bmatrix}, \Text{a} \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{i}{\sqrt{2}} \end{ bmatrix}. $ $
+$ $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\\\ 1 \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{1}{\sqrt{2}} \end{bmatrix}, \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{-1}{\sqrt{2}} \end{bmatrix}, \Text{a} \begin{bmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{i}{\sqrt{2}} \end{bmatrix}. $ $
 
 Hodnota "Vector State State" $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ a $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ proveďte speciální roli. Tyto dva vektory tvoří základ pro vektorový prostor, který popisuje stav qubit. To znamená, že každý objekt pro každý stav se může zapsat jako součet těchto základních vektorů. Konkrétně je možné zapsat vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ jako $x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $. I když by jakékoli rotace těchto vektorů sloužily jako naprosto platnému základu pro qubit, rozhodli jsme se pro ni toto oprávnění, a to voláním *výpočetního základu*.
 
@@ -37,11 +37,11 @@ i když opačná volba by mohla být zároveň zavedená. Proto z nekonečného 
 
 ## <a name="measuring-a-qubit"></a>Měření qubit
 
-Teď, když víme, jak vyjádřit qubit, můžeme získat některé Intuition pro to, co tyto stavy reprezentují, a to tak, že se podíváme na koncept [*měření*](https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics). Měření odpovídá neformálnímu designu "hledání" na qubit, který okamžitě sbalí stav na jeden ze dvou klasických stavů $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ nebo $ \begin{bmatrix} 0 \\\\ 1 \end{ bmatrix} $. Když se měří qubit, který je dán příslušným stavem \begin{bmatrix} \Alpha \\\\ \beta \end{bmatrix} $, získáme výsledek $0 $ s pravděpodobností $ | \Alpha | ^ 2 $ a výsledek $1 $ s pravděpodobností $ | \beta | ^ 2 $. Na výsledku $0 $ je nový stav qubit $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $; na výsledku $1 $ jeho stav je $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $. Všimněte si, že tyto pravděpodobnosti se sčítají až do $1 $, protože podmínka normalizace je $ | \Alpha | ^ 2 + | \beta | ^ 2 = $1.
+Teď, když víme, jak vyjádřit qubit, můžeme získat některé Intuition pro to, co tyto stavy reprezentují, a to tak, že se podíváme na koncept [*měření*](https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics). Měření odpovídá neformálnímu designu "hledání" na qubit, který okamžitě sbalí stav na jeden ze dvou klasických stavů $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ nebo $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $. Když se měří qubit, který je dán příslušným stavem \begin{bmatrix} \Alpha \\\\ \beta \end{bmatrix} $, získáme výsledek $0 $ s pravděpodobností $ | \Alpha | ^ 2 $ a výsledek $1 $ s pravděpodobností $ | \beta | ^ 2 $. Na výsledku $0 $ je nový stav qubit $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $; na výsledku $1 $ jeho stav je $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $. Všimněte si, že tyto pravděpodobnosti se sčítají až do $1 $, protože podmínka normalizace je $ | \Alpha | ^ 2 + | \beta | ^ 2 = $1.
 
 Vlastnosti měření také znamenají, že celkové znaménko vektoru stavu se nevýznamně nepoužívá. Negace vektoru je ekvivalentem $ \Alpha \rightarrow-\Alpha $ a $ \beta \rightarrow-\beta $. Vzhledem k tomu, že pravděpodobnost měření $0 $ a $1 $ závisí na velikosti na čtverci podmínek, vkládání těchto značek nemění pravděpodobnost všech výskytů. Tyto fáze se často nazývají [``*globální fáze*](https://en.wikipedia.org/wiki/Phase_factor) a obecněji můžou být ve formě $e ^ {i \phi} $ místo pouze $ \Pm $1.
 
-Poslední důležitou vlastností měření je, že neznamená poškození všech vektorů stavu. Pokud začínáte s qubit ve stavu $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $, který odpovídá klasickému stavu $0 $, měření tohoto stavu bude vždycky vracet výsledek $0 $ a nechat stav bez změny. V tomto smyslu, pokud máme jenom klasické bity (tj. qubits, které jsou buď $ \begin{bmatrix}1 \\\\ 0 \end{bmatrix} $ nebo $ \begin{bmatrix}0 \\\\ 1 \end{bmatrix} $), pak měření neškodí systém. To znamená, že můžeme replikovat klasická data a manipulovat s nimi na počítači se systémem na více počítačů, a to stejně jako na klasický počítač. Schopnost ukládat informace v obou stavech najednou je to, co zvyšuje množství procesorů nad rámec toho, co je možné v klasickém prostředí, a další robsí počítačů s možností kopírování dat do nerozlišené oblasti. Další informace najdete také [v části No-klonování věta. ](https://en.wikipedia.org/wiki/No-cloning_theorem).
+Poslední důležitou vlastností měření je, že neznamená poškození všech vektorů stavu. Pokud začínáte s qubit ve stavu $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $, který odpovídá klasickému stavu $0 $, měření tohoto stavu bude vždycky vracet výsledek $0 $ a nechat stav bez změny. V tomto smyslu, pokud máme jenom klasické bity (tj. qubits, které jsou buď $ \begin{bmatrix}1 \\\\ 0 \end{bmatrix} $ nebo $ \begin{bmatrix}0 \\\\ 1 \end{bmatrix} $), pak měření neškodí systém. To znamená, že můžeme replikovat klasická data a manipulovat s nimi na počítači se systémem na více počítačů, a to stejně jako na klasický počítač. Schopnost ukládat informace v obou stavech najednou je to, co zvyšuje množství procesorů nad rámec toho, co je možné v klasickém prostředí, a další robsí počítačů s možností kopírování dat do nerozlišené oblasti. Další informace najdete také [v větau No-klonování](https://en.wikipedia.org/wiki/No-cloning_theorem).
 
 ## <a name="visualizing-qubits-and-transformations-using-the-bloch-sphere"></a>Vizualizace Qubits a transformací pomocí koule Bloch
 
@@ -77,7 +77,7 @@ Jinými slovy, sada bran je univerzální branou, pokud může být jakákoli Je
 
 $ $ G_N G_ {N-1} \cdots G_2 G_1 \approx U. $ $
 
-Vzhledem k tomu, že konvence násobení matice je vynásobit zprava doleva první operace brány v této sekvenci, $G _N $ je vlastně poslední, který se používá pro vektor stavu. Řekněme, že taková sada brány je univerzální, pokud pro každou odolnost proti chybám $ \epsilon > 0 $ existuje $G _1, \ldots, G_N $, což znamená, že vzdálenost mezi $G _N \ ldots G_1 $ a $U $ je nejvíce $ \epsilon $. V ideálním případě hodnota $N $ potřebná k dosažení této vzdálenosti $ \epsilon $ by měla být Poly-logarithmically s $1/\ Epsilon $.
+Vzhledem k tomu, že konvence násobení matice je vynásobit zprava doleva první operace brány v této sekvenci, $G _N $, je vlastně poslední, který se používá pro vektor stavu. Řekněme, že taková sada brány je univerzální, pokud pro každou odolnost proti chybám $ \epsilon > 0 $ existuje $G _1, \ldots G_N $, což znamená, že vzdálenost mezi $G _N \ldots G_1 $ a $U $ je nejvíce $ \epsilon $. V ideálním případě hodnota $N $ potřebná k dosažení této vzdálenosti $ \epsilon $ by měla být Poly-logarithmically s $1/\ Epsilon $.
 
 Jak vypadá tato univerzální sada brány jako v praxi?  Nejjednodušší taková univerzální brána pro qubit brány se skládá jenom ze dvou bran: bránu Hadamard $H $ a bránu $T $-incalled (taky označovanou jako brána $ \ PI/8 $):
 
@@ -88,7 +88,7 @@ Z praktických důvodů vztahujících se k opravám chybných stavů ale může
 Pro každou z těchto bran můžeme klasifikovat dvě kategorie: brány Clifford a bránu $T $-.
 Toto dělení je užitečné vzhledem k tomu, že v mnoha schématech pro opravy chyb na základě počtu procesorů se snadno implementují brány Clifford, které vyžadují velmi málo prostředků v souvislosti s operacemi a qubits pro implementaci odolnosti proti chybám, zatímco non-Clifford brány jsou. poměrně nákladná při vyžadování odolnosti proti chybám. Standardní sada bran s jedním qubit Clifford, která je ve [výchozím nastavení součástí Q #](xref:microsoft.quantum.libraries.standard.prelude), zahrnuje
 
-$ $ H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ 1 &-1 \end{bmatrix}, \qquad S = \begin{bmatrix} 1 & 0 \\\\ 0 & i \end{bmatrix} = T ^ 2, \qquad X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} = HT ^ 4, $ $
+$ $ H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ 1 &-1 \end{bmatrix}, \qquad S = \begin{bmatrix} 1 & 0 \\\\ 0 & i \end{bmatrix} = T ^ 2, \qquad X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} = HT ^ 4. $ $
 
 $ $ Y = \begin{bmatrix} 0 &-i \\\\ i & 0 \end{bmatrix} = T ^ 2HT ^ 4 HT ^ 6, \qquad Z = \begin{bmatrix}1 & 0\\\\ 0 &-1 \end{bmatrix} = T ^ 4.
 $$
@@ -98,12 +98,12 @@ Spolu s bránou Clifford (Brána $T $) můžou tyto operace sestavovat tak, aby 
 
 Další informace o těchto operacích, jejich reprezentujes Bloch a implementace Q # najdete v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude#intrinsic-operations-and-functions).
 
-Jako příklad, jak lze z těchto primitivních typů vytvářet jednotnou transformaci, odpovídají tři transformace, které jsou znázorněny v Bloch koule, do sekvence brány $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \mapsto HZH \begin{bmatrix} 1. \\\\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $.
+Jako příklad, jak lze z těchto primitivních typů sestavovat jednotnou transformaci, odpovídají tři transformace, které jsou znázorněné v Blochch oblastech, do sekvence brány $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \mapsto HZH \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $.
 
 Zatímco předchozí představuje nejoblíbenější primitivní brány pro popis operací na logické úrovni zásobníku (považuje se na logickou úroveň jako úroveň algoritmu nečinnosti), často je vhodné zvážit méně základních operací na algoritmech úroveň, například operace blíže k úrovni popisu funkce. Naštěstí, Q # také obsahuje metody, které jsou k dispozici pro implementaci unitaries vyšší úrovně, které umožňují implementovat algoritmy vysoké úrovně bez explicitního rozkládání všech položek na Clifford a $T $-bran.
 
-Nejjednodušší taková primitivní jednoduchá rotace je qubit. Obvykle se berou v úvahu tři rotace s jedním qubit: $R _X $, $R _Y $ a $R _Z $. Aby bylo možné vizualizovat akci rotace $R _X (\theta) $, například Představte si, že jste natáhli správnou dlaždici podél směru $x $ osy Bloch koule a rozvedli jste vektor na vaši ruku pomocí úhlu výrazu $ \ théta/2 $ radiánů. Tento faktor odmítnutí $2 $ vznikne ze skutečnosti, že kolmé vektory jsou po vykreslení na Bloch koule ve skutečnosti v rozmezí od do \circ $90 ^ \circ $ stupňů. Odpovídající jednotkové matrice jsou:
+Nejjednodušší taková primitivní jednoduchá rotace je qubit. Obvykle se berou v úvahu tři rotace s jedním qubit: $R _x $, $R _y $ a $R _z $. Aby bylo možné vizualizovat akci $R _x (\theta) $, například Představte si, že jste natáhli správnou dlaždici podél směru $x $ osy Bloch a natočení vektoru rukou pomocí úhlu výrazu $ \ théta/2 $ radiánů. Tento faktor odmítnutí $2 $ vznikne ze skutečnosti, že kolmé vektory jsou po vykreslení na Bloch koule ve skutečnosti v rozmezí od do \circ $90 ^ \circ $ stupňů. Odpovídající jednotkové matrice jsou:
 
-\begin{align *} & R_z (\theta) = e ^ {-I\theta z/2} = \begin{bmatrix} e ^ {-i \ théta/2} & 0\\\\ 0 & e ^ {i \ théta/2} \end{bmatrix}, \\\\ & R_x (\theta) = e ^ {-I\theta x/2} = HR_z (\theta) H = \begin{bmatrix} \cos (\ théta/2) &-i\sin (\ théta/2)\\\\-i\sin (\ théta/2) & \cos (\ théta/2) \end{bmatrix}, \\\\ & R_y (\theta) = e ^ {-i\theta Y/2} = SHR_z (\theta) HS ^ \dagger = \begin{bmatrix} \cos (\ théta/2) &-\sin (\ théta/2) @no__ t_9_ \\ \sin (\ théta/2) & \cos (\ théta/2) \end{bmatrix}. \end{align*}
+\begin{align *} & R_z (\theta) = e ^ {-I\theta z/2} = \begin{bmatrix} e ^ {-i \ théta/2} & 0\\\\ 0 & e ^ {i \ théta/2} \end{bmatrix}, \\\\ & R_x (\theta) = e ^ {-I\theta x/2} = HR_z (\theta) H = \begin{bmatrix} \cos (\ théta/2) &-i\sin (\ théta/2)\\\\-i\sin (\ théta/2) & \cos (\ théta/2) \end{bmatrix}, \\\\ & R_y (\theta) = e ^ {-I\theta y/2} = SHR_z (\theta) HS ^ \dagger = \begin{bmatrix} \cos (\ théta/2) &-\sin (\ théta/2)\\\\ \sin (\ théta/2) & \cos (\ théta/2) \end{bmatrix}. \end{align*}
 
-Stejně jako jakékoli tři rotace je možné kombinovat tak, aby prováděly libovolné otočení ve třech dimenzích, je možné vidět z reprezentace Bloch koule, kterou je možné zapsat do jakékoli jednotkové matice jako sekvence tří otočení. Konkrétně pro každou jednotnou matrici $U $ existuje $ \Alpha, \beta, \gamma, \delta $ tak, že $U = e ^ {i\alpha} R_x (\beta) R_z (\gamma) R_x (\delta) $. Proto $R _Z (\theta) $ a $H $ také tvoří univerzální sadu brány, i když se nejedná o samostatnou sadu, protože $ \theta $ může mít libovolnou hodnotu. Z tohoto důvodu a kvůli aplikacím v simulaci nenáročného kódu jsou takové nepřetržité brány zásadní pro výpočet po sobě náročné na výpočetní výkon, zejména na úrovni návrhu algoritmu. Aby byla zajištěna hardwarová implementace odolná proti chybám, bude nakonec zkompilována do diskrétních sekvencí brány, které tyto rotace důkladně nasadí.
+Stejně jako jakékoli tři rotace je možné kombinovat tak, aby prováděly libovolné otočení ve třech dimenzích, je možné vidět z reprezentace Bloch koule, kterou je možné zapsat do jakékoli jednotkové matice jako sekvence tří otočení. Konkrétně pro každou jednotnou matrici $U $ existuje $ \Alpha, \beta, \gamma, \delta $ tak, že $U = e ^ {i\alpha} R_x (\beta) R_z (\gamma) R_x (\delta) $. Takže $R _z (\theta) $ a $H $ také tvoří univerzální sadu brány, i když se nejedná o samostatnou sadu, protože $ \theta $ může mít libovolnou hodnotu. Z tohoto důvodu a kvůli aplikacím v simulaci nenáročného kódu jsou takové nepřetržité brány zásadní pro výpočet po sobě náročné na výpočetní výkon, zejména na úrovni návrhu algoritmu. Aby byla zajištěna hardwarová implementace odolná proti chybám, bude nakonec zkompilována do diskrétních sekvencí brány, které tyto rotace důkladně nasadí.

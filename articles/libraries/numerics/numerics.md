@@ -1,17 +1,17 @@
 ---
-title: Použití knihovny numerických knihoven | Microsoft Docs
-description: Použití knihovny numerických knihoven
+title: 'Použití knihovny Microsoft Q # Numerics'
+description: Seznamte se s typy a operacemi, které jsou k dispozici v knihovně numerických hodnot společnosti Microsoft.
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: ca24ff60cd9ae5077c7f4bae0012fe1180d7e6d4
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: ad9f529efd06fdf13bab4467b091aafacf1d5b09
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821027"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907252"
 ---
 # <a name="using-the-numerics-library"></a>Použití knihovny numerických knihoven
 
@@ -36,7 +36,7 @@ Knihovna numerických hodnot podporuje následující typy.
 1. **`SignedLittleEndian`** : totéž jako `LittleEndian` s tím rozdílem, že představuje celé číslo se znaménkem uložené ve dvou doplňkech.
 1. **`FixedPoint`** : představuje reálné číslo sestávající z `qArr2 : Qubit[]` pole qubit a umístění binárního bodu `pos`, které počítá počet binárních číslic nalevo od binárního bodu. `qArr2` je uložen stejným způsobem jako `SignedLittleEndian`.
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Operace
 
 Pro každý ze tří typů uvedených výše je k dispozici celá řada operací:
 

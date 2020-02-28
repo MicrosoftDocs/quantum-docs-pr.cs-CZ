@@ -1,17 +1,17 @@
 ---
-title: Čítač hloubky | Simulátor sledování počítačového systému | Microsoft Docs
-description: Přehled simulátoru trasování kvantového počítače
+title: Čítač hloubky
+description: Přečtěte si o čítači hloubky Microsoft QDK, který shromažďuje počty hloubky každé operace vyvolané v programu
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: 07f927c794e2c62e53e4e053b5bc683d24bbed8d
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: d532a9f512b8c87d83d62ed26e3bb67e1b6f668b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820466"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906096"
 ---
 # <a name="depth-counter"></a>Čítač hloubky
 
@@ -37,7 +37,7 @@ operation ApplySampleWithCCNOT() : Unit {
 
 Chcete-li ověřit, zda `CCNOT` má `T` hloubku 5 a `ApplySampleWithCCNOT` má `T` hloubku 6 C# , můžeme použít následující kód:
 
-```csharp 
+```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
 using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
@@ -61,6 +61,6 @@ Nakonec můžete pro výstup všech statistik shromážděných službou `Depth 
 string csvSummary = sim.ToCSV()[MetricsCountersNames.depthCounter];
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech ##
+## <a name="see-also"></a>Viz také ##
 
 - Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.

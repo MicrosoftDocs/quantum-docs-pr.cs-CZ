@@ -1,22 +1,22 @@
 ---
-title: Správa licencí OSS
-description: 'Q # Standard knihovny – licencování a přispívání'
+title: Licencování open source pro QDK
+description: 'Přečtěte si informace o licencování pro používání a přispívání do knihoven Microsoft Q # Standard – licencování a přispívání.'
 author: martinro
 ms.author: martinro@microsoft.com
 ms.date: 2/16/2018
 ms.topic: article
 uid: microsoft.quantum.libraries.licensing
-ms.openlocfilehash: 35e55f6741e5dcc79724f80f31d89937696d8554
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 4bc0fb7fbeb4a71b891619218905d509e50911c9
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184385"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906198"
 ---
-# <a name="licensing"></a>Správa licencí #
+# <a name="licensing"></a>Licencování #
 
 Vývojová sada pro všechna provozní prostředí je poskytována s rozsáhlou kolekcí Open Source funkcí a operací licencovaných v rámci [licence MIT](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).
-Části standardní knihovny, které jsou přenosné napříč cílovými počítači, se dají získat z úložiště [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) na GitHubu spolu s jinými knihovnami, jako jsou a další knihovny, jako je například [Knihovna složení množství ](xref:microsoft.quantum.chemistry.concepts.intro).
+Části standardní knihovny, které jsou přenosné napříč cílovými počítači, se dají získat z úložiště [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) na GitHubu spolu s jinými knihovnami, jako jsou například a jiné knihovny, jako je například [Knihovna pro chemické](xref:microsoft.quantum.chemistry.concepts.intro)množství.
 
 Vývojová sada pro všechny společnosti od Microsoftu nabízí také specializované funkce knihovny a operace, které jsou licencované v rámci [licence Microsoft Research](https://github.com/Microsoft/Quantum-NC/blob/master/LICENSE).
 Ty se dají získat z úložiště [Microsoft/](https://github.com/microsoft/quantum-nc) prohlášeného NC na GitHubu.

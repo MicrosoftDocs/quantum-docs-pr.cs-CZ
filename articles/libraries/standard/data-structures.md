@@ -1,17 +1,17 @@
 ---
-title: 'Q # standardní knihovny – datové struktury | Microsoft Docs'
-description: 'Q # standardní knihovny – datové struktury'
+title: 'Datové struktury v knihovně Q # Standard'
+description: 'Přečtěte si o datových strukturách, Oracle a dynamických generátorech v knihovnách Microsoft Q # Standard.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 6eb47de84fdfbb9d35fdfc2988883f8e1cffa332
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 46ac6794d1e21e111aa1d98e11a6f83194f8d54e
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864351"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907779"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
@@ -31,7 +31,7 @@ let pair = (PauliZ, register); // type (Pauli, Qubit[])
 ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ```
 
-### <a name="arrays"></a>Pole ###
+### <a name="arrays"></a>Řadách ###
 
 Canon nabízí několik funkcí pro manipulaci s poli.
 Tyto funkce jsou typově parametrizované a dají se použít s poli typu Q #.
@@ -199,7 +199,7 @@ Hlavním cílem dynamické simulace je implementace operátoru pro vývoj času 
 
 $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} H_j, \end{align} $ $
 
-v případě, že je v počítači s procesorem na více procesorech snadné implementovat čas v každém termínu. Například pokud $H _j $ je Pauli $X _1X_2 $, který vychází z prvních a druhých prvků qubit registru Register `qubits`, může být implementováno jednoduše voláním operace $t, která má `Exp([PauliX,PauliX], t, qubits[1..2])`podpisu. Jak je popsáno dále v simulaci Hamiltonian, jedno řešení pak bude přibližný vývoj času pomocí $H $ se sekvencí jednodušších operací.
+v případě, že je v počítači s procesorem na více procesorech snadné implementovat čas v každém termínu. Například pokud $H _j $ je Pauli $X _1X_2 $, který vychází z prvních a druhých prvků qubit registru Register `qubits`, může být implementováno jednoduše voláním operace $t, která má `Exp([PauliX,PauliX], t, qubits[1..2])`podpisu.`((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)` Jak je popsáno dále v simulaci Hamiltonian, jedno řešení pak bude přibližný vývoj času pomocí $H $ se sekvencí jednodušších operací.
 
 $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $
 

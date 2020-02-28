@@ -1,17 +1,17 @@
 ---
-title: 'Příkazy Q # | Microsoft Docs'
-description: 'Příkazy Q #'
+title: 'Příkazy Q #'
+description: 'Přečtěte si o správném použití příkazů v Q #, včetně deklarací funkcí a operací, deklarací proměnných a přiřazení a volání operací.'
 author: QuantumWriter
 uid: microsoft.quantum.language.statements
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9a6f5d53ec21090d0c13f4369e0270d264cd1e9b
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: e801a5fdd24b973f47d23d2aca6f11bbebf333d4
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036487"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904668"
 ---
 # <a name="statements-and-other-constructs"></a>Příkazy a další konstrukce
 
@@ -29,7 +29,7 @@ V rámci `///` komentáře je text, který se zobrazí jako součást dokumentac
 Jako rozšíření pro Markdownu mohou být křížové odkazy na operace, funkce a uživatelsky definované typy v Q # zahrnuty pomocí `@"<ref target>"`, kde `<ref target>` je nahrazen plně kvalifikovaným názvem odkazovaného objektu kódu.
 V případě potřeby může také modul dokumentace podporovat další rozšíření Markdownu.
 
-Například:
+Příklad:
 
 ```qsharp
 /// # Summary

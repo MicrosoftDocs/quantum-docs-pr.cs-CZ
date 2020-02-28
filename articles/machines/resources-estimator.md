@@ -1,17 +1,17 @@
 ---
-title: Prostředky pro vývoj pro všechna ta sada prostředků Estimator | Microsoft Docs
-description: Přehled prostředků Estimator pro vývoj aplikací od Microsoftu
+title: Estimator prostředky pro vývoj pro všechna ta
+description: 'Přečtěte si o Estimatorech prostředků, které odhadují prostředky potřebné ke spuštění dané instance operace Q # v počítači s více operačními systémy.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 37c901e5a861f0e8a10cdc911ad1d84ddd3e6e00
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820857"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907048"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Cílový počítač ResourcesEstimator
 
@@ -130,7 +130,7 @@ operation Teleport(source : Qubit, target : Qubit) : Unit {
 Když `ResourcesEstimator` narazí `AssertProb`, bude nahrávat `PauliZ` na `source` a `q` by měl být uveden výsledek `Zero` s pravděpodobností 0,5. Když se spustí `M` později, nalezne zaznamenané hodnoty pravděpodobnosti výsledku a `M` vrátí `Zero` nebo `One` s pravděpodobností 0,5.
 
 
-## <a name="see-also"></a>Další informace najdete v tématech
+## <a name="see-also"></a>Viz také
 
 `ResourcesEstimator` je postaven na [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)počítačů s procesorem, který poskytuje bohatší sadu metrik, schopnost nahlásit metriky na plný graf volání a funkce, jako je například [Kontrola různých vstupů](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) , pomůžou najít chyby v programech Q #. Další informace najdete v dokumentaci [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 

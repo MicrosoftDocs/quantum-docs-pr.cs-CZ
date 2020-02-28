@@ -1,24 +1,24 @@
 ---
-title: 'Průvodce stylem Q # | Microsoft Docs'
-description: 'Průvodce stylem Q #'
+title: 'Průvodce stylem Microsoft Q #'
+description: 'Přečtěte si o názvech, vstupech, dokumentaci a konvencích formátování pro programy a knihovny Q #.'
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 4050e2ee9e516aed7a8ba1398792562926808ee0
-ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.openlocfilehash: 3c8e432378ec563a197a5b87000c3e90cadb8e18
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73463322"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907439"
 ---
 # <a name="q-style-guide"></a>Průvodce stylem Q # #
 ## <a name="general-conventions"></a>Obecné konvence ##
 
 Konvence navržené v této příručce jsou určené k tomu, aby usnadnily čtení a pochopení programů a knihoven ve službě Q #.
 
-## <a name="guidance"></a>Pokyny
+## <a name="guidance"></a>Doprovodné materiály
 
 Navrhujeme:
 
@@ -49,7 +49,7 @@ Tento rozdíl naznačuje, že pojmenování operací jako operací a funkcí jak
 > Z této perspektivy by měly být uživatelsky definované typy pojmenovány jako podstatná jména, aby samotný typ i funkce konstruktoru měly konzistentní názvy.
 
 Tam, kde je to rozumné, zajistěte, aby názvy operací začaly slovesy, které jasně indikují účinek prováděný operací.
-Například:
+Příklad:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -60,13 +60,13 @@ V takových případech není akce prováděná vstupní operací jasná, když 
 Jako v `ApplyIf`, `ApplyToEach`a `ApplyToFirst`doporučujeme použít příkaz `Apply`.
 V tomto případě mohou být užitečné i jiné akce, jako v `IterateThroughCartesianPower`.
 
-| Operace | Očekávaný efekt |
+| Příkaz | Očekávaný efekt |
 | ---- | ------ |
 | Použít | Nazývá se operace zadaná jako vstup. |
 | Assert | Hypotéza o výsledku možného měření doby využívání se kontroluje simulátorem. |
 | Ocenění | Vrátí se klasická hodnota, která představuje odhad vykreslený z jedné nebo více měření. |
 | Measure | Měří se měření po sobě a výsledek se vrátí uživateli. |
-| Připravit | Daný registr qubits se inicializuje do určitého stavu. |
+| Příprava | Daný registr qubits se inicializuje do určitého stavu. |
 | Ukázka | Z nějaké distribuce se náhodně vrátí klasická hodnota. |
 
 V případě funkcí doporučujeme vyhnout se použití sloves ve prospěch běžných podstatných jmen (viz doprovodné materiály o řádných podstatných jmenách níže) nebo adjektiva:
@@ -80,7 +80,7 @@ Například `ControlledOnInt` používá participle formuláře příkazu "Contr
 Tento název má další výhody, které odpovídají sémantikě předdefinovaných `Controlled` funktor, jak je popsáno dále níže.
 Obdobně lze použít _substantivum agenta_ k vytvoření funkce a názvů UDT z názvů operací, jako v případě názvu `Encoder` pro UDT, který je silně spojen s `Encode`.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -91,9 +91,9 @@ Navrhujeme:
 - U všech místních proměnných použijte `pascalCase` v případě silné Předvolby na `CamelCase`, `snake_case`nebo `ANGRY_CASE`. Konkrétně zajistěte, aby místní proměnné byly začínat malými písmeny.
 - Vyhněte se použití podtržítek `_` v názvech funkcí a operací; v případě potřeby dalších úrovní hierarchie použijte obory názvů a aliasy oboru názvů.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name (Název) | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Zrušením použití příkazu ("reflektování") označíte účinek operace. |
 | ☒ | <s>`operation XRotation`</s> | Místo operace použijte funkci navrhuje fráze substantivum. |
@@ -132,7 +132,7 @@ is Adj + Ctl {
 }
 ```
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -141,9 +141,9 @@ Navrhujeme:
 - Používejte velká písmena pro krátká (dvě písmena) zkratky a initialisms.
 - Použijte `CamelCase` pro delší (tři nebo více písmen) a initialisms.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name (Název) | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☑ | `X` | Dobře srozumitelná zkrácený příkaz pro použití transformace $X $ |
 | ☑ | `CNOT` | Dobře srozumitelná zkrácená zkratka pro "řízená – ne" |
@@ -168,17 +168,17 @@ Proto doporučujeme, abyste při každém rozumném a běžném výskytu, který
 Jako konkrétní příklad se v rámci akademické literatury často označují samostatně kontrolované SWAPy a dvakrát kontrolované operace, ale v rámci Fredkin se identifikují hlavně jako `CSWAP` a `CCNOT`.
 V obou případech komentáře k rozhraní API poskytují synonymum názvů na základě správných podstatných jmen a spolu se všemi příslušnými citacemi.
 
-Tato předvolba je obzvláště důležitá vzhledem k tomu, že některé použití řádných podstatných jmen bude vždy nutné – Q # následuje po sadě klasických jazyků, například a odkazuje na `Bool` typy v odkazu na logickou logiku, která je zase pojmenována za akceptovatelné. z logického typu Jiří.
+Tato předvolba je obzvláště důležitá vzhledem k tomu, že některé použití řádných podstatných jmen bude vždy nutné – Q # následuje po sadě pro řadu klasických jazyků, a odkazuje na `Bool` typy v odkazu na logickou logiku, která je zase pojmenována při respektování bool typu Jiří.
 Několik základních principů je obdobně pojmenováno podobným způsobem, včetně typu `Pauli` integrovaného do jazyka Q #.
 Minimalizací použití řádných podstatných jmen, kde takové použití není nezbytné, snižujeme dopad na to, kde nelze rozumně obejít řádná podstatná jména.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance) 
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance) 
 
 Navrhujeme:
 
 - Vyhněte se použití řádných podstatných jmen v názvech.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
 ***
 
@@ -188,19 +188,19 @@ Vzhledem k tomu, že Q # je silně a staticky typovaného jazyka, hodnota jednoh
 To je v kontrastu s jazyky, které umožňují hodnotám měnit typy implicitně (např.: povýšení typu) nebo prostřednictvím přetypování.
 Výsledkem je, že funkce pro převod typu hrají důležitou roli ve vývoji knihovny Q # a sestávají z nich jedno z častých rozhodnutí o pojmenování.
 Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_, můžou být zapsány jako funkce a tak do výše uvedených rad.
-Konkrétně doporučujeme, aby funkce pro převod typu neměly být nikdy pojmenovány jako slovesa (např.: `ConvertToX`) nebo příznakem příznaku příznaku (`ToX`), ale měly by se pojmenovat jako předpozice "adjektivum", které označují zdrojové a cílové typy (`XAsY`).
+Konkrétně doporučujeme, aby funkce pro převod typu neměly být nikdy pojmenovány jako slovesa (např.: `ConvertToX`) nebo typu příznaku příznaku (`ToX`), ale měly by být pojmenovány jako předpozice "adjektivum", které označují zdrojové a cílové typy (`XAsY`).
 Při výpisu typů polí v názvech funkcí konverze typu doporučujeme zkrácený `Arr`.
 Blokování výjimečných okolností, doporučujeme, aby všechny funkce pro převod typů byly pojmenovány pomocí `As`, aby je bylo možné rychle identifikovat.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
 - Pokud funkce převede hodnotu typu `X` na hodnotu typu `Y`, použijte buď název `AsY` nebo `XAsY`.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name (Název) | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Výsledkem předpozice "do" je příkazová fráze, která značí operaci a nikoli funkci. |
 | ☒ | <s>`AsDouble`</s> | Typ vstupu není jasný od názvu funkce. |
@@ -215,15 +215,15 @@ V mnoha případech je název určený výhradně pro použití interního pro k
 Je vhodné jasně označit, že se jedná o případ, kdy se pojmenují funkce a operace, aby byly náhodné závislosti na kódu pouze v interním kódu.
 Pokud operace nebo funkce není určena pro přímé použití, ale místo toho by měla být použita odpovídajícím voláním, které funguje na základě částečné aplikace, zvažte použití názvu začínajícího `_` pro volání, které je částečně použito.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
 - Není-li funkce, operace nebo uživatelsky definovaný typ součástí veřejného rozhraní API pro knihovnu nebo program Q #, ujistěte se, že název začíná počátečním podtržítkem (`_`).
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name (Název) | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`ApplyDecomposedOperation_`</s> | Podtržítko `_` nesmí být na konci názvu. |
 | ☑ | `_ApplyDecomposedOperation` | Podtržítko `_` na začátku jasně označuje, že tato operace je určena pouze pro interní použití. |
@@ -244,14 +244,14 @@ Tyto skupiny lze odlišit pomocí stejného kořenového názvu, následovaný j
 | `D` | Vstup nebo vstupy jsou typu `Double` |
 | `L` | Vstup nebo vstupy jsou typu `BigInt` |
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
 - Pokud funkce nebo operace nesouvisí s podobnými funkcemi nebo operacemi, které typy a funktor podporují jejich vstupy, nepoužívejte příponu.
 - Pokud funkce nebo operace souvisí s podobnými funkcemi nebo operacemi podle typů a funktor podpory jejich vstupů, použijte přípony jako v tabulce výše, abyste rozlišili varianty.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
 ***
 
@@ -261,7 +261,7 @@ Klíčový cíl kódu Q # pro funkci nebo operaci je, aby jej bylo možné snadn
 Podobně názvy vstupů a argumentů typu by měly sdělit, jak se bude funkce nebo argument používat, jakmile bude k dispozici.
 
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -276,7 +276,7 @@ Navrhujeme:
   Zejména se silně Vyhněte použití názvů proměnných s jedním písmenem jako indexů; Zvažte použití `idx` minimálně.
 - Proměnné používané pro uchovávání délek polí by měly začínat `n` a měly by být v množném čísle (např.: `nThings`).
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
 ***
 
@@ -285,7 +285,7 @@ Navrhujeme:
 Pojmenované položky v uživatelsky definovaných typech by měly být pojmenovány jako `CamelCase`, a to i ve vstupu na konstruktory UDT.
 To pomáhá při použití notace přistupujícího objektu (např.: `callable::Apply`) nebo zápisu typu Copy-and-Update (`set arr w/= Data <- newData`) jasně oddělit pojmenované položky od odkazů na místně vymezené proměnné.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -294,9 +294,9 @@ Navrhujeme:
 - Pojmenované položky, které nelze přeložit na operace, by měly být pojmenovány jako podstatné fráze.
 - Pro UDT, které zabalí operace, by měla být definována jedna pojmenovaná položka s názvem `Apply`.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Zlomk | Popis |
+|   | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Název `Apply` je příkazová fráze ve formátu `CamelCase`, což naznačuje, že pojmenovaná položka je operace. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Pojmenované položky by měly začínat počátečním velkým písmenem. |
@@ -342,7 +342,7 @@ U některých funkcí a operací, které jsou ve zvláštních případech minim
 Například `ControlledOnInt<'T>` je typu `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)`, například, aby `ControlledOnInt<Qubit[]>(5, _)` fungovat jako `Controlled` funktor, ale na podmínku, kterou registr ovládacího prvku představuje stav $ \ket{5} = \ket{101}$.
 Proto vývojář očekává, že vstupy `ControlledOnInt` umístit vracené operace jako poslední a že výsledná operace přebírá jako svůj vstupní `(Qubit[], 'T)`---stejné pořadí, jako následuje výstup `Controlled` funktor.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -350,11 +350,11 @@ Navrhujeme:
 - Používejte vstupní pořadí konzistentní s integrovanými funktory.
 - Všechny klasické vstupy umístěte před všechny vstupy za sebou.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
 ***
 
-## <a name="documentation-conventions"></a>Konvence dokumentace ##
+## <a name="documentation-conventions"></a>Konvence pro dokumentaci ##
 
 Jazyk Q # umožňuje připojit dokumentaci k operacím, funkcím a uživatelsky definovaným typům pomocí speciálně formátovaných dokumentačních komentářů.
 Tyto komentáře k této dokumentaci jsou označeny trojitými lomítky (`///`), [](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) které se dají použít k popisu účelu jednotlivých operací, funkcí a uživatelsky definovaných typů, které vstupy očekává a tak dále.
@@ -368,7 +368,7 @@ Používání dokumentačních komentářů tak může pomoci uživatelům vydá
 
 Aby bylo možné efektivně využít tuto funkci, doporučujeme, abyste při psaní dokumentačních komentářů měli na paměti pár věcí.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance)
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance)
 
 Navrhujeme:
 
@@ -388,7 +388,7 @@ Navrhujeme:
 - Pokud je operace nebo funkce v souvislosti s jinými operacemi nebo funkcemi podle funktor variant, vypíše další varianty jako odrážky v části `# See Also`.
 - Ponechte prázdný řádek komentáře mezi oddíly úrovně 1 (`/// #`), ale nenechávejte prázdné řádky mezi oddíly úrovně 2 (`/// ##`).
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
 #### <a name=""></a>☑ ####
 
@@ -434,7 +434,7 @@ Taková pravidla formátování podle povahy mají za následek trochu libovoln�
 Nicméně doporučujeme, abyste zachovali konzistentní sadu formátovacích konvencí v rámci skupiny spolupracovníky a zejména u rozsáhlých projektů Q #, jako je například vývojová sada.
 Tato pravidla lze automaticky použít pomocí nástroje formátování integrovaného s kompilátorem Q #.
 
-# <a name="guidancetabguidance"></a>[Doprovodné materiály](#tab/guidance) 
+# <a name="guidance"></a>[Doprovodné materiály](#tab/guidance) 
 
 Navrhujeme:
 
@@ -451,9 +451,9 @@ Navrhujeme:
 - Nepoužívejte mezery za název funkce, operace nebo UDT ani po `@` v deklaracích atributů.
 - Každá deklarace atributu by měla být na samostatném řádku.
 
-# <a name="examplestabexamples"></a>[Příklady](#tab/examples)
+# <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Zlomk | Popis |
+|   | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Používejte mezery kolem binárních operátorů. |
 | ☒ | <s>`target:Qubit`</s> | Používejte mezery kolem dvojtečky typu anotace. |

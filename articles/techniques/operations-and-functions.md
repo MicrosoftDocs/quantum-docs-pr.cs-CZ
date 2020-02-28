@@ -1,17 +1,17 @@
 ---
-title: 'Operace a funkce – Q # – techniky | Microsoft Docs'
-description: 'Operace a funkce – Q # – techniky'
+title: 'Operace a funkce Q #'
+description: 'Přečtěte si o operacích a funkcích Q # a o tom, jak se používají v programu pro práci za provozu.'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 43f0cf2da192a607e514d0c7de57a9bdd067faf7
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820772"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907660"
 ---
 # <a name="q-operations-and-functions"></a>Operace a funkce Q #
 
@@ -231,7 +231,7 @@ operation ApplyTwice(op : (Qubit => Unit), target : Qubit) : Unit {
 
 V tomto příkladu se šipka `=>`, která se zobrazí v typu `(Qubit => Unit)`, označuje, že vstupní pole `op` je operace, která přebírá jako svůj vstup typ `Qubit` a vytváří prázdnou řazenou kolekci členů jako svůj výstup.
 Dále určíme vlastnosti tohoto typu operace, které obsahují informace o tom, které funktory jsou podporovány.
-Operace typu `(Qubit => Unit)` nepodporuje ani `Adjoint` ani `Controlled` funktor. Pokud chceme indikovat, že operace tohoto typu musí podporovat například `Adjoint` funktor, je nutné ji deklarovat jako sousední. K tomu je potřeba použít anotaci `is Adj` k typu. Podobně `(Qubit => Unit is Ctl)` označuje, že operace tohoto typu podporuje `Controlled` funktor. Podíváme se, až budeme projednávat [typy v Q #] (odkazy XREF: Microsoft. LanguageGroup. Language. Type-model) obecněji.
+Operace typu `(Qubit => Unit)` nepodporuje ani `Adjoint` ani `Controlled` funktor. Pokud chceme indikovat, že operace tohoto typu musí podporovat například `Adjoint` funktor, je nutné ji deklarovat jako sousední. K tomu je potřeba použít anotaci `is Adj` k typu. Podobně `(Qubit => Unit is Ctl)` označuje, že operace tohoto typu podporuje `Controlled` funktor. Podíváme se, až budeme projednávat [typy v Q #](xref:microsoft.quantum.language.type-model) obecněji.
 
 Teď zdůrazňujeme, že můžeme také vracet operace jako součást výstupů, takže můžeme izolovat některé druhy klasických podmíněných logických funkcí jako klasických funkcí, které v podobě operace vrátí popis programového množství.
 Jednoduchým příkladem je zvážit příklad přenosu, ve kterém strana, která obdrží 16bitovou klasický zprávu, musí zprávu použít k dekódování jejich qubit do správného portu.

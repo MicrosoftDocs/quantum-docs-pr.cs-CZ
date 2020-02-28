@@ -1,17 +1,17 @@
 ---
-title: Struktura souborů | Microsoft Docs
-description: 'Struktura souborů Q #'
+title: 'Struktura souborů Q #'
+description: 'Naučte se strukturovat obory názvů a deklarace operací, funkcí a uživatelsky definovaných typů v programech a knihovnách Q #.'
 author: QuantumWriter
 uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: b4bb7d4d70677dbd5d921a9f68313760499a56a1
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821078"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907388"
 ---
 # <a name="file-structure"></a>Struktura souborů
 
@@ -66,7 +66,7 @@ Konkrétně neexistuje žádný automatický převod mezi hodnotami dvou uživat
 
 Uživatelsky definovaná deklarace typu se skládá z klíčového slova `newtype`následovaný názvem uživatelsky definovaného typu, `=`, platné specifikace typu a ukončující středník.
 
-Například:
+Příklad:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);

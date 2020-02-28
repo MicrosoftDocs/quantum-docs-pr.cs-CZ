@@ -1,16 +1,17 @@
 ---
 title: Broombridge – schéma pro složení nech procesorů
+description: Přehled schématu Broombridgech nech procesorů, který se používá k modelování reálných problémů v chemickém prostředí s Microsoft Quantum Development Kit.
 author: martinro
 ms.author: martinro@microsoft.com
 ms.date: 10/17/2018
 ms.topic: article
 uid: microsoft.quantum.libraries.chemistry.schema.broombridge
-ms.openlocfilehash: c2a7636d0b3f07419e3312e04da5d811229ad854
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a746b63055bb1b2c1168b89993a7459ca9597f86
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185320"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907813"
 ---
 # <a name="broombridge-quantum-chemistry-schema"></a>Schéma chemického Broombridge # 
 
@@ -23,9 +24,8 @@ YAML Broombridge je strukturovaný, uživatelsky čitelný a upravitelný způso
 - Stavy uzemnění a zajímání se dají znázornit pomocí sekvencí vytváření.
 - Je možné zadat horní a dolní meze úrovně energie.
 
-Formát dat je možné vygenerovat z NWChem s možností snadného navýšení: k dispozici je celá řada metod, která je dostupná v rozsahu od úplné instalace NWChem, aby se spouštěly balíčky, jako jsou ty, které jsou [tady](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests) uvedené, a výstupní Broombridge jako součást běhu, přes Docker Obrázek NWchem, který lze použít také k vygenerování Broombridge z cheminích zásobníků. Nakonec vizuální metodu, která umožňuje rychle začít s výpočetními chemiemi, aniž by bylo nutné instalovat žádný software z chemického prostředí [EMSL šipkami](https://arrows.emsl.pnnl.gov/api/qsharp_chem) na NWChem. 
+Formát dat je možné vygenerovat z NWChem s možností snadného navýšení: k dispozici je celá řada metod, která je v rozsahu od úplné instalace NWChem, aby spouštěla sady chemické balíčky, jako jsou ty, které jsou [tady](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests) uvedené, a výstupní Broombridge jako součást běhu, přes Docker image NWChem, která se dá také použít ke generování Broombridge z chemické balíčky. Nakonec vizuální metodu, která umožňuje rychle začít s výpočetními chemiemi, aniž by bylo nutné instalovat žádný software z chemického prostředí [EMSL šipkami](https://arrows.emsl.pnnl.gov/api/qsharp_chem) na NWChem. 
 
-Na vysoké úrovni lze souhře mezi NWChem a Microsoft Quantum Development Kit vizuálně znázornit takto: ![chemie Stack](~/media/broombridge.png) modrým šedým políčkem představuje schéma Broombridge, různá šedá vystínovaná pole představují jiné interní reprezentace dat, která se zvolila k reprezentování a zpracování algoritmů pro výpočetní využití na základě reálných problémů v chemickém prostředí. 
+Na vysoké úrovni se souhře mezi NWChem a Microsoft Quantum Development Kit dá vizuálně seskupit takto: ![ou sazbu,](~/media/broombridge.png) modré šedivé pole představuje schéma Broombridge, různá šedá vystínovaná pole představují další interní reprezentace dat, která se rozhodla znázornit a zpracovávat algoritmy pro výpočetní výpočetní služby na základě problémů ze skutečných složení. 
 
 [Zde](https://github.com/microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML)jsou uvedeny různé chemické reprezentace definované pomocí schématu Broombridge.
-

@@ -1,16 +1,16 @@
 ---
-title: 'Q # standardní knihovny – Diagnostika | Microsoft Docs'
-description: 'Q # standardní knihovny – Diagnostika'
+title: 'Diagnostika v knihovně Q # Standard'
+description: 'Přečtěte si o diagnostických funkcích a operacích v knihovnách Q # Standard používaných k zachycení chyb nebo chyb v programech pro práci s poli.'
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: 67ec6780d8cbbda7223d46026a9df97cebc92b33
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: ba2f248327bb3db4ee895f8e65ea31c17e42b5f4
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820976"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906232"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
@@ -109,7 +109,7 @@ V důsledku globální fáze ale můžeme zvolit $a\_i = $0, takže potřebujeme
 Proto je potřeba zadat tři kontrolní výrazy, které jsou vzájemně nezávislé, aby bylo možné vyhodnotit stav, který očekáváme.
 Provedeme to tak, že vyhledáme pravděpodobnost pozorování `Zero` pro každé měření Pauliy uvedené na hodnotu $ \Alpha $ a $ \beta $ a každý z nich se vyhodnotí jako nezávisle.
 V uvedeném pořadí $x $, $y $ a $z $ budou `Result` hodnoty pro Pauli $X $, $Y $ a $Z $.
-Pak použijte funkci pravděpodobnosti pro měření doby využívání hodnot \begin{align} \Pr (x = \texttt{Zero} | \Alpha, \beta) & = \frac12 +\_r b\_r + a\_i b\_i \\\Pr (y = \texttt{Zero} | \Alpha, \beta) & = \frac12 + a\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \Alpha, \beta) & = \frac12\left (1 +\_r ^ 2 + a\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).
+Pak použijte funkci pravděpodobnosti pro měření doby využívání hodnot \begin{align} \Pr (x = \texttt{Zero} | \Alpha, \beta) & = \frac12 +\_r b\_r + a\_i b\_i \\\Pr (y = \texttt{Zero} | \Alpha, \beta) & = \frac12 + a\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \Alpha, \beta) & = \frac12\left (1 +\_r ^ 2 + a\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).\\
 \end{align}
 
 Operace <xref:microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance> implementuje tyto kontrolní výrazy s ohledem na reprezentace $ \Alpha $ a $ \beta $ jako hodnoty typu <xref:microsoft.quantum.math.complex>.

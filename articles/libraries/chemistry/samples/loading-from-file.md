@@ -1,22 +1,22 @@
 ---
-title: Načítá se Hamiltonian ze souboru | Microsoft Docs
-description: Načtení Hamiltonian ze souboru docs
+title: Načtení hamiltoniánu ze souboru
+description: Naučte se, jak automaticky generovat velké Hamiltonian pomocí schématu Broombridge.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.loadhamiltonian
-ms.openlocfilehash: 18f257efe8d53d2a22af4840bd8d17ab6b80a503
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 715dbcefc10ecc5af45f2bdd228890f1cb28886b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442343"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907286"
 ---
 # <a name="loading-a-hamiltonian-from-file"></a>Načtení hamiltoniánu ze souboru
 Dříve jsme vytvořili Hamiltonians přidáním jednotlivých podmínek. I když je to v malých příkladech jemné, je chemie ve velkém měřítku vyžadovat Hamiltonians s miliony nebo miliardami podmínek. Takové Hamiltonians generované balíčky chemie, jako je NWChem, je příliš velké pro import rukou. V této ukázce ukážeme, jak může být instance `FermionHamiltonian` automaticky vygenerována z molekuly reprezentovaných [schématem Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge). V případě referenčních informací může být jedna ukázka `LithiumHydrideGUI` nebo ukázka `RunSimulation`. K dispozici je také omezená podpora pro import z formátu spotřebovaného [LIQUi | >](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/).
 
-Vezměte v úvahu příklad molekuly dusíku, který je k dispozici ve složce `IntegralData/YAML` v úložišti ukázek. Metoda pro načtení `Broombridge`ho schématu je jednoduchá.
+Vezměte v úvahu příklad molekuly dusíku, který je k dispozici ve složce `IntegralData/YAML` v úložišti ukázek. Metoda pro načtení schématu `Broombridge` je jednoduchá.
 
 ```csharp
 // This is the name of the file we want to load

@@ -1,17 +1,17 @@
 ---
-title: Instalace a ověření knihovny numerických a ověřovacích knihoven | Microsoft Docs
-description: Instalace a ověření knihovny numerických a ověřovacích knihoven
+title: Knihovna numerických procesorů Microsoft – instalace a ověření
+description: Naučte se, jak do instalace sady Visual Studio 2019 nebo novější přidat knihovnu Microsoft pro počet nestejných čísel.
 author: thomashaener
 ms.author: thhaner
 ms.date: 05/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.installation
-ms.openlocfilehash: c41bb73ea484271689eea2ca1b59ce6639dc15a7
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: cb0d00a509b3986b605dd7f15f9bccc0661bb894
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036453"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906334"
 ---
 # <a name="numerics-library-installation-and-validation"></a>Instalace a ověření knihovny numerických a ověřovacích knihoven
 
@@ -33,7 +33,7 @@ Další podrobnosti najdete v příručce k [uživatelskému rozhraní Správce 
 
 Alternativně můžete použít konzolu Správce balíčků k přidání knihovny numerické aplikace do projektu prostřednictvím rozhraní příkazového řádku.
 
-![](../../media/vs2017-nuget-console-menu.png)
+![Použití konzoly Správce balíčků z příkazového řádku](../../media/vs2017-nuget-console-menu.png)
 
 V konzole správce balíčků spusťte následující příkaz:
 

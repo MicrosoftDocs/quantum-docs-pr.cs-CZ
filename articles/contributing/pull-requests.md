@@ -1,17 +1,17 @@
 ---
-title: Otevírají se žádosti o přijetí změn | Microsoft Docs
-description: Otevírání žádostí o přijetí změn
+title: Otevírání žádostí o přijetí změn
+description: Přečtěte si, jak odeslat žádost o přijetí změn GitHubu, až budete připraveni přispívat k kódu nebo dokumentaci k Microsoft Quantum Development Kit.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: d70a0a0319d14cfdae4910b897733d77b236f2f9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183722"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907456"
 ---
 # <a name="opening-pull-requests"></a>Otevírání žádostí o přijetí změn #
 
@@ -42,19 +42,19 @@ Při práci s Git se všechny změny reprezentují jako _potvrzení_ , které po
 Předpokládejme, že jste na _větvi_ s názvem `feature`zahájili příspěvek.
 Potom vaše rozvětvení **Microsoft/** nečinnosti může vypadat přibližně takto:
 
-![](~/media/git-workflow-step0.png)
+![Pracovní větev na GitHubu](~/media/git-workflow-step0.png)
 
 Pokud provedete změny v místním úložišti, můžete si z jiného úložiště _Stáhnout_ změny, abyste mohli zachytit všechny změny, ke kterým došlo v opačném případě.
 
-![](~/media/git-workflow-step1.png)
+![Přijímání a slučování změn z nadřazeného úložiště](~/media/git-workflow-step1.png)
 
 Žádosti o přijetí změn fungují stejným způsobem, ale v opačném případě: Když otevřete žádost o přijetí změn, zeptejte se, že má nadřazené úložiště získat příspěvek do služby.
 
-![](~/media/git-workflow-step2.png)
+![Vyžádání žádosti o přijetí změn zpátky do původního úložiště](~/media/git-workflow-step2.png)
 
 Když v jednom z našich úložišť otevřete žádost o přijetí změn, GitHub nabídne ostatním uživatelům v komunitě možnost Zobrazit souhrn vašich změn, komentovat je a vytvořit návrhy, jak pomoci zajistit ještě lepší příspěvek.
 
-![](~/media/pull-request-header.png)
+![Snímek obrazovky žádosti o získání dat v GitHubu](~/media/pull-request-header.png)
 
 Použití tohoto procesu nám pomáhá využít funkce GitHubu ke zlepšení příspěvků a udržování vysoce kvalitních produktů pro naši komunitu programování.
 

@@ -1,17 +1,17 @@
 ---
-title: Pokročilé koncepty matrice | Microsoft Docs
-description: Pokročilé koncepty matrice
+title: Pokročilé koncepty matice
+description: Přečtěte si o exponenciálních eigenvectors, eigenvalues a matricích, které se používají k popisu a simulaci algoritmů pro plnění.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.matrix-advanced
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f87b3bcd19d2f98fea2a9724a280781a78c4cbb9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a83911e01ad758bbcb7f701000fd58b4f1c91cd2
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183756"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907575"
 ---
 # <a name="advanced-matrix-concepts"></a>Pokročilé koncepty matrice #
 
@@ -27,19 +27,19 @@ Například pro matici identita každý vektor $v $ je eigenvector s eigenvalue 
 
 Jako další příklad zvažte [*diagonální matici*](https://en.wikipedia.org/wiki/Diagonal_matrix) $D $, která má pouze nenulové položky na diagonále:
 
-$ $ \begin{bmatrix} D_1 & 0 & 0 \\\\ 0 & d_2 & 0 \\\\ 0 & 0 & D_3 \end{bmatrix}.
+$ $ \begin{bmatrix} d_1 & 0 & 0 \\\\ 0 & d_2 & 0 \\\\ 0 & 0 & d_3 \end{bmatrix}.
 $$
 
 Vektory
 
-$ $ \begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix}, \begin{bmatrix}0 \\\\ 1 \\\\ 0 \ end {bmatrix} a \begin{bmatrix}0 \\\\ 0 \\\\ 1 \ konec {bmatrix} $ $
+$ $ \begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix}, \begin{bmatrix}0 \\\\ 1 \\\\ 0 \ end {bmatrix} a \begin{bmatrix}0 \\\\ 0 \\\\ 1 \ end {bmatrix} $ $
 
 eigenvectors z této matice s eigenvalues $d _1 $, $d _2 $ a $d _3 $, v uvedeném pořadí. Pokud $d _1 $, $d _2 $, a $d _3 $ jsou odlišná čísla, pak jsou tyto vektory (a jejich násobky) jediným eigenvectors matice $D $. Obecně platí, že pro diagonální matrici je snadné číst z eigenvalues a eigenvectors. Eigenvalues jsou všechna čísla zobrazená na diagonále a jejich příslušné eigenvectors jsou vektory jednotek s jednou položkou rovnající se $1 $ a zbývající položky rovnající se $0 $.
 
-V příkladu výše si všimněte, že eigenvectors $D $ Form je základem pro $3 $ multidimenzionální vektory. Základem je sada vektorů, což znamená, že každý vektor lze zapsat jako lineární kombinaci. $V _1 $, $v _2 $ a $v _3 $ formu, pokud jakýkoli vektorový $v $ může být zapsaný jako $v = A_1 v_1 + A_2 v_2 + a_3 v_3 $ pro některá čísla $a _1 $, $a _2 $ a $a _3 $.
+V příkladu výše si všimněte, že eigenvectors $D $ Form je základem pro $3 $ multidimenzionální vektory. Základem je sada vektorů, což znamená, že každý vektor lze zapsat jako lineární kombinaci. $V _1 $, $v _2 $ a $v _3 $ formu, pokud je jakýkoli vektorový $v $ možné zapsat jako $v = a_1 v_1 + a_2 v_2 + a_3 v_3 $ pro některá čísla $a _1 $, $a _2 $ a $a _3 $.
 
 Odvolání, že matice Hermitian (označovaná také jako samostatně sousedící) je složitá čtvercová matice, která se rovná svému vlastnímu komplexu, zatímco Jednotková matice je složitá čtvercová matice, jejíž invertování je rovno složitosti.
-V případě Hermitian a maticových matric, které jsou v podstatě jenom pro tyto matrice, je k dispozici obecný výsledek, který je známý jako [*spektrální věta*](https://en.wikipedia.org/wiki/Spectral_theorem), který vyhodnotí následující: pro každou Hermitian nebo jednotkovou matrici $M $ existuje jednotkové $U $, které $M = U ^ \dagger D U $ pro nějakou úhlopříčnou matrici $D $. Kromě toho budou položky diagonálního $D $ eigenvalues $M $.
+V případě Hermitian a maticových matric, které jsou v podstatě pouze v případě, že se jedná o výpočetní výkon, je obecný výsledek známý jako [*spektrální věta*](https://en.wikipedia.org/wiki/Spectral_theorem), který vyhodnotí následující: pro každou Hermitian nebo jednotkovou matrici $M $ existuje jednotková $U $, kterou $M = U ^ \Dagger D u $ pro některé úhlopříčné matrice $D $. Kromě toho budou položky diagonálního $D $ eigenvalues $M $.
 
 Už víte, jak vypočítat eigenvalues a eigenvectors úhlopříčné matrice $D $. Pomocí tohoto větau víme, že pokud je $v $ eigenvector $D $ with eigenvalue $c $, tj. $Dv = CV $, pak $U ^ \dagger v $ bude eigenvector $M $ s eigenvalue $c $. Důvodem je to, že
 

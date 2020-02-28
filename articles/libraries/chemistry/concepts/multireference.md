@@ -1,19 +1,19 @@
 ---
-title: Korelační wavefunctions | Microsoft Docs
-description: Koncepční dokumentace k Dynamicsům
+title: Korelované vlnové funkce
+description: Seznamte se s dynamickými a nedynamickými korelacemi v wavefunctions pomocí knihovny Microsoft pro složení nedodržení.
 author: guanghaolow
 ms.author: gulow@microsoft.com
 ms.date: 05/28/2019
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.multireference
-ms.openlocfilehash: 0b14f373d31c5b63e313e07810daf62d9195b1d3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 005ef86382ca72969b06a4206cab01f3845718e2
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184028"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904430"
 ---
-# <a name="correlated-wavefunctions"></a>Korelační wavefunctions
+# <a name="correlated-wavefunctions"></a>Korelované vlnové funkce
 
 Pro mnoho systémů, zejména v blízkosti geometrie rovnováhy, [Hartree – Fock](xref:microsoft.quantum.chemistry.concepts.hartreefock) teoreticky poskytuje kvalitativní popis vlastností molekul prostřednictvím referenčního stavu s jedním determinantem. Aby však bylo možné dosáhnout kvantitativní přesnosti, musí být jedna z nich také zvážena z relačních účinků. 
 
@@ -24,9 +24,9 @@ To vyžaduje nadpolohu rozhodujících determinantů a je příkladem více wave
 Knihovna složení poskytuje způsob, jak zadat zeroth objednávky wavefunction pro problém s více odkazy jako nadmnožinu rozhodujících míst. Tento přístup, který volá zhuštěné wavefunctionsy, je platný, pokud pouze některé součásti postačují k určení nadpozice. Knihovna také poskytuje metodu pro zahrnutí dynamických korelací na základě jednoho determinantu pomocí generalizované jednotně Ansatz clusteru. Kromě toho také sestaví okruhy na základě stavu, které generují tyto stavy na počítači s více stroji. Tyto stavy mohou být zadány ve [schématu Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)a my také poskytujeme funkci pro ruční určení těchto stavů prostřednictvím knihovny složení.
 
 ## <a name="sparse-multi-reference-wavefunction"></a>Wavefunction zhuštěných více odkazů
-Stav vícenásobných odkazů $ \ket{\psi_{\rm {MCSCF}}}} se dá explicitně zadat jako lineární kombinace $N $-elektron Slater determininants.
-\begin{align} \ket{\psi_{\rm {MCSCF}}} \propto \sum_{i_1 < i_2 < \cdots < i_N} \lambda_{i_1, i_2, \cdots, i_N} a ^ \dagger_{i_1}a ^ \dagger_{i_2}\cdots a ^ \dagger_{i_N}\ket{0}.
-\end{align} například stav $ \propto (0,1 a ^ \dagger_1a ^ \dagger_2a ^ \dagger_6-0,2 a ^ \dagger_2a ^ \dagger_1a ^ \dagger_5) \ket{0}$ lze v knihovně chemie zadat následujícím způsobem.
+Stav vícenásobných odkazů $ \ket{\ psi_ {\rm {MCSCF}}} $ se dá explicitně zadat jako lineární kombinace $N $-elektron Slater determininants.
+\begin{align} \ket{\ psi_ {\rm {MCSCF}}} \propto \ sum_ {i_1 < i_2 < \cdots < i_N} \ lambda_ {i_1, i_2, \cdots, i_N} a ^ \ dagger_ {i_1} a ^ \ dagger_ {i_2} \cdots a ^ \ dagger_ {i_N} \ket{0}.
+\end{align} například stav $ \propto (0,1 a ^ \ dagger_1a ^ \ dagger_2a ^ \ dagger_6-0,2 a ^ \ dagger_2a ^ \ dagger_1a ^ \ dagger_5) \ket{0}$ může být uveden v knihovně chemie následujícím způsobem.
 ```csharp
 // Create a list of tuples where the first item of each 
 // tuple are indices to the creation operators acting on the
@@ -42,18 +42,18 @@ var wavefunction = new FermionWavefunction<int>(superposition);
 Tato explicitní reprezentace komponent nadpozice je platná, pokud je třeba zadat pouze některé součásti. Při použití této reprezentace by se neměla používat tato reprezentace, pokud je potřeba k přesnému zachycení požadovaného stavu použít spoustu součástí. Důvodem je, že se jedná o cenu za využití okruhu, která tento stav připraví na počítač s více procesory, který se škáluje alespoň lineárně s počtem komponent na více pozicích a s největší kvadratickou s jednou normou amplitudy pozice.
 
 ## <a name="unitary-coupled-cluster-wavefunction"></a>Jednotně kombinovaná wavefunction clusteru
-Pomocí knihovny chemistery je taky možné zadat jednotnou kombinaci clusterových wavefunction $ \ket{\psi_{\rm {UCC}}} $. V této situaci máme jediný determinant – referenční stav, který znamená $ \ket{\psi_{\rm{SCF}}} $. Komponenty pro jednotně wavefunction clustery se pak implicitně určí prostřednictvím jednotkového operátoru, který funguje v referenčním stavu.
-Tento operátor s jednou jednotkou se běžně zapisuje jako $e ^ {T-T ^ \dagger} $, kde $T-T ^ \dagger $ je operátor Hermitianho clusteru. Proto \begin{align} \ket{\psi_{\rm {UCC}}} = e ^ {T-T ^ \dagger}\ket{\psi_{\rm{SCF}}}.
+Pomocí knihovny chemistery je taky možné zadat jednotnou kombinaci wavefunction $ \ket{\ psi_ {\rm {UCC}}} $. V této situaci máme jediný determinant referenčního stavu, například $ \ket{\ psi_ {\rm{SCF}}} $. Komponenty pro jednotně wavefunction clustery se pak implicitně určí prostřednictvím jednotkového operátoru, který funguje v referenčním stavu.
+Tento operátor s jednou jednotkou se běžně zapisuje jako $e ^ {T-T ^ \dagger} $, kde $T-T ^ \dagger $ je operátor Hermitianho clusteru. Proto \begin{align} \ket{\ psi_ {\rm {UCC}}} = e ^ {T-T ^ \dagger}\ket{\ psi_ {\rm{SCF}}}.
 \end{align}
 
-Také je běžné rozdělit operátor clusteru $T = T_1 + T_2 + \cdots $ na části, kde každá část $T _J $ obsahuje $j $-tělo. V generalizované kombinaci s více clustery je operátor clusteru s jedním tělem (jednoduchou) ve tvaru \begin{align} T_1 = \sum_{pq}t ^ {p} _ {q} a ^ \dagger_p a_q, \end{align}
+Také je běžné rozdělit operátor clusteru $T = T_1 + T_2 + \cdots $ do částí, kde každá část $T _j $ obsahuje označení $j $-tělo. V generalizované kombinaci mezi clustery (jednoduchou) má operátor clusteru s jedním tělem () ve formě \begin{align} T_1 = \ sum_ {pq} T ^ {p} _ {q} a ^ \ dagger_p a_q, \end{align}
 
-a operátor clusteru se dvěma body (Double) má formu \begin{align} T_2 = \sum_{pqrs}t ^ {pq} _ {RS} a ^ \dagger_p a ^ \dagger_q a_r a_s.
+a \begin{align} operátor clusteru (Double) má tvar T_2 = \ sum_ {pqrs} T ^ {pq} _ {RS} a ^ \ dagger_p ^ \ dagger_q a_r a_s.
 \end{align}
 
 Je možné, že se jedná o výrazy s vyšším pořadím (Trojnásobky, čtyřikrát atd.), ale ne aktuálně podporované knihovnou chemie.
 
-Můžete například let $ \ket{\psi_{\rm{SCF}}} = a ^ \dagger_1 a ^ \dagger_2\ket{0}$ a let $T = 0,123 a ^ \dagger_0 A_1 + 0,456 a ^ \dagger_0a ^ \dagger_3 A_1 A_2-0,789 a ^ \dagger_3a ^ \dagger_2 A_1 A_0 $. Pak je tento stav vytvořen v knihovně chemie následujícím způsobem.
+Například nechejte $ \ket{\ psi_ {\rm{SCF}}} = a ^ \ dagger_1 a ^ \ dagger_2 \ket{0}$ a nechejte $T = 0,123 a ^ \ dagger_0 a_1 + 0,456 a ^ \ dagger_0a ^ \ dagger_3 A_1 a_2-0,789 ^ \ dagger_3a ^ \ dagger_2 A_1 A_0 $. Pak je tento stav vytvořen v knihovně chemie následujícím způsobem.
 ```csharp
 // Create a list of indices of the creation operators
 // for the single-reference state
@@ -77,7 +77,7 @@ var clusterOperator = new[]
 var wavefunction = new FermionWavefunction<int>(reference, clusterOperator);
 ```
 
-Pomocí číselníku convervation lze explicitně zadat `SpinOrbital` indexy místo celých indexů. Můžete například let $ \ket{\psi_{\rm{SCF}}} = a ^ \dagger_{1, \uparrow} a ^ \dagger_{2, \downarrow}\ket{0}$ a let $T = 0,123 a ^ \dagger_{0, \uparrow} a_ {1, \uparrow} + 0,456 a ^ \dagger_{0, \uparrow} a ^ \dagger_{3, \downarrow} a_ {1, \uparrow} a_ {2, \ DOWNARROW} – 0,789 a ^ \dagger_{3, \uparrow} a ^ \dagger_{2, \uparrow} a_ {1, \uparrow} a_ {0, \uparrow} $ se dodávají convserving. Pak je tento stav vytvořen v knihovně chemie následujícím způsobem.
+Pomocí číselníku convervation lze explicitně zadat `SpinOrbital` indexy místo celých indexů. Například nechejte $ \ket{\ psi_ {\rm{SCF}}} = a ^ \ dagger_ {1, \uparrow} a ^ \ dagger_ {2, \downarrow}\ket{0}$ a nechejte $T = 0,123 a ^ \ dagger_ {0, \uparrow} a_ {1, \uparrow} + 0,456 a ^ \ dagger_ {0, \uparrow} a ^ \ dagger_ {3, \downarrow} a_ {1, \uparrow} a_ {2, \downarrow}-0,789 a ^ \ dagger_ {3, \uparrow} a ^ \ dagger_ {2, \uparrow} a_ {1, \uparrow} a_ {0, \uparrow} $ by měl být číselník convserving. Pak je tento stav vytvořen v knihovně chemie následujícím způsobem.
 ```csharp
 // Create a list of indices of the creation operators
 // for the single-reference state

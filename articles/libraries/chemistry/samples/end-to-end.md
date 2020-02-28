@@ -1,23 +1,23 @@
 ---
-title: Od začátku do konce s NWChem | Microsoft Docs
-description: Komplexní s NWChem docs
+title: Ukázkový program pro NWChem
+description: Pomocí NWChem Input balíčku si můžete projít příkladem získání počtu bran pro simulaci pro práci s více instancemi.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 8f727ea4599e06b41ced561c624c4e773b9887d9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185813"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906504"
 ---
-# <a name="end-to-end-with-nwchem"></a>Konec až do konce s NWChem #
+# <a name="end-to-end-with-nwchem"></a>Kompletní použití NWChem #
 
 Na této stránce vás seznámíme s příkladem získání počtu bran pro simulaci přípravných počtů, počínaje vstupní balíčkí [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) .
 Než budete pokračovat v tomto příkladu, ujistěte se, že jste nainstalovali Docker, a to podle pokynů k [instalaci a ověření](xref:microsoft.quantum.chemistry.concepts.installation).
 
-Další informace:
+Další informace najdete tady:
 - [Struktura vstupních balíčku NWChem](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
     - [Příkazy vstupního balíčku pro použití s vývojovou sadou pro všechna ta](https://github.com/nwchemgit/nwchem/tree/master/contrib/quasar)
 - [Instalace knihovny a závislostí chemického složení](xref:microsoft.quantum.chemistry.concepts.installation)

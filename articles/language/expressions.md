@@ -1,17 +1,17 @@
 ---
-title: Výrazy | Microsoft Docs
-description: Výrazy
+title: 'Výrazy Q #'
+description: 'Pochopte, jak zadat, odkazovat a kombinovat konstanty, proměnné, operátory, operace a funkce jako výrazy v Q #.'
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: fbde873f220d737db17f889d00be33541e3eb59b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036305"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907405"
 ---
 # <a name="expressions"></a>Výrazy
 
@@ -73,7 +73,7 @@ To znamená, že posun jednoho kroku doleva nebo doprava je přesně stejný jak
 
 Celočíselné dělení a celočíselné zbytky se řídí stejným chováním jako C#záporná čísla.
 To znamená, že `a % b` vždycky budou stejné znaménko jako `a`a `b * (a / b) + a % b` se vždycky rovná `a`.
-Například:
+Příklad:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -306,7 +306,7 @@ umístění vazby `!` a `[]`. To znamená, `a[i]![3]` by měly být čteny jako 
 
 Priorita operátoru `!` má jeden dopad, který nemusí být zřejmý.
 Vrátí-li funkce nebo operace hodnotu, která je poté nezabalena, musí být volání funkce nebo operace uzavřena v závorkách, aby se argumenty řazené kolekce členů navázaly na volání, nikoli na rozbalení.
-Například:
+Příklad:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result

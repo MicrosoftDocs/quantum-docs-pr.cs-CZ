@@ -1,17 +1,17 @@
 ---
-title: Čítač primitivních operací | Simulátor sledování počítačového systému | Microsoft Docs
-description: Přehled simulátoru trasování kvantového počítače
+title: Čítač primitivních operací
+description: Přečtěte si o čítači operací primitivního provozu Microsoft QDK, který sleduje počet primitivních spuštění používaných operacemi v programu za běhu.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
-ms.openlocfilehash: 1f554c0a1b92c8f6b59be3a9d9965e0e25bd074f
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 8bdb0aed370e72b58b23025f1685ad7ce1a77a43
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820415"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77905943"
 ---
 # <a name="primitive-operations-counter"></a>Čítač primitivních operací  
 
@@ -63,6 +63,6 @@ Aby bylo možné vystavit výstup všech statistik shromažďovaných čítačem
 string csvSummary = sim.ToCSV()[MetricsCountersNames.primitiveOperationsCounter];
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech ##
+## <a name="see-also"></a>Viz také ##
 
 - Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.

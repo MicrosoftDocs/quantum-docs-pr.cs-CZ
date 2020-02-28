@@ -1,17 +1,17 @@
 ---
-title: 'Q # standardní knihovny – aplikace | Microsoft Docs'
-description: Standardní knihovny jazyka Q#
+title: 'Aplikace v knihovně Q # Standard'
+description: Seznamte se se dvěma základními aplikacemi ve výpočetním prostředí – Hamiltonian simulací a algoritmem hledání Shor.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 3e629e095bd2ee492496066710ef6fd4e578a543
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: b7c46b634c6d691c067c0dd995301395408c85ca
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868964"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907218"
 ---
 # <a name="applications"></a>Aplikace #
 
@@ -159,7 +159,7 @@ Odhad fáze tak má za výstupem eigenvalues $e ^ {2 \ PI i/r} $, z nichž lze $
 
 Diagram okruhu pro zjištění doby trvání:
 
-![](./../../media/QPE.svg)
+![Diagram okruhu pro hledání doby trvání](./../../media/QPE.svg)
 
 Zde $2N $ qubits jsou inicializovány do $ \ket{0}$ a $n $ qubits jsou inicializovány do $ \ket{1}$.
 Čtenář se znovu může zajímat, proč se v registru eigenstates inicializuje do $ \ket{1}$.

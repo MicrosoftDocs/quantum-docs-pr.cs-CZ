@@ -1,17 +1,17 @@
 ---
-title: Čítač šířky | Simulátor sledování počítačového systému | Microsoft Docs
-description: Přehled simulátoru trasování kvantového počítače
+title: Čítač šířky
+description: Přečtěte si o čítači šířky Microsoft QDKe, který spočítá počet qubits přidělených a vydaných každou operací v programu pro práci za sebou.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: 9c3601e74eec17bd6b463e90f8f3085c959d6f95
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: a76292222950310acc90dded02980e4a5b792e76
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820364"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907082"
 ---
 # <a name="width-counter"></a>Čítač šířky
 
@@ -57,6 +57,6 @@ Nakonec můžete pro výstup všech statistik shromážděných pomocí čítač
 string csvSummary = sim.ToCSV()[MetricsCountersNames.widthCounter];
 ```
 
-## <a name="see-also"></a>Další informace najdete v tématech ##
+## <a name="see-also"></a>Viz také ##
 
 - Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.

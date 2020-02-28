@@ -1,18 +1,18 @@
 ---
-title: Microsoft Quantum Development Kit Third Party Software | Microsoft Docs
-description: Microsoft Quantum Development Kit Third Party Software
+title: Microsoft Quantum Development Kit Third Party Software
+description: Microsoft Quantum Development Kit oznámení a informace o softwaru třetí strany.
 services: service-name-with-dashes-AZURE-ONLY
 keywords: Nepřidávejte ani neupravujte klíčová slova, aniž byste se poradili se svým odborníkem na SEO.
 author: QuantumWriter
 ms.author: MSFT-alias-person-or-DL
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
-ms.openlocfilehash: 85bade791c0744d6636d60fe4f7c9b8f7749c7c6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 84d83bf65b3c01a630d98210a5ac3fe322fa501f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184368"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906810"
 ---
 # <a name="third-party-software-notices-and-information"></a>OZNÁMENÍ A INFORMACE O SOFTWARU TŘETÍ STRANY
 
@@ -20,7 +20,7 @@ Tento soubor je založený na nebo zahrnuje materiály z níže uvedených proje
 
 1. YamlDotNet. podepsaná verze 4.2.2 (https://www.nuget.org/packages/YamlDotNet.Signed/4.2.2)
 2. xUnit. Runner. VisualStudio 2.3.1 (https://www.nuget.org/packages/xunit.runner.visualstudio/2.3.1)
-3. xUnit. Runner. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1 )
+3. xUnit. Runner. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1)
 4. xUnit. rozšiřitelnost. provedení: 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.execution/2.3.1)
 5. xUnit. rozšiřitelnost. Core 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.core/2.3.1)
 6. xUnit. Core 2.3.1 (https://www.nuget.org/packages/xunit.core/2.3.1)
@@ -39,7 +39,7 @@ Tento soubor je založený na nebo zahrnuje materiály z níže uvedených proje
 ---------------------------------------
 Copyright (c) 2008, 2009, 2010, 2011, 2012, 2013, 2014 Antoine Aubry a přispěvatelé
 
-Oprávnění se uděluje zdarma všem osobám, které získávají kopii tohoto softwaru a přidružených souborů dokumentace ("software") k tomu, aby mohl software řešit bez omezení, včetně bez omezení práv k používání, kopírování, úprav, sloučení, publikování, distribuce, sublicence a/nebo prodej kopií softwaru a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
+Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 
@@ -180,7 +180,7 @@ Termín "reprodukce", "rozmnožování", "odvozená práce" a "distribuce" mají
 
 (A) udělení autorského práva – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3, vám každý přispěvatel uděluje nevýhradní, celosvětovou a bezplatnou licenci k ochraně autorských práv, aby reprodukoval svůj příspěvek, připravil deriváty. spolupracuje se svým příspěvkem a distribuuje svůj příspěvek nebo jakékoli odvozené práce, které vytvoříte.
 
-(B) patentové udělení – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3, každý přispěvatel uděluje v rámci svých licencovaných patentů licenci bez licence na celosvětovou verzi, která se dá učinit, používat, prodávat, nabídnout prodej, dovoz nebo jiné vyřazení příspěvku na software nebo odvozené příspěvky k tomuto příspěvku v softwaru.
+(B) patentové udělení – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3 vám každý přispěvatel uděluje v rámci svých licencovaných patentů nevýlučnou a celosvětovou licenci bez poplatků za to, že provedl, využíval, prodává, nabízí prodej, dovoz nebo jiné využívání příspěvku v softwaru.
 
 3. Podmínky a omezení
 
@@ -192,7 +192,7 @@ Termín "reprodukce", "rozmnožování", "odvozená práce" a "distribuce" mají
 
 (D) Pokud distribuujete jakoukoli část softwaru ve formuláři zdrojového kódu, můžete tak učinit pouze v rámci této licence, včetně úplné kopie této licence s distribucí. Pokud distribuujete jakoukoli část softwaru do formuláře kompilovaného nebo kódu objektu, můžete tak učinit pouze v rámci licence, která je v souladu s touto licencí.
 
-(E) software je licencován "tak, jak je". Riziko spojené s jeho používáním nesete vy sami. Přispěvatelé neposkytují žádné výslovné záruky, záruky nebo podmínky. V rámci vašich místních zákonů můžete mít další spotřebitelská práva, která tato licence nemůže změnit. V rozsahu povoleném vašimi místními zákony přispěvatelé vylučují předpokládané záruky prodejnosti, vhodnosti pro určitý účel a neporušení předpisů.
+(E) software je licencován "tak, jak je". Berete na sebe rizika spojená s jeho používáním. Přispěvatelé neposkytují žádné výslovné záruky, záruky nebo podmínky. V rámci vašich místních zákonů můžete mít další spotřebitelská práva, která tato licence nemůže změnit. V rozsahu povoleném vašimi místními zákony přispěvatelé vylučují předpokládané záruky prodejnosti, vhodnosti pro určitý účel a neporušení předpisů.
 
 ## <a name="fsharpcore-notices-and-information"></a>OZNÁMENÍ a informace FSharp. Core
 ---------------------------------------
@@ -201,7 +201,7 @@ Licence MIT (MIT)
 Copyright (c) Microsoft Corporation.
 Všechna práva vyhrazena.
 
-Oprávnění se uděluje zdarma všem osobám, které získávají kopii tohoto softwaru a přidružených souborů dokumentace ("software") k tomu, aby mohl software řešit bez omezení, včetně bez omezení práv k používání, kopírování, úprav, sloučení, publikování, distribuce, sublicence a/nebo prodej kopií softwaru a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
+Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 
@@ -213,7 +213,7 @@ Licence MIT (MIT)
 
 Copyright (c) 2013 Tomas Petricek
 
-Oprávnění se uděluje zdarma všem osobám, které získávají kopii tohoto softwaru a přidružených souborů dokumentace ("software") k tomu, aby mohl software řešit bez omezení, včetně bez omezení práv k používání, kopírování, úprav, sloučení, publikování, distribuce, sublicence a/nebo prodej kopií softwaru a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
+Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 
@@ -226,7 +226,7 @@ Licence MIT (MIT)
 
 Copyright (c) 2012 Oystein Bjorke
 
-Oprávnění se uděluje zdarma všem osobám, které získávají kopii tohoto softwaru a přidružených souborů dokumentace ("software") k tomu, aby mohl software řešit bez omezení, včetně bez omezení práv k používání, kopírování, úprav, sloučení, publikování, distribuce, sublicence a/nebo prodej kopií softwaru a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
+Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 
@@ -244,7 +244,7 @@ Opětovná distribuce a použití ve zdrojových a binárních formulářích, s
 * Redistribuce v binárním formátu musí reprodukována výše uvedená oznámení o autorských právech, seznam podmínek a následující právní omezení v dokumentaci a dalších materiálech dodaných s distribucí.
 * Ani jméno FsCheck ani jména jeho přispěvatelů se dají použít k potvrzení nebo zvýšení úrovně produktů odvozených od tohoto softwaru bez konkrétního předchozího písemného oprávnění.
 
-TENTO SOFTWARE POSKYTUJE DRŽITELŮM AUTORSKÉHO PRÁVA A PŘISPĚVATELŮM "TAK JAK JSOU" A JAKÉKOLI VÝSLOVNÉ NEBO MLČKY PŘEDPOKLÁDANÉ ZÁRUKY, VČETNĚ NEOMEZENÉHO DRUHU OBCHODOVATELNOSTI A VHODNOSTI PRO KONKRÉTNÍ ÚČEL, JSOU NENÁROKNÉ. V ŽÁDNÉM PŘÍPADĚ SE VLASTNÍK AUTORSKÉHO PRÁVA NEBO PŘISPĚVATELÉ NEŠKODÍ ZA JAKÉKOLIV PŘÍMÉ, NEPŘÍMÉ, NÁHODNÉ, ZVLÁŠTNÍ, EXEMPLARYÉ NEBO NÁSLEDNÉ ŠKODY (VČETNĚ, ALE NE OMEZENÍ NA NÁHRADY NÁHRADNÍHO ZBOŽÍ NEBO SLUŽEB. ZTRÁTA POUŽITÍ, DAT NEBO ZISKU; NEBO PROVOZNÍ PŘERUŠENÍ) ALE ZPŮSOBILA I JAKÉKOLI TEORIE ZÁVAZKŮ, AŤ UŽ V KONTRAKTU, STRIKTNÍ ODPOVĚDNOST NEBO OBČANSKOPRÁVNÍ DELIKT (VČETNĚ NEDBALOSTI NEBO JINAK) VYPLÝVAJÍCÍCH Z POUŽITÍ TOHOTO SOFTWARU, A TO I V PŘÍPADĚ, ŽE JE TATO ŠKODA PORUŠENÁ.
+TENTO SOFTWARE JE POSKYTOVÁN DRŽITELI AUTORSKÝCH PRÁV „TAK, JAK JE“ BEZ JAKÝCHKOLI PŘÍMÝCH ČI NEPŘÍMÝCH ZÁRUK, MIMO JINÉ, VČETNĚ, ALE BEZ OMEZENÍ, NEPŘÍMÝCH ZÁRUK OBCHODOVATELNOSTI, VHODNOSTI PRO URČITÝ ÚČEL. V ŽÁDNÉM PŘÍPADĚ SE VLASTNÍK AUTORSKÉHO PRÁVA NEBO PŘISPĚVATELÉ NEŠKODÍ ZA JAKÉKOLIV PŘÍMÉ, NEPŘÍMÉ, NÁHODNÉ, ZVLÁŠTNÍ, EXEMPLARYÉ NEBO NÁSLEDNÉ ŠKODY (VČETNĚ, ALE NE OMEZENÍ NA NÁHRADY NÁHRADNÍHO ZBOŽÍ NEBO SLUŽEB. ZTRÁTA POUŽITÍ, DAT NEBO ZISKU; NEBO PROVOZNÍ PŘERUŠENÍ) ALE ZPŮSOBILA I JAKÉKOLI TEORIE ZÁVAZKŮ, AŤ UŽ V KONTRAKTU, STRIKTNÍ ODPOVĚDNOST NEBO OBČANSKOPRÁVNÍ DELIKT (VČETNĚ NEDBALOSTI NEBO JINAK) VYPLÝVAJÍCÍCH Z POUŽITÍ TOHOTO SOFTWARU, A TO I V PŘÍPADĚ, ŽE JE TATO ŠKODA PORUŠENÁ.
 
 ## <a name="argu-notices-and-information"></a>Argu oznámení a informace
 ---------------------------------------
@@ -252,7 +252,7 @@ Licence MIT (MIT)
 
 Copyright (c) 2016 Eirik Tsarpalis
 
-Oprávnění se uděluje zdarma všem osobám, které získávají kopii tohoto softwaru a přidružených souborů dokumentace ("software") k tomu, aby mohl software řešit bez omezení, včetně bez omezení práv k používání, kopírování, úprav, sloučení, publikování, distribuce, sublicence a/nebo prodej kopií softwaru a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
+Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 

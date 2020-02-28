@@ -1,17 +1,17 @@
 ---
-title: Hartree – Fock teorie | Microsoft Docs
-description: Hartree – teorie – Fock – docs
+title: Hartree – Fock teorie
+description: Seznamte se s Hartree – Fock teoreticky, což je jednoduchý způsob, jak vytvořit počáteční stav pro systémy na více systémů.
 author: nathanwiebe2
 ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.hartreefock
-ms.openlocfilehash: e73111ae710e11ca6730581b8be711cf32783677
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 6fa63cbe13fe98565ffb42b56f3ade86720cedb3
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184096"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904447"
 ---
 # <a name="hartreefock-theory"></a>Hartree – teorie Fock
 
@@ -22,10 +22,10 @@ Množství, jako je pozemní energie, se může naučit.
 Pokud má například $ \ket{\psi} $ jakýkoliv čistý stav, pak \begin{Equation} E = \bra{\psi} \hat{H} \ket{\psi} \end{Equation} poskytuje střední energii, kterou má systém v tomto stavu.
 Stav země je pak stav, který poskytuje nejmenší takovou hodnotu. Výsledkem je, že volba stavu, který je co nejblíže skutečnému stavu, je velmi důležitý pro odhad energie buď přímo (jak se provádí v variaci eigensolvers), nebo prostřednictvím odhadu fáze.
 
-Hartree – teoretická Fock představuje jednoduchý způsob, jak vytvořit počáteční stav pro systémy s více poli. Výsledkem je jedna Slatera determinanta pro základní stav systému. Za tímto účelem vyhledá rotaci v rámci Fock místa, které minimalizuje stav energie na zemi. Konkrétně pro systém $N $ Electrons metoda provádí \begin{Equation} rotace \prod_{j = 0} ^ {N-1} a ^ \dagger_j \ket{0} \mapsto \prod_{j = 0} ^ {N-1} e ^ {u} a ^ \dagger_j e ^ {-u} \ket{0}\defeq\prod_{j = 0} ^ {N-1} \widetilde{a} ^ \dagger _J \ket{0}, \end{Equation} s $uou anti-Hermitian (tj. =-u ^ \dagger $), $u = \sum_{pq} u_ {pq} a ^ \dagger_p a_q $. Je potřeba poznamenat, že matice $u $ představuje rotace Orbital a $ \widetilde{a} ^ \dagger_j $ a $ \widetilde{a}_J $ představují operátory vytváření a Annihilation pro Electrons, které zaujímají Hartree – Fock molekulární číselník orbitals.
+Hartree – teoretická Fock představuje jednoduchý způsob, jak vytvořit počáteční stav pro systémy s více poli. Výsledkem je jedna Slatera determinanta pro základní stav systému. Za tímto účelem vyhledá rotaci v rámci Fock místa, které minimalizuje stav energie na zemi. Konkrétně pro systém $N $ Electrons metoda provádí rotační \begin{Equation} \ prod_ {j = 0} ^ {N-1} a ^ \ dagger_j \ket{0} \mapsto \ prod_ {j = 0} ^ {N-1} e ^ {u} a ^ \ dagger_j e ^ {-u} \ket{0}\defeq\ prod_ {j = 0} ^ {N-1} \widetilde{a} ^ \ dagger_j \ket{0}, \end{Equation} pomocí anti-Hermitian (tj. $u =-u ^ \dagger $) Matrix $u = \ sum_ {pq} u_ {pq} a ^ \ dagger_p a_q $. Je potřeba poznamenat, že matice $u $ představuje rotace Orbital a $ \widetilde{a} ^ \ dagger_j $ a $ \widetilde{a} _j $ představují operátory vytváření a Annihilation pro Electrons, které zaujímají Hartree – Fock molekulární číselník orbitals.
 
 
-Matice $u $ je pak optimalizovaná tak, aby se minimalizovala očekávaná hodnota Energy $ \bra{0} \prod_{j = 0} ^ {N-1} \widetilde{a}\_j H \prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \dagger_k\ket{0}$. I když takové problémy s optimalizací můžou být pevně tvrdé, v praxi se Hartree algoritmus Fock, takže se v praxi rychle konverguje k problému s optimalizací téměř optimálního řešení, zejména pro molekuly v prostředí rovnováhy. Tyto stavy můžeme specifikovat jako instanci objektu `FermionWavefunction`. Například stav $a ^ \dagger_{1}a ^ \dagger_{2}^ \dagger_{6}\ket{0}$ je vytvořena v knihovně chemie následujícím způsobem.
+Matice $u $ je pak optimalizovaná tak, aby se minimalizovala očekávaná hodnota Energy $ \bra{0} \ prod_ {j = 0} ^ {N-1} \widetilde{a}\_j H \prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \ dagger_k \ket{0}$. I když takové problémy s optimalizací můžou být pevně tvrdé, v praxi se Hartree algoritmus Fock, takže se v praxi rychle konverguje k problému s optimalizací téměř optimálního řešení, zejména pro molekuly v prostředí rovnováhy. Tyto stavy můžeme specifikovat jako instanci objektu `FermionWavefunction`. Například stav $a ^ \ dagger_{1}^ \ dagger_{2}a ^ \ dagger_{6}\ket{0}$ je vytvořena instance v knihovně chemie následujícím způsobem.
 ```csharp
 // Create a list of integer indices of the creation operators
 var indices = new[] { 1, 2, 6 };

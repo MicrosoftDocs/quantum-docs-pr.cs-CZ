@@ -1,17 +1,17 @@
 ---
-title: Dirac notace | Microsoft Docs
-description: Zápis Dirac
+title: Diracova notace
+description: Přečtěte si, jak používat zápis Dirac, který představuje stavy a simuluje operace.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.dirac
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 33d964d079c94bd947e35d2c09516b29df1bba11
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 204e56cc97fe28f9c52dcfb882aadec7e09bb2dc
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184759"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907558"
 ---
 # <a name="dirac-notation"></a>Zápis Dirac
 
@@ -36,7 +36,7 @@ $$
 
 Následující notace se často používá k popisu stavů, které vznikají v důsledku použití brány Hadamard na $ \ket{0}$ a $ \ket{1}$ (které odpovídají vektorům jednotek v v $ + x $ a $-x $):
 
-$ $ \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\-1 \end{bmatrix} = H\ket{1} = \ket{-} .
+$ $ \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\-1 \end{bmatrix} = H\ket{1} = \ket{-}.
 $$
 
 Tyto stavy je také možné rozšířit pomocí Dirac Notation jako součty $ \ket{0}$ a $ \ket{1}$:
@@ -62,7 +62,7 @@ $ $ \big | \braket{1 | \psi}\big | ^ 2 = \left | \frac{3}{5}\braket{1 | 1} + \fr
 ### <a name="tensor-product-notation"></a>Zápis produktu tensor
 Zápis Dirac zahrnuje také implicitní strukturu produktů tensor v rámci něj.  To je důležité z toho důvodu, že v případě, že se jedná o výpočetní výkon, je vektor stavu, který popisuje dva nekorelační Registry, tensor produkty dvou vektorů stavu.  Stručně popisující strukturu produktu tensor nebo její nedostatečného je důležité, pokud chcete vysvětlit výpočet.  Struktura produktu tensor předpokládá, že můžeme napsat $ \psi \otimes \phi $ pro všechny dvě "vektory stavů za sebou $ \phi $ a $ \psi $ jako $ \ket{\psi} \ket{\phi} $, někdy explicitně zapsané jako $ \ket{\psi} \otimes \ket{\phi} $, ale v konvenci psaní $ \otimes $ v mezi vektory není nutné.  Například stav se dvěma qubits inicializovanými do nulového stavu je dán
 
-$ $ \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \ket{0} \ otimes \ket{0}= \ket{0} \ket{0}.
+$ $ \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \ket{0} \otimes \ket{0}= \ket{0} \ket{0}.
 $$
 
 Podobně stav $ \ket{p} $ pro celočíselný $p $ představuje stav bez hodnoty, který se zakóduje v binárním vyjádření celé číslo $p $.  Pokud si například přejete vyjádřit číslo $5 $ pomocí binárního kódování bez znaménka, můžeme ho ve stejné podobě vyjádřit jako
@@ -78,7 +78,7 @@ $$
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Příklad: popisující pozici Dirac Notation
 Jako další příklad, jak můžete použít Dirac Notation k popisu státu, vezměte v úvahu následující podobné způsoby psaní stavu, který je stejný jako u každého možného bitového řetězce délky $n $
 
-$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \sum_{j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
+$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \ sum_ {j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
 $$
 
 V této části se můžete zajímat, proč součet prochází z $0 $ až $2 ^ {n}-$1 pro $n $ bitů.  Nejdřív si všimněte, že je k dispozici $2 ^ {n} $ různých konfigurací, které $n $ bitů může trvat.  Můžete se podívat, že jeden bit může přijmout $2 $ hodnot, ale dvě bity můžou přijmout $4 $ hodnot a tak dále. Obecně to znamená, že existuje $2 ^ n $ různých možných bitových řetězců, ale největší hodnota je zakódována v jednom z nich $1 \ cdots 1 = 2 ^ n-$1, a proto je horním limitem součtu.
@@ -93,7 +93,7 @@ To znamená, že je možné distribuovat zápis produktu tensor v zápisu Dirac,
 
 Vektory Bra sledují podobnou konvenci pro KET vektory.  Například Vector $ \bra{\psi}\bra{\phi} $ je ekvivalentem State Vector $ \psi ^ \dagger \otimes \phi ^ \dagger = (\psi\otimes \phi) ^ \dagger $. Pokud je KET Vector $ \ket{\psi} $ $ \Alpha \ket{0} + \beta \ket{1}$ pak je vektorová verze Bra $ \bra{\psi} = \ket{\psi} ^ \dagger = (\bra{0}\Alpha ^ * + \bra{1}\beta ^ *) $.
 
-Představte si například, že chceme vypočítat pravděpodobnost měření stavu $ \ket{\psi} = \frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}$ pomocí programu pro měření stavu na hodnotu $ \ket{+} $ nebo $ \ket.{-}$. Pak pravděpodobnost, že zařízení bude mít za výstup $ \ket{-}$ stav 
+Představte si například, že chceme vypočítat pravděpodobnost měření stavu $ \ket{\psi} = \frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}$ pomocí programu pro měření stavu na hodnotu $ \ket{+} $ nebo $ \ket{-}$. Pak pravděpodobnost, že zařízení bude mít za výstup $ \ket{-}$ stav 
 
 $ $ | \braket{-| \psi} | ^ 2 = \left | \frac{1}{\sqrt{2}} (\bra{0}-\bra{1}) (\frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}) \right | ^ 2 = \left |-\frac{3}{5 \ sqrt{2}} + \frac{4}{5 \ sqrt{2}} \right | ^ 2 = \frac{1}{50}. $ $
 
@@ -102,7 +102,7 @@ Skutečnost, že se záporné znaménko objeví při výpočtu pravděpodobnosti
 ## <a name="ketbra-or-outer-product"></a>ketbra nebo vnější produkt
 Konečná položka, která je předmětem diskuze v Dirac Notation, je *ketbra* nebo vnější produkt.  Vnější produkt je reprezentován v Dirac zápisech jako $ \ket{\psi} \bra{\phi} $ a někdy se označuje jako ketbras, protože Bras a kets se vyskytují v opačném pořadí jako brakets.  Vnější produkt je definován pomocí násobení matice jako $ \ket{\psi} \bra{\phi} = \psi \phi ^ \dagger $ pro násobky stavových $ \psi $ a $ \phi $.  Nejjednodušším a pravděpodobně Nejběžnějším příkladem tohoto zápisu je
 
-$ $ \ket{0} \bra{0} = \begin{bmatrix}1\\\\ 0 \end{bmatrix}\begin{bmatrix}1 & 0 \end{bmatrix} = \begin{bmatrix}1 & 0\\\\ 0 & 0 \ end {bmatrix} \qquad \ket{1} \bra{1} = \begin{bmatrix}0\\\\ 1 \end{bmatrix}\begin{bmatrix}0 & 1 \end{bmatrix} = \begin{bmatrix}0 & 0\\\\ 0 & 1 \ konec {bmatrix}.
+$ $ \ket{0} \bra{0} = \begin{bmatrix}1\\\\ 0 \end{bmatrix}\begin{bmatrix}1 & 0 \end{bmatrix} = \begin{bmatrix}1 & 0\\\\ 0 & 0 \ konec {bmatrix} \qquad \ket{1} \bra{1} = \begin{bmatrix}0\\\\ 1 \end{bmatrix}\begin{bmatrix}0 & 1 \end{bmatrix} = \begin{bmatrix}0 & 0\\\\ 0 & 1 \ end {bmatrix}.
 $$
 
 Ketbras se často nazývají projektory, protože projektují stav na pevnou hodnotu.  Vzhledem k tomu, že tyto operace nejsou jednotkové (a dokonce i zachovat normu vektoru), mělo by být neuvedeno, že počítač s více operačními počítači nemůže deterministickém způsobem použít projektor.  Projektory se dotýkají působivé úlohy popisující akci, kterou měření má v nestavovém stavu.  Pokud například měříme stav $ \ket{\psi} $, který by měl být $0 $, pak výsledná transformace, která má stav v důsledku měření, je
@@ -132,7 +132,7 @@ $$
 
 Uvidíte, že je to v souladu s diskusí o pravděpodobnosti měření pro stavy multiqubit pomocí notace sloupcový-Vector:
 
-$ $ P (\Text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \ Dagger \psi | ^ 2, $ $
+$ $ P (\Text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \dagger \psi | ^ 2, $ $
 
 který se shoduje s qubitou diskuzi o měření.  Vygeneralizení tohoto výsledku pro qubit případ je však poněkud jednodušší, aby bylo možné vyjádřit pomocí notace Dirac, než je zápis ve sloupcovém vektoru, a je zcela ekvivalentní k předchozímu ošetření.
 
@@ -146,4 +146,3 @@ Pro zúčastněný čtenář doporučujeme přečíst si jednu z referenčních 
 
 ## <a name="q-gate-sequences-equivalent-to-quantum-states"></a>Sekvence pro bránu Q # rovnající se státům
 Konečný bod vyvolal informace o zápisu na základě teček a programovací jazyk Q #: na začátku tohoto dokumentu jsme zjistili, že stav je základní objekt informací v výpočetním prostředí.  Pak může nastat jako neočekávaně v Q # neexistuje žádný pojem stát.  Místo toho jsou všechny stavy popsány pouze pomocí operací, které slouží k jejich přípravě.  Předchozí příklad představuje vynikající ilustraci.  Místo toho, abychom v registru vyjádřili jednotnou pozici pro všechny bitové řetězce, můžeme výsledek vyjádřit jako $H ^ {\otimes n} \ket{0}$.  Tento exponenciálně kratší popis stavu má nejen výhodu, že se na něj dá klasický důvod, ale také stručně definuje operace, které je potřeba rozšířit prostřednictvím softwarového zásobníku, aby se tento algoritmus implementoval.  Z tohoto důvodu je Q # navržený tak, aby vygeneroval sekvence brány místo nestavových stavů. na teoretické úrovni jsou však dva perspektivy ekvivalentní.
-

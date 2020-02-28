@@ -1,24 +1,24 @@
 ---
-title: Symmetries molekulových integrálů | Microsoft Docs
-description: Symmetries molekulových integrálů koncepčních dokumentů
+title: Symmetries molekulových integrálů
+description: 'Přečtěte si o použití typu Q # OrbitalIntegral k zobrazení výčtu molekulových symmetries.'
 author: nathanwiebe2
 ms.author: nawiebe
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.symmetries
-ms.openlocfilehash: 041d600bc8d65e7d67f5fe7d61a69426fb42ffbc
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: b7e7b79af17af544c4a784eff08500498afc9f67
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442392"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904464"
 ---
 # <a name="symmetries-of-molecular-integrals"></a>Symmetries molekulových integrálů
 
-Základní symetrie Coulomb Hamiltonian, což je Hamiltonian v [modelech pro práci s elektronickými systémy](xref:microsoft.quantum.chemistry.concepts.quantummodels), které popisují Electrons interakci elektricky navzájem a s Nuclei, vede k řadě symmetries, které mohou být zneužito ke komprimaci podmínek v Hamiltonian.
-Obecně platí, že pokud se pro základní funkce $ \psi_j $ neprovádí žádné další předpoklady, máme jenom tento \begin{Equation} H_ {pqrs} = H_ {QPSR}, \tag{★} \label{EQ: hpqrs} \end{Equation}, který se dá hned zobrazit z integrálních hodnot v [modelech v případě Elektronické systémy](xref:microsoft.quantum.chemistry.concepts.quantummodels) po zaznamenání, že jejich hodnoty zůstávají stejné, pokud $p, q $ a $r, s $ se zamění z ochrany proti dojíždění.
+Podstata symetrie Coulomb Hamiltonian, která je Hamiltonian v [modelech pro práci s elektronickými systémy](xref:microsoft.quantum.chemistry.concepts.quantummodels), která popisuje Electrons interakci elektricky navzájem a s Nuclei, vede k tomu, že je možné využít řadu symmetries, které lze zneužít ke komprimaci podmínek v Hamiltonian.
+Obecně platí, že pokud se neprovádí žádné další předpoklady pro základní funkce $ \ psi_j $, máme jenom tento \begin{Equation} h_ {pqrs} = h_ {QPSR}. \tag{★} \label{EQ: hpqrs} \end{Equation}, který se dá hned zobrazit z integrálních prvků v [modelech nečinnosti u elektronických systémů](xref:microsoft.quantum.chemistry.concepts.quantummodels) , když se Poklade, že jejich hodnoty zůstávají stejné, pokud se $p, q $ a $r, s $ mění z ochrany po rozjíždění.
 
-Pokud předpokládáme, že orbitals jsou reálné (stejně jako u Gaussovskéch orbitalch bází), pak dál máme \begin{Equation} H_ {pqrs} = H_ {QPSR} = H_ {srqp} = H_ {rspq} = H_ {rqps} = H_ {psrq} = H_ {SPQR} = H_ {qrsp} .\tag {★} \label{EQ: hpqrsreal} \end{ rovnice} vzhledem k tomu, že tyto předpoklady jsou uloženy, můžeme použít výše uvedené symmetries k omezení dat potřebných k uložení prvků matrice Hamiltonian o faktoru $8 $; i když tomu tak je, umožňuje importovat data konzistentním způsobem, který je trochu náročnější.
+Pokud předpokládáme, že orbitals jsou reálné (stejně jako u Gaussovskéch orbitalch bází), pak dál máme \begin{Equation} h_ {pqrs} = h_ {QPSR} = h_ {srqp} = h_ {rspq} = h_ {rqps} = H_ {psrq} = H_ {SPQR} = h_ {qrsp} .\tag {★} \label{EQ: hpqrsreal} \end{ rovnice} vzhledem k tomu, že tyto předpoklady jsou uloženy, můžeme použít výše uvedené symmetries k omezení dat potřebných k uložení prvků matrice Hamiltonian o faktoru $8 $; i když tomu tak je, umožňuje importovat data konzistentním způsobem, který je trochu náročnější.
 Knihovna simulace Hamiltonian má podrutiny, které lze použít k importu integrálních souborů buď z [LIQUI $ | \rangle $](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/) , nebo přímo z [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
 
 Molekulové Orbital integrály (tj. $h\_{pq} $ a $h\_{pqrs} $), jako jsou reprezentovány pomocí typu `OrbitalIntegral`, který poskytuje řadu užitečných funkcí pro vyjádření této symetrie.

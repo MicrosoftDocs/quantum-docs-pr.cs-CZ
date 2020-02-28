@@ -1,17 +1,17 @@
 ---
-title: 'Q # standardní knihovny – předehru | Microsoft Docs'
-description: 'Q # standardní knihovny – předehru'
+title: Vnitřní operace a funkce v QDK
+description: Seznamte se s vnitřními operacemi a funkcemi v QDK, včetně klasických funkcí a operací s jednotkou, rotací a měřením.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: dddb3d4a5ebcdca16da41a5ae5520d98ea900a7f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: b1c26c632f36b6c254d940a89b13638f7592ab80
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73183229"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907201"
 ---
 # <a name="the-prelude"></a>Předehru #
 
@@ -27,7 +27,7 @@ Vnitřní operace definované ve standardní knihovně zhruba spadají do jedné
 - Operace implementující měření.
 
 Vzhledem k tomu, že sada Clifford + $T $ je [univerzální](xref:microsoft.quantum.concepts.multiple-qubits) pro práci s výpočetním prostředím, tyto operace postačují k tomu, aby se v negligibly malé chybě vyimplementovala jakákoli algoritmus.
-V případě, že zadáváte i rotace, Q # umožňuje programátorovi pracovat v rámci jedné qubit jednotkové a CNOTové knihovny brány. Tato knihovna je mnohem jednodušší, protože nepotřebuje programátora přímo vyjádřit Clifford $T + dekompozici $ a protože pro kompilaci jednoho qubit unitaries do Clifford a na $T $ Branch existují vysoce efektivní metody (viz [tady](xref:microsoft.quantum.more-information) pro další informace).
+V případě, že zadáváte i rotace, Q # umožňuje programátorovi pracovat v rámci jedné qubit jednotkové a CNOTové knihovny brány. Tato knihovna je mnohem jednodušší, protože nepotřebuje programátora přímo vyjádřit $T Clifford a dekompozici $, protože pro kompilaci jednoduchých qubit unitaries do Clifford a $T $ Branch existují vysoce efektivní metody (Další informace najdete [tady](xref:microsoft.quantum.more-information) ).
 
 Pokud je to možné, operace definované v předehru, které fungují na qubits, umožňují použít `Controlled` variantu, takže cílový počítač provede příslušné rozklady.
 
@@ -101,12 +101,12 @@ Má signaturu `(Qubit => Unit is Adj + Ctl)`a odpovídá qubit jednotkám:
 Kromě výše uvedených Pauli a Clifford operací Q # předehru poskytuje celou řadu způsobů, jak vyjádřit rotace.
 Jak je popsáno v [qubit operacích](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), možnost otáčení je zásadní pro algoritmy.
 
-Začneme zpětným voláním, které umožňuje vyjádřit jakoukoli operaci s jedním qubit pomocí $H $ a $T $, kde $H $ je operace Hadamard a kde \begin{Equation} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\% FIXME: aktuálně používá Quad back. napadení/Swagger/docs/v1.
+Začneme vrácením se změnami, kterou můžeme vyjádřit pomocí $H $ a $T $, kde $H $ je operace Hadamard a kde \begin{Equation} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\% FIXME: to v současné době používá napadení ze čtyř back-qubit.
 0 & e ^ {i \pi/4} \end{bmatrix} \end{Equation} je to druhá odmocnina operace <xref:microsoft.quantum.intrinsic.s>, například $T ^ 2 = S $.
 Brána $T $ je v rámci operace <xref:microsoft.quantum.intrinsic.t> implementovaná a má `(Qubit => Unit is Adj + Ctl)`signatury, což značí, že se jedná o jednotnou operaci na jednom qubit.
 
 I když je to v zásadě dostačující pro popsání jakékoli libovolné operace s jedním qubit, mohou být v různých cílových počítačích efektivnější reprezentace o Pauli operátorech, takže předehru zahrnuje různé způsoby, jak convienently. Vyjádřete taková otočení.
-Nejzákladnější z nich je operace <xref:microsoft.quantum.intrinsic.r>, která implementuje otočení kolem zadané osy Pauli, \begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je Pauli operátor, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální matrici.
+Nejzákladnější z nich je operace <xref:microsoft.quantum.intrinsic.r>, která implementuje otočení kolem zadané osy Pauli, \begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je Pauli operátor, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální hodnotu matice.
 Má `((Pauli, Double, Qubit) => Unit is Adj + Ctl)`podpisů, kde první dvě části vstupu reprezentují klasické argumenty $ \sigma $ a $ \phi $, které jsou potřebné k určení jednotkového operátoru $R (\sigma, \phi) $.
 Částečně se dá použít $ \sigma $ a $ \phi $, aby se získala operace, jejíž typ je jedna qubit jednotně.
 Například `R(PauliZ, PI() / 4, _)` má typ `(Qubit => Unit is Adj + Ctl)`.
@@ -155,7 +155,7 @@ Příklad operace otočení (kolem osy Pauli $Z $, v této instanci) mapované n
 
 Kromě qubit operací uvedených výše definuje předehru také několik operací s více qubit.
 
-Nejprve operace <xref:microsoft.quantum.intrinsic.cnot> provádí standardní bránu řízenou`NOT`, \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}.
+Nejprve operace <xref:microsoft.quantum.intrinsic.cnot> provádí standardní bránu řízená`NOT` \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}.
 \end{Equation} má signatura `((Qubit, Qubit) => Unit is Adj + Ctl)`, která představuje, že $ \operatorname{CNOT} $ funguje unitarily na dvou individuálních qubits.
 `CNOT(q1, q2)` je stejná jako `(Controlled X)([q1], q2)`.
 Vzhledem k tomu, že `Controlled` funktor umožňuje řízení v registru, používáme `[q1]` literálu pole k označení toho, že chceme mít pouze jeden ovládací prvek.
@@ -176,7 +176,7 @@ To znamená, že implementuje jednotnou matrici \begin{Equation} \operatorname{S
 > Brána kontrolovaného zahození, označovaná také jako brána Fredkin, je dostatečně výkonná pro zahrnutí všech klasických výpočtů.
 
 Nakonec předehru poskytuje dvě operace pro reprezentaci exponenciálních hodnot operátorů Pauli s více qubit.
-Operace <xref:microsoft.quantum.intrinsic.exp> provádí rotaci na základě tensor produktu Paulich matric, jak je znázorněno v qubit jednotkovém \begin{Equation} \operatorname{Exp} (\vec{\sigma}, \phi) \mathrel{: =} \exp\left (i \phi \sigma_0 \otimes \sigma_1 \otimes \ cdots \otimes \sigma_n \right), \end{Equation} kde $ \vec{\sigma} = (\sigma_0, \sigma_1, \dots, \sigma_n) $ je sekvence operátorů qubit s jedním Pauli a kde $ \phi $ je úhel.
+Operace <xref:microsoft.quantum.intrinsic.exp> provádí rotaci na základě tensor produktu Paulich matric, jak je reprezentované qubit jednotkou \begin{Equation} (\vec{\sigma}, \phi) \mathrel{: =} \exp\left (i \phi \ sigma_0 \otimes \ sigma_1 \otimes \cdots \otimes \ sigma_n \right), \end{Equation} kde $ \vec{\sigma} = (\ sigma_0, \ sigma_1, \dots, \ sigma_n) $ je sekvence operátorů s jedním qubitm Pauli a kde $ \phi $ je úhel.
 `Exp` rotace představuje $ \vec{\sigma} $ jako pole `Pauli` prvků, takže má `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)`signatury.
 
 Operace <xref:microsoft.quantum.intrinsic.expfrac> provádí stejnou rotaci pomocí dyadic zlomkového zápisu popsaného výše.
@@ -204,8 +204,8 @@ Pokud se pole Pauli a qubit liší od různých délek, operace se nezdařila.
 Počítejte s tím, že společná měření není shodná s měřením jednotlivých qubit jednotlivě.
 Zvažte například stav $ \ket{11} = \ket{1} \otimes \ket{1} = X\otimes X \ket{00}$.
 Měření $Z _0 $ a $Z _1 každou jednotlivě získáme výsledky $r _0 = $1 a $r _1 = $1.
-Měření $Z _0 Z_1 $ ale získáme jeden výsledek $r _ {\textrm{Joint}} = $0, což představuje, že dvojice $ \ket{11}$ je kladná.
-Neumísťujte jinak $ (-1) ^ {r_0 + r_1} = (-1) ^ R_ {\textrm{Joint}}) $.
+Měření $Z _0 Z_1 $ ale získáme jeden výsledek $r _ {\textrm{Joint}} = $0, který představuje dvojici hodnoty $ \ket{11}$ je kladné.
+Vložit jinak, $ (-1) ^ {r_0 + r_1} = (-1) ^ r_ {\textrm{Joint}}) $.
 Vzhledem k tomu, že jsme se dozvěděli *jenom* o paritě z tohoto měření, jsou zachovány všechny informace o všech procesorech, které jsou reprezentované na pozici mezi 2 2 qubit stavy kladné parity, $ \ket{00}$ a $ \ket{11}$.
 Tato vlastnost bude v podstatě pozdější, protože se zabývá opravami chyb.
 

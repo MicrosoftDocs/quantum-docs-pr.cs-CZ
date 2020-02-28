@@ -1,17 +1,17 @@
 ---
-title: 'Q # standardní knihovny – algoritmy | Microsoft Docs'
-description: Standardní knihovny jazyka Q#
+title: 'Algoritmy doby ve Q #'
+description: Seznamte se se základními výpočetními algoritmy, včetně zesílení amplitud, Fourierova transformace, Draper a Beauregard přidávání a odhadu fází.
 author: QuantumWriter
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 1c45808207a2020f603448eba05900cdc40b4916
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: aaa9ddf47e5ea35e7e57b9828db082889d0e6adf
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036351"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907235"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
