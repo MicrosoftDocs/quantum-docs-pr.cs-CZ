@@ -1,22 +1,22 @@
 ---
-title: Získávání odhadů úrovně energie | Microsoft Docs
-description: Získání odhadů úrovně energie dokumentace
+title: Získání odhadů energetické úrovně
+description: 'Projděte si ukázkový program Q #, který odhadne hodnoty energetické úrovně molekulové vodíky.'
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: 0fd457b152083af364d924502c18bc0813e34b83
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 3242d8c6dc6fad2bd99055027dd7ce4ec3510ff4
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442584"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907303"
 ---
-# <a name="obtaining-energy-level-estimates"></a><span data-ttu-id="7cec4-103">Získání odhadů energetické úrovně</span><span class="sxs-lookup"><span data-stu-id="7cec4-103">Obtaining energy level estimates</span></span>
-<span data-ttu-id="7cec4-104">Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole.</span><span class="sxs-lookup"><span data-stu-id="7cec4-104">Estimating the values of energy levels is one of the principal applications of quantum chemistry.</span></span> <span data-ttu-id="7cec4-105">Tady je přehled toho, jak to lze provést pro Kanonický příklad molekulové vodíku.</span><span class="sxs-lookup"><span data-stu-id="7cec4-105">Here, we outline how this may be performed for the canonical example of molecular Hydrogen.</span></span> <span data-ttu-id="7cec4-106">Ukázka, na kterou se odkazuje v této části, je `MolecularHydrogen` v úložišti vzorků chemického kódu.</span><span class="sxs-lookup"><span data-stu-id="7cec4-106">The sample referenced in this section is `MolecularHydrogen` in the chemistry samples repository.</span></span> <span data-ttu-id="7cec4-107">Dalším vizuálním příkladem, který vykresluje výstup, je `MolecularHydrogenGUI` ukázka.</span><span class="sxs-lookup"><span data-stu-id="7cec4-107">A more visual example that plots the output is the `MolecularHydrogenGUI` demo.</span></span>
+# <a name="obtaining-energy-level-estimates"></a><span data-ttu-id="e7d7c-103">Získání odhadů energetické úrovně</span><span class="sxs-lookup"><span data-stu-id="e7d7c-103">Obtaining energy level estimates</span></span>
+<span data-ttu-id="e7d7c-104">Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-104">Estimating the values of energy levels is one of the principal applications of quantum chemistry.</span></span> <span data-ttu-id="e7d7c-105">Tady je přehled toho, jak to lze provést pro Kanonický příklad molekulové vodíku.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-105">Here, we outline how this may be performed for the canonical example of molecular Hydrogen.</span></span> <span data-ttu-id="e7d7c-106">Ukázka, na kterou se odkazuje v této části, je `MolecularHydrogen` v úložišti vzorků chemického kódu.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-106">The sample referenced in this section is `MolecularHydrogen` in the chemistry samples repository.</span></span> <span data-ttu-id="e7d7c-107">Dalším vizuálním příkladem, který vykresluje výstup, je `MolecularHydrogenGUI` ukázka.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-107">A more visual example that plots the output is the `MolecularHydrogenGUI` demo.</span></span>
 
-<span data-ttu-id="7cec4-108">Naším prvním krokem je vytvoření Hamiltonian představující molekulovou vodíkovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="7cec4-108">Our first step is to construct the Hamiltonian representing molecular Hydrogen.</span></span> <span data-ttu-id="7cec4-109">I když se to dá provést pomocí nástroje NWChem, do této ukázky přidáme ručně Hamiltonianické výrazy pro zkrácení.</span><span class="sxs-lookup"><span data-stu-id="7cec4-109">Though this can be constructed through the NWChem tool, we manually add Hamiltonian terms for brevity in this sample.</span></span>
+<span data-ttu-id="e7d7c-108">Naším prvním krokem je vytvoření Hamiltonian představující molekulovou vodíkovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-108">Our first step is to construct the Hamiltonian representing molecular Hydrogen.</span></span> <span data-ttu-id="e7d7c-109">I když se to dá provést pomocí nástroje NWChem, do této ukázky přidáme ručně Hamiltonianické výrazy pro zkrácení.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-109">Though this can be constructed through the NWChem tool, we manually add Hamiltonian terms for brevity in this sample.</span></span>
 
 ```csharp
     // These orbital integrals are represented using the OrbitalIntegral
@@ -39,7 +39,7 @@ ms.locfileid: "73442584"
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-<span data-ttu-id="7cec4-110">Simulace Hamiltonian vyžaduje, abychom převedli operátory fermion na qubit operátory.</span><span class="sxs-lookup"><span data-stu-id="7cec4-110">Simulating the Hamiltonian requires us to convert the fermion operators to qubit operators.</span></span> <span data-ttu-id="7cec4-111">Tento převod se provádí pomocí kódování Jordánska-Wigner následujícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="7cec4-111">This conversion is performed through the Jordan-Wigner encoding as follows.</span></span>
+<span data-ttu-id="e7d7c-110">Simulace Hamiltonian vyžaduje, abychom převedli operátory fermion na qubit operátory.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-110">Simulating the Hamiltonian requires us to convert the fermion operators to qubit operators.</span></span> <span data-ttu-id="e7d7c-111">Tento převod se provádí pomocí kódování Jordánska-Wigner následujícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-111">This conversion is performed through the Jordan-Wigner encoding as follows.</span></span>
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -60,7 +60,7 @@ ms.locfileid: "73442584"
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-<span data-ttu-id="7cec4-112">Nyní předáte `qSharpData` reprezentující Hamiltonian do funkce `TrotterStepOracle` při [simulaci Hamiltonian Dynamics](xref:microsoft.quantum.libraries.standard.algorithms).</span><span class="sxs-lookup"><span data-stu-id="7cec4-112">We now pass the `qSharpData` representing the Hamiltonian to the `TrotterStepOracle` function in [Simulating Hamiltonian dynamics](xref:microsoft.quantum.libraries.standard.algorithms).</span></span> <span data-ttu-id="7cec4-113">`TrotterStepOracle` vrátí operaci s dobou platnosti, která se blíží skutečnému vývoji času Hamiltonian.</span><span class="sxs-lookup"><span data-stu-id="7cec4-113">`TrotterStepOracle` returns a quantum operation that approximates the real time-evolution of the Hamiltonian.</span></span>
+<span data-ttu-id="e7d7c-112">Nyní předáte `qSharpData` reprezentující Hamiltonian do funkce `TrotterStepOracle` při [simulaci Hamiltonian Dynamics](xref:microsoft.quantum.libraries.standard.algorithms).</span><span class="sxs-lookup"><span data-stu-id="e7d7c-112">We now pass the `qSharpData` representing the Hamiltonian to the `TrotterStepOracle` function in [Simulating Hamiltonian dynamics](xref:microsoft.quantum.libraries.standard.algorithms).</span></span> <span data-ttu-id="e7d7c-113">`TrotterStepOracle` vrátí operaci s dobou platnosti, která se blíží skutečnému vývoji času Hamiltonian.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-113">`TrotterStepOracle` returns a quantum operation that approximates the real time-evolution of the Hamiltonian.</span></span>
 
 ```qsharp
 // qSharpData passed from driver
@@ -78,9 +78,9 @@ let integratorOrder = 4;
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-<span data-ttu-id="7cec4-114">Nyní můžeme použít algoritmy odhadu fáze standardní knihovny k získání informací o spotřebě energie v základní knihovně pomocí výše uvedené simulace.</span><span class="sxs-lookup"><span data-stu-id="7cec4-114">We can now use the standard library's phase estimation algorithms to learn the ground state energy using the above simulation.</span></span> <span data-ttu-id="7cec4-115">K tomu je potřeba připravit dobrý odhad stavu stavového provozu.</span><span class="sxs-lookup"><span data-stu-id="7cec4-115">This requires preparing a good approximation to the quantum ground state.</span></span> <span data-ttu-id="7cec4-116">Návrhy těchto sblížení jsou k dispozici ve schématu `Broombridge`, ale některé návrhy neexistují, výchozí přístup přidá množství `hamiltonian.NElectrons` Electrons k greedily minimalizaci diagonálního energiesého termínu.</span><span class="sxs-lookup"><span data-stu-id="7cec4-116">Suggestions for such approximations are provided in the `Broombridge` schema, but absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to  greedily minimize the diagonal one-electron term energies.</span></span> <span data-ttu-id="7cec4-117">Funkce odhadu fáze a operace se nacházejí v [oboru názvů Microsoft. probíhají. charakterizace](xref:microsoft.quantum.characterization in DocFX notation).</span><span class="sxs-lookup"><span data-stu-id="7cec4-117">The phase estimation functions and operations are located in the [Microsoft.Quantum.Characterization namespace](xref:microsoft.quantum.characterization in DocFX notation).</span></span>
+<span data-ttu-id="e7d7c-114">Nyní můžeme použít algoritmy odhadu fáze standardní knihovny k získání informací o spotřebě energie v základní knihovně pomocí výše uvedené simulace.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-114">We can now use the standard library's phase estimation algorithms to learn the ground state energy using the above simulation.</span></span> <span data-ttu-id="e7d7c-115">K tomu je potřeba připravit dobrý odhad stavu stavového provozu.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-115">This requires preparing a good approximation to the quantum ground state.</span></span> <span data-ttu-id="e7d7c-116">Návrhy těchto sblížení jsou k dispozici ve schématu `Broombridge`, ale některé návrhy neexistují, výchozí přístup přidá množství `hamiltonian.NElectrons` Electrons k greedily minimalizaci diagonálního energiesého termínu.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-116">Suggestions for such approximations are provided in the `Broombridge` schema, but absent these suggestions, the default approach adds a number of `hamiltonian.NElectrons` electrons to  greedily minimize the diagonal one-electron term energies.</span></span> <span data-ttu-id="e7d7c-117">Funkce odhadu fáze a operace se nacházejí v [oboru názvů Microsoft. probíhají. charakterizace](xref:microsoft.quantum.characterization in DocFX notation).</span><span class="sxs-lookup"><span data-stu-id="e7d7c-117">The phase estimation functions and operations are located in the [Microsoft.Quantum.Characterization namespace](xref:microsoft.quantum.characterization in DocFX notation).</span></span>
 
-<span data-ttu-id="7cec4-118">Následující fragment kódu ukazuje, jak může být výstup pro vývoj v reálném čase integrací knihovny pro simulaci ve fázi kódu.</span><span class="sxs-lookup"><span data-stu-id="7cec4-118">The following snippet shows how the real time-evolution output by the chemistry simulation library may be integrated with quantum phase estimation.</span></span>
+<span data-ttu-id="e7d7c-118">Následující fragment kódu ukazuje, jak může být výstup pro vývoj v reálném čase integrací knihovny pro simulaci ve fázi kódu.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-118">The following snippet shows how the real time-evolution output by the chemistry simulation library may be integrated with quantum phase estimation.</span></span>
 
 ```qsharp
 operation GetEnergyByTrotterization (
@@ -119,7 +119,7 @@ operation GetEnergyByTrotterization (
 }
 ```
 
-<span data-ttu-id="7cec4-119">Tento kód Q # se teď dá vyvolat z programu ovladače.</span><span class="sxs-lookup"><span data-stu-id="7cec4-119">This Q# code may now be invoke from the driver program.</span></span> <span data-ttu-id="7cec4-120">V následující části vytvoříme úplný stav simulátoru a spustíme `GetEnergyByTrotterization`, abyste získali stavovou energii.</span><span class="sxs-lookup"><span data-stu-id="7cec4-120">In the following, we create a full-state simulator and run `GetEnergyByTrotterization` to obtain the ground state energy.</span></span>
+<span data-ttu-id="e7d7c-119">Tento kód Q # se teď dá vyvolat z programu ovladače.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-119">This Q# code may now be invoke from the driver program.</span></span> <span data-ttu-id="e7d7c-120">V následující části vytvoříme úplný stav simulátoru a spustíme `GetEnergyByTrotterization`, abyste získali stavovou energii.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-120">In the following, we create a full-state simulator and run `GetEnergyByTrotterization` to obtain the ground state energy.</span></span>
 
 ```csharp
 using (var qsim = new QuantumSimulator())
@@ -149,4 +149,4 @@ using (var qsim = new QuantumSimulator())
 }
 ```
 
-<span data-ttu-id="7cec4-121">Všimněte si, že jsou vráceny dva parametry.</span><span class="sxs-lookup"><span data-stu-id="7cec4-121">Note that two parameters are returned.</span></span> <span data-ttu-id="7cec4-122">`energyEst` je odhadem energetické energie a měla by být v průměru `-1.137`.</span><span class="sxs-lookup"><span data-stu-id="7cec4-122">`energyEst` is the estimate of the ground state energy, and should be around `-1.137` on average.</span></span> <span data-ttu-id="7cec4-123">`phaseEst` je nezpracované fáze vracené algoritmem odhadu fáze a je užitečná pro diagnostiku, když dojde k vytvoření aliasu z důvodu `trotterStep`, která je příliš velká.</span><span class="sxs-lookup"><span data-stu-id="7cec4-123">`phaseEst` is the raw phase returned by the phase estimation algorithm, and is useful to diagnose when aliasing occurs due to a `trotterStep` that is too large.</span></span>
+<span data-ttu-id="e7d7c-121">Všimněte si, že jsou vráceny dva parametry.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-121">Note that two parameters are returned.</span></span> <span data-ttu-id="e7d7c-122">`energyEst` je odhadem energetické energie a měla by být v průměru `-1.137`.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-122">`energyEst` is the estimate of the ground state energy, and should be around `-1.137` on average.</span></span> <span data-ttu-id="e7d7c-123">`phaseEst` je nezpracované fáze vracené algoritmem odhadu fáze a je užitečná pro diagnostiku, když dojde k vytvoření aliasu z důvodu `trotterStep`, která je příliš velká.</span><span class="sxs-lookup"><span data-stu-id="e7d7c-123">`phaseEst` is the raw phase returned by the phase estimation algorithm, and is useful to diagnose when aliasing occurs due to a `trotterStep` that is too large.</span></span>
