@@ -6,12 +6,12 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: c1fd578fdb3d56a7b48972e6ccc9b1605047fe36
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820347"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906946"
 ---
 # <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Rychlý start: Implementace Groverova vyhledávacího algoritmu v jazyku Q#
 
@@ -43,7 +43,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 1. Do souboru `Operations.qs` v projektu přidejte tento kód:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-23" highlight="5,27":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
 
 1. Definujte seznam, ve kterém hledáme, tak, že vytvoříte nový soubor `Reflections.qs` a vložíte do něj tento kód:
 
@@ -53,7 +53,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 1. Dále spusťte nový program v jazyku Q# a vyhledejte položku označenou operací `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-linetabtabid-python"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
+    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
 
     Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
 
@@ -71,7 +71,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
     [0, 1, 0, 1, 0]
     ```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-linetabtabid-csharp"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
+    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
 
     Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
 
@@ -90,7 +90,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
     Press any key to continue...
     ```
 
-    ### <a name="c-with-visual-studio-2019tabtabid-vs2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
+    ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
 
     Pokud chcete nový program v jazyku Q# spustit z C# v sadě Visual Studio, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
 

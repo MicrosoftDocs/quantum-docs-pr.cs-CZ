@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/07/2019
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 30135fa8a123e52a92b7187218f9980ba3cdbd2d
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 8d3b2d7c8da39a961f4eedcc5989ad3a1e134ade
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442200"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906725"
 ---
 # <a name="quantum-basics-with-q"></a>Základy kvantových výpočtů v Q#
 
@@ -30,7 +30,7 @@ Pokud se chcete jen seznámit se základy, můžete si článek přečíst i bez
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrace chování qubitů pomocí Q#
 
-Připomeňme si naši jednoduchou definici [qubitu](xref:microsoft.quantum.overview.what#the-qubit).  Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), qubit se může současně nacházet v **superpozici** stavů 0 a 1.  Qubit si můžete představit jako směr v prostoru (označuje se také jako vektor).  Qubit může být natočený do libovolného směru. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.  Tuto reprezentaci je možné formálněji vizualizovat [Blochovou koulí](/quantum/concepts/the-qubit?view=qsharp-preview#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Připomeňme si naši jednoduchou definici [qubitu](xref:microsoft.quantum.overview.what#the-qubit).  Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), qubit se může současně nacházet v **superpozici** stavů 0 a 1.  Qubit si můžete představit jako směr v prostoru (označuje se také jako vektor).  Qubit může být natočený do libovolného směru. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.  Tuto reprezentaci je možné formálněji vizualizovat [Blochovou koulí](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 
 Akce měření poskytuje binární výsledek a mění stav qubitu. Měřením získáme binární hodnotu, buď 0, nebo 1.  V důsledku měření přejde qubit ze superpozice (libovolného směru) do jednoho z klasických stavů.  Všechna následná opakovaná měření bez provedení dalších operací už budou poskytovat shodný binární výsledek.  
@@ -46,7 +46,7 @@ Aplikace vyvinuté pomocí nástroje Microsoft Quantum Development Kit se sklád
 1. Jeden nebo více kvantových algoritmů, implementovaných v kvantovém programovacím jazyce Q#.
 1. Hostitelský program implementovaný v programovacím jazyce jako Python nebo C#, který slouží jako hlavní vstupní bod a vyvolává kvantové algoritmy jako operace Q#.
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Vyberte umístění aplikace.
 
@@ -54,7 +54,7 @@ Aplikace vyvinuté pomocí nástroje Microsoft Quantum Development Kit se sklád
 
 1. Vytvořte soubor s názvem `host.py`. Tento soubor bude obsahovat váš hostitelský kód v Pythonu.
 
-#### <a name="c-command-linetabtabid-csharp"></a>[Příkazový řádek C#](#tab/tabid-csharp)
+#### <a name="c-command-line"></a>[Příkazový řádek C#](#tab/tabid-csharp)
 
 1. Vytvoření nového projektu Q#
 
@@ -71,7 +71,7 @@ Aplikace vyvinuté pomocí nástroje Microsoft Quantum Development Kit se sklád
     mv Operation.qs Bell.qs
     ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. Vytvoření nového projektu
 
@@ -177,7 +177,7 @@ Příkaz `using` je také jedinečný pro jazyk Q#. Slouží k přidělení qubi
 
 ## <a name="create-the-host-application-code"></a>Vytvořte kód hostitelské aplikace
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Otevřete soubor `host.py` a přidejte následující kód:
 
@@ -195,7 +195,7 @@ Příkaz `using` je také jedinečný pro jazyk Q#. Slouží k přidělení qubi
       print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4}')
     ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 1. Obsah souboru `Driver.cs` nahraďte následujícím kódem:
 
@@ -237,7 +237,7 @@ Příkaz `using` je také jedinečný pro jazyk Q#. Slouží k přidělení qubi
 
 ### <a name="about-the-host-application-code"></a>Kód hostitelské aplikace
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 Hostitelská aplikace v jazyce Python má tři části:
 
@@ -245,7 +245,7 @@ Hostitelská aplikace v jazyce Python má tři části:
 * Spusťte kvantový algoritmus zavoláním metody `simulate()` importované operace Q#.
 * Zpracujte výsledek operace. V příkladu bude `res` obsahovat výsledek operace. Zde je výsledkem řazená kolekce členů – počet nul (`num_zeros`) a počet jedniček (`num_ones`) změřených simulátorem. Z řazené kolekce členů získáme dvě pole a vytiskneme výsledky.
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 Hostitelská aplikace C# má čtyři části:
 
@@ -260,7 +260,7 @@ Hostitelská aplikace C# má čtyři části:
 
 ## <a name="build-and-run"></a>Sestavení a spuštění
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Zadejte v okně terminálu následující příkaz:
 
@@ -277,7 +277,7 @@ Init:0    0s=1000 1s=0
 Init:1    0s=0    1s=1000
 ```
 
-#### <a name="command-line--visual-studio-codetabtabid-csharp"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-csharp)
+#### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-csharp)
 
 1. Spusťte v okně terminálu následující příkaz:
 
@@ -299,7 +299,7 @@ Init:One  0s=0    1s=1000
 Press any key to continue...
 ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. Stiskněte `F5` a váš program by měl sestavit a spustit!
 
@@ -445,7 +445,7 @@ Když ji spustíme, získáme přesně stejný výsledek 50-50, jako předtím. 
 
 Nová návratová hodnota (`agree`) počítá případy, kdy se měření prvního qubitu shodovalo s měřením druhého qubitu. Také je potřeba odpovídajícím způsobem aktualizovat hostitelskou aplikaci:
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 ```python
 import qsharp
@@ -461,7 +461,7 @@ for i in initials:
     print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4} agree={agree: <4}')
 ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 ```csharp
             using (var qsim = new QuantumSimulator())
