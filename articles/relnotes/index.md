@@ -1,17 +1,17 @@
 ---
 title: Poznámky k verzi Preview sady Quantum Development Kit
-description: Poznámky k verzi Preview sady Quantum Development Kit
+description: Přečtěte si o nejnovějších aktualizacích sady Microsoft Quantum Development Kit ve verzi Preview.
 author: natke
 ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: be1eff8127be9fb024a1dc2de3ec82952ac2dc2b
-ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
+ms.openlocfilehash: f4bc69e5b14833dea0d61106a9eb368d7d7f5663
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441032"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906929"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -22,18 +22,32 @@ Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
 
 
+## <a name="version-01020022610"></a>Verze 0.10.2002.2610
+
+*Datum vydání: 27. února 2020*
+
+Tato verze obsahuje následující:
+
+- Nová knihovna pro kvantové strojové učení. Další informace najdete na naší [dokumentační stránce QML](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview).
+- Opravy chyb IQ#. Výsledkem je 10- až 20násobné zvýšení výkonu při načítání balíčků NuGet.
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
 ## <a name="version-01020012831"></a>Verze 0.10.2001.2831
 
 *Datum vydání: 29. ledna 2020*
 
 Tato verze obsahuje následující:
 
-- Nový balíček NuGet Microsoft.Quantum.SDK
+- Nový balíček NuGet Microsoft.Quantum.SDK, který nahradí balíček NuGet Microsoft.Quantum.Development.Kit při vytváření nových projektů. Balíček NuGet Microsoft.Quantum.Development.Kit se bude dál podporovat pro už existující projekty. 
+- Podpora pro rozšíření kompilátoru Q# s podporou nového balíčku NuGet Microsoft.Quantum.SDK NuGet. Další informace najdete v [dokumentaci na Githubu](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), v [ukázce rozšíření kompilátoru](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) a na [blogu vývojářů v Q#](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/).
 - Přidání podpory pro .NET Core 3.1 – důrazně doporučujeme mít nainstalovanou verzi 3.1.100, protože sestavování se staršími verzemi .NET Core SDK může způsobovat problémy
 - Nové transformace kompilátoru dostupné v oboru názvů Microsoft.Quantum.QsCompiler.Experimental
 - Nová funkce pro vystavení vektorů výstupního stavu ve formátu HTML v IQ#
 - Přidání podpory pro EstimateFrequencyA do oboru názvů Microsoft.Quantum.Characterization kvůli Hadamardovu a SWAP testu
 - Obor názvů AmplitudeAmplification teď používá průvodce stylem Q#
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01019120501"></a>Verze 0.10.1912.0501
 
