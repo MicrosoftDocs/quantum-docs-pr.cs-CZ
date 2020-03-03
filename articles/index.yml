@@ -1,28 +1,24 @@
 ### YamlMime:Landing
 title: Dokumentace k Microsoft Quantum
-summary: Naučte se používat sadu Microsoft Quantum Developer Kit a Q#, jazyk pro kvantové algoritmy. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.
+summary: Naučte se používat sadu Microsoft Quantum Development Kit a Q#, jazyk pro kvantové programování. Seznamte se s klíčovými koncepty a napište svůj první kvantový program. Projděte si bohaté nástroje a knihovny QDK.
 metadata:
-  title: Dokumentace k Microsoft Quantum – referenční materiály k rozhraní API Q#
-  description: Naučte se používat sadu Microsoft Quantum Development Kit a Q#, jazyk pro kvantové programování. Seznamte se s klíčovými koncepty a napište svůj první kvantový program.  Projděte si bohaté nástroje a knihovny QDK.
+  title: Dokumentace k Microsoft Quantum a referenční materiály k rozhraní API Q#
+  description: Seznamte se s koncepty kvantových výpočtů a využitím sady Microsoft Quantum Development Kit (QDK) a opensourcového kvantového programovacího jazyka Q#.
   ms.prod: quantum
   ms.topic: landing-page
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 10/21/2019
-  ms.openlocfilehash: a39b230bc3b740afd23f0050b9c45df6094bea4e
-  ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+  ms.openlocfilehash: 27f7ca535ddd846e7bae01baee3fbbb4713e0433
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/06/2020
-  ms.locfileid: "77036572"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77907422"
 landingContent:
-- title: Začínáme s Microsoft Quantum
+- title: Kvantové výpočty
   linkLists:
-  - linkListType: overview
-    links:
-    - text: Sada Quantum Development Kit
-      url: welcome.md
   - linkListType: learn
     links:
     - text: Co jsou kvantové výpočty?
@@ -31,66 +27,58 @@ landingContent:
       url: overview/quantum-computers.md
     - text: Proč se učit provádět kvantové výpočty?
       url: overview/why-learn-quantum-computing.md
-    - text: Co je Q#?
+    - text: Co jsou Q# a QDK?
       url: overview/what-is-qsharp.md
-    - text: Jak se naučím provádět kvantové výpočty?
+    - text: Jak získám další informace?
       url: overview/how-to-learn-quantum-computing.md
+  - linkListType: concept
+    links:
+    - text: Koncepce kvantových výpočtů
+      url: concepts/index.md
 - title: Získání sady Quantum Development Kit
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Sada Quantum Development Kit
+      url: welcome.md
   - linkListType: download
     links:
     - text: Instalace sady QDK
       url: install-guide/index.md
     - text: Aktualizace sady QDK
       url: install-guide/update.md
-- title: Rychlé starty
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Vytvoření generátoru kvantových náhodných čísel
-      url: quickstarts/qrng.md
-    - text: Základy kvantových výpočtů v Q#
-      url: quickstart.md
-    - text: 'Zrychlení kvantových výpočtů: Groverův vyhledávací algoritmus'
-      url: quickstarts/search.md
-- title: Koncepce kvantových výpočtů
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Koncepce kvantových výpočtů
-      url: concepts/index.md
 - title: Programovací jazyk Q#
   linkLists:
-  - linkListType: learn
+  - linkListType: overview
     links:
     - text: Úvod do jazyka Q#
       url: language/index.md
     - text: Techniky vývoje s využitím Q#
       url: techniques/index.md
-- title: Cílové počítače
-  linkLists:
-  - linkListType: overview
-    links:
     - text: Kvantové simulátory a hostitelské aplikace
       url: machines/index.md
-  - linkListType: architecture
+  - linkListType: quickstart
     links:
-    - text: Simulátor celkového stavu
-      url: machines/full-state-simulator.md
-    - text: Odhad prostředků
-      url: machines/resources-estimator.md
-    - text: Simulátor trasování
-      url: machines/qc-trace-simulator/index.md
-    - text: Simulátor Toffoli
-      url: machines/toffoli-simulator.md
-- title: 'Studijní materiály pro Q #'
-  linkLists:
+    - text: Vytvoření generátoru kvantových náhodných čísel
+      url: quickstarts/qrng.md
+    - text: Zkoumání provázání s využitím Q#
+      url: quickstart.md
+    - text: 'Zrychlení kvantových výpočtů: Groverův vyhledávací algoritmus'
+      url: quickstarts/search.md
   - linkListType: learn
     links:
     - text: Studium s využitím kvantových kat
       url: intro-to-katas.md
     - text: Procházení vzorového kódu Q#
       url: https://docs.microsoft.com/samples/browse/?languages=qsharp
+- title: Komunita a příspěvky
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Přispívání do QDK
+      url: contributing/index.md
+    - text: Číst blok k Microsoft Quantu
+      url: https://cloudblogs.microsoft.com/quantum
 - title: Knihovny Q#
   linkLists:
   - linkListType: reference
@@ -101,25 +89,3 @@ landingContent:
       url: libraries/numerics/index.md
     - text: Chemické knihovny
       url: libraries/chemistry/index.md
-    - text: Koncepty chemie
-      url: libraries/chemistry/concepts/quantum-dynamics.md
-- title: Aplikace a algoritmy Q# (ze standardních knihoven)
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Zvětšování amplitudy
-      url: libraries/standard/algorithms.md
-    - text: Odhad kvantové fáze
-      url: libraries/standard/algorithms.md#quantum-phase-estimation
-    - text: Shorův algoritmus
-      url: libraries/standard/applications.md#shors-algorithm
-    - text: Hamiltoniánská simulace
-      url: libraries/standard/applications.md
-- title: Komunita a příspěvky
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Přispívání do QDK
-      url: contributing/index.md
-    - text: Číst blok k Microsoft Quantu
-      url: https://cloudblogs.microsoft.com/quantum

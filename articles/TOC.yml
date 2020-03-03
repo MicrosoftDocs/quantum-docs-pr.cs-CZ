@@ -1,23 +1,21 @@
 - name: Dokumentace k Microsoft Quantum
   href: index.yml
-- name: Přehled
+- name: Začínáme s kvantovými výpočty
   items:
-    - name: Začínáme
+    - name: Co jsou kvantové výpočty?
+      href: overview/what-is-quantum-computing.md
+    - name: Co dokáže kvantový počítač?
+      href: overview/quantum-computers.md
+    - name: Proč se učit provádět kvantové výpočty?
+      href: overview/why-learn-quantum-computing.md
+    - name: 'Co jsou Q# a QDK?'
+      href: overview/what-is-qsharp.md
+    - name: Jak získám další informace?
+      href: overview/how-to-learn-quantum-computing.md
+- name: Získání sady Quantum Development Kit
+  items:
+    - name: Začínáme s QDK
       href: welcome.md
-    - name: Pět dotazů ke kvantovým výpočtům
-      items:
-        - name: Co jsou kvantové výpočty?
-          href: overview/what-is-quantum-computing.md
-        - name: Co dokáže kvantový počítač?
-          href: overview/quantum-computers.md
-        - name: Proč se učit provádět kvantové výpočty?
-          href: overview/why-learn-quantum-computing.md
-        - name: 'Co je Q#?'
-          href: overview/what-is-qsharp.md
-        - name: Jak se naučit provádět kvantové výpočty?
-          href: overview/how-to-learn-quantum-computing.md
-- name: Instalace a aktualizace
-  items:
     - name: Instalace sady QDK
       items:
         - name: Přehled instalace
@@ -30,15 +28,23 @@
           href: install-guide/qjupyter.md
     - name: Aktualizace sady QDK
       href: install-guide/update.md
-- name: Rychlé starty
+    - name: 'Jak vytvořit projekt v Q#'
+      href: how-to-guides/create-qsharp-project.md
+- name: 'Studijní materiály pro Q #'
   items:
-    - name: Generátor kvantových náhodných čísel
-      href: quickstarts/qrng.md
-    - name: 'Základy kvantových výpočtů v Q#'
-      href: quickstart.md
-    - name: Implementace Groverova vyhledávacího algoritmu
-      href: quickstarts/search.md
-- name: Koncepty
+    - name: Rychlé starty
+      items:
+        - name: Generátor kvantových náhodných čísel
+          href: quickstarts/qrng.md
+        - name: 'Zkoumání provázání s využitím Q#'
+          href: quickstart.md
+        - name: Implementace Groverova vyhledávacího algoritmu
+          href: quickstarts/search.md
+    - name: 'Studium Q# s využitím kvantových kat'
+      href: intro-to-katas.md
+    - name: 'Ukázky kódu v Q#'
+      href: 'https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp'
+- name: Sada QDK podrobně
   items:
     - name: Techniky kvantového vývoje
       topicHref: techniques/index.md
@@ -46,33 +52,17 @@
     - name: 'Programovací jazyk Q#'
       topicHref: language/index.md
       href: language/toc.yml
-    - name: 'Knihovny Q#'
-      href: libraries/toc.yml
     - name: Kvantové simulátory a estimátory prostředků
       href: machines/toc.yml
-    - name: Koncepce kvantových výpočtů
-      href: concepts/toc.yml
-- name: Návody
-  items:
-    - name: 'Vytvoření projektu v Q#'
-      href: how-to-guides/create-qsharp-project.md
-- name: 'Studijní materiály pro Q #'
-  items:
-    - name: Studium s využitím kvantových kat
-      href: intro-to-katas.md
-    - name: 'Ukázky Q#'
-      href: 'https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp'
-- name: Zdroje a prostředky
-  items:
-    - name: Glosář
-      href: Glossary.md
-    - name: Další čtení
-      href: for-more-info.md
-    - name: "Poznámky k\_verzi QDK"
-      topicHref: relnotes/index.md
-      href: relnotes/toc.yml
-    - name: Přispívání do QDK
-      href: contributing/toc.yml
-      topicHref: contributing/index.md
-    - name: Licence
-      href: license.md
+- name: 'Knihovny Q#'
+  href: libraries/toc.yml
+- name: Koncepce kvantových výpočtů
+  href: concepts/toc.yml
+- name: Další čtení
+  href: for-more-info.md
+- name: Přispívání do QDK
+  href: contributing/toc.yml
+  topicHref: contributing/index.md
+- name: "Poznámky k\_verzi QDK"
+  topicHref: relnotes/index.md
+  href: relnotes/toc.yml
