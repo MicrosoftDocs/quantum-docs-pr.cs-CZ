@@ -1,17 +1,17 @@
 ---
 title: Co jsou kvantové výpočty?
-description: Přečtěte si, co jsou kvantové výpočty a co dokáže kvantový počítač
+description: Seznámení s hardwarem, algoritmy a funkcemi kvantových výpočtů a sadou Microsoft Quantum Development Kit (QDK)
 author: natke
 ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.what
-ms.openlocfilehash: 2f3b64b00a0a9552e52e34cb1e3652810b266eab
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: 668df50882272bfa56541f178e2f4d5fb35efcf5
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73529934"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906776"
 ---
 # <a name="what-is-quantum-computing"></a>Co jsou kvantové výpočty?
 
