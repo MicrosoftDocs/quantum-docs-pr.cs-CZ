@@ -1,9 +1,14 @@
 - name: API – referenční informace
   items:
+    - name: API – referenční informace
+      href: index.md
     - name: 'Knihovny Q#'
+      topicHref: qsharp/index.md
       href: qsharp/toc.yml
     - name: Knihovny .NET
       items:
+        - name: Knihovny .NET
+          href: dot-net-libraries.md
         - name: Simulátor trasování
           href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
         - name: Kvantová chemie
