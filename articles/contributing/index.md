@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 63c6f90a511c7bd14435b2e593af0d8615c18519
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: cf913a09395f0694a51645ec8f91171e5b1555c3
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904872"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022482"
 ---
-# <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit #
+# <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit
 
 Sada Quantum Development Kit je víc než jen kolekce nástrojů pro psaní kvantových programů.
 Je součástí rozsáhlé komunity lidí, kteří objevují kvantové výpočty, provádějí výzkum v oblasti kvantových algoritmů, vyvíjejí nové aplikace pro kvantová zařízení nebo pracují jiným způsobem na maximálním využití kvantového programování.
@@ -23,7 +23,7 @@ Velice vám děkujeme za vaše laskavé příspěvky a za příležitost ke spol
 
 V tomto průvodci uvádíme několik rad, jak dosáhnout co největšího užitku z příspěvku pro širší komunitu kvantového programování.
 
-## <a name="building-community"></a>Vytváření komunity ##
+## <a name="building-community"></a>Vytváření komunity
 
 Hlavní věcí při přispívání je neustále mít na zřeteli komunitu, které přispíváte.
 Díky respektu a profesionálnímu chování k partnerům v komunitě kvantového programování i v širším měřítku můžete pomoct zajistit, aby vaše snaha přispívala k existenci té nejlepší a nejvstřícnější možné komunity.
@@ -31,7 +31,7 @@ Díky respektu a profesionálnímu chování k partnerům v komunitě kvantovéh
 Jako součást této snahy dodržují všechny projekty sady Quantum Development Kit [pravidla chování pro open source společnosti Microsoft](https://opensource.microsoft.com/codeofconduct/).
 Další informace najdete v [nejčastějších dotazech k pravidlům chování](https://opensource.microsoft.com/codeofconduct/faq/). S případnými dalšími dotazy nebo připomínkami se obracejte na adresu [opencode@microsoft.com](mailto:opencode@microsoft.com).
 
-## <a name="what-kinds-of-contributions-help-the-community"></a>Jaké druhy příspěvků komunitě pomůžou? ##
+## <a name="what-kinds-of-contributions-help-the-community"></a>Jaké druhy příspěvků komunitě pomůžou?
 
 Komunitě kvantového programování je možné pomáhat prostřednictvím příspěvků mnoha různými způsoby.
 V tomto průvodci se zaměříme na tři způsoby, které jsou pro sadu Quantum Development Kit obzvlášť relevantní.
@@ -45,7 +45,7 @@ Rozhodně se však nejedná o vyčerpávající seznam – doporučujeme vám pr
 Všechny tyto různé druhy příspěvků jsou nesmírně cenné a velmi si jich vážíme.
 V zbývající části průvodce vám poradíme s postupem u jednotlivých druhů příspěvků.
 
-## <a name="where-do-contributions-go"></a>Co se s příspěvky stane? ##
+## <a name="where-do-contributions-go"></a>Co se s příspěvky stane?
 
 Sada Quantum Development Kit obsahuje mnoho různých částí, které společně tvoří platformu pro psaní kvantových programů.
 Každý z těchto různých kousků je umístěn v jiném úložišti, takže jednou z prvních věcí k řešení je najít pro každý příspěvek to nejlepší místo.
@@ -66,7 +66,7 @@ Existuje ještě několik dalších, specializovanějších úložišť, která 
 - [**msr-quarc/qsharp.sty:** ](https://github.com/msr-quarc/qsharp.sty) Podpora formátování LaTeX pro syntaxi jazyka Q#.
 - [**msr-quarc/intern-workshop-2019:** ](https://github.com/msr-quarc/intern-workshop-2019) Poznámkový blok IQ# pro kurz k Deutschovu-Jozsovu algoritmu na workshopu pro stážisty v roce 2019.
 
-## <a name="next-steps"></a>Další kroky ##
+## <a name="next-steps"></a>Další kroky
 
 Děkujeme, že jste se stali součástí komunity sady Quantum Development Kit. Těšíme se na vaše příspěvky!
 Pokud se o přispívání chcete dozvědět víc, pokračujte jedním z následujících průvodců.
