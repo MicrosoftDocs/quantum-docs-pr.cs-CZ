@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 uid: microsoft.quantum.techniques.testing-and-debugging
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 3df8df8defabcc9cc87d59f543f425c882b001e0
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 8131c2ec9320b5075c37370e12ad39a4df5bd3d5
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907677"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022846"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -384,4 +384,4 @@ namespace app
 
 Na začátku `Assert` a `Dump` funkce a operace Q # podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno možné během provádění kódu v simulátoru.
 
-Ladění v Visual Studio Code využívá možnosti ladění poskytované rozšířením C# pro Visual Studio Code, které používá OmniSharp a vyžaduje instalaci [nejnovější verze](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 
+Ladění v Visual Studio Code využívá možnosti ladění poskytované rozšířením C# pro Visual Studio Code, které používá OmniSharp a vyžaduje instalaci [nejnovější verze](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). 

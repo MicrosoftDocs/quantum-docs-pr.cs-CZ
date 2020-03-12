@@ -5,16 +5,16 @@ author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 7605676e05ee352e47791657eeaafceef5dbb493
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77906504"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022497"
 ---
 # <a name="end-to-end-with-nwchem"></a>Kompletní použití NWChem #
 
-Na této stránce vás seznámíme s příkladem získání počtu bran pro simulaci přípravných počtů, počínaje vstupní balíčkí [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) .
+V tomto článku se seznámíte s příkladem získání počtu bran pro simulaci přípravných počtů, počínaje vstupní balíčkí [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) .
 Než budete pokračovat v tomto příkladu, ujistěte se, že jste nainstalovali Docker, a to podle pokynů k [instalaci a ověření](xref:microsoft.quantum.chemistry.concepts.installation).
 
 Další informace najdete tady:
@@ -62,7 +62,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Dál naimportujeme příkaz `Get-GateCount`, který je k dispozici v ukázce **GetGateCount** .
-Úplné podrobnosti najdete v [pokynech uvedených v ukázce](https://github.com/Microsoft/Quantum/tree/master/Chemistry/GetGateCount).
+Úplné podrobnosti najdete v [pokynech uvedených v ukázce](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
 V dalším kroku spusťte následující příkaz, kde v závislosti na vašem operačním systému nahradíte `<runtime>` buď pomocí `win10-x64`, `osx-x64`nebo `linux-x64`:
 
 ```powershell
@@ -112,7 +112,7 @@ set tce:qelb  9
 
 ## <a name="producing-and-consuming-broombridge-output-from-nwchem"></a>Vytváření a využívání výstupu Broombridge z NWChem ##
 
-Teď máme všechno, co potřebujeme k vytváření a využívání dokumentů Broombridge.
+Teď máte všechno, co potřebujete k tvorbě a využívání dokumentů Broombridge.
 Pokud chcete spustit NWChem a vytvořit dokument Broombridge pro vstupní balíček `h4_sto6g_0.000.nw`, spusťte `Convert-NWChemToBroombridge`:
 
 > [!NOTE]
@@ -123,7 +123,7 @@ Pokud chcete spustit NWChem a vytvořit dokument Broombridge pro vstupní balí�
 Convert-NWChemToBroombridge h4_sto6g_0.000.nw 
 ```
 
-Tím se vytvoří dokument Broombridge s názvem `h4_sto6g_0.000.yaml`, který můžeme použít s `Get-GateCount`:
+Tím se vytvoří dokument Broombridge s názvem `h4_sto6g_0.000.yaml`, který můžete použít s `Get-GateCount`:
 
 ```powershell
 Get-GateCount -Format YAML h4_sto6g_0.000.yaml
@@ -164,7 +164,7 @@ Existuje spousta věcí, které můžete dělat tady:
 - Vyzkoušejte si jiné předdefinované vstupní balíčky, třeba změnou parametru `alpha` v `h4_sto6g_alpha.nw`, 
 - Zkuste upravit balíčky, a to tak, že upravíte NWChem balíčky přímo, například prozkoumávání `STO-nG` modelů pro různé volby n, 
 - Vyzkoušejte jiné předdefinované vstupní balíčky NWChem, které jsou k dispozici na adrese `nwchem/qa/chem_library_tests`,
-- Vyzkoušejte sadu předdefinovaných srovnávacích testů Broombridge YAML, které byly vygenerovány z NWChem a jsou k dispozici jako součást [úložiště Microsoft/](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML). Tyto srovnávací testy zahrnují: 
+- Vyzkoušejte sadu předdefinovaných srovnávacích testů Broombridge YAML, které byly vygenerovány z NWChem a jsou k dispozici jako součást [úložiště Microsoft/](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Tyto srovnávací testy zahrnují: 
     - malé molekuly, jako je molekulový vodík (H2), beryllium (), lithium Hydride (LiH),
     - větší molekuly, jako je ozon (O3), beta-karoten, cytosine a spousta dalších. 
 - Vyzkoušejte grafické šipky front-endu [EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) , které vycházejí z rozhraní Microsoft Quantum Development Kit. 

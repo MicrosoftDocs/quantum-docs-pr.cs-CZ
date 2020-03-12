@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.docs
-ms.openlocfilehash: d244a7841b4093031d6225230a6cbefb22cc6a39
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: ed5ab5df9de5d71ccd922cd430cf15779806dd6a
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904889"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022637"
 ---
-# <a name="improving-documentation"></a>Vylepšení dokumentace #
+# <a name="improving-documentation"></a>Vylepšení dokumentace
 
 Dokumentace k vývojové sadě pro každé z nich přebírá několik různých forem. Tyto informace jsou snadno dostupné vývojářům ve více než jednou.
 
@@ -28,7 +28,7 @@ Každá forma dokumentace se ale v podrobnostech liší:
 - **Reference k rozhraní API** je sada stránek pro každou funkci Q #, operace a uživatelsky definované typy, které jsou publikovány na https://docs.microsoft.com/qsharp/api/. Tyto stránky dokumentují vstupy a operace pro jednotlivé možné akce, spolu s příklady a odkazy na Další informace. Odkaz rozhraní API se automaticky extrahuje z malých dokumentů DFM ve zdrojovém kódu Q # jako součást každé vydané verze.
 - **Soubor readme<!---->. MD** , který je součástí jednotlivých ukázek a Kata, popisuje, jak použít tuto ukázku nebo Kata, co se zabývá a jak se vztahuje na zbytek vývojové sady pro plnění. Tyto soubory jsou zapisovány pomocí [Markdownu (GFM)](https://github.github.com/gfm/), což je složitější alternativa k DFM, která je oblíbená pro připojení dokumentace přímo k úložištím kódu.
 
-## <a name="contributing-to-the-conceptual-documentation"></a>Přispívání do koncepční dokumentace ##
+## <a name="contributing-to-the-conceptual-documentation"></a>Přispívání do koncepční dokumentace
 
 Aby bylo možné přispívat do dokumentace k Koncepční dokumentaci nebo k souboru READme, pak začíná žádost o přijetí změn pro MicrosoftDocs/podklady [ **-docs-PR**](https://github.com/MicrosoftDocs/quantum-docs-pr/
 ), [**Microsoft/** ](https://github.com/Microsoft/Quantum)prosazení nebo [**Microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas), jak je to vhodné.
@@ -41,7 +41,18 @@ Další informace o žádostech o přijetí změn najdete níže, ale v současn
 - Mnoho členů komunity pro programování po dobu nevyužívání předpisů je školními výzkumníky a jejich příspěvky se v komunitě uznávají hlavně prostřednictvím citace. Kromě pomoci čtenářů najít další materiály, aby se zajistilo správné uvedení školních výstupů, jako jsou například dokumenty, přednášky, blogové příspěvky a softwarové nástroje, mohou pomoci akademickým přispěvatelům zajistit jejich nejlepší práci pro zlepšení komunity.
 - Komunita pro programování pro velké množství je širokou a skvělou různorodou komunitou. Použití žen v prostředníkech v příkladech třetích osob (např.: "Pokud uživatel..., bude...") může fungovat jako vyloučené místo zahrnutí. Společnost Cognizant jména lidí v citacích a odkazech a správným zahrnutím znaků, které nejsou ASCII, může obsluhovat různorodost komunity tím, že se bude brát ohled na její členy. Podobně se mnoho slov v anglickém jazyce často používá Hateful způsobem, takže jejich použití v technické dokumentaci může způsobit poškození jak na jednotlivé čtenáře, tak na komunitě.
 
-## <a name="contributing-to-the-api-references"></a>Přispívání do referencí rozhraní API ##
+### <a name="referencing-sample-code-from-conceptual-articles"></a>Odkazování na vzorový kód z koncepčních článků
+
+Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft/Quantum), můžete tak učinit pomocí speciálního příkazu Markdownu DocFX:
+
+```markdown
+:::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
+```
+
+Tento příkaz importuje řádky 4 až 8 ze [souboru`Game.qs` z ukázky `chsh-game`](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)a označí je jako kód Q # pro účely zvýrazňování syntaxe.
+Pomocí tohoto příkazu se můžete vyhnout duplikování kódu mezi koncepčními články a úložištěm ukázek, aby byl vzorový kód v dokumentaci vždy aktuální.
+
+## <a name="contributing-to-the-api-references"></a>Přispívání do referencí rozhraní API
 
 Aby bylo možné přispívat do odkazů rozhraní API, je nejužitečnější otevřít žádost o přijetí změn přímo na dokumentovaném kódu.
 Každá funkce, operace nebo uživatelsky definovaný typ podporuje dokumentační komentář (označený `///` místo `//`).
@@ -123,6 +134,7 @@ Pro příklad `ControlledOnBitString`můžeme napsat něco podobného jako násl
      return ControlledOnBitStringImpl(bits, oracle, _, _);
  }
 ```
+
 Vykreslenou verzi kódu uvedenou výše můžete zobrazit v [dokumentaci k rozhraní API pro funkci `ControlledOnBitString`](xref:microsoft.quantum.canon.controlledonbitstring).
 
 Kromě obecné praxe psaní dokumentace k rozhraní API, které vám pomůžou při psaní komentářů k rozhraní API, je potřeba mít na paměti pár věcí:

@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 8ba4648f1837065d15957a01ab4ca8dd2d490a42
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 80d9df00159090768ea442e519c34043a99b050c
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77905144"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022799"
 ---
 # <a name="quantum-circuits"></a>Okruhy
 Vezměte v úvahu za chvilku, že se jedná o jednotnou transformaci $ \Text{CNOT} _{01}(H\otimes 1) $.
@@ -24,7 +24,7 @@ Diagram okruhu pro přípravu tohoto maximálního entangledého stavu je:
 
 <!--- ![](.\media\1.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Diagram ![ho okruhu pro qubit stav s maximální entangled](~/media/Concepts1.png)
+Diagram ![ho okruhu pro qubit stav s maximální entangled](~/media/1.svg)
 
 ## <a name="quantum-circuit-diagram-conventions"></a>Konvence diagramu pro okruhy
 Tento vizuál pro práci s více operačními operacemi může být mnohem snadno digestible než zapsání jeho ekvivalentní matrice, jakmile pochopíte konvence pro vyjádření okruhu.
@@ -37,7 +37,7 @@ Například symbol
 
 <!--- ![](.\media\2.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Symbol ![pro operaci Hadamard fungující na qubit](~/media/concepts_2.png) registraci typu Single-
+Symbol ![pro operaci Hadamard fungující na qubit](~/media/2.svg) registraci typu Single-
 
 je [Hadamard](xref:microsoft.quantum.intrinsic.h) operace fungující v registru s jedním qubit.
 
@@ -47,7 +47,7 @@ Jinými slovy, pokud se dráty naformátují jako držící stav, vodiče přin�
 
 <!--- ![](.\media\3.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![diagram u bran na základě počtu procesorů, které se používají zleva doprava](~/media/concepts_3.png)
+![diagram u bran na základě počtu procesorů, které se používají zleva doprava](~/media/3.svg)
 
 je jednotná matice $CBA $.
 Násobení matice dodržuje opačnou konvenci: nejprve se použije matice nejvyšší výše. V diagramech okruhu ve službě pro vytváření koncových procesorů se ale jako první používá brána vlevo.
@@ -65,7 +65,7 @@ Jako objasnění příkladu můžeme definovat qubit jednotkovou $B operaci $ (H
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Diagram ![ového okruhu pro qubit jednotkové operace](~/media/concepts_4.png)
+Diagram ![ového okruhu pro qubit jednotkové operace](~/media/4.svg)
 
 V závislosti na kontextu, ve kterém se okruh používá, můžeme také zobrazit $B $ jako akce v jednom qubit registru, nikoli 2 1-qubit Registry. Nejužitečnější vlastností takových diagramů s abstraktním okruhem je pravděpodobně to, že umožňují složitosti složitých algoritmů na vysoké úrovni, aniž by bylo nutné je kompilovat na základní brány.
 To znamená, že můžete získat Intuition o toku dat pro velký algoritmus, aniž byste museli porozumět všem podrobnostem o tom, jak jednotlivé podrutiny v rámci algoritmu fungují.
@@ -78,14 +78,14 @@ Obecně popisujeme tyto řízené operace v diagramech okruhů jako
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Diagram ![ového okruhu jednotlivě kontrolované brány](~/media/concepts_5.png)
+Diagram ![ového okruhu jednotlivě kontrolované brány](~/media/5.svg)
 
 Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když qubit ovládacího prvku převezme hodnotu $1 $.
 Pro zvláštní případy, kdy $G = X $ a $G = Z $ zavádíme následující zápis, který popíše řízenou verzi bran (Všimněte si, že brána řízená-X je rozhraní [$CNOT $](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Diagram ![ového okruhu pro speciální případy řízených bran](~/media/concepts_6.png)
+Diagram ![ového okruhu pro speciální případy řízených bran](~/media/6.svg)
 
 Q # poskytuje metody pro automatické generování řízené verze operace, která bude ukládat programátora z nutnosti kódování těchto operací. Příklad najdete tady:
 
@@ -104,7 +104,7 @@ Konkrétně takový okruh vypadá takto:
 
 <!--- ![](.\media\7.svg) ---->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![symbol reprezentující operaci měření](~/media/concepts_7.png)
+![symbol reprezentující operaci měření](~/media/7.svg)
 
 Q # implementuje pro tento účel [operátor míry](xref:microsoft.quantum.intrinsic.measure) .
 Další informace najdete v [části o měřeních](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
@@ -113,7 +113,7 @@ Podobně, předaný okruh
 
 <!--- ![](.\media\8.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-Diagram ![ho okruhu reprezentující kontrolované operace](~/media/concepts_8.png)
+Diagram ![ho okruhu reprezentující kontrolované operace](~/media/8.svg)
 
 poskytuje klasický monitorovanou bránu, kde $G $ se aplikuje v případě, že je pro klasický řídicí bit nastavená hodnota $1 $.
 
@@ -125,4 +125,4 @@ To je nezbytné, aby protokol fungoval v souladu s zákony na mechanismy plněn�
 Okruh pro stavovou dopravu je uveden níže. Poskytujeme také verzi okruhu s poznámkou, která ukazuje, jak číst okruh.
 
 <!--- ![](.\media\tp2.svg){ width=50% } --->
-![okruhu pro vystavování](~/media/concepts_tp2.png)
+![okruhu pro vystavování](~/media/tp2.svg)

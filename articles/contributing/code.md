@@ -6,27 +6,27 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: 1882e640dacf3987745ed225fef18636726f70a8
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: edc52dc4434e91258bece28812fd76b66329c6f9
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907473"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022458"
 ---
-# <a name="contributing-code"></a>Přispívání do kódu #
+# <a name="contributing-code"></a>Přispívání do kódu
 
 Kromě vytváření sestav a vylepšení dokumentace může být přispívat kód do vývojové sady pro plnění kódu velmi přímým způsobem, jak pomáhat vašim partnerům v komunitě programování.
 Díky přispívání kódu vám může pomoct opravit problémy, poskytnout nové příklady, usnadnit používání stávajících knihoven nebo dokonce přidat zcela nové funkce.
 
 V této příručce podíváme se na to, co vyhledáme, když zkontrolujeme žádosti o přijetí změn, abychom vám pomohli přispět k vašemu příspěvku.
 
-## <a name="what-we-look-for"></a>Co podíváme na ##
+## <a name="what-we-look-for"></a>Co podíváme na
 
 Ideální příspěvek v kódu staví na stávající práci v úložišti pro vývojová prostředí pro řešení problémů, rozbalí existující funkce nebo přidá nové funkce, které spadají do oboru úložiště.
 Když přijmeme příspěvek kódu, bude se jednat o součást samotného vývojového prostředí, takže nové funkce budou zveřejněny, udržovány a vyvíjeny stejným způsobem jako zbytek vývojové sady pro plnění.
 Proto je užitečné, pokud je funkce přidaná v příspěvku dobře testována a je dokumentována.
 
-### <a name="unit-tests"></a>Testy jednotek ###
+### <a name="unit-tests"></a>Testy jednotek
 
 Funkce Q #, operace a uživatelsky definované typy, které vytvářejí knihovny, jako je například Canon, se automaticky testují jako součást vývoje v úložišti [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Když se otevře nová žádost o přijetí změn, například naše konfigurace [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) ověří, že změny v žádosti o přijetí změn neruší žádné stávající funkce, na kterých je komunita programování.
@@ -56,7 +56,7 @@ function PairTest () : Unit {
 Složitější podmínky lze kontrolovat pomocí postupů v [části testování](xref:microsoft.quantum.libraries.diagnostics) Průvodce standardními knihovnami.
 Například následující test kontroluje, že `H(q); X(q); H(q);` jako volaný <xref:microsoft.quantum.canon.applywith> funguje stejně jako `Z(q)`.
 
-```qsharp
+```Q#
 @Test("QuantumSimulator")
 operation TestApplyWith() : Unit {
     let actual = ApplyWith(H, X, _);
@@ -79,7 +79,8 @@ V místním prostředí lze testy jednotek spustit pomocí Průzkumníka testů 
 
 ### Citations and References ### -->
 
-## <a name="when-well-reject-a-pull-request"></a>Po odmítnutí žádosti o získání dat odmítneme ##
+
+## <a name="when-well-reject-a-pull-request"></a>Po odmítnutí žádosti o získání dat odmítneme
 
 V některých případech odmítneme žádost o získání příspěvku.
 Pokud k tomu dojde, neznamená to, že je to špatné, protože existuje několik důvodů, proč nemusí být možné přijmout konkrétní příspěvek.
@@ -98,10 +99,15 @@ Nakonec nemůžeme přijmout příspěvky, které způsobují poškození komuni
 Chceme zajistit, aby příspěvky poskytovaly celou komunitu pro výpočetní výkon, jak jsou v aktuální milované rozmanitosti, a v budoucnu i v budoucnu.
 Oceňujeme vám vaši technickou podporu při realizaci tohoto cíle.
 
-## <a name="next-steps"></a>Další kroky ##
+## <a name="next-steps"></a>Další kroky
 
 Děkujeme, že se vám pomůže zajistit vývojovou sadu pro všechna ta, což je skvělý prostředek pro celou komunitu programování.
 Další informace najdete v následující příručce ke stylu Q #.
 
 > [!div class="nextstepaction"]
 > [Seznamte se s pokyny pro styl Q #](xref:microsoft.quantum.contributing.style)
+
+V závislosti na tom, jaký typ kódu přispíváte, může docházet k dalším akcím, které vám pomůžou zajistit, aby váš příspěvek byl co nejvíc pro komunitu co nejužitečnější.
+
+> [!div class="nextstepaction"]
+> [Další informace o přispívání ukázek](xref:microsoft.quantum.contributing.samples)
