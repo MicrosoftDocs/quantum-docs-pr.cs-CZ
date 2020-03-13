@@ -6,5 +6,9 @@
   href: pull-requests.md
 - name: Přispívání do kódu
   href: code.md
+- name: Přispívání do ukázek
+  href: samples.md
 - name: Průvodce stylem
   href: style-guide.md
+- name: Principy návrhu rozhraní API
+  href: api-design-principles.md
