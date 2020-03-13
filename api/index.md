@@ -6,20 +6,19 @@ author: natke
 ms.author: nakersha
 ms.date: 09/04/2019
 ms.topic: landing-page
-ms.openlocfilehash: 25a53e1cb8577761ef89cdcf2cfcddc509093f86
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 5975b0caf0fc73ad18fbd8a1e7c82a2333161da2
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73056966"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022518"
 ---
-# <a name="q-standard-libraries"></a>Standardní knihovny jazyka Q# #
+# <a name="q-api-reference"></a>Referenční materiály k rozhraní API pro Q# #
 
-Jazyk Q# je podporován mnoha různými užitečnými operacemi, funkcemi a uživatelem definovanými typy, které tvoří *standardní knihovnu* jazyka Q#.
-Standardní knihovna jazyka Q# je rozdělená na dvě hlavní části:
+Referenční materiály k rozhraní API zahrnují standardní knihovnu Q# a tři další knihovny vytvořené na jejím základě – knihovny pro chemii, numerické výpočty a strojové učení. Pro Q# jsou k dispozici také knihovny .NET a Pythonu.
 
-- **Předehra:** Operace a funkce definované jako součást cílového počítače a kompilátoru, typicky v klasickém nativním kódu .NET.
-  Obecně platí, že různé cílové počítače můžou mít různé implementace předehry podle používaného systému.
-- **Zásady:** Operace a funkce definované v jazyku Q# a založené na logice definované v předehře.
-  Implementace zásad je nezávislá na cílových počítačích.
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+- [Knihovny Q#](xref:microsoft.quantum.qsharplibintro)
+- [Knihovny .NET](xref:microsoft.quantum.dotnetlibsintro)
+- [Knihovny Pythonu](https://docs.microsoft.com/python/qsharp)
+
+Další informace o knihovnách Q# najdete tady: <xref:microsoft.quantum.libraries>.
