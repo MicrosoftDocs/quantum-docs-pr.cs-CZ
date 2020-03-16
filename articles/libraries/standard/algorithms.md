@@ -6,12 +6,12 @@ ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: aaa9ddf47e5ea35e7e57b9828db082889d0e6adf
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 8b8a9019e8bc419f42b0c6f7558354d19a157917
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907235"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402846"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
@@ -77,9 +77,9 @@ $ $ Pokud definujeme $ $ \ket{\phi\_k (a)} = \frac{1}{\sqrt{2}} \left (\ket{0} +
 $ $ Cesta k provedení operace přidávání se pak po zjištění, že součet vstupních hodnot může zapsat jako $ $ \ket{a + b} = \operatorname{QFT} ^{-1}\ket{\phi\_1 (a + b)} \otimes \cdots \otimes \ket{\phi\_n (a + b)}.
 $ $ Celá čísla $b $ a $a $ je pak možné přidat při řízeném otočení fáze na každé qubits v rozloženém formátu pomocí ovládacích prvků $b $ as.
 
-Toto rozšíření může být dále zjednodušené. zaznamená si, že pro libovolné celé číslo $j $ a reálné číslo $x $, $e ^ {i2\pi (x + j)} = e ^ {i2\pi x} $.  Důvodem je to, že Pokud otočíte v kruhu $360 ^ {\circ} $ Degrees ($ 2 \ PI $ radiánů), budete mít přesně na začátku místo, kde jste začali.  Jedinou důležitou součástí $x $ for $e ^ {i2\pi x} $ je proto desetinná část $x $.  Konkrétně, pokud máme binární rozšíření formuláře $x = y +0. x\_0x\_2 \ ldots x\_n $ then $e ^ {i2\pi x} = e ^ {i2\pi (0. x\_0x\_2 \ ldots x\_{n-1})} $, tedy $ $ \ket{\phi\_k (a + b)} = \frac{1}{\sqrt{2}} \left (\ket{0} + e ^ {i2\pi [a/2 ^ k +0. b\_k\ldots b\_1]} \ket{1} \right). $ $ to znamená, že pokud provedeme další zvýšením hodnoty tensor faktory v rozšíření Fourierova transformace $ \ket{a} $, přičemž počet otočení se zmenší, protože se $k $ zmenší.  Tím se podstatně sníží počet bran, které jsou potřeba při přidávání.  Poznamenejte si kroky Fourierova transformace, fáze sčítání a invertované funkce Fourierova transformace, které tvoří Draper jako $ \operatorname{QFT} ^{-1} \left (\phi\\\!\operatorname{ADD}\right) \operatorname{QFT} $. Okruh nároků, který používá toto zjednodušení k implementaci celého procesu, je možné zobrazit níže.
+Toto rozšíření může být dále zjednodušené. zaznamená si, že pro libovolné celé číslo $j $ a reálné číslo $x $, $e ^ {i2\pi (x + j)} = e ^ {i2\pi x} $.  Důvodem je to, že Pokud otočíte v kruhu $360 ^ {\circ} $ Degrees ($ 2 \ PI $ radiánů), budete mít přesně na začátku místo, kde jste začali.  Jedinou důležitou součástí $x $ for $e ^ {i2\pi x} $ je proto desetinná část $x $.  Konkrétně, pokud máme binární rozšíření formuláře $x = y +0. x\_0x\_2 \ ldots x\_n $ then $e ^ {i2\pi x} = e ^ {i2\pi (0. x\_0x\_2 \ ldots x\_{n-1})} $ a proto $ $ \ket{\phi\_k (a + b)} = \frac{1}{\sqrt{2}} \left (\ket{0} + e ^ {i2\pi [a/2 ^ k +0. b\_k\ldots b\_1]} \ket{1} \right). $ $ to znamená, že pokud provedeme násobení každého tensor faktoru v rozšíření Fourierova transformace $ \ket{a} $, pak počet otočení se zmenší, protože $k $ klesá.  Tím se podstatně sníží počet bran, které jsou potřeba při přidávání.  Poznamenejte si kroky Fourierova transformace, fáze sčítání a invertované funkce Fourierova transformace, které tvoří Draper jako $ \operatorname{QFT} ^{-1} \left (\phi\\\!\operatorname{ADD}\right) \operatorname{QFT} $. Okruh nároků, který používá toto zjednodušení k implementaci celého procesu, je možné zobrazit níže.
 
-![Zobrazení Draper jako diagram obvodu](~/media/draper.png)
+![Zobrazení Draper jako diagram obvodu](~/media/draper.svg)
 
 Každá řízená $eá brána ^ {I2 \ pi/k} $ v okruhu odkazuje na bránu řízených fází.  Taková omezení mají vlastnost, která se nachází na páru qubits, na které jednají, $ \ket{00}\mapsto \ket{00}$, ale $ \ket{11}\mapsto e ^ {I2 \ pi/k} \ KET{11}$.  Tento okruh vám umožní doplněním bez dalších qubits kromě těch, které jsou potřeba k uložení vstupů a výstupů.
 
@@ -92,7 +92,7 @@ $$
 
 K přidání $a $ a $b $ ve fázi Beauregard přidáváte pomocí přidávání Draper, nebo speciálně \!\phi\\\operatorname{ADD} $.  Pak používá stejnou operaci k určení, zda $a + b < N $ pomocí odečítání $N $ a testování, pokud $a + b-N < 0 $.  Okruh tyto informace uchovává v doplňkovém qubit a potom přidá $N $ back-Register, pokud $a + b < N $.  Pak ukončí nevýpočetní Tento doplňkový bit (Tento krok je nutný, aby bylo zajištěno, že ancilla lze po volání přidávání zrušit přidělení).  Okruh pro přidání Beauregard je uveden níže.
 
-![Zobrazení Beauregard jako diagram obvodu](~/media/beau.png)
+![Zobrazení Beauregard jako diagram obvodu](~/media/beau.svg)
 
 Tady je brána $ \phi\\\!\operatorname{ADD} $ má stejný tvar jako $ \phi\\\!\operatorname{ADD} $ s tím rozdílem, že v tomto kontextu je vstup klasický, ale nejedná se o něj.  To umožňuje, aby řízené fáze v $ \phi\\\!\operatorname{ADD} $ nahradily fázemi, které se pak dají kompilovat do menšího počtu operací, aby se snížil počet qubits a počet bran potřebných pro daný modul.
 
@@ -111,7 +111,7 @@ Nefunguje jinak, účinek použití $V $ je přesně stejný jako při použití
 Proto se pro zbytek této diskuze podíváme na fázi odhadu v souvislosti s $R _1 (\phi) $, kterou implementujeme pomocí *Kickback fáze*s názvem.
 
 Vzhledem k tomu, že registr řízení a cíle zůstane untangled po tomto procesu, můžeme použít $ \ket{\phi} $ jako cíl kontrolované aplikace $U ^ $2 a připravit druhý qubit ovládacího prvku ve stavu $R _1 (2 \phi) \ket{+} $.
-V tomto případě můžeme získat registraci formuláře \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \phi) \ket{+} \\\\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket{0} + \exp (i 2 ^ {j} \phi) \ket{1}\right) \\\\ & \propto \ sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align}, kde $n $ je počet bitů s přesností, které vyžadujeme. a tam, kde jsme použili ${} \propto {}$ k označení toho, že jsme potlačili faktor normalizace $ 1/\sqrt{2 ^ n} $.
+V tomto případě můžeme získat registraci formuláře \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \phi) \ket{+} \\\\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket{0} + \exp (i 2 ^ {j} \phi) \ket{1}\right) \\\\ & \propto \ sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align}, kde $n $ je počet bitů s přesností, které vyžadujeme. a tam, kde jsme použili ${} \propto {}$ k označení toho, že jsme potlačili faktor normalizace $1/\sqrt {2 ^ n} $.
 
 Pokud předpokládáme, že $ \phi = 2 \pi p/2 ^ k $ pro celé číslo $p $, rozpoznáme to jako $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, kde $p _J $ je $j ^ {\textrm{th}} $ bit of $2 \pi \phi $.
 Když použijete sousedící transformaci Fourierova transformace, získáme proto binární reprezentace fáze kódované jako stav pro stav.
