@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.multiple-qubits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 2fa227c823cd87df9c799c043c699e4ce818b8e3
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 239073b7e7edafc49bc65cb60c9f45cf0af83dbe
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907541"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320887"
 ---
 # <a name="multiple-qubits"></a>Několik Qubits
 
@@ -27,7 +27,7 @@ Tyto nástroje jsou nezbytně nutné pro pochopení sady bran, které se běžn�
 
 ## <a name="representing-two-qubits"></a>Reprezentace dvou Qubits
 Hlavním rozdílem mezi jedním a dvěma qubit stavy je, že qubit stavy jsou dvojrozměrné místo dvojrozměrného rozměru.
-Důvodem je to, že výpočetního základu pro qubit stavy je tvořen tensor produkty jednoho qubit států.  Například máme \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{bmatrix}.\\
+Důvodem je to, že výpočetního základu pro qubit stavy je tvořen tensor produkty jednoho qubit států.  Například máme \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix} ,\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0\\\\ 1 \end{bmatrix}.
 \end{align}
 
 Pomocí této konstrukce je snadné zjistit, že obecněji stav $n $ qubits je reprezentovaný vektorem jednotek Dimension $2 ^ n $.  Vektor
@@ -59,13 +59,16 @@ $$
 
 Je také možné změřit pouze jeden qubit stát qubit. V případech, kdy měříte pouze jeden z qubits, dopad měření se mírně liší, protože celý stav není sbalen do výpočetního stavu, ale je sbalený pouze do jednoho dílčího systému.  Jinými slovy, v takovém případě měření pouze jednoho qubit sbalí pouze jeden z podsystémů, ale ne všechny.  
 
-Pokud to chcete vidět, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí Hadamard transformaci $H $ na dvou qubits zpočátku nastavené na stav "0": $ $ H ^ {\otimes 2} \left (\begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 &-1 & 1 &-1 \\\\ 1 & 1 &-1 &-1 \\\\ 1 &- 1 &-1 & 1 \end{bmatrix}\begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0 \ konec {bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1 \ end {bmatrix} \mapsto \begin{Cases}\Text{Outcome} = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \Text{Outcome} = 1 & \frac{1}{\sqrt{2}} \begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\ \end{Cases}.
+Pokud to chcete vidět, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí Hadamard transformaci $H $ na dvou qubits zpočátku nastavené na stav "0": $ $ H ^ {\otimes 2} \left (\begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 &-1 & 1 &-1 \\\\ 1 & 1 &-1 &-1 \\\\ 1 &-1 &-1 & 1 \ konec {bmatrix} \begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0 \ end {bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1 \ konec {bmatrix} \mapsto \begin{Cases}\Text{Outcome} = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \Text{Outcome} = 1 & \frac{1}{\sqrt{2}} \begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\ \end{Cases}.
 $ $ Oba výsledky mají 50% pravděpodobnost výskytu.  Výsledek, který je 50% pravděpodobnosti pro obojí, může být vytvořen z faktu, že počáteční vektor stavu po dobu, kdy je vyměněno za vyměněné $0 $ s $1 $ na první qubit, je invariantní.
 
-Matematické pravidlo pro měření prvního nebo druhého qubit je jednoduché.  Pokud zadáváme $e _k $ být $k ^ {\rm th} $ výpočetního vektoru a nechte $S sadu všech $e _k $, tak, aby qubit v dané hodnotě přenesl hodnotu $1 $ pro tuto hodnotu $k $.  Pokud vás například zajímá měření prvního qubitu, $S $ by se znamenalo $e _2 \ equiv $10 a $e _3 \ equiv $11.  Podobně, pokud vás zajímá druhý qubit $S $ by se $e _1 \ equiv $1 a $e _3 \equiv $11.  Pak pravděpodobnost měření zvolené qubity na $1 $ je pro stav Vector $ \psi $
+Matematické pravidlo pro měření prvního nebo druhého qubit je jednoduché.  Pokud zadáváme $e _k $ být $k ^ {\rm th} $ výpočetního vektoru a nechte $S sadu všech $e _k $, tak, aby qubit v dané hodnotě přenesl hodnotu $1 $ pro tuto hodnotu $k $.  Pokud vás například zajímá měření prvního qubitu, $S $ by se znamenalo $e _1 \ equiv $10 a $e _3 \ equiv $11.  Podobně, pokud vás zajímá druhý qubit $S $ by se $e _2 \ equiv $1 a $e _3 \equiv $11.  Pak pravděpodobnost měření zvolené qubity na $1 $ je pro stav Vector $ \psi $
 
 $ $ P (\Text{Outcome} = 1) = \ sum_ {e_k \Text{v sadě} S} \psi ^ \dagger e_k e_k ^ \dagger \psi.
 $$
+
+> [!NOTE]
+> V tomto dokumentu používáme formát Little-endian k označení výpočetního základu. Ve formátu Little endian se nejdříve najdou nejméně významné bity. Například číslo čtyři ve formátu Little endian je reprezentované řetězcem bitů 001.
 
 Vzhledem k tomu, že každé měření qubit může vracet pouze $0 $ nebo $1 $, pravděpodobnost měření $0 $ je jednoduše $1-P (\Text{Outcome} = 1) $.  Důvodem je, že pouze pro pravděpodobnost měření $1 $ podáváme jenom vzorec.
 
@@ -79,7 +82,7 @@ $$
 
 Pokud vezmeme $ \psi $ jako jednotnou výše uvedenou vektorovou a máte zájem o měření prvního qubitu. 
 
-$ $ P (\Text{Measurement prvního qubit} = 1) = (\psi ^ \dagger e_2) (e_2 ^ \dagger \psi) + (\psi ^ \dagger e_3) (e_3 ^ \dagger \psi) = | e_2 ^ \dagger \psi | ^ 2 + | e_3 ^ \dagger \psi | ^ 2.
+$ $ P (\Text{Measurement prvního qubit} = 1) = (\psi ^ \dagger e_1) (e_1 ^ \dagger \psi) + (\psi ^ \dagger e_3) (e_3 ^ \dagger \psi) = | e_1 ^ \dagger \psi | ^ 2 + | e_3 ^ \dagger \psi | ^ 2.
 $$
 
 Všimněte si, že toto je jenom součet dvou pravděpodobností, které by se měly očekávat při měření výsledků $10 $ a $11 $, qubits se měření.
@@ -90,12 +93,13 @@ $$
 
 to přesně odpovídá tomu, co naše Intuition oznamuje, že by měla být pravděpodobnost.  Podobně lze stav zapsat jako
 
-$ $ \frac{\frac{e_2}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1 \ konec {bmatrix} $ $
+$ $ \frac{\frac{e_1}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1 \ konec {bmatrix} $ $
 
 znovu v souladu s našimi Intuition.
 
 ## <a name="two-qubit-operations"></a>Operace se dvěma qubit
-Stejně jako v případě qubit jsou jakékoli jednotkové transformace platnou operací na qubits. Obecně platí, že jednotná transformace v $n $ qubits je matice $U $ o velikosti $2 ^ n \times 2 ^ n $ (takže funguje na vektorech velikosti $2 ^ n $), jako je $U ^{-1} = U ^ \dagger $. Například brána CNOT (řízená-NOT) je běžně používaná qubit brána a je reprezentována následující jednotkovou maticí:
+Stejně jako v případě qubit jsou jakékoli jednotkové transformace platnou operací na qubits. Obecně platí, že jednotná transformace v $n $ qubits je matice $U $ o velikosti $2 ^ n \times 2 ^ n $ (takže funguje na vektorech velikosti $2 ^ n $), jako je $U ^{-1} = U ^ \dagger $.
+Například brána CNOT (řízená-NOT) je běžně používaná qubit brána a je reprezentována následující jednotkovou maticí:
 
 $ $ \operatorname{CNOT} = \begin{bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \ 1 \\\\ 0 \ 0 \ 1 \ 0 \end{bmatrix} $ $
 

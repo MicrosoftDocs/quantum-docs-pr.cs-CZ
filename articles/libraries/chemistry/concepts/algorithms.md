@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: e3ce76f5ddcca497adb519eece959c9dd5dec92f
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 5dad4e4a77eea99e72eb2efac52eec61ebbdb21c
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904634"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320717"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulace Hamiltonian Dynamics
 
@@ -28,14 +28,14 @@ Všimněte si, že pokud $e ^ {-i H} $ byly normální exponenciální, chyba v 
 K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění (*tj.* $H _J H_k \Ne H_k H_j $ všeobecně).
 
 Pokud je $t $ velké, Trotter vzorce Suzuki se dají použít k tomu, aby se tento dynamika přesně simulovaly tím, že se rozbalí do sekvence krátkého časového intervalu.
-Nechť $r $ je počet kroků provedených v čase vývoje.
-Potom máme $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon > 0 $.
+Nechte $r $ počet kroků provedených v čase vývoje, takže pokaždé, když se krok spustí pro čas $t/r $. Potom máme $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon > 0 $.
 
 Přesnější sblížení lze sestavit pomocí sekvence exponenciálních exponenciálních operátorů, aby se chybové výrazy zrušily.
-Nejjednodušším takový vzorec, symetrický vzorec Trotter nebo rozdělení Strang, má formu $ $ U_1 (t) = \ prod_ {j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ může být menší než $ \epsilon $ pro jakékoli $ \epsilon > 0 $ tak, že vyberete $r $ pro škálování jako $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+Nejjednodušší vzorec, druhý objednávka vzorec Trotter-Suzuki, má formu $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $ chyba, kterou je možné udělat méně než $ \epsilon $ pro jakékoli $ \epsilon > 0 $ tak, že vyberete $r $ pro škálování jako $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
-I vyšší pořadí vzorců Trotter lze vytvořit na základě $U _1 $.
-Nejjednodušší je následující vzorec čtvrté objednávky, původně představeno pomocí Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5t ^ 5), $ $ kde $s _1 = (4-4 ^ {1/3}) ^{-1}$.
+Dokonce i vyšší pořadí vzorců, konkrétně ($ 2k $ > $k), je možné vytvořit rekurzivní: $ $ U_ {2k} (t) = [U_ {2k-2} (s_k\~ t)] ^ 2 U_ {2k-2} ([1-4s_k] t) [U_ {2k-2} (s_k\~ t)] ^ 2 = e ^ {-iHt} + O ((m t) ^ {2k + 1}/r ^ {2k}), $ $ WHERE $s _k = (4-4 ^ {1/(2k-1)}) ^{-1}$.
+
+Nejjednodušší je následující čtvrtý příkaz ($k = $2) vzorec, který původně představil Suzuki: $ $ U_4 (t) = [U_2 (s_2\~ t)] ^ 2 U_2 ([1-4s_2] t) [U_2 (s_2\~ t)] ^ 2 = e ^ {-iHt} + O (m ^ 5t ^ 5/r ^ 4), $ $ WHERE $s _2 = (4-4 ^ {1/3}) ^{-1}$.
 Obecně platí, že je možné podobně vytvořit libovolně vyšší pořadí vzorců; Nicméně náklady vyplývající z použití složitějších integrátorů často převažují nad rámec čtvrtého řádu pro většinu praktických problémů.
 
 Aby výše uvedené strategie fungovaly, potřebujeme metodu pro simulaci třídy typu "$e ^ {-iH_j t} $".
