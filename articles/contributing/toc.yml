@@ -1,6 +1,6 @@
 - name: Zasílání zpráv o chybách
   href: reporting-bugs.md
-- name: Přispívání do dokumentace
+- name: Vylepšování dokumentace
   href: docs.md
 - name: Otevírání žádostí o přijetí změn
   href: pull-requests.md
