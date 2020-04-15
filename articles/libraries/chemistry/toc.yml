@@ -5,5 +5,5 @@
 - name: Vyvolání chemické knihovny
   topicHref: samples/index.md
   href: samples/toc.yml
-- name: Schema
+- name: Schéma
   href: schema/toc.yml
