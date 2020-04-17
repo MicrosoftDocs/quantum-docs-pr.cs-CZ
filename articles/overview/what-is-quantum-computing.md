@@ -7,10 +7,10 @@ ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.what
 ms.openlocfilehash: 668df50882272bfa56541f178e2f4d5fb35efcf5
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 04/16/2020
 ms.locfileid: "77906776"
 ---
 # <a name="what-is-quantum-computing"></a>Co jsou kvantové výpočty?
@@ -29,11 +29,11 @@ Kvantové výpočty se můžou jevit jako náročné, s těmi pravými prostřed
 
 ## <a name="the-qubit"></a>Qubit
 
-Kvantové výpočetní prostředí definuje výpočetní koncepce, které odrážejí kvantové chování.  Kvantové výpočty začínají u pojmu qubit.  V kvantových výpočtech představuje kvantový bit (**qubit**) jednotku kvantových informací podobnou klasickému bitu. Zatímco klasické bity obsahují jednu binární hodnotu (například 0 nebo 1), stav qubitu se může současně nacházet v **superpozici** hodnot 0 a 1.  
+Kvantové výpočetní prostředí definuje výpočetní koncepce, které odrážejí kvantové chování.  Kvantové výpočty začínají u pojmu qubit.  V kvantových výpočtech představuje kvantový bit (**qubit**) jednotku kvantových informací podobnou klasickému bitu. Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), qubit se může současně nacházet v **superpozici** stavů 0 a 1.  
 
 Změřením qubitu se jeho stav změní. V důsledku změření přejde qubit ze superpozice do jednoho z klasických stavů.  
 
-Několik qubitů může být také **provázáno**. Když změříme jeden provázaný qubit, upraví se tím naše znalost stavu ostatních qubitů.
+Několik qubitů může být také **provázáno**. Když změříme jeden provázaný qubit, změní se tím naše znalost stavu ostatních qubitů.
 
 ## <a name="quantum-algorithms"></a>Kvantové algoritmy
 
