@@ -3,7 +3,7 @@ uid: microsoft.quantum.extensions.math.mind
 name: MinD
 type: function
 namespace: Microsoft.Quantum.Extensions.Math
-summary: Připomínáme, že je zastaralá. Místo toho prosím použijte @"microsoft.quantum.math.mind".
+summary: Připomínáme, že je zastaralá. Místo toho @"microsoft.quantum.math.mind" ho použijte.
 syntax: 'function MinD (a : Double, b : Double) : Double'
 input:
   content: '(a : Double, b : Double)'
@@ -20,9 +20,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 6e73d7446cc2a38356d028600112b87c866d35d3
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: ccd3404bb3150e915f7081895937438779f68e6e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74865218"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686190"
