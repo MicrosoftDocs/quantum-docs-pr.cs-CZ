@@ -7,7 +7,7 @@ summary: Vrátí funkci, která mapuje Syndrome o chybách na odpovídající ch
 remarks: >-
   Díky iteraci všech chyb s váhou $1 $ získáme celkem $3 \ krát 5 = 15 $ možné netriviální Syndromes.
 
-  Společně s identitou je sestavena tabulka Error a odpovídající Syndrome. Pro kód 5 qubit, na který je tato tabulka dána: $X\_1: (0, 0, 0, 1); X\_2: (1, 0, 0, 0); X\_3: (1, 1, 0, 0); X\_4: (0, 1, 1, 0); X\_5: (0, 0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1, 0, 0, 1); Z\_5: (0, 1, 0, 0) $ s $Y _i $ získaný přidáním $X _i $ a $Z _i $ Syndromes. Všimněte si, že pořadí při obnovení tabulky je předané převedením bitvectors na celá čísla (s použitím Little Endian).
+  Společně s identitou je sestavena tabulka Error a odpovídající Syndrome. Pro kód 5 qubit, na který je tato tabulka dána:\_$X 1: (0, 0, 0, 1); X\_2: (1, 0, 0, 0); ×\_3: (1, 1, 0, 0); ×\_4: (0, 1, 1, 0); X\_5: (0, 0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1, 0, 0, 1); Z\_5: (0, 1, 0, 0) $ s $Y _i $ získá přidáním $X _i $ a $Z _i $ Syndromes. Všimněte si, že pořadí při obnovení tabulky je předané převedením bitvectors na celá čísla (s použitím Little Endian).
 syntax: 'function FiveQubitCodeRecoveryFn () : Microsoft.Quantum.ErrorCorrection.RecoveryFn'
 input:
   content: ()
@@ -15,14 +15,14 @@ input:
 output:
   content: Microsoft.Quantum.ErrorCorrection.RecoveryFn
   types:
-  - summary: Funkce typu `RecoveryFn`, která přijímá Syndrome měření `Result[]` a vrací operátory `Pauli[]`, které opraví zjištěnou chybu.
+  - summary: Funkce typu `RecoveryFn` , která přijímá Syndrome měření `Result[]` a vrací `Pauli[]` operátory, které opraví zjištěnou chybu.
     uid: microsoft.quantum.errorcorrection.recoveryfn
 seeAlso:
 - recoveryfn
 metadata:
-  ms.openlocfilehash: efeabbeb6595d1440882eef73f152610a3ac74c5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8de748ddaf446cfcf7b8694079bd84bfc171211c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211626"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684890"
