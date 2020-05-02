@@ -9,9 +9,9 @@ summary: >-
 
   Po předané operaci a vstupu k této operaci se operace aplikuje, jakmile bude poskytnut další vstup.
 
-  Konkrétně výraz `Delay(op, arg, _)` je operace, která `op` na `arg` při volání metody.
+  Konkrétně výraz `Delay(op, arg, _)` je operace, která se vztahuje `op` na `arg` při volání metody.
 
-  Výraz `Delay(op,arg,_)` umožňuje zpoždění aplikace `op`.
+  Výraz `Delay(op,arg,_)` umožňuje zpožděnou aplikaci `op`.
 syntax: "operation DelayCA (op : ('T => Unit is Ctl + Adj), arg : 'T, aux : Unit) : Unit"
 input:
   content: "(op : ('T => Unit is Ctl + Adj), arg : 'T, aux : Unit)"
@@ -53,9 +53,9 @@ seeAlso:
 - microsoft.quantum.canon.delay
 - microsoft.quantum.canon.delayed
 metadata:
-  ms.openlocfilehash: ec419d56854c8398502a29e2d178da5608c1c592
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 71dae781438d07344b3c11da14e8eb323cd2073c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219650"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675683"

@@ -1,24 +1,24 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.amplitudeamplification
 name: Microsoft.Quantum.AmplitudeAmplification
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro provádění zesílení amplitud.\n\n # <a name=\"description\"></a>Popis\n Zesílení zesílení oblivious s částečnou odrazací je nejobecnější forma zesílení amplitud, které jsou zde implementovány.\n\n Tato funkce se volá prostřednictvím operace AmpAmpObliviousByReflectionPhases.\n\n Má dva Registry: `ancillaRegister` a `systemRegister`.\n\n To přijímá dva Oracle pro tyto odrazy typu `ReflectionOracle`, které fungují pouze v registru `ancillaRegister`.\n\n To přijímá speciální rozhraní Oracle pro oblivious amplitudy amplitud typu `ObliviousOracle` které společně v obou registrech fungují.\n\n U vstupního stavu na `ancillaRegister` se předpokládá, že se jedná o jedinečný $-$1 eigenstate prvního operátoru reflexe $I-2 \\ KET {s} \\ Bra {s} $.\n\n Odrazy týkající se cílového stavu se často implementují tím, že předpokládají přístup k Oracle, který tento stav připravuje z výpočetního základu $ \\ket{0\\cdots 0} $.\n\n Naše konvence pro tyto Oracle vyžaduje dva Registry: jeden qubit `flagQubit` registraci a registr pro všechno ostatní v registru ancillaRegister.\n\n Oracle typu `StateOracle` pracuje společně na obou registrech k vytvoření cílového stavu označeného $ \\ket{1}$ v registru `flagQubit` s určitou skutečnou amplitudou.\n\n Reflexe `ReflectionOracle` o stavu tohoto příznaku je vygenerována operací `TargetStateReflectionOracle`.\n\n Reflexe `ReflectionOracle` o vstupním stavu do `ancillaRegister` je vygenerována obráceným StateOracle a pak odráží přibližně $ \\ket{0\\cdots 0} $ s ReflectionStart ().\n\n Typ Oracle typu `DeterministicStateOracle` pracuje na `qubitState` registry a vytvoří cílový stav přesně bez příznaku.\n\n `AmpAmpObliviousByOraclePhases` je verze zesílení amplitud oblivious, která přijímá `StateOracle` Oracle a `ObliviousOracle` místo odrazů.\n\n Všimněte si, že zesílení amplitud je zvláštní případ zesílení amplitud oblivious, kde `ObliviousOracle` je operátorem identity a neexistuje qubits systému, tj. `systemRegister` je prázdný.\n\n Tato funkce se volá prostřednictvím `AmpAmByReflectionPhases` operace a `AmpAmpByOraclePhases`.\n\n Fáze pro částečné odrazy ve standardním případu hledání Grover jsou poskytovány funkcí AmpAmpPhasesStandard.\n\n Například máme následující závislosti: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro provádění zesílení amplitud.\n\n # <a name=\"description\"></a>Popis\n Zesílení zesílení oblivious s částečnou odrazací je nejobecnější forma zesílení amplitud, které jsou zde implementovány.\n\n Tato funkce se volá prostřednictvím operace AmpAmpObliviousByReflectionPhases.\n\n Má dva Registry: `ancillaRegister` a. `systemRegister`\n\n To přijímá dva Oracle pro tyto odrazy typu `ReflectionOracle` , které se `ancillaRegister` chovají pouze v registru.\n\n To přijímá speciální rozhraní Oracle pro oblivious amplitudy amplitud typu `ObliviousOracle` , které společně působí v obou registrech.\n\n Hodnota vstupního stavu na `ancillaRegister` je považována za jedinečnou $-$1 eigenstate prvního operátoru reflexe $I-2 \\ KET {s} \\ Bra {s} $.\n\n Odrazy týkající se cílového stavu se často implementují tím, že předpokládají přístup k Oracle, který tento stav připravuje z výpočetního základu $ \\ket{0\\cdots 0} $.\n\n Naše konvence pro tyto Oracle vyžaduje dva Registry: registr s jedním qubit `flagQubit` a registr pro všechno ostatní v registraci ancillaRegister.\n\n Oracle typu `StateOracle` funguje společně na obou registrech k vytvoření cílového stavu označeného $ \\ket{1}$ v `flagQubit` registru s určitou skutečnou amplitudou.\n\n Reflexe `ReflectionOracle` stavu tohoto příznaku je vygenerována `TargetStateReflectionOracle`operací.\n\n Odraz `ReflectionOracle` o stavu vstupu `ancillaRegister` se generuje obráceným StateOracle a pak se odráží přibližně $ \\ket{0\\cdots 0} $ s ReflectionStart ().\n\n Oracle typu `DeterministicStateOracle` funguje na `qubitState` registrech, aby bylo možné vytvořit cílový stav přesně bez příznaku.\n\n `AmpAmpObliviousByOraclePhases`je verze oblivious zesílení amplitud, která přijímá Oracle `StateOracle` a `ObliviousOracle` místo odrazů.\n\n Mějte na paměti, že zesílení amplitud je zvláštní případ oblivious zesílení amplitud, kde `ObliviousOracle` je operátorem identity, a neexistuje žádný systémový `systemRegister` qubits, tj. je prázdný.\n\n Tato funkce se volá prostřednictvím operace `AmpAmByReflectionPhases` a `AmpAmpByOraclePhases`.\n\n Fáze pro částečné odrazy ve standardním případu hledání Grover jsou poskytovány funkcí AmpAmpPhasesStandard.\n\n Například máme následující závislosti: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
 functions:
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByOracle se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByOracle se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoraclephases
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByOraclePhases se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByOraclePhases se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampbyreflectionphases
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByReflectionPhases se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpByReflectionPhases se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyoraclephases
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpObliviousByOraclePhases se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpObliviousByOraclePhases se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyreflectionphases
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpObliviousByReflectionPhases se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpObliviousByReflectionPhases se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampphasesfixedpoint
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpPhasesFixedPoint se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpPhasesFixedPoint se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampampphasesstandard
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpPhasesStandard se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpPhasesStandard se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.ampamprotationtoreflectionphases
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpRotationToReflectionPhases se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpRotationToReflectionPhases se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections
   summary: Amplituda amplitud na základě částečných odrazů
 - uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation
@@ -39,13 +39,13 @@ functions:
   summary: Vypočítá částečné odrazové fáze pro zesílení standardního amplitudy.
 - uid: microsoft.quantum.amplitudeamplification.targetstatereflectionoracle
   summary: >-
-    Vytvoří `ReflectionOracle` o cílovém stavu jednoznačně označené příznakem qubit.
+    `ReflectionOracle` Sestaví cílový stav jednoznačně označený příznakem qubit.
 
 
-    Cílový stav má jednu qubit sadu na 1 a všechny ostatní 0: $ \ket{1}_f $.
+    Cílový stav má jednu qubit sadu na 1 a všechny ostatní 0: $ \ket{1}_F $.
 operations:
 - uid: microsoft.quantum.amplitudeamplification.ampamprusbyoracle
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpRUSByOracle se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\".\nPoužijte prosím @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAmpAmpRUSByOracle se už nepoužívá. Místo toho @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\" ho použijte.\nPoužijte @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\"prosím."
 - uid: microsoft.quantum.amplitudeamplification.applyamplitudeamplification
   summary: U daného registru aplikuje zesílení amplitud pomocí dané sady fází a Oracle, aby odrážely počáteční a konečné stavy.
 - uid: microsoft.quantum.amplitudeamplification.applyfixedpointamplification
@@ -58,9 +58,9 @@ newtypes:
 - uid: microsoft.quantum.amplitudeamplification.rotationphases
   summary: Fáze pro sekvenci qubit otočení v zesílení amplitudy.
 metadata:
-  ms.openlocfilehash: 7b6aec2bd2300a84550f92740e24f33ce243ea7c
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 7f8b98826812e842a582d7940c5dc892a056e1fa
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870378"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675517"

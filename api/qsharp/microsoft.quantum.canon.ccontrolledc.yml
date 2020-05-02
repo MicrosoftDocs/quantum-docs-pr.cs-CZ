@@ -4,9 +4,9 @@ name: CControlledC
 type: function
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  V případě operace op vrátí novou operaci, která použije hodnotu op, pokud je klasický řídicí bit true. Pokud `false`, nic se nestane.
+  V případě operace op vrátí novou operaci, která použije hodnotu op, pokud je klasický řídicí bit true. Pokud `false`k tomu nedojde, nic se nestane.
 
-  Modifikátor `C` označuje, že je operace ovladatelné.
+  Modifikátor `C` označuje, že operace je ovladatelné.
 syntax: "function CControlledC (op : ('T => Unit is Ctl)) : ((Bool, 'T) => Unit is Ctl)"
 input:
   content: "(op : ('T => Unit is Ctl))"
@@ -47,9 +47,9 @@ typeParameters:
 seeAlso:
 - microsoft.quantum.canon.ccontrolled
 metadata:
-  ms.openlocfilehash: 73a953fd2f2380f808fd612e46084c443e6c87ee
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a136257958cff7a759cdd34f266db1909b646f23
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211779"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675888"
