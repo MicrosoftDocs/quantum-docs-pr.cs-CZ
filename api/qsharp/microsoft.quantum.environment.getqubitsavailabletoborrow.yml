@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Environment
 summary: >-
   Vrátí počet qubitsů, které jsou aktuálně k dispozici k vypůjčení.
 
-  To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits vrácené funkcí `GetQubitsAvailableToUse`.
+  To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits, který vrátil `GetQubitsAvailableToUse`.
 syntax: 'operation GetQubitsAvailableToBorrow () : Int'
 input:
   content: ()
@@ -15,17 +15,17 @@ output:
   content: Int
   types:
   - summary: >-
-      Počet qubits, které mohou být přiděleny v příkazu `borrowing`.
+      Počet qubits, které mohou být přiděleny v `borrowing` příkazu.
 
-      Pokud použitý cílový počítač tyto informace neposkytuje, vrátí se `-1`.
+      Pokud použitý cílový počítač tyto informace neposkytuje, vrátí `-1` se.
     isPrimitive: true
     uid: Int
 seeAlso:
 - getqubitsavailabletouse
 metadata:
-  ms.openlocfilehash: c0caf866ad9a8773aa11ee7c6951ca3acc60cbaa
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 99dd2afb66c334b112a2ee511b0437281da6b888
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73230479"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682414"

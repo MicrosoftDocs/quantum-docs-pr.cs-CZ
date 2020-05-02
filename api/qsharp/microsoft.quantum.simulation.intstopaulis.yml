@@ -9,21 +9,21 @@ input:
   content: '(ints : Int[])'
   types:
   - name: ints
-    summary: Pole celých čísel v rozsahu `0..3` má být převedeno na operátory Pauli.
+    summary: Pole celých čísel v rozsahu `0..3` , který má být převeden na Pauli operátory.
     isArray: true
     isPrimitive: true
     uid: Int
 output:
   content: Pauli[]
   types:
-  - summary: Pole `paulis` operátorů Pauli `Pauli[]` stejnou délku jako `ints` tak, aby `paulis[idxPauli]` byla rovna prvku `[PauliI, PauliX, PauliY, PauliZ]` daným `ints[idxPauli]`.
+  - summary: Pole `paulis` operátorů `Pauli[]` `ints` Pauli se stejnou délkou, která `paulis[idxPauli]` je rovna elementu z `[PauliI, PauliX, PauliY, PauliZ]` daného. `ints[idxPauli]`
     isArray: true
     isPrimitive: true
     uid: Pauli
 metadata:
-  ms.openlocfilehash: 407ad1481c220f390fffb5f1b59f0968d6d6570c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1159e3db02663b0588d12ea9d297e055be84ac4a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066978"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682620"

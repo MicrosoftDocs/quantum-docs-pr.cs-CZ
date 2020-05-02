@@ -7,14 +7,14 @@ summary: >-
   Vytvoří jednotkové kódování bloku pro Hamiltonian.
 
 
-  Hamiltonian $H = \sum_{j}\alpha_j P_j $ je popsána úhrnem podmínek Pauli $P _J $, každý s reálným koeficientem $ \alpha_j $.
-remarks: To se získá tím, že se připraví a odpravují stav $ \ sum_ {j} \ sqrt {\ alpha_j/\ Alpha} \ KET {j} $ a vytvoří se jednotková <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> a <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>s hodnotou násobení.
+  Hamiltonian $H = \ sum_ {j} \ alpha_j P_j $ je popsána na základě součtu Pauli podmínek $P _j $, každý s reálným koeficientem $ \ alpha_j $.
+remarks: To se získá tím, že se připraví a odpravují stav $ \ sum_ {j}, alpha_j/\Alpha}\ket{j} $ a vytvoří se <xref:microsoft.quantum.preparation.statepreparationpositivecoefficients> Jednotková <xref:microsoft.quantum.canon.multiplexoperationsfromgenerator>a jednotně řízená s vynásobením.
 syntax: 'function PauliBlockEncoding (generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem) : (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)'
 input:
   content: '(generatorSystem : Microsoft.Quantum.Simulation.GeneratorSystem)'
   types:
   - name: generatorSystem
-    summary: '`GeneratorSystem`, který popisuje $H $ jako součet podmínek Pauli'
+    summary: A `GeneratorSystem` který popisuje $H $ jako součet podmínek Pauli
     uid: microsoft.quantum.simulation.generatorsystem
 output:
   content: (Double, Microsoft.Quantum.Simulation.BlockEncodingReflection)
@@ -23,21 +23,21 @@ output:
       ## <a name="first-parameter"></a>První parametr
 
 
-      Jedna-norma koeficientů $ \Alpha = \sum_{j} | \alpha_j | $
+      Jedna-norma koeficientů $ \Alpha = \ sum_ {j} | \ alpha_j | $
 
 
       ## <a name="second-parameter"></a>Druhý parametr
 
 
-      `BlockEncodingReflection` Jednotková $U $ Hamiltonian $H $. Protože tato jednotná operace splňuje $U ^ 2 = I $, je také odraz.
+      `BlockEncodingReflection` Jednotková $U $ $H Hamiltonian $. Protože tato jednotná operace splňuje $U ^ 2 = I $, je také odraz.
     types:
     - isPrimitive: true
       uid: Double
     - uid: microsoft.quantum.simulation.blockencodingreflection
 metadata:
-  ms.openlocfilehash: 352ab71457601c38b22e93f706cb59f50bf24151
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 75b614fa23f2e00a3a960224d79905106fb06070
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216131"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682544"
