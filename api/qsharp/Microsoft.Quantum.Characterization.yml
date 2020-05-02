@@ -8,9 +8,9 @@ operations:
 - uid: microsoft.quantum.characterization.discretephaseestimationiteration
   summary: Provádí jednu iteraci iteračního (klasického) algoritmu fáze odhadu pomocí celočíselné mocniny jednotkové databáze Oracle.
 - uid: microsoft.quantum.characterization.estimatefrequency
-  summary: S ohledem na přípravu a měření vyhodnotí četnost, s jakou je měření úspěšná (vrátí `Zero`) provedením daného počtu testů.
+  summary: S ohledem na přípravu a měření odhadne četnost, s jakou měření probíhají (vrátí `Zero`), provedením daného počtu testů.
 - uid: microsoft.quantum.characterization.estimatefrequencya
-  summary: Vzhledem k přípravě, která je sousední a měření, odhadne četnost, s jakou je měření úspěšné (vrátí `Zero`), a to provedením daného počtu zkušebních hodnot.
+  summary: S ohledem na přípravu, která je sousední a měření, odhadne četnost, s jakou měření vychází (vrátí `Zero`) provedením daného počtu zkušebních hodnot.
 - uid: microsoft.quantum.characterization.estimateimagoverlapbetweenstates
   summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne imaginární část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
 - uid: microsoft.quantum.characterization.estimateoverlapbetweenstates
@@ -18,19 +18,19 @@ operations:
 - uid: microsoft.quantum.characterization.estimaterealoverlapbetweenstates
   summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne skutečnou část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
 - uid: microsoft.quantum.characterization.measureallz
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureAllZ se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.measurement.measureallz\".\nPoužijte prosím @\"microsoft.quantum.measurement.measureAllZ\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureAllZ se už nepoužívá. Místo toho @\"microsoft.quantum.measurement.measureallz\" ho použijte.\nPoužijte @\"microsoft.quantum.measurement.measureAllZ\"prosím."
 - uid: microsoft.quantum.characterization.measureidentity
   summary: Měří operátor identity v registru qubits.
 - uid: microsoft.quantum.characterization.quantumphaseestimation
-  summary: Provádí pro daný Oracle `U` a `targetState`algoritmus odhadu doby přírůstku při přečtení fáze do pokladny na základě služby big-endian.
+  summary: Provádí pro daný Oracle `U` algoritmus odhadu doby přírůstku `targetState`a přečtení fáze do pokladny na základě služby big-endian.
 - uid: microsoft.quantum.characterization.robustphaseestimation
-  summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané Oracle `U` a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
+  summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané `U` Oracle a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
 - uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
   summary: Provede qubit proces tomography měření v Pauli, a to s ohledem na konkrétní kanál zájmu.
 metadata:
-  ms.openlocfilehash: ff2bee3d5885c4b83a7ba17eeaf578c226dbbf20
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 2ae4ee28cf6e87a3fde1f8107194760c388b462c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870677"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673365"

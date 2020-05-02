@@ -36,30 +36,30 @@ functions:
   summary: Vrátí fázi komplexního čísla typu `ComplexPolar`.
 - uid: microsoft.quantum.math.bitsizei
   summary: >-
-    Pro nezáporné celé číslo `a`vrátí počet bitů požadovaných k reprezentaci `a`.
+    Pro nezáporné celé číslo `a`vrátí počet bitů, které musí představovat. `a`
 
 
     To znamená, že vrátí nejmenší $n $, který $a < 2 ^ n $.
 - uid: microsoft.quantum.math.bitsizel
   summary: >-
-    Pro nezáporné celé číslo `a`vrátí počet bitů požadovaných k reprezentaci `a`.
+    Pro nezáporné celé číslo `a`vrátí počet bitů, které musí představovat. `a`
 
 
     To znamená, že vrátí nejmenší $n $, který $a < 2 ^ n $.
 - uid: microsoft.quantum.math.ceiling
   summary: Vrátí nejmenší celé číslo větší nebo rovno zadanému číslu.
 - uid: microsoft.quantum.math.complexascomplexpolar
-  summary: Převede složitý počet typů `Complex` na komplexní číslo typu `ComplexPolar`.
+  summary: Převede komplexní číslo typu `Complex` na komplexní číslo typu. `ComplexPolar`
 - uid: microsoft.quantum.math.complexpolarascomplex
-  summary: Převede složitý počet typů `ComplexPolar` na komplexní číslo typu `Complex`.
+  summary: Převede komplexní číslo typu `ComplexPolar` na komplexní číslo typu. `Complex`
 - uid: microsoft.quantum.math.complexpolartocomplex
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nComplexPolarToComplex se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.complexpolarascomplex\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nComplexPolarToComplex se už nepoužívá. Místo toho @\"microsoft.quantum.math.complexpolarascomplex\" ho použijte."
 - uid: microsoft.quantum.math.complextocomplexpolar
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nComplexToComplexPolar se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.complexascomplexpolar\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nComplexToComplexPolar se už nepoužívá. Místo toho @\"microsoft.quantum.math.complexascomplexpolar\" ho použijte."
 - uid: microsoft.quantum.math.continuedfractionconvergenti
-  summary: Vyhledá pokračující zlomek Convergent, který je nejblíže `fraction` s jmenovatelem menším nebo rovnou `denominatorBound`
+  summary: Vyhledá pokračující zlomek Convergent nejbližší `fraction` k jmenovateli menší nebo rovno`denominatorBound`
 - uid: microsoft.quantum.math.continuedfractionconvergentl
-  summary: Vyhledá pokračující zlomek Convergent, který je nejblíže `fraction` s jmenovatelem menším nebo rovnou `denominatorBound`
+  summary: Vyhledá pokračující zlomek Convergent nejbližší `fraction` k jmenovateli menší nebo rovno`denominatorBound`
 - uid: microsoft.quantum.math.cos
   summary: Vrací kosinus určeného úhlu.
 - uid: microsoft.quantum.math.cosh
@@ -174,16 +174,16 @@ functions:
   summary: Vrátí součet dvou vstupů.
 - uid: microsoft.quantum.math.pnorm
   summary: >-
-    Vrátí `L(p)`ovou normu vektoru `Double`s.
+    Vrací `L(p)` normu vektoru `Double`s.
 
 
-    To znamená, že dané pole $x $ typu `Double[]`vrátí $p $-Norm $\|x\|\_p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
+    To znamená, že předané pole $x $ typu `Double[]`vrátí $p $-norm $\|x\|\_p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
 - uid: microsoft.quantum.math.pnormalized
   summary: >-
     Normalizuje vektor `Double`s v `L(p)` normě.
 
 
-    To znamená, že dané pole $x $ typu `Double[]`, vrátí pole, kde jsou všechny prvky děleny $p $-Norm $\|x\|_p $.
+    To znamená, že předané pole $x $ typu `Double[]`vrátí pole, kde jsou všechny prvky děleny $p $-norm $\|x\|_p $.
 - uid: microsoft.quantum.math.powc
   summary: Vrátí číslo umocněné na daný příkon.
 - uid: microsoft.quantum.math.powcp
@@ -230,7 +230,7 @@ functions:
   summary: Vypočítá integrální část čísla.
 newtypes:
 - uid: microsoft.quantum.math.bigfraction
-  summary: Představuje racionální číslo formuláře `p/q`. Celočíselná `p` je prvním prvkem řazené kolekce členů a `q` je druhým prvkem řazené kolekce členů.
+  summary: Představuje racionální číslo formuláře `p/q`. Celé `p` číslo je první prvek řazené kolekce členů `q` a je druhým prvkem řazené kolekce členů.
 - uid: microsoft.quantum.math.complex
   summary: >-
     Představuje komplexní číslo podle jeho reálné a imaginární části.
@@ -243,7 +243,7 @@ newtypes:
 
     Polární reprezentace komplexního čísla je $c = r e ^ {i t} $.
 - uid: microsoft.quantum.math.fraction
-  summary: Představuje racionální číslo formuláře `p/q`. Celočíselná `p` je prvním prvkem řazené kolekce členů a `q` je druhým prvkem řazené kolekce členů.
+  summary: Představuje racionální číslo formuláře `p/q`. Celé `p` číslo je první prvek řazené kolekce členů `q` a je druhým prvkem řazené kolekce členů.
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje klasické matematické funkce a datové typy."
 operations:
 - uid: microsoft.quantum.math.randomint
@@ -255,9 +255,9 @@ operations:
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Vrátí jednu z qubitch Pauliých operátorů s jednou náhodným rozsahem.
 metadata:
-  ms.openlocfilehash: 03a0eba2101d3a20b393b7f685ac463b1abcd727
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 2ad787a0d29e98e25c733d1fdcf0a79fcc8c2803
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905824"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673158"
