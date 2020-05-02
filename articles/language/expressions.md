@@ -6,38 +6,38 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: fbde873f220d737db17f889d00be33541e3eb59b
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 095be52af27f827f3e52d39a70702f50d6d59ee8
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907405"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82683923"
 ---
 # <a name="expressions"></a>Výrazy
 
 ## <a name="grouping"></a>Seskupování
 
 V případě libovolného výrazu je stejný výraz uzavřený v závorkách výraz stejného typu.
-`(7)` je například výraz `Int`, `([1,2,3])` je výraz typu `Int`s a `((1,2))` je výraz typu `(Int, Int)`.
+Například `(7)` `Int` výraz je výraz, `([1,2,3])` je výraz typu array `Int`s a `((1,2))` je výraz s typem. `(Int, Int)`
 
-Ekvivalenci mezi jednoduchými hodnotami a řazenými kolekcemi členů s jedním prvkem popsanými v [modelu typu](xref:microsoft.quantum.language.type-model#tuple-types) odebere nejednoznačnost mezi `(6)` jako skupinu a `(6)` jako řazenou kolekci členů s jedním prvkem.
+V případě rovnosti mezi jednoduchými hodnotami a řazenými kolekcemi členů s jedním prvkem popsanými v `(6)` [modelu typu](xref:microsoft.quantum.language.type-model#tuple-types) dojde k `(6)` odebrání nejednoznačnosti mezi jako skupina a jako řazená kolekce členů s jedním prvkem.
 
 ## <a name="symbols"></a>Symboly
 
-Název vázaného symbolu nebo přiřazený k hodnotě typu `'T` je výraz typu `'T`.
-Například pokud je symbol `count` svázán s celočíselnou hodnotou `5`, pak `count` je celočíselný výraz.
+Název vázaného symbolu nebo přiřazený k hodnotě typu `'T` je výraz typu. `'T`
+Pokud je například symbol `count` svázán s celočíselnou hodnotou `5`, pak `count` je celočíselný výraz.
 
 ## <a name="numeric-expressions"></a>Číselné výrazy
 
-Číselné výrazy jsou výrazy typu `Int`, `BigInt`nebo `Double`.
+Číselné výrazy jsou výrazy typu `Int`, `BigInt`nebo. `Double`
 To znamená, že jsou buď celá čísla, nebo čísla s plovoucí desetinnou čárkou.
 
-literály `Int` v Q # jsou identické s celočíselnými literály v C#, s tím rozdílem, že nejsou vyžadovány žádné koncové čárky "l" nebo "l" (nebo povoleny).
+`Int`literály v Q # jsou v jazyce C# identické s celočíselnými literály, s výjimkou, že není vyžadován koncový znak "l" nebo "L" (nebo je povolen).
 V uvedeném pořadí jsou podporována šestnáctková a binární celá čísla s předponou 0x a 0b.
 
-literály `BigInt` v Q # jsou identické s velkými celočíselnými řetězci v .NET s koncovým řetězcem "l" nebo "L".
+`BigInt`literály v Q # jsou identické s velkými celočíselnými řetězci v .NET s koncovým řetězcem "l" nebo "L".
 Předpona "0x" je podporována hexadecimálními velkými čísly.
-Následující jsou tedy všechna platná použití `BigInt` literály:
+Následující jsou tedy všechna platná použití `BigInt` literálů:
 
 ```qsharp
 let bigZero = 0L;
@@ -45,34 +45,34 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-literály `Double` v Q # jsou identické s dvojitými literály v C#, s tím rozdílem, že nejsou vyžadovány žádné koncové znaky "d" nebo "d" (nebo povoleny).
+`Double`literály v Q # jsou identické s dvojitými literály v jazyce C# s tím rozdílem, že není vyžadován koncový znak "d" nebo "D" (nebo povoleno).
 
-Vzhledem k výrazu pole libovolného typu elementu může být výraz `Int` vytvořen pomocí předdefinované funkce `Length` a výraz pole uzavřený v závorkách, `(` a `)`.
-Například pokud je `a` svázána s polem, `Length(a)` je celočíselný výraz.
-Je-li `b` pole celých čísel, `Int[][]`a `Length(b)` je počet dílčích polí v `b`a `Length(b[1])` je počet celých čísel ve druhém dílčím poli v `b`.
+Vzhledem k výrazu pole libovolného typu `Int` elementu může být výraz vytvořen pomocí `Length` předdefinované funkce s výrazem pole uzavřeným v závorkách `(` a. `)`
+Například pokud `a` je svázána s polem, pak `Length(a)` je celočíselný výraz.
+Pokud `b` je pole polí celých čísel, `Int[][]` `Length(b)` , pak je počet dílčích polí v `b`a `Length(b[1])` je počet celých čísel ve druhém dílčím poli v. `b`
 
-Pro vytvoření nového číselného výrazu lze použít binární operátory `+`, `-`, `*`a `/`, které jsou zadány dvěma číselnými výrazy stejného typu.
+Zadané dva číselné výrazy stejného typu, binární `+`operátory, `-` `*`, a `/` mohou být použity k vytvoření nového číselného výrazu.
 Typ nového výrazu bude stejný jako u typů výrazů prvků.
 
-Zadaným dvěma celočíselnými výrazy, binární operátor `^` (napájení) lze použít k vytvoření nového celočíselného výrazu.
-Podobně `^` lze použít se dvěma dvojitými výrazy k vytvoření nového dvojitého výrazu.
-Nakonec `^` možné použít s velkým celým číslem na levé straně a celé číslo na pravé straně k vytvoření nového výrazu Big Integer.
+Zadaným dvěma celočíselnými výrazy lze binární operátor `^` (napájení) použít k vytvoření nového celočíselného výrazu.
+Podobně `^` lze použít se dvěma dvojitými výrazy pro vytvoření nového dvojitého výrazu.
+Nakonec `^` lze použít s velkým celým číslem na levé straně a celým číslem na pravé straně k vytvoření nového výrazu Big Integer.
 V takovém případě se druhý parametr musí vejít do 32 bitů; v takovém případě se vyvolá Běhová chyba.
 
-Předané dva celočíselné nebo velké celočíselné výrazy mohou být tvořeny výrazem `%` (modulo), `&&&` (bitových a), `|||` (bitových nebo) nebo `^^^` (bitových operátorů XOR).
+Předané dva celočíselné nebo velké celočíselné výrazy mohou být vytvořeny pomocí `%` operátorů (modulo), `&&&` (bitové a), `|||` (bitových nebo) nebo `^^^` (bitových operátorů XOR).
 
-Pro vytvoření nového výrazu stejného typu, jako je výraz na levé straně, je možné použít buď celočíselný nebo velký výraz celého čísla na levé straně, a výraz typu Integer na pravé straně, operátor `<<<` (aritmetický posun doleva) nebo `>>>` (aritmetický posun).
+Pro vytvoření nového výrazu stejného typu, který je použit jako levý výraz, lze použít buď celočíselný nebo velký `<<<` celočíselný výraz na levé straně `>>>` , a výraz typu Integer na pravé straně, operátor (aritmetický levý SHIFT) nebo (aritmetický posun Shift).
 
 Druhý parametr (velikost posunu) pro operaci posunu musí být větší nebo roven nule. chování pro záporné hodnoty posunutí není definováno.
 Velikost SHIFT pro buď operaci posunutí musí být také do 32 bitů. v takovém případě se vyvolá Běhová chyba.
-Pokud číslo, které má být posunuto, je celé číslo, hodnota posunutí je interpretována `mod 64`; To znamená, že posun 1 a Shift 65 mají stejný účinek.
+Pokud číslo, které má být posunuto, je celé číslo, je interpretována `mod 64`Hodnota posunutí; To znamená, že posun 1 a Shift 65 mají stejný účinek.
 
 Pro celočíselné i velké celočíselné hodnoty jsou posunuty aritmetické operace.
 Posunutí záporné hodnoty doleva nebo doprava bude mít za následek záporné číslo.
 To znamená, že posun jednoho kroku doleva nebo doprava je přesně stejný jako násobení nebo dělení 2, v uvedeném pořadí.
 
-Celočíselné dělení a celočíselné zbytky se řídí stejným chováním jako C#záporná čísla.
-To znamená, že `a % b` vždycky budou stejné znaménko jako `a`a `b * (a / b) + a % b` se vždycky rovná `a`.
+Celočíselné dělení a celočíselné zbytky se řídí stejným chováním pro záporná čísla jako C#.
+To znamená, `a % b` že vždy bude mít stejné znaménko `a`jako a `b * (a / b) + a % b` bude vždy rovno `a`.
 Příklad:
 
  `A` | `B` | `A / B` | `A % B`
@@ -84,19 +84,19 @@ Příklad:
 
 Dělení velkých celých čísel a Modulus funguje stejným způsobem.
 
-V případě libovolného číselného výrazu může být nový výraz vytvořen pomocí operátoru `-` unární.
+V případě libovolného číselného výrazu může být výraz New vytvořen pomocí `-` unárního operátoru.
 Nový výraz bude stejného typu jako výraz prvku.
 
-S ohledem na libovolný celočíselný nebo velký celočíselný výraz může být nový výraz stejného typu vytvořen pomocí unárního operátoru `~~~` (bitový doplněk).
+S ohledem na `~~~` libovolný celočíselný nebo velký celočíselný výraz může být nový výraz stejného typu vytvořen pomocí unárního operátoru (bitového doplňku).
 
 ## <a name="boolean-expressions"></a>Výrazy logických hodnot
 
 Dvě `Bool` hodnoty literálu jsou `true` a `false`.
 
-Vzhledem k jakýmkoli dvěma výrazům stejného primitivního typu lze použít binární operátory `==` a `!=` k vytvoření výrazu `Bool`.
+Vzhledem k jakýmkoliv dvěma výrazům stejného primitivního typu lze `==` použít `!=` binární operátory a k vytvoření `Bool` výrazu.
 Výraz bude true, pokud jsou dva výrazy stejné, a false, pokud ne.
 
-Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty. Například použití operátoru "Unwrap" `!` (vysvětleno na [stránce modelu typu Q #](xref:microsoft.quantum.language.type-model#user-defined-types)),
+Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty. Například pomocí operátoru `!` "Unwrap" (popsaný na [stránce modelu typu Q #](xref:microsoft.quantum.language.type-model#user-defined-types)),
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -106,86 +106,86 @@ let z = x! == y!;             // This will compile and yield z = false.
 let t = x == y;               // This will cause a compiler error.
 ```
 
-Porovnání rovnosti pro hodnoty `Qubit` je rovnost identity; To znamená, zda dva výrazy identifikují stejný qubit.
+Porovnání rovnosti `Qubit` pro hodnoty je rovnost identity; To znamená, zda dva výrazy identifikují stejný qubit.
 Stav obou qubits se neshoduje, nepoužívá se, neměří ani nemění pomocí tohoto porovnání.
 
-Porovnání rovnosti pro hodnoty `Double` může být zavádějící z důvodu zaoblení efektů.
-`49.0 * (1.0/49.0) != 1.0`například.
+Porovnání rovnosti `Double` pro hodnoty může být zavádějící z důvodu zaoblení efektů.
+Například `49.0 * (1.0/49.0) != 1.0`.
 
-Vzhledem k tomu, že jsou zadány dva číselné výrazy, binární operátory `>`, `<`, `>=`a `<=` lze použít k vytvoření nového logického výrazu, který má hodnotu true, pokud je první výraz v tomto pořadí větší než, menší než, větší nebo roven nebo menší nebo roven druhému výrazu.
+Vzhledem k tomu, že jsou zadány dva `>`číselné `<`výrazy `>=`, binární `<=` operátory,, a lze použít k vytvoření nového logického výrazu, který je true, pokud je první výraz v tomto pořadí větší než, menší než nebo roven nebo menší nebo roven druhému výrazu.
 
-V případě jakýchkoli dvou logických výrazů lze použít binární operátory `and` a `or` k vytvoření nového logického výrazu, který má hodnotu true, pokud jsou oba výrazy (odp. buď nebo oba) pravdivé.
+Za `and` daných dvou logických výrazů lze binární `or` operátory a použít k vytvoření nového logického výrazu, který má hodnotu true, pokud oba výrazy (odp. buď nebo obojí z) jsou pravdivé.
 
-S ohledem na jakýkoliv logický výraz lze použít unární operátor `not` k vytvoření nového logického výrazu, který je true, pokud je výraz prvku false.
+S ohledem na logický výraz může `not` být unární operátor použit k vytvoření nového logického výrazu, který je true, pokud je výraz prvku false.
 
 ## <a name="string-expressions"></a>Řetězcové výrazy
 
-Q # povoluje použití řetězců v příkazu `fail` a ve funkci `Log` Standard.
+Q # povoluje použití řetězců v `fail` příkazu a funkci `Log` Standard.
 
 Řetězce v Q # jsou buď literály nebo interpolované řetězce.
-Řetězcové literály jsou podobně jako jednoduché řetězcové literály ve většině jazyků: sekvence znaků Unicode uzavřená v dvojitých uvozovkách, `"`.
-Uvnitř řetězce je možné znak zpětného lomítka `\` použít k úniku znaku dvojité uvozovky a vložení nového řádku jako `\n`, návratu na začátek jako `\r`a kartu jako `\t`.
-Příklad:
+Řetězcové literály jsou podobně jako jednoduché řetězcové literály ve většině jazyků: sekvence znaků Unicode uzavřených do dvojitých uvozovek `"`,.
+Uvnitř řetězce je možné `\` znak zpětného lomítka použít k úniku znaku dvojité uvozovky a vložit nový řádek jako `\n`znak návratu `\r`na začátek řádku a kartu jako. `\t`
+Například:
 
 ```qsharp
 "\"Hello world!\", she said.\n"
 ```
 
 Syntaxe Q # pro interpolování řetězců je podmnožinou syntaxe C# 7,0; Q # nepodporuje doslovné (Multi-line) interpolované řetězce.
-Viz [*interpolované řetězce*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) pro C# syntaxi.
+Viz [*interpolované řetězce*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) pro syntaxi jazyka C#.
 
-Výrazy uvnitř interpolované řetězce následují syntaxe Q #, nikoli C# syntaxe.
+Výrazy uvnitř interpolované řetězce následují syntax Q #, nikoli syntaxe jazyka C#.
 Libovolný platný výraz Q # se může objevit v interpolované řetězci.
 
 ## <a name="qubit-expressions"></a>Výrazy qubit
 
-Jedinými `Qubit` výrazy jsou symboly, které jsou vázány na `Qubit` hodnoty nebo prvky pole `Qubit` polí.
+Jediné `Qubit` výrazy jsou symboly, které jsou vázány `Qubit` na hodnoty nebo prvky pole `Qubit` polí.
 Neexistují žádné `Qubit` literály.
 
 ## <a name="pauli-expressions"></a>Výrazy Pauli
 
-Čtyři `Pauli` hodnoty, `PauliI`, `PauliX`, `PauliY`a `PauliZ`, jsou všechny platné výrazy `Pauli`.
+Čtyři `Pauli` hodnoty `PauliI`,, `PauliX` `PauliY`, a `PauliZ`, jsou platné `Pauli` výrazy.
 
-Kromě toho jediné `Pauli` výrazy jsou symboly, které jsou vázány na `Pauli` hodnoty nebo prvky pole `Pauli` polí.
+Kromě toho jsou jedinými `Pauli` výrazy symboly, které jsou vázány na `Pauli` hodnoty nebo prvky pole `Pauli` polí.
 
 ## <a name="result-expressions"></a>Výsledné výrazy
 
-Dvě `Result` hodnoty, `One` a `Zero`, jsou platné `Result` výrazy.
+Dvě `Result` hodnoty `One` a `Zero`jsou platné `Result` výrazy.
 
-Kromě toho jediné `Result` výrazy jsou symboly, které jsou vázány na `Result` hodnoty nebo prvky pole `Result` polí.
-Konkrétně Všimněte si, že `One` není stejná jako celé číslo `1`a mezi nimi není přímý převod.
+Kromě toho jsou jedinými `Result` výrazy symboly, které jsou vázány na `Result` hodnoty nebo prvky pole `Result` polí.
+Konkrétně si všimněte, že `One` není stejný jako celé číslo `1`a mezi nimi není přímý převod.
 Totéž platí pro `Zero` a `0`.
 
 ## <a name="range-expressions"></a>Výrazy rozsahu
 
-Pro všechny tři `Int` výrazy `start`, `step`a `stop`je `start .. step .. stop` výraz rozsahu, jehož prvním prvkem je `start`, druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud nebude předán `stop`.
-Rozsah může být prázdný, pokud je například `step` kladný a `stop < start`.
-Poslední prvek rozsahu bude `stop`, pokud rozdíl mezi `start` a `stop` je integrální násobek `step`; To znamená, že rozsah je zahrnut na obou koncích.
+S ohledem na `Int` tři `start`výrazy `step`,, `stop`a `start .. step .. stop` je výraz rozsahu, jehož prvním prvkem je `start`, druhý prvek `start+step`je, třetí prvek je `start+step+step`atd., dokud `stop` není předán.
+Rozsah může být prázdný, pokud `step` je instance například pozitivní a. `stop < start`
+`stop` Poslední prvek rozsahu bude, pokud rozdíl mezi `start` a `stop` je integrální násobkem; `step` To znamená, že rozsah je zahrnut na obou koncích.
 
-Pro všechny dva `Int` výrazy `start` a `stop`je `start .. stop` výraz rozsahu, který se rovná `start .. 1 .. stop`.
-Všimněte si, že implicitní `step` je + 1, i když `stop` je menší než `start`; v takovém případě je rozsah prázdný.
+Při daných dvou `Int` `start` výrazech `stop`a `start .. stop` je výraz rozsahu, který je roven `start .. 1 .. stop`.
+Všimněte si, že předpokládaná `step` je + 1, `stop` i když je `start`menší než; v takovém případě je rozsah prázdný.
 
 Mezi příklady oblastí patří:
 
-- `1..3` je rozsah 1, 2, 3.
-- `2..2..5` je rozsah 2, 4.
-- `2..2..6` je rozsah 2, 4, 6.
-- `6..-2..2` je rozsah 6, 4, 2.
-- `2..1` je prázdný rozsah.
-- `2..6..7` je rozsah 2.
-- `2..2..1` je prázdný rozsah.
-- `1..-1..2` je prázdný rozsah.
+- `1..3`je rozsah 1, 2, 3.
+- `2..2..5`je rozsah 2, 4.
+- `2..2..6`je rozsah 2, 4, 6.
+- `6..-2..2`je rozsah 6, 4, 2.
+- `2..1`je prázdný rozsah.
+- `2..6..7`je rozsah 2.
+- `2..2..1`je prázdný rozsah.
+- `1..-1..2`je prázdný rozsah.
 
 ## <a name="callable-expressions"></a>Výrazy, které se mají volat
 
 Volatelné literály je název operace nebo funkce definované v oboru kompilace.
-Například `X` je literál operace, který odkazuje na standardní knihovnu `X` operace a `Message` je literál funkce, který odkazuje na `Message` funkci standardní knihovny.
+Například `X` je literál operace, který odkazuje na standardní operace knihovny `X` a `Message` je literál funkce, který odkazuje na standardní funkci knihovny. `Message`
 
-Pokud operace podporuje `Adjoint` funktor, `Adjoint op` je výraz operace.
-Podobně pokud operace podporuje `Controlled` funktor, `Controlled op` je výraz operace.
+Pokud operace podporuje `Adjoint` funktor, pak `Adjoint op` je výraz operace.
+Podobně platí, že pokud operace podporuje `Controlled` funktor, pak `Controlled op` je výraz operace.
 Typy těchto výrazů jsou zadány v [funktory](xref:microsoft.quantum.language.type-model#functors).
 
-Funktory (`Adjoint` a `Controlled`) sváže více než všechny ostatní operátory, s výjimkou operátoru Unwrap `!` a pole Indexing `[]`.
+Funktory (`Adjoint` a `Controlled`) sváže více než všechny ostatní operátory, s výjimkou operátoru `!` Unwrap a pole s `[]`indexem.
 Níže jsou uvedené všechny právní a za předpokladu, že operace podporují funktory, který se používá:
 
 ```qsharp
@@ -199,11 +199,11 @@ Dá se použít jako hodnota, která se dá použít jako hodnota, řekněme, ž
 V tomto případě musí být v případě, že je možné volat parametry typu, zadány jako součást hodnoty, kterou lze volat.
 Hodnota, která se nedá volat, nemůže mít nespecifikované parametry typu.
 
-Pokud `Fun` například funkce s podpisovým `'T1->Unit`:
+Pokud `Fun` je například funkce s signaturou `'T1->Unit`:
 
 ```qsharp
 let f = Fun<Int>;            // f is Int->Unit.
-SomeOtherFun(Fun<Double>);   // A Double->Unit is passed to SomOtherFun.
+SomeOtherFun(Fun<Double>);   // A Double->Unit is passed to SomeOtherFun.
 let g = Fun;                 // This causes a compilation error.
 SomeOtherFun(Fun);           // This also causes a compilation error.
 ```
@@ -213,9 +213,9 @@ SomeOtherFun(Fun);           // This also causes a compilation error.
 Vzhledem k volání (operace nebo funkce) a výrazu řazené kolekce členů na vstupním typu signatury, která se dá volat, může být výraz vyvolání vytvořen připojením výrazu řazené kolekce členů k výrazu, který je k volání.
 Typ výrazu vyvolání je výstupní typ signatury, kterou chcete volat.
 
-Například pokud `Op` je operace s podpisovým `((Int, Qubit) => Double)`, `Op(3, qubit1)` je výraz typu `Double`.
-Podobně, pokud je `Sin` funkce s podpisovým `(Double -> Double)`, `Sin(0.1)` je výraz typu `Double`.
-Nakonec, pokud je `Builder` funkce se signaturou `(Int -> (Int -> Int))`, `Builder(3)` je funkce z do int.
+Například pokud `Op` je operace s signaturou `((Int, Qubit) => Double)`, `Op(3, qubit1)` je výraz typu. `Double`
+Podobně, pokud `Sin` je funkce s signaturou `(Double -> Double)`, `Sin(0.1)` je výraz typu `Double`.
+Nakonec, pokud `Builder` je funkce s signaturou `(Int -> (Int -> Int))`, `Builder(3)` je funkce z do int.
 
 Vyvolání výsledku výrazu s možností volání vyžaduje navíc pár závorek kolem volání.
 Proto pokud chcete vyvolat výsledek volání `Builder` z předchozího odstavce, správná syntaxe je:
@@ -224,25 +224,25 @@ Proto pokud chcete vyvolat výsledek volání `Builder` z předchozího odstavce
 (Builder(3))(2)
 ```
 
-Při vyvolání typu, který se dá volat, se skutečné parametry typu můžou zadat v lomených závorkách `<` a `>` po možném výrazu.
+Při vyvolání typu, který se dá volat, se skutečné parametry typu můžou zadat v lomených závorkách `<` a `>` po volání výrazu.
 To je obvykle zbytečné, protože kompilátor Q # odvodí skutečné typy.
 Je vyžadován pro částečnou aplikaci (viz níže), pokud je argument typu bez parametrů ponechán neurčen.
 Někdy je to užitečné i při předávání operací s různými funktory, které jsou schopné volat.
 
-Pokud má například `Func` signatura `('T1, 'T2, 'T1) -> 'T2`, `Op1` a `Op2` mají signatury `(Qubit[] => Unit is Adj)`a `Op3` má podpis `(Qubit[] => Unit)`, k vyvolání `Func` s `Op1` jako první argument, `Op2` jako druhé a `Op3` jako třetí:
+`Func` Například pokud má `('T1, 'T2, 'T1) -> 'T2`signatura `Op1` a `Op2` `(Qubit[] => Unit is Adj)`má signaturu a `Op3` má signaturu `(Qubit[] => Unit)`, pro vyvolání `Func` `Op1` jako první argument `Op2` jako druhý a `Op3` jako třetí:
 
 ```qsharp
 let combinedOp = Func<(Qubit[] => Unit), (Qubit[] => Unit is Adj)>(Op1, Op2, Op3);
 ```
 
-Specifikace typu je povinná, protože `Op3` a `Op1` mají různé typy, takže kompilátor bude považovat za dvojznačný bez specifikace.
+Specifikace typu je povinná `Op3` , `Op1` protože a má jiné typy, takže kompilátor bude považovat za dvojznačný bez specifikace.
 
 ### <a name="partial-application"></a>Částečná aplikace
 
 S ohledem na výraz, který lze volat, lze vytvořit novou voláním podmnožiny argumentů, které lze volat.
 Tato metoda se nazývá _Částečná aplikace_.
 
-V Q # je částečně aplikovaná metoda volání vyjádřena zapsáním normálního výrazu vyvolání, ale pomocí podtržítka, `_`pro neurčené argumenty.
+V Q # je částečně aplikovaná metoda volat vyjádřena zapsáním normálního výrazu vyvolání, ale pomocí podtržítka `_`, pro neurčené argumenty.
 Výsledná volat má stejný typ výsledku jako základní volat a stejné specializace pro operace.
 Vstupní typ částečné aplikace je jednoduše původní typ, ze kterého byly odebrány zadané argumenty.
 
@@ -251,9 +251,9 @@ Změna hodnoty proměnné následně nebude mít vliv na částečnou aplikaci.
 
 Například pokud `Op` má typ `((Int, ((Qubit, Qubit), Double)) => Unit is Adj)`:
 
-- `Op(5,(_,_))` má `(((Qubit,Qubit), Double) => Unit is Adj)`typu, a proto má `Op(5,_)`.
-- `Op(_,(_,1.0))` má `((Int, (Qubit,Qubit)) => Unit is Adj)`typu.
-- `Op(_,((q1,q2),_))` má `((Int,Double) => Unit is Adj)`typu.
+- `Op(5,(_,_))`má typ `(((Qubit,Qubit), Double) => Unit is Adj)`, a tak má `Op(5,_)`.
+- `Op(_,(_,1.0))`má typ `((Int, (Qubit,Qubit)) => Unit is Adj)`.
+- `Op(_,((q1,q2),_))`má typ `((Int,Double) => Unit is Adj)`.
    Všimněte si, že se tady používá ekvivalenci typu Singleton v řazené kolekci členů.
 
 Pokud má částečně použité volání metody typu, které kompilátor nemůže odvodit, musí být k dispozici na webu vyvolání.
@@ -281,30 +281,30 @@ Existují dva důležité komentáře k použití rekurze, ale:
 
 ## <a name="tuple-expressions"></a>Výrazy řazené kolekce členů
 
-Literál řazené kolekce členů je sekvence výrazů prvků příslušného typu oddělených čárkami, které jsou uzavřeny v `(` a `)`.
-Například `(1, One)` je výraz `(Int, Result)`.
+Literál řazené kolekce členů je sekvence výrazů prvků příslušného typu, které jsou odděleny čárkami a uzavřeny `(` v `)`a.
+Například `(1, One)` je `(Int, Result)` výraz.
 
 Kromě literálů jsou jedinými výrazy řazené kolekce členů symboly, které jsou vázány na hodnoty řazené kolekce členů, prvky pole řazené kolekce členů a volání, která vrací řazené kolekce členů.
 
 ## <a name="user-defined-type-expressions"></a>Výrazy uživatelsky definovaného typu
 
 Literál uživatelsky definovaného typu se skládá z názvu typu následovaného literálem řazené kolekce členů základního typu řazené kolekce členů typu.
-Například pokud `IntPair` je uživatelem definovaný typ založený na `(Int, Int)`, pak `IntPair(2,3)` být platným literálem tohoto typu.
+Například pokud `IntPair` je uživatelem definovaný typ založený na `(Int, Int)`, pak `IntPair(2,3)` by byl platným literálem tohoto typu.
 
 Kromě literálů jsou jedinými výrazy uživatelsky definovaného typu symboly, které jsou vázány na hodnoty daného typu, prvky pole polí daného typu a volání, která vrací tento typ.
 
 ## <a name="unwrap-expressions"></a>Rozbalit výrazy
 
-V Q # je operátorem rozbalení znak koncového vykřičníku `!`.
-Například pokud `IntPair` je uživatelem definovaný typ s podkladovým typem `(Int, Int)`a `s` byla proměnná s hodnotou `IntPair(2,3)`, `s!` `(2,3)`.
+V Q # se operátor rozbalení označuje jako koncová značka `!`vykřičník.
+Například `IntPair` Pokud je uživatelem definovaný typ s podkladovým typem `(Int, Int)`a `s` byl proměnnou s hodnotou `IntPair(2,3)`, potom `s!` by byl. `(2,3)`
 
-Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech. operátor rozbalení může být opakován; například `s!!` označuje dvakrát nezabalenou hodnotu `s`.
-Proto pokud `WrappedPair` je uživatelem definovaný typ s podkladovým typem `IntPair`a `t` je proměnná s hodnotou `WrappedPair(IntPair(1,2))`, `t!!` `(1,2)`.
+Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech. operátor rozbalení může být opakován; například `s!!` označuje zdvojnásobně nezabalenou hodnotu `s`.
+Proto, pokud `WrappedPair` je uživatelem definovaný typ s podkladovým typem `IntPair`, a `t` je proměnná s hodnotou `WrappedPair(IntPair(1,2))`, potom `t!!` by byla. `(1,2)`
 
-Operátor `!` má vyšší prioritu než všechny ostatní operátory kromě `[]` pro indexování pole a vytváření řezů.
-umístění vazby `!` a `[]`. To znamená, `a[i]![3]` by měly být čteny jako `((a[i])!)[3]`: přebírat `i`"th elementu `a`, rozbalíte ho a pak získáme třetí prvek nezabalené hodnoty (který musí být pole).
+`!` Operátor má vyšší prioritu než všechny ostatní operátory `[]` , kromě indexace pole a řezů.
+`!`a `[]` vytvořit vazby. To znamená, `a[i]![3]` že by měla být `((a[i])!)[3]`přečtena jako `i`: Vezměte "element `a`", rozbalíte ho a pak Získejte třetí prvek nezabalené hodnoty (který musí být pole).
 
-Priorita operátoru `!` má jeden dopad, který nemusí být zřejmý.
+Priorita `!` operátoru má jeden dopad, který nemusí být zřejmý.
 Vrátí-li funkce nebo operace hodnotu, která je poté nezabalena, musí být volání funkce nebo operace uzavřena v závorkách, aby se argumenty řazené kolekce členů navázaly na volání, nikoli na rozbalení.
 Příklad:
 
@@ -320,29 +320,29 @@ Všechny elementy musí být kompatibilní se stejným typem.
 
 Je-li běžný typ prvku typ operace nebo funkce, všechny prvky musí mít stejné vstupní a výstupní typy.
 Typ elementu pole bude podporovat všechny funktory, které jsou podporovány všemi prvky.
-Například pokud jsou `Qubit[] => Unit``Op1`, `Op2`a `Op3`, ale `Op1` podporuje `Adjoint`, `Op2` podporuje `Controlled`a `Op3` podporuje obojí:
+Například `Op1`Pokud, `Op2`a `Op3` jsou `Qubit[] => Unit`všechny, ale `Op1` podporují `Adjoint`, `Op2` podporují `Controlled`a `Op3` podporují obojí:
 
-- `[Op1, Op2]` je pole `(Qubit[] => Unit)`ch operací.
-- `[Op1, Op3]` je pole `(Qubit[] => Unit is Adj)`ch operací.
-- `[Op2, Op3]` je pole `(Qubit[] => Unit is Ctl)`ch operací.
+- `[Op1, Op2]`je pole `(Qubit[] => Unit)` operací.
+- `[Op1, Op3]`je pole `(Qubit[] => Unit is Adj)` operací.
+- `[Op2, Op3]`je pole `(Qubit[] => Unit is Ctl)` operací.
 
-Prázdné literály pole, `[]`, nejsou povoleny.
-Místo toho, aby používaly `new ★[0]`, kde `★` jako zástupný symbol pro vhodný typ, umožňuje vytvořit požadované pole s nulovou délkou.
+Prázdné literály pole, `[]`nejsou povoleny.
+Místo toho `new ★[0]`použití, `★` kde je jako zástupný symbol pro vhodný typ, umožňuje vytvořit požadované pole s nulovou délkou.
 
-Zadáním dvou polí stejného typu lze pomocí binárního operátoru `+` vytvořit nové pole, které je zřetězením dvou polí.
+Při zadání dvou polí stejného typu může být binární `+` operátor použit k vytvoření nového pole, které je zřetězením dvou polí.
 Například `[1,2,3] + [4,5,6]` je `[1,2,3,4,5,6]`.
 
 ### <a name="array-creation"></a>Vytvoření pole
 
-Když je zadán typ a výraz `Int`, operátor `new` lze použít k přidělení nového pole dané velikosti.
-`new Int[i+1]` by například přidělila nové pole `Int` s `i+1` elementy.
+Pro daný typ a `Int` výraz lze `new` operátor použít k přidělení nového pole dané velikosti.
+Například `new Int[i+1]` by bylo přiděleno nové `Int` pole s `i+1` prvky.
 
 Prvky nového pole jsou inicializovány na výchozí hodnotu závislou na typu.
 Ve většině případů se jedná o nějakou odchylku nuly.
 
 Pro qubits a volat, které jsou odkazy na entity, neexistuje přiměřená výchozí hodnota.
 Proto pro tyto typy je výchozí hodnota neplatný odkaz, který nelze použít, aniž by došlo k chybě za běhu.
-To se podobá odkazu s hodnotou null v jazycích, C# jako je například nebo Java.
+To se podobá odkazu s hodnotou null v jazycích, jako je C# nebo Java.
 Pole obsahující qubits nebo volat musí být správně inicializována s jinými než výchozími hodnotami, aby bylo možné jejich prvky bezpečně použít. Vhodné inicializační rutiny lze nalézt v <xref:microsoft.quantum.arrays>.
 
 Výchozí hodnoty pro každý typ jsou:
@@ -357,7 +357,7 @@ Typ | Výchozí
  `Qubit` | _Neplatný qubit_
  `Pauli` | `PauliI`
  `Result` | `Zero`
- `Range` | Prázdný rozsah `1..1..0`
+ `Range` | Prázdný rozsah`1..1..0`
  `Callable` | _Neplatný volat_
  `Array['T]` | `'T[0]`
 
@@ -384,21 +384,21 @@ for (i in 1..N) {
 
 ### <a name="array-slices"></a>Řezy pole
 
-S ohledem na výraz pole a výraz `Range` může být výraz New vytvořen pomocí operátoru `[` a `]`ho průřezu pole.
-Nový výraz bude stejný jako typ pole a bude obsahovat položky pole indexované prvky `Range`v pořadí definovaném `Range`.
-Například pokud je `a` svázán s polem `Double`s, pak `a[3..-1..0]` je výraz `Double[]`, který obsahuje první čtyři prvky `a`, ale v obráceném pořadí, jak jsou uvedeny v `a`.
+S ohledem na výraz pole a `Range` výraz může být výraz New vytvořen pomocí operátoru `[` a `]` řezu Array.
+Nový výraz bude stejný jako typ pole a bude obsahovat položky pole indexované prvky `Range`, v pořadí definovaném. `Range`
+Například `a` Pokud je svázána s polem `Double`s, pak `a[3..-1..0]` je `Double[]` výraz, který obsahuje první čtyři prvky, `a` ale v obráceném pořadí, jak jsou uvedeny v. `a`
 
-Pokud je `Range` prázdné, bude výsledný řez pole nulovou délkou.
+Pokud je `Range` pole prázdné, bude výsledný řez pole nulovou délkou.
 
 Pokud výraz pole není jednoduchý identifikátor, musí být uzavřen závorky, aby bylo možné vytvořit řezy.
-Například pokud `a` a `b` jsou pole `Int`s, řez z zřetězení by byl vyjádřen jako:
+Například pokud `a` a `b` jsou obě pole třídy `Int`s, řez z zřetězení by byl vyjádřen jako:
 
 ```qsharp
 (a+b)[1..2..7]
 ```
 
 Všechna pole v Q # jsou založená na nule.
-To znamená, že první prvek pole `a` je vždy `a[0]`.
+To znamená, že první prvek pole `a` je vždy. `a[0]`
 
 Od naší verze 0,8 podporujeme kontextové výrazy pro průřezy rozsahu. Konkrétně je možné vynechat počáteční a koncové hodnoty rozsahu v kontextu výrazu průřezu rozsahu. V takovém případě kompilátor použije následující pravidla k odvodit zamýšlené oddělovače pro daný rozsah. 
 
@@ -425,54 +425,54 @@ let slice10 = arr[...];       // slice10 is [1,2,3,4,5,6];
 
 ## <a name="array-element-expressions"></a>Výrazy prvků pole
 
-S ohledem na výraz pole a výraz `Int` může být výraz New vytvořen pomocí operátoru `[` a `]` elementu pole.
+S ohledem na výraz pole a `Int` výraz může být nový výraz vytvořen pomocí operátoru `[` a `]` elementu pole.
 Nový výraz bude stejného typu jako typ prvku pole.
-Pokud je například `a` svázán s polem `Double`s, pak `a[4]` je výraz `Double`.
+Například pokud `a` je svázán s polem `Double`s, pak `a[4]` je `Double` výraz.
 
 Pokud výraz pole není jednoduchý identifikátor, musí být uzavřen závorky, aby bylo možné vybrat prvek.
-Například pokud `a` a `b` jsou pole `Int`s, prvek ze zřetězení by byl vyjádřen jako:
+Například pokud `a` a `b` jsou obě pole třídy `Int`s, prvek ze zřetězení by byl vyjádřen jako:
 
 ```qsharp
 (a+b)[13]
 ```
 
 Všechna pole v Q # jsou založená na nule.
-To znamená, že první prvek pole `a` je vždy `a[0]`.
+To znamená, že první prvek pole `a` je vždy. `a[0]`
 
 
 ## <a name="copy-and-update-expressions"></a>Výrazy kopírování a aktualizace
 
 Nová pole je možné vytvořit z existujících pomocí výrazů kopírování a aktualizace.
-Výraz kopírování a aktualizace je výrazem `expression1 w/ expression2 <- expression3`formuláře, kde `expression1` musí být typu `T[]` pro určitý typ `T`. Druhý `expression2` definuje indexy prvků, které mají být upraveny v porovnání s polem v `expression1` a musí být buď typu `Int`, nebo typu `Range`. Pokud je `expression2` typu `Int`, `expression3` musí být typu `T`. Pokud je `expression2` typu `Range`, `expression3` musí být typu `T[]`.
+Výraz kopírování `expression1 w/ expression2 <- expression3`a aktualizace je výrazem formuláře, kde `expression1` musí být typu `T[]` pro nějaký typ. `T` Druhý `expression2` definuje indexy prvků, které mají být upraveny v porovnání s polem v `expression1` a musí být buď typu `Int` nebo typu. `Range` Pokud `expression2` je typ `Int`, `expression3` musí být typu. `T` Pokud `expression2` je typ `Range`, `expression3` musí být typu. `T[]`
 
-Výraz kopie a aktualizace `arr w/ idx <- value` vytvoří nové pole se všemi prvky nastavenými na odpovídající prvek v `arr`, s výjimkou elementů v `idx`, které jsou nastaveny na jeden nebo s v `value`. Pokud například `arr` obsahuje `[0,1,2,3]`pole, pak 
-- `arr w/ 0 <- 10` je pole `[10,1,2,3]`.
-- `arr w/ 2 <- 10` je pole `[0,1,10,3]`.
-- `arr w/ 0..2..3 <- [10,12]` je pole `[10,1,12,3]`.
+Výraz `arr w/ idx <- value` kopírování a aktualizace vytvoří nové pole se všemi prvky nastavenými na odpovídající element v `arr`, s výjimkou elementů v `idx`, které jsou nastaveny na jeden (y) v. `value` Například pokud `arr` obsahuje pole `[0,1,2,3]`, pak 
+- `arr w/ 0 <- 10`je pole `[10,1,2,3]`.
+- `arr w/ 2 <- 10`je pole `[0,1,10,3]`.
+- `arr w/ 0..2..3 <- [10,12]`je pole `[10,1,12,3]`.
 
 Podobné výrazy existují pro pojmenované položky v uživatelsky definovaných typech. Zvažte například typ. 
 
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
 ```
-Pokud `c` obsahuje hodnotu typu `Complex(1.,-1.)`a pak `c w/ Re <- 0.` je výraz typu `Complex`, který je vyhodnocen jako `Complex(0.,-1.)`.
+Pokud `c` `Complex(1.,-1.)`obsahuje hodnotu typu, `c w/ Re <- 0.` pak je výraz typu `Complex` , který je vyhodnocen jako. `Complex(0.,-1.)`
 
 ## <a name="conditional-expressions"></a>Podmíněné výrazy
 
-Vzhledem k dvěma dalším výrazům stejného typu a logickému výrazu může být podmíněný výraz vytvořen pomocí otazníku `?` a svislým pruhem `|`.
-`a==b ? c | d`například.
-V tomto příkladu bude hodnota podmíněného výrazu `c`, pokud má `a==b` hodnotu true a `d`, pokud má hodnotu false.
+Vzhledem k dvěma dalším výrazům stejného typu a logickému výrazu může být podmíněný výraz vytvořen pomocí otazníku `?` a svislého panelu. `|`
+Například `a==b ? c | d`.
+V tomto příkladu bude hodnota podmíněného výrazu v `c` případě `a==b` hodnoty true a `d` v případě false.
 
 Tyto dva výrazy mohou být vyhodnoceny na operace, které mají stejné vstupy a výstupy, ale podporují různé funktory.
 V tomto případě typ podmíněného výrazu je operace s těmito vstupy a výstupy, které podporují všechny funktory Podporované oběma výrazy.
-Například pokud jsou `Qubit[]=>Unit``Op1`, `Op2`a `Op3`, ale `Op1` podporuje `Adjoint`, `Op2` podporuje `Controlled`a `Op3` podporuje obojí:
+Například `Op1`Pokud, `Op2`a `Op3` jsou `Qubit[]=>Unit`všechny, ale `Op1` podporují `Adjoint`, `Op2` podporují `Controlled`a `Op3` podporují obojí:
 
-- `flag ? Op1 | Op2` je operace `(Qubit[] => Unit)`.
-- `flag ? Op1 | Op3` je operace `(Qubit[] => Unit is Adj)`.
-- `flag ? Op2 | Op3` je operace `(Qubit[] => Unit is Ctl)`.
+- `flag ? Op1 | Op2`je `(Qubit[] => Unit)` operace.
+- `flag ? Op1 | Op3`je `(Qubit[] => Unit is Adj)` operace.
+- `flag ? Op2 | Op3`je `(Qubit[] => Unit is Ctl)` operace.
 
 Pokud jeden ze dvou možných výsledných výrazů zahrnuje volání funkce nebo operace, bude toto volání provedeno pouze v případě, že je výsledkem ta, která bude hodnotou volání.
-Například v případě `a==b ? C(qs) | D(qs)`, pokud je `a==b` true, bude vyvolána operace `C`, a pokud je hodnota false, bude vyvolána pouze `D`.
+`a==b ? C(qs) | D(qs)`Například v případě, `a==b` Pokud je hodnota true, bude vyvolána `C` operace, a pokud je hodnota false, bude vyvolána pouze. `D`
 To se podobá krátkodobému okruhu v jiných jazycích.
 
 
@@ -480,9 +480,9 @@ To se podobá krátkodobému okruhu v jiných jazycích.
 
 Všechny binární operátory jsou asociativní zprava, s výjimkou `^`.
 
-Hranaté závorky, `[` a `]`pro průřezy pole a indexování se sváže před jakýmkoli operátorem.
+Hranaté `[` závorky a `]`pro vytváření řezů a indexování polí sváže před libovolným operátorem.
 
-Funktory `Adjoint` a vazba `Controlled` po vyřazení pole, ale před všemi ostatními operátory.
+Funktory `Adjoint` a `Controlled` BIND po vyřazení pole, ale před všemi ostatními operátory.
 
 Kulaté závorky pro operace a volání funkce se také vážou před libovolným operátorem, ale po vyřazení a funktory pole.
 
@@ -490,19 +490,19 @@ Operátory v pořadí podle priority, od nejvyšších po nejnižší:
 
 Operátor | Aritou | Popis | Typy operandů
 ---------|----------|---------|---------------
- koncový `!` | Unární | Rozbalení | Libovolný uživatelsky definovaný typ
- `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, `BigInt` nebo `Double` pro `-`, `Int` nebo `BigInt` pro `~~~``Bool``not`
- `^` | Binární hodnota | Celočíselný výkon | `Int` nebo `BigInt` pro základní `Int` pro exponent
- `/`, `*`, `%` | Binární hodnota | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*``Int` nebo `BigInt` pro `%`
- `+`, `-` | Binární hodnota | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double`, navíc `String` nebo libovolný typ pole pro `+`
- `<<<`, `>>>` | Binární hodnota | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
- `<`, `<=`, `>`, `>=` | Binární hodnota | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo `Double`
- `==`, `!=` | Binární hodnota | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
- `&&&` | Binární hodnota | Bitový operátor AND | `Int` nebo `BigInt`
- `^^^` | Binární hodnota | Bitový operátor XOR | `Int` nebo `BigInt`
- <code>\|\|\|</code> | Binární hodnota | Bitový operátor OR | `Int` nebo `BigInt`
- `and` | Binární hodnota | Logický operátor AND | `Bool`
- `or` | Binární hodnota | Logický operátor OR | `Bool`
+ koncové`!` | Unární | Rozbalení | Libovolný uživatelsky definovaný typ
+ `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, `BigInt` nebo `Double` `~~~` `Bool` pro, pro, pro `-` `Int` `BigInt``not`
+ `^` | binární | Celočíselný výkon | `Int`nebo `BigInt` pro základ `Int` pro exponent
+ `/`, `*`, `%` | binární | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*`, `Int` nebo `BigInt` pro`%`
+ `+`, `-` | binární | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double`, navíc `String` nebo libovolný typ pole pro`+`
+ `<<<`, `>>>` | binární | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
+ `<`, `<=`, `>`, `>=` | binární | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo`Double`
+ `==`, `!=` | binární | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
+ `&&&` | binární | Bitový operátor AND | `Int` nebo `BigInt`
+ `^^^` | binární | Bitový operátor XOR | `Int` nebo `BigInt`
+ <code>\|\|\|</code> | binární | Bitový operátor OR | `Int` nebo `BigInt`
+ `and` | binární | Logický operátor AND | `Bool`
+ `or` | binární | Logický operátor OR | `Bool`
  `..` | Binární/Ternární | Operátor rozsahu | `Int`
- `?` `|` | Ternární | Podmíněné | `Bool` na levé straně
+ `?` `|` | Ternární | Podmíněné | `Bool`na levé straně
 `w/` `<-` | Ternární | Kopírování a aktualizace | viz [výrazy pro kopírování a aktualizaci](#copy-and-update-expressions)
