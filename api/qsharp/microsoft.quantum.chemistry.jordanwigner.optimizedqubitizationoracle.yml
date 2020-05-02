@@ -9,7 +9,7 @@ input:
   content: '(qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData, targetError : Double)'
   types:
   - name: qSharpData
-    summary: Hamiltonian popisované podle formátu `JordanWignerEncodingData`.
+    summary: Hamiltonian popsané podle `JordanWignerEncodingData` formátu.
     uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
   - name: targetError
     summary: Chyba kroku přípravy stavu auxillary
@@ -18,7 +18,7 @@ input:
 output:
   content: (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))
   types:
-  - summary: 'Řazená kolekce členů, kde: `Int` je počet přidělených qubits, `Double` je Hamiltoniané koeficienty a operace je průvodce příprocesorem, který vytvořila Qubitization.'
+  - summary: 'Řazená kolekce členů `Int` , kde: je počet přidělených `Double` qubits, je jednou z Hamiltonian koeficientů a operace je průvodce příchodem na základě doby, kterou vytvořila Qubitization.'
     types:
     - isPrimitive: true
       uid: Int
@@ -39,9 +39,9 @@ output:
         - Adjoint
         - Controlled
 metadata:
-  ms.openlocfilehash: 541d4f2196bc9ba06d02b83c500d539932b62463
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: b6dff5ce49e6f0d106df31040c2e539fc1a24029
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73231890"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82665106"
