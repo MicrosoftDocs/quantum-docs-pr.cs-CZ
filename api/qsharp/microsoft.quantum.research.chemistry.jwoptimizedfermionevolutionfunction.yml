@@ -18,12 +18,12 @@ input:
 output:
   content: Microsoft.Quantum.Simulation.EvolutionUnitary
   types:
-  - summary: "`EvolutionUnitary` představující čas – vývoj pomocí termínu, na který se odkazuje v ' generatorIndex."
+  - summary: "`EvolutionUnitary` Představuje čas – vývoj v rámci termínu, na který se odkazuje v ' generatorIndex."
     uid: microsoft.quantum.simulation.evolutionunitary
 metadata:
-  ms.openlocfilehash: 0e85f9be6001d71980a442ebbc04b88ba4240166
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ae5796c80198bd7e02940d978eeaebb3e2fcd814
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73228014"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82683120"

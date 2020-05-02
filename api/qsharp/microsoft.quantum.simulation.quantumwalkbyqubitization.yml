@@ -7,9 +7,9 @@ summary: >-
   Převede reflexi kódování bloku na Projděte.
 
 
-  Vzhledem k tomu, `BlockEncodingReflection` reprezentované jednotkou $U $, která kóduje některý operátor $H $ z zájmu, převede ho na úkol $W $ obsahující spektrum $ \Pm e ^ {\Pm i\sin ^{-1}(H)} $.
+  V případě `BlockEncodingReflection` , že se jedná o $U $, který kóduje některý operátor $H $ zájmu, převede ho na přejíždění do doby, $W $ obsahující spektrum $ \Pm e ^ {\Pm i\sin{-1}^ (H)} $.
 syntax: 'function QuantumWalkByQubitization (blockEncoding : Microsoft.Quantum.Simulation.BlockEncodingReflection) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
-references: '- Simulace Hamiltonian podle Qubitization Guang vystoupí hao nízká, Petr L. Čuangština https://arxiv.org/abs/1610.06546'
+references: '- Simulace Hamiltonian podle Qubitization Guang vystoupí hao nízká, Petr L. Čuangštinahttps://arxiv.org/abs/1610.06546'
 input:
   content: '(blockEncoding : Microsoft.Quantum.Simulation.BlockEncodingReflection)'
   types:
@@ -18,7 +18,7 @@ input:
 output:
   content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
   types:
-  - summary: $W $ pracuje společně na registrech `a` a `s` blokující kódování $H $ a obsahuje spektrum $ \Pm e ^ {\Pm i\sin ^{-1}(H)} $.
+  - summary: $W $ pracuje společně na registrech `a` a `s` zablokuje $H $ a obsahuje spektrum $ \Pm e ^ {\Pm i\sin ^{-1}(H)} $.
     isOperation: true
     input:
       types:
@@ -39,9 +39,9 @@ seeAlso:
 - microsoft.quantum.canon.blockencoding
 - microsoft.quantum.canon.blockencodingreflection
 metadata:
-  ms.openlocfilehash: aed748abe8f3468da0cc772606afc4f577c4abeb
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: e2a6c0469b730140b8584e8cff2aad2d68254793
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76869147"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682502"

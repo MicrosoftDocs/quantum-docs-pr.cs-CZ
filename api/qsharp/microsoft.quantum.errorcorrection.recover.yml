@@ -3,16 +3,16 @@ uid: microsoft.quantum.errorcorrection.recover
 name: Recover
 type: operation
 namespace: Microsoft.Quantum.ErrorCorrection
-summary: Provede jednu kulatou hodnotu opravy chyb pomocí kódu, který je popsaný `QECC` typem.
+summary: Provede jeden znak opravy chyb pomocí kódu, který je popsán v `QECC` typu.
 syntax: 'operation Recover (code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister) : Unit'
 input:
   content: '(code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister)'
   types:
   - name: code
-    summary: Chyba při opravování kódu v balení jako typ `QECC` popisuje kódování a dekódování dat a způsob, jakým se má měřit chyba Syndromes.
+    summary: Chyba ve formátu dat – Oprava zabaleného kódu `QECC` jako typ popisuje kódování a dekódování dat a způsob, jakým se má měřit chyba Syndromes.
     uid: microsoft.quantum.errorcorrection.qecc
   - name: fn
-    summary: '`RecoveryFn`, který mapuje každou chybu Syndrome na `Pauli[]` operace, které chybu zjištěné chyby opraví.'
+    summary: A `RecoveryFn` který mapuje každou chybu Syndrome na `Pauli[]` operace, které opraví zjištěnou chybu.
     uid: microsoft.quantum.errorcorrection.recoveryfn
   - name: logicalRegister
     summary: Pole qubits, kde je definován kód stabilizace.
@@ -27,9 +27,9 @@ seeAlso:
 - microsoft.quantum.canon.recoveryfn
 - microsoft.quantum.canon.logicalregister
 metadata:
-  ms.openlocfilehash: baaa5862dd189a04667081d762900931e6b5e766
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2a873e06c20bf62c998b1096d862d26ff89aa134
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73220347"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682289"
