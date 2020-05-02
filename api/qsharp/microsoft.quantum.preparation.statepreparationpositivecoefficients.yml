@@ -7,15 +7,15 @@ summary: >-
   Vrátí operaci, která připraví daný stav.
 
 
-  Vrácená operace $U $ připraví libovolný stav pro každý kraj $ \ket{\psi} $ s pozitivním koeficientem $ \alpha_j\ge $0 ze stavu $n $-qubit výpočetního základu $ \ket{0...0} $.
+  Vrácená operace $U $ připraví libovolný stav pro každý kraj $ \ket{\psi} $ s pozitivním koeficientem $ \ alpha_j \ge $0 ze stavu $n $-qubit výpočetního základu $ \ket{0...0} $.
 
 
-  Akce U nově přiděleného registru je dána $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\sum_{j = 0} ^ {2 ^ n-1} \alpha_j \ket{j}}{\sqrt{\sum_{j = 0} ^ {2 ^ n-1} | \alpha_j | ^ 2}}.
+  Akce U nově přiděleného registru je dána $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} \ alpha_j \ket{j}}{\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | \ alpha_j | ^ 2}}.
 
   \end{align} $ $
-remarks: Negativní vstupní koeficienty $ \alpha_j < $0 budou považovány za kladné s hodnotou $ | \alpha_j | $. `coefficients` budou doplněny elementy $ \alpha_j = $0,0, pokud je zadána méně než $2 ^ n $.
+remarks: Negativní vstupní koeficienty $ \ alpha_j < $0 budou považovány za kladné s hodnotou $ | \ alpha_j | $. `coefficients`budou doplněny elementy $ \ alpha_j = $0,0, pokud je zadána méně než $2 ^ n $.
 examples: >-
-  Následující fragment kódu připraví stav po zemi $ \ket{\psi} = \ sqrt {1/8} \ KET{0}+ \ sqrt {7/8} \ KET{2}$ v registru qubit `qubitsLE`.
+  Následující fragment kódu připraví stav pro stav, který je v registru{0}{2} `qubitsLE`qubit připraven na \ket{\psi} = \ sqrt {1/8} \ KET + \ sqrt {7/8} \ KET $.
 
 
   ```qsharp
@@ -35,7 +35,7 @@ input:
   content: '(coefficients : Double[])'
   types:
   - name: coefficients
-    summary: Pole až do $2 ^ n $ $ \alpha_j $. $J $ th součinitel indexuje číselný stav $ \ket{j} $ kódovaný ve formátu Little endian.
+    summary: Pole až do $2 ^ n $ koeficienty $ \ alpha_j $. $J $ th součinitel indexuje číselný stav $ \ket{j} $ kódovaný ve formátu Little endian.
     isArray: true
     isPrimitive: true
     uid: Double
@@ -55,9 +55,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 2a31449781d4b3bab1f2af40083df78bf6cc2083
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d419fd88ed037001cc51dbd354b5c89dbe334246
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226365"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686465"

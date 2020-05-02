@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 82af3b5123588cc06882f746ffcb0402ad3f0f2e
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907456"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686841"
 ---
 # <a name="opening-pull-requests"></a>Otevírání žádostí o přijetí změn #
 
@@ -39,7 +39,7 @@ V takovém případě je užitečné, abyste si vyžádali, co **je**žádost o 
 Při práci s Git se všechny změny reprezentují jako _potvrzení_ , které popisují, jak tyto změny souvisejí se stavem úložiště před těmito změnami.
 Často vykreslíme diagramy, ve kterých se potvrzení vykreslí jako kružnice se šipkami z předchozích potvrzení.
 
-Předpokládejme, že jste na _větvi_ s názvem `feature`zahájili příspěvek.
+Předpokládejme, že jste ve _větvi_ s názvem `feature`zahájili příspěvek.
 Potom vaše rozvětvení **Microsoft/** nečinnosti může vypadat přibližně takto:
 
 ![Pracovní větev na GitHubu](~/media/git-workflow-step0.png)
@@ -60,9 +60,9 @@ Použití tohoto procesu nám pomáhá využít funkce GitHubu ke zlepšení př
 
 ## <a name="how-to-make-a-pull-request"></a>Jak vytvořit žádost o získání dat ##
 
-Existují dva hlavní způsoby, jak vytvořit žádost o získání dat.
-U malých změn, které ovlivňují jenom jeden soubor, se dá webové rozhraní GitHubu použít k úplnému Online podání žádosti o přijetí změn.
-U složitějších příspěvků je nejčastěji snazší použít místní počítač k přípravě žádosti o přijetí změn.
+Existují dva hlavní způsoby, jak vytvořit žádost o získání dat.  
+U malých změn, které ovlivňují jenom jeden soubor, se dá webové rozhraní GitHubu použít k úplnému Online podání žádosti o přijetí změn. Jednoduše přejděte k souboru, který chcete upravit, a použijte ikonu Upravit.  
+U složitějších příspěvků je nejčastěji snazší naklonování úložiště do místního počítače, aby se nejdříve připravila žádost o získání dat.
 
 <!--
 ### Using the Web Interface ###

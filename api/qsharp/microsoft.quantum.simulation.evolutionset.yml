@@ -7,12 +7,12 @@ summary: >-
   Představuje sadu bran, které lze snadno implementovat a použít k implementaci algoritmů simulace.
 
 
-  Prvky v sadě jsou indexovány <xref:microsoft.quantum.simulation.generatorindex>a každá sada je popsána funkcí z `GeneratorIndex` na <xref:microsoft.quantum.simulation.evolutionunitary>, což jsou operace parametrizované reálné číslo představující čas
+  Prvky v sadě jsou indexovány <xref:microsoft.quantum.simulation.generatorindex>a a každá sada je popsána funkcí z `GeneratorIndex` na <xref:microsoft.quantum.simulation.evolutionunitary>, což jsou operace parametrizované reálné číslo představující čas
 syntax: newtype EvolutionSet = (Microsoft.Quantum.Simulation.GeneratorIndex -> Microsoft.Quantum.Simulation.EvolutionUnitary);
 metadata:
-  ms.openlocfilehash: 2e3e717ca219f5e575f750a32f640215142b170c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 0db782c1909c6121078f251f34bbffd5b49a4d8e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211082"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82687000"
