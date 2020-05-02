@@ -7,7 +7,7 @@ summary: >-
   Vyhodnotí, že qubit v očekávaném stavu.
 
 
-  `expected` představuje složitý vektor, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+  `expected`představuje složitý vektor, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
 
   První prvek řazených kolekcí členů, který představuje každý z $a $, $b $ je reálnou částí komplexního čísla, zatímco druhým z nich je imaginární část.
 
@@ -37,7 +37,7 @@ remarks: >-
   ```
 
 
-  Tolerance je $L\_{\infty} $ Distance mezi 3 dimenzionálními skutečnými vektory (x ₂, x ₃, x ₄) definovanými v $ \langle\psi | \psi\rangle = x\_1 I + x\_2 X + x\_3 Y + x\_4 Z $ a reálného vektoru (Y ₂ , y ₃, y ₄) definované ρ = y ₁ I + y ₂ X + y ₃ Y + y ₄ Z, kde ρ je matice hustoty odpovídající stavu registru.
+  Tolerance\_je $L {\infty} $ Distance mezi 3 multidimenzionálním skutečným vektorem (x ₂, x ₃, x ₄) definované pomocí $ \langle\psi | \psi\rangle =\_x 1 I +\_x 2 x +\_x 3 Y +\_x 4 Z $ a reálného vektoru (y ₂, y ₃, y ₄) definované ρ = Y ₁ I + y ₂ x + y ₃ Y + y ₄ Z, kde ρ je matice hustoty odpovídající stavu registru.
 
   To platí pouze za předpokladu, že tr (ρ) a tr (| ψ ⟩ ⟨ ψ |) jsou obě 1 (například x ₁ = 1/2, y ₁ = 1/2).
 
@@ -60,7 +60,7 @@ input:
   content: '(expected : (Microsoft.Quantum.Math.Complex, Microsoft.Quantum.Math.Complex), register : Qubit, tolerance : Double)'
   types:
   - name: expected
-    summary: Očekávala se složitá amplituda pro $ \ket{0}$ a $ \ket{1}$, v uvedeném pořadí.
+    summary: Očekávala se složitá amplituda{0}pro $ \ket ${1}a $ \ket $ v uvedeném pořadí.
     types:
     - uid: microsoft.quantum.math.complex
     - uid: microsoft.quantum.math.complex
@@ -81,9 +81,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 8b43bac19173c5ae5a11ff6879a03209c32e7c76
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 77d28c122a44f39924242dedb6bd6163974e18c1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227113"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82656605"
