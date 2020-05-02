@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.MachineLearning
 summary: Vrátí výchozí sadu možností pro účely školení klasifikátorů.
 examples: >-
-  Chcete-li použít výchozí možnosti, ale s dalšími měřeními, použijte operátor `w/`:
+  Chcete-li použít výchozí možnosti, ale s dalšími měřeními, `w/` použijte operátor:
 
 
   ```Q#
@@ -23,9 +23,9 @@ output:
   - summary: Přiměřená sada výchozích možností školení pro použití při výuce klasifikátorů.
     uid: microsoft.quantum.machinelearning.trainingoptions
 metadata:
-  ms.openlocfilehash: 6013d4f7268cfc422eedbe7d2070adbb167ad4ea
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 87f056e336ca78881421e669b3d282af8e679353
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77909462"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82685434"
