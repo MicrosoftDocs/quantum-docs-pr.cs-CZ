@@ -3,25 +3,25 @@ uid: microsoft.quantum.convert.boolasresult
 name: BoolAsResult
 type: function
 namespace: Microsoft.Quantum.Convert
-summary: Převede typ `Bool` na typ `Result`, kde `true` je namapováno na `One` a `false` je mapován na `Zero`.
+summary: '`Bool` Převede `Result` typ na typ, kde `true` je mapován na `One` a `false` je mapován na. `Zero`'
 syntax: 'function BoolAsResult (input : Bool) : Result'
 input:
   content: '(input : Bool)'
   types:
   - name: input
-    summary: '`Bool` k převedení.'
+    summary: '`Bool`má být převedeno.'
     isPrimitive: true
     uid: Bool
 output:
   content: Result
   types:
-  - summary: '`Result` reprezentující `input`.'
+  - summary: '`Result` Představuje `input`.'
     isPrimitive: true
     uid: Result
 metadata:
-  ms.openlocfilehash: 88019e17d91753f9aeafd273d2f38fef0f420be2
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 270809a4e5bdf8eae2c1dfc360c20fa707f39658
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73212289"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82660766"
