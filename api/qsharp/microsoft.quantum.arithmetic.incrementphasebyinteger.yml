@@ -7,7 +7,7 @@ summary: >-
   Zvýší nepodepsaná bezplatných hodnot do registru pomocí klasického celého čísla pomocí otočení fáze.
 
 
-  Předpokládejme, že `target` zakódování unsigned integer $x $ v kódování Little endian a `increment` je rovno $a $.
+  Předpokládejme, `target` že kódování unsigned integer $x $ v kódování Little endian a `increment` je rovno $a $.
 
   Tato operace pak implementuje jednotkové $ \ket{x} \mapsto \ket{x + a} $, kde sčítání se provádí modulo $2 ^ n $, kde $n = \texttt{Length (Target!)} $.
 remarks: >-
@@ -21,7 +21,7 @@ input:
   content: '(increment : Int, target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian)'
   types:
   - name: increment
-    summary: Celé číslo, o které je `target` zvětšeno.
+    summary: Celé číslo, kterým `target` se zvyšuje hodnota.
     isPrimitive: true
     uid: Int
   - name: target
@@ -39,9 +39,9 @@ seeAlso:
 - incrementbyintegerbe
 - incrementbyintegerle
 metadata:
-  ms.openlocfilehash: 379e643826ca54e123c8b855f4bba48a9d79a137
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2893d432b4043bbacb425f3ae42cbbdd3d4dc225
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219038"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679520"

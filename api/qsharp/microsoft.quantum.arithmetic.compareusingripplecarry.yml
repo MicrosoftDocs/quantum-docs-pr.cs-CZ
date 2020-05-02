@@ -7,24 +7,24 @@ summary: >-
   Tato operace testuje, zda celé číslo reprezentované registrem qubits je větší než jiné celé číslo, a použití funkce XOR výsledku na výstupní qubit.
 
 
-  Zadaná dvě celá čísla `x` a `y` uložená v qubitch registrech se stejnou velikostí, tato operace zkontroluje, jestli splňují `x > y`. Pokud je nastaveno na true, je 1 XORed do výstupního qubit. V opačném případě je 0 XORed do výstupního qubit.
+  Zadaná dvě celá čísla `x` a `y` uložená v qubit registrech se stejnou velikostí, tato operace kontroluje, jestli `x > y`splňují. Pokud je nastaveno na true, je 1 XORed do výstupního qubit. V opačném případě je 0 XORed do výstupního qubit.
 
-  Jinými slovy Tato operace může být reprezentována jednotkou $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x > y)}.
+  Jinými slovy Tato operace může být reprezentována jednotkou $ $ \begin{align} U\ket {x} \ KET {y} \ KET {z} = \ket{x}\ket{y}\ket{z\oplus (x>y)}.
 
   \end{align} $ $
 syntax: 'operation CompareUsingRippleCarry (x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit) : Unit'
-references: '- Nové v rámci Ripple – přenést okruh Steven A. Cuccaro, Tomáš G. Draper, Samuel A. Kutin, David Petrie Moulton https://arxiv.org/abs/quant-ph/0410184'
+references: '- Nové v rámci Ripple – přenést okruh Steven A. Cuccaro, Tomáš G. Draper, Samuel A. Kutin, David Petrie Moultonhttps://arxiv.org/abs/quant-ph/0410184'
 input:
   content: '(x : Microsoft.Quantum.Arithmetic.LittleEndian, y : Microsoft.Quantum.Arithmetic.LittleEndian, output : Qubit)'
   types:
   - name: x
-    summary: První číslo, které se má porovnat s uložením v `LittleEndian`ovém formátu v registru qubit
+    summary: První číslo, které má být porovnáno, uloženo ve `LittleEndian` formátu v qubit registru.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: y
-    summary: Druhé číslo, které se má porovnat s uložením v `LittleEndian`ovém formátu v registru qubit
+    summary: Druhé číslo, které má být porovnáno, uloženo ve `LittleEndian` formátu v qubit registru.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: output
-    summary: Qubit, který ukládá výsledek porovnání $x > a $.
+    summary: Qubit, který ukládá výsledek porovnání $x>a $.
     isPrimitive: true
     uid: Qubit
 output:
@@ -36,9 +36,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 1ef346a9fd33859abffe9c30b14b5ea95068169d
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 08cff4d874060fce0b461c7eeadfdcadf6fa1453
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871120"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679760"

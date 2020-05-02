@@ -9,7 +9,7 @@ input:
   content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
   types:
   - name: coefficients
-    summary: Poměrná část s lichým polynomem jako dvojitá Array, tj. Array $ [A_0, A_1,..., a_k] $ pro liché polynomy $P (x) = A_0 x + A_1 x ^ 3 + \cdots + a_k x ^ {2k + 1} $.
+    summary: Poměrná část s lichým polynomem jako dvojitá Array, tj. Array $ [a_0, a_1,..., a_k] $ pro liché polynomy $P (x) = a_0 x + a_1 x ^ 3 + \cdots + a_k × ^ {2k + 1} $.
     isArray: true
     isPrimitive: true
     uid: Double
@@ -17,7 +17,7 @@ input:
     summary: Vstupní číslo s pevnou desetinnou čárkou, pro které se má vyhodnotit polynomická hodnota
     uid: microsoft.quantum.arithmetic.fixedpoint
   - name: result
-    summary: Výstupní číslo s pevnou desetinnou čárkou, které bude obsahovat P (x). Musí se nacházet ve stavu $ \ket{0}$ zpočátku.
+    summary: Výstupní číslo s pevnou desetinnou čárkou, které bude obsahovat P (x). Musí být ve stavu $ \ket{0}$ původně.
     uid: microsoft.quantum.arithmetic.fixedpoint
 output:
   content: Unit
@@ -28,9 +28,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 3ae6ab137b2c257a98b0ec777c19212d8732f619
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ae149fe3ef12b5384bd08b62daabd6368e130399
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219106"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679659"
