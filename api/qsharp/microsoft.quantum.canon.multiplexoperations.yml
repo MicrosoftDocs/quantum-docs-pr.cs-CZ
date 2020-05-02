@@ -11,9 +11,9 @@ summary: >-
 
 
   $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-remarks: '`coefficients` bude doplněna prvky identity, pokud je zadáno méně než $2 ^ n $. Tato implementace používá $n-$1 auxillary qubits.'
+remarks: '`coefficients`bude doplněn elementy identity, pokud je zadáno méně než $2 ^ n $. Tato implementace používá $n-$1 auxillary qubits.'
 syntax: "operation MultiplexOperations (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
-references: '- Směrem k první simulaci nedostatku na více minut s využitím zrychleníů Andrew M. Childs, Dmitri Maslov, Yunseonga, Neilem J. Rossův, jüan Su https://arxiv.org/abs/1711.10980'
+references: '- Směrem k první simulaci nedostatku na více minut s využitím zrychleníů Andrew M. Childs, Dmitri Maslov, Yunseonga, Neilem J. Rossův, jüan Suhttps://arxiv.org/abs/1711.10980'
 input:
   content: "(unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
   types:
@@ -48,9 +48,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 93fa7ef1f5a7374f970098eb5fa865e02854d1ff
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 97ecc07d8d6b9f7c9cdfa5dbe02b354d3d0a7aee
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77906708"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678824"

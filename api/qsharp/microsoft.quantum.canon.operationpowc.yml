@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Canon
 summary: >-
   Vyvolá operaci s napájením.
 
-  Modifikátor `C` označuje, že je operace ovladatelné.
+  Modifikátor `C` označuje, že operace je ovladatelné.
 
 
   To znamená, že vzhledem k operaci, která představuje bránu $U $, vrátí novou operaci $U ^ m $ pro $m pro napájení $.
@@ -52,9 +52,9 @@ typeParameters:
 seeAlso:
 - microsoft.quantum.canon.operationpow
 metadata:
-  ms.openlocfilehash: c8da707ae2a47e427204f95f11040154e0d53e02
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: b3714baaa9eb0f0769b5e141e9ba3f0dce7c70cf
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871256"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678676"

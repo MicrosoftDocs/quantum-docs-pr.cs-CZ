@@ -11,10 +11,10 @@ summary: >-
 
   To může být užitečné, kdykoli je očekáván vstup typu operace, ale není nutné provádět žádnou akci.
 
-  Například pokud konkrétní oprava chyby Syndrome indikuje, že nedošlo k žádné chybě, `NoOp<Qubit[]>` pravděpodobně správný postup obnovení.
+  Například pokud konkrétní oprava chyby Syndrome značí, že nedošlo k žádné chybě, `NoOp<Qubit[]>` může se jednat o správný postup obnovení.
 
-  Podobně pokud operace očekává jako vstup proceduru přípravy stavu, `NoOp<Qubit[]>` lze použít k přípravě stavu $ \ket{0 \cdots 0} $.
-remarks: V téměř všech případech je nutné zadat parametr typu pro `NoOp` explicitně. `NoOp<Qubit>` je například stejný jako <xref:microsoft.quantum.intrinsic.i>.
+  Podobně pokud operace očekává jako vstup proceduru přípravy stavu, `NoOp<Qubit[]>` dá se použít k přípravě stavu $ \ket{0 \cdots 0} $.
+remarks: Ve většině případů je parametr typu pro `NoOp` nutné zadat explicitně. Například `NoOp<Qubit>` je stejný jako <xref:microsoft.quantum.intrinsic.i>.
 syntax: "operation NoOp (input : 'T) : Unit"
 input:
   content: "(input : 'T)"
@@ -34,9 +34,9 @@ functors:
 seeAlso:
 - microsoft.quantum.intrinsic.i
 metadata:
-  ms.openlocfilehash: 8752eb93c1fba59065518ffd4665ea6f110ce1cc
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 74c85340e065929feabb81d7e97339f80255c0f6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73222676"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678719"
