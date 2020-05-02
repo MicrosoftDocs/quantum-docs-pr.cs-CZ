@@ -4,17 +4,17 @@ name: MultiplexOperationsBruteForceFromGenerator
 type: operation
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _J $, pokud se řídí stavem n-qubit číslo $ \ket{j} $.
+  Aplikuje jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $ při kontrole pomocí n-qubit čísla stavu $ \ket{j} $.
 
 
   $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-remarks: '`coefficients` bude doplněna prvky identity, pokud je zadáno méně než $2 ^ n $. Tato verze je implementována přímo prostřednictvím smyčky v rámci jednotně řízených operátorů n.'
+remarks: '`coefficients`bude doplněn elementy identity, pokud je zadáno méně než $2 ^ n $. Tato verze je implementována přímo prostřednictvím smyčky v rámci jednotně řízených operátorů n.'
 syntax: "operation MultiplexOperationsBruteForceFromGenerator (unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
 input:
   content: "(unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
   types:
   - name: unitaryGenerator
-    summary: Řazená kolekce členů, kde je první prvek `Int` počet unitaries $N $ a druhý prvek `(Int -> ('T => () is Adj + Ctl))` je funkce, která přebírá celé číslo $j $ in $ [0, N-1] $ a výstupuje Jednotková operace $V _J $.
+    summary: Řazená kolekce členů, kde `Int` je prvním prvkem počet unitaries $N $, a druhý prvek `(Int -> ('T => () is Adj + Ctl))` je funkce, která přebírá celé číslo $j $ v $ [0, N-1] $ a vypisuje jednotkovou operaci $V _J $.
     types:
     - isPrimitive: true
       uid: Int
@@ -41,7 +41,7 @@ input:
     summary: $n $-qubit registr ovládacího prvku, který kóduje číselný stav $ \ket{j} $ ve formátu Little endian.
     uid: microsoft.quantum.arithmetic.littleendian
   - name: target
-    summary: Obecný qubit registr, na kterém $V _J $.
+    summary: Obecný registr qubit, na který $V _j $
     uid: "'T"
     isLocal: true
 output:
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: a010fc41e76c09f064fdb7a0fa890efcfd8a41f8
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ea435831323b0e117027005fa8007c87ab3f2575
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73225158"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678805"

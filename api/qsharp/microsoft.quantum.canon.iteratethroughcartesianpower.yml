@@ -9,7 +9,7 @@ summary: >-
 
   Iterativní postupně aplikuje operaci pro každý prvek kartézském výkonu rozsahu `0..(bound - 1)`.
 examples: >-
-  Vzhledem k operaci `op`jsou následující dva fragmenty ekvivalentní:
+  Vzhledem k operaci `op`jsou tyto dva fragmenty ekvivalentní:
 
 
   ```Q#
@@ -39,7 +39,7 @@ input:
   content: '(power : Int, bound : Int, op : (Int[] => Unit))'
   types:
   - name: power
-    summary: Kartézském výkon, pro který by měl být vyvolán rozsah `0..(bound - 1)`.
+    summary: Kartézském napájení, na které by měl `0..(bound - 1)` být rozsah vyvolán.
     isPrimitive: true
     uid: Int
   - name: bound
@@ -66,9 +66,9 @@ output:
 seeAlso:
 - microsoft.quantum.canon.iteratethroughcartesianproduct
 metadata:
-  ms.openlocfilehash: 4679e1b569dab167eecbb22947543ab993d7fa8d
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: a6f2d0e1f99c6cf7038803271af974a1c5fca465
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870933"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679058"

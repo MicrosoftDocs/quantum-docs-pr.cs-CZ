@@ -4,7 +4,7 @@ name: MultiplexerFromGenerator
 type: function
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Vrátí jednotkovou operaci řízenou vynásobením $U $, která používá jednotkovou $V _J $, pokud je kontrolována stavem n-qubit čísla $ \ket{j} $.
+  Vrátí jednotkovou operaci řízenou vynásobením $U $, která se vztahuje na jednotkovou $V _j $, pokud je kontrolována v n-qubit čísle stavu $ \ket{j} $.
 
 
   $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
@@ -13,7 +13,7 @@ input:
   content: '(unitaryGenerator : (Int, (Int -> (Qubit[] => Unit is Adj + Ctl))))'
   types:
   - name: unitaryGenerator
-    summary: Řazená kolekce členů, kde je první prvek `Int` počet unitaries $N $ a druhý prvek `(Int -> ('T => () is Adj + Ctl))` je funkce, která přebírá celé číslo $j $ in $ [0, N-1] $ a výstupuje Jednotková operace $V _J $.
+    summary: Řazená kolekce členů, kde `Int` je prvním prvkem počet unitaries $N $, a druhý prvek `(Int -> ('T => () is Adj + Ctl))` je funkce, která přebírá celé číslo $j $ v $ [0, N-1] $ a vypisuje jednotkovou operaci $V _J $.
     types:
     - isPrimitive: true
       uid: Int
@@ -40,7 +40,7 @@ input:
 output:
   content: ((Microsoft.Quantum.Arithmetic.LittleEndian, Qubit[]) => Unit is Adj + Ctl)
   types:
-  - summary: Jednotková operace řízená pomocí vícenásobného vynásobení $U $, která se vztahuje na unitaries popsané `unitaryGenerator`.
+  - summary: Jednotková operace řízená pomocí vícenásobného vynásobení $U $, `unitaryGenerator`která se vztahuje na unitaries, kterou popisuje.
     isOperation: true
     input:
       types:
@@ -58,9 +58,9 @@ output:
 seeAlso:
 - microsoft.quantum.canon.multiplexoperationsfromgenerator
 metadata:
-  ms.openlocfilehash: 52cd79e2450e7c33c8c5ff2b1d6fbf540200c7e7
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1000e7606b7afed988687839cc85442a0dd9ff30
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227759"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678849"
