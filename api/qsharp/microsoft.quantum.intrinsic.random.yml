@@ -4,7 +4,7 @@ name: Random
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
 summary: >-
-  Náhodná operace přebírá pole Double jako vstup a vrací náhodně vybraný index do pole jako `Int`.
+  Náhodná operace přebírá pole Double jako vstup a vrátí náhodně vybraný index do pole jako `Int`.
 
   Pravděpodobnost výběru konkrétního indexu je úměrná hodnotě prvku pole v daném indexu.
 
@@ -21,13 +21,13 @@ input:
 output:
   content: Int
   types:
-  - summary: Celé číslo $i $ s pravděpodobností $ \Pr (i) = p_i/\sum_i p_i $, kde $p _i $ je $i $ th elementu `probs`.
+  - summary: Celé číslo $i $ s pravděpodobností $ \Pr (i) = p_i/\ sum_i p_i $, kde $p _i $ je prvek $i $ th `probs`.
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: b2a5f6a0b1d2584e385bfa4de2b2c43fc1cf6509
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: b269b780b5e8ad048d1563e3dca98524a5ed63d2
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233930"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686810"

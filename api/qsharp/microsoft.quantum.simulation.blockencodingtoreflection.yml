@@ -4,33 +4,33 @@ name: BlockEncodingToReflection
 type: function
 namespace: Microsoft.Quantum.Simulation
 summary: >-
-  Převede `BlockEncoding` na ekvivalentní `BLockEncodingReflection`.
+  `BlockEncoding` Převede na ekvivalentní `BLockEncodingReflection`.
 
 
-  To znamená, že daná `BlockEncoding` Jednotková $U $, která kóduje některý operátor $H $, převede ho na `BlockEncodingReflection` $U $, který kóduje stejný operátor, ale také splňuje $U ^ \dagger = U $.
+  To znamená, že s `BlockEncoding` ohledem na jednotkové $U $, který kóduje nějaký operátor $H $ Interest, převede ho `BlockEncodingReflection` na $U $, který kóduje stejný operátor, ale také splňuje $U ' ^ \dagger = U ' $.
 
   Tím se zvýší velikost pomocného registru $U $ o jeden qubit.
 remarks: Tím se zvýší velikost pomocného registru $U $ o jeden qubit.
 syntax: 'function BlockEncodingToReflection (blockEncoding : Microsoft.Quantum.Simulation.BlockEncoding) : Microsoft.Quantum.Simulation.BlockEncodingReflection'
-references: '- Simulace Hamiltonian podle Qubitization Guang vystoupí hao nízká, Petr L. Čuangština https://arxiv.org/abs/1610.06546'
+references: '- Simulace Hamiltonian podle Qubitization Guang vystoupí hao nízká, Petr L. Čuangštinahttps://arxiv.org/abs/1610.06546'
 input:
   content: '(blockEncoding : Microsoft.Quantum.Simulation.BlockEncoding)'
   types:
   - name: blockEncoding
-    summary: '`BlockEncoding` Jednotková $U $, která se má převést na reflexi.'
+    summary: '`BlockEncoding` Jednotková $U $, která má být převedena na reflexi.'
     uid: microsoft.quantum.simulation.blockencoding
 output:
   content: Microsoft.Quantum.Simulation.BlockEncodingReflection
   types:
-  - summary: Jednotková $U $ pracuje společně na registrech `a` a `s` blokující kódování $H $ a splňuje $U ^ \dagger = U $.
+  - summary: Jednotková $U ' $ jednají společně na `a` registrech `s` a blokující kódování $H $ a splňuje $U ' ^ \dagger = U ' $.
     uid: microsoft.quantum.simulation.blockencodingreflection
 seeAlso:
 - microsoft.quantum.canon.blockencoding
 - microsoft.quantum.canon.blockencodingreflection
 metadata:
-  ms.openlocfilehash: 47eba3c59ef30f89139830aa4d9b98d22d141d8f
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e656a5ab9e187660a20420049374380ef9726647
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73065618"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82686920"
