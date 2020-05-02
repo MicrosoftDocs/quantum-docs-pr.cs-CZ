@@ -22,7 +22,7 @@ input:
       parametr aproximace, který určuje, na jaké úrovni se vyřadí kontrolované otočení Z okruhu QFT.
 
 
-      Parametr aproximace a určuje úroveň vyřazení z rotací, tj. ∈ {0.. n} a všech rotací Z 2π/2k, kde k > a jsou odebrány z okruhu QFT. Je známo, že pro k > = log ₂ (n) + log ₂ (1/ε) + 3 jedna se dá svázat | | QFT-AQFT | | < ε.
+      Parametr aproximace a určuje úroveň vyřazení z rotací, tj. ∈ {0.. n} a všech rotací Z 2π/2k, kde k>a jsou odebrány z okruhu QFT. Je známo, že pro k >= log ₂ (n) + log ₂ (1/ε) + 3 jedna se dá svázat | | QFT-AQFT | |<ε.
     isPrimitive: true
     uid: Int
   - name: qs
@@ -37,9 +37,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 6d650d4c1d80e747df7560c630543189513d252a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 44d6a5937924f13cab04137bd3d0eb81396824c9
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73212527"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674391"

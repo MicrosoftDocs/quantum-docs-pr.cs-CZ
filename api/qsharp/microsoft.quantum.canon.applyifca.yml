@@ -7,11 +7,11 @@ summary: >-
   Aplikuje jednotnou operaci s podmíněným klasickým bitem.
 
 
-  Při `op` operace a `bit`bitové hodnoty platí `op` `target`, pokud `bit` `true`. Pokud `false`, nic se nestane s `target`.
+  `target` Pokud `bit` je `true`zadaná `op` operace a bitová `bit`hodnota, `op` platí pro if. V `false`případě, že `target`se nic nestane s.
 
   Přípona `CA` označuje, že operace, která se má použít, je jednotná (přivedená a přiléhající).
 examples: >-
-  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězec zadaný jako pole hodnot `Bool`:
+  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězce, který byl zadán jako pole `Bool` hodnot:
 
 
   ```Q#
@@ -67,9 +67,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: c78136688111a71e6a9a58972c9b9bb71603e0cf
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2b716ef4a7d429176aa1359fb22b3ce24be0d5f4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213751"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675045"
