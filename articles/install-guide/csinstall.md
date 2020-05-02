@@ -1,147 +1,101 @@
 ---
-title: 'Vývoj s Q # +C#'
+title: Vývoj s využitím Q# a C#
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036283"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680166"
 ---
-# <a name="develop-with-q--c"></a><span data-ttu-id="b8eba-102">Vývoj s Q # +C#</span><span class="sxs-lookup"><span data-stu-id="b8eba-102">Develop with Q# + C#</span></span>
+# <a name="using-q-with-c-and-f"></a><span data-ttu-id="cffaa-102">Použití Q # s C\# a F\#</span><span class="sxs-lookup"><span data-stu-id="cffaa-102">Using Q# with C\# and F\#</span></span>
 
-<span data-ttu-id="b8eba-103">Nainstalujte QDK pro vývoj C# hostitelských programů pro volání Q # Operations.</span><span class="sxs-lookup"><span data-stu-id="b8eba-103">Install the QDK to develop C# host programs to call Q# operations.</span></span>
+<span data-ttu-id="cffaa-103">Q # je sestavený tak, aby se dobře hrál s jazyky .NET, jako je C# a F #.</span><span class="sxs-lookup"><span data-stu-id="cffaa-103">Q# is built to play well with .NET languages such as C# and F#.</span></span>
+<span data-ttu-id="cffaa-104">V této příručce vám ukážeme, jak použít Q # s hostitelským programem napsaným v jazyce .NET.</span><span class="sxs-lookup"><span data-stu-id="cffaa-104">In this guide, we'll demonstrate how to use Q# with a host program written in a .NET language.</span></span>
 
-<span data-ttu-id="b8eba-104">Q # je sestavený tak, aby se dobře hrál s jazyky C#.NET – konkrétně.</span><span class="sxs-lookup"><span data-stu-id="b8eba-104">Q# is built to play well with .NET languages--specifically C#.</span></span> <span data-ttu-id="b8eba-105">S tímto párováním můžete pracovat v různých vývojových prostředích:</span><span class="sxs-lookup"><span data-stu-id="b8eba-105">You can work with this pairing inside different development environments:</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="cffaa-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cffaa-105">Prerequisites</span></span>
 
-- [<span data-ttu-id="b8eba-106">Q # + C# s použitím sady Visual Studio (Windows)</span><span class="sxs-lookup"><span data-stu-id="b8eba-106">Q# + C# using Visual Studio (Windows)</span></span>](#VS)
-- [<span data-ttu-id="b8eba-107">Q # + C# použití Visual Studio Code (Windows, Linux a Mac)</span><span class="sxs-lookup"><span data-stu-id="b8eba-107">Q# + C# using Visual Studio Code (Windows, Linux and Mac)</span></span>](#VSC)
-- [<span data-ttu-id="b8eba-108">Q # + C# použití nástroje příkazového řádku `dotnet`</span><span class="sxs-lookup"><span data-stu-id="b8eba-108">Q# + C# using the `dotnet` command-line tool</span></span>](#command)
+- <span data-ttu-id="cffaa-106">Nainstalujte sadu [pro vývoj pro více procesorů pro použití s projekty příkazového řádku Q #](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="cffaa-106">Install the Quantum Development Kit [for use with Q# command-line projects](xref:microsoft.quantum.install.standalone).</span></span>
 
-## <span data-ttu-id="b8eba-109">Vývoj pomocí Q # + C# pomocí sady Visual Studio <a name="VS"></a></span><span class="sxs-lookup"><span data-stu-id="b8eba-109">Develop with Q# + C# using Visual Studio <a name="VS"></a></span></span>
+## <a name="creating-a-q-library-and-a-net-host"></a><span data-ttu-id="cffaa-107">Vytvoření knihovny Q # a hostitele .NET</span><span class="sxs-lookup"><span data-stu-id="cffaa-107">Creating a Q# library and a .NET host</span></span>
 
-<span data-ttu-id="b8eba-110">Visual Studio nabízí bohatá prostředí pro vývoj programů Q #.</span><span class="sxs-lookup"><span data-stu-id="b8eba-110">Visual Studio offers a rich environment for developing Q# programs.</span></span> <span data-ttu-id="b8eba-111">Rozšíření Visual Studio Q # obsahuje šablony pro soubory a projekty Q # a také zvýrazňování syntaxe, dokončování kódu a podporu technologie IntelliSense.</span><span class="sxs-lookup"><span data-stu-id="b8eba-111">The Q# Visual Studio extension contains templates for Q# files and projects as well as syntax highlighting, code completion and IntelliSense support.</span></span>
+<span data-ttu-id="cffaa-108">Prvním krokem je vytvoření projektů pro knihovnu Q # a pro hostitele .NET, který bude volat operace a funkce definované ve vaší knihovně Q #.</span><span class="sxs-lookup"><span data-stu-id="cffaa-108">The first step is to create projects for your Q# library, and for the .NET host that will call into the operations and functions defined in your Q# library.</span></span>
 
+### <a name="visual-studio-2019"></a>[<span data-ttu-id="cffaa-109">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="cffaa-109">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
 
-1. <span data-ttu-id="b8eba-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b8eba-112">Pre-requisites</span></span>
+- <span data-ttu-id="cffaa-110">Vytvoření nové knihovny Q #</span><span class="sxs-lookup"><span data-stu-id="cffaa-110">Create a new Q# library</span></span>
+  - <span data-ttu-id="cffaa-111">Přejít na **soubor** -> **Nový** -> **projekt**</span><span class="sxs-lookup"><span data-stu-id="cffaa-111">Go to **File** -> **New** -> **Project**</span></span>
+  - <span data-ttu-id="cffaa-112">Do vyhledávacího pole zadejte text "Q #"</span><span class="sxs-lookup"><span data-stu-id="cffaa-112">Type "Q#" in the search box</span></span>
+  - <span data-ttu-id="cffaa-113">Vybrat **knihovnu Q #**</span><span class="sxs-lookup"><span data-stu-id="cffaa-113">Select **Q# Library**</span></span>
+  - <span data-ttu-id="cffaa-114">Vybrat **Další**</span><span class="sxs-lookup"><span data-stu-id="cffaa-114">Select **Next**</span></span>
+  - <span data-ttu-id="cffaa-115">Zvolit název a umístění knihovny</span><span class="sxs-lookup"><span data-stu-id="cffaa-115">Choose a name and location for your library</span></span>
+  - <span data-ttu-id="cffaa-116">Ujistěte se, že není **zaškrtnuté** možnost "umístit projekt a řešení ve stejném adresáři".</span><span class="sxs-lookup"><span data-stu-id="cffaa-116">Make sure that "place project and solution in same directory" is **unchecked**</span></span>
+  - <span data-ttu-id="cffaa-117">Vyberte **vytvořit** .</span><span class="sxs-lookup"><span data-stu-id="cffaa-117">Select **Create**</span></span>
+- <span data-ttu-id="cffaa-118">Vytvořit nový hostitelský program C# nebo F #</span><span class="sxs-lookup"><span data-stu-id="cffaa-118">Create a new C# or F# host program</span></span>
+  - <span data-ttu-id="cffaa-119">Přejít na **soubor** → **Nový** → **projekt**</span><span class="sxs-lookup"><span data-stu-id="cffaa-119">Go to **File** → **New** → **Project**</span></span>
+  - <span data-ttu-id="cffaa-120">Vyberte Konzolová aplikace (.NET Core) pro C# nebo F. #</span><span class="sxs-lookup"><span data-stu-id="cffaa-120">Select "Console App (.NET Core")" for either C# or F#</span></span>
+  - <span data-ttu-id="cffaa-121">Vybrat **Další**</span><span class="sxs-lookup"><span data-stu-id="cffaa-121">Select **Next**</span></span>
+  - <span data-ttu-id="cffaa-122">V části *řešení*vyberte Přidat do řešení.</span><span class="sxs-lookup"><span data-stu-id="cffaa-122">Under *solution*, select "add to solution"</span></span>
+  - <span data-ttu-id="cffaa-123">Vyberte název hostitelského programu</span><span class="sxs-lookup"><span data-stu-id="cffaa-123">Choose a name for your host program</span></span>
+  - <span data-ttu-id="cffaa-124">Vyberte **vytvořit** .</span><span class="sxs-lookup"><span data-stu-id="cffaa-124">Select **Create**</span></span>
 
-    - <span data-ttu-id="b8eba-113">[Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 s povolenými úlohami vývoje pro různé platformy pomocí rozhraní .NET Core</span><span class="sxs-lookup"><span data-stu-id="b8eba-113">[Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3, with the .NET Core cross-platform development workload enabled</span></span>
+### <a name="visual-studio-code-or-command-line"></a>[<span data-ttu-id="cffaa-125">Visual Studio Code nebo příkazový řádek</span><span class="sxs-lookup"><span data-stu-id="cffaa-125">Visual Studio Code or Command Line</span></span>](#tab/tabid-cmdline)
 
-1. <span data-ttu-id="b8eba-114">Nainstalujte rozšíření sady Visual Studio pro jazyk Q#.</span><span class="sxs-lookup"><span data-stu-id="b8eba-114">Install the Q# Visual Studio extension</span></span>
+- <span data-ttu-id="cffaa-126">Vytvoření nové knihovny Q #</span><span class="sxs-lookup"><span data-stu-id="cffaa-126">Create a new Q# library</span></span>
 
-    - <span data-ttu-id="b8eba-115">Stažení a instalace [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)</span><span class="sxs-lookup"><span data-stu-id="b8eba-115">Download and install the [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)</span></span>
+  ```dotnetcli
+  dotnet new classlib -lang Q# -o quantum
+  ```
 
-1. <span data-ttu-id="b8eba-116">Ověřte instalaci vytvořením aplikace `Hello World`.</span><span class="sxs-lookup"><span data-stu-id="b8eba-116">Verify the installation by creating a `Hello World` application</span></span>
+- <span data-ttu-id="cffaa-127">Vytvoření nového projektu konzoly C# nebo F #</span><span class="sxs-lookup"><span data-stu-id="cffaa-127">Create a new C# or F# console project</span></span>
 
-    - <span data-ttu-id="b8eba-117">Vytvořte novou aplikaci v jazyku Q#.</span><span class="sxs-lookup"><span data-stu-id="b8eba-117">Create a new Q# application</span></span>
+  ```dotnetcli
+  dotnet new console -lang C# -o host  
+  ```
 
-        - <span data-ttu-id="b8eba-118">Přejděte do části **Soubor** -> **Nový** -> **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-118">Go to **File** -> **New** -> **Project**</span></span>
-        - <span data-ttu-id="b8eba-119">Do vyhledávacího pole zadejte `Q#`.</span><span class="sxs-lookup"><span data-stu-id="b8eba-119">Type `Q#` in the search box</span></span>
-        - <span data-ttu-id="b8eba-120">Vyberte **Aplikace Q#** .</span><span class="sxs-lookup"><span data-stu-id="b8eba-120">Select **Q# Application**</span></span>
-        - <span data-ttu-id="b8eba-121">Vyberte **Další**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-121">Select **Next**</span></span>
-        - <span data-ttu-id="b8eba-122">Vyberte název a umístění aplikace.</span><span class="sxs-lookup"><span data-stu-id="b8eba-122">Choose a name and location for your application</span></span>
-        - <span data-ttu-id="b8eba-123">Vyberte **Vytvořit**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-123">Select **Create**</span></span>
+- <span data-ttu-id="cffaa-128">Přidání knihovny Q # jako odkazu z hostitelského programu</span><span class="sxs-lookup"><span data-stu-id="cffaa-128">Add your Q# library as a reference from your host program</span></span>
 
-    - <span data-ttu-id="b8eba-124">Prozkoumejte projekt.</span><span class="sxs-lookup"><span data-stu-id="b8eba-124">Inspect the project</span></span>
+  ```dotnetcli
+  cd host
+  dotnet add reference ../quantum/quantum.csproj
+  ```
 
-        <span data-ttu-id="b8eba-125">Měli byste zjistit, že byly vytvořeny dva soubory: `Driver.cs`, což je hostitelská aplikace C#, a `Operation.qs`, což je program v jazyku Q#, který definuje jednoduchou operaci zobrazení zprávy na konzole.</span><span class="sxs-lookup"><span data-stu-id="b8eba-125">You should see that two files have been created: `Driver.cs`, which is the C# host application; and `Operation.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
+- <span data-ttu-id="cffaa-129">Volitelné Vytvoření řešení pro oba projekty</span><span class="sxs-lookup"><span data-stu-id="cffaa-129">[Optional] Create a solution for both projects</span></span>
 
-    - <span data-ttu-id="b8eba-126">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="b8eba-126">Run the application</span></span>
+  ```dotnetcli
+  dotnet new sln -n quantum-dotnet
+  dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
+  dotnet sln quantum-dotnet.sln add ./host/host.csproj
+  ```
 
-        - <span data-ttu-id="b8eba-127">Vyberte **Ladit** -> **Spustit bez ladění**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-127">Select **Debug** -> **Start Without Debugging**</span></span>
-        - <span data-ttu-id="b8eba-128">V okně konzoly by se měl zobrazit text `Hello quantum world!`.</span><span class="sxs-lookup"><span data-stu-id="b8eba-128">You should see the text `Hello quantum world!` printed to a console window.</span></span>
+***
 
-> [!NOTE]
-> * <span data-ttu-id="b8eba-129">Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.</span><span class="sxs-lookup"><span data-stu-id="b8eba-129">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its subfolders.</span></span>  
+## <a name="calling-into-q-from-net"></a><span data-ttu-id="cffaa-130">Volání do Q # z .NET</span><span class="sxs-lookup"><span data-stu-id="cffaa-130">Calling into Q# from .NET</span></span>
 
-## <span data-ttu-id="b8eba-130">Vývoj pomocí Q # + C# pomocí Visual Studio Code <a name="VSC"></a></span><span class="sxs-lookup"><span data-stu-id="b8eba-130">Develop with Q# + C# using Visual Studio Code <a name="VSC"></a></span></span>
+<span data-ttu-id="cffaa-131">Jakmile budete mít projekty nastavené podle výše uvedených pokynů, můžete do aplikace v konzole .NET zavolat do Q #.</span><span class="sxs-lookup"><span data-stu-id="cffaa-131">Once you have your projects set up following the above instructions, you can call into Q# from your .NET console application.</span></span>
+<span data-ttu-id="cffaa-132">Kompilátor Q # vytvoří třídy .NET pro každou operaci Q # a funkci, která vám umožní spouštět v simulátoru své programy pro práci s více operačními systémy.</span><span class="sxs-lookup"><span data-stu-id="cffaa-132">The Q# compiler will create .NET classes for each Q# operation and function that allow you to run your quantum programs on a simulator.</span></span>
 
-<span data-ttu-id="b8eba-131">Visual Studio Code (VS Code) nabízí bohatý prostředí pro vývoj programů Q # v systémech Windows, Linux a Mac.</span><span class="sxs-lookup"><span data-stu-id="b8eba-131">Visual Studio Code (VS Code) offers a rich environment for developing Q# programs on Windows, Linux and Mac.</span></span>  <span data-ttu-id="b8eba-132">Rozšíření Q # VS Code zahrnuje podporu zvýrazňování syntaxe Q #, dokončování kódu a fragmentů kódu Q #.</span><span class="sxs-lookup"><span data-stu-id="b8eba-132">The Q# VS Code extension includes support for Q# syntax highlighting, code completion, and Q# code snippets.</span></span>
+<span data-ttu-id="cffaa-133">Například [Ukázka interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) zahrnuje následující příklad operace Q #:</span><span class="sxs-lookup"><span data-stu-id="cffaa-133">For example, the [.NET interoperability sample](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) includes the following example of a Q# operation:</span></span>
 
-1. <span data-ttu-id="b8eba-133">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b8eba-133">Pre-requisites</span></span>
+:::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-   - [<span data-ttu-id="b8eba-134">VS Code</span><span class="sxs-lookup"><span data-stu-id="b8eba-134">VS Code</span></span>](https://code.visualstudio.com/download)
-   - [<span data-ttu-id="b8eba-135">.NET Core SDK 3,1 nebo novější</span><span class="sxs-lookup"><span data-stu-id="b8eba-135">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
+<span data-ttu-id="cffaa-134">Chcete-li volat tuto operaci z rozhraní .NET pro simulátor doby provozu, můžete `Run` použít metodu třídy `RunAlgorithm` .NET vygenerovanou kompilátorem Q #:</span><span class="sxs-lookup"><span data-stu-id="cffaa-134">To call this operation from .NET on a quantum simulator, you can use the `Run` method of the `RunAlgorithm` .NET class generated by the Q# compiler:</span></span>
 
-1. <span data-ttu-id="b8eba-136">Nainstalujte rozšíření VS Code pro kvantové programování.</span><span class="sxs-lookup"><span data-stu-id="b8eba-136">Install the Quantum VS Code extension</span></span>
+### <a name="c"></a>[<span data-ttu-id="cffaa-135">R #</span><span class="sxs-lookup"><span data-stu-id="cffaa-135">C#</span></span>](#tab/tabid-csharp)
 
-    - <span data-ttu-id="b8eba-137">Nainstalujte [rozšíření VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span><span class="sxs-lookup"><span data-stu-id="b8eba-137">Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode)</span></span>
+:::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
-1. <span data-ttu-id="b8eba-138">Nainstalujte šablony kvantového projektu:</span><span class="sxs-lookup"><span data-stu-id="b8eba-138">Install the Quantum project templates:</span></span>
+### <a name="f"></a>[<span data-ttu-id="cffaa-136">F#</span><span class="sxs-lookup"><span data-stu-id="cffaa-136">F#</span></span>](#tab/tabid-fsharp)
 
-   - <span data-ttu-id="b8eba-139">Přejděte do části **Zobrazit** -> **Paleta příkazů**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-139">Go to **View** -> **Command Palette**</span></span>
-   - <span data-ttu-id="b8eba-140">Vyberte **Q #: Instalace šablon projektů**</span><span class="sxs-lookup"><span data-stu-id="b8eba-140">Select **Q#: Install project templates**</span></span>
+:::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-    <span data-ttu-id="b8eba-141">Teď máte sadu Quantum Development Kit nainstalovanou a připravenou k používání ve vašich vlastních aplikacích a knihovnách.</span><span class="sxs-lookup"><span data-stu-id="b8eba-141">You now have the Quantum Development Kit installed and ready to use in your own applications and libraries.</span></span>
-
-1. <span data-ttu-id="b8eba-142">Ověřte instalaci vytvořením aplikace `Hello World`.</span><span class="sxs-lookup"><span data-stu-id="b8eba-142">Verify the installation by creating a `Hello World` application</span></span>
-
-    - <span data-ttu-id="b8eba-143">Vytvořte nový projekt:</span><span class="sxs-lookup"><span data-stu-id="b8eba-143">Create a new project:</span></span>
-
-        - <span data-ttu-id="b8eba-144">Přejděte do části **Zobrazit** -> **Paleta příkazů**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-144">Go to **View** -> **Command Palette**</span></span>
-        - <span data-ttu-id="b8eba-145">Vyberte **Q #: vytvořit nový projekt.**</span><span class="sxs-lookup"><span data-stu-id="b8eba-145">Select **Q#: Create New Project**</span></span>
-        - <span data-ttu-id="b8eba-146">Vybrat **samostatnou konzolovou aplikaci**</span><span class="sxs-lookup"><span data-stu-id="b8eba-146">Select **Standalone console application**</span></span>
-        - <span data-ttu-id="b8eba-147">Přejděte do umístění v systému souborů, ve kterém chcete aplikaci vytvořit.</span><span class="sxs-lookup"><span data-stu-id="b8eba-147">Navigate to the location on the file system where you would like to create the application</span></span>
-        - <span data-ttu-id="b8eba-148">Po vytvoření projektu klikněte na tlačítko **Otevřít nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="b8eba-148">Click on the **Open new project...** button, once the project has been created</span></span>
-
-    - <span data-ttu-id="b8eba-149">Pokud ještě nemáte nainstalované C# rozšíření pro vs Code, zobrazí se automaticky otevírané okno.</span><span class="sxs-lookup"><span data-stu-id="b8eba-149">If you don't already have the C# extension for VS Code installed, a pop-up will appear.</span></span> <span data-ttu-id="b8eba-150">Nainstalujte rozšíření.</span><span class="sxs-lookup"><span data-stu-id="b8eba-150">Install the extension.</span></span> 
-
-    - <span data-ttu-id="b8eba-151">Spusťte aplikaci:</span><span class="sxs-lookup"><span data-stu-id="b8eba-151">Run the application:</span></span>
-
-        - <span data-ttu-id="b8eba-152">Přejít na **terminál** -> **nový terminál**</span><span class="sxs-lookup"><span data-stu-id="b8eba-152">Go to **Terminal** -> **New Terminal**</span></span>
-        - <span data-ttu-id="b8eba-153">Zadejte `dotnet run`</span><span class="sxs-lookup"><span data-stu-id="b8eba-153">Enter `dotnet run`</span></span>
-        - <span data-ttu-id="b8eba-154">V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="b8eba-154">You should see the following text in the output window `Hello quantum world!`</span></span>
-
-
-> [!NOTE]
-> * <span data-ttu-id="b8eba-155">Rozšíření Visual Studio Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami.</span><span class="sxs-lookup"><span data-stu-id="b8eba-155">Workspaces with multiple root folders are not currently supported by the Visual Studio Code extension.</span></span> <span data-ttu-id="b8eba-156">Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="b8eba-156">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
-
-## <span data-ttu-id="b8eba-157">Vývoj pomocí Q # + C# pomocí nástroje příkazového řádku `dotnet`<a name="command"></a></span><span class="sxs-lookup"><span data-stu-id="b8eba-157">Develop with Q# + C# using the `dotnet` command-line tool <a name="command"></a></span></span>
-
-<span data-ttu-id="b8eba-158">Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazového řádku. Stačí nainstalovat .NET Core SDK a šablony projektů QDK.</span><span class="sxs-lookup"><span data-stu-id="b8eba-158">Of course, you can also build and run Q# programs from the command line by simply installing the .NET Core SDK and the QDK project templates.</span></span> 
-
-1. <span data-ttu-id="b8eba-159">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b8eba-159">Pre-requisites</span></span>
-
-    - [<span data-ttu-id="b8eba-160">.NET Core SDK 3,1 nebo novější</span><span class="sxs-lookup"><span data-stu-id="b8eba-160">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
-
-1. <span data-ttu-id="b8eba-161">Nainstalujte šablony kvantového projektu pro rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="b8eba-161">Install the Quantum project templates for .NET</span></span>
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
-
-    <span data-ttu-id="b8eba-162">Teď máte sadu Quantum Development Kit nainstalovanou a připravenou k používání ve vašich vlastních aplikacích a knihovnách.</span><span class="sxs-lookup"><span data-stu-id="b8eba-162">You now have the Quantum Development Kit installed and ready to use in your own applications and libraries.</span></span>
-
-1. <span data-ttu-id="b8eba-163">Ověřte instalaci vytvořením aplikace `Hello World`.</span><span class="sxs-lookup"><span data-stu-id="b8eba-163">Verify the installation by creating a `Hello World` application</span></span>
-
-    - <span data-ttu-id="b8eba-164">Vytvoření nové aplikace</span><span class="sxs-lookup"><span data-stu-id="b8eba-164">Create a new application</span></span>
-
-       ```dotnetcli
-       dotnet new console -lang "Q#" -o runSayHello
-       ```
-
-    - <span data-ttu-id="b8eba-165">Přejděte do adresáře nové aplikace.</span><span class="sxs-lookup"><span data-stu-id="b8eba-165">Navigate to the new application directory</span></span>
-
-       ```bash
-       cd runSayHello
-       ```
-
-    <span data-ttu-id="b8eba-166">Spolu se soubory projektu aplikace by se měly zobrazovat dva vytvořené soubory: soubor v jazyku Q# (`Operation.qs`) a soubor hostitele v jazyku C# (`Driver.cs`).</span><span class="sxs-lookup"><span data-stu-id="b8eba-166">You should see that two files have been created, along with the project files of the application: a Q# file (`Operation.qs`) and a C# host file (`Driver.cs`).</span></span>
-
-    - <span data-ttu-id="b8eba-167">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="b8eba-167">Run the application</span></span>
-
-        ```dotnetcli
-        dotnet run
-        ```
-
-        <span data-ttu-id="b8eba-168">Měl by se zobrazit následující výstup: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="b8eba-168">You should see the following output: `Hello quantum world!`</span></span>
-
+***
     
-## <a name="whats-next"></a><span data-ttu-id="b8eba-169">Co dále?</span><span class="sxs-lookup"><span data-stu-id="b8eba-169">What's next?</span></span>
+## <a name="whats-next"></a><span data-ttu-id="cffaa-137">Co dále?</span><span class="sxs-lookup"><span data-stu-id="cffaa-137">What's next?</span></span>
 
-<span data-ttu-id="b8eba-170">Teď máte sadu Quantum Development Kit nainstalovanou v upřednostňovaném prostředí a můžete napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.write-program).</span><span class="sxs-lookup"><span data-stu-id="b8eba-170">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.write-program).</span></span>
+<span data-ttu-id="cffaa-138">Když teď máte prostředí pro vývoj s využitím provozu pro Q # pro programy příkazového řádku Q a pro interoperabilitu s .NET, můžete napsat a spustit [svůj první program](xref:microsoft.quantum.write-program)pro práci s procesorem.</span><span class="sxs-lookup"><span data-stu-id="cffaa-138">Now that you have Quantum Development Kit set up for both Q# command-line programs, and for interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.write-program).</span></span>

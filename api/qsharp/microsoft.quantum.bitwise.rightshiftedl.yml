@@ -24,19 +24,19 @@ input:
     isPrimitive: true
     uid: BigInt
   - name: amount
-    summary: Počet bitů, o který má být `value` posunut doprava.
+    summary: Počet bitů, které `value` mají být posunuty doprava.
     isPrimitive: true
     uid: Int
 output:
   content: BigInt
   types:
-  - summary: Hodnota `value`, posunutí vpravo podle `amount` bitů.
+  - summary: Hodnota, která `value`se posouvá doprava po `amount` bitech.
     isPrimitive: true
     uid: BigInt
 metadata:
-  ms.openlocfilehash: 4c370d859eefdcff5fc844cf55e17adad7b5df86
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: c6a61d838141e86d831bb341a1e077927e580dcc
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213853"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680593"

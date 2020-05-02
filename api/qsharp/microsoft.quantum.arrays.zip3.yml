@@ -26,7 +26,7 @@ input:
 output:
   content: ('T1, 'T2, 'T3)[]
   types:
-  - summary: Pole obsahující 3-řazené kolekce formulářů `(first[idx], second[idx], third[idx])` pro každý `idx`. Pokud se tři pole neshodují, bude výstup, který je kratší než tento počet vstupů.
+  - summary: Pole obsahující 3 – řazené kolekce členů formuláře `(first[idx], second[idx], third[idx])` pro každý. `idx` Pokud se tři pole neshodují, bude výstup, který je kratší než tento počet vstupů.
     isArray: true
     types:
     - uid: "'T1"
@@ -46,9 +46,9 @@ seeAlso:
 - zip
 - zip4
 metadata:
-  ms.openlocfilehash: 1a4f3a533178e089d975d5a510d202afe004d999
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 899066b309e41df3a1bb2bdce93382ff58de2662
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214176"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680738"

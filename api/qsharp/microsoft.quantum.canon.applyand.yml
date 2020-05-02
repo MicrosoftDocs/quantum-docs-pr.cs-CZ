@@ -7,10 +7,10 @@ summary: >-
   Invertuje zadaný cílový qubit, pokud jsou oba ovládací prvky qubits ve 1 stavu, přičemž pomocí měření provede operaci sousedících operací.
 
 
-  Invertuje `target` pouze v případě, že jsou oba ovládací prvky 1, ale předpokládá, že `target` je ve stavu 0.  Operace má T-Count 4, T-Depth 2 a nevyžaduje žádné pomocné qubit a může proto být vhodnější pro operaci CCNOT, pokud se `target` ví, že má hodnotu 0.  Sousední operace této operace měří na základě měření a nevyžaduje žádné brány T.
+  `target` Invertuje pouze v případě, že jsou oba ovládací prvky 1, `target` ale předpokládá, že je ve stavu 0.  Operace má T-Count 4, T-Depth 2 a nevyžaduje žádné pomocné qubit a může proto být vhodnější pro operaci CCNOT, pokud `target` je známo, že má hodnotu 0.  Sousední operace této operace měří na základě měření a nevyžaduje žádné brány T.
 
 
-  Řízená aplikace této operace nevyžaduje žádné pomocné qubit `2^c` `Rz` brány a není optimalizovaná pro hloubku, kde `c` je celkový počet qubits ovládacích prvků, včetně dvou ovládacích prvků z `ApplyAnd` operace.  Aplikace řízená v sousedství vyžaduje `2^c - 1` `Rz`ch Branch (s úhlem dvojnásobku velikosti nesousedících operací), žádné pomocné qubit a není optimalizovaná pro hloubku.
+  Kontrolované použití této operace nevyžaduje žádné pomocné qubit, `2^c` `Rz` brány a není optimalizované pro hloubku, kde `c` je počet celkových ovládacích prvků qubits, včetně dvou ovládacích prvků z `ApplyAnd` operace.  Aplikace řízená pomocí souseda vyžaduje `2^c - 1` `Rz` , aby byly brány (s úhlem dvojnásobku velikosti nesousedících operací), žádné pomocné qubit a není optimalizované pro hloubku.
 syntax: 'operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
 references: >-
   - Cody Novotný: "nové konstrukce pro bránu Toffoli odolné proti chybám", fyz. rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) doi: 10.1103/PhysRevA. 87.022328
@@ -42,9 +42,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 7cde3dbbd33ff482609bbaaccb15e4c7b1bc536e
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 973f7f618154720396be0bb4a01b52d763ccdd1c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872984"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680545"
