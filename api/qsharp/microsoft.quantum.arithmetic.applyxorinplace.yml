@@ -7,10 +7,10 @@ summary: >-
   Aplikuje operaci bitové operace-XOR mezi klasickým celým číslem a celým číslem reprezentovaným registrem qubits.
 
 
-  Aplikuje operace `X` na qubits v registru Little-endian na základě 1 bitů v rámci celého čísla.
+  Aplikuje `X` operace na qubits v registru s malým endian na základě 1 bitů v celé číslo.
 
 
-  Poznamenejte si `value` a nechte y unsigned integer zakódovaný v `target`a pak `InPlaceXorLE` provede operaci určenou následující mapou: $ \ket{y}\rightarrow \ket{y\oplus a} $, kde $ \oplus $ je bitový exkluzivní operátor OR.
+  Poznamenejte `value` si a nechť y unsigned integer kódovaný v `target`a pak `InPlaceXorLE` provede operaci určenou následující mapou: $ \ket{y}\rightarrow \ket{y\oplus a} $, kde $ \OPLUS $ je bitový exkluzivní operátor OR.
 syntax: 'operation ApplyXorInPlace (value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
@@ -20,7 +20,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Registr na základě doby, který se používá k ukládání `value` v kódování Little endian.
+    summary: Registr v případě příznaku, který `value` se používá k uložení v kódování Little endian.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 9d3d837d92537cc5d51a80e8e1c83c230b7acc28
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 27568274d343242f3b3bd0eef8de6e48d546de1f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871171"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679913"

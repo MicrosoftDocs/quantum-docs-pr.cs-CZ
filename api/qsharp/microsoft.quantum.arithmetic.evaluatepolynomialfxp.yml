@@ -9,7 +9,7 @@ input:
   content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
   types:
   - name: coefficients
-    summary: Koúčinnosti polynomu jako dvojitá Array, tj. Array $ [A_0, A_1,..., a_d] $ pro polynomická $P (x) = A_0 + A_1 x + \cdots + a_d x ^ d $.
+    summary: Koúčinnosti polynomu jako dvojitá Array, tj. Array $ [a_0, a_1,..., a_d] $ pro polynomická $P (x) = a_0 + a_1 x + \cdots + a_d x ^ d $.
     isArray: true
     isPrimitive: true
     uid: Double
@@ -17,7 +17,7 @@ input:
     summary: Vstupní číslo s pevnou desetinnou čárkou, pro které se má vyhodnotit polynomická hodnota
     uid: microsoft.quantum.arithmetic.fixedpoint
   - name: result
-    summary: Výstupní číslo s pevnou desetinnou čárkou, které bude obsahovat $P (x) $. Musí se nacházet ve stavu $ \ket{0}$ zpočátku.
+    summary: Výstupní číslo s pevnou desetinnou čárkou, které bude obsahovat $P (x) $. Musí být ve stavu $ \ket{0}$ původně.
     uid: microsoft.quantum.arithmetic.fixedpoint
 output:
   content: Unit
@@ -28,9 +28,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 8a3531860001c09fa3dadd5ba4db276f0a20d06a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7907702d8919060c630ce410d1cfcb995b4ed37a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73220993"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679646"
