@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Logical
 summary: Vrátí jednu ze dvou hodnot v závislosti na hodnotě logické podmínky.
 remarks: >-
-  Na rozdíl od operátoru `?|` Tato funkce nemá krátký okruh, takže oba vstupy jsou plně vyhodnoceny.
+  Na rozdíl od `?|` operátoru Tato funkce nemá krátký okruh, takže oba vstupy jsou plně vyhodnoceny.
 
 
   V případě chování až po krátkého okruhu jsou následující ekvivalenty:
@@ -27,23 +27,23 @@ input:
     isPrimitive: true
     uid: Bool
   - name: ifTrue
-    summary: Hodnota, která se má vrátit, když `condition` `true`.
+    summary: Hodnota, která má být vrácena `condition` , `true`Pokud je.
     uid: "'T"
     isLocal: true
   - name: ifFalse
-    summary: Hodnota, která se má vrátit, když `condition` `false`.
+    summary: Hodnota, která má být vrácena `condition` , `false`Pokud je.
     uid: "'T"
     isLocal: true
 output:
   content: "'T"
   types:
-  - summary: '`ifTrue`, pokud `condition` `true`, a `ifFalse` jinak.'
+  - summary: '`ifTrue`Pokud `condition` je `true`, a `ifFalse` jinak.'
     uid: "'T"
     isLocal: true
 metadata:
-  ms.openlocfilehash: f26e540b181ce405125dbf80cd97c3e177ad9531
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: c5a255fe0434c7dfc9bf49f1a1c9c6be03cd8055
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233335"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674082"
