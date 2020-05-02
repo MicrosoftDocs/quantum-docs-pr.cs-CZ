@@ -16,7 +16,7 @@ remarks: >-
 
   ### <a name="examples"></a>Příklady
 
-  Pomocí <xref:microsoft.quantum.simulation.paulievolutionset>je operátor $ \pi X_2 X_5 Y_9 $ reprezentován jako:
+  Pomocí <xref:microsoft.quantum.simulation.paulievolutionset>, operátor $ \pi X_2 X_5 Y_9 $ je reprezentován jako:
 
 
   ```qsharp
@@ -29,9 +29,9 @@ seeAlso:
 - evolutionset
 - paulievolutionset
 metadata:
-  ms.openlocfilehash: dc5f5b96a6d1708e94de918a65cbd68e0af06192
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d633ecdc11075eb45a40a58bb2a1ca67af577c3c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067046"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82655149"
