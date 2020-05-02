@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: >-
   Vratný, místní Ripple – přidání dvou celých čísel.
 
-  Pomocí dvou $n $ bitových celých čísel zakódovaných v registrech LittleEndian `xs` a `ys`a qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bitová kopie je XORed do qubit `carry`.
+  Pomocí dvou $n $ bitových celých čísel zakódovaných `xs` v `ys`registrech LittleEndian a qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit. `carry`
 remarks: Tato operace má stejné funkce jako RippleCarryAdderD a RippleCarryAdderCDKM, ale nepoužívá žádné ancilla qubits.
 syntax: 'operation RippleCarryAdderTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
 references: >-
@@ -34,9 +34,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 9c27164d8245c587b03c43606acebd0d156626bd
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8c1d67c4ffb7d2f75d70bc02be958fd08b6c6b14
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214482"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676665"

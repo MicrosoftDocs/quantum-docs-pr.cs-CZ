@@ -3,23 +3,23 @@ uid: microsoft.quantum.chemistry
 name: Microsoft.Quantum.Chemistry
 functions:
 - uid: microsoft.quantum.chemistry.htermstogenidx
-  summary: Převede index na Hamiltonian termín v `HTerm[]` formátu dat na GeneratorIndex.
+  summary: Převede index na Hamiltonian termín ve `HTerm[]` formátu dat na GeneratorIndex.
 - uid: microsoft.quantum.chemistry.htermstogensys
-  summary: Převede Hamiltonian v `HTerm[]` formátu dat na GeneratorSystem.
+  summary: Převede Hamiltonian ve `HTerm[]` formátu dat na GeneratorSystem.
 - uid: microsoft.quantum.chemistry.htermtogenidx
-  summary: Převede výraz Hamiltonian ve formátu dat `HTerm` na GeneratorIndex.
+  summary: Převede výraz Hamiltonian ve `HTerm` formátu dat na GeneratorIndex.
 - uid: microsoft.quantum.chemistry.isnotzero
-  summary: Ověří, zda `Double` číslo není přibližně nula.
+  summary: Ověří, zda `Double` je číslo nepřibližně nula.
 newtypes:
 - uid: microsoft.quantum.chemistry.hterm
   summary: >-
-    Formát dat předaných C# z do Q #, který představuje období Hamiltonian.
+    Formát dat předaných z C# na Q #, který představuje období Hamiltonian.
 
     Význam reprezentovaných dat je určen algoritmem, který ho přijímá.
 metadata:
-  ms.openlocfilehash: 78d6e9f54c25f9d1a6af32c157d23069b8a4872b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fda6e5c8daebeae115046771e85e0e49d057e666
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210912"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677025"

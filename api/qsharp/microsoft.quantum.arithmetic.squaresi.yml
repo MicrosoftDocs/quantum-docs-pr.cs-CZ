@@ -3,7 +3,7 @@ uid: microsoft.quantum.arithmetic.squaresi
 name: SquareSI
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Čtvercové celé číslo se znaménkem `xs` a uloží výsledek do `result`, který musí být zpočátku nula.
+summary: Čtvercové celé `xs` číslo se znaménkem a `result`uložení výsledku v, které musí být zpočátku nula.
 remarks: Implementace spoléhá na IntegerSquare.
 syntax: 'operation SquareSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian, result : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit'
 input:
@@ -13,7 +13,7 @@ input:
     summary: n-bit celé číslo na čtverec (SignedLittleEndian)
     uid: microsoft.quantum.arithmetic.signedlittleendian
   - name: result
-    summary: 2N výsledek (SignedLittleEndian) musí být ve stavu $ \ket{0}$ zpočátku.
+    summary: 2N výsledek (SignedLittleEndian), musí být ve stavu $ \ket{0}$ zpočátku.
     uid: microsoft.quantum.arithmetic.signedlittleendian
 output:
   content: Unit
@@ -24,9 +24,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 71a3ffc190540ccfb51eb81febdce6a943dc99fb
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e4a212094c38d370e2489b586ee8014131bef9dc
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218409"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676591"

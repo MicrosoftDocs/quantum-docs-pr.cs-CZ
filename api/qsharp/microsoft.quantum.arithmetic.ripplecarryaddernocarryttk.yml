@@ -7,7 +7,7 @@ summary: >-
   Vratný, místní Ripple – přidání dvou celých čísel bez nutnosti provádět.
 
 
-  V LittleEndian registrech `xs` a `ys`se předávají $n dvě celočíselná celá čísla, která jsou v registru zakódovaná. Tato operace vypočítá součet dvou celých čísel modulo $2 ^ n $, kde $n $ je bitová velikost vstupů `xs` a `ys`. Nepočítá se z něj bit provozování.
+  Tato dvě $nová celá čísla `xs` kódovaná v registrech LittleEndian a `ys`operace vypočítají součet dvou celých čísel modulo $2 ^ n $, kde $n $ je bitová velikost vstupů `xs` a. `ys` Nepočítá se z něj bit provozování.
 remarks: Tato operace má stejné funkce jako RippleCarryAdderTTK, ale nevrací bit přenosu.
 syntax: 'operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 references: >-
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 5147d6d78582ad3f45587938f1b4cf3f8a2dd506
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: cf6855325edc354d22b0324f5949a435a11ce8bb
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871052"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676687"

@@ -34,21 +34,21 @@ functions:
   summary: Vyhodnotí, že klasická hodnota s plovoucí desetinnou čárkou má očekávanou hodnotu až na malou toleranci 1E-10.
 operations:
 - uid: microsoft.quantum.diagnostics.assertallzero
-  summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu $ \ket{0}$.
+  summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu{0}$ \ket $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
-  summary: Vytvrzení, že zadané qubits jsou všechny ve stavu $ \ket{0}$ State až do dané tolerance.
+  summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu{0}$ \ket $ až do dané tolerance.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
 
 
-    Tento kontrolní výraz je implementován pomocí kontroly akce operací ve všech stavech formuláře $V _0 \otimes... \otimes V_ {n-1} $, kde $V _k $ je jedna ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
+    Tento kontrolní výraz je implementován pomocí kontroly akce operací ve všech stavech formuláře $V _0 \otimes... \otimes v_ {n-1} $, kde $V _k $ je jedna ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
 
 
     Tento kontrolní výraz používá $n $ qubits a vyžaduje více volání operací, které jsou porovnány.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
   summary: >-
-    Kontroluje, zda je operace `givenU` shodná s operací `expectedU` na dané vstupní velikosti tím, že kontroluje akci operací pouze na vektorech z výpočetního základu.
+    Kontroluje, zda je `givenU` operace shodná s operací `expectedU` na dané vstupní velikosti tím, že kontroluje akci operací pouze na vektorech z výpočetního základu.
 
     To je nezbytné, ale nedostatečné, podmínkou rovnosti dvou unitaries.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
@@ -62,27 +62,29 @@ operations:
 
     Tento kontrolní výraz lze použít k zajištění toho, aby Optimalizovaná verze operace se shoduje s jeho implementací Naive nebo aby operace, která funguje na řadě nestránkovaného řetězce, souhlasila se známými případy.
 - uid: microsoft.quantum.diagnostics.assertqubit
-  summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli Z.
+  summary: Vyhodnotí, že `q` qubit je v očekávané eigenstate operátoru Pauli z.
 - uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
   summary: >-
     Vyhodnotí, že qubit v očekávaném stavu.
 
 
-    `expected` představuje složitý vektor, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+    `expected`představuje složitý vektor, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
 
     První prvek řazených kolekcí členů, který představuje každý z $a $, $b $ je reálnou částí komplexního čísla, zatímco druhým z nich je imaginární část.
 
     Poslední argument definuje toleranci, se kterou je proveden kontrolní výraz.
 - uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
-  summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli Z až do dané tolerance.
+  summary: Vyhodnotí, že `q` qubit je v očekávané eigenstate operátoru Pauli z až po danou toleranci.
 newtypes:
+- uid: microsoft.quantum.diagnostics.enabletestingvianame
+  summary: Kompilátor rozpoznal atribut, pomocí kterého lze definovat alternativní název, který lze použít při načítání typu nebo volat pro účely testování.
 - uid: microsoft.quantum.diagnostics.test
   summary: Rozpoznaný atribut kompilátoru použitý k označení testu jednotky.
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace, které jsou užitečné pro diagnostické účely, včetně operací Assert a funkcí deklarací identity."
 metadata:
-  ms.openlocfilehash: 353750a6714b1cdd54ff866657a39bb825e34425
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 5e580bb50983d5c0e65d3284408bae04a5e92756
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905909"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676979"

@@ -7,9 +7,9 @@ summary: >-
   Použije operaci s podmíněným klasickým bitem.
 
 
-  Při `op` operace a `bit`bitové hodnoty platí `op` `target`, pokud `bit` `true`. Pokud `false`, nic se nestane s `target`.
+  `target` Pokud `bit` je `true`zadaná `op` operace a bitová `bit`hodnota, `op` platí pro if. V `false`případě, že `target`se nic nestane s.
 examples: >-
-  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězec zadaný jako pole hodnot `Bool`:
+  Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězce, který byl zadán jako pole `Bool` hodnot:
 
 
   ```Q#
@@ -59,9 +59,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: 8493200e8c87fc423bee6754f50f0f5c6b7cdd5c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: b3a573c55d461eb3c1a2af0cb7bacd0a4cfecbe5
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217644"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676367"

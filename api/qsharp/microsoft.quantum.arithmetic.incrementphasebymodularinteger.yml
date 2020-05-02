@@ -7,11 +7,11 @@ summary: >-
   Provede modulární přírůstek qubit registru pomocí celočíselné konstanty.
 
 
-  Poznamenejte si `increment` pomocí $a $, `modulus` $N $ a celého čísla kódovaného `target` $.
+  Poznamenejte si `increment` $a $, `modulus` pomocí $N $ a celého čísla kódovaného v `target` $y $.
 
   Operace pak provede následující transformaci: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} v \end{align} se ve formátu Little endian kódují.
 remarks: >-
-  Předpokládá, že `target` má nejvyšší bit nastavený na hodnotu 0.
+  Předpokládá, `target` že má nejvyšší bit nastavený na hodnotu 0.
 
   Také předpokládá, že hodnota cíle je menší než $N $.
 
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Celé číslo $y $ ve formátu Little-endian, který je zakódovaný do `increment` $a $ je přidán do.
+    summary: Celé číslo $y $ ve formátu Little-endian, který `increment` je zakódovaný do $a $ je přidaný do.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -43,9 +43,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementbymodularinteger
 metadata:
-  ms.openlocfilehash: 69240c9ecac0917f8f2a6d1f6a3554cc93269cbd
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: e97f88d64d9188d18b10ed7f67adc0225167c466
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871409"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676855"

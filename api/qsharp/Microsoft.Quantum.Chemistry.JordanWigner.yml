@@ -3,19 +3,19 @@ uid: microsoft.quantum.chemistry.jordanwigner
 name: Microsoft.Quantum.Chemistry.JordanWigner
 functions:
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerblockencodinggeneratorsystem
-  summary: Převede Hamiltonian popsaný `JWOptimizedHTerms` na `GeneratorSystem` vyjádřené v Pauli `GeneratorIndex`.
+  summary: Převede Hamiltonian, který popisuje `JWOptimizedHTerms` , na `GeneratorSystem` vyjádřený v Pauli `GeneratorIndex`.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorevolutionset
   summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerclusteroperatorgeneratorsystem
-  summary: Převede Hamiltonian popsaný `JWOptimizedHTerms` na `GeneratorSystem` vyjádřené ve smyslu konvence `GeneratorIndex` definované v tomto souboru.
+  summary: Převede Hamiltonian, který popisuje `JWOptimizedHTerms` , na `GeneratorSystem` vyjádřené v `GeneratorIndex` konvenci definované v tomto souboru.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionevolutionset
   summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerfermionfunction
   summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v JordanWigner.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignergeneratorsystem
-  summary: Převede Hamiltonian popsaný `JWOptimizedHTerms` na `GeneratorSystem` vyjádřené ve smyslu konvence `GeneratorIndex` definované v tomto souboru.
+  summary: Převede Hamiltonian, který popisuje `JWOptimizedHTerms` , na `GeneratorSystem` vyjádřené v `GeneratorIndex` konvenci definované v tomto souboru.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedblockencodinggeneratorsystem
-  summary: Převede Hamiltonian popsaný `JWOptimizedHTerms` na `GeneratorSystem` vyjádřené v Pauli `GeneratorIndex`.
+  summary: Převede Hamiltonian, který popisuje `JWOptimizedHTerms` , na `GeneratorSystem` vyjádřený v Pauli `GeneratorIndex`.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle
   summary: Vrátí Qubitizationou operaci T-Count optimalizované operace a parametry nezbytné ke spuštění.
 - uid: microsoft.quantum.chemistry.jordanwigner.qubitizationoracle
@@ -24,7 +24,7 @@ functions:
   summary: Vrátí operaci kroku Trotter a parametry nezbytné ke spuštění.
 operations:
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbexy
-  summary: Jednotková $U $, která používá řetězec Pauli v $ (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0 $ on qubits $0.. p $ Conditioned on a index $z \in\{0, 1\}$ a $p $. To znamená $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psí} = \ket{z}\ket{p} (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0\ket {\ psí} \end{align} $ $
+  summary: Jednotková $U $, která používá řetězec Pauli v $ (X ^ {z + 1}\_py ^ {z}\_p) z\_{p-1}... Z_0 $ on qubits $0.. p $ podmíněně v indexu $z \in\{0, 1\}$ a $p $. To znamená $ $ \begin{align} U\ket {z} \ KET {p} \ KET {\ psí} = \ket{z}\ket{p} (X ^ {z + 1}\_py ^ {z}\_p) z\_{p-1}... Z_0 \ket{\psi} \end{align} $ $
 - uid: microsoft.quantum.chemistry.jordanwigner.preparesingleconfigurationalstatesinglesiteoccupation
   summary: Jednoduchá příprava stavu zkušební verze pomocí číselníku orbitals
 - uid: microsoft.quantum.chemistry.jordanwigner.preparesparsemulticonfigurationalstate
@@ -38,24 +38,24 @@ operations:
 newtypes:
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
   summary: >-
-    Formát dat předávaných C# z do Q #, který představuje všechny informace pro simulaci Hamiltonian
+    Formát dat předaných z C# na Q #, který představuje všechny informace pro simulaci Hamiltonian
 
     Význam reprezentovaných dat je určen algoritmem, který ho přijímá.
 - uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerinputstate
-  summary: 'Formát dat předaných C# z do Q # představující přípravu počátečního stavu. význam zobrazených dat závisí na algoritmu, který ho přijímá.'
+  summary: 'Formát dat předaných z C# na Q # představující přípravu počátečního stavu. význam zobrazených dat závisí na algoritmu, který ho přijímá.'
 - uid: microsoft.quantum.chemistry.jordanwigner.jwoptimizedhterms
   summary: >-
-    Formát dat předaných C# z do Q #, který reprezentuje Hamiltonian podmínek.
+    Formát dat předaných z C# na Q #, který představuje výrazy Hamiltonian.
 
     Význam reprezentovaných dat je určen algoritmem, který ho přijímá.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbegeneratorsystem
-  summary: Funkce, která vrací `OptimizedBETermIndex` data pro term `n` předaná celočíselná `n`, spolu s počtem podmínek v prvním `Int` a součtem absolutních hodnot všech výrazů v `Double`.
+  summary: Funkce, která `OptimizedBETermIndex` vrací data pro `n` Term s daným `n`celým číslem, spolu s počtem podmínek v prvním `Int` a součtem absolutních hodnot všech výrazů v `Double`.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbetermindex
   summary: Termínová data v optimalizovaném algoritmu kódování bloku.
 metadata:
-  ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bbc51f1ca36c81f15f96d0e526eb15bf79922373
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210929"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677044"

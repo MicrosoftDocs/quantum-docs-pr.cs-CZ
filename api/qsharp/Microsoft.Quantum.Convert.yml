@@ -18,9 +18,9 @@ functions:
 - uid: microsoft.quantum.convert.boolarrayaspauli
   summary: V případě bitového řetězce vrátí operátor qubit Pauli, který je reprezentován jako pole operátorů s jedním qubit Pauli.
 - uid: microsoft.quantum.convert.boolarrayasresultarray
-  summary: Převede typ `Bool[]` na typ `Result[]`, kde `true` je namapováno na `One` a `false` je mapován na `Zero`.
+  summary: '`Bool[]` Převede `Result[]` typ na typ, kde `true` je mapován na `One` a `false` je mapován na. `Zero`'
 - uid: microsoft.quantum.convert.boolasresult
-  summary: Převede typ `Bool` na typ `Result`, kde `true` je namapováno na `One` a `false` je mapován na `Zero`.
+  summary: '`Bool` Převede `Result` typ na typ, kde `true` je mapován na `One` a `false` je mapován na. `Zero`'
 - uid: microsoft.quantum.convert.boolasstring
   summary: Převede danou logickou hodnotu na ekvivalentní řetězcové vyjádření.
 - uid: microsoft.quantum.convert.doubleasstring
@@ -47,20 +47,20 @@ functions:
 - uid: microsoft.quantum.convert.pauliarrayasint
   summary: Zakóduje qubit Pauli operátor reprezentovaný jako pole operátorů s jedním qubit Pauli do celého čísla.
 - uid: microsoft.quantum.convert.rangeasintarray
-  summary: Vytvoří pole `arr` celých čísel, která jsou výčtem typu Start.. krok.. účelu.
+  summary: Vytvoří pole `arr` celých čísel, která jsou vyhodnocena spuštěním.. krok.. účelu.
 - uid: microsoft.quantum.convert.resultarrayasboolarray
-  summary: Převede typ `Result[]` na typ `Bool[]`, kde `One` je namapováno na `true` a `Zero` je mapován na `false`.
+  summary: '`Result[]` Převede `Bool[]` typ na typ, kde `One` je mapován na `true` a `Zero` je mapován na. `false`'
 - uid: microsoft.quantum.convert.resultarrayasint
   summary: Vytvoří kladné celé číslo z řetězce výsledků ve formátu Little endian.
 - uid: microsoft.quantum.convert.resultasbool
-  summary: Převede typ `Result` na typ `Bool`, kde `One` je namapováno na `true` a `Zero` je mapován na `false`.
+  summary: '`Result` Převede `Bool` typ na typ, kde `One` je mapován na `true` a `Zero` je mapován na. `false`'
 operations:
 - uid: microsoft.quantum.convert.call
   summary: Volá funkci s daným vstupem.
 metadata:
-  ms.openlocfilehash: a0c347d8004b8f8bd35fc1b7f7eaf52e6230cee0
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d435979692fe94efb64af82f4a7a949cb2341ef8
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210963"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676997"
