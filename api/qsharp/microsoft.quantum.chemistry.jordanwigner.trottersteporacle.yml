@@ -9,7 +9,7 @@ input:
   content: '(qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int)'
   types:
   - name: qSharpData
-    summary: Hamiltonian popisované podle formátu `JordanWignerEncodingData`.
+    summary: Hamiltonian popsané podle `JordanWignerEncodingData` formátu.
     uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
   - name: trotterStepSize
     summary: Velikost kroku Trotter integrátoru.
@@ -22,7 +22,7 @@ input:
 output:
   content: (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))
   types:
-  - summary: 'Řazená kolekce členů, kde: `Int` je počet přidělených qubits, `Double` je `1.0/trotterStepSize`a operace je krok Trotter.'
+  - summary: 'Řazená kolekce členů `Int` , kde: je počet přidělených `Double` qubits `1.0/trotterStepSize`, je a operace je krok Trotter.'
     types:
     - isPrimitive: true
       uid: Int
@@ -43,9 +43,9 @@ output:
         - Adjoint
         - Controlled
 metadata:
-  ms.openlocfilehash: 168203ef7e62522cf2df3c746ca75ffaf4ab3252
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d78cac1e2f1a3b95007a3572aa7257d1938b97f4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227589"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82662973"
