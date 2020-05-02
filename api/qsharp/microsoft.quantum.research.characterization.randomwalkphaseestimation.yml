@@ -1,0 +1,82 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.research.characterization.randomwalkphaseestimation
+name: RandomWalkPhaseEstimation
+type: operation
+namespace: Microsoft.Quantum.Research.Characterization
+summary: Provádí odhad iterativní fáze pomocí náhodného prohledání přibližné bayesovského rozhodování odvození na výsledky klasických měření z daných Oracle a eigenstate.
+remarks: >-
+  ### <a name="iterative-phase-estimation-and-eigenstates"></a>Odhad iterační fáze a Eigenstates
+
+
+  Obecně platí, že vstupní registr `eigenstate` nemusí být eigenstate $ \ket{\phi} $ of $U $, ale může být na pozici nad eigenstates. Předpokládejme\_, že vstupní stav je dán \begin{align} \ket{\psi} & = \sum {j} \Alpha\_j \ket{\phi\_j}, \end{align}, kde $\{\Alpha\_j\}$ jsou složité, například $ \sum\_j | \Alpha\_j | ^ 2 = $1 a kde $U \ket{\phi\_j} = \phi\_j\ket {\ fí\_j} $.
+
+
+  Následný odhad iterační fáze se nakonec konverguje na jeden eigenstate, jak je popsáno v příručce pro [vývoj](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).
+
+
+  ### <a name="experiment-design"></a>Experimentovat návrh
+
+
+  Doba měření $t $ a inverze úhlů $ \theta $ předaná do `oracle` jsou zvolena v souladu s *heuristikou pro odhad částic*, \begin{align} \theta \sim \Pr (\phi), \quad{1}t \approx \frac {\variance{\phi}}.
+
+  \end{align} tato heuristická metoda je ideální pro snížení očekávané další odchylky v iterativní fázi odhadu v rámci předběžného normálního předběžného.
+
+
+  ### <a name="optimality"></a>Optimální výkon
+
+
+  Tato operace se blíží optimálnímu Estimator pro fázi $ \phi $, jak je vyhodnocená pomocí $L kvadratické ztráty (\phi, \hat{\phi}) \mathrel{: =} (\phi-\hat{\phi}) ^ 2 $.
+
+
+  Další informace o statistice iterativní fáze odhadu najdete v tématu [odhad fáze bayesovského rozhodování](xref:microsoft.quantum.libraries.characterization#bayesian-phase-estimation) .
+syntax: 'operation RandomWalkPhaseEstimation (initialMean : Double, initialStdDev : Double, nMeasurements : Int, maxMeasurements : Int, unwind : Int, oracle : Microsoft.Quantum.Oracles.ContinuousOracle, targetState : Qubit[]) : Double'
+references: >-
+  - Pro trajekty *et al.* 2011 [doi: 10/TFX](https://doi.org/10.1007/s11128-012-0407-6), [arXiv: 1110.3067](https://arxiv.org/abs/1110.3067).
+
+  - Wiebe *et al.* 2013 [doi: 10/tf3](https://doi.org/10.1103/PhysRevLett.112.190501), [arXiv: 1309.0876](https://arxiv.org/abs/1309.0876)
+
+  - Wiebe a granade 2018 *(v přípravě)*.
+input:
+  content: '(initialMean : Double, initialStdDev : Double, nMeasurements : Int, maxMeasurements : Int, unwind : Int, oracle : Microsoft.Quantum.Oracles.ContinuousOracle, targetState : Qubit[])'
+  types:
+  - name: initialMean
+    summary: Střední hodnota počátečního normálního povýšení při předchozí distribuci přes $ \phi $
+    isPrimitive: true
+    uid: Double
+  - name: initialStdDev
+    summary: Směrodatná odchylka počátečního normálního rozdělení při předchozí distribuci na $ \phi $
+    isPrimitive: true
+    uid: Double
+  - name: nMeasurements
+    summary: Počet měření, která se mají přijmout do konečného dodatečného odhadu.
+    isPrimitive: true
+    uid: Int
+  - name: maxMeasurements
+    summary: Celkový počet měření, než může být proveden před tím, než je operace považována za neúspěšnou.
+    isPrimitive: true
+    uid: Int
+  - name: unwind
+    summary: Počet výsledků, které mají být zapomenout při selhání kontroly konzistence.
+    isPrimitive: true
+    uid: Int
+  - name: oracle
+    summary: Operace představující jednotnou $U $, kterou $U (t) \ket{\phi} = e ^ {i t \phi}\ket{\phi} $ for eigenstates $ \ket{\phi} $ s neznámou fází $ \phi \in \mathbb{R} ^ + $.
+    uid: microsoft.quantum.oracles.continuousoracle
+  - name: targetState
+    summary: Registr, na kterém $U $ pracuje.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Double
+  types:
+  - summary: 'Konečný odhad $ \hat{\phi} \mathrel{: =} \expect [\phi] $, kde se očekává, že je na začátku všechna přijatá data.'
+    isPrimitive: true
+    uid: Double
+metadata:
+  ms.openlocfilehash: 719c8583cb0fe7f0c9c0f7fa617fa469080a9588
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82706733"
