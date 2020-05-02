@@ -3,25 +3,25 @@ uid: microsoft.quantum.extensions.testing
 name: Microsoft.Quantum.Extensions.Testing
 operations:
 - uid: microsoft.quantum.extensions.testing.assertallzero
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAllZero se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertallzero\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertallzero\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAllZero se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertallzero\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertallzero\"prosím."
 - uid: microsoft.quantum.extensions.testing.assertallzerotol
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAllZeroTol se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertAllZeroTol se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\"prosím."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplace
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualInPlace se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\".\nVšimněte si, že pořadí argumentů této operace se změnilo."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualInPlace se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\"prosím.\nVšimněte si, že pořadí argumentů této operace se změnilo."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplacecompbasis
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualInPlaceCompBasis se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis\".\nVšimněte si, že pořadí argumentů této operace se změnilo."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualInPlaceCompBasis se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis\"prosím.\nVšimněte si, že pořadí argumentů této operace se změnilo."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalreferenced
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualReferenced se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\".\nVšimněte si, že pořadí argumentů této operace se změnilo."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertOperationsEqualReferenced se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\"prosím.\nVšimněte si, že pořadí argumentů této operace se změnilo."
 - uid: microsoft.quantum.extensions.testing.assertqubit
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubit se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertqubit\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertqubit\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubit se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertqubit\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertqubit\"prosím."
 - uid: microsoft.quantum.extensions.testing.assertqubitstate
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubitState se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubitState se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\"prosím."
 - uid: microsoft.quantum.extensions.testing.assertqubittol
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubitTol se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\".\nPoužijte prosím @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertQubitTol se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\"prosím."
 metadata:
-  ms.openlocfilehash: 0d06129c66f13c8c5ee9158ef6be41bf447791f9
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 2edd8b382cb62078188850d6810c26e4f3a8a901
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858410"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673248"

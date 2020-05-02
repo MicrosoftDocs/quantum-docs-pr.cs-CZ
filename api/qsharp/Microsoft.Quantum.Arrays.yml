@@ -20,7 +20,7 @@ functions:
 - uid: microsoft.quantum.arrays.filtered
   summary: Předané pole a predikát, který je definován pro prvky pole, vrátí pole, které se skládá z prvků, které odpovídají predikátu.
 - uid: microsoft.quantum.arrays.fold
-  summary: Provede iteraci funkce `f` přes pole `array`a vrátí `f(f(f(initialState, array[0]), array[1]), ...)`.
+  summary: Opakuje funkci `f` prostřednictvím pole `array`a vrátí. `f(f(f(initialState, array[0]), array[1]), ...)`
 - uid: microsoft.quantum.arrays.head
   summary: Vrátí první prvek pole.
 - uid: microsoft.quantum.arrays.indexof
@@ -69,9 +69,9 @@ operations:
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: 422564f632efd7a6d093d78358a15ee012f918f8
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: a9088a037953f62ab7193ea525a6e71d43fe2fb2
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80320726"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673391"

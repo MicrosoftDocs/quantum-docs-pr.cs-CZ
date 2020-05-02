@@ -7,13 +7,13 @@ operations:
   summary: >-
     Vrátí počet qubitsů, které jsou aktuálně k dispozici k vypůjčení.
 
-    To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits vrácené funkcí `GetQubitsAvailableToUse`.
+    To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits, který vrátil `GetQubitsAvailableToUse`.
 - uid: microsoft.quantum.environment.getqubitsavailabletouse
   summary: Vrátí počet qubits aktuálně dostupných k použití.
 metadata:
-  ms.openlocfilehash: 50e5cfb7c1b9a4075c25b2705d00b435a09e159e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bd6d442aabb179f4c5fea0a0f48efaa472ec00cf
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056832"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673349"

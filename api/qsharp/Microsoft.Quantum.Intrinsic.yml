@@ -16,7 +16,7 @@ operations:
     Aplikuje bránu řízeného NOT (CNOT) na pár qubits.
 
 
-    \begin{align} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix} , \end{align}
+    \begin{align} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}, \end{align}
 
 
     místo, kde jsou řádky a sloupce seřazené jako v průvodci koncepcemi.
@@ -25,19 +25,19 @@ operations:
     Aplikuje exponenciální hodnotu qubit operátoru Pauli.
 
 
-    \begin{align} e ^ {i \theta [P_0 \otimes P_1 \cdots P_ {N-1}]}, \end{align}, kde $P _i $ je $i $ th prvku `paulis`a kde $N = $`Length(paulis)`.
+    \begin{align} e ^ {i \theta [P_0 \otimes P_1 \cdots P_ {N-1}]}, \end{align}, kde $P _i $ je prvek `paulis`$i $ th a kde $N = $.`Length(paulis)`
 - uid: microsoft.quantum.intrinsic.expfrac
   summary: >-
     Aplikuje exponenciální operátor qubit Pauli s argumentem daným zlomkem dyadic.
 
 
-    \begin{align} e ^ {i \pi k [P_0 \otimes P_1 \cdots P_ {N-1}]/2 ^ N}, \end{align} kde $P _i $ je $i $ th prvku `paulis`a kde $N = $`Length(paulis)`.
+    \begin{align} e ^ {i \pi k [P_0 \otimes P_1 \cdots P_ {N-1}]/2 ^ N}, \end{align} kde $P _i $ je prvek `paulis`$i $ th a kde $N = $.`Length(paulis)`
 - uid: microsoft.quantum.intrinsic.h
   summary: >-
     Aplikuje transformaci Hadamard na jeden qubit.
 
 
-    \begin{align} H \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ 1 &-1 \end{bmatrix}.
+    \begin{align} H \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ \\ 1 &-1 \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.i
@@ -55,18 +55,18 @@ operations:
     Provede společné měření jednoho nebo více qubits v zadaných základech Pauli.
 
 
-    Výsledek výstupu je dán distribucí: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} kde $P _i $ je $i $ th elementu @no__ t_0_ a kde $N = \texttt{Length} (\texttt{Bases}) $.
+    Výsledek výstupu je dán distribucí: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} kde $P _i $ je $i $ th prvek `bases`a kde $N = \texttt{Length} (\texttt{Bases}) $.
 
-    To znamená, že měření vrátí `Result` $d $ tak, že eigenvalue účinku pozorovaného měření je $ (-1) ^ d $.
+    To znamená, že měření vrátí `Result` $d $ tak, že eigenvalue účinek pozorovaného měření je $ (-1) ^ d $.
 - uid: microsoft.quantum.intrinsic.r
   summary: >-
     Použije rotaci o dané ose Pauli.
 
 
-    \begin{align} R_ {\mu} (\theta) \mathrel{: =} e ^ {-i \theta \sigma_{\mu}/2}, \end{align} WHERE $ \mu \in \{I, X, Y, Z\}$.
+    \begin{align} R_ {\mu} (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_ {\mu}/2}, \end{align} WHERE $ \mu \in \{i, X, Y, Z\}$.
 - uid: microsoft.quantum.intrinsic.r1
   summary: >-
-    Použije rotaci o stavu $ \ket{1}$ v daném úhlu.
+    Použije rotaci o stavu $ \ket{1}$ podle daného úhlu.
 
 
     \begin{align} R_1 (\theta) \mathrel{: =} \operatorname{diag} (1, e ^ {i\theta}).
@@ -84,10 +84,10 @@ operations:
 
     > [!WARNING]
 
-    > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r"a nezahrnuje faktor $1/2 $ zahrnutý v @"microsoft.quantum.intrinsic.r1".
+    > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r"a nezahrnuje faktor $1/2 $ zahrnutý do @"microsoft.quantum.intrinsic.r1".
 - uid: microsoft.quantum.intrinsic.random
   summary: >-
-    Náhodná operace přebírá pole Double jako vstup a vrací náhodně vybraný index do pole jako `Int`.
+    Náhodná operace přebírá pole Double jako vstup a vrátí náhodně vybraný index do pole jako `Int`.
 
     Pravděpodobnost výběru konkrétního indexu je úměrná hodnotě prvku pole v daném indexu.
 
@@ -101,34 +101,22 @@ operations:
     Aplikuje otočení o dané ose Pauli o úhel zadaný jako dyadic zlomek.
 
 
-    \begin{align} R_ {\mu} (n, k) \mathrel{: =} e ^ {i \pi n \sigma_{\mu}/2 ^ k}, \end{align} WHERE $ \mu \in \{I, X, Y, Z\}$.
+    \begin{align} R_ {\mu} (n, k) \mathrel{: =} e ^ {i \pi n \ sigma_ {\mu}/2 ^ k}, \end{align} WHERE $ \mu \in \{i, X, Y, Z\}$.
 
 
     > [!WARNING]
 
     > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r".
 - uid: microsoft.quantum.intrinsic.rx
-  summary: >-
-    Aplikuje otočení o $x ose $ na daném úhlu.
-
-
-    \begin{align} R_x (\theta) \mathrel{: =} e ^ {-i \theta \sigma_x/2} = \begin{bmatrix} \cos \frac{\theta}{2} &-i\sin \frac{\theta}{2}\\\\-i\sin \frac{\theta}{2} & \cos \frac{\theta}{2} \end{bmatrix}.
-
-    \end{align}
+  summary: "Aplikuje otočení o $x ose $ na daném úhlu.\n\n\\begin{align} R_x (\\theta) \\mathrel{: =} e ^ {-i \\theta \\ sigma_x/2} = \\begin{bmatrix} \\cos \\frac{\\theta}{2} &-i\\sin \\frac{\\theta}{2} \\\\ \\\\ -i\\sin \\frac{\\theta}{2} & \\cos \\frac{\\theta}{2} \\end{bmatrix}.  \n\\end{align}"
 - uid: microsoft.quantum.intrinsic.ry
-  summary: >-
-    Aplikuje otočení o $y ose $ na daném úhlu.
-
-
-    \begin{align} R_y (\theta) \mathrel{: =} e ^ {-i \theta \sigma_y/2} = \begin{bmatrix} \cos \frac{\theta}{2} &-\sin \frac{\theta}{2}\\\\ \sin \frac{\theta}{2} & \cos \frac{\theta}{2} \end{bmatrix}.
-
-    \end{align}
+  summary: "Aplikuje otočení o $y ose $ na daném úhlu.\n\n\\begin{align} R_y (\\theta) \\mathrel{: =} e ^ {-i \\theta \\ sigma_y/2} = \\begin{bmatrix} \\cos \\frac{\\theta}{2} &-\\sin \\frac{\\theta}{2} \\\\ \\\\ \\sin \\frac{\\theta}{2} & \\cos \\frac{\\theta}{2} \\end{bmatrix}.  \n\\end{align}"
 - uid: microsoft.quantum.intrinsic.rz
   summary: >-
     Aplikuje otočení o $z ose $ na daném úhlu.
 
 
-    \begin{align} R_z (\theta) \mathrel{: =} e ^ {-i \theta \sigma_z/2} = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\\\ 0 & e ^ {i \theta/2} \end{bmatrix}.
+    \begin{align} R_z (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_z/2} = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\ \\ 0 & e ^ {i \theta/2} \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.s
@@ -136,7 +124,7 @@ operations:
     Použije bránu fáze π/4 na jednu qubit.
 
 
-    \begin{align} S \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 & i \end{bmatrix}.
+    \begin{align} S \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ 0 & i \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.swap
@@ -144,7 +132,7 @@ operations:
     Aplikuje bránu SWAP na pár qubits.
 
 
-    \begin{align} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix} , \end{align}
+    \begin{align} \operatorname{swap} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \end{bmatrix}, \end{align}
 
 
     místo, kde jsou řádky a sloupce seřazené jako v průvodci koncepcemi.
@@ -153,7 +141,7 @@ operations:
     Aplikuje bránu π/8 na jednu qubit.
 
 
-    \begin{align} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 & e ^ {i \pi/4} \end{bmatrix}.
+    \begin{align} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ 0 & e ^ {i \pi/4} \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.x
@@ -161,7 +149,7 @@ operations:
     Použije bránu Pauli $X $.
 
 
-    \begin{align} \sigma_x \mathrel{: =} \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix}.
+    \begin{align} \ sigma_x \mathrel{: =} \begin{bmatrix} 0 & 1 \\ \\ 1 & 0 \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.y
@@ -169,7 +157,7 @@ operations:
     Použije bránu Pauli $Y $.
 
 
-    \begin{align} \sigma_y \mathrel{: =} \begin{bmatrix} 0 &-i \\\\ i & 0 \end{bmatrix}.
+    \begin{align} \ sigma_y \mathrel{: =} \begin{bmatrix} 0 &-i \\ \\ & 0 \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.intrinsic.z
@@ -177,13 +165,13 @@ operations:
     Použije bránu Pauli $Z $.
 
 
-    \begin{align} \sigma_z \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 &-1 \end{bmatrix}.
+    \begin{align} \ sigma_z \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ 0 &-1 \end{bmatrix}.
 
     \end{align}
 metadata:
-  ms.openlocfilehash: a2f80ca98d86e5a1457efb6dad34c60d6ef75a2e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 303e6d0376841672b9c8dbd3d8bd47ff7b24916a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056349"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673230"

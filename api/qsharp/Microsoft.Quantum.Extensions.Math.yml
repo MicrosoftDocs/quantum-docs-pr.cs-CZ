@@ -3,81 +3,81 @@ uid: microsoft.quantum.extensions.math
 name: Microsoft.Quantum.Extensions.Math
 functions:
 - uid: microsoft.quantum.extensions.math.absb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.absl\".\nPoužijte prosím @\"microsoft.quantum.math.absl\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsB se už nepoužívá. Místo toho @\"microsoft.quantum.math.absl\" ho použijte.\nPoužijte @\"microsoft.quantum.math.absl\"prosím."
 - uid: microsoft.quantum.extensions.math.absd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.absd\".\nPoužijte prosím @\"microsoft.quantum.math.absd\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsD se už nepoužívá. Místo toho @\"microsoft.quantum.math.absd\" ho použijte.\nPoužijte @\"microsoft.quantum.math.absd\"prosím."
 - uid: microsoft.quantum.extensions.math.absi
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsI se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.absi\".\nPoužijte prosím @\"microsoft.quantum.math.absi\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAbsI se už nepoužívá. Místo toho @\"microsoft.quantum.math.absi\" ho použijte.\nPoužijte @\"microsoft.quantum.math.absi\"prosím."
 - uid: microsoft.quantum.extensions.math.arccos
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcCos se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.arccos\".\nPoužijte prosím @\"microsoft.quantum.math.arccos\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcCos se už nepoužívá. Místo toho @\"microsoft.quantum.math.arccos\" ho použijte.\nPoužijte @\"microsoft.quantum.math.arccos\"prosím."
 - uid: microsoft.quantum.extensions.math.arcsin
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcSin se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.arcsin\".\nPoužijte prosím @\"microsoft.quantum.math.arcsin\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcSin se už nepoužívá. Místo toho @\"microsoft.quantum.math.arcsin\" ho použijte.\nPoužijte @\"microsoft.quantum.math.arcsin\"prosím."
 - uid: microsoft.quantum.extensions.math.arctan
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcTan se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.arctan\".\nPoužijte prosím @\"microsoft.quantum.math.arctan\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcTan se už nepoužívá. Místo toho @\"microsoft.quantum.math.arctan\" ho použijte.\nPoužijte @\"microsoft.quantum.math.arctan\"prosím."
 - uid: microsoft.quantum.extensions.math.arctan2
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcTan2 se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.arctan2\".\nPoužijte prosím @\"microsoft.quantum.math.arctan2\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nArcTan2 se už nepoužívá. Místo toho @\"microsoft.quantum.math.arctan2\" ho použijte.\nPoužijte @\"microsoft.quantum.math.arctan2\"prosím."
 - uid: microsoft.quantum.extensions.math.ceiling
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nStrop se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.ceiling\".\nPoužijte prosím @\"microsoft.quantum.math.ceiling\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nStrop se už nepoužívá. Místo toho @\"microsoft.quantum.math.ceiling\" ho použijte.\nPoužijte @\"microsoft.quantum.math.ceiling\"prosím."
 - uid: microsoft.quantum.extensions.math.cos
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nCos se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.cos\".\nPoužijte prosím @\"microsoft.quantum.math.cos\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCos se už nepoužívá. Místo toho @\"microsoft.quantum.math.cos\" ho použijte.\nPoužijte @\"microsoft.quantum.math.cos\"prosím."
 - uid: microsoft.quantum.extensions.math.cosh
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nCosh – se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.cosh\".\nPoužijte prosím @\"microsoft.quantum.math.cosh\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nCosh – se už nepoužívá. Místo toho @\"microsoft.quantum.math.cosh\" ho použijte.\nPoužijte @\"microsoft.quantum.math.cosh\"prosím."
 - uid: microsoft.quantum.extensions.math.divremb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nDivRemB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.divreml\".\nPoužijte prosím @\"microsoft.quantum.math.divreml\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nDivRemB se už nepoužívá. Místo toho @\"microsoft.quantum.math.divreml\" ho použijte.\nPoužijte @\"microsoft.quantum.math.divreml\"prosím."
 - uid: microsoft.quantum.extensions.math.e
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nE-mail se už nepoužívá. Použijte prosím @\"microsoft.quantum.math.e\" .\nPoužijte prosím @\"microsoft.quantum.math.e\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nE-mail se už nepoužívá. Použijte prosím@\"microsoft.quantum.math.e\" .\nPoužijte @\"microsoft.quantum.math.e\"prosím."
 - uid: microsoft.quantum.extensions.math.expd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nExpD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.expd\".\nPoužijte prosím @\"microsoft.quantum.math.expd\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nExpD se už nepoužívá. Místo toho @\"microsoft.quantum.math.expd\" ho použijte.\nPoužijte @\"microsoft.quantum.math.expd\"prosím."
 - uid: microsoft.quantum.extensions.math.floor
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodlaha je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.floor\".\nPoužijte prosím @\"microsoft.quantum.math.floor\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodlaha je zastaralá. Místo toho @\"microsoft.quantum.math.floor\" ho použijte.\nPoužijte @\"microsoft.quantum.math.floor\"prosím."
 - uid: microsoft.quantum.extensions.math.ieeeremainder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nIEEERemainder se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.ieeeremainder\".\nPoužijte prosím @\"microsoft.quantum.math.ieeeremainder\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nIEEERemainder se už nepoužívá. Místo toho @\"microsoft.quantum.math.ieeeremainder\" ho použijte.\nPoužijte @\"microsoft.quantum.math.ieeeremainder\"prosím."
 - uid: microsoft.quantum.extensions.math.log
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nProtokol je zastaralý. Místo toho prosím použijte @\"microsoft.quantum.math.log\".\nPoužijte prosím @\"microsoft.quantum.math.log\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nProtokol je zastaralý. Místo toho @\"microsoft.quantum.math.log\" ho použijte.\nPoužijte @\"microsoft.quantum.math.log\"prosím."
 - uid: microsoft.quantum.extensions.math.log10
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nLog10 – se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.log10\".\nPoužijte prosím @\"microsoft.quantum.math.log10\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nLog10 – se už nepoužívá. Místo toho @\"microsoft.quantum.math.log10\" ho použijte.\nPoužijte @\"microsoft.quantum.math.log10\"prosím."
 - uid: microsoft.quantum.extensions.math.maxb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.maxl\".\nPoužijte prosím @\"microsoft.quantum.math.maxl\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxB se už nepoužívá. Místo toho @\"microsoft.quantum.math.maxl\" ho použijte.\nPoužijte @\"microsoft.quantum.math.maxl\"prosím."
 - uid: microsoft.quantum.extensions.math.maxd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.maxd\".\nPoužijte prosím @\"microsoft.quantum.math.maxd\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxD se už nepoužívá. Místo toho @\"microsoft.quantum.math.maxd\" ho použijte.\nPoužijte @\"microsoft.quantum.math.maxd\"prosím."
 - uid: microsoft.quantum.extensions.math.maxi
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxI se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.maxi\".\nPoužijte prosím @\"microsoft.quantum.math.maxi\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMaxI se už nepoužívá. Místo toho @\"microsoft.quantum.math.maxi\" ho použijte.\nPoužijte @\"microsoft.quantum.math.maxi\"prosím."
 - uid: microsoft.quantum.extensions.math.minb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMinB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.minl\".\nPoužijte prosím @\"microsoft.quantum.math.minl\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMinB se už nepoužívá. Místo toho @\"microsoft.quantum.math.minl\" ho použijte.\nPoužijte @\"microsoft.quantum.math.minl\"prosím."
 - uid: microsoft.quantum.extensions.math.mind
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPřipomínáme, že je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.mind\".\nPoužijte prosím @\"microsoft.quantum.math.mind\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPřipomínáme, že je zastaralá. Místo toho @\"microsoft.quantum.math.mind\" ho použijte.\nPoužijte @\"microsoft.quantum.math.mind\"prosím."
 - uid: microsoft.quantum.extensions.math.mini
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMinI se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.mini\".\nPoužijte prosím @\"microsoft.quantum.math.mini\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMinI se už nepoužívá. Místo toho @\"microsoft.quantum.math.mini\" ho použijte.\nPoužijte @\"microsoft.quantum.math.mini\"prosím."
 - uid: microsoft.quantum.extensions.math.modpowb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nModPowB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.modpowl\".\nPoužijte prosím @\"microsoft.quantum.math.modpowl\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nModPowB se už nepoužívá. Místo toho @\"microsoft.quantum.math.modpowl\" ho použijte.\nPoužijte @\"microsoft.quantum.math.modpowl\"prosím."
 - uid: microsoft.quantum.extensions.math.pi
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPI je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.pi\".\nPoužijte prosím @\"microsoft.quantum.math.pi\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPI je zastaralá. Místo toho @\"microsoft.quantum.math.pi\" ho použijte.\nPoužijte @\"microsoft.quantum.math.pi\"prosím."
 - uid: microsoft.quantum.extensions.math.powd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPowD se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.powd\".\nPoužijte prosím @\"microsoft.quantum.math.powd\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPowD se už nepoužívá. Místo toho @\"microsoft.quantum.math.powd\" ho použijte.\nPoužijte @\"microsoft.quantum.math.powd\"prosím."
 - uid: microsoft.quantum.extensions.math.round
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nZaokrouhlení je zastaralé. Místo toho prosím použijte @\"microsoft.quantum.math.round\".\nPoužijte prosím @\"microsoft.quantum.math.round\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nZaokrouhlení je zastaralé. Místo toho @\"microsoft.quantum.math.round\" ho použijte.\nPoužijte @\"microsoft.quantum.math.round\"prosím."
 - uid: microsoft.quantum.extensions.math.signb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nSignB se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.signl\".\nPoužijte prosím @\"microsoft.quantum.math.signl\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nSignB se už nepoužívá. Místo toho @\"microsoft.quantum.math.signl\" ho použijte.\nPoužijte @\"microsoft.quantum.math.signl\"prosím."
 - uid: microsoft.quantum.extensions.math.signd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodpis je zastaralý. Místo toho prosím použijte @\"microsoft.quantum.math.signd\".\nPoužijte prosím @\"microsoft.quantum.math.signd\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodpis je zastaralý. Místo toho @\"microsoft.quantum.math.signd\" ho použijte.\nPoužijte @\"microsoft.quantum.math.signd\"prosím."
 - uid: microsoft.quantum.extensions.math.signi
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodpis je zastaralý. Místo toho prosím použijte @\"microsoft.quantum.math.signi\".\nPoužijte prosím @\"microsoft.quantum.math.signi\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPodpis je zastaralý. Místo toho @\"microsoft.quantum.math.signi\" ho použijte.\nPoužijte @\"microsoft.quantum.math.signi\"prosím."
 - uid: microsoft.quantum.extensions.math.sin
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nSin je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.sin\".\nPoužijte prosím @\"microsoft.quantum.math.sin\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nSin je zastaralá. Místo toho @\"microsoft.quantum.math.sin\" ho použijte.\nPoužijte @\"microsoft.quantum.math.sin\"prosím."
 - uid: microsoft.quantum.extensions.math.sinh
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nSinh – se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.sinh\".\nPoužijte prosím @\"microsoft.quantum.math.sinh\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nSinh – se už nepoužívá. Místo toho @\"microsoft.quantum.math.sinh\" ho použijte.\nPoužijte @\"microsoft.quantum.math.sinh\"prosím."
 - uid: microsoft.quantum.extensions.math.sqrt
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nOdmocnina je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.sqrt\".\nPoužijte prosím @\"microsoft.quantum.math.sqrt\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nOdmocnina je zastaralá. Místo toho @\"microsoft.quantum.math.sqrt\" ho použijte.\nPoužijte @\"microsoft.quantum.math.sqrt\"prosím."
 - uid: microsoft.quantum.extensions.math.tan
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nŠedobéžová je zastaralá. Místo toho prosím použijte @\"microsoft.quantum.math.tan\".\nPoužijte prosím @\"microsoft.quantum.math.tan\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nŠedobéžová je zastaralá. Místo toho @\"microsoft.quantum.math.tan\" ho použijte.\nPoužijte @\"microsoft.quantum.math.tan\"prosím."
 - uid: microsoft.quantum.extensions.math.tanh
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nTanh – se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.tanh\".\nPoužijte prosím @\"microsoft.quantum.math.tanh\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nTanh – se už nepoužívá. Místo toho @\"microsoft.quantum.math.tanh\" ho použijte.\nPoužijte @\"microsoft.quantum.math.tanh\"prosím."
 - uid: microsoft.quantum.extensions.math.truncate
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nZkrácení se už nepoužívá. Místo toho prosím použijte @\"microsoft.quantum.math.truncate\".\nPoužijte prosím @\"microsoft.quantum.math.truncate\"."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nZkrácení se už nepoužívá. Místo toho @\"microsoft.quantum.math.truncate\" ho použijte.\nPoužijte @\"microsoft.quantum.math.truncate\"prosím."
 metadata:
-  ms.openlocfilehash: 1eb20bd8834d2a34022ee503808fd26eccaf8c64
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: b94b4c7aa1523d9f3e8b42359e759ffa356b25ea
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858832"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673264"
