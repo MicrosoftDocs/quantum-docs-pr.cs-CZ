@@ -5,7 +5,7 @@ type: operation
 namespace: Microsoft.Quantum.Characterization
 summary: Měří operátor identity v registru qubits.
 remarks: >-
-  Vzhledem k tomu, že $ \boldone $ obsahuje jenom eigenvalue $1 $ a nemá negativní eigenvalue, tato operace vždycky vrátí `Zero`, která odpovídá eigenvalue $ + 1 = (-1) ^ 0 $, a nezpůsobí sbalení stavu `register`.
+  Vzhledem k tomu, že $ \boldone $ má pouze eigenvalue $1 $, a nemá negativní eigenvalue, tato operace vždy vrátí `Zero`hodnotu odpovídající eigenvalue $ + 1 = (-1) ^ 0 $ a nezpůsobí sbalení stavu `register`.
 
 
   Sám o sobě tato operace není užitečná, ale je užitečná v kontextu procesu tomography, protože poskytuje informace o uchovávání sledování v rámci procesu.
@@ -27,9 +27,9 @@ output:
     isPrimitive: true
     uid: Result
 metadata:
-  ms.openlocfilehash: fcfe08d4ae7a192074b90b7b45fffbcb5944e7ff
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 28dd3655c883c02b798e6e4cdf39c70100c6535b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73229119"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677642"

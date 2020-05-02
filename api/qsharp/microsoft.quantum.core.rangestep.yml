@@ -4,7 +4,7 @@ name: RangeStep
 type: function
 namespace: Microsoft.Quantum.Core
 summary: Vrátí celé číslo, které určuje, jak se počítá další hodnota rozsahu.
-remarks: První prvek výrazu rozsahu je `start`, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` předáno.
+remarks: První prvek `start`výrazu rozsahu je, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` není předán.
 syntax: 'function RangeStep (range : Range) : Int'
 input:
   content: '(range : Range)'
@@ -19,9 +19,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 0195f0f2eb03c163ae08cc789867627286a44097
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 30f67fba4e263f3b01bec1c360198728087783f2
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066604"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677334"

@@ -4,7 +4,7 @@ name: EstimateImagOverlapBetweenStates
 type: operation
 namespace: Microsoft.Quantum.Characterization
 summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne imaginární část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
-remarks: Tato operace používá test Hadamard k vyhledání imaginární části pro $ $ \begin{align} \braket{\psi | V ^ {\dagger} U | \psi} \end{align} $ $, kde $ \ket{\psi} $ je stav připravený `commonPreparation`, $U $ je jednotná reprezentace akce `preparation1`a kde $V $ odpovídá `preparation2`.
+remarks: Tato operace používá test Hadamard k vyhledání imaginární části pro $ $ \begin{align} \braket{\psi | V ^ {\dagger} U | \psi} \end{align} $ $ kde $ \ket{\psi} $ je stav `commonPreparation`, který připravil, $U $ je jednotková reprezentace akce `preparation1`a kde $V $ odpovídá. `preparation2`
 syntax: 'operation EstimateImagOverlapBetweenStates (commonPreparation : (Qubit[] => Unit is Adj), preparation1 : (Qubit[] => Unit is Adj + Ctl), preparation2 : (Qubit[] => Unit is Adj + Ctl), nQubits : Int, nMeasurements : Int) : Double'
 references: '- Aharonov *et al.* [quant-pH/0511096](https://arxiv.org/abs/quant-ph/0511096).'
 input:
@@ -55,7 +55,7 @@ input:
     - Adjoint
     - Controlled
   - name: nQubits
-    summary: Počet qubits, na které se `commonPreparation`, `preparation1`a `preparation2` všechny Act
+    summary: Počet qubits, které `commonPreparation`jsou, `preparation1`a `preparation2` všechny Act.
     isPrimitive: true
     uid: Int
   - name: nMeasurements
@@ -71,9 +71,9 @@ seeAlso:
 - microsoft.quantum.characterization.estimaterealoverlapbetweenstates
 - microsoft.quantum.characterization.estimateoverlapbetweenstates
 metadata:
-  ms.openlocfilehash: 8d15c55627cc3cdf9167c7834fe8a1f1e0864fc1
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 6885830a644da147b0e9fe4e9efd3b553b15885e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872848"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677725"

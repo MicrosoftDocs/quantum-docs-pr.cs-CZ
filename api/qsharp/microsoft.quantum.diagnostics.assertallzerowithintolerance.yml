@@ -3,7 +3,7 @@ uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
 name: AssertAllZeroWithinTolerance
 type: operation
 namespace: Microsoft.Quantum.Diagnostics
-summary: Vytvrzení, že zadané qubits jsou všechny ve stavu $ \ket{0}$ State až do dané tolerance.
+summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu{0}$ \ket $ až do dané tolerance.
 syntax: 'operation AssertAllZeroWithinTolerance (qubits : Qubit[], tolerance : Double) : Unit'
 input:
   content: '(qubits : Qubit[], tolerance : Double)'
@@ -14,7 +14,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: tolerance
-    summary: Přesnost, se kterou má být stav ve stavu $ \ket{0}$
+    summary: Přesnost, se kterou má být stav ve stavu ${0}\ket $
     isPrimitive: true
     uid: Double
 output:
@@ -28,9 +28,9 @@ functors:
 seeAlso:
 - assertqubitwithintolerance
 metadata:
-  ms.openlocfilehash: 0e3b560d08077bb353147d98a921a2c2ca3ae202
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ae55998333d6bc3a4d8b41341842147d80dcd183
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066536"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677302"

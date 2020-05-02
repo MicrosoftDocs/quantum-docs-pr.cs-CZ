@@ -3,7 +3,7 @@ uid: microsoft.quantum.characterization.estimatefrequency
 name: EstimateFrequency
 type: operation
 namespace: Microsoft.Quantum.Characterization
-summary: S ohledem na přípravu a měření vyhodnotí četnost, s jakou je měření úspěšná (vrátí `Zero`) provedením daného počtu testů.
+summary: S ohledem na přípravu a měření odhadne četnost, s jakou měření probíhají (vrátí `Zero`), provedením daného počtu testů.
 syntax: 'operation EstimateFrequency (preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
 input:
   content: '(preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
@@ -44,16 +44,16 @@ output:
   content: Double
   types:
   - summary: >-
-      Odhad $ \hat{p} $ frekvence, s jakou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ vrátí `Zero`, získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, kde $n\_{\ Šipka nahoru} $ je počet pozorovaných výsledků `Zero`.
+      Odhad $ \hat{p} $ frekvence, se kterou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0}) `Zero`) $ vrátí, získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, kde $n\_{\uparrow} $ je počet zjištěných `Zero` výsledků.
 
 
       To je důležité zejména u cílových počítačů, které jsou v souladu s fyzickými omezeními, což znamená, že pravděpodobnosti nelze změřit.
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 1c27d38983f9fa9c1a1dc5c80548e307b7c36ffe
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 973ab328d11410fee400659f18a99d50c1883156
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73229187"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677733"
