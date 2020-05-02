@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Canon
 summary: >-
   Aplikuje vynásobení kontrolované verze samostatně kontrolované operace.
 
-  Modifikátor `CA` označuje, že operace s jedním qubit je ovladatelné a sousedící.
+  Modifikátor `CA` označuje, že operace s jedním qubit je ovladatelné a přiléhající.
 remarks: >-
   Tato operace používá pouze čistě ancilla qubits.
 
@@ -23,7 +23,7 @@ input:
 
       První qubit v argumentu operace předpokládá, že se jedná o ovládací prvek a že zbytek se považuje za cílový qubits.
 
-      `ApplyMultiControlled` vždy volá `singlyControlledOp` s argumentem Length alespoň 1.
+      `ApplyMultiControlled`vždy volá `singlyControlledOp` s argumentem délky alespoň 1.
     isOperation: true
     input:
       types:
@@ -41,14 +41,14 @@ input:
     uid: microsoft.quantum.canon.ccnotop
   - name: controls
     summary: >-
-      Qubits, na kterém má být řízení `singlyControlledOp`.
+      Qubits, na `singlyControlledOp` kterém má být kontrolována.
 
-      Délka `controls` musí být alespoň 1.
+      Délka `controls` musí být aspoň 1.
     isArray: true
     isPrimitive: true
     uid: Qubit
   - name: targets
-    summary: Cílový qubits, na kterém `singlyControlledOp` úkony.
+    summary: Cílová qubits, na `singlyControlledOp` které působí.
     isArray: true
     isPrimitive: true
     uid: Qubit
@@ -63,9 +63,9 @@ functors:
 seeAlso:
 - microsoft.quantum.canon.applymulticontrolledc
 metadata:
-  ms.openlocfilehash: d9b0f2b18d025d0ce60bbb02a9559546539eaecd
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1cb239c8c49ff4f4f8f991d6ad81374f0dd23f7f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73220704"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672532"

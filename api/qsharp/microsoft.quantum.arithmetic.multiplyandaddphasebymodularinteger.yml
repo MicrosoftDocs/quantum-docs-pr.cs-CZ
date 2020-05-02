@@ -5,7 +5,7 @@ type: operation
 namespace: Microsoft.Quantum.Arithmetic
 summary: Stejné jako MultiplyAndAddByModularInteger, ale předpokládá, že summand kóduje celá čísla v QFT základ.
 remarks: >-
-  Předpokládá, že `phaseSummand` má nejvyšší bit nastavený na hodnotu 0.
+  Předpokládá, `phaseSummand` že má nejvyšší bit nastavený na hodnotu 0.
 
   Také předpokládá, že hodnota `phaseSummand` je menší než $N $.
 syntax: 'operation MultiplyAndAddPhaseByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian, phaseSummand : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
@@ -36,9 +36,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
 metadata:
-  ms.openlocfilehash: 3728e95ad26768d486af79e7c4158a2a2715bbd2
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 029ff8fb767ae018b7462f19a5fe09e83e606c6e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871392"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672804"

@@ -7,7 +7,7 @@ summary: >-
   Invertuje daný cílový qubit, pokud je a pouze v případě, že oba ovládací prvky qubits jsou v 1 stavu s T-hloubkou 1, pomocí měření k provedení sousedící operace.
 
 
-  Invertuje `target` pouze v případě, že jsou oba ovládací prvky 1, ale předpokládá, že `target` je ve stavu 0.  Operace má T-Count 4, T-Depth 1 a vyžaduje jeden pomocný qubit a může proto být vhodnější pro operaci CCNOT, pokud se `target` ví, že má hodnotu 0.  Sousední funkce této operace měří na základě měření a nevyžaduje žádné brány T a žádné pomocné qubity.
+  `target` Invertuje pouze v případě, že jsou oba ovládací prvky 1, `target` ale předpokládá, že je ve stavu 0.  Operace má T-Count 4, T-Depth 1 a vyžaduje jeden pomocný qubit a může proto být vhodnější pro operaci CCNOT, pokud `target` je známo, že má hodnotu 0.  Sousední funkce této operace měří na základě měření a nevyžaduje žádné brány T a žádné pomocné qubity.
 syntax: 'operation ApplyLowDepthAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
 references: >-
   - Cody Novotný: "nové konstrukce pro bránu Toffoli odolné proti chybám", fyz. rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) doi: 10.1103/PhysRevA. 87.022328
@@ -37,9 +37,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 060a4b2241f231a9d164bdcce2beb2a3315d96f9
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 14f70cf11cad542f137cee99d5d2a62cedeb4e72
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872933"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672571"

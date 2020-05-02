@@ -7,17 +7,17 @@ summary: >-
   Aplikuje jednu ze dvou jednotkových operací v závislosti na hodnotě klasického výsledku.
 
 
-  V důsledku `result`použije operace `zeroOp` `zeroInput` jako vstup, když se `result` rovná `Zero`, a použije `oneOp(oneInput)`, pokud `result == One`.
+  `result`Výsledkem `zeroOp` je, že použije operaci s `zeroInput` jako vstup `result` `Zero`, pokud je rovna, a platí při `oneOp(oneInput)` `result == One`použití.
 syntax: "operation ApplyIfElseRCA (result : Result, (zeroOp : ('T => Unit is Adj + Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Adj + Ctl), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit is Adj + Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Adj + Ctl), oneInput : 'U))"
   types:
   - name: result
-    summary: Výsledek měření použitý k určení, zda je použita `zeroOp` nebo `oneOp`.
+    summary: Výsledek měření použitý k určení, zda `zeroOp` nebo `oneOp` je použit.
     isPrimitive: true
     uid: Result
   - name: zeroOp
-    summary: Jednotná operace, která se má použít, když `result == Zero`.
+    summary: Jednotná operace, která se má `result == Zero`použít, když.
     isOperation: true
     input:
       types:
@@ -31,11 +31,11 @@ input:
     - Adjoint
     - Controlled
   - name: zeroInput
-    summary: Vstup, který má být k dispozici pro `zeroOp` při `result == Zero`.
+    summary: Vstup, který má být k `zeroOp` dispozici v případě `result == Zero`.
     uid: "'T"
     isLocal: true
   - name: oneOp
-    summary: Jednotná operace, která se má použít, když `result == One`.
+    summary: Jednotná operace, která se má `result == One`použít, když.
     isOperation: true
     input:
       types:
@@ -49,7 +49,7 @@ input:
     - Adjoint
     - Controlled
   - name: oneInput
-    summary: Vstup, který má být k dispozici pro `oneOp` při `result == One`.
+    summary: Vstup, který má být k `oneOp` dispozici v případě `result == One`.
     uid: "'U"
     isLocal: true
 output:
@@ -59,9 +59,9 @@ output:
     uid: Unit
 typeParameters:
 - uid: "'T"
-  summary: Vstupní typ operace `zeroOp` být podmíněně použit.
+  summary: Vstupní typ operace `zeroOp` , která se má podmíněně použít.
 - uid: "'U"
-  summary: Vstupní typ operace `oneOp` být podmíněně použit.
+  summary: Vstupní typ operace `oneOp` , která se má podmíněně použít.
 functors:
 - Adjoint
 - Controlled
@@ -72,9 +72,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 79fc62ca2c3525699deec6669e6b078408ede837
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a1182abedfbb4905ec65f5e720d82a1766aa5d65
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213717"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672712"

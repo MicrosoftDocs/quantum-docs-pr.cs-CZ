@@ -7,7 +7,7 @@ summary: >-
   Aplikuje jednotnou operaci v rámci klasické hodnoty výsledků.
 
 
-  V případě `op` operace a hodnoty výsledku `result`použije `op` na `target`, pokud `result` `One`. Pokud `Zero`, nic se nestane s `target`.
+  `target` Pokud `result` je `One`zadaná `op` operace a výsledná `result`hodnota, `op` platí pro pravidlo if. V `Zero`případě, že `target`se nic nestane s.
 
   Přípona `CA` označuje, že operace, která se má použít, je jednotná (přivedená a přiléhající).
 syntax: "operation ApplyIfOneCA (result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T)) : Unit"
@@ -52,9 +52,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifonea
 - microsoft.quantum.canon.applyifoneca
 metadata:
-  ms.openlocfilehash: 9756dcc29853d41e1d2a9fee5816254afa5e5d73
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: f8837e549ec1fc70b76e8151a211c4bf9f71168e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217389"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672648"

@@ -7,7 +7,7 @@ summary: Amplituda amplitud na základě částečných odrazů
 remarks: >-
   Zesílení amplitud je zvláštní případ oblivious zesílení amplitud, kde nejsou žádné systémové qubits a oblivious Oracle je nastavená na identity.
 
-  Ve většině případů je `startQubits` inicializován ve stavu $ \ket{\Text{Start}}\_$1, což je eigenstate v `startStateReflection`$-$1.
+  Ve většině případů `startQubits` je inicializován ve stavu $ \ket{\Text{Start}}\_$1, což je eigenstate $-$1 pro. `startStateReflection`
 syntax: 'function AmplitudeAmplificationFromPartialReflections (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle) : (Qubit[] => Unit is Adj + Ctl)'
 input:
   content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle)'
@@ -39,9 +39,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 8fd7ecce6a7623158e26ec4db6732daf114490af
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 4dae118f99c8a2e7cf933a378ed38d414a94fef4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872304"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673006"
