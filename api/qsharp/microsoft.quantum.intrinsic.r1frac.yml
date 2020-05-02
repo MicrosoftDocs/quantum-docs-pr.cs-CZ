@@ -14,7 +14,7 @@ summary: >-
 
   > [!WARNING]
 
-  > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r"a nezahrnuje faktor $1/2 $ zahrnutý v @"microsoft.quantum.intrinsic.r1".
+  > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r"a nezahrnuje faktor $1/2 $ zahrnutý do @"microsoft.quantum.intrinsic.r1".
 remarks: >-
   Ekvivalent:
 
@@ -51,9 +51,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: c91aa9424abd038fa3a5a22fd23ac92cce171414
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 45fa756e94be8b580c909004016e0f40861111c1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233981"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82683738"

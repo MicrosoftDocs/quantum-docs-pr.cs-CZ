@@ -7,7 +7,7 @@ summary: >-
   Normalizuje vektor `Double`s v `L(p)` normě.
 
 
-  To znamená, že dané pole $x $ typu `Double[]`, vrátí pole, kde jsou všechny prvky děleny $p $-Norm $\|x\|_p $.
+  To znamená, že předané pole $x $ typu `Double[]`vrátí pole, kde jsou všechny prvky děleny $p $-norm $\|x\|_p $.
 syntax: 'function PNormalized (p : Double, array : Double[]) : Double[]'
 input:
   content: '(p : Double, array : Double[])'
@@ -23,16 +23,16 @@ input:
 output:
   content: Double[]
   types:
-  - summary: Pole $x $ normalizován $p $-Norm $\|x\|_p $.
+  - summary: Pole $x $ normalizován $p $-norm $\|x\|_p $.
     isArray: true
     isPrimitive: true
     uid: Double
 seeAlso:
 - pnorm
 metadata:
-  ms.openlocfilehash: 5fd219b866b14d3d6faf58cdf4f1ce2b9fbadf9d
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 68697fe159fecfeed0078f95de8d91f825125f41
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067284"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684028"
