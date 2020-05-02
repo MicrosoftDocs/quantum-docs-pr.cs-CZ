@@ -10,16 +10,16 @@ summary: >-
   Vstup pro Oracle $O $ je:
 
 
-  - Registr, ve kterém bude uložený požadovaný stav pro stav dat $ \ket{\psi}\_s $
+  - Registr, ve kterém bude uložen požadovaný stav pro tento počet\_dat $ \ket{\psi} s $
 remarks: >-
-  Tento Oracle definovaný pomocí $O \ket{0}= \ket{\psi} $ pracuje na stavovém základě výpočtu $ \ket{0}$ k vytvoření stavu $ \ket{\psi} $.
+  Tento Oracle definovaný pomocí $O \ket{0}= \ket{\psi} $ pracuje na stavovém základě výpočtu $ \ket{0}$ a vytvoří stav $ \ket{\psi} $.
 
   Prvním parametrem je qubit registr $ \ket{\psi} $.
 syntax: newtype DeterministicStateOracle = (Qubit[] => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: bc10b84502866d1f5e19b28e77e54c1b10d01b28
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 35d4b0243fac954c483a81ae1cccb46b44759ca0
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73231125"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681314"

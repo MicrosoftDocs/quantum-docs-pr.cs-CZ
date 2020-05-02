@@ -12,13 +12,13 @@ input:
 output:
   content: Pauli
   types:
-  - summary: Operátor `Pauli`, který je jedním z `[PauliI, PauliX, PauliY, PauliZ]`.
+  - summary: '`Pauli` Operátor, který je jedním z `[PauliI, PauliX, PauliY, PauliZ]`.'
     isPrimitive: true
     uid: Pauli
 metadata:
-  ms.openlocfilehash: 564e6c78859d5f74e0fc4ca9c5467e806742b7b2
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e0065244d20a9f9c6850a23625ecc3bbb73ace0f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219939"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681515"
