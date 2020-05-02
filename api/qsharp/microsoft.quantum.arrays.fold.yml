@@ -3,7 +3,7 @@ uid: microsoft.quantum.arrays.fold
 name: Fold
 type: function
 namespace: Microsoft.Quantum.Arrays
-summary: Provede iteraci funkce `f` přes pole `array`a vrátí `f(f(f(initialState, array[0]), array[1]), ...)`.
+summary: Opakuje funkci `f` prostřednictvím pole `array`a vrátí. `f(f(f(initialState, array[0]), array[1]), ...)`
 examples: >-
   ```qsharp
 
@@ -50,13 +50,13 @@ output:
     isLocal: true
 typeParameters:
 - uid: "'State"
-  summary: Typ stavu, ve kterém funkce `folder` pracuje, tj., jako je například, přijímá jako první argument a vrátí.
+  summary: Typ stavu, na kterém `folder` funkce pracuje, tj., přijímá jako první argument a vrací.
 - uid: "'T"
   summary: Typ `array` prvků.
 metadata:
-  ms.openlocfilehash: 4be4752029b10351cfb3fe0fa6aa61b84b157510
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d02d20c049e8b8d21214028efcd6a647067bf71f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214346"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676450"

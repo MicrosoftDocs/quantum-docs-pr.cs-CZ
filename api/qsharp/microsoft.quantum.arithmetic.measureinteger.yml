@@ -3,7 +3,7 @@ uid: microsoft.quantum.arithmetic.measureinteger
 name: MeasureInteger
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Měří obsah v registru a převede ho na celé číslo. Měření se provádí s ohledem na standardní výpočetní základ, tj. na eigenbasis `PauliZ`.
+summary: Měří obsah v registru a převede ho na celé číslo. Měření se provádí s ohledem na standardní výpočetní základ, tj. eigenbasis `PauliZ`.
 remarks: Tato operace obnoví vstupní registr do stavu $ \ket{00\cdots 0} $, který je vhodný pro uvolnění zpět na cílový počítač.
 syntax: 'operation MeasureInteger (target : Microsoft.Quantum.Arithmetic.LittleEndian) : Int'
 input:
@@ -15,15 +15,15 @@ input:
 output:
   content: Int
   types:
-  - summary: Unsigned integer, který obsahuje měřenou hodnotu `target`.
+  - summary: Unsigned integer obsahující měřenou hodnotu `target`.
     isPrimitive: true
     uid: Int
 seeAlso:
 - microsoft.quantum.canon.measureintegerbe
 metadata:
-  ms.openlocfilehash: 989302867cbfb6b429bf8e8d4b8a76a0c1c4e61d
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: cb7432ccf4c66b4f508b182e8c96bd73b13e2f08
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214873"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676760"

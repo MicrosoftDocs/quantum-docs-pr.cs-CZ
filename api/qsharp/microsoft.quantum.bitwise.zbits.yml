@@ -4,7 +4,7 @@ name: ZBits
 type: function
 namespace: Microsoft.Quantum.Bitwise
 summary: Vrací celé číslo představující bity Z pole operátorů Pauli.
-remarks: Funkce bude vyvolána, pokud je délka pole `paulis` větší než 63.
+remarks: Funkce bude vyvolána, pokud je délka `paulis` pole větší než 63.
 syntax: 'function ZBits (paulis : Pauli[]) : Int'
 input:
   content: '(paulis : Pauli[])'
@@ -17,15 +17,15 @@ input:
 output:
   content: Int
   types:
-  - summary: Celé číslo $x $ with Binary rereprezentace $ (p_{62}\,p_{61}\,\dots\,p_0) $, kde $p _i = $0, pokud `paulis[i]` `PauliI` nebo `PauliX` a kde $p _i = $1, pokud `paulis[i]` `PauliY` nebo `PauliZ`.
+  - summary: Celé číslo $x $ s binární reprezentací $ ({62}\,p_{61}\,p_\,\dots p_0) $, kde $p _i = $0 `paulis[i]` , `PauliI` Pokud `PauliX` je nebo a kde $p _i = `paulis[i]` $1 `PauliY` , `PauliZ`Pokud je nebo.
     isPrimitive: true
     uid: Int
 seeAlso:
 - xbits
 metadata:
-  ms.openlocfilehash: 21d3da075cb4b98e5604f72b8432536bb9d51753
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d7605a48451292792a97e9049125674c6716780f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217695"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676426"

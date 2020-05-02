@@ -8,7 +8,7 @@ remarks: Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` 
 examples: >-
   Následující kód demonstruje funkci "Filtered".
 
-  Predikát je definován pomocí funkce @"microsoft.quantum.logical.greaterthani":
+  Predikát je definován pomocí @"microsoft.quantum.logical.greaterthani" funkce:
 
 
   ```qsharp
@@ -59,9 +59,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 metadata:
-  ms.openlocfilehash: 8ce7f84c2243a5194b5a2223884fb68304767dbf
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: 6aa19a279425672675182f3c8098e7c47fb5cce6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80320739"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676469"

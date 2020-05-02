@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Zadaná dvě pole stejného typu a predikát, který je definován pro páry prvků pole, kontroluje, zda jsou pole shodná.
 remarks: >-
-  Tato funkce je definována pro obecné typy. To znamená, že kdykoli máme dvě pole `'T[]` a funkce `equal: ('T, 'T) -> Bool`, vrátí tato funkce hodnotu `Bool`, která označuje, zda jsou pole shodná.
+  Tato funkce je definována pro obecné typy. To znamená, že kdykoli máme dvě pole `'T[]` a funkci `equal: ('T, 'T) -> Bool`, tato funkce vrátí `Bool` hodnotu, která označuje, zda jsou pole shodná.
 
   Pro dvě pole, která mají být považována za EQUAL, musí mít stejnou délku a elementy ve stejné pozici v poli musí být stejné.
 examples: >-
@@ -59,18 +59,18 @@ output:
   content: Bool
   types:
   - summary: >-
-      Hodnota `true` pouze v případě, že `array1` a `array2` jsou stejné.
+      Hodnota `true` , pokud `array1` a `array2` jsou rovna.
 
-      To znamená, že pokud mají obě pole stejnou délku, a všechny prvky jsou stejné jako definovány `equal`.
+      To znamená, že pokud mají obě pole stejnou délku, a všechny prvky jsou stejné jako definované pomocí `equal`.
     isPrimitive: true
     uid: Bool
 typeParameters:
 - uid: "'T"
   summary: Typ prvků každého pole.
 metadata:
-  ms.openlocfilehash: 466078fa243e2f394fa42dff15845ae5f1cd73df
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: d2af5ff8e2d66e6162c73c3854670451a00dcf50
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80321602"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676499"

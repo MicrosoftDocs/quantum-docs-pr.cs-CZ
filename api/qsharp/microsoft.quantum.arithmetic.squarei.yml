@@ -3,7 +3,7 @@ uid: microsoft.quantum.arithmetic.squarei
 name: SquareI
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Vypočítá čtverci celého čísla `xs` do `result`, která musí být zpočátku nula.
+summary: Vypočítá čtverci celého čísla `xs` do `result`, které musí být zpočátku nula.
 remarks: K výpočtu čtverce používá standardní přístup Shift-and-Add. Uloží $n-$1 qubits ve srovnání s řešením přímého přeposílání, které před použitím regulárního násobitele nejdřív zkopíruje XS a potom operaci kopírování vrátí zpět.
 syntax: 'operation SquareI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
@@ -13,7 +13,7 @@ input:
     summary: $n $-bitové číslo do čtverce (LittleEndian)
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: $2N $-bit Result (LittleEndian), musí být ve stavu $ \ket{0}$ zpočátku.
+    summary: $2N $-bit výsledek (LittleEndian), musí být ve stavu $ \ket{0}$ zpočátku.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -24,9 +24,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: ae55cd24a5dad065c010006f01484f7e903e76f6
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: eedc2536da0fd75712929af44f5167d3fc73add3
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218426"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676609"

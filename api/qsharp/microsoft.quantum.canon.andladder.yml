@@ -7,9 +7,9 @@ summary: >-
   Provede řízený "a žebřík" v registru cílového qubits.
 
 
-  Tato operace používá transformaci popsanou následujícím mapováním výpočetního základu, $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní základní stav `controls`a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy `targets`.
+  \_Tato operace používá transformaci popsanou následujícím mapováním výpočetního základu, $ $ \begin{align} \ket{x 1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}}, \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ odkazuje na výpočetní stavy `controls`na bázi a kde $ \ket{y\_1, \dots, y\_{n-1}} $ odkazuje na výpočetní stavy pro. `targets`
 remarks: >-
-  - Slouží jako součást <xref:microsoft.quantum.canon.applymulticontrolledc> a <xref:microsoft.quantum.canon.applymulticontrolledca>.
+  - Používá se jako součást <xref:microsoft.quantum.canon.applymulticontrolledc> a. <xref:microsoft.quantum.canon.applymulticontrolledca>
 
   - Diagram vysvětlení a okruhu viz obrázek 4,10, část 4,3 v Nielsen & Čuangština.
 syntax: 'operation AndLadder (ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit'
@@ -43,9 +43,9 @@ output:
 functors:
 - Adjoint
 metadata:
-  ms.openlocfilehash: bf5b262ca55bea542218356918cf36eb95502967
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 4cc74315145176fd3a2258a3d92b2f2dfb4d66d3
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871035"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676399"
