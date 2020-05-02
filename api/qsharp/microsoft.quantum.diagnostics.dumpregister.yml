@@ -7,10 +7,10 @@ summary: Vypíše stav aktuálního cílového počítače přidružený k dané
 remarks: >-
   Tato metoda umožňuje vypsat informace přidružené ke stavu daného qubits do souboru nebo do jiného umístění.
 
-  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění (`()`) obvykle znamená, že se výstup vygeneruje do konzoly.
+  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění (`()`) však obvykle znamená, že výstup bude vygenerován do konzoly.
 
 
-  U místních úplných simulátorů distribuovaných jako součást vývojové sady pro plnění stavových prostředí očekává Tato metoda řetězec s cestou k souboru, ve kterém bude zapisovat stav daného qubits (tj. funkce Wave odpovídajícího subsystému) jako jednorozměrné ar. Ray komplexních čísel, kde každý prvek představuje amplitudy pravděpodobnosti měření odpovídajícího stavu.
+  U místních úplných simulátorů distribuovaných jako součást vývojové sady pro plnění stavových prostředí očekává Tato metoda řetězec s cestou k souboru, ve kterém bude zapisovat stav daného qubits (tj. funkce Wave odpovídajícího subsystému) jako jednorozměrné pole komplexních čísel, kde každý prvek představuje amplitudy pravděpodobnosti měření odpovídajícího stavu.
 
   Pokud jsou zadané qubits entangled s jinými qubit a jejich stav nelze oddělit, pouze hlásí, že qubits je entangled.
 syntax: "function DumpRegister (location : 'T, qubits : Qubit[]) : Unit"
@@ -33,9 +33,9 @@ output:
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 6d553a95bfa619d142b681e2830fc0375c6bcae5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 3bf5302364b37cb1ccef651935833b966ff84464
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227028"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677226"

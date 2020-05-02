@@ -4,7 +4,7 @@ name: EstimateOverlapBetweenStates
 type: operation
 namespace: Microsoft.Quantum.Characterization
 summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhaduje se čtvercový překryv mezi stavy, které jsou připraveny jednotlivými operacemi.
-remarks: Tato operace používá test prohození k vyhledání $ $ \begin{align} \left | \braket{00\cdots 0 | V ^ {\dagger} U | 00 \ cdots 0} \right | ^ 2 \end{align} $ $ kde $U $ je jednotná reprezentace akce `preparation1`a kde $V $ odpovídá `preparation2`.
+remarks: Tato operace používá test prohození k vyhledání $ $ \begin{align} \left | \braket{00\cdots 0 | V ^ {\dagger} U | 00 \ cdots 0} \right | ^ 2 \end{align} $ $, kde $U $ je jednotková reprezentace akce `preparation1`a kde $V $ odpovídá. `preparation2`
 syntax: 'operation EstimateOverlapBetweenStates (preparation1 : (Qubit[] => Unit is Adj), preparation2 : (Qubit[] => Unit is Adj), nQubits : Int, nMeasurements : Int) : Double'
 input:
   content: '(preparation1 : (Qubit[] => Unit is Adj), preparation2 : (Qubit[] => Unit is Adj), nQubits : Int, nMeasurements : Int)'
@@ -38,7 +38,7 @@ input:
     functors:
     - Adjoint
   - name: nQubits
-    summary: Počet qubits, na které se `commonPreparation`, `preparation1`a `preparation2` všechny Act
+    summary: Počet qubits, které `commonPreparation`jsou, `preparation1`a `preparation2` všechny Act.
     isPrimitive: true
     uid: Int
   - name: nMeasurements
@@ -54,9 +54,9 @@ seeAlso:
 - microsoft.quantum.characterization.estimaterealoverlapbetweenstates
 - microsoft.quantum.characterization.estimateimagoverlapbetweenstates
 metadata:
-  ms.openlocfilehash: aa8713a1ef7176793a0b11baa675b22e48d61411
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: 6eefd9b32b73d3f73bb31ff81509466e754e20d6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76872610"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677687"
