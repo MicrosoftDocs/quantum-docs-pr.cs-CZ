@@ -5,9 +5,9 @@ type: function
 namespace: Microsoft.Quantum.Convert
 summary: Vytvoří binární reprezentace kladného celého čísla s použitím reprezentace Little-endian pro vrácené pole.
 remarks: >-
-  Vstupní `bits` musí být v rozmezí od 0 do 63.
+  Vstup `bits` musí být v rozmezí od 0 do 63.
 
-  Vstupní `number` musí být mezi 0 a $2 ^ {\texttt{BITS}}-$1.
+  Vstup `number` musí být mezi 0 a $2 ^ {\texttt{bits}}-$1.
 syntax: 'function IntAsBoolArray (number : Int, bits : Int) : Bool[]'
 input:
   content: '(number : Int, bits : Int)'
@@ -23,14 +23,14 @@ input:
 output:
   content: Bool[]
   types:
-  - summary: Pole logických hodnot, které představují `number`.
+  - summary: Pole logických hodnot, které `number`představují.
     isArray: true
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: e75eede507f04178755e886258e7eb73a6cc3dce
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: f14af582713f5d08e29b54a1e1758b4efbeea094
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858985"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82659189"
