@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Core
 summary: Vrátí definovanou počáteční hodnotu daného rozsahu.
 remarks: >-
-  První prvek výrazu rozsahu je `start`, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` předáno.
+  První prvek `start`výrazu rozsahu je, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` není předán.
 
 
   Všimněte si, že definovaná počáteční hodnota rozsahu je shodná s prvním prvkem sekvence, pokud rozsah neurčuje prázdnou sekvenci (například 2.. 1).
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 0d618a26d71a5b41e6ea6b73503e9f099b18f129
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a5a5240da851b459e732c78f7be94b8a2d02b1f1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73231754"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82657240"

@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Core
 summary: Vrátí definovanou koncovou hodnotu daného rozsahu, což není nutně poslední prvek v sekvenci.
 remarks: >-
-  První prvek výrazu rozsahu je `start`, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` předáno.
+  První prvek `start`výrazu rozsahu je, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` není předán.
 
 
   Všimněte si, že definovaná koncová hodnota rozsahu se může lišit od posledního prvku v pořadí určeném rozsahem. například v rozsahu 0.. 2... 5 poslední prvek je 4, ale koncová hodnota je 5.
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: c7436046b6be7d4d0801471ecc6c78e36421e54a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 85e9006f73cd5f7b5a78b57148cbd7ad5b764878
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066638"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82657636"
