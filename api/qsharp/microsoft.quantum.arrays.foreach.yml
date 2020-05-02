@@ -4,13 +4,13 @@ name: ForEach
 type: operation
 namespace: Microsoft.Quantum.Arrays
 summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
-remarks: "Operace je definována pro obecné typy, tj. kdykoli máme pole `'T[]` a operace `action : 'T -> 'U` můžeme namapovat prvky pole a vytvořit nové pole typu `'U[]`."
+remarks: "Operace je definována pro obecné typy, tj. kdykoli máme pole `'T[]` a operaci `action : 'T -> 'U` , můžeme namapovat prvky pole a vytvořit nové pole typu. `'U[]`"
 syntax: "operation ForEach (action : ('T => 'U), array : 'T[]) : 'U[]"
 input:
   content: "(action : ('T => 'U), array : 'T[])"
   types:
   - name: action
-    summary: Operace z `'T` do `'U`, která je použita na každý prvek.
+    summary: Operace z `'T` na `'U` , která je použita na každý prvek.
     isOperation: true
     input:
       types:
@@ -28,7 +28,7 @@ input:
 output:
   content: "'U[]"
   types:
-  - summary: Pole `'U[]` prvků, které jsou mapovány operací `action`.
+  - summary: Pole `'U[]` prvků, které jsou mapovány `action` operací.
     isArray: true
     uid: "'U"
     isLocal: true
@@ -36,11 +36,11 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 - uid: "'U"
-  summary: Typ výsledku operace `action`.
+  summary: Typ výsledku `action` operace.
 metadata:
-  ms.openlocfilehash: 6f61c37fb7a62bcbcfe91768725173e9a919e987
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: af4b6b469017e4cee581a9bdd96ef6171d9b1deb
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871018"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681036"

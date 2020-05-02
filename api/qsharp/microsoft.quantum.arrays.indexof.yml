@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Vrátí první index prvního prvku v poli, který splňuje daný predikát. Pokud žádný takový prvek neexistuje, vrátí hodnotu-1.
 examples: >-
-  Předpokládejme, že `IsEven : Int -> Bool` je funkce, která vrací `true` pouze v případě, že je její vstup i. Pak lze použít s `IndexOf` k nalezení prvního i elementu v poli:
+  Předpokládejme, `IsEven : Int -> Bool` že se jedná o funkci `true` , která vrací pouze v případě, že je její vstup i. Pak lze použít s `IndexOf` k nalezení prvního i elementu v poli:
 
 
   ```Q#
@@ -38,13 +38,13 @@ input:
 output:
   content: Int
   types:
-  - summary: Nejmenší index `idx` takový, že `predicate(arr[idx])` má hodnotu true, nebo-1, pokud žádný takový prvek neexistuje.
+  - summary: Buď nejmenší index `idx` , který `predicate(arr[idx])` je true, nebo-1, pokud žádný takový prvek neexistuje.
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 6f7fee40a558e7bb17b94c9dd58656c6f34ceac8
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 6fb95357096751e53f601a9c855ff656e2dd1b34
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218188"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681005"

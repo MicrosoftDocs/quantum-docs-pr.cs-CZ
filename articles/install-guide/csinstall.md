@@ -1,147 +1,101 @@
 ---
-title: 'Vývoj s Q # +C#'
+title: Vývoj s využitím Q# a C#
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036283"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680166"
 ---
-# <a name="develop-with-q--c"></a>Vývoj s Q # +C#
+# <a name="using-q-with-c-and-f"></a>Použití Q # s C\# a F\#
 
-Nainstalujte QDK pro vývoj C# hostitelských programů pro volání Q # Operations.
+Q # je sestavený tak, aby se dobře hrál s jazyky .NET, jako je C# a F #.
+V této příručce vám ukážeme, jak použít Q # s hostitelským programem napsaným v jazyce .NET.
 
-Q # je sestavený tak, aby se dobře hrál s jazyky C#.NET – konkrétně. S tímto párováním můžete pracovat v různých vývojových prostředích:
+## <a name="prerequisites"></a>Požadavky
 
-- [Q # + C# s použitím sady Visual Studio (Windows)](#VS)
-- [Q # + C# použití Visual Studio Code (Windows, Linux a Mac)](#VSC)
-- [Q # + C# použití nástroje příkazového řádku `dotnet`](#command)
+- Nainstalujte sadu [pro vývoj pro více procesorů pro použití s projekty příkazového řádku Q #](xref:microsoft.quantum.install.standalone).
 
-## Vývoj pomocí Q # + C# pomocí sady Visual Studio <a name="VS"></a>
+## <a name="creating-a-q-library-and-a-net-host"></a>Vytvoření knihovny Q # a hostitele .NET
 
-Visual Studio nabízí bohatá prostředí pro vývoj programů Q #. Rozšíření Visual Studio Q # obsahuje šablony pro soubory a projekty Q # a také zvýrazňování syntaxe, dokončování kódu a podporu technologie IntelliSense.
+Prvním krokem je vytvoření projektů pro knihovnu Q # a pro hostitele .NET, který bude volat operace a funkce definované ve vaší knihovně Q #.
 
+### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-1. Požadavky
+- Vytvoření nové knihovny Q #
+  - Přejít na **soubor** -> **Nový** -> **projekt**
+  - Do vyhledávacího pole zadejte text "Q #"
+  - Vybrat **knihovnu Q #**
+  - Vybrat **Další**
+  - Zvolit název a umístění knihovny
+  - Ujistěte se, že není **zaškrtnuté** možnost "umístit projekt a řešení ve stejném adresáři".
+  - Vyberte **vytvořit** .
+- Vytvořit nový hostitelský program C# nebo F #
+  - Přejít na **soubor** → **Nový** → **projekt**
+  - Vyberte Konzolová aplikace (.NET Core) pro C# nebo F. #
+  - Vybrat **Další**
+  - V části *řešení*vyberte Přidat do řešení.
+  - Vyberte název hostitelského programu
+  - Vyberte **vytvořit** .
 
-    - [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 s povolenými úlohami vývoje pro různé platformy pomocí rozhraní .NET Core
+### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code nebo příkazový řádek](#tab/tabid-cmdline)
 
-1. Nainstalujte rozšíření sady Visual Studio pro jazyk Q#.
+- Vytvoření nové knihovny Q #
 
-    - Stažení a instalace [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)
+  ```dotnetcli
+  dotnet new classlib -lang Q# -o quantum
+  ```
 
-1. Ověřte instalaci vytvořením aplikace `Hello World`.
+- Vytvoření nového projektu konzoly C# nebo F #
 
-    - Vytvořte novou aplikaci v jazyku Q#.
+  ```dotnetcli
+  dotnet new console -lang C# -o host  
+  ```
 
-        - Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
-        - Do vyhledávacího pole zadejte `Q#`.
-        - Vyberte **Aplikace Q#** .
-        - Vyberte **Další**.
-        - Vyberte název a umístění aplikace.
-        - Vyberte **Vytvořit**.
+- Přidání knihovny Q # jako odkazu z hostitelského programu
 
-    - Prozkoumejte projekt.
+  ```dotnetcli
+  cd host
+  dotnet add reference ../quantum/quantum.csproj
+  ```
 
-        Měli byste zjistit, že byly vytvořeny dva soubory: `Driver.cs`, což je hostitelská aplikace C#, a `Operation.qs`, což je program v jazyku Q#, který definuje jednoduchou operaci zobrazení zprávy na konzole.
+- Volitelné Vytvoření řešení pro oba projekty
 
-    - Spuštění aplikace
+  ```dotnetcli
+  dotnet new sln -n quantum-dotnet
+  dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
+  dotnet sln quantum-dotnet.sln add ./host/host.csproj
+  ```
 
-        - Vyberte **Ladit** -> **Spustit bez ladění**.
-        - V okně konzoly by se měl zobrazit text `Hello quantum world!`.
+***
 
-> [!NOTE]
-> * Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
+## <a name="calling-into-q-from-net"></a>Volání do Q # z .NET
 
-## Vývoj pomocí Q # + C# pomocí Visual Studio Code <a name="VSC"></a>
+Jakmile budete mít projekty nastavené podle výše uvedených pokynů, můžete do aplikace v konzole .NET zavolat do Q #.
+Kompilátor Q # vytvoří třídy .NET pro každou operaci Q # a funkci, která vám umožní spouštět v simulátoru své programy pro práci s více operačními systémy.
 
-Visual Studio Code (VS Code) nabízí bohatý prostředí pro vývoj programů Q # v systémech Windows, Linux a Mac.  Rozšíření Q # VS Code zahrnuje podporu zvýrazňování syntaxe Q #, dokončování kódu a fragmentů kódu Q #.
+Například [Ukázka interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) zahrnuje následující příklad operace Q #:
 
-1. Požadavky
+:::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-   - [VS Code](https://code.visualstudio.com/download)
-   - [.NET Core SDK 3,1 nebo novější](https://www.microsoft.com/net/download)
+Chcete-li volat tuto operaci z rozhraní .NET pro simulátor doby provozu, můžete `Run` použít metodu třídy `RunAlgorithm` .NET vygenerovanou kompilátorem Q #:
 
-1. Nainstalujte rozšíření VS Code pro kvantové programování.
+### <a name="c"></a>[R #](#tab/tabid-csharp)
 
-    - Nainstalujte [rozšíření VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
+:::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
-1. Nainstalujte šablony kvantového projektu:
+### <a name="f"></a>[F#](#tab/tabid-fsharp)
 
-   - Přejděte do části **Zobrazit** -> **Paleta příkazů**.
-   - Vyberte **Q #: Instalace šablon projektů**
+:::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-    Teď máte sadu Quantum Development Kit nainstalovanou a připravenou k používání ve vašich vlastních aplikacích a knihovnách.
-
-1. Ověřte instalaci vytvořením aplikace `Hello World`.
-
-    - Vytvořte nový projekt:
-
-        - Přejděte do části **Zobrazit** -> **Paleta příkazů**.
-        - Vyberte **Q #: vytvořit nový projekt.**
-        - Vybrat **samostatnou konzolovou aplikaci**
-        - Přejděte do umístění v systému souborů, ve kterém chcete aplikaci vytvořit.
-        - Po vytvoření projektu klikněte na tlačítko **Otevřít nový projekt**.
-
-    - Pokud ještě nemáte nainstalované C# rozšíření pro vs Code, zobrazí se automaticky otevírané okno. Nainstalujte rozšíření. 
-
-    - Spusťte aplikaci:
-
-        - Přejít na **terminál** -> **nový terminál**
-        - Zadejte `dotnet run`
-        - V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`
-
-
-> [!NOTE]
-> * Rozšíření Visual Studio Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami. Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.
-
-## Vývoj pomocí Q # + C# pomocí nástroje příkazového řádku `dotnet`<a name="command"></a>
-
-Samozřejmě můžete programy v Q# také sestavovat a spouštět z příkazového řádku. Stačí nainstalovat .NET Core SDK a šablony projektů QDK. 
-
-1. Požadavky
-
-    - [.NET Core SDK 3,1 nebo novější](https://www.microsoft.com/net/download)
-
-1. Nainstalujte šablony kvantového projektu pro rozhraní .NET.
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
-
-    Teď máte sadu Quantum Development Kit nainstalovanou a připravenou k používání ve vašich vlastních aplikacích a knihovnách.
-
-1. Ověřte instalaci vytvořením aplikace `Hello World`.
-
-    - Vytvoření nové aplikace
-
-       ```dotnetcli
-       dotnet new console -lang "Q#" -o runSayHello
-       ```
-
-    - Přejděte do adresáře nové aplikace.
-
-       ```bash
-       cd runSayHello
-       ```
-
-    Spolu se soubory projektu aplikace by se měly zobrazovat dva vytvořené soubory: soubor v jazyku Q# (`Operation.qs`) a soubor hostitele v jazyku C# (`Driver.cs`).
-
-    - Spuštění aplikace
-
-        ```dotnetcli
-        dotnet run
-        ```
-
-        Měl by se zobrazit následující výstup: `Hello quantum world!`
-
+***
     
 ## <a name="whats-next"></a>Co dále?
 
-Teď máte sadu Quantum Development Kit nainstalovanou v upřednostňovaném prostředí a můžete napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.write-program).
+Když teď máte prostředí pro vývoj s využitím provozu pro Q # pro programy příkazového řádku Q a pro interoperabilitu s .NET, můžete napsat a spustit [svůj první program](xref:microsoft.quantum.write-program)pro práci s procesorem.

@@ -28,7 +28,7 @@ input:
   content: "(mapper : ((Int, 'T) -> 'U), array : 'T[])"
   types:
   - name: mapper
-    summary: Funkce z `(Int, 'T)` pro `'U`, která se používá k mapování prvků a jejich indexů.
+    summary: Funkce z `(Int, 'T)` `'U` , která se používá k mapování prvků a jejich indexů.
     isFunction: true
     input:
       types:
@@ -48,7 +48,7 @@ input:
 output:
   content: "'U[]"
   types:
-  - summary: Pole `'U[]` prvků, které jsou mapovány funkcí `mapper`.
+  - summary: Pole `'U[]` prvků, které jsou mapovány `mapper` funkcí.
     isArray: true
     uid: "'U"
     isLocal: true
@@ -56,13 +56,13 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 - uid: "'U"
-  summary: Typ výsledku funkce `mapper`.
+  summary: Typ výsledku `mapper` funkce
 seeAlso:
 - mapped
 metadata:
-  ms.openlocfilehash: 08dacd9b53b151d5cadcef16db8b460d4326d746
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 64741df4a3d7b7937f13614ffc9c7c7ec1aa3f7b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214278"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680935"

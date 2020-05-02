@@ -9,10 +9,10 @@ summary: >-
   Pokud se udělí operátor identity, qubit se připraví do maximálního smíšeného stavu.
 
 
-  Pokud byl qubit původně ve stavu $ \ket{0}$, tato operace připraví qubit do $ + $1 eigenstate daného Pauli operátoru, nebo pro `PauliI`v nejvyšším smíšeném stavu místo toho (viz <xref:microsoft.quantum.preparation.preparesinglequbitidentity>).
+  Pokud byl původně qubit ve stavu $ \ket{0}$, tato operace připraví qubit v $ + $1 eigenstate daného operátoru Pauli, nebo pro `PauliI`, v případě, že je místo toho ve stavu "maximálního smíšené" <xref:microsoft.quantum.preparation.preparesinglequbitidentity>(viz).
 
 
-  Pokud byl qubit v jiném stavu než $ \ket{0}$, tato operace použije následující brány: $H $ for `PauliX`$HS $ for `PauliY`, $I $ for `PauliZ` a <xref:microsoft.quantum.preparation.preparesinglequbitidentity> pro `PauliI`.
+  Pokud{0}byl qubit v jiném stavu než $ \ket $, tato operace použije následující brány: $H $ for `PauliX`, $HS $ for `PauliY`, $I $ pro `PauliZ` a <xref:microsoft.quantum.preparation.preparesinglequbitidentity> pro. `PauliI`
 syntax: 'operation PrepareQubit (basis : Pauli, qubit : Qubit) : Unit'
 input:
   content: '(basis : Pauli, qubit : Qubit)'
@@ -31,9 +31,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: be4eb730bebd00531aaa49302578b23f4a52237b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 70032bd9174bb987206e2084e2788e5ac7169ae7
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226535"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681125"

@@ -4,13 +4,13 @@ name: Mapped
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Předané pole a funkce, které jsou definovány pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole pod funkcí.
-remarks: "Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a funkce `mapper: 'T -> 'U` můžeme namapovat prvky pole a vytvořit nové pole typu `'U[]`."
+remarks: "Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a funkci `mapper: 'T -> 'U` , můžeme namapovat prvky pole a vytvořit nové pole typu. `'U[]`"
 syntax: "function Mapped (mapper : ('T -> 'U), array : 'T[]) : 'U[]"
 input:
   content: "(mapper : ('T -> 'U), array : 'T[])"
   types:
   - name: mapper
-    summary: Funkce z `'T` pro `'U`, která se používá k mapování prvků.
+    summary: Funkce z `'T` `'U` , která se používá k mapování prvků.
     isFunction: true
     input:
       types:
@@ -28,7 +28,7 @@ input:
 output:
   content: "'U[]"
   types:
-  - summary: Pole `'U[]` prvků, které jsou mapovány funkcí `mapper`.
+  - summary: Pole `'U[]` prvků, které jsou mapovány `mapper` funkcí.
     isArray: true
     uid: "'U"
     isLocal: true
@@ -36,11 +36,11 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 - uid: "'U"
-  summary: Typ výsledku funkce `mapper`.
+  summary: Typ výsledku `mapper` funkce
 metadata:
-  ms.openlocfilehash: 3e9262d3d2b294ccfafac24b2b080b124c9e319c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 877899dad82374281090e189c727c2a662f12b7b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218120"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680951"

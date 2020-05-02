@@ -1,19 +1,19 @@
 ---
-title: 'Vývoj pomocí Q # + Pythonu'
+title: Vývoj s využitím Q# a Pythonu
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: 1e40c2dddeaf4fad41693c976493f10fffffa139
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: e1b8a0c68b3ac0c059c6de6e478593321764ff88
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830997"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680147"
 ---
-# <a name="develop-with-q--python"></a>Vývoj pomocí Q # + Pythonu
+# <a name="develop-with-q--python"></a>Vývoj s využitím Q# a Pythonu
 
 Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly operace Q #.
 
@@ -24,13 +24,13 @@ Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly op
     - [.NET Core SDK 3,1 nebo novější](https://www.microsoft.com/net/download)
 
 
-1. Nainstalujte balíček `qsharp`, balíček Pythonu, který umožňuje spolupráci mezi Q # a Pythonem.
+1. Nainstalujte `qsharp` balíček, balíček Pythonu, který umožňuje spolupráci mezi Q # a Pythonem.
 
     ```bash
     pip install qsharp
     ```
 
-1. Nainstalujte `iqsharp`, jádro používané v Jupyter a Pythonu, které poskytuje základní funkce pro kompilaci a provádění operací Q #.
+1. Nainstalujte SWEETIQ #, jádro používané v Jupyter a Pythonu, které poskytuje základní funkce pro kompilaci a provádění operací Q #.
 
     ```bash
     dotnet tool install -g Microsoft.Quantum.IQSharp
@@ -83,6 +83,6 @@ Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly op
 > [!NOTE]
 > * Pomocí poznámkových bloků Python Jupyter můžete také napsat klasický program v Pythonu a v buňkách volat operace Q #. Kód Pythonu je pouze běžný program v Pythonu.
 
-## <a name="whats-next"></a>A co dál?
+## <a name="whats-next"></a>Co dále?
 
 Teď máte sadu Quantum Development Kit nainstalovanou v upřednostňovaném prostředí a můžete napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.write-program).
