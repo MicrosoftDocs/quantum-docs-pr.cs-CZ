@@ -5,7 +5,7 @@ type: newtype
 namespace: Microsoft.Quantum.ErrorCorrection
 summary: Představuje operaci, která slouží k měření Syndrome bloku kódu chyby.
 remarks: >-
-  Signatura `(LogicalRegister => Syndrome)` představuje operaci, která pracuje společně na qubits v `LogicalRegister` a některé auxillary qubits, za kterými následuje měření auxillary qubits pro extrakci `Syndrome` hodnoty představující `Result[]` těchto měření.
+  Signatura `(LogicalRegister => Syndrome)` představuje operaci, která funguje společně na qubits v `LogicalRegister` a některé auxillary qubits následované měřením qubits auxillary pro extrakci `Syndrome` hodnoty představující `Result[]` tato měření.
 
 
   ### <a name="examples"></a>Příklady
@@ -24,9 +24,9 @@ seeAlso:
 - logicalregister
 - syndrome
 metadata:
-  ms.openlocfilehash: 75f0fee569475e887b97d9969c9e92285809f1cb
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: aa324e8e149ba9418082145ed982236c473c1a4d
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73232230"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684831"
