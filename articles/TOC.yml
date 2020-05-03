@@ -17,15 +17,7 @@
     - name: Začínáme s QDK
       href: welcome.md
     - name: Instalace sady QDK
-      items:
-        - name: Přehled instalace
-          href: install-guide/index.md
-        - name: 'Q# + C#'
-          href: install-guide/csinstall.md
-        - name: 'Q# + Python'
-          href: install-guide/pyinstall.md
-        - name: 'Poznámkové bloky Jupyter v Q#'
-          href: install-guide/qjupyter.md
+      href: install-guide/toc.yml
     - name: Aktualizace sady QDK
       href: install-guide/update.md
     - name: 'Jak vytvořit projekt v Q#'
