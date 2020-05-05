@@ -1,0 +1,13 @@
+items:
+  - name: Přehled instalace
+    href: index.md
+  - name: 'Aplikace příkazového řádku v Q#'
+    href: standalone.md
+  - name: 'Poznámkové bloky Jupyter v Q#'
+    href: qjupyter.md
+  - name: 'Použití Q# s dalšími jazyky'
+    items:
+      - name: 'Použití Q # s Pythonem'
+        href: pyinstall.md
+      - name: 'Použití Q # s .NET'
+        href: csinstall.md
