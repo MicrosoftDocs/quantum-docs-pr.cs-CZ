@@ -1,0 +1,28 @@
+- href: chemistry.broombridge.md
+  name: Příkaz magic %chemistry.broombridge
+- href: chemistry.encode.md
+  name: Příkaz magic %chemistry.encode
+- href: chemistry.fh.add_terms.md
+  name: Příkaz magic %chemistry.fh.add_terms
+- href: chemistry.fh.load.md
+  name: Příkaz magic %chemistry.fh.load
+- href: chemistry.inputstate.load.md
+  name: Příkaz magic %chemistry.inputstate.load
+- href: config.md
+  name: Příkaz magic %config
+- href: estimate.md
+  name: Příkaz magic %estimate
+- href: lsmagic.md
+  name: Příkaz magic %lsmagic
+- href: package.md
+  name: Příkaz magic %package
+- href: performance.md
+  name: Příkaz magic %performance
+- href: simulate.md
+  name: Příkaz magic %simulate
+- href: toffoli.md
+  name: Příkaz magic %toffoli
+- href: who.md
+  name: Příkaz magic %who
+- href: workspace.md
+  name: Příkaz magic %workspace

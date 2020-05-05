@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 5fafb736f34d27f9233370a0a8a66c0613606048
-ms.sourcegitcommit: 9d1c045cf1a2c3e19030cb38dbc7496dbd24ab58
+ms.openlocfilehash: bca700660094b91f1c0dfa03f9bce1336073ca51
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77904770"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680193"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Instalace sady Microsoft Quantum Development Kit (QDK)
 
@@ -28,6 +28,7 @@ Kromě toho sada QDK poskytuje podporu Q# pro poznámkové bloky Jupyter s jádr
 
 Sada QDK je k dispozici pro víc vývojových prostředí. Z následujících částí vyberte upřednostňovanou instalaci:
 
-- [Instalace Q# pro C#:](xref:microsoft.quantum.install.cs) Toto prostředí vyberte, pokud chcete kombinací jazyků C# a Q# vytvořit hostitelský program v C#, který volá operace v Q#.
-- [Instalace Q# pro Python:](xref:microsoft.quantum.install.python) Toto prostředí vyberte, pokud chcete kombinací jazyků Python a Q# vytvořit hostitelský program v Pythonu, který volá operace v Q#.
-- [Instalace Q # pro poznámkové bloky Jupyter:](xref:microsoft.quantum.install.jupyter) Toto prostředí vyberte, pokud chcete spouštět kód Q# v buňkách s vloženým textem nebo vytvořit interaktivní kurzy kvantových výpočtů. Nevybírejte toto prostředí, pokud chcete kombinovat Q# s externím klasickým hostitelským programem.
+- [Aplikace příkazového řádku v Q#:](xref:microsoft.quantum.install.standalone) Tento přístup zvolte, když chcete pracovat s jazykem Q# z příkazového řádku. Tato možnost nevyžaduje ovladač ani hostitelský program jako následující možnosti.
+- [Instalace Q # pro poznámkové bloky Jupyter:](xref:microsoft.quantum.install.jupyter) Toto prostředí vyberte, pokud chcete spouštět kód Q# v buňkách s vloženým textem nebo vytvořit interaktivní kurzy kvantových výpočtů. 
+- [Vývoj s využitím Q# a Pythonu:](xref:microsoft.quantum.install.python) Toto prostředí vyberte, pokud chcete kombinací jazyků Python a Q# vytvořit hostitelský program v Pythonu, který volá operace v Q#.
+- [Vývoj s využitím Q# a C# nebo F#:](xref:microsoft.quantum.install.cs) Toto prostředí vyberte, pokud chcete kombinací jazyků C# nebo F# a Q# vytvořit hostitelský program v .NET, který volá operace v Q#.
