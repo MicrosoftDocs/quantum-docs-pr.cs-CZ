@@ -20,8 +20,6 @@
       href: install-guide/toc.yml
     - name: Aktualizace sady QDK
       href: install-guide/update.md
-    - name: 'Jak vytvořit projekt v Q#'
-      href: how-to-guides/create-qsharp-project.md
 - name: Kurzy
   items:
     - name: Generátor kvantových náhodných čísel
