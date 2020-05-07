@@ -1,6 +1,6 @@
 - name: Dokumentace k Microsoft Quantum
   href: index.yml
-- name: Začínáme s kvantovými výpočty
+- name: Přehled
   items:
     - name: Co jsou kvantové výpočty?
       href: overview/what-is-quantum-computing.md
@@ -12,7 +12,7 @@
       href: overview/what-is-qsharp.md
     - name: Jak získám další informace?
       href: overview/how-to-learn-quantum-computing.md
-- name: Získání sady Quantum Development Kit
+- name: Rychlé starty
   items:
     - name: Začínáme s QDK
       href: welcome.md
@@ -22,21 +22,19 @@
       href: install-guide/update.md
     - name: 'Jak vytvořit projekt v Q#'
       href: how-to-guides/create-qsharp-project.md
-- name: 'Studijní materiály pro Q #'
+- name: Kurzy
   items:
-    - name: Rychlé starty
-      items:
-        - name: Generátor kvantových náhodných čísel
-          href: quickstarts/qrng.md
-        - name: 'Zkoumání provázání s využitím Q#'
-          href: quickstart.md
-        - name: Implementace Groverova vyhledávacího algoritmu
-          href: quickstarts/search.md
+    - name: Generátor kvantových náhodných čísel
+      href: quickstarts/qrng.md
+    - name: 'Zkoumání provázání s využitím Q#'
+      href: quickstart.md
+    - name: Implementace Groverova vyhledávacího algoritmu
+      href: quickstarts/search.md
     - name: 'Studium Q# s využitím kvantových kat'
       href: intro-to-katas.md
     - name: 'Ukázky kódu v Q#'
       href: 'https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp'
-- name: Sada QDK podrobně
+- name: 'Uživatelská příručka Q#'
   items:
     - name: Techniky kvantového vývoje
       topicHref: techniques/index.md
@@ -46,15 +44,21 @@
       href: language/toc.yml
     - name: Kvantové simulátory a estimátory prostředků
       href: machines/toc.yml
-- name: 'Knihovny Q#'
-  href: libraries/toc.yml
-- name: Koncepce kvantových výpočtů
-  href: concepts/toc.yml
-- name: Další čtení
-  href: for-more-info.md
-- name: Přispívání do QDK
-  href: contributing/toc.yml
-  topicHref: contributing/index.md
-- name: "Poznámky k\_verzi QDK"
-  topicHref: relnotes/index.md
-  href: relnotes/toc.yml
+- name: Koncepty
+  items:
+    - name: Koncepce kvantových výpočtů
+      href: concepts/toc.yml
+    - name: 'Knihovny Q#'
+      href: libraries/toc.yml
+- name: Zdroje a prostředky
+  items:
+    - name: Glosář
+      href: concepts/Glossary.md
+    - name: Přispívání do QDK
+      href: contributing/toc.yml
+      topicHref: contributing/index.md
+    - name: "Poznámky k\_verzi QDK"
+      topicHref: relnotes/index.md
+      href: relnotes/toc.yml
+    - name: Další čtení
+      href: for-more-info.md
