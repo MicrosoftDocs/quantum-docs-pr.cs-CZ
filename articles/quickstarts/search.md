@@ -6,14 +6,14 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906946"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686828"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Rychlý start: Implementace Groverova vyhledávacího algoritmu v jazyku Q#
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Rychlý start: Implementace Groverova vyhledávacího algoritmu v jazyku Q\#
 
 V tomto rychlém startu se dozvíte, jak zkompilovat a spustit Groverovo hledání a urychlit hledání nestrukturovaných dat.  Groverovo hledání je jedním z nejoblíbenějších kvantových výpočetních algoritmů a tato poměrně malá implementace v jazyce Q# poskytuje představu o některých výhodách programování kvantových řešení pomocí kvantového programovacího jazyka Q# vysoké úrovně při vyjádření kvantových algoritmů.  Na konci průvodce se zobrazí výstup simulace, který ukazuje úspěšné vyhledání konkrétního řetězce v seznamu neuspořádaných položek za zlomek času, než by trvalo prohledání celého seznamu v klasickém počítači.
 
@@ -41,9 +41,9 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 1. S použitím sady Quantum Development Kit [vytvořte nový projekt v jazyku Q#](xref:microsoft.quantum.howto.createproject) s názvem `Grover` ve vývojovém prostředí podle vašeho výběru.
 
-1. Do souboru `Operations.qs` v projektu přidejte tento kód:
+1. Do souboru `Program.qs` v projektu přidejte tento kód:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
 
 1. Definujte seznam, ve kterém hledáme, tak, že vytvoříte nový soubor `Reflections.qs` a vložíte do něj tento kód:
 
@@ -53,64 +53,54 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 1. Dále spusťte nový program v jazyku Q# a vyhledejte položku označenou operací `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Aplikace příkazového řádku v Q# s využitím sady Visual Studio nebo editoru Visual Studio Code
 
-    Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
+Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
 
-    :::code language="python" source="~/quantum/samples/algorithms/simple-grover/host.py" range="9-14":::
+V sadě Visual Studio se skript jednoduše spustí stisknutím Ctrl + F5.
 
-    Pak můžete hostitelský program Pythonu spustit z příkazového řádku:
+V editoru VS Code při prvním použití sestavte `Program.qs` zadáním následujícího příkazu na terminálu:
 
-    ```bash
-    $ python host.py
-    Preparing Q# environment...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    [0, 1, 0, 1, 0]
-    ```
+```Command line
+dotnet build
+```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
+Pro následná spuštění není potřeba ho sestavovat znovu. Pokud ho chcete spustit, zadejte následující příkaz a stiskněte Enter:
 
-    Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
+```Command line
+dotnet run --no-build
+```
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
+Na terminálu by se měla zobrazit následující zpráva:
 
-    Pak můžete hostitelský program C# spustit z příkazového řádku:
+```
+operations.qs:
+This operation applies Grover's algorithm to search all possible inputs to an operation to find a particular marked state.
+Usage:
+operations.qs [options] [command]
 
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
+--n-qubits <n-qubits> (REQUIRED)
+-s, --simulator <simulator>         The name of the simulator to use.
+--version                           Show version information
+-?, -h, --help                      Show help and usage information
+Commands:
+```
 
-    Press any key to continue...
-    ```
+Důvodem je to, že jste nezadali počet qubitů, které chcete použít, takže terminál vás upozorní na příkazy, které jsou pro spustitelný soubor k dispozici. Pokud chcete použít 5 qubitů, měli byste zadat:
 
-    ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
+```Command line
+dotnet run --n-qubits 5
+```
 
-    Pokud chcete nový program v jazyku Q# spustit z C# v sadě Visual Studio, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
+Po stisknutí klávesy Enter by se měl zobrazit následující výstup:
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
-
-    Pak stiskněte klávesu F5, program se spustí a automaticky se zobrazí nové okno s následujícími výsledky: 
-
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
-
-    Press any key to continue...
-    ```
-    ***
-
-    Operace `ReflectAboutMarked` se volá jen čtyřikrát, program v jazyku Q# však našel vstup „01010“ mezi $2^{5} = 32$ možnými vstupy!
+```
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+[Zero,One,Zero,One,Zero]
+```
 
 ## <a name="next-steps"></a>Další kroky
 
@@ -119,10 +109,11 @@ Pokud se vám tento rychlý start líbil, podívejte se na některé prostředky
 - [Zpět na Začínáme pomocí průvodce sady QDK](xref:microsoft.quantum.welcome)
 - Vyzkoušejte [ukázku](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) obecnějšího Groverova vyhledávacího algoritmu
 - [Další informace o Groverově vyhledávání v kvantových katách](xref:microsoft.quantum.overview.katas)
-- Další informace o [zvětšování amplitudy](xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification), technice kvantových výpočtů, která stojí za Groverovým vyhledávacím algoritmem
+- Další informace o [zvětšování amplitudy][amplitude-amplification], technice kvantových výpočtů, která stojí za Groverovým vyhledávacím algoritmem
 - [Koncepce kvantových výpočtů](xref:microsoft.quantum.concepts.intro)
 - [Ukázky sady Quantum Development Kit](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
 [install]: xref:microsoft.quantum.install
+[amplitude-amplification]: xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification

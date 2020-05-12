@@ -6,29 +6,29 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: b9c8592b1296a7de1b9ad5d0538ad1972ec25e31
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: 5a433606f08f4c6a4ab7b5df67a7f0c30d2b3f0d
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906980"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82683009"
 ---
-# <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Rychlý start: Implementace kvantového generátoru náhodných čísel v jazyku Q#
-Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je kvantový generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo. 
+# <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Rychlý start: Implementace kvantového generátoru náhodných čísel v jazyku Q\#
+
+Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je kvantový generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo.
 
 ## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
 - [Vytvořte projekt v jazyku Q#](xref:microsoft.quantum.howto.createproject)
 
-
 ## <a name="write-a-q-operation"></a>Napište operaci Q#
 
 ### <a name="q-operation-code"></a>Kód operace Q#
 
-1. Obsah souboru Operation.qs nahraďte následujícím kódem:
+1. Obsah souboru Program.qs nahraďte následujícím kódem:
 
- :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-14":::
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
 
 Jak je uvedeno v článku [Co jsou kvantové výpočty?](xref:microsoft.quantum.overview.what), qubit je jednotka kvantových informací, které můžou být v superpozici. Při změření může mít qubit jenom hodnotu 0 nebo 1. Během zpracování však stav qubitu představuje pravděpodobnost přečtení hodnoty 0 anebo 1 při měření. Tento pravděpodobnostní stav se nazývá superpozice. Na základě této pravděpodobnosti můžeme generovat náhodná čísla.
 
@@ -36,7 +36,7 @@ V rámci operace v jazyku Q # zavádíme datový typ `Qubit`, který je pro jazy
 
 Pomocí operace `H` můžeme `Qubit` převést do superpozice. Ke změření qubitu a přečtení jeho hodnoty použijte vnitřní operaci `M`.
 
-Když `Qubit` převedeme do superpozice a změříme ho, bude výsledkem při každém vyvolání kódu jiná hodnota. 
+Když `Qubit` převedeme do superpozice a změříme ho, bude výsledkem při každém vyvolání kódu jiná hodnota.
 
 Když je pro `Qubit` zrušeno přidělení, musí pro něj být znovu nastaven stav `Zero`, jinak simulátor ohlásí běhovou chybu. Snadný způsob, jak toho dosáhnout, je vyvolat operaci `Reset`.
 
@@ -52,52 +52,68 @@ Tuto reprezentaci můžeme použít k vizualizaci toho, co kód dělá:
 
 <img src="~/media/qrng-H.png" width="450" alt="Preparing a qubit in superposition">
 
-
 * Pak qubit změříme a výstup uložíme:
 
 <img src="~/media/qrng-meas.png" width="450" alt="Measuring a qubit and saving the output">
 
 Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Pokud chceme generovat celá čísla, můžeme tuto operaci volat vícekrát. Pokud například budeme tuto operaci volat třikrát a získáme tři náhodné bity, můžeme generovat náhodná 3-bitová čísla (tedy náhodné číslo v rozsahu 0 až 7).
 
-## <a name="creating-a-complete-random-number-generator-using-a-host-program"></a>Vytvoření kompletního generátoru náhodných čísel s využitím hostitelského programu
 
-Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel s využitím hostitelského programu.
+## <a name="creating-a-complete-random-number-generator"></a>Vytvoření kompletního generátoru náhodných čísel
 
- ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
- 
- Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
- 
-:::code language="python" source="~/quantum/samples/getting-started/qrng/host.py" range="11-30":::
+Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel. Můžeme použít aplikace příkazového řádku v Q # nebo hostitelský program.
 
- Pak můžete hostitelský program Pythonu spustit z příkazového řádku:
- ```bash
- $ python host.py
- Preparing Q# environment...
- ..The random number generated is 42
- ```
- ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
- 
- Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
- 
- :::code language="csharp" source="~/quantum/samples/getting-started/qrng/Host.cs" range="4-39":::
- 
- Pak můžete hostitelský program C# spustit z příkazového řádku:
- 
- ```bash
- $ dotnet run
- The random number generated is 42
- ```
 
- ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
 
- Pokud chcete nový program v jazyku Q# spustit z C# v sadě Visual Studio, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Aplikace příkazového řádku v Q# s využitím sady Visual Studio nebo editoru Visual Studio Code](#tab/tabid-qsharp)
 
- :::code language="csharp" source="~/quantum/samples/getting-started/qrng/Host.cs" range="4-39":::
+Pokud chcete vytvořit kompletní aplikaci příkazového řádku v Q#, přidejte do programu v Q# následující vstupní bod: 
 
- Pak stiskněte klávesu F5, program se spustí a automaticky se zobrazí nové okno s vygenerovaným náhodným číslem: 
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
- ```bash
- $ dotnet run
- The random number generated is 42
- ```
- ***
+Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
+
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-34":::
+
+V sadě Visual Studio se skript jednoduše spustí stisknutím Ctrl + F5.
+
+V editoru VS Code při prvním použití sestavte Program.qs zadáním následujícího příkazu na terminálu:
+
+```dotnetcli
+dotnet build
+```
+
+Pro následná spuštění není potřeba ho sestavovat znovu. Pokud ho chcete spustit, zadejte následující příkaz a stiskněte Enter:
+
+```dotnetcli
+dotnet run --no-build
+```
+
+### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
+
+Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
+
+:::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
+
+Pak můžete hostitelský program Pythonu spustit z příkazového řádku:
+
+```bash
+$ python host.py
+Preparing Q# environment...
+..The random number generated is 42
+```
+
+### <a name="c-with-visual-studio-code-or-visual-studio"></a>[C# s využitím editoru Visual Studio Code nebo sady Visual Studio](#tab/tabid-csharp)
+
+Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
+
+:::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
+
+Pak můžete hostitelský program v C# spustit z příkazového řádku (v sadě Visual Studio byste měli stisknout F5):
+
+```bash
+$ dotnet run
+The random number generated is 42
+```
+
+***
