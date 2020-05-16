@@ -1,5 +1,5 @@
 ---
-title: Informace o tom, jak aktualizovat Microsoft Quantum Development Kit (QDK)
+title: Aktualizace sady pro vývoj pro QDK
 description: 'V této části najdete popis postupu aktualizace projektů Q # a Microsoft Quantum Development Kit k aktuální verzi.'
 author: natke
 ms.author: nakersha
@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: bf6d6d3d80af485b555429f25b125bfea685bebf
-ms.sourcegitcommit: c57c271ab73f75f165401651fad2b5bc143e9c8f
+ms.openlocfilehash: 53f72f1d49ae32a5a8572a1cf68a66a1d9b45e4a
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82862203"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426912"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace Microsoft Quantum Development Kit (QDK)
 
@@ -34,13 +34,13 @@ Bez ohledu na to, jestli používáte C# nebo Python k hostování operací Q #,
     dotnet --version
     ```
 
-    Ověřte, že výstup `3.1.100` je nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkuste to znovu. Pak postupujte podle pokynů níže v závislosti na instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
+    Ověřte, že výstup je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkuste to znovu. Pak postupujte podle pokynů níže v závislosti na instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
 
 ### <a name="update-q-projects-in-visual-studio"></a>Aktualizace projektů Q # v aplikaci Visual Studio
  
 1. Aktualizace na nejnovější verzi sady Visual Studio 2019 najdete [tady](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) pokyny.
 2. Otevřete řešení v aplikaci Visual Studio
-3. V nabídce vyberte **sestavit** -> **Vyčistit řešení** .
+3. V nabídce vyberte **sestavit**  ->  **Vyčistit řešení** .
 4. V každém z vašich souborů. csproj aktualizujte cílové rozhraní na `netcoreapp3.1` (nebo `netstandard2.1` Pokud se jedná o projekt knihovny).
     To znamená upravit řádky formuláře:
 
@@ -50,7 +50,7 @@ Bez ohledu na to, jestli používáte C# nebo Python k hostování operací Q #,
 
     Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 5. Uložit a zavřít všechny soubory ve vašem řešení
-6. Vybrat **nástroje** -> **příkazového řádku** -> **Developer Command Prompt**
+6. Vybrat **nástroje**  ->  **příkazového řádku**  ->  **Developer Command Prompt**
 7. Pro každý projekt v řešení spusťte následující příkaz:
 
     ```dotnetcli
@@ -58,7 +58,7 @@ Bez ohledu na to, jestli používáte C# nebo Python k hostování operací Q #,
     ```
 
    Pokud vaše projekty používají jiné balíčky Microsoft. (např. Microsoft. probíhat. NUMERIC), spusťte příkaz i pro tyto.
-8. Zavřete příkazový řádek a vyberte **Build** -> **Build** Build ( *nevybírejte znovu* sestavit řešení).
+8. Zavřete příkazový řádek a vyberte **Build**  ->  **Build** Build (nevybírejte *not* znovu sestavit řešení).
 
 Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](#update-visual-studio-qdk-extension).
 
@@ -66,7 +66,7 @@ Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](
 ### <a name="update-q-projects-in-visual-studio-code"></a>Aktualizace projektů Q # v Visual Studio Code
 
 1. V Visual Studio Code otevřete složku obsahující projekt, který chcete aktualizovat.
-2. Vybrat **terminál** -> **Nový** terminál
+2. Vybrat **terminál**  ->  **Nový** terminál
 3. Postupujte podle pokynů pro aktualizaci pomocí příkazového řádku (přímo níže).
 
 ### <a name="update-q-projects-using-the-command-line"></a>Aktualizace projektů Q # pomocí příkazového řádku
@@ -136,7 +136,7 @@ Níže vyberte vývojové prostředí.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Nedělejte si `iqsharp` starosti, pokud je vaše verze vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
+    Nedělejte si starosti `iqsharp` , pokud je vaše verze vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
 3. Aktualizace `qsharp` balíčku
 
@@ -159,7 +159,7 @@ Níže vyberte vývojové prostředí.
     ...
     ```
 
-5. Z umístění vašich `.qs` souborů spusťte následující příkaz.
+5. Z umístění vašich souborů spusťte následující příkaz. `.qs`
 
     ```bash
     python -c "import qsharp; qsharp.reload()"
@@ -189,7 +189,7 @@ Níže vyberte vývojové prostředí.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Nedělejte si `iqsharp` starosti, pokud je vaše verze vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
+    Nedělejte si starosti `iqsharp` , pokud je vaše verze vyšší, měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
 3. Z buňky v Jupyter Notebook spusťte následující příkaz:
 
@@ -220,18 +220,14 @@ Níže vyberte vývojové prostředí.
 
 2. Aktualizace šablon projektů pro každé z nich:
 
-   - Přejít na **View** -> **paletu příkazů** zobrazení
+   - Přejít na **View**  ->  **paletu příkazů** zobrazení
    - Vyberte **Q #: Instalace šablon projektů**
    - Po několika sekundách byste měli obdržet místní nabídku potvrzující, že se šablony projektů úspěšně nainstalovaly.
 
-### <a name="c-using-the-dotnet-command-line-tool"></a>C#, použití nástroje `dotnet` příkazového řádku
+### <a name="c-using-the-dotnet-command-line-tool"></a>C#, použití `dotnet` nástroje příkazového řádku
 
 1. Aktualizace šablon projektů pro každý produkt pro .NET
 
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
-
-## <a name="whats-next"></a>Co dále?
-
-Teď, když jste v upřednostňovaném prostředí aktualizovali sadu pro vývoj pro práci s více operačními systémy, můžete pokračovat v vývoji a spouštění programů pro práci s více poli. Pokud jste ještě nezapsali program, můžete začít s [prvním programem pro práci](xref:microsoft.quantum.write-program)za sebou.

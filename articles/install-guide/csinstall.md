@@ -1,19 +1,19 @@
 ---
-title: Vývoj s využitím Q# a C#
+title: Vývoj s využitím Q# a .NET
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: 155367dbb1373f00e2b0bd732a5319b32462c9f9
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82680166"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426506"
 ---
-# <a name="using-q-with-c-and-f"></a>Použití Q # s C\# a F\#
+# <a name="develop-with-q-and-net"></a>Vývoj s využitím Q# a .NET
 
 Q # je sestavený tak, aby se dobře hrál s jazyky .NET, jako je C# a F #.
 V této příručce vám ukážeme, jak použít Q # s hostitelským programem napsaným v jazyce .NET.
@@ -29,7 +29,7 @@ Prvním krokem je vytvoření projektů pro knihovnu Q # a pro hostitele .NET, k
 ### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 - Vytvoření nové knihovny Q #
-  - Přejít na **soubor** -> **Nový** -> **projekt**
+  - Přejít na **soubor**  ->  **Nový**  ->  **projekt**
   - Do vyhledávacího pole zadejte text "Q #"
   - Vybrat **knihovnu Q #**
   - Vybrat **Další**
@@ -84,9 +84,9 @@ Například [Ukázka interoperability .NET](https://github.com/microsoft/Quantum
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-Chcete-li volat tuto operaci z rozhraní .NET pro simulátor doby provozu, můžete `Run` použít metodu třídy `RunAlgorithm` .NET vygenerovanou kompilátorem Q #:
+Chcete-li volat tuto operaci z rozhraní .NET pro simulátor doby provozu, můžete použít `Run` metodu `RunAlgorithm` třídy .NET vygenerovanou kompilátorem Q #:
 
-### <a name="c"></a>[R #](#tab/tabid-csharp)
+### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 :::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
@@ -96,6 +96,6 @@ Chcete-li volat tuto operaci z rozhraní .NET pro simulátor doby provozu, můž
 
 ***
     
-## <a name="whats-next"></a>Co dále?
+## <a name="next-steps"></a>Další kroky
 
-Když teď máte prostředí pro vývoj s využitím provozu pro Q # pro programy příkazového řádku Q a pro interoperabilitu s .NET, můžete napsat a spustit [svůj první program](xref:microsoft.quantum.write-program)pro práci s procesorem.
+Když teď máte prostředí pro vývoj s využitím provozu pro Q # pro programy příkazového řádku Q a pro interoperabilitu s .NET, můžete napsat a spustit [svůj první program](xref:microsoft.quantum.quickstarts.qrng)pro práci s procesorem.

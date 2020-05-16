@@ -1,167 +1,167 @@
 ---
-title: Glosář kvantových výpočtů
-description: Glosář běžných pojmů, akcí a objektů používaných v kvantové majetrové práci.
+title: Glosář pro výpočetní výkon
+description: Glosář běžných podmínek, akcí a objektů používaných při práci.
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: ee78515a0f47730b7d3df10da0853c5b8a7f6624
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: cbc473eb14d8afd255a7072475dc054e18b98e3e
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81482233"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426709"
 ---
-# <a name="quantum-computing-glossary"></a>Glosář kvantových výpočtů
+# <a name="quantum-computing-glossary"></a>Glosář pro výpočetní výkon
 
-## <a name="adjoint"></a>Adjoint
+## <a name="adjoint"></a>Sousednít
 
-Komplexní konjugát transponovat [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují [unitární](xref:microsoft.quantum.glossary#unitary-operator) operátor, adjoint je inverzní operace a je označen symbolem dýky. Například pokud operace `U` představuje unitární operátor $U$, pak `Adjoint U` představuje $U^\dagger$. Další informace naleznete v tématu [Adjoint](xref:microsoft.quantum.language.file-structure#adjoint).
+Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují operátor s jednou [jednotkou](xref:microsoft.quantum.glossary#unitary-operator) , je sousední osoba inverzní k operaci a je označena symbolem Dagger. Například pokud operace `U` představuje jednotkový operátor $U $, pak `Adjoint U` představuje $U ^ \dagger $. Další informace najdete v tématu [sousednít](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
 
 ## <a name="ancilla"></a>Ancilla
 
-[Qubit,](xref:microsoft.quantum.glossary#qubit) který slouží jako dočasná paměť pro kvantový počítač a je přidělena a de-přidělena podle potřeby.  Další informace naleznete [v tématu Multiple qubits](xref:microsoft.quantum.concepts.multiple-qubits).
+[Qubit](xref:microsoft.quantum.glossary#qubit) , který slouží jako dočasná paměť pro počítač s procesorem a je přidělený a nepřidělený podle potřeby.  Další informace najdete v tématu [víc qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
 ## <a name="bell-state"></a>Stav zvonku
 
-Jeden ze čtyř specifických maximálně [zamotaných](xref:microsoft.quantum.glossary#entanglement) [kvantových stavů](xref:microsoft.quantum.glossary#quantum-state) dvou qubitů. Čtyři stavy jsou definovány $\ket{\beta_{ij}} = (\mathbb{I} \otimes X^iZ^j) (\ket{00} + \ket{11}) / \sqrt{2}$. Bell stát je také známý jako [pár EPR](xref:microsoft.quantum.glossary#epr-pair).
+Jedno ze čtyř specifických [entangledch](xref:microsoft.quantum.glossary#entanglement) [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma qubitsy. Čtyři stavy jsou definovány $ \ket{\ beta_ {IJ}} = (\mathbb{I} \otimes X ^ iZ ^ j) (\ket {00} + \ket {11} )/\sqrt {2} $. Stav zvonku se označuje také jako [dvojice EPR](xref:microsoft.quantum.glossary#epr-pair).
 
-## <a name="bloch-sphere"></a>Blážová koule
+## <a name="bloch-sphere"></a>Koule Bloch
 
-Grafické znázornění[jednoqubitového](xref:microsoft.quantum.glossary#qubit) [kvantového stavu](xref:microsoft.quantum.glossary#quantum-state) jako bodu v trojrozměrné jednotkové sféře. Další informace naleznete v [tématu Vizualizace qubitů a transformací pomocí Sféra bloch](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavových](xref:microsoft.quantum.glossary#quantum-state) procesorů jako bodu v trojrozměrné oblasti jednotek. Další informace naleznete v tématu [vizualizace Qubits a transformace pomocí koule Bloch](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
-## <a name="callable"></a>Callable
+## <a name="callable"></a>Kompatibilní
 
-[Operace](xref:microsoft.quantum.glossary#operation) nebo [funkce](xref:microsoft.quantum.glossary#function) v jazyce Q#. Další informace naleznete v [tématu Operation and function types](xref:microsoft.quantum.language.type-model#operation-and-function-types).
+[Operace](xref:microsoft.quantum.glossary#operation) nebo [funkce](xref:microsoft.quantum.glossary#function) v jazyce Q #. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
-## <a name="clifford-group"></a>Cliffordskupina
+## <a name="clifford-group"></a>Skupina Clifford
 
-Soubor operací, které zabírají oktanů [sféry Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek permutace [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Patří mezi ně operace [$X $](xref:microsoft.quantum.intrinsic.x), [$Y $,](xref:microsoft.quantum.intrinsic.y) [$Z$,](xref:microsoft.quantum.intrinsic.z) [$H$](xref:microsoft.quantum.intrinsic.h) a [$S$.](xref:microsoft.quantum.intrinsic.s)
+Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek, se projeví u [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Mezi ně patří operace [$X $](xref:microsoft.quantum.intrinsic.x), [$Y $](xref:microsoft.quantum.intrinsic.y), [$Z $](xref:microsoft.quantum.intrinsic.z), [$H $](xref:microsoft.quantum.intrinsic.h) a [$S $](xref:microsoft.quantum.intrinsic.s).
 
-## <a name="controlled"></a>Kontrolované
+## <a name="controlled"></a>Kontrol
 
-Kvantová [operace,](xref:microsoft.quantum.glossary#operation) která bere jeden nebo více [qubitů](xref:microsoft.quantum.glossary#qubit) jako aktivátory pro cílovou operaci. Další informace naleznete v [tématu Controlled](xref:microsoft.quantum.language.type-model#controlled).
+[Operace](xref:microsoft.quantum.glossary#operation) s incidentem, která přijímá jednu nebo více [qubits](xref:microsoft.quantum.glossary#qubit) jako EnableRSS pro cílovou operaci. Další informace najdete v tématu [řízené a sousedící operace](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
 
-## <a name="dirac-notation"></a>Dirac notace
+## <a name="dirac-notation"></a>Zápis Dirac
 
-Symbolický zkratka, která zjednodušuje reprezentaci [kvantových stavů](xref:microsoft.quantum.glossary#quantum-state), také volal *podprsenka-ket* notace.  Část *podprsenky* představuje vektor řádku, například $\bra{A} = \begin{bmatrix} A{_1} & A{_2} \end{bmatrix}$ a *část ket* představuje vektor sloupce, $\ket{B} = \begin{bmatrix} B{_1} \\ \\ B{_2} \end{bmatrix}$. Další informace naleznete [v tématu Dirac Notation](xref:microsoft.quantum.concepts.dirac).
+Symbolická zkrácený tvar, který zjednodušuje reprezentace [stavových krajů](xref:microsoft.quantum.glossary#quantum-state), označovaných také jako *Bra-KET* Notation.  *Bra* část představuje vektor řádku, například $ \bra{A} = \begin{bmatrix} a {_1} & {_2} \end{bmatrix} $ a *KET* část představuje vektor sloupce $ \ket{B} = \begin{bmatrix} B {_1} \\ \\ B {_2} \end{bmatrix} $. Další informace najdete v tématu [Dirac Notation](xref:microsoft.quantum.concepts.dirac).
 
-## <a name="eigenvalue"></a>Reálná hodnota
+## <a name="eigenvalue"></a>Eigenvalue
 
-Faktor, kterým se velikost [emitačního vektoru](xref:microsoft.quantum.glossary#eigenvector) dané transformace mění použitím transformace.  Vzhledem k tomu, čtvercová matice $M$ a přívektor $v$, pak $Mv = cv$, kde $c$ je eigenvalue a může být komplexní počet libovolného argumentu. Další informace naleznete v [tématu Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced).
+Faktor, kterým je velikost [eigenvector](xref:microsoft.quantum.glossary#eigenvector) dané transformace změněna aplikací transformace.  Pro druhou matrici $M $ a eigenvector $v $, pak $Mv = CV $, kde $c $ je eigenvalue a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
-## <a name="eigenvector"></a>První vektor
+## <a name="eigenvector"></a>Eigenvector
 
-Vektor, jehož směr není změněn danou transformací a jehož velikost se mění koeficientem odpovídajícím [vlastní hodnotě](xref:microsoft.quantum.glossary#eigenvalue)tohoto vektoru . Vzhledem k tomu, čtvercová matice $M$ a emigenvalue $c$, pak $Mv = cv$, kde $v$ je malý vektor matice a může být komplexní počet libovolného argumentu. Další informace naleznete v [tématu Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced).
+Vektor, jehož směr je beze změny v dané transformaci a jehož velikost je změněna faktorem odpovídajícím [eigenvaluei](xref:microsoft.quantum.glossary#eigenvalue)vektoru. Pro druhou matrici $M $ a eigenvalue $c $, pak $Mv = CV $, kde $v $ je eigenvector matice a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
-## <a name="entanglement"></a>Zapletení
+## <a name="entanglement"></a>Entanglement
 
-Kvantové částice, jako jsou [qubity](xref:microsoft.quantum.glossary#qubit), mohou být spojeny nebo *zamotány* tak, že nemohou být popsány nezávisle na sobě. Jejich výsledky měření jsou korelovány, i když jsou odděleny nekonečně daleko. Zapletení je nezbytné pro [měření](xref:microsoft.quantum.glossary#measurement) [stavu](xref:microsoft.quantum.glossary#quantum-state) qubitu.  Další informace naleznete v [tématu Advanced matrix concepts](xref:microsoft.quantum.concepts.matrix-advanced).
+Částice, jako je například [qubits](xref:microsoft.quantum.glossary#qubit), mohou být propojeny nebo *entangled* tak, aby se nemohly popsány nezávisle na sobě. Jejich výsledky měření se korelují i v případě, že jsou nekonečně zcela oddělené. Entanglement je zásadní pro [měření](xref:microsoft.quantum.glossary#measurement) [stavu](xref:microsoft.quantum.glossary#quantum-state) qubit.  Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
-## <a name="epr-pair"></a>Dvojice EPR
+## <a name="epr-pair"></a>EPR pár
 
-Jeden ze čtyř specifických maximálně zamotaných [kvantových stavů](xref:microsoft.quantum.glossary#quantum-state) dvou [qubitů](xref:microsoft.quantum.glossary#qubit). Čtyři stavy jsou definovány $\ket{\beta_{ij}}{1} = (\mathbb \otimes X^iZ^j) (\ket{00} + \ket{11}) / \sqrt{2}$. Dvojice EPR je také známá jako [bellský stav](xref:microsoft.quantum.glossary#bell-state)
+Jedno ze čtyř specifických entangledch [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma [qubitsy](xref:microsoft.quantum.glossary#qubit). Čtyři stavy jsou definovány $ \ket{\ beta_ {IJ}} = (\mathbb {1} \Otimes X ^ iZ ^ j) (\ket {00} + \ket {11} )/\sqrt {2} $. Dvojice EPR je také známá jako [stav zvonku](xref:microsoft.quantum.glossary#bell-state) .
 
-## <a name="evolution"></a>Vývoj
+## <a name="evolution"></a>Vývoji
 
-Jak se [kvantový stav](xref:microsoft.quantum.glossary#quantum-state) mění v průběhu času. Další informace naleznete [v tématu Matrix exponenciály](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
+Jak se v průběhu času mění [stav](xref:microsoft.quantum.glossary#quantum-state) u. Další informace najdete v tématu [exponenciální matice](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
 ## <a name="function"></a>Funkce
-Typ podprogramu v jazyce Q#, který je čistě klasický (nekvantový). Zatímco funkce se používají v rámci kvantové algoritmy, nemohou působit na [qubity](xref:microsoft.quantum.glossary#qubit) nebo call [operace](xref:microsoft.quantum.glossary#operation). Další informace naleznete v [tématu Operation and function types](xref:microsoft.quantum.language.type-model#operation-and-function-types).
+Typ subrutiny v jazyce Q #, který je čistě klasický (nestránkovaného). I když jsou funkce používány v rámci algoritmů doby provozu, nemohou působit na [operace](xref:microsoft.quantum.glossary#operation) [qubits](xref:microsoft.quantum.glossary#qubit) nebo volání. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
-## <a name="gate"></a>Gate
+## <a name="gate"></a>OTP
 
-Starší termín pro kvantovou [operaci](xref:microsoft.quantum.glossary#operation), založený na konceptu klasických logických bran. [Kvantový obvod](xref:microsoft.quantum.glossary#quantum-circuit-diagram) je síť bran (nebo operací), založená na podobném konceptu klasických logických obvodů.
+Starší verze termínu pro [operaci](xref:microsoft.quantum.glossary#operation)na základě konceptu klasických bran logiky. [Okruh](xref:microsoft.quantum.glossary#quantum-circuit-diagram) doby provozu je síť bran (nebo operací) na základě podobného konceptu klasických logických okruhů.
 
 ## <a name="global-phase"></a>Globální fáze
 
-Pokud jsou dva [stavy](xref:microsoft.quantum.glossary#quantum-state) identické až do násobku komplexního čísla $e^{i\phi}$, říká se, že se liší až do globální fáze. Na rozdíl od místních fází nelze globální fáze pozorovat pomocí [žádného měřitelství](xref:microsoft.quantum.glossary#measurement). Další informace naleznete [v tématu Qubit](xref:microsoft.quantum.concepts.qubit).
+Pokud jsou dva [stavy](xref:microsoft.quantum.glossary#quantum-state) identické až na násobek komplexního čísla $e ^ {i\phi} $, říká se, že se liší až do globální fáze. Na rozdíl od místních fází se globální fáze nedají pozorovat prostřednictvím žádného [měřitelného](xref:microsoft.quantum.glossary#measurement). Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit).
 
-## <a name="hadamard"></a>Hadamard (Hadamard)
+## <a name="hadamard"></a>Hadamard
 
-Operace Hadamard (označovaná také jako brána Hadamard nebo transformace) působí na jeden [qubit](xref:microsoft.quantum.glossary#qubit) a{0}umístí jej do{1}rovnoměrné [superpozice](xref:microsoft.quantum.glossary#superposition) $\ket ${0}nebo $\ket $ pokud je qubit zpočátku ve stavu $\ket $ . V Q# je tato operace použita [`H`](xref:microsoft.quantum.intrinsic.h) předdefinovanou operací.
+Operace Hadamard (také označovaná jako Hadamard nebo transformační) funguje na jednom [qubit](xref:microsoft.quantum.glossary#qubit) a umístí ji do sudé [pozice](xref:microsoft.quantum.glossary#superposition) $ \ket {0} $ nebo $ \ket {1} $, pokud je qubit zpočátku ve stavu $ \ket {0} $. V Q # se tato operace používá v rámci předdefinované [`H`](xref:microsoft.quantum.intrinsic.h) operace.
 
-## <a name="immutable"></a>Neměnná
+## <a name="immutable"></a>Neměnné
 
-Proměnná, jejíž hodnotu nelze změnit. Neměnná proměnná v Q# `let` je vytvořena pomocí klíčového slova. Chcete-li deklarovat proměnné, které *lze* změnit, `set` použijte [proměnlivé](xref:microsoft.quantum.glossary#immutable) klíčové slovo deklarovat a klíčové slovo upravit hodnotu. 
+Proměnná, jejíž hodnota se nedá změnit. Neproměnlivá proměnná v Q # se vytvoří pomocí `let` klíčového slova. Chcete-li deklarovat proměnné, které *lze* změnit, použijte klíčové slovo [mutable](xref:microsoft.quantum.glossary#immutable) k deklaraci a `set` klíčové slovo pro úpravu hodnoty. 
 
 ## <a name="measurement"></a>Měření
 
-Manipulace s [qubitem](xref:microsoft.quantum.glossary#qubit) (nebo sadou qubitů), která dává výsledek pozorování, ve skutečnosti získává klasický bit. Další informace naleznete [v tématu Qubit](xref:microsoft.quantum.concepts.qubit#measuring-a-qubit).
+Manipulace s [qubit](xref:microsoft.quantum.glossary#qubit) (nebo sadou qubits), která vede k výsledku pozorování, v důsledku získání klasického bitu. Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit#measuring-a-qubit).
 
 ## <a name="mutable"></a>Měnitelné
 
-Proměnná, jejíž hodnota může být po vytvoření změněna. Proměnlivá proměnná v Q# `mutable` je deklarována pomocí klíčového slova a upravena pomocí klíčového `set` slova. Proměnné vytvořené pomocí `let` klíčového slova jsou [neměnné](xref:microsoft.quantum.glossary#immutable) a jejich hodnotu nelze změnit.
+Proměnná, jejíž hodnota může být po vytvoření změněna. Proměnlivá proměnná v Q # je deklarována pomocí `mutable` klíčového slova a upravena pomocí `set` klíčového slova. Proměnné vytvořené pomocí `let` klíčového slova jsou [neměnné](xref:microsoft.quantum.glossary#immutable) a jejich hodnotu nelze změnit.
 
 ## <a name="namespace"></a>Obor názvů
 
-Popisek pro kolekci souvisejících názvů (tj. [operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function)a [uživatelem definované typy).](xref:microsoft.quantum.glossary#user-defined-type) Například obor názvů [Microsoft.Quantum.Preparation](xref:microsoft.quantum.preparation) označuje všechny symboly definované ve standardní knihovně, které pomáhají při přípravě počátečních stavů.
+Popisek pro kolekci souvisejících názvů (například [operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function)a [uživatelsky definované typy](xref:microsoft.quantum.glossary#user-defined-type)). Například obor názvů [Microsoft.. Preparation](xref:microsoft.quantum.preparation) označí všechny symboly definované ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.
 
 ## <a name="operation"></a>Operace
 
-Základní jednotka kvantové realizace v Q#. Je zhruba ekvivalentní funkci v Jazyce C, C++ nebo Pythonu nebo statické metodě v jazyce C# nebo v jazyce Java. Další informace naleznete v [tématu Operation and function types](xref:microsoft.quantum.language.type-model#operation-and-function-types).
+Základní jednotka provádění ve službě Q #. Je zhruba ekvivalentní funkci v jazyce C, C++ nebo Python nebo statickou metodou v jazyce C# nebo Java. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="operator-application"></a>Aplikace operátora
 
-Provádím kvantovou operaci. To obvykle platí unitární matice na aktuální kvantový stav vektoru.
+Provádění operací s více operačními operacemi. To obvykle platí jednotnou matici s aktuálním vektorem stavu.
 
 ## <a name="oracle"></a>Oracle
 
-Podprogram, který poskytuje informace závislé na datech kvantový algoritmus za běhu. Cílem je obvykle poskytnout [superpozici](xref:microsoft.quantum.glossary#superposition) výstupů odpovídajících vstupům, které jsou v superpozici. Další informace naleznete v [tématu Oracles](xref:microsoft.quantum.libraries.data-structures#oracles).
+Podprogram, který poskytuje informace závislé na datech pro algoritmus v době běhu. Cílem je obvykle poskytnout [nadmnožinu](xref:microsoft.quantum.glossary#superposition) výstupů odpovídajících vstupům, které jsou umístěny na pozici. Další informace najdete v tématu [Oracle](xref:microsoft.quantum.libraries.data-structures#oracles).
 
 ## <a name="partial-application"></a>Částečná aplikace
 
-Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. To vrátí nový [volatelný,](xref:microsoft.quantum.glossary#callable) který potřebuje pouze chybějící parametry (označené podtržítkem), které mají být dodány během budoucí aplikace. Například vzhledem `MyFunc(x : int, y : int) : int {return x + y;}` k funkci ji můžete částečně `let NewFunc = MyFunc(_, 3)`použít na novou funkci . Novou funkci pak můžete později volat s `NewFunc(2)` chybějícím parametrem, který vrací hodnotu *5*.  Další informace naleznete v tématu [Částečná aplikace](xref:microsoft.quantum.language.expressions#partial-application).
+Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. Tím se vrátí nový, který lze [volat](xref:microsoft.quantum.glossary#callable) , který potřebuje k zadání chybějících parametrů (označených podtržítkem), aby byl dodán v budoucí aplikaci. Například vzhledem k tomu, že se funkce `MyFunc(x : int, y : int) : int {return x + y;}` dá částečně použít pro novou funkci `let NewFunc = MyFunc(_, 3)` . Novou funkci můžete zavolat později s chybějícím parametrem, `NewFunc(2)` který vrátí hodnotu *5*.  Další informace naleznete v [části částečná aplikace](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
 
-## <a name="pauli-operators"></a>Pauli operátoři
+## <a name="pauli-operators"></a>Pauli operátory
 
-Sada tří 2 x 2 unitárních matic `X`známých jako , `Y` a `Z` kvantové operace. Matice identity, $I$, je často součástí sady také.  $I = \begin{bmatrix} \\ \\ 1 & 0 0 & 1 \end{bmatrix}$, $X \\ \\ = \begin{bmatrix} 0 & 1 1 & 0 \end{bmatrix}$, $Y = \begin{bmatrix} 0 & -i \\ \\ i & 0 \end{bmatrix}$, $Z = \begin{bmatrix} 1 & 0 \\ \\ 0 & -1 \bmatrix}$.   Další informace naleznete [v tématu Single-qubit operations](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
+Množina tří matic 2 × 2 matice, které se označují `X` jako `Y` a `Z` operace. V sadě je často obsažena i matice identity $I $.  $I = \begin{bmatrix} 1 & 0 \\ \\ 0 & 1 \end{bmatrix} $, $X = \begin{bmatrix} 0 & 1 \\ \\ 1 & 0 \end{bmatrix} $, $Y = \begin{bmatrix} 0 &-i \\ \\ i & 0 \end{bmatrix} $, $Z = \begin{bmatrix} 1 & 0 \\ \\ 0 &-1 \end{bmatrix} $.   Další informace najdete v tématu [operace s jedním qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
-## <a name="quantum-circuit-diagram"></a>Kvantový schéma obvodu
+## <a name="quantum-circuit-diagram"></a>Diagram okruhu doby
 
-Metoda graficky reprezentovat sekvenci [operací](xref:microsoft.quantum.glossary#operation) (nebo [brány)](xref:microsoft.quantum.glossary#gate)pro ![jednoduché](~/media/qpe.png)kvantové programy, například Ukázkový obvodový diagram . Další informace naleznete v tématu [Quantum circuits](xref:microsoft.quantum.concepts.circuits).
+Metoda pro grafickou reprezentaci posloupnosti operací (nebo [bran](xref:microsoft.quantum.glossary#gate)) pro jednoduché programy pro [práci](xref:microsoft.quantum.glossary#operation) s poli, například ![ diagram ukázkového okruhu ](~/media/qpe.png) . Další informace najdete v tématu [okruhy](xref:microsoft.quantum.concepts.circuits).
 
-## <a name="quantum-libraries"></a>Kvantové knihovny
+## <a name="quantum-libraries"></a>Knihovny pro nestejnou doby
 
-Kolekce [operací](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function) a [uživatelem definované typy](xref:microsoft.quantum.glossary#user-defined-type) pro vytváření programů Q#. Standardní [knihovna](xref:microsoft.quantum.libraries.standard.intro) je nainstalována ve výchozím nastavení. Další knihovny jsou k dispozici [chemie knihovna](xref:microsoft.quantum.chemistry.concepts.intro), [numerická knihovna](xref:microsoft.quantum.numerics.intro) a [knihovna strojového učení](xref:microsoft.quantum.machine-learning.concepts.intro).
+Kolekce [operací](xref:microsoft.quantum.glossary#operation), [funkcí](xref:microsoft.quantum.glossary#function) a [uživatelsky definovaných typů](xref:microsoft.quantum.glossary#user-defined-type) pro vytváření programů Q #. [Standardní knihovna](xref:microsoft.quantum.libraries.standard.intro) je nainstalována ve výchozím nastavení. K dispozici jsou další knihovny, které jsou [knihovnou složení](xref:microsoft.quantum.chemistry.concepts.intro), [Knihovna numerických](xref:microsoft.quantum.numerics.intro) knihoven a [Knihovna strojového učení](xref:microsoft.quantum.machine-learning.concepts.intro).
 
-## <a name="quantum-state"></a>Kvantový stav
+## <a name="quantum-state"></a>Stav pro stav
 
-Přesný stav izolovaného kvantového systému, ze kterého lze extrahovat pravděpodobnosti [měření.](xref:microsoft.quantum.glossary#measurement) V kvantové výpočetní technice kvantový simulátor používá tyto informace k simulaci toho, jak qubity reagují na operace. Další informace naleznete [v tématu Qubit](xref:microsoft.quantum.concepts.qubit).
+Přesný stav izolovaného systému pro plnění, ze kterého lze extrahovat pravděpodobnost [měření](xref:microsoft.quantum.glossary#measurement) . V případě, že se jedná o výpočetní výkon, simulátor používá tyto informace k simulaci, jak qubits reaguje na operace. Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit).
 
 ## <a name="qubit"></a>Qubit
 
-Základní jednotka kvantových informací, analogický k *trochu* v klasické výpočetní techniky. Další informace naleznete [v tématu Qubit](xref:microsoft.quantum.concepts.qubit).
+Základní jednotkou informací, která je obdobou *bitu* v klasickém výpočetním prostředí. Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit).
 
-## <a name="repeat-until-success"></a>Opakovat až do úspěchu
+## <a name="repeat-until-success"></a>Opakovat až do – úspěšné
 
-Kvantový algoritmus, který probabilisticky uspěje. Po selhání se rutina bude opakovat, dokud nebude úspěšná (nebo bylo dosaženo limitu). Další informace naleznete [v tématu Repeat Until Success (RUS)](xref:microsoft.quantum.techniques.qubits#measurements)
+Algoritmus pro všechna ta, který se probabilistically úspěšně. Po selhání bude rutina opakovat až do úspěchu (nebo bylo dosaženo limitu). Další informace najdete v tématu [opakování do úspěchu (ru)](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop) .
 
 ## <a name="standard-libraries"></a>Standardní knihovny
 
-[Operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function) a [uživatelem definované typy,](xref:microsoft.quantum.glossary#user-defined-type) které jsou nainstalovány spolu s kompilátorem Q# během instalace. Standardní implementace knihovny je agnostik s ohledem na cílové počítače. Další informace naleznete v [tématu Standardní knihovny](xref:microsoft.quantum.libraries.standard.intro).
+[Operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function) a [uživatelsky definované typy](xref:microsoft.quantum.glossary#user-defined-type) , které jsou nainstalovány spolu s kompilátorem Q # během instalace. Standardní implementace knihovny je nezávislá s ohledem na cílové počítače. Další informace najdete v tématu [standardní knihovny](xref:microsoft.quantum.libraries.standard.intro).
 
-## <a name="superposition"></a>Superpozice
+## <a name="superposition"></a>Nadpozice
 
-Koncept kvantové výpočetní techniky, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinace dvou stavů, $\ket{\\} a $\ket{\1}$, dokud není [měřen](xref:microsoft.quantum.glossary#measurement).  Další informace naleznete v tématu [Co je kvantová výpočetní technika](xref:microsoft.quantum.overview.what).
+Koncept v této službě znamená, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinací dvou stavů $ \ket{\0} $ a $ \ket{\1} $, dokud se [neměří](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [Principy výpočetního](xref:microsoft.quantum.overview.understanding)prostředí.
 
-## <a name="target-machine"></a>Cílový stroj
+## <a name="target-machine"></a>Cílový počítač
 
-Cíl kompilace, který snižuje abstraktní kvantový program směrem k hardwaru nebo simulaci. To obvykle zahrnuje přepisování pro mnoho účelů, včetně nahrazení brány, kódování pro opravu chyb, geometrické rozložení a další. Další informace naleznete v [tématu Quantum simulátory a hostitelské aplikace](xref:microsoft.quantum.machines).
+Cíl kompilace, který snižuje abstraktní program pro plnění do hardwaru nebo simulace. To obvykle zahrnuje opakované zápisy pro mnoho účelů, včetně nahrazení brány, kódování pro korekci chyb, geometrické rozložení a další. Další informace najdete v tématu [simulátory a hostitelské aplikace](xref:microsoft.quantum.machines).
 
 ## <a name="teleportation"></a>Teleportace
 
-Metoda regenerace dat nebo [kvantového stavu](xref:microsoft.quantum.glossary#quantum-state)jednoho [qubitu](xref:microsoft.quantum.glossary#qubit) z jednoho místa na druhé bez fyzického pohybu qubitu pomocí [zapletení](xref:microsoft.quantum.glossary#entanglement) a [měření](xref:microsoft.quantum.glossary#measurement).  Další informace naleznete v [tématech Kvantové obvody](xref:microsoft.quantum.concepts.circuits) a [Uvedení to všechno dohromady](xref:microsoft.quantum.techniques.puttingittogether).
+Metoda pro opětovné generování dat nebo [stav](xref:microsoft.quantum.glossary#quantum-state)u jednoho [qubit](xref:microsoft.quantum.glossary#qubit) z jednoho místa do druhého bez fyzického přesunu qubit pomocí [entanglement](xref:microsoft.quantum.glossary#entanglement) a [měření](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [okruhy](xref:microsoft.quantum.concepts.circuits) a příslušné Kata při [Katasech](xref:microsoft.quantum.overview.katas).
 
-## <a name="tuple"></a>Tuple
+## <a name="tuple"></a>Řazené kolekce členů
 
-Kolekce hodnot oddělených čárkami, která funguje jako jedna hodnota. *Typ* řazené kolekce členů je definován typy hodnot, které obsahuje. V Q#jsou řazené kolekce členů [neměnné](xref:microsoft.quantum.glossary#immutable) a mohou být vnořeny, obsahovat pole nebo použity v poli. Další informace naleznete v tématu [Typy tuple](xref:microsoft.quantum.language.type-model#tuple-types).
+Kolekce hodnot oddělených čárkou, které fungují jako jediná hodnota. *Typ* řazené kolekce členů je definován typy hodnot, které obsahuje. V Q # jsou řazené kolekce členů [neměnné](xref:microsoft.quantum.glossary#immutable) a mohou být vnořené, obsahují pole nebo použity v poli. Další informace naleznete v tématu [typy řazené kolekce členů](xref:microsoft.quantum.guide.types#tuple-types).
 
-## <a name="unitary-operator"></a>Unitární operátor
+## <a name="unitary-operator"></a>Operátor jednotných
 
-Operátor $UU, jehož inverzní je rovna jeho [adjoint](xref:microsoft.quantum.glossary#adjoint), tj.
+Operátor, jehož invertování je rovno jeho [sousedním](xref:microsoft.quantum.glossary#adjoint), tj. $uu ^ {\dagger} = \id $.
 
 ## <a name="user-defined-type"></a>Uživatelem definovaný typ
 
-Kolekce předdefinované nebo dříve definované typy, které mohou být označovány jako jedna jednotka. Další informace naleznete v [tématu User-defined types](xref:microsoft.quantum.language.type-model#user-defined-types).
+Kolekce předdefinovaných nebo dříve definovaných typů, které mohou být označovány jako jedna jednotka. Další informace naleznete v tématu [uživatelsky definované typy](xref:microsoft.quantum.guide.types#user-defined-types).
