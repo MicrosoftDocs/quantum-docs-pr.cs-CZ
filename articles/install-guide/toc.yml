@@ -3,7 +3,7 @@ items:
     href: index.md
   - name: 'Aplikace příkazového řádku v Q#'
     href: standalone.md
-  - name: 'Poznámkové bloky Jupyter v Q#'
+  - name: 'Aplikace Jupyter Notebook v Q#'
     href: qjupyter.md
   - name: 'Q# s dalšími jazyky'
     items:
