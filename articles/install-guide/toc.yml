@@ -5,9 +5,9 @@ items:
     href: standalone.md
   - name: 'Poznámkové bloky Jupyter v Q#'
     href: qjupyter.md
-  - name: 'Použití Q# s dalšími jazyky'
+  - name: 'Q# s dalšími jazyky'
     items:
-      - name: 'Použití Q # s Pythonem'
+      - name: 'Q# s Pythonem'
         href: pyinstall.md
-      - name: 'Použití Q # s .NET'
+      - name: 'Q# s .NET'
         href: csinstall.md

@@ -1,0 +1,66 @@
+---
+title: Uživatelská příručka Q#
+description: Přehled účelu a obsahu uživatelské příručky
+author: gillenhaalb
+ms.author: a-gibec@microsoft.com
+ms.date: 03/05/2020
+ms.topic: article
+uid: microsoft.quantum.guide
+ms.openlocfilehash: f535aaedbe6ce181375d48f7023409ad8212c702
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83430607"
+---
+# <a name="the-q-user-guide"></a>Uživatelská příručka Q#
+
+Vítá vás uživatelská příručka Q#! 
+
+Tady najdete podrobný popis základních konceptů jazyka Q# a všechny informace, které potřebujete k psaní kvantových programů.
+
+## <a name="user-guide-contents"></a>Obsah uživatelské příručky
+
+- [Základy jazyka Q#:](xref:microsoft.quantum.guide.basics) Úvodní přehled účelu a funkcí programovacího jazyka Q#. 
+
+### <a name="q-language"></a>Jazyk Q#
+
+- [Typy v jazyce Q#:](xref:microsoft.quantum.guide.types) Vysvětluje model typů v jazyce Q# a popisuje syntaxi pro určování typů a práci s nimi.
+
+- [Výrazy typu:](xref:microsoft.quantum.guide.expressions) Podrobně popisuje, jak určovat hodnoty jednotlivých typů v jazyce Q#, odkazovat na ně, kombinovat je a pracovat s nimi. 
+
+### <a name="using-q"></a>Použití Q#
+
+- [Struktura souborů Q#:](xref:microsoft.quantum.guide.filestructure) Popisuje strukturu a syntaxi souboru Q# `*.qs`.
+
+- [Operace a funkce:](xref:microsoft.quantum.guide.operationsfunctions) Podrobně popisuje dva volatelné typy jazyka Q# – *operace*, které zahrnují akci s qubitovými registry, a *funkce*, které pracují výhradně s klasickými informacemi. 
+    Tady uvidíte, jak je definovat a volat, včetně sdružených a řízených verzí kvantových operací.
+
+- [Proměnné:](xref:microsoft.quantum.guide.variables) Popisuje roli proměnných v programech v jazyce Q# a jejich efektivní využití. 
+    Tady najdete například informace o rozsazích vazeb, rozdílech mezi neměnnými a proměnlivými proměnnými a postupu jejich přiřazení nebo změně jejich přiřazení.
+
+- [Práce s qubity:](xref:microsoft.quantum.guide.qubits) Popisuje funkce jazyka Q# sloužící k adresování jednotlivých qubitů a systémů qubitů. 
+    Konkrétně to zahrnuje jejich přidělení, provádění operací s nimi a nakonec jejich měření. 
+
+- [Tok řízení:](xref:microsoft.quantum.guide.controlflow) Podrobně popisuje programovací vzory toku řízení, které jsou k dispozici v Q# a mezi které patří řada standardních technik (podmíněné spouštění, smyčky for a while atd.) a také vzor Repeat-Until-Success specifický pro kvantové výpočty.
+
+- [Testování a ladění:](xref:microsoft.quantum.guide.testingdebugging) Podrobně popisuje některé techniky k zajištění, že váš kód dělá to, co by měl. 
+    Z důvodu obecné neprůhlednosti kvantových informací může ladění kvantového programu vyžadovat specializované techniky. 
+    Naštěstí jazyk Q# podporuje mnoho technik klasického ladění, na které jsou programátoři zvyklí, a také ty, které jsou specifické pro kvantové výpočty. Patří mezi ně vytváření a spouštění testů jednotek v jazyce Q#, vkládání *kontrolních výrazů* pro hodnoty a pravděpodobnosti do kódu a funkce `Dump`, které vypisuje stav cílového počítače. 
+    Tyto funkce se dají použít společně s naším simulátorem celkového stavu k ladění určitých částí výpočtů obcházením některých kvantových omezení (např. teorému o nemožnosti klonování).
+
+### <a name="quantum-simulators-and-resource-estimators"></a>Kvantové simulátory a estimátory prostředků
+
+- [Kvantové simulátory a hostitelské aplikace:](xref:microsoft.quantum.machines) Přehled různých dostupných simulátorů a také obecného modelu spouštění mezi hostitelským programem a cílovými počítači.
+
+- [Simulátor celkového stavu:](xref:microsoft.quantum.machines.full-state-simulator) Cílový počítač, který simuluje celkový kvantový stav. Tento simulátor je užitečný při úplném spouštění nebo ladění menších programů (méně než pár desítek qubitů).
+
+- [Estimátor prostředků:](xref:microsoft.quantum.machines.resources-estimator) Odhaduje prostředky potřebné ke spuštění dané instance operace Q# na kvantovém počítači.
+
+- [Simulátor trasování:](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Spouští kvantové programy, aniž by ve skutečnosti simuloval stav kvantového počítače, a díky tomu může spouštět kvantové programy využívající tisíce qubitů. Tento simulátor je užitečný při ladění klasického kódu v rámci kvantového programu a také při odhadu potřebných prostředků.
+
+- [Simulátor Toffoli:](xref:microsoft.quantum.machines.toffoli-simulator) Kvantový simulátor pro zvláštní účely, který je možné používat s miliony qubitů, ale pouze pro programy s omezenou sadou kvantových operací (konkrétně operací X, CNOT a vícenásobně řízených operací X).
+
+### <a name="quick-reference-pages"></a>Stručné referenční stránky
+
+- [Příkazy magic IQ#](xref:microsoft.quantum.guide.quickref.iqsharp) Stručná referenční stránka pro příkazy magic IQ# v rámci poznámkových bloků Jupyter v Q#.

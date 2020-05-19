@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 91f12ef6bd15e27c8920471442c66ff3b1e71122
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: f365d471d9af73828b78c4fab8579557310a5288
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82677094"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426766"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -48,7 +48,7 @@ Toto vydání obsahuje menší opravy chyb pro verzi 0.11.2003.2506.
 
 Tato verze obsahuje následující:
 
-- Nová podpora pro modifikátory přístupu v Q#; další informace viz [struktury souborů](xref:microsoft.quantum.language.file-structure#internal-declarations)
+- Nová podpora pro modifikátory přístupu v Q#; další informace viz [struktury souborů](xref:microsoft.quantum.guide.filestructure)
 - Aktualizováno na .NET Core SDK 3.1
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -86,7 +86,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nový atribut Test pro test jednotek Q#, viz aktualizovaná dokumentace k API [zde](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizovaný průvodce testováním a laděním [zde](xref:microsoft.quantum.techniques.testing-and-debugging)
+- Nový atribut Test pro test jednotek Q#, viz aktualizovaná dokumentace k API [zde](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizovaný průvodce testováním a laděním [zde](xref:microsoft.quantum.guide.testingdebugging)
 - Přidání trasování zásobníku v případě chyby spuštění programu v jazyku Q#
 - Podpora zarážek v editoru Visual Studio Code vzhledem k aktualizaci [rozšíření OmniSharp C# Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
@@ -133,7 +133,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nová podpora [příkazů konjugace](xref:microsoft.quantum.language.statements#conjugations) v Q#
+- Nová podpora [příkazů konjugace](xref:microsoft.quantum.guide.operationsfunctions#conjugations) v Q#
 - Nové akce kódu v kompilátoru, například náhrada, přidání dokumentace a aktualizace položky jednoduchého pole
 - Přidané instalační šablony a nové příkazy projektu do rozšíření editoru Visual Studio Code
 - Přidané nové varianty kombinátoru ApplyIf, například [Microsoft.Quantum.Canon.ApplyIfOne](xref:microsoft.quantum.canon.applyifone)
@@ -150,7 +150,7 @@ Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících
 
 Tato verze obsahuje následující:
 
-- Nová umístění indexů pro řezy polí, další informace najdete v [referenční příručce jazyka](xref:microsoft.quantum.language.expressions#array-slices).
+- Nová umístění indexů pro řezy polí, další informace najdete v [referenční příručce jazyka](xref:microsoft.quantum.guide.expressions#array-slices).
 - Přidání souboru Dockerfile hostovaného ve službě [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry), další informace najdete v [úložišti IQ#](https://github.com/microsoft/iqsharp/blob/master/README.md).
 - Zásadní změna [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro), aktualizace nastavení konfigurace, změny názvů; aktualizované názvy najdete v [prohlížeči rozhraní .NET API](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
@@ -171,10 +171,10 @@ Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících
 
 ### <a name="q-language-syntax"></a>Syntaxe jazyka Q#
 Tato verze přidává novou syntaxi jazyka Q#:
-* Byly přidány pojmenované položky pro [uživatelsky definované typy](xref:microsoft.quantum.language.type-model#user-defined-types).  
+* Byly přidány pojmenované položky pro [uživatelsky definované typy](xref:microsoft.quantum.guide.types#user-defined-types).  
 * Konstruktory uživatelsky definovaných typů se teď dají použít jako funkce.
-* Byla přidána podpora pro příkazy [copy-and-update](xref:microsoft.quantum.language.expressions#copy-and-update-expressions) a [apply-and-reassign]((xref:microsoft.quantum.language.statements#rebinding-of-mutable-symbols)) v uživatelsky definovaných typech.
-* Opravný blok pro smyčky [repeat-until-success](xref:microsoft.quantum.language.statements#repeat-until-success-loop) je teď volitelný.
+* Byla přidána podpora pro příkazy [copy-and-update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) a [apply-and-reassign](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols) v uživatelsky definovaných typech.
+* Opravný blok pro smyčky [repeat-until-success](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop) je teď volitelný.
 * Nyní podporujeme smyčky while ve funkcích (ne v operacích).
 
 ### <a name="library"></a>Knihovna 
@@ -202,10 +202,10 @@ Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících
 
 ### <a name="q-language-syntax"></a>Syntaxe jazyka Q#
 Tato verze přidává novou syntaxi jazyka Q#:
-* Přidán [zkrácený způsob, jak vyjádřit specializace kvantových operací](xref:microsoft.quantum.language.type-model#functors) (řízení a adjungace) pomocí operátorů `+`.  Stará syntaxe je zastaralá.  Programy, které používají starou syntaxi (například `: adjoint`), budou i nadále fungovat, ale vygeneruje se upozornění v době kompilace.  
-* Přidán nový operátor pro příkaz [copy-and-update](xref:microsoft.quantum.language.expressions#copy-and-update-expressions), `w/`, který lze použít k rychlému vytvoření pole jako modifikace existujícího pole.
-* Přidán běžný [příkaz apply-and-update](xref:microsoft.quantum.language.statements#rebinding-of-mutable-symbols), například `+=``w/=`.
-* Přidán způsob, jak zadat krátký název pro obory názvů v [direktivách open](xref:microsoft.quantum.language.file-structure#open-directives).
+* Přidán [zkrácený způsob, jak vyjádřit specializace kvantových operací](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations) (řízení a adjungace) pomocí operátorů `+`.  Stará syntaxe je zastaralá.  Programy, které používají starou syntaxi (například `: adjoint`), budou i nadále fungovat, ale vygeneruje se upozornění v době kompilace.  
+* Přidán nový operátor pro příkaz [copy-and-update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions), `w/`, který lze použít k rychlému vytvoření pole jako modifikace existujícího pole.
+* Přidán běžný [příkaz apply-and-update](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols), například `+=`, `w/=`.
+* Přidán způsob, jak zadat krátký název pro obory názvů v [direktivách open](xref:microsoft.quantum.guide.filestructure#open-directives).
 
 V této verzi už nepovolujeme zadat prvek pole na levé straně příkazu set.  Důvodem je, že syntaxe naznačuje, že tato pole jsou měnitelná, a přitom ve skutečnosti výsledkem této operace bylo vždy vytvoření nového pole s modifikací.  Místo toho se vygeneruje chyba kompilátoru s doporučením, aby se ke stejnému výsledku použil nový operátor copy-and-update, `w/`.  
 
@@ -280,7 +280,7 @@ Tato verze obsahuje následující:
 
 - Oprava chyby pro problém DumpRegister hlášených komunitou ([č. 148](https://github.com/Microsoft/Quantum/issues/148)).
 
-- Přidání možnosti vrácení z [příkazu using](xref:microsoft.quantum.language.statements).
+- Přidání možnosti vrácení z [příkazu using](xref:microsoft.quantum.guide.qubits#allocating-qubits).
 
 - Přepracování [úvodní příručky](xref:microsoft.quantum.install).
 
@@ -303,7 +303,7 @@ Tato verze obsahuje následující:
 
 Tato verze obsahuje následující:
 
-- Přidává podporu pro nový primitivní typ, BigInt, který představuje celé číslo se znaménkem libovolné velikosti.  Přečtěte si další informace o [typu BigInt](xref:microsoft.quantum.language.type-model).
+- Přidává podporu pro nový primitivní typ, BigInt, který představuje celé číslo se znaménkem libovolné velikosti.  Přečtěte si další informace o [typu BigInt](xref:microsoft.quantum.guide.types).
 - Přidává nový simulátor Toffoli, rychlý simulátor pro zvláštní účely, který může simulovat kvantové operace X, CNOT a vícenásobně řízené operace X s velkým počtem qubitů.  Přečtěte si další informace o [simulátoru Toffoli](xref:microsoft.quantum.machines.toffoli-simulator).
 - Přidává jednoduchý estimátor prostředků, který odhadne prostředky potřebné ke spuštění dané instance operace Q# v kvantovém počítači.  Přečtěte si další informace o [estimátoru prostředků](xref:microsoft.quantum.machines.resources-estimator).
 
@@ -427,7 +427,7 @@ Tato aktualizace přidává nové funkce ladění:
 * V sadě Visual Studio se teď pravděpodobnost měření $\ket{1}$ na jednotlivém qubitu automaticky zobrazí v okně ladění pro cílový počítač QuantumSimulator.
 * V sadě Visual Studio se zlepšilo zobrazení vlastností proměnných v oknech ladění **Autos** a **Locals**. 
 
-Přečtěte si další informace o [testování a ladění](xref:microsoft.quantum.techniques.testing-and-debugging).
+Přečtěte si další informace o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
 
 ### <a name="community-contributions"></a>Komunitní příspěvky
 
