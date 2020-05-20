@@ -1,19 +1,19 @@
 ---
-title: 'Typy v Q #'
+title: Typy v Q#
 description: 'Seznamte se s různými typy použitými v programovacím jazyce Q #.'
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 58370193bd62e306197a9e07c28f8611f043e55c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
+ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431134"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609137"
 ---
-# <a name="types-in-q"></a>Typy v Q #
+# <a name="types-in-q"></a>Typy v Q#
 
 Tato stránka obsahuje model typu Q # a popisuje syntaxi pro zadání a práci s typy.
 Na další stránce [Zadejte výrazy](xref:microsoft.quantum.guide.expressions), podrobnosti o tom, jak vytvořit a pracovat na výrazech těchto typů.
@@ -35,7 +35,7 @@ Jazyk Q # poskytuje několik *primitivních typů*, ze kterých lze sestavit dal
    textový.
 - `Double`Typ představuje číslo s plovoucí desetinnou čárkou s dvojitou přesností, například: `0.0` , `-1.3` , `4e-7` .
 - `Bool`Typ představuje logickou hodnotu, která může být buď `true` nebo `false` .
-- `Range`Typ představuje sekvenci celých čísel, která je označena jako `start..step..stop` , kde označuje krok s možnostmi. 
+- `Range`Typ představuje sekvenci celých čísel, označených jako `start..step..stop` , kde označuje, že krok je nepovinný. 
    To `start .. stop` odpovídá `start..1..stop` , a například `1..2..7` představuje sekvenci $ \{ 1, 3, 5, 7 \} $.
 - `String`Typ je posloupnost znaků Unicode, která je po vytvoření uživatelem neprůhledná.
   Tento typ slouží k hlášení zpráv na klasického hostitele v případě chyby nebo diagnostické události.
@@ -125,7 +125,7 @@ Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singlet
 
 Uživatelsky definovaná deklarace typu se skládá z klíčového slova `newtype` , následované názvem uživatelsky definovaného typu, a `=` platnou specifikací typu a ukončující středník.
 
-Příklad:
+Například:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
