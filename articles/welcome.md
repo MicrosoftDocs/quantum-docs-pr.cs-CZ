@@ -1,19 +1,19 @@
 ---
 uid: microsoft.quantum.welcome
-title: Začínáme se sadou Quantum Development Kit
+title: Začínáme se sadou Quantum Development Kit (QDK)
 description: Naučte se programovat kvantové projekty v jazyce Q# s využitím sady Microsoft Quantum Development Kit.
 author: natke
 ms.author: nakersha
 ms.date: 5/10/2020
 ms.topic: overview
-ms.openlocfilehash: 2356fee2333acb73f528fad6d9def68a7fe84083
-ms.sourcegitcommit: 4da99168479f96f408b984279a5a7eabcda752db
+ms.openlocfilehash: 5fea46e43d9a3739e4b058781e1b52dff20b7e21
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708714"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327505"
 ---
-# <a name="get-started-with-the-quantum-development-kit"></a>Začínáme se sadou Quantum Development Kit
+# <a name="get-started-with-the-quantum-development-kit-qdk"></a>Začínáme se sadou Quantum Development Kit (QDK)
 
 Vítejte u sady Microsoft Quantum Development Kit!  
 

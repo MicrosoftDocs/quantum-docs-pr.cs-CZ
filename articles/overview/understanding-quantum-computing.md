@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.understanding
-ms.openlocfilehash: 65fa85a80021124444fd352f9492d03cbefcb859
-ms.sourcegitcommit: a03d79ca3f0774161a9f86a15528d36e1291acce
+ms.openlocfilehash: aa3de9290250e82bc2f3ea5f1d35a16095469f7e
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433006"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327726"
 ---
 # <a name="understanding-quantum-computing"></a>Principy kvantových výpočtů
 
@@ -69,5 +69,4 @@ Tyto koncepty jen kloužou po vnější slupce kvantové mechaniky, jsou však z
 
 ## <a name="next-steps"></a>Další kroky
 
-> [!div class="nextstepaction"]
-> [Kvantové počítače a kvantové simulátory](xref:microsoft.quantum.overview.simulators)
+[Kvantové počítače a kvantové simulátory](xref:microsoft.quantum.overview.simulators)
