@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
-ms.openlocfilehash: e89b9ccfe2a0796e01eedfc99f7ce71038d85f38
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 0deb0729a88c49798f32a22a943b935d383c570b
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430930"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327539"
 ---
 # <a name="working-with-qubits"></a>Práce s qubity
 
@@ -30,7 +30,7 @@ Příkaz se skládá z klíčového slova `using` následovaných levou závorko
 Vazba se řídí stejným vzorem jako `let` příkazy: buď jeden symbol, nebo záznamovou sadu symbolů následovaný symbolem rovná `=` se, a buď jedinou hodnotou, nebo porovnáním řazené kolekce členů *inicializátorů*.
 
 Inicializátory jsou k dispozici buď pro jeden qubit, který `Qubit()` je označen jako nebo jako pole qubits, `Qubit[n]` , kde `n` je `Int` výraz.
-Například:
+Třeba
 
 ```qsharp
 using (qubit = Qubit()) {
@@ -59,7 +59,7 @@ Tyto qubits nejsou obvykle v čistém stavu, tj., nejsou nutně inicializovány 
 Ty se často označují jako "nequbitsé", protože jejich stav je neznámý a může být dokonce entangled s ostatními částmi paměti počítače.
 
 Vazba následuje stejný vzor a pravidla jako v `using` příkazu.
-Například:
+Třeba
 ```qsharp
 borrowing (qubit = Qubit()) {
     // ...
@@ -221,5 +221,6 @@ Důvodem je to, že ví od struktury okruhu, jak snadno přidat další ovládac
 
 Je povede k porovnání tohoto kódu s jinou funkcí Canon, `MultiControlledXClean` která dosahuje stejného cíle implementace operace řízené vynásobením `X` , která však používá několik čistých qubits pomocí `using` mechanismu. 
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Přečtěte si o [toku řízení](xref:microsoft.quantum.guide.controlflow) v Q #.

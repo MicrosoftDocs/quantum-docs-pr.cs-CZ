@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
-ms.openlocfilehash: f42e3e4492f934d7a8f03d4fec6fa0de765401d7
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: ddd889fdfabb505d7118c1eff551a6fbfa757309
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909921"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327641"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Základní klasifikace: klasifikace dat pomocí QDK
 
@@ -19,10 +19,10 @@ V tomto rychlém startu se dozvíte, jak spustit sekvenční třídění na zák
 
 V této příručce použijeme datovou sadu s poloviční měsíc pomocí struktury klasifikátoru definované v Q #.
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- [Vytvořte projekt v jazyku Q#](xref:microsoft.quantum.howto.createproject)
+- Vytvořte projekt Q # pro [hostitelský program Pythonu](xref:microsoft.quantum.install.python) nebo pro [hostitelský program C#](xref:microsoft.quantum.install.cs).
 
 ## <a name="host-program"></a>Hostitelský program
 
@@ -34,7 +34,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
 
-    Pokud chcete spustit klasifikátor Q # z Pythonu, uložte následující kód jako `host.py`. Mějte na paměti, že budete také potřebovat soubor Q # `Training.qs`, který je vysvětlen dále v tomto kurzu.
+    Pokud chcete spustit klasifikátor Q # z Pythonu, uložte následující kód jako `host.py` . Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="python" source="~/quantum/samples/machine-learning/half-moons/host.py" range="3-42":::
 
@@ -49,7 +49,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
 
-    Pokud chcete spustit třídění Q # z C#, uložte následující kód jako `Host.cs`. Mějte na paměti, že budete také potřebovat soubor Q # `Training.qs`, který je vysvětlen dále v tomto kurzu.
+    Pokud chcete spustit klasifikátor Q # z C#, uložte následující kód jako `Host.cs` . Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -63,7 +63,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
 
-    Chcete-li spustit nový program Q # C# ze sady Visual Studio, upravte `Host.cs` tak, aby C# zahrnoval následující kód. Mějte na paměti, že budete také potřebovat soubor Q # `Training.qs`, který je vysvětlen dále v tomto kurzu.
+    Chcete-li spustit nový program Q # z C# v aplikaci Visual Studio, upravte `Host.cs` tak, aby obsahovalo následující kód jazyka C#. Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -76,17 +76,17 @@ Hostitelský program se skládá ze tří částí:
     ```
     ***
 
-## <a name="q-classifier-code"></a>Kód třídění Q\#
+## <a name="q-classifier-code"></a>\#Kód třídění Q
 
 Teď se podívejme, jak se operace vyvolané hostitelským programem definují v Q #.
-Následující kód ukládáme do souboru s názvem `Training.qs`.
+Následující kód ukládáme do souboru s názvem `Training.qs` .
 
 :::code language="qsharp" source="~/quantum/samples/machine-learning/half-moons/Training.qs" range="4-116":::
 
 Nejdůležitější funkce a operace definované v kódu výše jsou:
 
 - `ClassifierStructure() : ControlledRotation[]`: v této funkci nastavíme strukturu modelu našeho okruhu přidáním vrstev řízených bran, které považujeme za. Tento krok je podobný deklaraci vrstev neurons v sekvenčním modelu hloubkového učení.
-- `TrainHalfMoonModel() : TrainWineModel() : (Double[], Double)`: Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady obsažené v knihovně, nastavili jsme parametry Hyper a počáteční parametry pro školení a zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
+- `TrainHalfMoonModel() : TrainWineModel() : (Double[], Double)`: Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady zahrnuté do knihovny, nastavíme parametry Hyper a počáteční parametry pro školení a my zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
 - `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: Tato operace definuje proces ověření pro vyhodnocení modelu. Tady načteme ukázky pro ověřování, počet měření na vzorek a toleranci. Vyprodukuje počet chybných klasifikací na zvolené dávce vzorků pro ověření.
 
 ## <a name="next-steps"></a>Další kroky

@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 407b4ff3570816eb7bdc323a5c5b77dac2d951af
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 456c05d4ca66a747e0cc514a30c6bbb33610f481
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430896"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327777"
 ---
 # <a name="variables-in-q"></a>Proměnné v Q #
 
@@ -55,7 +55,7 @@ Tady poskytujeme některé možné příklady technik revázání příkazů.
 
 ### <a name="apply-and-reassign-statements"></a>Příkazy Apply a Reassign
 
-Konkrétní druh `set` příkazu, který označujeme jako příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Například:
+Konkrétní druh `set` příkazu, který označujeme jako příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Třeba
 ```qsharp
 mutable counter = 0;
 for (i in 1 .. 2 .. 10) {
@@ -232,5 +232,6 @@ if (a == b) {
 ...
 ```
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Přečtěte si o [práci s Qubits](xref:microsoft.quantum.guide.qubits) v Q #.

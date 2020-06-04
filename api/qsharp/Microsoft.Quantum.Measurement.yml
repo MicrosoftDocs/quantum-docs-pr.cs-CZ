@@ -9,19 +9,19 @@ operations:
 - uid: microsoft.quantum.measurement.measurewithscratch
   summary: Měří zadaný Pauli operátor pomocí explicitního qubitho škrábance k provedení měření.
 - uid: microsoft.quantum.measurement.mresetx
-  summary: Měří jednu qubitu v ose X a obnoví ji na standardní základní stav | 0 〉 za měřením.
+  summary: Měří jeden qubit v ose X a obnoví ho do pevného počátečního stavu po měření.
 - uid: microsoft.quantum.measurement.mresety
-  summary: Měří jednu qubitu na ose Y a obnoví ji na standardní základní stav | 0 〉 za měřením.
+  summary: Měří jeden qubit v ose Y a obnoví ho do pevného počátečního stavu po měření.
 - uid: microsoft.quantum.measurement.mresetz
-  summary: Měří jeden qubit v `Z` základu a obnoví ho do standardního základního stavu | 0 〉 za měřením.
+  summary: Měří jeden qubit v rámci a obnoví ho do pevného počátečního stavu po měření.
 - uid: microsoft.quantum.measurement.multim
   summary: Měří jednotlivé qubity v daném poli na úrovni Standard.
 - uid: microsoft.quantum.measurement.settobasisstate
   summary: Nastaví qubit na daný výpočetní stav na základě měření qubit a v případě potřeby použije bitovou překlopení.
 metadata:
-  ms.openlocfilehash: 8e0910bf53734ffe65aa12b06321ec9b3403133f
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 894c0bb7f0b57e9fe04837b89cd57345745df6c5
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673145"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326621"

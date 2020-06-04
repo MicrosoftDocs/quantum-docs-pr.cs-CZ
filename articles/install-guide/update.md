@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: 53f72f1d49ae32a5a8572a1cf68a66a1d9b45e4a
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 3245f587493ce12cfec15c8f932fd092d85f688e
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426912"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327560"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace Microsoft Quantum Development Kit (QDK)
 
@@ -21,8 +21,8 @@ Přečtěte si, jak aktualizovat Microsoft Quantum Development Kit (QDK) na nejn
 V tomto článku se předpokládá, že už máte nainstalované QDK. Pokud instalujete poprvé, přečtěte si [příručku k instalaci](xref:microsoft.quantum.install).
 
 Doporučujeme, abyste si zachovali aktuálnost nejnovější verze QDK. Postupujte podle tohoto průvodce aktualizací a upgradujte na nejnovější verzi QDK. Proces se skládá ze dvou částí:
-1. Aktualizace existujících souborů a projektů Q # pro zarovnávání kódu pomocí aktualizované syntaxe
-2. aktualizace samotného QDK pro zvolené vývojové prostředí 
+1. Aktualizace stávajících souborů a projektů Q # pro zarovnání kódu s aktualizovanou syntaxí.
+2. Aktualizuje se QDK sám pro zvolené vývojové prostředí.
 
 ## <a name="updating-q-projects"></a>Aktualizují se projekty Q #. 
 
@@ -38,9 +38,9 @@ Bez ohledu na to, jestli používáte C# nebo Python k hostování operací Q #,
 
 ### <a name="update-q-projects-in-visual-studio"></a>Aktualizace projektů Q # v aplikaci Visual Studio
  
-1. Aktualizace na nejnovější verzi sady Visual Studio 2019 najdete [tady](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) pokyny.
-2. Otevřete řešení v aplikaci Visual Studio
-3. V nabídce vyberte **sestavit**  ->  **Vyčistit řešení** .
+1. Aktualizujte na nejnovější verzi sady Visual Studio 2019, pokyny najdete [tady](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) .
+2. Otevřete řešení v aplikaci Visual Studio.
+3. V nabídce vyberte **sestavit**  ->  **Vyčištění řešení**.
 4. V každém z vašich souborů. csproj aktualizujte cílové rozhraní na `netcoreapp3.1` (nebo `netstandard2.1` Pokud se jedná o projekt knihovny).
     To znamená upravit řádky formuláře:
 
@@ -49,16 +49,30 @@ Bez ohledu na to, jestli používáte C# nebo Python k hostování operací Q #,
     ```
 
     Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
-5. Uložit a zavřít všechny soubory ve vašem řešení
-6. Vybrat **nástroje**  ->  **příkazového řádku**  ->  **Developer Command Prompt**
-7. Pro každý projekt v řešení spusťte následující příkaz:
 
-    ```dotnetcli
-    dotnet add [project_name].csproj package Microsoft.Quantum.Development.Kit
+5. V každém ze souborů. csproj nastavte sadu SDK na `Microsoft.Quantum.Sdk` , jak je uvedeno na řádku níže. Všimněte si, že číslo verze by mělo být nejnovější dostupné a můžete ho zjistit pomocí [poznámky k verzi](https://docs.microsoft.com/quantum/relnotes/).
+
+    ```xml
+    <Project Sdk="Microsoft.Quantum.Sdk/0.11.2006.207">
     ```
 
-   Pokud vaše projekty používají jiné balíčky Microsoft. (např. Microsoft. probíhat. NUMERIC), spusťte příkaz i pro tyto.
-8. Zavřete příkazový řádek a vyberte **Build**  ->  **Build** Build (nevybírejte *not* znovu sestavit řešení).
+6. Uložte a zavřete všechny soubory ve vašem řešení.
+
+7. Vyberte **nástroje**  ->  **příkazového řádku**  ->  **Developer Command Prompt**. Alternativně můžete použít konzolu pro správu balíčků v sadě Visual Studio.
+
+8. Pro každý projekt v řešení spusťte následující příkaz pro **Odebrání** tohoto balíčku:
+
+    ```dotnetcli
+    dotnet remove [project_name].csproj package Microsoft.Quantum.Development.Kit
+    ```
+
+   Pokud vaše projekty používají jakékoli jiné balíčky Microsoft. probíhat nebo Microsoft. Azure. (např. Microsoft. probíhat. NUMERIC), spusťte pro ně příkaz **Add** , který aktualizuje použitou verzi.
+
+    ```dotnetcli
+    dotnet add [project_name].csproj package [package_name]
+    ```
+
+9. Zavřete příkazový řádek a vyberte **sestavení**  ->  **Build** Build (nevybírejte *not* znovu sestavit řešení).
 
 Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](#update-visual-studio-qdk-extension).
 
@@ -66,35 +80,65 @@ Nyní můžete přeskočit k [aktualizaci rozšíření sady Visual Studio QDK](
 ### <a name="update-q-projects-in-visual-studio-code"></a>Aktualizace projektů Q # v Visual Studio Code
 
 1. V Visual Studio Code otevřete složku obsahující projekt, který chcete aktualizovat.
-2. Vybrat **terminál**  ->  **Nový** terminál
+2. Vyberte **terminál**  ->  **Nový**terminál.
 3. Postupujte podle pokynů pro aktualizaci pomocí příkazového řádku (přímo níže).
 
 ### <a name="update-q-projects-using-the-command-line"></a>Aktualizace projektů Q # pomocí příkazového řádku
 
-1. Přejděte do složky, která obsahuje soubor projektu.
+1. Přejděte do složky, která obsahuje váš hlavní soubor projektu.
+
 2. Spusťte následující příkaz:
 
     ```dotnetcli
     dotnet clean [project_name].csproj
     ```
 
-3. V každém z vašich souborů. csproj aktualizujte cílové rozhraní na `netcoreapp3.1` (nebo `netstandard2.1` Pokud se jedná o projekt knihovny).
-    To znamená upravit řádky formuláře:
+3. Určete aktuální verzi QDK. Pokud ho chcete najít, můžete si přečíst [poznámky k verzi](https://docs.microsoft.com/quantum/relnotes/). Verze bude v podobném formátu `0.11.2006.207` .
 
-    ```xml
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    ```
+4. V každém z vašich `.csproj` souborů Projděte následující kroky:
 
-    Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
-4. Spusťte následující příkaz:
+    - Aktualizujte cílové rozhraní na `netcoreapp3.1` (nebo `netstandard2.1` Pokud se jedná o projekt knihovny). To znamená upravit řádky formuláře:
 
-    ```dotnetcli
-    dotnet add package Microsoft.Quantum.Development.Kit
-    ```
+        ```xml
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        ```
 
-    Pokud váš projekt používá jiné balíčky Microsoft. prokládání (např. Microsoft. prohodně. Numerics), spusťte příkaz i pro tyto účely.
-5. Uložte a zavřete všechny soubory.
-6. Opakujte 1-4 pro každou závislost projektu a pak přejděte zpátky do složky, která obsahuje váš hlavní projekt, a spusťte:
+        Další podrobnosti o určení cílových rozhraní najdete [tady](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
+
+    - Nahraďte odkaz na sadu SDK v definici projektu. Ujistěte se, že číslo verze odpovídá hodnotě určené v **kroku 3**.
+
+        ```xml
+        <Project Sdk="Microsoft.Quantum.Sdk/0.11.2006.207">
+        ```
+
+    - Pokud je k dispozici, odeberte odkaz na balíček `Microsoft.Quantum.Development.Kit` , který bude zadán v následující položce:
+
+        ```xml
+        <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.10.1910.3107" />
+        ```
+
+    - Aktualizujte verzi všech balíčků pro neplatnost od Microsoftu na nejnovější vydanou verzi QDK (stanovenou v **kroku 3**). Tyto balíčky jsou pojmenovány s následujícími vzory:
+
+        ```
+        Microsoft.Quantum.*
+        Microsoft.Azure.Quantum.*
+        ```
+    
+        Odkazy na balíčky mají následující formát:
+
+        ```xml
+        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.11.2006.207" />
+        ```
+
+    - Aktualizovaný soubor uložte.
+
+    - Obnovte závislosti projektu následujícím způsobem:
+
+        ```dotnetcli
+        dotnet restore [project_name].csproj
+        ```
+
+4. Přejděte zpět do složky obsahující váš hlavní projekt a spusťte příkaz:
 
     ```dotnetcli
     dotnet build [project_name].csproj

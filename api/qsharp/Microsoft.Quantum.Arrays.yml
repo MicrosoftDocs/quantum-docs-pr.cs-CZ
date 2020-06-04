@@ -20,7 +20,7 @@ functions:
 - uid: microsoft.quantum.arrays.filtered
   summary: Předané pole a predikát, který je definován pro prvky pole, vrátí pole, které se skládá z prvků, které odpovídají predikátu.
 - uid: microsoft.quantum.arrays.fold
-  summary: Opakuje funkci `f` prostřednictvím pole `array`a vrátí. `f(f(f(initialState, array[0]), array[1]), ...)`
+  summary: Opakuje funkci `f` prostřednictvím pole `array` a vrátí `f(f(f(initialState, array[0]), array[1]), ...)` .
 - uid: microsoft.quantum.arrays.head
   summary: Vrátí první prvek pole.
 - uid: microsoft.quantum.arrays.indexof
@@ -29,6 +29,8 @@ functions:
   summary: V poli, vrátí rozsah v rámci indexů tohoto pole, který je vhodný pro použití ve smyčce for.
 - uid: microsoft.quantum.arrays.isempty
   summary: Vrátí hodnotu true pouze v případě, že je pole prázdné.
+- uid: microsoft.quantum.arrays.ispermutation
+  summary: Vrátí výstupy true, pokud dané pole představuje permutaci.
 - uid: microsoft.quantum.arrays.lookupfunction
   summary: Předanému poli vrátí funkci, která vrátí prvky daného pole.
 - uid: microsoft.quantum.arrays.mapped
@@ -69,9 +71,9 @@ operations:
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: a9088a037953f62ab7193ea525a6e71d43fe2fb2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 92eb956a1387a9765354f45e27eb084c6d73f51b
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673391"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326706"

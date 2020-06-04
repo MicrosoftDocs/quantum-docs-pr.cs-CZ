@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
-ms.openlocfilehash: cbee92c6d7e765237a7a42532dd7012b51421708
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: b8c24dae6cc8d8f37ad4f1f74017c05cabe3a4b4
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430964"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327454"
 ---
 # <a name="q-file-structure"></a>Struktura souborů Q #
 
@@ -152,5 +152,6 @@ Následující názvy se rozpoznávají jako hlavičky komentářů k dokumentac
 - **Viz také**: seznam plně kvalifikovaných názvů, které označují související funkce, operace nebo uživatelsky definované typy.
 - **Odkazy**: seznam odkazů a citace pro položku, která je popsána.
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Přečtěte si o [operacích a funkcích](xref:microsoft.quantum.guide.operationsfunctions) v Q #.

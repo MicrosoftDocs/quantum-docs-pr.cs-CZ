@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: c534e016fcb8b50e66c11ca29c253ba0512acc6e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 1f1b641563fe35879abeee32b4f0aeeb7001b1a0
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430947"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84326536"
 ---
 # <a name="control-flow-in-q"></a>Tok řízení v Q #
 
@@ -44,7 +44,7 @@ Pokud je původní podmínka IF a všechny klauzule else-if vyhodnoceny jako NEP
 Všimněte si, že libovolný blok je spuštěný ve svém vlastním oboru.
 Vazby provedené v `if` `elif` bloku, nebo nejsou `else` po konci viditelné.
 
-Například:
+Třeba
 
 ```qsharp
 if (result == One) {
@@ -174,7 +174,7 @@ Volat, které vracejí jiný typ, vyžadují konečný návratový příkaz.
 V rámci operace není maximální počet návratových příkazů.
 Kompilátor může vygenerovat upozornění, pokud příkazy následují příkaz return v rámci bloku.
 
-Například:
+Třeba
 ```qsharp
 return 1;
 ```
@@ -196,7 +196,7 @@ Skládá se z klíčového slova `fail` následovaných řetězcem a zakončený
 Počet příkazů selhání v rámci operace není nijak omezen.
 Kompilátor může vygenerovat upozornění, pokud příkazy následují po příkazu neúspěchu v rámci bloku.
 
-Například:
+Třeba
 ```qsharp
 fail $"Impossible state reached";
 ```
@@ -329,5 +329,6 @@ Významné programové funkce zobrazené v této operaci jsou složitější `fi
 Viz také [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) pro další informace o [`Assert`](xref:microsoft.quantum.intrinsic.assert) [`AssertProb`](xref:microsoft.quantum.intrinsic.assertprob) operacích a.
 
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Přečtěte si o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) v Q #.

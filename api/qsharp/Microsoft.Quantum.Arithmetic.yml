@@ -33,19 +33,19 @@ operations:
 - uid: microsoft.quantum.arithmetic.addfxp
   summary: Přidá dvě čísla s pevnou desetinnou čárkou uložená v registrech.
 - uid: microsoft.quantum.arithmetic.addi
-  summary: Automaticky zvolí mezi doplněním a bez, v závislosti na velikosti registru `ys`.
+  summary: Automaticky zvolí mezi doplněním a bez, v závislosti na velikosti registru `ys` .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphasele
-  summary: Použije operaci, která jako vstup <xref:microsoft.quantum.arithmetic.phaselittleendian> převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian>.
+  summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselea
-  summary: Použije operaci, která jako vstup <xref:microsoft.quantum.arithmetic.phaselittleendian> převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian>.
+  summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselec
-  summary: Použije operaci, která jako vstup <xref:microsoft.quantum.arithmetic.phaselittleendian> převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian>.
+  summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaseleca
-  summary: Použije operaci, která jako vstup <xref:microsoft.quantum.arithmetic.phaselittleendian> převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian>.
+  summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applymajorityinplace
   summary: Aplikuje operaci se třemi qubity na místě v registru qubits.
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonle
-  summary: Použije operaci, která jako vstup <xref:microsoft.quantum.arithmetic.littleendian> převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.phaselittleendian>.
+  summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.littleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.phaselittleendian> .
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonlea
   summary: ''
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonlec
@@ -71,34 +71,29 @@ operations:
 - uid: microsoft.quantum.arithmetic.applyxorinplace
   summary: Aplikuje operaci bitové operace-XOR mezi klasickým celým číslem a celým číslem reprezentovaným registrem qubits.
 - uid: microsoft.quantum.arithmetic.assertallzerofxp
-  summary: Pomocná funkce pro vyhodnocení, že číslo s pevnou desetinnou čárkou je inicializováno na nulu, tj. všechny qubits jsou ve{0}stavu $ \ket $.
+  summary: Pomocná funkce pro vyhodnocení, že číslo s pevnou desetinnou čárkou je inicializováno na nulu, tj. všechny qubits jsou ve stavu $ \ket {0} $.
 - uid: microsoft.quantum.arithmetic.assertmostsignificantbit
   summary: Vyhodnotí, že nejvýznamnější qubit registru qubit, který představuje unsigned integer, je v určitém stavu.
 - uid: microsoft.quantum.arithmetic.assertphaselessthan
-  summary: Vyhodnotí, `number` že kódovaný v PhaseLittleEndian je menší `value`než.
+  summary: Vyhodnotí, že `number` kódovaný v PhaseLittleEndian je menší než `value` .
 - uid: microsoft.quantum.arithmetic.assertprobint
   summary: Vyhodnotí, že pravděpodobnost konkrétního stavu registru pro nepodmíněných hodnot má očekávanou hodnotu.
 - uid: microsoft.quantum.arithmetic.carry
-  summary: Implementuje bránu vratného přenosu. S ohledem na zakódovaný bit `carryIn` v qubit a dvou summand bitů kódovaný v `summand1` a `summand2`, vypočítá logickou XOR `carryIn`, `summand1` a `summand2` v qubit `summand2` a přenese XORed na qubit. `carryOut`
-- uid: microsoft.quantum.arithmetic.cascadeccnot
-  summary: >-
-    Implementuje kaskády CCNOTch bran řízených v odpovídajících bitech dvou registrů qubit, které fungují na dalších qubit jednoho z registrů.
-
-    Počínaje od qubits na pozici 0 v obou registrech jako ovládací prvky se CCNOT použije na qubit na pozici 1 cílového registru, kterou řídí qubits na pozici 1 v qubit na pozici 2 v cílovém registru atd., končící akci na cílovém qubit na pozici `Length(nQubits)-1`.
+  summary: Implementuje bránu vratného přenosu. S ohledem na zakódovaný bit v qubit `carryIn` a dvou summand bitů kódovaný v `summand1` a `summand2` , vypočítá logickou XOR `carryIn` , `summand1` a `summand2` v qubit `summand2` a přenese XORed na qubit `carryOut` .
 - uid: microsoft.quantum.arithmetic.comparegreaterthanfxp
   summary: Porovná dvě číslo s pevnou desetinnou čárkou, která jsou uložená v registrech, a řídí převrácení výsledku.
 - uid: microsoft.quantum.arithmetic.comparegti
-  summary: Obálka pro porovnání celého `result = x > y`čísla:.
+  summary: 'Obálka pro porovnání celého čísla: `result = x > y` .'
 - uid: microsoft.quantum.arithmetic.comparegtsi
-  summary: 'Obálka pro porovnání se znaménkem pro celé číslo: `result = xs > ys`.'
+  summary: 'Obálka pro porovnání se znaménkem pro celé číslo: `result = xs > ys` .'
 - uid: microsoft.quantum.arithmetic.compareusingripplecarry
   summary: Tato operace testuje, zda celé číslo reprezentované registrem qubits je větší než jiné celé číslo, a použití funkce XOR výsledku na výstupní qubit.
 - uid: microsoft.quantum.arithmetic.computereciprocalfxp
   summary: Vypočítá $1/x $ pro číslo s pevnou desetinnou čárkou $x $.
 - uid: microsoft.quantum.arithmetic.computereciprocali
-  summary: Vypočítá protější hodnotu 1/x pro unsigned integer x pomocí dělení celého čísla. Výsledek, který je interpretován jako celé číslo, bude `floor(2^(2*n-1) / x)`.
+  summary: Vypočítá protější hodnotu 1/x pro unsigned integer x pomocí dělení celého čísla. Výsledek, který je interpretován jako celé číslo, bude `floor(2^(2*n-1) / x)` .
 - uid: microsoft.quantum.arithmetic.copymostsignificantbit
-  summary: Zkopíruje nejvýznamnější bit qubit registru `from` reprezentujícího unsigned integer do qubit. `target`
+  summary: Zkopíruje nejvýznamnější bit qubit registru `from` reprezentujícího unsigned integer do qubit `target` .
 - uid: microsoft.quantum.arithmetic.dividei
   summary: Vydělí dvě celá čísla.
 - uid: microsoft.quantum.arithmetic.evaluateevenpolynomialfxp
@@ -124,7 +119,7 @@ operations:
 - uid: microsoft.quantum.arithmetic.measurefxp
   summary: Změřte číslo s pevnou desetinnou čárkou, vrátí jeho hodnotu Double a obnoví všechny Registry na nulu.
 - uid: microsoft.quantum.arithmetic.measureinteger
-  summary: Měří obsah v registru a převede ho na celé číslo. Měření se provádí s ohledem na standardní výpočetní základ, tj. eigenbasis `PauliZ`.
+  summary: Měří obsah v registru a převede ho na celé číslo. Měření se provádí s ohledem na standardní výpočetní základ, tj. eigenbasis `PauliZ` .
 - uid: microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
   summary: Provede modulární násobení a přidání celočíselnými konstantami v qubit registru.
 - uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
@@ -134,9 +129,9 @@ operations:
 - uid: microsoft.quantum.arithmetic.multiplyfxp
   summary: Vynásobí dvě čísla s pevnou desetinnou čárkou v registrech.
 - uid: microsoft.quantum.arithmetic.multiplyi
-  summary: Vynásobit `xs` celé `ys` číslo a uložit výsledek do `result`, který musí být zpočátku nula.
+  summary: Vynásobit celé číslo `xs` `ys` a uložit výsledek do `result` , který musí být zpočátku nula.
 - uid: microsoft.quantum.arithmetic.multiplysi
-  summary: Vynásobit `xs` celé číslo se `ys` znaménkem (signed `result`Integer) a uložit výsledek do, který musí být zpočátku nula.
+  summary: Vynásobit celé číslo se znaménkem `xs` (signed integer) `ys` a uložit výsledek do `result` , který musí být zpočátku nula.
 - uid: microsoft.quantum.arithmetic.preparefxp
   summary: Inicializovat číslo s pevnou desetinnou čárkou pro klasický konstantu.
 - uid: microsoft.quantum.arithmetic.reflectaboutinteger
@@ -147,22 +142,22 @@ operations:
   summary: >-
     Vratný, místní Ripple – přidání dvou celých čísel.
 
-    Pomocí dvou $n $ bitových celých čísel zakódovaných `xs` v `ys`registrech LittleEndian a qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit. `carry`
+    Pomocí dvou $n $ bitových celých čísel zakódovaných v registrech LittleEndian `xs` a `ys` qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit `carry` .
 - uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
   summary: Vratný, místní Ripple – přidání dvou celých čísel bez nutnosti provádět.
 - uid: microsoft.quantum.arithmetic.ripplecarryadderttk
   summary: >-
     Vratný, místní Ripple – přidání dvou celých čísel.
 
-    Pomocí dvou $n $ bitových celých čísel zakódovaných `xs` v `ys`registrech LittleEndian a qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit. `carry`
+    Pomocí dvou $n $ bitových celých čísel zakódovaných v registrech LittleEndian `xs` a `ys` qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit `carry` .
 - uid: microsoft.quantum.arithmetic.squarefxp
   summary: Čtverce číslo s pevnou desetinnou čárkou.
 - uid: microsoft.quantum.arithmetic.squarei
-  summary: Vypočítá čtverci celého čísla `xs` do `result`, které musí být zpočátku nula.
+  summary: Vypočítá čtverci celého čísla `xs` do `result` , které musí být zpočátku nula.
 - uid: microsoft.quantum.arithmetic.squaresi
-  summary: Čtvercové celé `xs` číslo se znaménkem a `result`uložení výsledku v, které musí být zpočátku nula.
+  summary: Čtvercové celé číslo se znaménkem `xs` a uložení výsledku v `result` , které musí být zpočátku nula.
 - uid: microsoft.quantum.arithmetic.sum
-  summary: Implementuje bránu vratného součtu. Má-li `carryIn` bit zakódovaný v qubit a dvě summand bity zakódované v `summand1` a `summand2`, vypočítá logickou XOR `carryIn` `summand1` a `summand2` v qubit. `summand2`
+  summary: Implementuje bránu vratného součtu. Má-li bit zakódovaný v qubit `carryIn` a dvě summand bity zakódované v `summand1` a `summand2` , vypočítá logickou XOR `carryIn` `summand1` a `summand2` v qubit `summand2` .
 newtypes:
 - uid: microsoft.quantum.arithmetic.bigendian
   summary: Zaregistrujte, aby se v pořadí big-endian zakódují unsigned integer. Qubit s indexem `0` kóduje nejvyšší bit unsigned integer.
@@ -179,9 +174,9 @@ newtypes:
 - uid: microsoft.quantum.arithmetic.signedlittleendian
   summary: Typ celého čísla se znaménkem uložený ve Little endian (viz LittleEndian).
 metadata:
-  ms.openlocfilehash: eda1d6d9037caecd7a2f0d91acdc0e59d34efe41
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6e43f31c738b48413ead40e16fbbfe4185b8a57d
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675497"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326723"

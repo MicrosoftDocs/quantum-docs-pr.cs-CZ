@@ -7,26 +7,26 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: c093284f1ea33b72d4d264992b0ba6bf6bc72782
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 8019b32a3290e2d45124ebb1eb75395f6cb758db
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036436"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327522"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Vytvoření projektu Q # ve vývojovém prostředí
 
 Naučte se vytvořit projekt Q # pomocí QDK.
 
-Projekt Q # obsahuje soubory Q #, které obsahují kód doby a hostitelský program pro spouštění programu pro práci s více operačními systémy. Hostitelský program můžete napsat v jazycích .NET C#, jako je, nebo v Pythonu. Můžete také spustit kód Q # v poznámkovém bloku Jupyter pomocí jádra SWEETIQ #.
+Projekt Q # obsahuje soubory Q #, které obsahují kód doby a hostitelský program pro spouštění programu pro práci s více operačními systémy. Můžete napsat hostitelský program v jazycích .NET, jako je C# nebo v Pythonu. Můžete také spustit kód Q # v Jupyter Notebook pomocí jádra SWEETIQ #.
 
 Vyberte vývojové prostředí a jazyk z následujících částí:
 
 * [Python](#create-a-python-project)
-* [Notebooky Q # Jupyter](#create-a-q-jupyter-notebook-project)
-* [C#se sadou Visual Studio](#create-a-c-project-on-windows-using-visual-studio)
-* [C#s VS Code](#create-a-c-project-using-vs-code)
-* [C#pomocí příkazového řádku](#create-a-c-project-using-the-dotnet-command-line-tool)
+* [Aplikace Jupyter Notebook v Q#](#create-a-q-jupyter-notebook-project)
+* [C# se sadou Visual Studio](#create-a-c-project-on-windows-using-visual-studio)
+* [C# s VS Code](#create-a-c-project-using-vs-code)
+* [C# s příkazovým řádkem](#create-a-c-project-using-the-dotnet-command-line-tool)
 
 ## <a name="create-a-python-project"></a>Vytvoření projektu v Pythonu
 
@@ -36,7 +36,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 1. Vytvořte složku pro váš projekt a přejděte do této složky.
 
-1. Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #. Například:
+1. Vytvořte soubor Q # s názvem `Operation.qs` a přidejte do něj svůj kód q #. Příklad:
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
     }
     ```
 
-1. Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #. Například:
+1. Vytvořte soubor hostitele Pythonu `host.py` s názvem pro volání operace Q #. Příklad:
 
     ```python
     import qsharp
@@ -89,7 +89,7 @@ Nyní můžete pokračovat v vývoji programu pro práci s více.
 
 1. Přejděte na adresu URL zobrazenou na příkazovém řádku. Příklad: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]
 
-1. V prohlížeči se zobrazí stránka Jupyter. Na kartě **soubory** vyberte **Nový** > **Q #** a vytvořte Poznámkový blok Jupyter s jádrem Q #. Do první buňky poznámkového bloku přidejte následující kód:
+1. V prohlížeči se zobrazí stránka Jupyter. Na kartě **soubory** vyberte **Nový**  >  **Q #** a vytvořte Jupyter notebook s jádrem Q #. Do první buňky poznámkového bloku přidejte následující kód:
 
     ```qsharp
     operation SayHello() : Unit {
@@ -97,21 +97,21 @@ Nyní můžete pokračovat v vývoji programu pro práci s více.
     }
     ```
 
-1. Vyberte **buňku** > **Spustit buňky** pro spuštění poznámkového bloku. `SayHello` se brzy objeví ve výstupu buňky:
+1. Vyberte **buňky**  >  pro**spuštění** poznámkového bloku. `SayHello`brzy se zobrazí ve výstupu buňky:
 
-    ![Buňka poznámkového bloku Jupyter s využitím kódu Q#](~/media/install-guide-jupyter.png)
+    ![Jupyter Notebook buňka s kódem Q #](~/media/install-guide-jupyter.png)
 
     Při spuštění v poznámkových blocích Jupyter se zkompiluje kód Q # a výstup poznámkového bloku vytvoří název operací, které najde.
 
 1. V nové buňce simulujte spuštění právě vytvořené operace v kvantovém počítači, a to pomocí příkazu magic `%simulate`:
 
-    ![Buňka poznámkového bloku Jupyter s využitím příkazu magic %simulate](~/media/install-guide-jupyter-simulate.png)
+    ![Jupyter Notebook buňka s% simulující Magic](~/media/install-guide-jupyter-simulate.png)
 
     Měla by se zobrazit zpráva na obrazovce spolu s výsledkem operace, kterou jste vyvolali (v tomto případě prázdným).
 
 Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji vašeho vlastního navýšení.
 
-## <a name="create-a-c-project-on-windows-using-visual-studio"></a>Vytvoření C# projektu ve Windows pomocí sady Visual Studio
+## <a name="create-a-c-project-on-windows-using-visual-studio"></a>Vytvoření projektu v jazyce C# ve Windows pomocí sady Visual Studio
 
 1. Požadavky
 
@@ -119,12 +119,12 @@ Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji 
 
 1. Vytvořte novou aplikaci v jazyku Q#.
 
-    * Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
+    * Přejít na **soubor**  ->  **Nový**  ->  **projekt**
     * Do vyhledávacího pole zadejte `Q#`.
-    * Vyberte **Aplikace Q#** .
-    * Vyberte **Další**.
+    * Vyberte **Aplikace Q#**.
+    * Vybrat **Další**
     * Vyberte název a umístění aplikace.
-    * Vyberte **Vytvořit**.
+    * Vyberte **vytvořit** .
 
 1. Prozkoumejte projekt.
 
@@ -132,7 +132,7 @@ Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji 
 
 1. Spuštění aplikace
 
-    * Vyberte **Ladit** -> **Spustit bez ladění**.
+    * Vyberte **ladit**  ->  **Spustit bez ladění**
     * V okně konzoly by se měl zobrazit text `Hello quantum world!`.
 
 Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady Visual Studio
@@ -140,7 +140,7 @@ Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady 
 > [!NOTE]
 > * Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
 
-## <a name="create-a-c-project-using-vs-code"></a>Vytvoření C# projektu pomocí vs Code
+## <a name="create-a-c-project-using-vs-code"></a>Vytvoření projektu v jazyce C# pomocí VS Code
 
 1. Požadavky
 
@@ -148,7 +148,7 @@ Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady 
 
 1. Vytvořte nový projekt:
 
-    * Přejděte do části **Zobrazit** -> **Paleta příkazů**.
+    * Přejít na **View**  ->  **paletu příkazů** zobrazení
     * Vyberte **Q #: vytvořit nový projekt.**
     * Vybrat **samostatnou konzolovou aplikaci**
     * Přejděte do umístění v systému souborů, ve kterém chcete aplikaci vytvořit.
@@ -156,8 +156,8 @@ Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady 
 
 1. Spusťte aplikaci:
 
-    * Přejít na **terminál** -> **nový terminál**
-    * Zadejte `dotnet run`
+    * Přejít na **terminál**  ->  **nový terminál**
+    * Napište`dotnet run`
     * V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`
 
 Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Code.
@@ -165,11 +165,11 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 > [!NOTE]
 > * Rozšíření Visual Studio Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami. Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.
 
-## <a name="create-a-c-project-using-the-dotnet-command-line-tool"></a>Vytvoření C# projektu pomocí `dotnet` nástroje příkazového řádku
+## <a name="create-a-c-project-using-the-dotnet-command-line-tool"></a>Vytvoření projektu v jazyce C# pomocí `dotnet` nástroje příkazového řádku
 
 1. Požadavky
 
-    * Instalace [sady pro vývoj pro všechna ta v příkazovém řádku](xref:microsoft.quantum.install.cs)
+    * Instalace [sady pro vývoj pro všechna ta v příkazovém řádku](xref:microsoft.quantum.install.standalone)
 
 1. Vytvoření nové aplikace
 
@@ -195,6 +195,6 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 Teď budete pokračovat ve vývoji ve vaší práci pomocí nástrojů příkazového řádku.
 
-## <a name="whats-next"></a>Co dále?
+## <a name="next-steps"></a>Další kroky
 
 Teď, když jste vytvořili projekt v upřednostňovaném prostředí, můžete pokračovat ve vývoji vašeho vlastního navýšení.

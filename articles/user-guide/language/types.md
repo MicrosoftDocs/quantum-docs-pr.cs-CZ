@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
-ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
+ms.openlocfilehash: f7a3ac3813966c0ef695068297ce4d9949ead554
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609137"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327284"
 ---
 # <a name="types-in-q"></a>Typy v Q#
 
@@ -63,7 +63,8 @@ V druhém příkladu si všimněte, že představuje potenciálně vícenásobn�
 Q # neposkytuje podporu pro pravoúhlá pole s multidimenzionálními hodnotami.
 
 Hodnota pole může být napsána ve zdrojovém kódu Q # pomocí hranatých závorek kolem prvků pole, jako v `[PauliI, PauliX, PauliY, PauliZ]` .
-Typ literálu pole je určen běžným základním typem všech položek v poli. 
+Typ literálu pole je určen běžným základním typem všech položek v poli. Proto se pokusíte vytvořit pole s prvky, které nemají žádný společný základní typ, vyvolá chybu.  
+Pro příklad tohoto příkladu se podívejte na [pole, která](xref:microsoft.quantum.guide.expressions#arrays-of-callables) se mají volat.
 
 > [!WARNING]
 > Po vytvoření pole nelze prvky pole změnit.
@@ -125,7 +126,7 @@ Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singlet
 
 Uživatelsky definovaná deklarace typu se skládá z klíčového slova `newtype` , následované názvem uživatelsky definovaného typu, a `=` platnou specifikací typu a ukončující středník.
 
-Například:
+Příklad:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -291,7 +292,8 @@ Při vyvolání volání typu s parametrem typu musí být všechny argumenty, k
 
 Q # neposkytuje mechanismus pro omezení možných typů, které mohou být nahrazeny parametrem typu.
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Teď, když jste viděli všechny typy, které tvoří jazyk Q #, můžete přejít na [typ výrazy v Q #](xref:microsoft.quantum.guide.expressions) a podívat se, jak vytvořit a manipulovat s výrazy těchto různých typů.
 
 

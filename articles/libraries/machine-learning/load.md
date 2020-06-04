@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.load
-ms.openlocfilehash: 15e63ced6223759a332ce22a43c133a7899f482a
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: efa4a65a489446cbef48507d0b02a932da74c71c
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909955"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327658"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Načtení a klasifikace vlastních datových sad
 
@@ -25,7 +25,7 @@ Konkrétně doporučujeme použít naši šablonu pro načtení dat, abyste mohl
 
 Předpokládejme, že máme datovou sadu pro školení $ (x, y) $ o velikosti $N = $2, kde každá instance $x _i $ $x $ má tři funkce: $x _ {typem I1} $, $x _ {I2} $ a $x _ {i3} $.
 Datová sada ověření má stejnou strukturu.
-Tyto datsets mohou být reprezentovány `data.json`m souborem podobným následujícímu:
+Tyto datsets mohou být reprezentovány `data.json` souborem podobným následujícímu:
 
 ```json
 {
@@ -78,16 +78,16 @@ Předpokládejme, že máme malou datovou sadu se výškami a závažími různ�
 | 0,30      | 8          | Cat    |
 | 0,91      | 44         | Psy    |
 | 0,86      | 31          | Psy    |
-| 0.32      | 5         | Cat    |
-| 0.25      | 4          | Cat    |
+| 0,32      | 5         | Cat    |
+| 0,25      | 4          | Cat    |
 
 Postup je následující:
 
 - Nejdřív je potřeba oddělit datovou sadu do školení a ověření. V takovém případě můžeme pouze první tři ukázky pro školení a zbytek vzorků pro ověření. Obecně je vhodné vzorkovat datovou sadu s náhodným školením a ověřením, abyste se vyhnuli nechtěným posunům v školicích datech.
-- Za druhé potřebujeme přiřadit číselný popisek ke každé třídě. Všimněte si, že za chvíli QML Library pouze problémy binární klasifikace. Proto přiřadíme návěští 0 ke třídě `Dog` a číslo 1 ke třídě `Cat`.
+- Za druhé potřebujeme přiřadit číselný popisek ke každé třídě. Všimněte si, že za chvíli QML Library pouze problémy binární klasifikace. Proto přiřadíme k třídě popisek 0 `Dog` a číslo 1 ke třídě `Cat` .
 - Nakonec šablonu vyplníme pomocí dat z naší datové sady. Všimněte si, že pro velké datové sady byste měli vytvořit malý skript, který automaticky vygeneruje šablonu z konkrétní datové sady. Tento skript bude záviset na původním formátu datové sady.
 
-Pro naši datovou sadu `data.json` soubor:
+Pro naši datovou sadu `data.json` soubor je:
 
 ```json
 {
@@ -137,7 +137,7 @@ Pro naši datovou sadu `data.json` soubor:
 
 ```
 
-## <a name="loading-the-data"></a>Načítání dat
+## <a name="loading-the-data"></a>Načtení dat
 
 Jakmile budete mít data serializovaná jako soubor JSON, můžete je načíst pomocí knihoven JSON, které jsou k dispozici s vámi zvoleným jazykem hostitele.
 
@@ -149,12 +149,12 @@ Python poskytuje [integrovaný `json` balíček](https://docs.python.org/3.7/lib
 
 ### <a name="c"></a>[C#](#tab/tabid-csharp)
 
-Platforma .NET Core poskytuje [balíček`System.Text.Json`](https://www.nuget.org/packages/System.Text.Json) pro práci s daty serializovanými JSON:
+Platforma .NET Core poskytuje [ `System.Text.Json` balíček](https://www.nuget.org/packages/System.Text.Json) pro práci s daty serializovanými ve formátu JSON:
 
 :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="10,64-82":::
 
 ***
 
-## <a name="whats-next"></a>Co dále?
+## <a name="next-steps"></a>Další kroky
 
 Nyní jste připraveni začít používat vlastní experimenty s vlastními datovými sadami. Vyzkoušejte různé třídění a datovou sadu a přispívat ke sdílení vašich výsledků komunitou.

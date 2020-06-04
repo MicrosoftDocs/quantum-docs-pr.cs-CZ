@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
-ms.openlocfilehash: fd0ea47f00b1456ec460808ef7d451c8427677cd
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: e77b52d1a6eb7e2f62ab12dedd75d00ac8fec4be
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431151"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327318"
 ---
 # <a name="q-basics"></a>Základy Q #
 
@@ -106,8 +106,7 @@ Příkazy vyhodnocení výrazu vyžadují ukončující středník.
 Skoro každý aspekt programu Q # je sestaven pomocí příkazů, takže žádná z nich nemůže zahrnovat všechny informace, které se na ně vztahují.
 Jejich lexikální struktura a formátování jsou však popsány na stránce [struktury souborů q #](xref:microsoft.quantum.guide.filestructure) , přiřazení symbolů a rozsahu u [proměnných v q #](xref:microsoft.quantum.guide.variables)a v cyklech toku řízení, jako je `for` například [tok řízení v q #](xref:microsoft.quantum.guide.controlflow).
 
-
-## <a name="whats-next"></a>Co dále?
+## <a name="next-steps"></a>Další kroky
 V celé zbývající části tohoto průvodce vám ukážeme, jak pomocí Q # vytvářet komplexní programy pro vystavování prostřednictvím základních stavebních bloků operací, funkcí a typů.
 
 Pokud chcete začít, můžete začít učit se o [typech v Q #](xref:microsoft.quantum.guide.types).

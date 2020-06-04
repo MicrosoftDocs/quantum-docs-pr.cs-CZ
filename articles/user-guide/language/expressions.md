@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 93432cef9711b6780192cd59e92b09647a264b5c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: c4b2cc0bed44ffdfb191ba522d6526959e7c6708
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431202"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327301"
 ---
 # <a name="type-expressions-in-q"></a>Výrazy typu v Q #
 
@@ -221,7 +221,6 @@ let g = Foo(arg)!;      // Syntax error
 Literál pole je sekvence jednoho nebo více výrazů prvků, které jsou odděleny čárkami a uzavřeny v `[` a `]` .
 Všechny elementy musí být kompatibilní se stejným typem.
 
-
 Při zadání dvou polí stejného typu `+` může být binární operátor použit k vytvoření nového pole, které je zřetězením dvou polí.
 Například `[1,2,3] + [4,5,6]` je `[1,2,3,4,5,6]` .
 
@@ -229,6 +228,9 @@ Například `[1,2,3] + [4,5,6]` je `[1,2,3,4,5,6]` .
 
 Pro daný typ a `Int` výraz lze `new` operátor použít k přidělení nového pole dané velikosti.
 Například `new Int[i + 1]` by bylo přiděleno nové `Int` pole s `i + 1` prvky.
+
+Prázdné literály pole, `[]` nejsou povoleny.
+Místo toho použití `new ★[0]` , kde `★` je jako zástupný symbol pro vhodný typ, umožňuje vytvořit požadované pole s nulovou délkou.
 
 Prvky nového pole jsou inicializovány na výchozí hodnotu závislou na typu.
 Ve většině případů se jedná o nějakou odchylku nuly.
@@ -373,8 +375,7 @@ Například pokud `Op1` , `Op2` a `Op3` jsou všechny `Qubit[] => Unit` , ale `O
 - `[Op1, Op3]`je pole `(Qubit[] => Unit is Adj)` operací.
 - `[Op2, Op3]`je pole `(Qubit[] => Unit is Ctl)` operací.
 
-Prázdné literály pole, `[]` nejsou povoleny.
-Místo toho použití `new ★[0]` , kde `★` je jako zástupný symbol pro vhodný typ, umožňuje vytvořit požadované pole s nulovou délkou.
+Nicméně zatímco `(Qubit[] => Unit is Adj)` a `(Qubit[] => Unit is Ctl)` operace mají společný základní typ `(Qubit[] => Unit)` , mějte na paměti, že pole *of* těchto operátorů nesdílejí společný základní typ. Například by v `[[Op1], [Op2]]` současné době vyvolala chybu, protože se pokouší vytvořit pole nekompatibilních typů polí `(Qubit[] => Unit is Adj)[]` a `(Qubit[] => Unit is Ctl)[]` .
 
 
 ## <a name="conditional-expressions"></a>Podmíněné výrazy
@@ -473,24 +474,25 @@ Kulaté závorky pro operace a volání funkce se také vážou před libovolný
 
 Operátory v pořadí podle priority, od nejvyšších po nejnižší:
 
-Operátor | Aritou | Popis | Typy operandů
+Operátor | Aritou | Description | Typy operandů
 ---------|----------|---------|---------------
  koncové`!` | Unární | Rozbalení | Libovolný uživatelsky definovaný typ
  `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, nebo pro, pro, `BigInt` `Double` `-` `Int` `BigInt` `~~~` `Bool` pro`not`
- `^` | binární | Celočíselný výkon | `Int`nebo `BigInt` pro základ `Int` pro exponent
- `/`, `*`, `%` | binární | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*` , `Int` nebo `BigInt` pro`%`
- `+`, `-` | binární | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double` , navíc `String` nebo libovolný typ pole pro`+`
- `<<<`, `>>>` | binární | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
- `<`, `<=`, `>`, `>=` | binární | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo`Double`
- `==`, `!=` | binární | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
- `&&&` | binární | Bitový operátor AND | `Int` nebo `BigInt`
- `^^^` | binární | Bitový operátor XOR | `Int` nebo `BigInt`
- <code>\|\|\|</code> | binární | Bitový operátor OR | `Int` nebo `BigInt`
- `and` | binární | Logický operátor AND | `Bool`
- `or` | binární | Logický operátor OR | `Bool`
+ `^` | Binární | Celočíselný výkon | `Int`nebo `BigInt` pro základ `Int` pro exponent
+ `/`, `*`, `%` | Binární | Dělení, násobení, celočíselné zbytky | `Int`, `BigInt` nebo `Double` pro `/` a `*` , `Int` nebo `BigInt` pro`%`
+ `+`, `-` | Binární | Sčítání nebo řetězce a zřetězení polí, odčítání | `Int`, `BigInt` nebo `Double` , navíc `String` nebo libovolný typ pole pro`+`
+ `<<<`, `>>>` | Binární | Levý SHIFT, posun doprava | `Int` nebo `BigInt`
+ `<`, `<=`, `>`, `>=` | Binární | Méně než, méně než nebo-rovno, větší než, větší než nebo rovno, větší než nebo rovno | `Int`, `BigInt` nebo`Double`
+ `==`, `!=` | Binární | rovná se, nerovná se porovnávání | jakýkoli primitivní typ
+ `&&&` | Binární | Bitový operátor AND | `Int` nebo `BigInt`
+ `^^^` | Binární | Bitový operátor XOR | `Int` nebo `BigInt`
+ <code>\|\|\|</code> | Binární | Bitový operátor OR | `Int` nebo `BigInt`
+ `and` | Binární | Logický operátor AND | `Bool`
+ `or` | Binární | Logický operátor OR | `Bool`
  `..` | Binární/Ternární | Operátor rozsahu | `Int`
  `?` `|` | Ternární | Podmíněné | `Bool`na levé straně
 `w/` `<-` | Ternární | Kopírování a aktualizace | viz [výrazy pro kopírování a aktualizaci](#copy-and-update-expressions)
 
-## <a name="whats-next"></a>A co dál?
+## <a name="next-steps"></a>Další kroky
+
 Teď, když můžete pracovat s výrazy v Q #, můžete přejít na [operace a funkce v q #](xref:microsoft.quantum.guide.operationsfunctions) a zjistit, jak definovat a volat operace a funkce.

@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: cbc473eb14d8afd255a7072475dc054e18b98e3e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 042e4e27ef4e42cfc0c24fbb0ae2232cf1bbfe36
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426709"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327607"
 ---
 # <a name="quantum-computing-glossary"></a>Glosář pro výpočetní výkon
 
@@ -55,7 +55,7 @@ Faktor, kterým je velikost [eigenvector](xref:microsoft.quantum.glossary#eigenv
 
 Vektor, jehož směr je beze změny v dané transformaci a jehož velikost je změněna faktorem odpovídajícím [eigenvaluei](xref:microsoft.quantum.glossary#eigenvalue)vektoru. Pro druhou matrici $M $ a eigenvalue $c $, pak $Mv = CV $, kde $v $ je eigenvector matice a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
-## <a name="entanglement"></a>Entanglement
+## <a name="entanglement"></a>Provázání
 
 Částice, jako je například [qubits](xref:microsoft.quantum.glossary#qubit), mohou být propojeny nebo *entangled* tak, aby se nemohly popsány nezávisle na sobě. Jejich výsledky měření se korelují i v případě, že jsou nekonečně zcela oddělené. Entanglement je zásadní pro [měření](xref:microsoft.quantum.glossary#measurement) [stavu](xref:microsoft.quantum.glossary#quantum-state) qubit.  Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
@@ -120,7 +120,11 @@ Množina tří matic 2 × 2 matice, které se označují `X` jako `Y` a `Z` oper
 
 ## <a name="quantum-circuit-diagram"></a>Diagram okruhu doby
 
-Metoda pro grafickou reprezentaci posloupnosti operací (nebo [bran](xref:microsoft.quantum.glossary#gate)) pro jednoduché programy pro [práci](xref:microsoft.quantum.glossary#operation) s poli, například ![ diagram ukázkového okruhu ](~/media/qpe.png) . Další informace najdete v tématu [okruhy](xref:microsoft.quantum.concepts.circuits).
+Metoda pro grafickou reprezentaci posloupnosti [operací](xref:microsoft.quantum.glossary#operation) (nebo [bran](xref:microsoft.quantum.glossary#gate)) pro jednoduché programy pro práci s poli, například 
+
+![Diagram ukázkového okruhu](~/media/qpe.png). 
+
+Další informace najdete v tématu [okruhy](xref:microsoft.quantum.concepts.circuits).
 
 ## <a name="quantum-libraries"></a>Knihovny pro nestejnou doby
 
@@ -144,7 +148,7 @@ Algoritmus pro všechna ta, který se probabilistically úspěšně. Po selhán�
 
 ## <a name="superposition"></a>Nadpozice
 
-Koncept v této službě znamená, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinací dvou stavů $ \ket{\0} $ a $ \ket{\1} $, dokud se [neměří](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [Principy výpočetního](xref:microsoft.quantum.overview.understanding)prostředí.
+Koncept v této službě znamená, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinací dvou stavů $ \ket {0} $ a $ \ket {1} $, dokud se [neměří](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [Principy výpočetního](xref:microsoft.quantum.overview.understanding)prostředí.
 
 ## <a name="target-machine"></a>Cílový počítač
 
