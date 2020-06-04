@@ -7,36 +7,36 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: c093284f1ea33b72d4d264992b0ba6bf6bc72782
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 8019b32a3290e2d45124ebb1eb75395f6cb758db
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036436"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327522"
 ---
-# <a name="create-a-q-project-in-your-development-environment"></a><span data-ttu-id="51ccc-103">Vytvoření projektu Q # ve vývojovém prostředí</span><span class="sxs-lookup"><span data-stu-id="51ccc-103">Create a Q# project in your development environment</span></span>
+# <a name="create-a-q-project-in-your-development-environment"></a><span data-ttu-id="f70bd-103">Vytvoření projektu Q # ve vývojovém prostředí</span><span class="sxs-lookup"><span data-stu-id="f70bd-103">Create a Q# project in your development environment</span></span>
 
-<span data-ttu-id="51ccc-104">Naučte se vytvořit projekt Q # pomocí QDK.</span><span class="sxs-lookup"><span data-stu-id="51ccc-104">Learn how to create a Q# project with the QDK.</span></span>
+<span data-ttu-id="f70bd-104">Naučte se vytvořit projekt Q # pomocí QDK.</span><span class="sxs-lookup"><span data-stu-id="f70bd-104">Learn how to create a Q# project with the QDK.</span></span>
 
-<span data-ttu-id="51ccc-105">Projekt Q # obsahuje soubory Q #, které obsahují kód doby a hostitelský program pro spouštění programu pro práci s více operačními systémy.</span><span class="sxs-lookup"><span data-stu-id="51ccc-105">A Q# project contains Q# files containing quantum code, as well as a host program to run the quantum program.</span></span> <span data-ttu-id="51ccc-106">Hostitelský program můžete napsat v jazycích .NET C#, jako je, nebo v Pythonu.</span><span class="sxs-lookup"><span data-stu-id="51ccc-106">You can write the host program in .NET languages such as C#, or in Python.</span></span> <span data-ttu-id="51ccc-107">Můžete také spustit kód Q # v poznámkovém bloku Jupyter pomocí jádra SWEETIQ #.</span><span class="sxs-lookup"><span data-stu-id="51ccc-107">You can also run Q# code in a Jupyter notebook using the IQ# kernel.</span></span>
+<span data-ttu-id="f70bd-105">Projekt Q # obsahuje soubory Q #, které obsahují kód doby a hostitelský program pro spouštění programu pro práci s více operačními systémy.</span><span class="sxs-lookup"><span data-stu-id="f70bd-105">A Q# project contains Q# files containing quantum code, as well as a host program to run the quantum program.</span></span> <span data-ttu-id="f70bd-106">Můžete napsat hostitelský program v jazycích .NET, jako je C# nebo v Pythonu.</span><span class="sxs-lookup"><span data-stu-id="f70bd-106">You can write the host program in .NET languages such as C#, or in Python.</span></span> <span data-ttu-id="f70bd-107">Můžete také spustit kód Q # v Jupyter Notebook pomocí jádra SWEETIQ #.</span><span class="sxs-lookup"><span data-stu-id="f70bd-107">You can also run Q# code in a Jupyter Notebook using the IQ# kernel.</span></span>
 
-<span data-ttu-id="51ccc-108">Vyberte vývojové prostředí a jazyk z následujících částí:</span><span class="sxs-lookup"><span data-stu-id="51ccc-108">Choose your development environment and language from the sections below:</span></span>
+<span data-ttu-id="f70bd-108">Vyberte vývojové prostředí a jazyk z následujících částí:</span><span class="sxs-lookup"><span data-stu-id="f70bd-108">Choose your development environment and language from the sections below:</span></span>
 
-* [<span data-ttu-id="51ccc-109">Python</span><span class="sxs-lookup"><span data-stu-id="51ccc-109">Python</span></span>](#create-a-python-project)
-* [<span data-ttu-id="51ccc-110">Notebooky Q # Jupyter</span><span class="sxs-lookup"><span data-stu-id="51ccc-110">Q# Jupyter notebooks</span></span>](#create-a-q-jupyter-notebook-project)
-* [<span data-ttu-id="51ccc-111">C#se sadou Visual Studio</span><span class="sxs-lookup"><span data-stu-id="51ccc-111">C# with Visual Studio</span></span>](#create-a-c-project-on-windows-using-visual-studio)
-* [<span data-ttu-id="51ccc-112">C#s VS Code</span><span class="sxs-lookup"><span data-stu-id="51ccc-112">C# with VS Code</span></span>](#create-a-c-project-using-vs-code)
-* [<span data-ttu-id="51ccc-113">C#pomocí příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="51ccc-113">C# with the command line</span></span>](#create-a-c-project-using-the-dotnet-command-line-tool)
+* [<span data-ttu-id="f70bd-109">Python</span><span class="sxs-lookup"><span data-stu-id="f70bd-109">Python</span></span>](#create-a-python-project)
+* [<span data-ttu-id="f70bd-110">Aplikace Jupyter Notebook v Q#</span><span class="sxs-lookup"><span data-stu-id="f70bd-110">Q# Jupyter Notebooks</span></span>](#create-a-q-jupyter-notebook-project)
+* [<span data-ttu-id="f70bd-111">C# se sadou Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f70bd-111">C# with Visual Studio</span></span>](#create-a-c-project-on-windows-using-visual-studio)
+* [<span data-ttu-id="f70bd-112">C# s VS Code</span><span class="sxs-lookup"><span data-stu-id="f70bd-112">C# with VS Code</span></span>](#create-a-c-project-using-vs-code)
+* [<span data-ttu-id="f70bd-113">C# s příkazovým řádkem</span><span class="sxs-lookup"><span data-stu-id="f70bd-113">C# with the command line</span></span>](#create-a-c-project-using-the-dotnet-command-line-tool)
 
-## <a name="create-a-python-project"></a><span data-ttu-id="51ccc-114">Vytvoření projektu v Pythonu</span><span class="sxs-lookup"><span data-stu-id="51ccc-114">Create a Python project</span></span>
+## <a name="create-a-python-project"></a><span data-ttu-id="f70bd-114">Vytvoření projektu v Pythonu</span><span class="sxs-lookup"><span data-stu-id="f70bd-114">Create a Python project</span></span>
 
-1. <span data-ttu-id="51ccc-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51ccc-115">Pre-requisites</span></span>
+1. <span data-ttu-id="f70bd-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f70bd-115">Pre-requisites</span></span>
 
-     * <span data-ttu-id="51ccc-116">Instalace [sady pro vývoj pro](xref:microsoft.quantum.install.python) všechna tato prostředí pro Python</span><span class="sxs-lookup"><span data-stu-id="51ccc-116">Install the [Quantum Development Kit for Python](xref:microsoft.quantum.install.python)</span></span>
+     * <span data-ttu-id="f70bd-116">Instalace [sady pro vývoj pro](xref:microsoft.quantum.install.python) všechna tato prostředí pro Python</span><span class="sxs-lookup"><span data-stu-id="f70bd-116">Install the [Quantum Development Kit for Python](xref:microsoft.quantum.install.python)</span></span>
 
-1. <span data-ttu-id="51ccc-117">Vytvořte složku pro váš projekt a přejděte do této složky.</span><span class="sxs-lookup"><span data-stu-id="51ccc-117">Create a folder for your project, and navigate to that folder</span></span>
+1. <span data-ttu-id="f70bd-117">Vytvořte složku pro váš projekt a přejděte do této složky.</span><span class="sxs-lookup"><span data-stu-id="f70bd-117">Create a folder for your project, and navigate to that folder</span></span>
 
-1. <span data-ttu-id="51ccc-118">Vytvořte soubor Q # s názvem `Operation.qs`a přidejte do něj svůj kód Q #.</span><span class="sxs-lookup"><span data-stu-id="51ccc-118">Create a Q# file called `Operation.qs`, and add your Q# code to it.</span></span> <span data-ttu-id="51ccc-119">Například:</span><span class="sxs-lookup"><span data-stu-id="51ccc-119">For example:</span></span>
+1. <span data-ttu-id="f70bd-118">Vytvořte soubor Q # s názvem `Operation.qs` a přidejte do něj svůj kód q #.</span><span class="sxs-lookup"><span data-stu-id="f70bd-118">Create a Q# file called `Operation.qs`, and add your Q# code to it.</span></span> <span data-ttu-id="f70bd-119">Příklad:</span><span class="sxs-lookup"><span data-stu-id="f70bd-119">For example:</span></span>
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ ms.locfileid: "77036436"
     }
     ```
 
-1. <span data-ttu-id="51ccc-120">Vytvořte soubor hostitele Pythonu s názvem `host.py` pro volání operace Q #.</span><span class="sxs-lookup"><span data-stu-id="51ccc-120">Create a python host file called `host.py` to call your Q# operation.</span></span> <span data-ttu-id="51ccc-121">Například:</span><span class="sxs-lookup"><span data-stu-id="51ccc-121">For example:</span></span>
+1. <span data-ttu-id="f70bd-120">Vytvořte soubor hostitele Pythonu `host.py` s názvem pro volání operace Q #.</span><span class="sxs-lookup"><span data-stu-id="f70bd-120">Create a python host file called `host.py` to call your Q# operation.</span></span> <span data-ttu-id="f70bd-121">Příklad:</span><span class="sxs-lookup"><span data-stu-id="f70bd-121">For example:</span></span>
 
     ```python
     import qsharp
@@ -60,36 +60,36 @@ ms.locfileid: "77036436"
     SayHello.simulate()
     ```
 
-1. <span data-ttu-id="51ccc-122">Spusťte program:</span><span class="sxs-lookup"><span data-stu-id="51ccc-122">Run the program:</span></span>
+1. <span data-ttu-id="f70bd-122">Spusťte program:</span><span class="sxs-lookup"><span data-stu-id="f70bd-122">Run the program:</span></span>
 
     ```bash
     python host.py
     ```
 
-1. <span data-ttu-id="51ccc-123">Ověřte výstup.</span><span class="sxs-lookup"><span data-stu-id="51ccc-123">Verify the output.</span></span> <span data-ttu-id="51ccc-124">Výstupem programu by měly být následující řádky:</span><span class="sxs-lookup"><span data-stu-id="51ccc-124">Your program should output the following lines:</span></span>
+1. <span data-ttu-id="f70bd-123">Ověřte výstup.</span><span class="sxs-lookup"><span data-stu-id="f70bd-123">Verify the output.</span></span> <span data-ttu-id="f70bd-124">Výstupem programu by měly být následující řádky:</span><span class="sxs-lookup"><span data-stu-id="f70bd-124">Your program should output the following lines:</span></span>
 
     ```bash
     Hello from quantum world!
     0
     ```
 
-<span data-ttu-id="51ccc-125">Nyní můžete pokračovat v vývoji programu pro práci s více.</span><span class="sxs-lookup"><span data-stu-id="51ccc-125">You can now continue to develop your quantum program.</span></span>
+<span data-ttu-id="f70bd-125">Nyní můžete pokračovat v vývoji programu pro práci s více.</span><span class="sxs-lookup"><span data-stu-id="f70bd-125">You can now continue to develop your quantum program.</span></span>
 
-## <a name="create-a-q-jupyter-notebook-project"></a><span data-ttu-id="51ccc-126">Vytvoření projektu Q # Jupyter Notebook</span><span class="sxs-lookup"><span data-stu-id="51ccc-126">Create a Q# Jupyter Notebook project</span></span>
+## <a name="create-a-q-jupyter-notebook-project"></a><span data-ttu-id="f70bd-126">Vytvoření projektu Q # Jupyter Notebook</span><span class="sxs-lookup"><span data-stu-id="f70bd-126">Create a Q# Jupyter Notebook project</span></span>
 
-1. <span data-ttu-id="51ccc-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51ccc-127">Pre-requisites</span></span>
+1. <span data-ttu-id="f70bd-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f70bd-127">Pre-requisites</span></span>
 
-    * <span data-ttu-id="51ccc-128">Nainstalujte si [pro Jupyter poznámkové bloky pro vývoj pro](xref:microsoft.quantum.install.jupyter) všechna ta.</span><span class="sxs-lookup"><span data-stu-id="51ccc-128">Install the [Quantum Development Kit for Jupyter notebooks](xref:microsoft.quantum.install.jupyter)</span></span>
+    * <span data-ttu-id="f70bd-128">Nainstalujte si [pro Jupyter poznámkové bloky pro vývoj pro](xref:microsoft.quantum.install.jupyter) všechna ta.</span><span class="sxs-lookup"><span data-stu-id="f70bd-128">Install the [Quantum Development Kit for Jupyter Notebooks](xref:microsoft.quantum.install.jupyter)</span></span>
 
-1. <span data-ttu-id="51ccc-129">Spusťte následující příkaz, kterým se spustí server poznámkového bloku:</span><span class="sxs-lookup"><span data-stu-id="51ccc-129">Run the following command to start the notebook server:</span></span>
+1. <span data-ttu-id="f70bd-129">Spusťte následující příkaz, kterým se spustí server poznámkového bloku:</span><span class="sxs-lookup"><span data-stu-id="f70bd-129">Run the following command to start the notebook server:</span></span>
 
     ```bash
     jupyter notebook
     ```
 
-1. <span data-ttu-id="51ccc-130">Přejděte na adresu URL zobrazenou na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="51ccc-130">Browse to the URL shown on the command line.</span></span> <span data-ttu-id="51ccc-131">Příklad: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]</span><span class="sxs-lookup"><span data-stu-id="51ccc-131">For example: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]</span></span>
+1. <span data-ttu-id="f70bd-130">Přejděte na adresu URL zobrazenou na příkazovém řádku.</span><span class="sxs-lookup"><span data-stu-id="f70bd-130">Browse to the URL shown on the command line.</span></span> <span data-ttu-id="f70bd-131">Příklad: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]</span><span class="sxs-lookup"><span data-stu-id="f70bd-131">For example: [http://localhost:8888/?token=c790a52ba54f0cf77465c3c8983d776348285b0280d91b85]</span></span>
 
-1. <span data-ttu-id="51ccc-132">V prohlížeči se zobrazí stránka Jupyter.</span><span class="sxs-lookup"><span data-stu-id="51ccc-132">A Jupyter page appears in the browser.</span></span> <span data-ttu-id="51ccc-133">Na kartě **soubory** vyberte **Nový** > **Q #** a vytvořte Poznámkový blok Jupyter s jádrem Q #.</span><span class="sxs-lookup"><span data-stu-id="51ccc-133">On the **Files** tab, select **New** > **Q#** to create a Jupyter notebook with a Q# kernel.</span></span> <span data-ttu-id="51ccc-134">Do první buňky poznámkového bloku přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="51ccc-134">Add the following code to the first notebook cell:</span></span>
+1. <span data-ttu-id="f70bd-132">V prohlížeči se zobrazí stránka Jupyter.</span><span class="sxs-lookup"><span data-stu-id="f70bd-132">A Jupyter page appears in the browser.</span></span> <span data-ttu-id="f70bd-133">Na kartě **soubory** vyberte **Nový**  >  **Q #** a vytvořte Jupyter notebook s jádrem Q #.</span><span class="sxs-lookup"><span data-stu-id="f70bd-133">On the **Files** tab, select **New** > **Q#** to create a Jupyter Notebook with a Q# kernel.</span></span> <span data-ttu-id="f70bd-134">Do první buňky poznámkového bloku přidejte následující kód:</span><span class="sxs-lookup"><span data-stu-id="f70bd-134">Add the following code to the first notebook cell:</span></span>
 
     ```qsharp
     operation SayHello() : Unit {
@@ -97,104 +97,104 @@ ms.locfileid: "77036436"
     }
     ```
 
-1. <span data-ttu-id="51ccc-135">Vyberte **buňku** > **Spustit buňky** pro spuštění poznámkového bloku.</span><span class="sxs-lookup"><span data-stu-id="51ccc-135">Select **Cell** > **Run Cells** to run the notebook.</span></span> <span data-ttu-id="51ccc-136">`SayHello` se brzy objeví ve výstupu buňky:</span><span class="sxs-lookup"><span data-stu-id="51ccc-136">`SayHello` will soon appear in the cell output:</span></span>
+1. <span data-ttu-id="f70bd-135">Vyberte **buňky**  >  pro**spuštění** poznámkového bloku.</span><span class="sxs-lookup"><span data-stu-id="f70bd-135">Select **Cell** > **Run Cells** to run the notebook.</span></span> <span data-ttu-id="f70bd-136">`SayHello`brzy se zobrazí ve výstupu buňky:</span><span class="sxs-lookup"><span data-stu-id="f70bd-136">`SayHello` will soon appear in the cell output:</span></span>
 
-    ![Buňka poznámkového bloku Jupyter s využitím kódu Q#](~/media/install-guide-jupyter.png)
+    ![Jupyter Notebook buňka s kódem Q #](~/media/install-guide-jupyter.png)
 
-    <span data-ttu-id="51ccc-138">Při spuštění v poznámkových blocích Jupyter se zkompiluje kód Q # a výstup poznámkového bloku vytvoří název operací, které najde.</span><span class="sxs-lookup"><span data-stu-id="51ccc-138">When running in Jupyter Notebooks, the Q# code is compiled, and the notebook outputs the name of the operation(s) that it finds.</span></span>
+    <span data-ttu-id="f70bd-138">Při spuštění v poznámkových blocích Jupyter se zkompiluje kód Q # a výstup poznámkového bloku vytvoří název operací, které najde.</span><span class="sxs-lookup"><span data-stu-id="f70bd-138">When running in Jupyter Notebooks, the Q# code is compiled, and the notebook outputs the name of the operation(s) that it finds.</span></span>
 
-1. <span data-ttu-id="51ccc-139">V nové buňce simulujte spuštění právě vytvořené operace v kvantovém počítači, a to pomocí příkazu magic `%simulate`:</span><span class="sxs-lookup"><span data-stu-id="51ccc-139">In a new cell, simulate the execution in a quantum computer of the operation you just created by using the `%simulate` magic:</span></span>
+1. <span data-ttu-id="f70bd-139">V nové buňce simulujte spuštění právě vytvořené operace v kvantovém počítači, a to pomocí příkazu magic `%simulate`:</span><span class="sxs-lookup"><span data-stu-id="f70bd-139">In a new cell, simulate the execution in a quantum computer of the operation you just created by using the `%simulate` magic:</span></span>
 
-    ![Buňka poznámkového bloku Jupyter s využitím příkazu magic %simulate](~/media/install-guide-jupyter-simulate.png)
+    ![Jupyter Notebook buňka s% simulující Magic](~/media/install-guide-jupyter-simulate.png)
 
-    <span data-ttu-id="51ccc-141">Měla by se zobrazit zpráva na obrazovce spolu s výsledkem operace, kterou jste vyvolali (v tomto případě prázdným).</span><span class="sxs-lookup"><span data-stu-id="51ccc-141">You should see the message printed on the screen along with the result of the operation you invoked (in this case, empty).</span></span>
+    <span data-ttu-id="f70bd-141">Měla by se zobrazit zpráva na obrazovce spolu s výsledkem operace, kterou jste vyvolali (v tomto případě prázdným).</span><span class="sxs-lookup"><span data-stu-id="f70bd-141">You should see the message printed on the screen along with the result of the operation you invoked (in this case, empty).</span></span>
 
-<span data-ttu-id="51ccc-142">Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji vašeho vlastního navýšení.</span><span class="sxs-lookup"><span data-stu-id="51ccc-142">You can now add other Q# operations to continue your quantum development.</span></span>
+<span data-ttu-id="f70bd-142">Nyní můžete přidat další operace Q #, abyste mohli pokračovat ve vývoji vašeho vlastního navýšení.</span><span class="sxs-lookup"><span data-stu-id="f70bd-142">You can now add other Q# operations to continue your quantum development.</span></span>
 
-## <a name="create-a-c-project-on-windows-using-visual-studio"></a><span data-ttu-id="51ccc-143">Vytvoření C# projektu ve Windows pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="51ccc-143">Create a C# project on Windows, using Visual Studio</span></span>
+## <a name="create-a-c-project-on-windows-using-visual-studio"></a><span data-ttu-id="f70bd-143">Vytvoření projektu v jazyce C# ve Windows pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f70bd-143">Create a C# project on Windows, using Visual Studio</span></span>
 
-1. <span data-ttu-id="51ccc-144">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51ccc-144">Pre-requisites</span></span>
+1. <span data-ttu-id="f70bd-144">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f70bd-144">Pre-requisites</span></span>
 
-    * <span data-ttu-id="51ccc-145">Instalace [rozšíření pro vývojovou sadu pro Visual Studio](xref:microsoft.quantum.install.cs)</span><span class="sxs-lookup"><span data-stu-id="51ccc-145">Install the [Quantum Development Kit extension for Visual Studio](xref:microsoft.quantum.install.cs)</span></span>
+    * <span data-ttu-id="f70bd-145">Instalace [rozšíření pro vývojovou sadu pro Visual Studio](xref:microsoft.quantum.install.cs)</span><span class="sxs-lookup"><span data-stu-id="f70bd-145">Install the [Quantum Development Kit extension for Visual Studio](xref:microsoft.quantum.install.cs)</span></span>
 
-1. <span data-ttu-id="51ccc-146">Vytvořte novou aplikaci v jazyku Q#.</span><span class="sxs-lookup"><span data-stu-id="51ccc-146">Create a new Q# application</span></span>
+1. <span data-ttu-id="f70bd-146">Vytvořte novou aplikaci v jazyku Q#.</span><span class="sxs-lookup"><span data-stu-id="f70bd-146">Create a new Q# application</span></span>
 
-    * <span data-ttu-id="51ccc-147">Přejděte do části **Soubor** -> **Nový** -> **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-147">Go to **File** -> **New** -> **Project**</span></span>
-    * <span data-ttu-id="51ccc-148">Do vyhledávacího pole zadejte `Q#`.</span><span class="sxs-lookup"><span data-stu-id="51ccc-148">Type `Q#` in the search box</span></span>
-    * <span data-ttu-id="51ccc-149">Vyberte **Aplikace Q#** .</span><span class="sxs-lookup"><span data-stu-id="51ccc-149">Select **Q# Application**</span></span>
-    * <span data-ttu-id="51ccc-150">Vyberte **Další**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-150">Select **Next**</span></span>
-    * <span data-ttu-id="51ccc-151">Vyberte název a umístění aplikace.</span><span class="sxs-lookup"><span data-stu-id="51ccc-151">Choose a name and location for your application</span></span>
-    * <span data-ttu-id="51ccc-152">Vyberte **Vytvořit**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-152">Select **Create**</span></span>
+    * <span data-ttu-id="f70bd-147">Přejít na **soubor**  ->  **Nový**  ->  **projekt**</span><span class="sxs-lookup"><span data-stu-id="f70bd-147">Go to **File** -> **New** -> **Project**</span></span>
+    * <span data-ttu-id="f70bd-148">Do vyhledávacího pole zadejte `Q#`.</span><span class="sxs-lookup"><span data-stu-id="f70bd-148">Type `Q#` in the search box</span></span>
+    * <span data-ttu-id="f70bd-149">Vyberte **Aplikace Q#**.</span><span class="sxs-lookup"><span data-stu-id="f70bd-149">Select **Q# Application**</span></span>
+    * <span data-ttu-id="f70bd-150">Vybrat **Další**</span><span class="sxs-lookup"><span data-stu-id="f70bd-150">Select **Next**</span></span>
+    * <span data-ttu-id="f70bd-151">Vyberte název a umístění aplikace.</span><span class="sxs-lookup"><span data-stu-id="f70bd-151">Choose a name and location for your application</span></span>
+    * <span data-ttu-id="f70bd-152">Vyberte **vytvořit** .</span><span class="sxs-lookup"><span data-stu-id="f70bd-152">Select **Create**</span></span>
 
-1. <span data-ttu-id="51ccc-153">Prozkoumejte projekt.</span><span class="sxs-lookup"><span data-stu-id="51ccc-153">Inspect the project</span></span>
+1. <span data-ttu-id="f70bd-153">Prozkoumejte projekt.</span><span class="sxs-lookup"><span data-stu-id="f70bd-153">Inspect the project</span></span>
 
-    <span data-ttu-id="51ccc-154">Měli byste zjistit, že byly vytvořeny dva soubory: `Driver.cs`, což je hostitelská aplikace C#, a `Operation.qs`, což je program v jazyku Q#, který definuje jednoduchou operaci zobrazení zprávy na konzole.</span><span class="sxs-lookup"><span data-stu-id="51ccc-154">You should see that two files have been created: `Driver.cs`, which is the C# host application; and `Operation.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
+    <span data-ttu-id="f70bd-154">Měli byste zjistit, že byly vytvořeny dva soubory: `Driver.cs`, což je hostitelská aplikace C#, a `Operation.qs`, což je program v jazyku Q#, který definuje jednoduchou operaci zobrazení zprávy na konzole.</span><span class="sxs-lookup"><span data-stu-id="f70bd-154">You should see that two files have been created: `Driver.cs`, which is the C# host application; and `Operation.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
 
-1. <span data-ttu-id="51ccc-155">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="51ccc-155">Run the application</span></span>
+1. <span data-ttu-id="f70bd-155">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="f70bd-155">Run the application</span></span>
 
-    * <span data-ttu-id="51ccc-156">Vyberte **Ladit** -> **Spustit bez ladění**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-156">Select **Debug** -> **Start Without Debugging**</span></span>
-    * <span data-ttu-id="51ccc-157">V okně konzoly by se měl zobrazit text `Hello quantum world!`.</span><span class="sxs-lookup"><span data-stu-id="51ccc-157">You should see the text `Hello quantum world!` printed to a console window.</span></span>
+    * <span data-ttu-id="f70bd-156">Vyberte **ladit**  ->  **Spustit bez ladění**</span><span class="sxs-lookup"><span data-stu-id="f70bd-156">Select **Debug** -> **Start Without Debugging**</span></span>
+    * <span data-ttu-id="f70bd-157">V okně konzoly by se měl zobrazit text `Hello quantum world!`.</span><span class="sxs-lookup"><span data-stu-id="f70bd-157">You should see the text `Hello quantum world!` printed to a console window.</span></span>
 
-<span data-ttu-id="51ccc-158">Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="51ccc-158">You can now continue your quantum development using Visual Studio</span></span>
-
-> [!NOTE]
-> * <span data-ttu-id="51ccc-159">Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.</span><span class="sxs-lookup"><span data-stu-id="51ccc-159">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its subfolders.</span></span>  
-
-## <a name="create-a-c-project-using-vs-code"></a><span data-ttu-id="51ccc-160">Vytvoření C# projektu pomocí vs Code</span><span class="sxs-lookup"><span data-stu-id="51ccc-160">Create a C# project, using VS Code</span></span>
-
-1. <span data-ttu-id="51ccc-161">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51ccc-161">Pre-requisites</span></span>
-
-    * <span data-ttu-id="51ccc-162">Instalace [rozšíření pro vývojovou sadu pro vs Code](xref:microsoft.quantum.install.cs)</span><span class="sxs-lookup"><span data-stu-id="51ccc-162">Install the [Quantum Development Kit extension for VS Code](xref:microsoft.quantum.install.cs)</span></span>
-
-1. <span data-ttu-id="51ccc-163">Vytvořte nový projekt:</span><span class="sxs-lookup"><span data-stu-id="51ccc-163">Create a new project:</span></span>
-
-    * <span data-ttu-id="51ccc-164">Přejděte do části **Zobrazit** -> **Paleta příkazů**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-164">Go to **View** -> **Command Palette**</span></span>
-    * <span data-ttu-id="51ccc-165">Vyberte **Q #: vytvořit nový projekt.**</span><span class="sxs-lookup"><span data-stu-id="51ccc-165">Select **Q#: Create New Project**</span></span>
-    * <span data-ttu-id="51ccc-166">Vybrat **samostatnou konzolovou aplikaci**</span><span class="sxs-lookup"><span data-stu-id="51ccc-166">Select **Standalone console application**</span></span>
-    * <span data-ttu-id="51ccc-167">Přejděte do umístění v systému souborů, ve kterém chcete aplikaci vytvořit.</span><span class="sxs-lookup"><span data-stu-id="51ccc-167">Navigate to the location on the file system where you would like to create the application</span></span>
-    * <span data-ttu-id="51ccc-168">Po vytvoření projektu klikněte na tlačítko **Otevřít nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="51ccc-168">Click on the **Open new project...** button, once the project has been created</span></span>
-
-1. <span data-ttu-id="51ccc-169">Spusťte aplikaci:</span><span class="sxs-lookup"><span data-stu-id="51ccc-169">Run the application:</span></span>
-
-    * <span data-ttu-id="51ccc-170">Přejít na **terminál** -> **nový terminál**</span><span class="sxs-lookup"><span data-stu-id="51ccc-170">Go to **Terminal** -> **New Terminal**</span></span>
-    * <span data-ttu-id="51ccc-171">Zadejte `dotnet run`</span><span class="sxs-lookup"><span data-stu-id="51ccc-171">Enter `dotnet run`</span></span>
-    * <span data-ttu-id="51ccc-172">V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="51ccc-172">You should see the following text in the output window `Hello quantum world!`</span></span>
-
-<span data-ttu-id="51ccc-173">Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="51ccc-173">You can now continue your quantum development using Visual Studio Code.</span></span>
+<span data-ttu-id="f70bd-158">Nyní můžete pokračovat ve vývoji vašeho vlastního využití pomocí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f70bd-158">You can now continue your quantum development using Visual Studio</span></span>
 
 > [!NOTE]
-> * <span data-ttu-id="51ccc-174">Rozšíření Visual Studio Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami.</span><span class="sxs-lookup"><span data-stu-id="51ccc-174">Workspaces with multiple root folders are not currently supported by the Visual Studio Code extension.</span></span> <span data-ttu-id="51ccc-175">Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="51ccc-175">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
+> * <span data-ttu-id="f70bd-159">Pokud řešení sady Visual Studio obsahuje více projektů, musí se všechny projekty obsažené v řešení nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.</span><span class="sxs-lookup"><span data-stu-id="f70bd-159">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its subfolders.</span></span>  
 
-## <a name="create-a-c-project-using-the-dotnet-command-line-tool"></a><span data-ttu-id="51ccc-176">Vytvoření C# projektu pomocí `dotnet` nástroje příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="51ccc-176">Create a C# project, using the `dotnet` command-line tool</span></span>
+## <a name="create-a-c-project-using-vs-code"></a><span data-ttu-id="f70bd-160">Vytvoření projektu v jazyce C# pomocí VS Code</span><span class="sxs-lookup"><span data-stu-id="f70bd-160">Create a C# project, using VS Code</span></span>
 
-1. <span data-ttu-id="51ccc-177">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51ccc-177">Pre-requisites</span></span>
+1. <span data-ttu-id="f70bd-161">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f70bd-161">Pre-requisites</span></span>
 
-    * <span data-ttu-id="51ccc-178">Instalace [sady pro vývoj pro všechna ta v příkazovém řádku](xref:microsoft.quantum.install.cs)</span><span class="sxs-lookup"><span data-stu-id="51ccc-178">Install the [Quantum Development Kit for the Command Line](xref:microsoft.quantum.install.cs)</span></span>
+    * <span data-ttu-id="f70bd-162">Instalace [rozšíření pro vývojovou sadu pro vs Code](xref:microsoft.quantum.install.cs)</span><span class="sxs-lookup"><span data-stu-id="f70bd-162">Install the [Quantum Development Kit extension for VS Code](xref:microsoft.quantum.install.cs)</span></span>
 
-1. <span data-ttu-id="51ccc-179">Vytvoření nové aplikace</span><span class="sxs-lookup"><span data-stu-id="51ccc-179">Create a new application</span></span>
+1. <span data-ttu-id="f70bd-163">Vytvořte nový projekt:</span><span class="sxs-lookup"><span data-stu-id="f70bd-163">Create a new project:</span></span>
+
+    * <span data-ttu-id="f70bd-164">Přejít na **View**  ->  **paletu příkazů** zobrazení</span><span class="sxs-lookup"><span data-stu-id="f70bd-164">Go to **View** -> **Command Palette**</span></span>
+    * <span data-ttu-id="f70bd-165">Vyberte **Q #: vytvořit nový projekt.**</span><span class="sxs-lookup"><span data-stu-id="f70bd-165">Select **Q#: Create New Project**</span></span>
+    * <span data-ttu-id="f70bd-166">Vybrat **samostatnou konzolovou aplikaci**</span><span class="sxs-lookup"><span data-stu-id="f70bd-166">Select **Standalone console application**</span></span>
+    * <span data-ttu-id="f70bd-167">Přejděte do umístění v systému souborů, ve kterém chcete aplikaci vytvořit.</span><span class="sxs-lookup"><span data-stu-id="f70bd-167">Navigate to the location on the file system where you would like to create the application</span></span>
+    * <span data-ttu-id="f70bd-168">Po vytvoření projektu klikněte na tlačítko **Otevřít nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="f70bd-168">Click on the **Open new project...** button, once the project has been created</span></span>
+
+1. <span data-ttu-id="f70bd-169">Spusťte aplikaci:</span><span class="sxs-lookup"><span data-stu-id="f70bd-169">Run the application:</span></span>
+
+    * <span data-ttu-id="f70bd-170">Přejít na **terminál**  ->  **nový terminál**</span><span class="sxs-lookup"><span data-stu-id="f70bd-170">Go to **Terminal** -> **New Terminal**</span></span>
+    * <span data-ttu-id="f70bd-171">Napište`dotnet run`</span><span class="sxs-lookup"><span data-stu-id="f70bd-171">Enter `dotnet run`</span></span>
+    * <span data-ttu-id="f70bd-172">V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="f70bd-172">You should see the following text in the output window `Hello quantum world!`</span></span>
+
+<span data-ttu-id="f70bd-173">Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="f70bd-173">You can now continue your quantum development using Visual Studio Code.</span></span>
+
+> [!NOTE]
+> * <span data-ttu-id="f70bd-174">Rozšíření Visual Studio Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami.</span><span class="sxs-lookup"><span data-stu-id="f70bd-174">Workspaces with multiple root folders are not currently supported by the Visual Studio Code extension.</span></span> <span data-ttu-id="f70bd-175">Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="f70bd-175">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
+
+## <a name="create-a-c-project-using-the-dotnet-command-line-tool"></a><span data-ttu-id="f70bd-176">Vytvoření projektu v jazyce C# pomocí `dotnet` nástroje příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="f70bd-176">Create a C# project, using the `dotnet` command-line tool</span></span>
+
+1. <span data-ttu-id="f70bd-177">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f70bd-177">Pre-requisites</span></span>
+
+    * <span data-ttu-id="f70bd-178">Instalace [sady pro vývoj pro všechna ta v příkazovém řádku](xref:microsoft.quantum.install.standalone)</span><span class="sxs-lookup"><span data-stu-id="f70bd-178">Install the [Quantum Development Kit for the command line](xref:microsoft.quantum.install.standalone)</span></span>
+
+1. <span data-ttu-id="f70bd-179">Vytvoření nové aplikace</span><span class="sxs-lookup"><span data-stu-id="f70bd-179">Create a new application</span></span>
 
     ```dotnetcli
     dotnet new console -lang Q# -o <project name>
     ```
 
-1. <span data-ttu-id="51ccc-180">Přejděte do adresáře nové aplikace.</span><span class="sxs-lookup"><span data-stu-id="51ccc-180">Navigate to the new application directory</span></span>
+1. <span data-ttu-id="f70bd-180">Přejděte do adresáře nové aplikace.</span><span class="sxs-lookup"><span data-stu-id="f70bd-180">Navigate to the new application directory</span></span>
 
     ```bash
     cd <project name>
     ```
 
-    <span data-ttu-id="51ccc-181">Spolu se soubory projektu aplikace by se měly zobrazovat dva vytvořené soubory: soubor v jazyku Q# (`Operation.qs`) a soubor hostitele v jazyku C# (`Driver.cs`).</span><span class="sxs-lookup"><span data-stu-id="51ccc-181">You should see that two files have been created, along with the project files of the application: a Q# file (`Operation.qs`) and a C# host file (`Driver.cs`).</span></span>
+    <span data-ttu-id="f70bd-181">Spolu se soubory projektu aplikace by se měly zobrazovat dva vytvořené soubory: soubor v jazyku Q# (`Operation.qs`) a soubor hostitele v jazyku C# (`Driver.cs`).</span><span class="sxs-lookup"><span data-stu-id="f70bd-181">You should see that two files have been created, along with the project files of the application: a Q# file (`Operation.qs`) and a C# host file (`Driver.cs`).</span></span>
 
-1. <span data-ttu-id="51ccc-182">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="51ccc-182">Run the application</span></span>
+1. <span data-ttu-id="f70bd-182">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="f70bd-182">Run the application</span></span>
 
     ```dotnetcli
     dotnet run
     ```
 
-    <span data-ttu-id="51ccc-183">Měl by se zobrazit následující výstup: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="51ccc-183">You should see the following output: `Hello quantum world!`</span></span>
+    <span data-ttu-id="f70bd-183">Měl by se zobrazit následující výstup: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="f70bd-183">You should see the following output: `Hello quantum world!`</span></span>
 
-<span data-ttu-id="51ccc-184">Teď budete pokračovat ve vývoji ve vaší práci pomocí nástrojů příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="51ccc-184">You now continue your quantum development, using command line tools.</span></span>
+<span data-ttu-id="f70bd-184">Teď budete pokračovat ve vývoji ve vaší práci pomocí nástrojů příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="f70bd-184">You now continue your quantum development, using command line tools.</span></span>
 
-## <a name="whats-next"></a><span data-ttu-id="51ccc-185">Co dále?</span><span class="sxs-lookup"><span data-stu-id="51ccc-185">What's next?</span></span>
+## <a name="next-steps"></a><span data-ttu-id="f70bd-185">Další kroky</span><span class="sxs-lookup"><span data-stu-id="f70bd-185">Next steps</span></span>
 
-<span data-ttu-id="51ccc-186">Teď, když jste vytvořili projekt v upřednostňovaném prostředí, můžete pokračovat ve vývoji vašeho vlastního navýšení.</span><span class="sxs-lookup"><span data-stu-id="51ccc-186">Now that you have created a project in your preferred environment, you can continue your quantum development.</span></span>
+<span data-ttu-id="f70bd-186">Teď, když jste vytvořili projekt v upřednostňovaném prostředí, můžete pokračovat ve vývoji vašeho vlastního navýšení.</span><span class="sxs-lookup"><span data-stu-id="f70bd-186">Now that you have created a project in your preferred environment, you can continue your quantum development.</span></span>

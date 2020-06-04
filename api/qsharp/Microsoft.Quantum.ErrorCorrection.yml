@@ -22,10 +22,6 @@ functions:
 - uid: microsoft.quantum.errorcorrection.tablelookuprecovery
   summary: Pro danou tabulku Pauli operací v daném registru qubits vrátí tato funkce objekt typu `RecoveryFn` , který obsahuje všechny informace potřebné k provedení dekódování vyhledávání tabulky v souvislosti s daným polem Pauli operací.
 operations:
-- uid: microsoft.quantum.errorcorrection.bitflipdecoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nBitFlipDecoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.decodefrombitflipcode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\"prosím."
-- uid: microsoft.quantum.errorcorrection.bitflipencoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nBitFlipEncoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\"prosím."
 - uid: microsoft.quantum.errorcorrection.decodefrombitflipcode
   summary: Dekóduje z [3, 1, 3]/⟦ 3, 1, 1 ⟧ kódu překlopení.
 - uid: microsoft.quantum.errorcorrection.decodefromfivequbitcode
@@ -38,10 +34,6 @@ operations:
   summary: Se zakóduje do kódu ⟦ 5, 1, 3 ⟧.
 - uid: microsoft.quantum.errorcorrection.encodeintosteanecode
   summary: Operace kódování, která mapuje nekódovaný registr v registru do kódovaného registru, se zakódovaným registrem na základě kódu ⟦ 7, 1, 3 ⟧ Steane.
-- uid: microsoft.quantum.errorcorrection.fivequbitcodedecoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nFiveQubitCodeDecoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"prosím."
-- uid: microsoft.quantum.errorcorrection.fivequbitcodeencoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nFiveQubitCodeEncoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\"prosím."
 - uid: microsoft.quantum.errorcorrection.injectpi4yrotation
   summary: Otočí jeden qubit o π/4 o ose Y.
 - uid: microsoft.quantum.errorcorrection.knilldistill
@@ -52,13 +44,9 @@ operations:
   summary: Provede jeden znak opravy chyb pomocí kódu, který je popsán v `QECC` typu.
 - uid: microsoft.quantum.errorcorrection.recovercss
   summary: Provede jeden znak opravy chyb pomocí kódu, který je popsán v `CSS` typu.
-- uid: microsoft.quantum.errorcorrection.steanecodedecoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nSteaneCodeDecoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.decodefromsteanecode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"prosím."
-- uid: microsoft.quantum.errorcorrection.steanecodeencoder
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nSteaneCodeEncoder se už nepoužívá. Místo toho @\"microsoft.quantum.errorcorrection.encodeintosteanecode\" ho použijte.\nPoužijte @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"prosím."
 newtypes:
 - uid: microsoft.quantum.errorcorrection.css
-  summary: Představuje kód Calderbank – Shor – Steane (CSS) podle definice kodéru, dekodéru a jeho postupů Syndrome měření pro `X` chyby a `Z` v uvedeném pořadí.
+  summary: Představuje kód Calderbank – Shor – Steane (CSS) podle definice kodéru, dekodéru a jeho postupů Syndrome měření pro `X` chyby a v `Z` uvedeném pořadí.
 - uid: microsoft.quantum.errorcorrection.decodeop
   summary: >-
     Představuje operaci, která dekóduje kódovaný registr do fyzického registru a pomocné qubitsy použité k zaznamenání Syndrome.
@@ -82,9 +70,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Představuje operaci, která slouží k měření Syndrome bloku kódu chyby.
 metadata:
-  ms.openlocfilehash: b4d7aaa55fee7e99b9c96ebf3cecb36706a66062
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: eed1de587e6bfbfc197113c5cd280ae72df1ce7e
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673335"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326604"

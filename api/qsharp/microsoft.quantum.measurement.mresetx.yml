@@ -3,7 +3,11 @@ uid: microsoft.quantum.measurement.mresetx
 name: MResetX
 type: operation
 namespace: Microsoft.Quantum.Measurement
-summary: Měří jednu qubitu v ose X a obnoví ji na standardní základní stav | 0 〉 za měřením.
+summary: >-
+  Měří jeden qubit v ose X a obnoví ho do pevného počátečního stavu po měření.
+
+
+  Provede qubit měření v $X $-základ a zajistí, že qubit se vrátí do $ \ket {0} $ za měřením.
 syntax: 'operation MResetX (target : Qubit) : Result'
 input:
   content: '(target : Qubit)'
@@ -19,9 +23,9 @@ output:
     isPrimitive: true
     uid: Result
 metadata:
-  ms.openlocfilehash: de0422b51d7772892919ee1faeff1f27e9d0616b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 72df2fcf966fcda09ef35e644007e713780e7a68
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681409"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84327437"
