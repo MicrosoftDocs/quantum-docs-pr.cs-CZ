@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
-ms.openlocfilehash: f0b87936c9baf07555e76f295da58c0a6b9ecd17
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 05d3292e1c6e3c8c1163c460f2aaa51c591aa1d5
+ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84328591"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84422236"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Kurz: zápis a simulace programů qubit na úrovni Q\#
 
@@ -386,7 +386,7 @@ Podrobnosti o prvním řádku našeho vstupního stavu $ \ket {000} $:
 * **`    ---`**: Grafická reprezentace fáze amplitudy.
 * **`[ 0.0000 rad ]`**: číselná hodnota fáze (v radiánech).
 
-Velikost i fáze se zobrazí s grafickým znázorněním. Reprezentace velikosti je jednoduchá: zobrazuje pruh `*` a čím vyšší je pravděpodobnost, tím větší bude pruh. Pro fázi si přečtěte [část DumpMachine](xref:microsoft.quantum.techniques.testing-and-debugging#dump-functions) pro možné reprezentace symbolů na základě rozsahů úhlů.
+Velikost i fáze se zobrazí s grafickým znázorněním. Reprezentace velikosti je jednoduchá: zobrazuje pruh `*` a čím vyšší je pravděpodobnost, tím větší bude pruh. Pro fázi si přečtěte téma [testování a ladění: funkce výpisu](xref:microsoft.quantum.guide.testingdebugging#dump-functions) pro možné reprezentace symbolů na základě rozsahů úhlů.
 
 
 Vytištěný výstup tedy ilustruje, že naše naprogramované brány transformují náš stav z

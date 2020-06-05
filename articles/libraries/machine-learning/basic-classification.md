@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
-ms.openlocfilehash: ddd889fdfabb505d7118c1eff551a6fbfa757309
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 1d2538fd164c4c61c2712978d3b5c57b0eb766e6
+ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327641"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84422168"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Základní klasifikace: klasifikace dat pomocí QDK
 
@@ -86,7 +86,7 @@ Následující kód ukládáme do souboru s názvem `Training.qs` .
 Nejdůležitější funkce a operace definované v kódu výše jsou:
 
 - `ClassifierStructure() : ControlledRotation[]`: v této funkci nastavíme strukturu modelu našeho okruhu přidáním vrstev řízených bran, které považujeme za. Tento krok je podobný deklaraci vrstev neurons v sekvenčním modelu hloubkového učení.
-- `TrainHalfMoonModel() : TrainWineModel() : (Double[], Double)`: Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady zahrnuté do knihovny, nastavíme parametry Hyper a počáteční parametry pro školení a my zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
+- `TrainHalfMoonModel() : (Double[], Double)`: Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady zahrnuté do knihovny, nastavíme parametry Hyper a počáteční parametry pro školení a my zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
 - `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: Tato operace definuje proces ověření pro vyhodnocení modelu. Tady načteme ukázky pro ověřování, počet měření na vzorek a toleranci. Vyprodukuje počet chybných klasifikací na zvolené dávce vzorků pro ověření.
 
 ## <a name="next-steps"></a>Další kroky
