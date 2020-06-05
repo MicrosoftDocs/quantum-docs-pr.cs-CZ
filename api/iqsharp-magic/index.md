@@ -2,6 +2,7 @@
 
 | Příkaz magic | Souhrn |
 |---------------|---------|
+| [`%check_kata`](xref:microsoft.quantum.iqsharp.magic-ref.check_kata) | Zkontroluje referenční implementaci pro jeden test katy. |
 | [`%chemistry.broombridge`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.broombridge) | Načte a vrátí reprezentaci problému elektronové struktury Broombridge z daného souboru .yaml. |
 | [`%chemistry.encode`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.encode) | Zakóduje fermionový hamiltonián do formátu zpracovatelného jazykem Q#. |
 | [`%chemistry.fh.add_terms`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.fh.add_terms) | Přidá termy do fermionového hamiltoniánu. |
@@ -9,6 +10,7 @@
 | [`%chemistry.inputstate.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.inputstate.load) | Načte problém elektronové struktury Broombridge a vrátí vybraný vstupní stav. |
 | [`%config`](xref:microsoft.quantum.iqsharp.magic-ref.config) | Umožňuje nastavení konfiguračních možností nebo dotazy na ně. |
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Spustí danou funkci nebo operaci na cílovém počítači ResourcesEstimator. |
+| [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Provede jeden test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Vrátí seznam všech aktuálně dostupných příkazů magic. |
 | [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Poskytuje možnost načíst balíček NuGet. Balíček musí být k dispozici v seznamu zdrojů NuGet. Obvykle zahrnuje nuget.org. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Hlásí aktuální metriky výkonu pro toto jádro. |

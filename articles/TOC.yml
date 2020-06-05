@@ -31,6 +31,8 @@
       href: quickstart.md
     - name: Implementace Groverova vyhledávacího algoritmu
       href: quickstarts/search.md
+    - name: Programování na úrovni qubitů
+      href: tutorials/qft-tutorial.md
     - name: 'Studium Q# s využitím kvantových kat'
       href: intro-to-katas.md
     - name: 'Ukázky kódu v Q#'

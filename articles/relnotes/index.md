@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: f365d471d9af73828b78c4fab8579557310a5288
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: ec5b3b26102df6ecc19d89b41c7fd8938b34e761
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426766"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327760"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -20,6 +20,19 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-0112006207"></a>Verze 0.11.2006.207
+
+*Datum vydání: 3. června 2020*
+
+Tato verze obsahuje následující:
+
+- Poznámkové bloky v Q# a hostitelské programy v Pythonu už neselžou při přítomnosti vstupního bodu Q#
+- Aktualizace [standardní knihovny](xref:microsoft.quantum.libraries.standard.intro) pro použití modifikátorů přístupu
+- Kompilátor teď povoluje modul plug-in pro kroky přepsání mezi vestavěnými kroky přepsání.
+- V souladu s plánem popsaným v našich [principech rozhraní API](xref:microsoft.quantum.contributing.api-design) bylo odebráno několik vyřazených funkcí a operací. Knihovny a programy v Q#, které se ve verzi 0.11.2004.2825 sestavovaly bez varování, budou dál běžet beze změny.
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01120042825"></a>Verze 0.11.2004.2825
 
@@ -34,7 +47,6 @@ Tato verze obsahuje následující:
 > [!NOTE]
 > Aplikace příkazového řádku v Q# s použitím nového atributu [`@EntryPoint()`](xref:microsoft.quantum.core.entrypoint) aktuálně nelze volat z hostitelských programů Pythonu nebo .NET.
 > Další informace najdete v tématech týkajících se [Pythonu](xref:microsoft.quantum.install.python) a [interoperability rozhraní .NET](xref:microsoft.quantum.install.cs).
-
 
 ## <a name="version-01120033107"></a>Verze 0.11.2003.3107
 
