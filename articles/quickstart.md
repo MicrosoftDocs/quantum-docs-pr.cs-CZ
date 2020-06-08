@@ -3,15 +3,15 @@ title: Zkoumání provázání s využitím Q#
 description: Naučte se psát kvantové programy v jazyce Q#. Vývoj aplikace demonstrující Bellovy stavy pomocí nástroje Quantum Development Kit (QDK)
 author: natke
 ms.author: nakersha
-ms.date: 10/07/2019
+ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 7836e39227fa2282c6e2faa039f6e625103d5403
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 989080e7d9979bb87d14b2580d28732bb1092eb1
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426846"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327369"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -25,28 +25,27 @@ Název Bell odkazuje na Bellovy stavy, což jsou specifické kvantové stavy 2 q
 
 Chcete-li se pustit do kódování, nejprve proveďte tyto kroky: 
 
-* [Instalace](xref:microsoft.quantum.install) vývojové sady s použitím preferovaného jazykového a vývojového prostředí
+* Nainstalujte sadu Quantum Development Kit pro [Python](xref:microsoft.quantum.install.python) nebo [.NET](xref:microsoft.quantum.install.cs).
 * Pokud už máte sadu QDK nainstalovanou, zkontrolujte, že je [aktualizovaná na nejnovější verzi](xref:microsoft.quantum.update)
 
 Pokud se chcete jen seznámit se základy, můžete si článek přečíst i bez instalace sady QDK. Získáte tak přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrace chování qubitů pomocí Q#
 
-Připomeňme si naši jednoduchou definici [qubitu](xref:microsoft.quantum.overview.understanding).  Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), qubit se může současně nacházet v **superpozici** stavů 0 a 1.  Qubit si můžete představit jako směr v prostoru (označuje se také jako vektor).  Qubit může být natočený do libovolného směru. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.  Tuto reprezentaci je možné formálněji vizualizovat [Blochovou koulí](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
-
+Připomeňme si naši jednoduchou definici [qubitu](xref:microsoft.quantum.overview.understanding).  Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), [qubit](xref:microsoft.quantum.glossary#qubit) se může nacházet v **superpozici** stavů 0 a 1.  Qubit si můžete představit jako směr v prostoru (označuje se také jako vektor).  Qubit může být natočený do libovolného směru. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.  Tuto reprezentaci je možné formálněji vizualizovat [Blochovou koulí](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 Akce měření poskytuje binární výsledek a mění stav qubitu. Měřením získáme binární hodnotu, buď 0, nebo 1.  V důsledku měření přejde qubit ze superpozice (libovolného směru) do jednoho z klasických stavů.  Všechna následná opakovaná měření bez provedení dalších operací už budou poskytovat shodný binární výsledek.  
 
-Několik qubitů může být také **provázáno**. Když změříme jeden provázaný qubit, změní se tím naše znalost stavu ostatních qubitů.
+Několik qubitů může být také [**provázáno**](xref:microsoft.quantum.glossary#entanglement). Když změříme jeden provázaný qubit, změní se tím naše znalost stavu ostatních qubitů.
 
 Nyní jsme připraveni ukázat, jak se toto chování vyjadřuje v jazyce Q#.  Začneme s nejjednodušším možným programem a sestavíme ho tak, abychom demonstrovali kvantovou superpozici a provázání.
 
 ## <a name="setup"></a>Nastavení
 
-Aplikace vyvinuté pomocí nástroje Microsoft Quantum Development Kit se skládají ze dvou částí:
+Tento kurz používá hostitelské programy a skládá se ze dvou částí:
 
-1. Jeden nebo více kvantových algoritmů, implementovaných v kvantovém programovacím jazyce Q#.
-1. Hostitelský program implementovaný v programovacím jazyce jako Python nebo C#, který slouží jako hlavní vstupní bod a vyvolává kvantové algoritmy jako operace Q#.
+1. Řada kvantových algoritmů, implementovaných v kvantovém programovacím jazyce Q#.
+1. Hostitelský program implementovaný v programovacím jazyce Python nebo C#, který slouží jako hlavní vstupní bod a vyvolává kvantové algoritmy jako operace Q#.
 
 #### <a name="python"></a>[Python](#tab/tabid-python)
 
@@ -498,9 +497,8 @@ Jak jsme uvedli v přehledu, statistika prvního qubitu se nezměnila (stále š
 
 Blahopřejeme, napsali jste svůj první kvantový program!
 
-## <a name="whats-next"></a>Co dále?
+## <a name="next-steps"></a>Další kroky
 
 Kurz [Groverův vyhledávací algoritmus](xref:microsoft.quantum.quickstarts.search) vám ukáže, jak implementovat a spustit Groverovo vyhledávání, jeden z nejoblíbenějších kvantových výpočetních algoritmů, a nabízí dobrý příklad programu Q#, který se dá použít k řešení reálných problémů pomocí kvantových výpočtů.  
 
 Dokument [Začínáme se sadou Quantum Development Kit](xref:microsoft.quantum.welcome) vám nabídne další způsoby, jak se seznámit s jazykem Q# a kvantovými programy.
-

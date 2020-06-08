@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 3e109553adc4d724733834e3660bfe7789052bcf
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 8fafbccfe2a94a824353221b5e7eb8bac16c42f2
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426821"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327352"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Kurz: Implementace kvantového generátoru náhodných čísel v jazyku Q\#
 
@@ -20,7 +20,7 @@ Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je 
 ## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- [Vytvořte projekt v jazyku Q#](xref:microsoft.quantum.howto.createproject)
+- Vytvořte projekt v jazyce Q# buď [pomocí jazyka Q# z příkazového řádku](xref:microsoft.quantum.install.standalone), [pomocí hostitelského programu v Pythonu](xref:microsoft.quantum.install.python), nebo [pomocí hostitelského programu v jazyce C#](xref:microsoft.quantum.install.cs).
 
 ## <a name="write-a-q-operation"></a>Napište operaci Q#
 

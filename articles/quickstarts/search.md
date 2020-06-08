@@ -6,12 +6,12 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 9562e1937a2cac49d682cc0524d8fb29e276d95c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 9e4c53b4d5159cf07f0654603c1d477ad09eb7c6
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426811"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327403"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Kurz: Implementace Groverova vyhledávacího algoritmu v jazyku Q\#
 
@@ -39,7 +39,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 ## <a name="write-the-code"></a>Psaní kódu
 
-1. S použitím sady Quantum Development Kit [vytvořte nový projekt v jazyku Q#](xref:microsoft.quantum.howto.createproject) s názvem `Grover` ve vývojovém prostředí podle vašeho výběru.
+1. Pomocí sady Quantum Development Kit [vytvořte nový projekt v jazyku Q# pro aplikace příkazového řádku](xref:microsoft.quantum.install.standalone). Nazvěte projekt `Grover`.
 
 1. Do souboru `Program.qs` v projektu přidejte tento kód:
 

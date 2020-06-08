@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.algebra
-ms.openlocfilehash: 9f156a3cc092e295317061dda5e8aa29e9d5ca1e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4750643d16ad8af6240df42c1b93353565561429
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430845"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327590"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Lineární algebra pro kvantové výpočty
 
@@ -67,7 +67,7 @@ $$
 
 Výsledkem je čtyřřádková matice, kde každý prvek představuje pravděpodobnost. Například $ac$ je pravděpodobnost, že oba qubity zkolabují do 0 a 0, $ad$ je pravděpodobnost kolapsu do 0 a 1 a tak dále. 
 
-Stejně jako musí stav jednoho qubitu $\begin{bmatrix} a \\\\  b \end{bmatrix}$ splňovat podmínku $|a|^2 + |b|^2 = 1$, aby reprezentoval platný kvantový stav, musí i stav dvou qubitů $\begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}$ splňovat podmínku $|a|^2 + |b|^2 + |c|^2+ |d|^2 = 1$.
+Stejně jako musí stav jednoho qubitu $\begin{bmatrix} a \\\\  b \end{bmatrix}$ splňovat podmínku $|a|^2 + |b|^2 = 1$, aby reprezentoval platný kvantový stav, musí i stav dvou qubitů $\begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}$ splňovat podmínku $|ac|^2 + |ad|^2 + |bc|^2+ |bd|^2 = 1$.
 
 ## <a name="summary"></a>Souhrn
 
@@ -75,5 +75,4 @@ Lineární algebra je standardní jazyk pro popis kvantových výpočtů a kvant
 
 ## <a name="next-steps"></a>Další kroky
 
-> [!div class="nextstepaction"]
-> [Instalace sady QDK](xref:microsoft.quantum.install)
+[Instalace sady QDK](xref:microsoft.quantum.install)
