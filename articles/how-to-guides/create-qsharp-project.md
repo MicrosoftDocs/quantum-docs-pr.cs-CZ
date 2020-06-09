@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: 8019b32a3290e2d45124ebb1eb75395f6cb758db
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 8af8e3288aab731520ede984d5f89644de292385
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327522"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578207"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Vytvoření projektu Q # ve vývojovém prostředí
 
@@ -36,7 +36,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 1. Vytvořte složku pro váš projekt a přejděte do této složky.
 
-1. Vytvořte soubor Q # s názvem `Operation.qs` a přidejte do něj svůj kód q #. Příklad:
+1. Vytvořte soubor Q # s názvem `Operation.qs` a přidejte do něj svůj kód q #. Například:
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
     }
     ```
 
-1. Vytvořte soubor hostitele Pythonu `host.py` s názvem pro volání operace Q #. Příklad:
+1. Vytvořte soubor hostitele Pythonu `host.py` s názvem pro volání operace Q #. Například:
 
     ```python
     import qsharp
@@ -62,13 +62,13 @@ Vyberte vývojové prostředí a jazyk z následujících částí:
 
 1. Spusťte program:
 
-    ```bash
+    ```
     python host.py
     ```
 
 1. Ověřte výstup. Výstupem programu by měly být následující řádky:
 
-    ```bash
+    ```
     Hello from quantum world!
     0
     ```
@@ -83,7 +83,7 @@ Nyní můžete pokračovat v vývoji programu pro práci s více.
 
 1. Spusťte následující příkaz, kterým se spustí server poznámkového bloku:
 
-    ```bash
+    ```
     jupyter notebook
     ```
 
@@ -179,7 +179,7 @@ Nyní můžete pokračovat ve vývoji ve vaší práci pomocí Visual Studio Cod
 
 1. Přejděte do adresáře nové aplikace.
 
-    ```bash
+    ```
     cd <project name>
     ```
 

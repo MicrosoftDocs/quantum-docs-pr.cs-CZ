@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: 0c4dc856c94b0a694fb99607eda64cec4d5c221d
-ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
+ms.openlocfilehash: 9117794d6cf6f05fa34e05c21fad8977d0e76505
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660772"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577816"
 ---
 # <a name="develop-with-q-jupyter-notebooks"></a>Vývoj s využitím poznámkových bloků Jupyter v Q#
 
@@ -32,7 +32,7 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
 
 1. Nainstalujte balíček `iqsharp`.
 
-    ```bash
+    ```dotnetcli
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
@@ -41,7 +41,7 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
 
     - Spusťte následující příkaz, kterým se spustí server poznámkového bloku:
 
-        ```bash
+        ```
         jupyter notebook
         ```
 

@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: 35499daae0cd0ae329e39b43b0d8dd5a00183871
-ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
+ms.openlocfilehash: f18d005012dc1c52aab456f1c7b194d182cab786
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660726"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578160"
 ---
 # <a name="develop-with-q-and-python"></a>Vývoj pomocí Q # a Pythonu
 
@@ -26,13 +26,13 @@ Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly op
 
 1. Nainstalujte `qsharp` balíček, balíček Pythonu, který umožňuje spolupráci mezi Q # a Pythonem.
 
-    ```bash
+    ```
     pip install qsharp
     ```
 
 1. Nainstalujte SWEETIQ #, jádro používané v Jupyter a Pythonu, které poskytuje základní funkce pro kompilaci a provádění operací Q #.
 
-    ```bash
+    ```dotnetcli
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
@@ -69,15 +69,15 @@ Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly op
 
     - Spusťte program:
 
-        ```bash
+        ```
         python hello_world.py
         ```
 
     - Ověřte výstup. Výstupem programu by měly být následující řádky:
 
-        ```bash
+        ```
         Hello from quantum world!
-       ```
+        ```
 
 
 > [!NOTE]
