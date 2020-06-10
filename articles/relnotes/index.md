@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 9a54c1d7a4403a98f945181fdad8ba8a7fdb1175
-ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
+ms.openlocfilehash: 6b24ebe9f0b5fd3318e8adfe1a62bafaf9d1961e
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84422219"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578130"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -25,6 +25,12 @@ Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quan
 
 *Datum vydání: 4. června 2020*
 
+Tato verze opravuje chybu ovlivňující kompilaci projektů v Q#.
+
+## <a name="version-0112006207"></a>Verze 0.11.2006.207
+
+*Datum vydání: 3. června 2020*
+
 Tato verze obsahuje následující:
 
 - Poznámkové bloky v Q# a hostitelské programy v Pythonu už neselžou při přítomnosti vstupního bodu Q#
@@ -33,6 +39,9 @@ Tato verze obsahuje následující:
 - V souladu s plánem popsaným v našich [principech rozhraní API](xref:microsoft.quantum.contributing.api-design) bylo odebráno několik vyřazených funkcí a operací. Knihovny a programy v Q#, které se ve verzi 0.11.2004.2825 sestavovaly bez varování, budou dál běžet beze změny.
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
+> [!NOTE]
+> Tato verze obsahuje chybu ovlivňující kompilaci projektů v Q#. Doporučujeme upgradovat na novější verzi.
 
 ## <a name="version-01120042825"></a>Verze 0.11.2004.2825
 
