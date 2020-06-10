@@ -6,18 +6,89 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 43f14d67db76dabda34bf881ccbfae0bfd1784ff
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+no-loc:
+- $
+- $
+- '\cdots'
+- bmatrix
+- '\ddots'
+- '\equiv'
+- '\sum'
+- '\begin'
+- '\end'
+- '\sqrt'
+- '\otimes'
+- '{'
+- '}'
+- '\text'
+- '\phi'
+- '\kappa'
+- '\psi'
+- '\alpha'
+- '\beta'
+- '\gamma'
+- '\delta'
+- '\omega'
+- '\bra'
+- '\ket'
+- '\boldone'
+- '\\\\'
+- '\\'
+- =
+- '\frac'
+- '\text'
+- '\mapsto'
+- '\dagger'
+- '\to'
+- "\begin{cases}"
+- "\end{cases}"
+- '\operatorname'
+- '\braket'
+- '\id'
+- '\expect'
+- '\defeq'
+- '\variance'
+- '\dd'
+- '&'
+- "\begin{align}"
+- "\end{align}"
+- '\Lambda'
+- '\lambda'
+- '\Omega'
+- '\mathrm'
+- '\left'
+- '\right'
+- '\qquad'
+- '\times'
+- '\big'
+- '\langle'
+- '\rangle'
+- '\bigg'
+- '\Big'
+- '|'
+- '\mathbb'
+- '\vec'
+- '\in'
+- '\texttt'
+- '\ne'
+- <
+- '>'
+- '\leq'
+- '\geq'
+- ~~
+- "~"
+ms.openlocfilehash: 745f0570bf62c5d98c2896cdc893ec385abd7115
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426613"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630407"
 ---
 # <a name="quantum-circuits"></a>Okruhy
-Vezměte v úvahu, že se jedná o jednotnou transformaci $ \Text{CNOT} _ {01} (H\otimes 1) $.
+Vezměte v úvahu za chvilku, že se jedná o jednotnou transformaci $ \Text { CNOT} _ {01 } (H \otimes 1) $.
 Tato sekvence brány má zásadní význam pro výpočetní výkon, protože vytváří qubit stav s maximální entangled:
 
-$ $ \mathrm{CNOT}_ {01} (H\otimes 1) \ket {00} = \frac {1} {\sqrt {2} } \left (\ket {00} + \ket {11} \right), $ $
+$ $ \mathrm{CNOT}_{01 } (H \otimes 1) \ket{00 } = \frac{1 } {\sqrt{2 } } \left (\ket{00 } + \ket{11 } \right), $ $
 
 Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu*.
 Diagram okruhu pro přípravu tohoto maximálního entangledého stavu je:
@@ -49,7 +120,7 @@ Jinými slovy, pokud se dráty naformátují jako držící stav, vodiče přin�
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagram protiprocesorů používaných v zleva doprava](~/media/3.svg)
 
-je jednotná matice $CBA $.
+je $CBA jednotnou maticí $ .
 Násobení matice dodržuje opačnou konvenci: nejprve se použije matice nejvyšší výše. V diagramech okruhu ve službě pro vytváření koncových procesorů se ale jako první používá brána vlevo.
 Tento rozdíl může v některých případech vést k nejasnostem, takže je důležité si všimnout tohoto významného rozdílu mezi lineárním zápisem algebraických a diagramy okruhu.
 
@@ -61,27 +132,27 @@ Pokud neobsahují stejný počet výstupů jako vstupy, které by nebyly vratné
 Z tohoto důvodu musí mít jakékoli pole vykreslené v diagramu okruhu přesně stejný počet vodičů, kteří ho vstupují při jeho ukončení.
 
 Diagramy okruhu s více qubit se podobají podobným konvencím pro qubit.
-Jako objasnění příkladu můžeme definovat qubit jednotkovou $B operaci $ (H S\otimes X) $ a objasnit okruh stejným způsobem jako
+Jako příklad objasnění můžete definovat qubit jednotkovou $B operaci, $ která bude mít hodnotu $ (H S \otimes ×) $ a objasnit okruh stejným způsobem jako
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagram okruhu s qubit jednotkovou operací](~/media/4.svg)
 
-V závislosti na kontextu, ve kterém se okruh používá, můžeme také zobrazit $B $ jako akce v jednom qubit registru, nikoli 2 1-qubit Registry. Nejužitečnější vlastností takových diagramů s abstraktním okruhem je pravděpodobně to, že umožňují složitosti složitých algoritmů na vysoké úrovni, aniž by bylo nutné je kompilovat na základní brány.
+V $ závislosti na kontextu, ve kterém se okruh používá, můžeme také zobrazit $B jako akce v jednom qubit registru, a ne 2 1-qubit Registry. Nejužitečnější vlastností takových diagramů s abstraktním okruhem je pravděpodobně to, že umožňují složitosti složitých algoritmů na vysoké úrovni, aniž by bylo nutné je kompilovat na základní brány.
 To znamená, že můžete získat Intuition o toku dat pro velký algoritmus, aniž byste museli porozumět všem podrobnostem o tom, jak jednotlivé podrutiny v rámci algoritmu fungují.
 
 ## <a name="controlled-gates"></a>Řízené brány
 Druhá konstrukce, která je integrovaná do qubitch okruhů, je řídicích diagramů.
-Akce u jednorázových jader, označených příznakem $ \Lambda (G) $, kde jedna hodnota qubit řídí aplikaci $G $, se dá pochopit tak, že se podíváme na následující příklad vstupu stavu produktu $ \Lambda (G) (\Alpha \ket {0} + \beta \ket {1} ) \ket{\psi} = \Alpha \ket {0} \ket{\psi} + \beta \ket {1} G\ket {\ psí} $.
-To znamená, že řízená brána se vztahuje $G $ na registr obsahující $ \psi $ if a jenom v případě, že qubit ovládacího prvku převezme hodnotu $1 $.
+Akce u jednorázových jader, označených příznakem $ \Lambda (G) $, kde jedna hodnota qubit řídí aplikaci $G $ , se dá pochopit tak, že se podíváme na následující příklad vstupu stavu produktu $ \Lambda (G) (\Alpha \ket{0 } + \beta \ket{1 } ) \ket { \psi } = \Alpha \ket{0 \Ket \psi } { } + \beta \ket{1 } G \ket { \psi } $.
+To znamená, že řízená brána se vztahuje $G $ do registru obsahujícího $ \psi $ , pokud a pouze v případě, že qubit ovládacího prvku převezme hodnotu $1 $ .
 Obecně popisujeme tyto řízené operace v diagramech okruhů jako
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagram okruhu samostatně kontrolované brány](~/media/5.svg)
 
-Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když qubit ovládacího prvku převezme hodnotu $1 $.
-Pro zvláštní případy, kdy $G = X $ a $G = Z $ zavádíme následující zápis, který popíše řízenou verzi bran (Všimněte si, že brána řízená-X je rozhraní [$CNOT $](xref:microsoft.quantum.intrinsic.cnot)):
+Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když qubit ovládacího prvku převezme hodnotu $1 $ .
+Pro speciální případy, kdy $G = X $ a $G = Z, $ zavádíme následující zápis, který popíše řízená verze bran (Všimněte si, že brána řízená-X je [ $ bránou $CNOT](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
@@ -115,7 +186,7 @@ Podobně, předaný okruh
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagram okruhu reprezentující kontrolovanou operaci](~/media/8.svg)
 
-poskytuje klasický monitorovanou bránu, kde $G $ se aplikuje v případě, že je pro klasický řídicí bit nastavená hodnota $1 $.
+poskytuje klasickou bránu, kde $G $ se aplikuje na bit klasického ovládacího prvku, který má hodnotu $1 $ .
 
 ## <a name="teleportation-circuit-diagram"></a>Diagram okruhu přenosu
 Pro ilustraci těchto komponent je možná nejlepší výkon

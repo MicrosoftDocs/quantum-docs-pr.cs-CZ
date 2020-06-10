@@ -6,18 +6,18 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: e829862521951c50cb42eebf261c803071a95275
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4311ebf9f72254485a20ba721ea2ce19163f4371
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426437"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630259"
 ---
 # <a name="develop-with-q-command-line-applications"></a>Vývoj s aplikacemi příkazového řádku Q #
 
 Programy Q # se dají spouštět samostatně, bez ovladače v hostitelském jazyce, jako je C#, F # nebo Python.
 
-## <a name="pre-requisites"></a>Požadavky
+## <a name="prerequisites"></a>Požadavky
 
 - [.NET Core SDK 3,1 nebo novější](https://www.microsoft.com/net/download)
 

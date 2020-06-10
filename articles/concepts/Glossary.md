@@ -6,18 +6,89 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: 042e4e27ef4e42cfc0c24fbb0ae2232cf1bbfe36
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+no-loc:
+- $
+- $
+- '\cdots'
+- bmatrix
+- '\ddots'
+- '\equiv'
+- '\sum'
+- '\begin'
+- '\end'
+- '\sqrt'
+- '\otimes'
+- '{'
+- '}'
+- '\text'
+- '\phi'
+- '\kappa'
+- '\psi'
+- '\alpha'
+- '\beta'
+- '\gamma'
+- '\delta'
+- '\omega'
+- '\bra'
+- '\ket'
+- '\boldone'
+- '\\\\'
+- '\\'
+- =
+- '\frac'
+- '\text'
+- '\mapsto'
+- '\dagger'
+- '\to'
+- "\begin{cases}"
+- "\end{cases}"
+- '\operatorname'
+- '\braket'
+- '\id'
+- '\expect'
+- '\defeq'
+- '\variance'
+- '\dd'
+- '&'
+- "\begin{align}"
+- "\end{align}"
+- '\Lambda'
+- '\lambda'
+- '\Omega'
+- '\mathrm'
+- '\left'
+- '\right'
+- '\qquad'
+- '\times'
+- '\big'
+- '\langle'
+- '\rangle'
+- '\bigg'
+- '\Big'
+- '|'
+- '\mathbb'
+- '\vec'
+- '\in'
+- '\texttt'
+- '\ne'
+- <
+- '>'
+- '\leq'
+- '\geq'
+- ~~
+- "~"
+ms.openlocfilehash: 2a3b1fe480b9886d0c11255bb1b1e01402dce4f7
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327607"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630092"
 ---
 # <a name="quantum-computing-glossary"></a>Glosář pro výpočetní výkon
 
 ## <a name="adjoint"></a>Sousednít
 
-Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují operátor s jednou [jednotkou](xref:microsoft.quantum.glossary#unitary-operator) , je sousední osoba inverzní k operaci a je označena symbolem Dagger. Například pokud operace `U` představuje jednotkový operátor $U $, pak `Adjoint U` představuje $U ^ \dagger $. Další informace najdete v tématu [sousednít](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují operátor s jednou [jednotkou](xref:microsoft.quantum.glossary#unitary-operator) , je sousední osoba inverzní k operaci a je označena symbolem Dagger. Například pokud operace `U` představuje jednotkový operátor $U $ , pak `Adjoint U` představuje $U ^ \dagger $ . Další informace najdete v tématu [sousednít](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
 
 ## <a name="ancilla"></a>Ancilla
 
@@ -25,7 +96,7 @@ Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro o
 
 ## <a name="bell-state"></a>Stav zvonku
 
-Jedno ze čtyř specifických [entangledch](xref:microsoft.quantum.glossary#entanglement) [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma qubitsy. Čtyři stavy jsou definovány $ \ket{\ beta_ {IJ}} = (\mathbb{I} \otimes X ^ iZ ^ j) (\ket {00} + \ket {11} )/\sqrt {2} $. Stav zvonku se označuje také jako [dvojice EPR](xref:microsoft.quantum.glossary#epr-pair).
+Jedno ze čtyř specifických [entangledch](xref:microsoft.quantum.glossary#entanglement) [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma qubitsy. Čtyři stavy jsou definovány $ \ket { \ Beta_ {IJ } } = (\Mathbb{I } \Otimes X ^ iZ ^ j) (\ket{00 } + \ket{11 } )/\sqrt{2 } $. Stav zvonku se označuje také jako [dvojice EPR](xref:microsoft.quantum.glossary#epr-pair).
 
 ## <a name="bloch-sphere"></a>Koule Bloch
 
@@ -37,7 +108,7 @@ Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavov�
 
 ## <a name="clifford-group"></a>Skupina Clifford
 
-Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek, se projeví u [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Mezi ně patří operace [$X $](xref:microsoft.quantum.intrinsic.x), [$Y $](xref:microsoft.quantum.intrinsic.y), [$Z $](xref:microsoft.quantum.intrinsic.z), [$H $](xref:microsoft.quantum.intrinsic.h) a [$S $](xref:microsoft.quantum.intrinsic.s).
+Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek, se projeví u [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Patří mezi ně operace [$X $ ](xref:microsoft.quantum.intrinsic.x), [$Y $ ](xref:microsoft.quantum.intrinsic.y), [$Z $ ](xref:microsoft.quantum.intrinsic.z) [ $ $H](xref:microsoft.quantum.intrinsic.h) a [$S $ ](xref:microsoft.quantum.intrinsic.s).
 
 ## <a name="controlled"></a>Kontrol
 
@@ -45,15 +116,15 @@ Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.gl
 
 ## <a name="dirac-notation"></a>Zápis Dirac
 
-Symbolická zkrácený tvar, který zjednodušuje reprezentace [stavových krajů](xref:microsoft.quantum.glossary#quantum-state), označovaných také jako *Bra-KET* Notation.  *Bra* část představuje vektor řádku, například $ \bra{A} = \begin{bmatrix} a {_1} & {_2} \end{bmatrix} $ a *KET* část představuje vektor sloupce $ \ket{B} = \begin{bmatrix} B {_1} \\ \\ B {_2} \end{bmatrix} $. Další informace najdete v tématu [Dirac Notation](xref:microsoft.quantum.concepts.dirac).
+Symbolická zkrácený tvar, který zjednodušuje reprezentace [stavových krajů](xref:microsoft.quantum.glossary#quantum-state), označovaných také jako *Bra-KET* Notation.  *Bra* část představuje vektor řádku, například $ \bra{A } = \begin{ bmatrix } a {_1 } & {_2 } \end{ bmatrix } $ a *KET* část představuje vektor sloupce $ \ket{B } = \begin{ bmatrix } B {_1 } \\ \\ B {_2 } \end{ bmatrix } $. Další informace najdete v tématu [Dirac Notation](xref:microsoft.quantum.concepts.dirac).
 
 ## <a name="eigenvalue"></a>Eigenvalue
 
-Faktor, kterým je velikost [eigenvector](xref:microsoft.quantum.glossary#eigenvector) dané transformace změněna aplikací transformace.  Pro druhou matrici $M $ a eigenvector $v $, pak $Mv = CV $, kde $c $ je eigenvalue a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
+Faktor, kterým je velikost [eigenvector](xref:microsoft.quantum.glossary#eigenvector) dané transformace změněna aplikací transformace.  Při zadání čtvercové matice $M $ a eigenvector $v a $ pak $MV = CV $ , kde $c $ je eigenvalue a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
 ## <a name="eigenvector"></a>Eigenvector
 
-Vektor, jehož směr je beze změny v dané transformaci a jehož velikost je změněna faktorem odpovídajícím [eigenvaluei](xref:microsoft.quantum.glossary#eigenvalue)vektoru. Pro druhou matrici $M $ a eigenvalue $c $, pak $Mv = CV $, kde $v $ je eigenvector matice a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
+Vektor, jehož směr je beze změny v dané transformaci a jehož velikost je změněna faktorem odpovídajícím [eigenvaluei](xref:microsoft.quantum.glossary#eigenvalue)vektoru. Při zadání čtvercové matice $M $ a eigenvalue $c a $ pak $MV = CV $ , kde $v $ je eigenvector matice a může být komplexním číslem libovolného argumentu. Další informace najdete v tématu [pokročilé koncepty matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 
 ## <a name="entanglement"></a>Provázání
 
@@ -61,7 +132,7 @@ Vektor, jehož směr je beze změny v dané transformaci a jehož velikost je zm
 
 ## <a name="epr-pair"></a>EPR pár
 
-Jedno ze čtyř specifických entangledch [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma [qubitsy](xref:microsoft.quantum.glossary#qubit). Čtyři stavy jsou definovány $ \ket{\ beta_ {IJ}} = (\mathbb {1} \Otimes X ^ iZ ^ j) (\ket {00} + \ket {11} )/\sqrt {2} $. Dvojice EPR je také známá jako [stav zvonku](xref:microsoft.quantum.glossary#bell-state) .
+Jedno ze čtyř specifických entangledch [stavových stavů](xref:microsoft.quantum.glossary#quantum-state) se dvěma [qubitsy](xref:microsoft.quantum.glossary#qubit). Čtyři stavy jsou definovány $ \ket { \ Beta_ {IJ } } = (\Mathbb{1 } \Otimes X ^ iZ ^ j) (\ket{00 } + \ket{11 } )/\sqrt{2 } $. Dvojice EPR je také známá jako [stav zvonku](xref:microsoft.quantum.glossary#bell-state) .
 
 ## <a name="evolution"></a>Vývoji
 
@@ -76,11 +147,11 @@ Starší verze termínu pro [operaci](xref:microsoft.quantum.glossary#operation)
 
 ## <a name="global-phase"></a>Globální fáze
 
-Pokud jsou dva [stavy](xref:microsoft.quantum.glossary#quantum-state) identické až na násobek komplexního čísla $e ^ {i\phi} $, říká se, že se liší až do globální fáze. Na rozdíl od místních fází se globální fáze nedají pozorovat prostřednictvím žádného [měřitelného](xref:microsoft.quantum.glossary#measurement). Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit).
+Pokud jsou dva [stavy](xref:microsoft.quantum.glossary#quantum-state) identické až na násobek komplexního čísla $e ^ {i \phi } $, říká se, že se liší až do globální fáze. Na rozdíl od místních fází se globální fáze nedají pozorovat prostřednictvím žádného [měřitelného](xref:microsoft.quantum.glossary#measurement). Další informace najdete v tématu [qubit](xref:microsoft.quantum.concepts.qubit).
 
 ## <a name="hadamard"></a>Hadamard
 
-Operace Hadamard (také označovaná jako Hadamard nebo transformační) funguje na jednom [qubit](xref:microsoft.quantum.glossary#qubit) a umístí ji do sudé [pozice](xref:microsoft.quantum.glossary#superposition) $ \ket {0} $ nebo $ \ket {1} $, pokud je qubit zpočátku ve stavu $ \ket {0} $. V Q # se tato operace používá v rámci předdefinované [`H`](xref:microsoft.quantum.intrinsic.h) operace.
+Operace Hadamard (také označovaná jako Hadamard nebo transformační) funguje na jednom [qubit](xref:microsoft.quantum.glossary#qubit) a umístí ji do sudé [pozice](xref:microsoft.quantum.glossary#superposition) $ \ket{0 } $ nebo $ \ket{1 } $, pokud je qubit zpočátku ve stavu $ \ket{0 } $. V Q # se tato operace používá v rámci předdefinované [`H`](xref:microsoft.quantum.intrinsic.h) operace.
 
 ## <a name="immutable"></a>Neměnné
 
@@ -116,7 +187,7 @@ Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:
 
 ## <a name="pauli-operators"></a>Pauli operátory
 
-Množina tří matic 2 × 2 matice, které se označují `X` jako `Y` a `Z` operace. V sadě je často obsažena i matice identity $I $.  $I = \begin{bmatrix} 1 & 0 \\ \\ 0 & 1 \end{bmatrix} $, $X = \begin{bmatrix} 0 & 1 \\ \\ 1 & 0 \end{bmatrix} $, $Y = \begin{bmatrix} 0 &-i \\ \\ i & 0 \end{bmatrix} $, $Z = \begin{bmatrix} 1 & 0 \\ \\ 0 &-1 \end{bmatrix} $.   Další informace najdete v tématu [operace s jedním qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
+Množina tří matic 2 × 2 matice, které se označují `X` jako `Y` a `Z` operace. $V sadě je často obsažena i matice identity $I.  $I = \begin{ bmatrix } 1 & 0 \\ \\ 0 & 1 \end{ bmatrix } $, $X = \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } $, $Y = \begin{ bmatrix } 0 &-i \\ \\ i & 0 \end{ bmatrix } $, $Z = \begin{ bmatrix } 1 & 0 \\ \\ 0 &-1 \end{ bmatrix } $.   Další informace najdete v tématu [operace s jedním qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
 ## <a name="quantum-circuit-diagram"></a>Diagram okruhu doby
 
@@ -148,7 +219,7 @@ Algoritmus pro všechna ta, který se probabilistically úspěšně. Po selhán�
 
 ## <a name="superposition"></a>Nadpozice
 
-Koncept v této službě znamená, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinací dvou stavů $ \ket {0} $ a $ \ket {1} $, dokud se [neměří](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [Principy výpočetního](xref:microsoft.quantum.overview.understanding)prostředí.
+Koncept v této službě znamená, že [qubit](xref:microsoft.quantum.glossary#qubit) je lineární kombinací dvou stavů $ \ket{0 } $ a $ \ket{1 } $, dokud se [neměří](xref:microsoft.quantum.glossary#measurement).  Další informace najdete v tématu [Principy výpočetního](xref:microsoft.quantum.overview.understanding)prostředí.
 
 ## <a name="target-machine"></a>Cílový počítač
 
@@ -164,7 +235,7 @@ Kolekce hodnot oddělených čárkou, které fungují jako jediná hodnota. *Typ
 
 ## <a name="unitary-operator"></a>Operátor jednotných
 
-Operátor, jehož invertování je rovno jeho [sousedním](xref:microsoft.quantum.glossary#adjoint), tj. $uu ^ {\dagger} = \id $.
+Operátor, jehož invertování je rovno jeho [sousedním](xref:microsoft.quantum.glossary#adjoint), tj. $uu ^ {\dagger } = \id $ .
 
 ## <a name="user-defined-type"></a>Uživatelem definovaný typ
 

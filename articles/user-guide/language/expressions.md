@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: c4b2cc0bed44ffdfb191ba522d6526959e7c6708
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: b32644382bb88fb11da00d0d7d78bbd797a0eaaa
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327301"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84629998"
 ---
 # <a name="type-expressions-in-q"></a>Výrazy typu v Q #
 
@@ -63,7 +63,7 @@ To znamená, že posun jednoho kroku doleva nebo doprava je přesně stejný jak
 
 Celočíselné dělení a celočíselné zbytky se řídí stejným chováním pro záporná čísla jako C#.
 To znamená, že `a % b` vždy bude mít stejné znaménko jako `a` a `b * (a / b) + a % b` bude vždy rovno `a` .
-Příklad:
+Například:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -201,7 +201,7 @@ Kromě literálů jsou jedinými výrazy uživatelsky definovaného typu symboly
 V Q # se operátor rozbalení označuje jako koncová značka vykřičník `!` .
 Například pokud `IntPair` je uživatelem definovaný typ s podkladovým typem `(Int, Int)` a `s` byl proměnnou s hodnotou `IntPair(2, 3)` , potom `s!` by byl `(2, 3)` .
 
-Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech. operátor rozbalení může být opakován; například `s!!` označuje zdvojnásobně nezabalenou hodnotu `s` .
+Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech se může opakovat operátor rozbalení; například `s!!` označuje zdvojnásobně nezabalenou hodnotu `s` .
 Proto, pokud `WrappedPair` je uživatelem definovaný typ s podkladovým typem `IntPair` , a `t` je proměnná s hodnotou `WrappedPair(IntPair(1,2))` , potom `t!!` by byla `(1,2)` .
 
 `!`Operátor má vyšší prioritu než všechny ostatní operátory, kromě `[]` indexace pole a řezů.
@@ -209,7 +209,7 @@ Proto, pokud `WrappedPair` je uživatelem definovaný typ s podkladovým typem `
 
 Priorita `!` operátoru má jeden dopad, který nemusí být zřejmý.
 Vrátí-li funkce nebo operace hodnotu, která je poté nezabalena, musí být volání funkce nebo operace uzavřena v závorkách, aby se argumenty řazené kolekce členů navázaly na volání, nikoli na rozbalení.
-Příklad:
+Například:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -474,7 +474,7 @@ Kulaté závorky pro operace a volání funkce se také vážou před libovolný
 
 Operátory v pořadí podle priority, od nejvyšších po nejnižší:
 
-Operátor | Aritou | Description | Typy operandů
+Operátor | Aritou | Popis | Typy operandů
 ---------|----------|---------|---------------
  koncové`!` | Unární | Rozbalení | Libovolný uživatelsky definovaný typ
  `-`, `~~~`, `not` | Unární | Numerický negativní, bitový doplněk, logická negace | `Int`, nebo pro, pro, `BigInt` `Double` `-` `Int` `BigInt` `~~~` `Bool` pro`not`

@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: f18d005012dc1c52aab456f1c7b194d182cab786
-ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
+ms.openlocfilehash: 1ae208e7047cb040fb44945a59c3cc6508a09723
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578160"
+ms.locfileid: "84630286"
 ---
 # <a name="develop-with-q-and-python"></a>Vývoj pomocí Q # a Pythonu
 
@@ -36,6 +36,15 @@ Nainstalujte QDK pro vývoj hostitelských programů v Pythonu, aby se volaly op
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
+
+    > [!NOTE]
+    > Pokud se během kroku zobrazí chyba `dotnet iqsharp install` , otevřete nové okno terminálu a zkuste to znovu.
+    > Pokud to pořád nefunguje, zkuste vyhledat nainstalovaný `dotnet-iqsharp` Nástroj (ve Windows, `dotnet-iqsharp.exe` ) a spusťte:
+    > ```
+    > /path/to/dotnet-iqsharp install --user --path-to-tool="/path/to/dotnet-iqsharp"
+    > ```
+    > kde `/path/to/dotnet-iqsharp` by měla být nahrazena absolutní cestou k `dotnet-iqsharp` nástroji v systému souborů.
+    > Obvykle se tato složka nachází `.dotnet/tools` ve složce vašeho profilu uživatele.
   
 1. I když v jakémkoli integrovaném vývojovém prostředí můžete použít Q # s Pythonem, důrazně doporučujeme pro vaše aplikace pro Q # + Python používat rozhraní IDE Visual Studio Code (VS Code). Pomocí Visual Studio Code a rozšíření QDK Visual Studio Code získáte přístup k rozsáhlejším funkcím.
 

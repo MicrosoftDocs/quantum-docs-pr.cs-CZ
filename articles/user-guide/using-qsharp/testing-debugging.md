@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: 374ac42255ab6b2c5eff8ab7879b3a5103181f7f
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: dd6c7ae8a016423f26c37f3eedf0ae9c1d126b78
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430913"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630032"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -218,7 +218,7 @@ Ostatní řádky popisují amplitudu pravděpodobnosti měření vektoru stavu $
 
 * **`∣0❭:`** Tento řádek odpovídá `0` průběžnému stavu výpočtu.
 * **`0.707107 +  0.000000 i`**: amplituda pravděpodobnosti ve formátu kartézském.
-* **` == `**: `equal` symbol oddělené reprezentace obou shod.
+* **` == `**: `equal` znaménko odděluje rovnocenné reprezentace.
 * **`**********  `**: Grafická reprezentace velikosti, počet `*` je úměrný pravděpodobnosti měření tohoto vektoru stavu.
 * **`[ 0.500000 ]`**: číselná hodnota velikosti
 * **`    ---`**: Grafická reprezentace fáze amplitudy (viz níže).

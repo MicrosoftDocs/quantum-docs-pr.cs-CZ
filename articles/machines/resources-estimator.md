@@ -6,12 +6,12 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 01d242ed405bdd326f65e534f82ff378a464ee7d
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: b0c800c3946d2e4ba4457127fb9495dc9dcf2934
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426881"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630139"
 ---
 # <a name="the-resources-estimator-target-machine"></a>Cílový počítač prostředků Estimator
 
@@ -42,7 +42,7 @@ namespace Quantum.MyProgram
 }
 ```
 
-Jak ukazuje příklad, `ResourcesEstimator` poskytuje `ToTSV()` metodu pro generování tabulky s hodnotami, které jsou odděleny tabulátory (TSV), které lze uložit do souboru nebo zapsat do konzoly pro účely analýzy. Výstup výše uvedeného programu by měl vypadat přibližně takto:
+Jak ukazuje příklad, `ResourcesEstimator` poskytuje `ToTSV()` metodu pro generování tabulky s hodnotami oddělenými tabulátory (TSV), které lze uložit do souboru nebo zapsat do konzoly pro účely analýzy. Výstup výše uvedeného programu by měl vypadat přibližně takto:
 
 ```Output
 Metric          Sum

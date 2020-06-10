@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: dfb2b1779e3ddc77fc74697bc4dc2904b1a0c70f
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 948b385948f0b362e7c12500662132883959a798
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426924"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630238"
 ---
 # <a name="q-style-guide"></a>Průvodce stylem Q # #
 ## <a name="general-conventions"></a>Obecné konvence ##
@@ -49,7 +49,7 @@ Tento rozdíl naznačuje, že pojmenování operací jako operací a funkcí jak
 > Z této perspektivy by měly být uživatelsky definované typy pojmenovány jako podstatná jména, aby samotný typ i funkce konstruktoru měly konzistentní názvy.
 
 Tam, kde je to rozumné, zajistěte, aby názvy operací začaly slovesy, které jasně indikují účinek prováděný operací.
-Příklad:
+Například:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -280,7 +280,7 @@ Navrhujeme:
 
 ***
 
-### <a name="user-defined-type-named-items"></a>Uživatelem definovaný typ s názvem Items ###
+### <a name="user-defined-type-named-items"></a>Uživatelem definované typy pojmenované položky ###
 
 Pojmenované položky v uživatelsky definovaných typech by měly být pojmenovány jako `CamelCase` , a to i ve vstupu na konstruktory UDT.
 To pomáhá při použití notace přístupového objektu (např.: `callable::Apply` ) nebo zápisu () pro jasně oddělit pojmenované položky od odkazů na místně vymezené proměnné `set arr w/= Data <- newData` .

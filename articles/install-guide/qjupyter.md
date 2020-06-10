@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: 9117794d6cf6f05fa34e05c21fad8977d0e76505
-ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
+ms.openlocfilehash: b80d95a160b5f46c1132d3428ba32ad6dcd5656e
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 06/09/2020
-ms.locfileid: "84577816"
+ms.locfileid: "84630337"
 ---
 # <a name="develop-with-q-jupyter-notebooks"></a>Vývoj s využitím poznámkových bloků Jupyter v Q#
 
@@ -36,6 +36,15 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
+
+    > [!NOTE]
+    > Pokud se během kroku zobrazí chyba `dotnet iqsharp install` , otevřete nové okno terminálu a zkuste to znovu.
+    > Pokud to pořád nefunguje, zkuste vyhledat nainstalovaný `dotnet-iqsharp` Nástroj (ve Windows, `dotnet-iqsharp.exe` ) a spusťte:
+    > ```
+    > /path/to/dotnet-iqsharp install --user --path-to-tool="/path/to/dotnet-iqsharp"
+    > ```
+    > kde `/path/to/dotnet-iqsharp` by měla být nahrazena absolutní cestou k `dotnet-iqsharp` nástroji v systému souborů.
+    > Obvykle se tato složka nachází `.dotnet/tools` ve složce vašeho profilu uživatele.
 
 1. Ověřte instalaci vytvořením aplikace `Hello World`.
 
