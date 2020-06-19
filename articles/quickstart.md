@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 989080e7d9979bb87d14b2580d28732bb1092eb1
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 271eb7f496835f152573be930d0fe24e59f2d15d
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327369"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630072"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -21,7 +21,7 @@ Tento dokument vás provede instalací sady QDK, sestavením programu a spuště
 Vytvoříme aplikaci nazvanou Bell, která demonstruje kvantové provázání.
 Název Bell odkazuje na Bellovy stavy, což jsou specifické kvantové stavy 2 qubitů používané k demonstraci nejjednodušších příkladů superpozice a provázání.
 
-## <a name="pre-requisites"></a>Požadavky
+## <a name="prerequisites"></a>Požadavky
 
 Chcete-li se pustit do kódování, nejprve proveďte tyto kroky: 
 
@@ -59,7 +59,7 @@ Tento kurz používá hostitelské programy a skládá se ze dvou částí:
 
 1. Vytvoření nového projektu Q#
 
-    ```bash
+    ```
     dotnet new console -lang Q# --output Bell
     cd Bell
     ```
@@ -68,7 +68,7 @@ Tento kurz používá hostitelské programy a skládá se ze dvou částí:
 
 1. Přejmenování souboru Q#
 
-    ```bash
+    ```
     mv Operation.qs Bell.qs
     ```
 
@@ -282,7 +282,7 @@ Init:1    0s=0    1s=1000
 
 1. Spusťte v okně terminálu následující příkaz:
 
-    ```bash
+    ```dotnetcli
     dotnet run
     ```
 
