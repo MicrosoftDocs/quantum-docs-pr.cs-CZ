@@ -1,0 +1,11 @@
+- name: Přehled
+  href: index.md
+- name: Simulátor celkového stavu
+  href: full-state-simulator.md
+- name: Odhad prostředků
+  href: resources-estimator.md
+- name: Simulátor trasování
+  topicHref: qc-trace-simulator/index.md
+  href: qc-trace-simulator/toc.yml
+- name: Simulátor Toffoli
+  href: toffoli-simulator.md

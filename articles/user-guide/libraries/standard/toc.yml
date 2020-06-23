@@ -1,0 +1,22 @@
+- name: Úvod
+  href: prelude.md
+- name: Klasická matematika
+  href: math.md
+- name: Převody typů
+  href: convert.md
+- name: Tok řízení vyššího řádu
+  href: control-flow.md
+- name: Datové struktury a modelování
+  href: data-structures.md
+- name: Kvantové algoritmy
+  href: algorithms.md
+- name: Diagnostika
+  href: diagnostics.md
+- name: Charakterizace
+  href: characterization.md
+- name: Oprava chyb
+  href: error-correction.md
+- name: Aplikace
+  href: applications.md
+- name: Licencování OSS
+  href: licensing.md

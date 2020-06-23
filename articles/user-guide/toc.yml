@@ -1,12 +1,14 @@
 - name: Přehled / Obsah
   href: index.md
-- name: 'Základy Q#'
+- name: Základy Q#
   href: basics.md
-- name: 'Jazyk Q#'
+- name: Jazyk Q#
   href: language/toc.yml
-- name: 'Použití Q#'
+- name: Použití Q#
   href: using-qsharp/toc.yml
 - name: Simulátory a estimátory prostředků
-  href: ../machines/toc.yml
+  href: machines/toc.yml
+- name: Knihovny Q#
+  href: libraries/toc.yml
 - name: Stručná referenční příručka
   href: quickref/toc.yml

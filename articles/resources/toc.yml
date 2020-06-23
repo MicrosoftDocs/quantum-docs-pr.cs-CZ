@@ -1,0 +1,9 @@
+- name: Glosář
+  href: glossary.md
+- name: Přispívání do QDK
+  href: contributing/toc.yml
+  topicHref: contributing/index.md
+- name: "Poznámky k\_verzi QDK"
+  href: relnotes.md
+- name: Další čtení
+  href: further-reading.md

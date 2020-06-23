@@ -10,12 +10,12 @@ metadata:
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 5/10/2020
-  ms.openlocfilehash: e36a289f17d56a4a8edae71b9a3194a144767dd4
-  ms.sourcegitcommit: 4da99168479f96f408b984279a5a7eabcda752db
+  ms.openlocfilehash: 313ee49f4e6ad25e57c47a9d95a1617326af3bec
+  ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/20/2020
-  ms.locfileid: "83708697"
+  ms.lasthandoff: 06/23/2020
+  ms.locfileid: "85269520"
 landingContent:
 - title: Kvantové výpočty
   linkLists:
@@ -40,13 +40,13 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Sada Quantum Development Kit
-      url: welcome.md
+      url: quickstarts/get-started.md
   - linkListType: download
     links:
     - text: Instalace sady QDK
-      url: install-guide/index.md
+      url: quickstarts/index.md
     - text: Aktualizace sady QDK
-      url: install-guide/update.md
+      url: quickstarts/update.md
 - title: Programovací jazyk Q#
   linkLists:
   - linkListType: how-to-guide
@@ -54,19 +54,19 @@ landingContent:
     - text: Uživatelská příručka Q#
       url: user-guide/index.md
     - text: Kvantové simulátory a hostitelské aplikace
-      url: machines/index.md
+      url: user-guide/machines/index.md
   - linkListType: tutorial
     links:
     - text: Vytvoření generátoru kvantových náhodných čísel
-      url: quickstarts/qrng.md
+      url: tutorials/quantum-random-number-generator.md
     - text: Zkoumání provázání s využitím Q#
-      url: quickstart.md
+      url: tutorials/explore-entanglement.md
     - text: 'Zrychlení kvantových výpočtů: Groverův vyhledávací algoritmus'
-      url: quickstarts/search.md
+      url: tutorials/search.md
   - linkListType: learn
     links:
     - text: Studium s využitím kvantových kat
-      url: intro-to-katas.md
+      url: tutorials/intro-to-katas.md
     - text: Procházení vzorového kódu Q#
       url: https://docs.microsoft.com/samples/browse/?languages=qsharp
 - title: Komunita a příspěvky
@@ -74,7 +74,7 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Přispívání do QDK
-      url: contributing/index.md
+      url: resources/contributing/index.md
     - text: Číst blok k Microsoft Quantu
       url: https://cloudblogs.microsoft.com/quantum
 - title: Knihovny Q#
@@ -82,10 +82,10 @@ landingContent:
   - linkListType: reference
     links:
     - text: Standardní knihovny
-      url: libraries/standard/index.md
+      url: user-guide/libraries/standard/index.md
     - text: Chemické knihovny
-      url: libraries/chemistry/index.md
+      url: user-guide/libraries/chemistry/index.md
     - text: Knihovna pro strojové učení
-      url: libraries/machine-learning/index.md
+      url: user-guide/libraries/machine-learning/index.md
     - text: Numerické knihovny
-      url: libraries/numerics/index.md
+      url: user-guide/libraries/numerics/index.md
