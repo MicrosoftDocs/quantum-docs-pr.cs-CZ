@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 6c09531cd8bee8f5efb472c95c575daed04d3040
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: f9d4e14742b7d06a6e90af0902b31fbdf17aedab
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630192"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269537"
 ---
 # <a name="vectors-and-matrices"></a>Vektory a matice
 
@@ -189,9 +196,9 @@ To je vhodnější v některých příkladech:
 $ $ \begin{bmatrix}
         a \\ \\ b \end{ bmatrix } \otimes \begin{ bmatrix } c \\ \\ d \\ \\ e \end{ bmatrix } = \begin{bmatrix}
         \begin{ bmatrix } c \\ \\ d \\ \\ e \end{bmatrix}
-        \\\\[1,5 EM] b \begin{ bmatrix } c \\ \\ d \\ \\ e \end {bmatrix}
+        \\\\[1,5 EM] b \begin{ bmatrix } c \\ \\ d \\ \\ e\end{bmatrix}
     účelubmatrix}
-    = \begin{ bmatrix } a c \\ \\ a d \\ \\ a e \\ \\ b c \\ \\ b d \\ \\ je \end {bmatrix}
+    = \begin{ bmatrix } a c \\ \\ a d \\ \\ a e \\ \\ b c \\ \\ b d \\ \\\end{bmatrix}
 $$
 
 a
@@ -201,21 +208,21 @@ $ $ \begin{bmatrix}
     \otimes \begin{bmatrix}
         e \ f \\ \\ g \ h \end{bmatrix}
      = \begin{bmatrix}
-    a \begin {bmatrix}
+    určitého\begin{bmatrix}
     e \ f \\\\ g \ h \end{bmatrix}
-    b \begin {bmatrix}
+    b\begin{bmatrix}
     e \ f \\\\ g \ h \end{bmatrix}
-    \\\\[1em] c \begin {bmatrix}
+    \\\\[1em] c\begin{bmatrix}
     e \ f \\\\ g \ h \end{bmatrix}
-    d \begin {bmatrix}
+    trojrozměrné\begin{bmatrix}
     e \ f \\\\ g \ h \end{bmatrix}
     účelubmatrix}
     = \begin{bmatrix}
     AE \ AF \ je \ BF \\ \\ AG \ Ah \ BG \ BH \\ \\ CE \ CF \ de \ DF \ \\ \\ \ ch \ DG \ DH \end{ bmatrix } .
 $$
 
-Konečná užitečná konvence zápisu okolních produktů tensor je to, že pro všechny vektorové $v $ nebo matrice $M $ $v ^ {\otimes n } $ nebo $M ^ {\otimes n } $ je krátká ruka pro $n $ opakovaný tensor produkt.  Například:
+Konečná užitečná konvence zápisu okolních produktů tensor je to, že pro všechny vektorové $v $ nebo matrice $M $ $v ^ {\otimes n } $ nebo $M ^ {\otimes n } $ je krátká ruka pro $n $ opakovaný tensor produkt.  Příklad:
 
 \begin{align}
-& \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } , \qquad \begin { bmatrix } 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \qquad \begin { bmatrix } 1 \\ \\ -1 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ -1 \\ \\ -1 \\ \\ 1 \end{ bmatrix } , \\ \\ & \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } , \qquad \begin { bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 0 &0&0&1 \\ \\ 0 &0&1&0 \\ \\ 0 &1&0&0 \\\\ 1 &0&0&0 \end { bmatrix } .
+& \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } , \qquad \begin{bmatrix} 1 \\ \\ 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \qquad \begin{bmatrix} 1 \\ \\ -1 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 1 \\ \\ -1 \\ \\ -1 \\ \\ 1 \end{ bmatrix } , \\ \\ & \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 1 } = \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } , \qquad \begin{bmatrix} 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } ^ {\otimes 2 } = \begin{ bmatrix } 0 &0&0&1 \\ \\ 0 &0&1&0 \\ \\ 0 &1&0&0 \\\\ 1 &0&0&0 \end{bmatrix} .
 \end{align}

@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 224bd5165f508f6cd1fdb85fb5c14ba2e23e59ea
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 1ac235bef473efa82b096cae4159e2c724ba7c0e
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630364"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269486"
 ---
 # <a name="multiple-qubits"></a>Několik Qubits
 
@@ -138,7 +145,7 @@ $$
 
 Je také možné změřit pouze jeden qubit stát qubit. V případech, kdy měříte pouze jeden z qubits, dopad měření se mírně liší, protože celý stav není sbalen do výpočetního stavu, ale je sbalený pouze do jednoho dílčího systému.  Jinými slovy, v takovém případě měření pouze jednoho qubit sbalí pouze jeden z podsystémů, ale ne všechny.  
 
-Chcete-li se podívat, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí transformačního $H Hadamard $ na dvou qubits zpočátku nastavených na stav 0: $ $ H ^ {\otimes 2 } \left (\begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \otimes \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \right) = \frac{1 } {2 } \begin{ bmatrix } 1 & 1 & 1 & 1 \\ \\ 1 &-1 & 1 &-1 \\ \\ 1 & 1 &-1 &-1 \\ \\ 1 &-1 &-1 & 1 \end{ bmatrix } \begin{ bmatrix } 1 0 0 \\\\ \\\\ \\\\ 0 \end { bmatrix } = \frac{1 } {2 } \begin{ bmatrix } 1 1 1 \\\\ \\\\ \\\\ \end { bmatrix } \mapsto \begin{Cases } \Text{Outcome} = 0 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{ bmatrix } \\ \\ \Text{Outcome} = 1 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ \\\\ \\\\ bmatrix } \\ \\ } 0 1 1 \end{\end{Cases.
+Chcete-li se podívat, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí transformačního $H Hadamard $ na dvou qubits zpočátku nastavených na stav 0: $ $ H ^ {\otimes 2 } \left (\begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \otimes \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \right) = \frac{1 } {2 } \begin{ bmatrix } 1 & 1 & 1 & 1 \\ \\ 1 &-1 & 1 &-1 \\ \\ 1 & 1 &-1 &-1 \\ \\ 1 &-1 &-1 & 1 \end{ bmatrix } \begin{ bmatrix } 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \frac{1 } {2 } \begin{ bmatrix } 1 1 1 \\\\ \\\\ \\\\ 1 \end{bmatrix} \mapsto \begin{Cases } \Text{Outcome} = 0 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{\Text{Outcome bmatrix } \\ \\ } = 1 & \frac{1 } {\sqrt{2} \begin{ } bmatrix } 0 \\\\ 0 \\\\ \\\\ bmatrix } \\ \\ } 1 1 \end{\end{Cases.
 $ $ Oba výsledky mají 50% pravděpodobnost výskytu.  Výsledek, který je 50% pravděpodobnosti pro obojí, může být od faktu od faktu, že počáteční vektor stavu neplatí jako invariantní při vyměnění $0 $ s $1 $ na prvním qubit.
 
 Matematické pravidlo pro měření prvního nebo druhého qubit je jednoduché.  Pokud necháte $e _k $ být $k ^ {\rm th } $ výpočetního základu a nechejte $S $ být sadou všech $e _k $ tak, že qubit v daném případě převezme hodnotu $1 $ pro tuto hodnotu $k $ .  Pokud vás například zajímá měření prvního qubitu, $S $ by se $e _1 \equiv 10 $ a $e _3 \equiv 11 $ .  Podobně pokud vás zajímá druhý qubit $S $ by představoval $e _2 \equiv 01 $ a $e _3 \equiv 11 $ .  Pak pravděpodobnost měření zvoleného qubitu na $1 $ je pro stav Vector $ \psi$
@@ -167,12 +174,12 @@ $$
 Všimněte si, že toto je jenom součet dvou pravděpodobností, které by se měly očekávat pro měření výsledků $10 $ a $11, $ aby se qubitso měření.
 V našem příkladu je tato podmínka vyhodnocena jako
 
-$ $ \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&1&0 \end { bmatrix } \begin{ bmatrix } 1 \\\\ 1 \\\\ 1 \\\\ \end { bmatrix } \right | ^ 2 + \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&0&1 \end { bmatrix } \begin{ bmatrix } 1 \\\\ 1 \\\\ 1 \\\\ 1 \end { bmatrix } \right | ^ 2 = \frac{1 } {2 } .
+$ $ \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&1&0 \end{bmatrix} \begin{ bmatrix } 1 \\\\ 1 1 1 \\\\ \\\\ \end{bmatrix} \right | ^ 2 + \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&0&1 \end{bmatrix} \begin{ bmatrix } 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{bmatrix} \right | ^ 2 = \frac{1 } {2 } .
 $$
 
 to přesně odpovídá tomu, co naše Intuition oznamuje, že by měla být pravděpodobnost.  Podobně lze stav zapsat jako
 
-$ $ \frac { \frac{e_1 } {2 } + \frac{e_3 } {2 } } {\sqrt { \frac{1 } {2 } }} = \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1 \end {bmatrix}
+$ $ \frac { \frac{e_1 } {2 } + \frac{e_3 } {2 } } {\sqrt { \frac{1 } {2 } }} = \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1\end{bmatrix}
 $$
 
 znovu v souladu s našimi Intuition.

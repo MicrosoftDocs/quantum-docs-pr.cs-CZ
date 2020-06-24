@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 115c1703e433f24930e4be61b545048c95da28d1
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 7f10c4ad5eb325da97552d60ff47ea89a699f08d
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630302"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269469"
 ---
 # <a name="pauli-measurements"></a>Pauli měření
 
@@ -161,7 +168,7 @@ V Q # říkáme výsledek---to znamená, že klasické informace extrahované z 
 
 Měření qubitch operátorů Pauli je definováno podobně, jak je vidět na základě těchto možností:
 
-$ $ Z \otimes z = \begin{ bmatrix } 1 &0 &0&0 \\\\ 0 & -1&0&0 \\\\ 0&0 & -1&0 \\\\ 0&0&0&1 \end { bmatrix } .
+$ $ Z \otimes z = \begin{ bmatrix } 1 &0 &0&0 \\\\ 0 & -1&0&0 \\\\ 0&0 & -1&0 \\\\ 0&0&0&1 \end{bmatrix} .
 $$
 
 Proto tensor produkty dvou operátorů Pauli-$Z $ tvoří matici složenou ze dvou mezer, které se skládají z $ + 1 $ a $-1 $ eigenvalues.

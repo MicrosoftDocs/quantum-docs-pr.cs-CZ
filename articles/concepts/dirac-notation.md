@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 958910452109fc722999acddd70894c458e38357
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: f9dddfa25e9fd1e3d8aaf92b2e3b17c96ed8b72a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630388"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269502"
 ---
 # <a name="dirac-notation"></a>Zápis Dirac
 
@@ -123,7 +130,7 @@ $$
 
 Jako příklad zápisu Diracu Zvažte možnost brzdit $ \braket{0 | 1 } $, což je vnitřní produkt mezi $0 $ a $1 $ .  Dá se zapsat jako 
 
-$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end { bmatrix } = 0. $ $
+$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end{bmatrix} = 0. $ $
 
 Říká se tomu, že $ \ket{0 } $ a $ \ket{1 } $ jsou kolmé vektory, což znamená $ \braket{0 | 1 } = \braket{1 | 0 } = 0 $ .  Také podle definice $ \braket{0 | 0 } = \braket{1 | 1 } = 1 $ , což znamená, že dva vektory výpočetního základu mohou být také volány *orthonormal*.
 Tyto vlastnosti orthonormal budou užitečné v následujícím příkladu. Pokud máme stav $ \ket { \psi } = {\frac{3 } {5 } } \ket{1 } + {\frac{4 } {5 } } \ket{0 } $ then, protože $ \braket{1 | 0 } = 0 $ pravděpodobnost měření $1 $ je  
@@ -173,7 +180,7 @@ Skutečnost, že se záporné znaménko objeví při výpočtu pravděpodobnosti
 ## <a name="ketbra-or-outer-product"></a>ketbra nebo vnější produkt
 Konečná položka, která je předmětem diskuze v Dirac Notation, je *ketbra* nebo vnější produkt.  Vnější produkt je reprezentován v Dirac zápisy jako $ \ket { \psi } \bra { \phi } $ a někdy se označuje jako ketbras, protože Bras a kets se vyskytují v opačném pořadí jako brakets.  Vnější produkt je definován pomocí násobení matic jako $ \ket { \psi } \bra { \phi } = \psi \phi ^ \dagger pro násobky $ stavových vektorů $ \psi $ a $ \phi $ .  Nejjednodušším a pravděpodobně Nejběžnějším příkladem tohoto zápisu je
 
-$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end { bmatrix } \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end { bmatrix } .
+$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end{bmatrix} \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end{bmatrix} .
 $$
 
 Ketbras se často nazývají projektory, protože projektují stav na pevnou hodnotu.  Vzhledem k tomu, že tyto operace nejsou jednotkové (a dokonce i zachovat normu vektoru), mělo by být neuvedeno, že počítač s více operačními počítači nemůže deterministickém způsobem použít projektor.  Projektory se dotýkají působivé úlohy popisující akci, kterou měření má v nestavovém stavu.  Pokud například měříme stav $ \ket { \psi } $, který bude $0 $ , pak výsledná transformace, která se v důsledku měření funguje jako stav, je

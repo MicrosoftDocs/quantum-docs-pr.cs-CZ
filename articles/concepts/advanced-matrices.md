@@ -9,6 +9,13 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
+- $$
+- $$
+- $$
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +84,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 8d3c646715f13c454e51b9295cbfdabf6a236ffc
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 71923247121eae6a1d4e26d2664d8e547370ba3a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630151"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269452"
 ---
 # <a name="advanced-matrix-concepts"></a>Pokročilé koncepty matrice #
 
@@ -104,7 +114,7 @@ $$
 
 Vektory
 
-$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end { bmatrix } a \begin{ bmatrix } 0 0 \\ \\ \\ \\ 1 \end {bmatrix}$$
+$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end{bmatrix} a \begin{ bmatrix } 0 0 \\ \\ \\ \\ 1\end{bmatrix}$$
 
 eigenvectors z této matice s eigenvalues $d _1 $ , $d _2 $ a $d _3 $ , v uvedeném pořadí. Pokud $d _1 $ , $d _2 $ a $d _3 $ jsou odlišná čísla, pak jsou tyto vektory (a jejich násobky) jediným eigenvectors $D matice $ . Obecně platí, že pro diagonální matrici je snadné číst z eigenvalues a eigenvectors. Eigenvalues jsou všechna čísla, která se zobrazují na diagonále a jejich příslušné eigenvectors jsou vektory jednotek s jednou položkou rovnající se $1 $ a zbývající položky rovnající se $0 $ .
 
