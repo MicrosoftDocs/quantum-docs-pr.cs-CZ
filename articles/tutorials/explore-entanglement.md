@@ -1,152 +1,192 @@
 ---
 title: Zkoumání provázání s využitím Q#
 description: Naučte se psát kvantové programy v jazyce Q#. Vývoj aplikace demonstrující Bellovy stavy pomocí nástroje Quantum Development Kit (QDK)
-author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+author: geduardo
+ms.author: v-edsanc@microsoft.com
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 294366b884da93f11c60cfdbdce9b40cf5202b0d
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 16c93b3dd17363c06602529cb34e8fc84aadc7a8
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274488"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415418"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
 V tomto kurzu vám ukážeme, jak v jazyce Q# napsat program, který manipuluje s qubity, měří je a demonstruje efekty superpozice a provázání.
-Tento dokument vás provede instalací sady QDK, sestavením programu a spuštěním programu na kvantovém simulátoru.  
 
 Vytvoříme aplikaci nazvanou Bell, která demonstruje kvantové provázání.
 Název Bell odkazuje na Bellovy stavy, což jsou specifické kvantové stavy 2 qubitů používané k demonstraci nejjednodušších příkladů superpozice a provázání.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="pre-requisites"></a>Požadavky
 
 Chcete-li se pustit do kódování, nejprve proveďte tyto kroky: 
 
-* Nainstalujte sadu Quantum Development Kit pro [Python](xref:microsoft.quantum.install.python) nebo [.NET](xref:microsoft.quantum.install.cs).
+* [Nainstalujte](xref:microsoft.quantum.install) sadu pro vývoj pro práci s více jazyky pomocí vašeho preferovaného jazykového a vývojového prostředí.
 * Pokud už máte sadu QDK nainstalovanou, zkontrolujte, že je [aktualizovaná na nejnovější verzi](xref:microsoft.quantum.update)
 
-Pokud se chcete jen seznámit se základy, můžete si článek přečíst i bez instalace sady QDK. Získáte tak přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
+Můžete také postupovat spolu s mluveným komentářem bez instalace QDK, Projděte si přehledy programovacího jazyka Q # a první koncepty výpočetních prostředků.
 
-## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrace chování qubitů pomocí Q#
+## <a name="in-this-tutorial-youll-learn-how-to"></a>V tomto kurzu se naučíte:
 
-Připomeňme si naši jednoduchou definici [qubitu](xref:microsoft.quantum.overview.understanding).  Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), [qubit](xref:microsoft.quantum.glossary#qubit) se může nacházet v **superpozici** stavů 0 a 1.  Qubit si můžete představit jako směr v prostoru (označuje se také jako vektor).  Qubit může být natočený do libovolného směru. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.  Tuto reprezentaci je možné formálněji vizualizovat [Blochovou koulí](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+> [!div class="checklist"]
+> * Vytváření a kombinování operací v Q\#
+> * Vytvořte operace pro vložení qubits do umístění, entangle a měření.
+> * Demonstrujte neentanglementy s využitím programu Q # spuštěného v simulátoru. 
 
-Akce měření poskytuje binární výsledek a mění stav qubitu. Měřením získáme binární hodnotu, buď 0, nebo 1.  V důsledku měření přejde qubit ze superpozice (libovolného směru) do jednoho z klasických stavů.  Všechna následná opakovaná měření bez provedení dalších operací už budou poskytovat shodný binární výsledek.  
+## <a name="demonstrating-qubit-behavior-with-the-qdk"></a>Demonstrace chování qubit pomocí QDK
 
-Několik qubitů může být také [**provázáno**](xref:microsoft.quantum.glossary#entanglement). Když změříme jeden provázaný qubit, změní se tím naše znalost stavu ostatních qubitů.
+Zatímco klasické bity obsahují jednu binární hodnotu (tj. 0 nebo 1), [qubit](xref:microsoft.quantum.glossary#qubit) se může nacházet v **superpozici** stavů 0 a 1.  Koncepční, stav qubit lze představit jako směr v abstraktním prostoru (označuje se také jako vektor).  Stav qubit může být v libovolném z možných směrů. Dva **klasické stavy** odpovídají dvěma směrům. Představují 100% šanci na změření 0 a 100% šanci na změření 1.
+
+Akce měření poskytuje binární výsledek a mění stav qubitu.
+Měření vytvoří binární hodnotu, buď 0, nebo 1.  V důsledku měření přejde qubit ze superpozice (libovolného směru) do jednoho z klasických stavů.  Všechna následná opakovaná měření bez provedení dalších operací už budou poskytovat shodný binární výsledek.  
+
+Několik qubitů může být také [**provázáno**](xref:microsoft.quantum.glossary#entanglement).  Když změříme jeden provázaný qubit, změní se tím naše znalost stavu ostatních qubitů.
 
 Nyní jsme připraveni ukázat, jak se toto chování vyjadřuje v jazyce Q#.  Začneme s nejjednodušším možným programem a sestavíme ho tak, abychom demonstrovali kvantovou superpozici a provázání.
 
-## <a name="setup"></a>Nastavení
+## <a name="creating-a-q-project"></a>Vytvoření projektu Q #
 
-Tento kurz používá hostitelské programy a skládá se ze dvou částí:
+První věc, kterou je potřeba udělat, je vytvoření nového projektu Q #. V tomto kurzu použijeme prostředí založené na [aplikacích příkazového řádku s vs Code](xref:microsoft.quantum.install.standalone).
 
-1. Řada kvantových algoritmů, implementovaných v kvantovém programovacím jazyce Q#.
-1. Hostitelský program implementovaný v programovacím jazyce Python nebo C#, který slouží jako hlavní vstupní bod a vyvolává kvantové algoritmy jako operace Q#.
+Chcete-li vytvořit nový projekt, v VS Code: 
 
-#### <a name="python"></a>[Python](#tab/tabid-python)
+1. Klikněte na **Zobrazit**  ->  **paletu příkazů** a vyberte **Q #: vytvořit nový projekt**.
+2. Klikněte na **samostatná Konzolová aplikace**.
+3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **vytvořit projekt**.
+4. Po úspěšném vytvoření projektu klikněte v pravém dolním rohu na **Otevřít nový projekt...** .
 
-1. Vyberte umístění aplikace.
+V tomto případě jsme volali projekt `Bell` . Tím se vytvoří dva soubory: `Bell.csproj` , soubor projektu a `Program.qs` Šablona aplikace Q #, kterou použijeme k zápisu naší aplikace. Obsah `Program.qs` by měl být:
 
-1. Vytvořte soubor s názvem `Bell.qs`. Tento soubor bude obsahovat váš kód Q#.
+```qsharp
+   namespace Bell {
 
-1. Vytvořte soubor s názvem `host.py`. Tento soubor bude obsahovat váš hostitelský kód v Pythonu.
+      open Microsoft.Quantum.Canon;
+      open Microsoft.Quantum.Intrinsic;
+    
 
-#### <a name="c-command-line"></a>[Příkazový řádek C#](#tab/tabid-csharp)
+      @EntryPoint()
+      operation HelloQ() : Unit {
+          Message("Hello quantum world!");
+      }
+   }
+```
 
-1. Vytvoření nového projektu Q#
+## <a name="write-the-q-application"></a>Zapsat aplikaci Q \#
+ 
+Naším cílem je připravit dva qubity v určitém kvantovém stavu a demonstrovat tak, jak v Q# pracovat s qubity, měnit jejich stav a využívat efekty superpozice a provázání. Za účelem zavedení qubitch států, operací a měření vám budeme sestavovat tuto část.
 
-    ```
-    dotnet new console -lang Q# --output Bell
-    cd Bell
-    ```
+### <a name="initialize-qubit-using-measurement"></a>Inicializovat qubit pomocí měření
 
-    Měli byste vidět soubor `.csproj`, soubor Q# s názvem `Operations.qs` a soubor hostitelského programu s názvem `Driver.cs`.
+V prvním kódu níže si ukážeme, jak v jazyce Q# pracovat s qubity.  Zavádíme dvě operace [`M`](xref:microsoft.quantum.intrinsic.m) a [`X`](xref:microsoft.quantum.intrinsic.x) transformují stav qubit. V tomto fragmentu kódu je použita operace `SetQubitState`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `SetQubitState` provádí měření qubitu pomocí operace `M`.  V Q # qubit měření vždy vrací buď `Zero` nebo `One` .  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, "převrátí `SetQubitState` " qubit; to znamená, že spustí `X` operaci, která změní stav qubit na nový stav, ve kterém pravděpodobnost vracení měření vrací `Zero` a `One` jsou obráceny. Tímto způsobem `SetQubitState` vždy umístí cílový qubit do požadovaného stavu.
 
-1. Přejmenování souboru Q#
-
-    ```
-    mv Operation.qs Bell.qs
-    ```
-
-#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
-
-1. Vytvoření nového projektu
-
-   * Otevřete sadu Visual Studio.
-   * V nabídce **Soubor** vyberte **Nový** -> **Projekt...** .
-   * V průzkumníku šablon projektu zadejte do vyhledávacího pole `Q#` a vyberte šablonu `Q# Application`.
-   * Dejte projektu název `Bell`.
-
-1. Přejmenování souboru Q#
-
-   * Přejděte na **Průzkumníka řešení**.
-   * Klikněte pravým tlačítkem na soubor `Operations.qs`.
-   * Přejmenujte ho na `Bell.qs`.
-
-* * *
-
-## <a name="write-a-q-operation"></a>Napište operaci Q#
-
-Naším cílem je připravit dva qubity v určitém kvantovém stavu a demonstrovat tak, jak v Q# pracovat s qubity, měnit jejich stav a využívat efekty superpozice a provázání. Program sestavíme krok za krokem a předvedeme si stavy, operace a měření spojené s qubity.
-
-**Přehled:**  V prvním kódu níže si ukážeme, jak v jazyce Q# pracovat s qubity.  Zavedeme dvě operace `M` a `X`, které mění stav qubitu. 
-
-V tomto fragmentu kódu je použita operace `Set`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `Set` provádí měření qubitu pomocí operace `M`.  V Q# vrací měření qubitu vždy buď `Zero`, nebo `One`.  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, operace Set qubit „překlopí“. To znamená, že provede operaci `X`, která změní stav qubit na nový stav, ve kterém jsou pravděpodobnosti změření `Zero` a `One` převrácené.  Pro předvedení efektu operace `Set` je pak přidána operace `TestBellState`.  Tato operace jako vstup přebírá `Zero` nebo `One`, několikrát s tímto vstupem zavolá operaci `Set` a spočítá, kolikrát byla z měření qubitu vrácena hodnota `Zero` a kolikrát `One`. Samozřejmě v této první simulaci operace `TestBellState` očekáváme, že všechna měření qubitu nastaveného pomocí vstupního parametru `Zero` vrátí hodnotu `Zero` a všechna měření qubitu nastaveného pomocí parametru `One` vrátí `One`.  Dále do operace `TestBellState` přidáme kód pro demonstraci superpozice a provázání.
+Nahraďte obsah `Program.qs` následujícím kódem:
 
 
-### <a name="q-operation-code"></a>Kód operace Q#
+```qsharp
+   namespace Bell {
+       open Microsoft.Quantum.Intrinsic;
+       open Microsoft.Quantum.Canon;
 
-1. Obsah souboru Bell.qs nahraďte následujícím kódem:
+       operation SetQubitState(desired : Result, q1 : Qubit) : Unit {
+           if (desired != M(q1)) {
+               X(q1);
+           }
+       }
+   }
+```
 
-    ```qsharp
-    namespace Quantum.Bell {
-        open Microsoft.Quantum.Intrinsic;
-        open Microsoft.Quantum.Canon;
+Teď můžeme zavolat tuto operaci, aby nastavila qubit do klasického stavu a vrátila buď hodnotu `Zero` ve 100 % případů, nebo hodnotu `One` ve 100 % případů.
+`Zero` a `One` jsou konstanty, které představují pouze dva možné výsledky měření stavu qubitu.
 
-        operation Set(desired : Result, q1 : Qubit) : Unit {
-            if (desired != M(q1)) {
-                X(q1);
-            }
-        }
-    }
-    ```
+Operace `SetQubitState` měří qubit. Pokud je qubit ve stavu, který chceme, `SetQubitState` ho nechá být, v opačném případě provedením operace `X` změní stav qubitu na požadovaný stav.
 
-    Teď můžeme zavolat tuto operaci, aby nastavila qubit do klasického stavu a vrátila buď hodnotu `Zero` ve 100 % případů, nebo hodnotu `One` ve 100 % případů.  `Zero` a `One` jsou konstanty, které představují pouze dva možné výsledky měření stavu qubitu.
+#### <a name="about-q-operations"></a>Operace v jazyce Q#
 
-    Operace `Set` měří qubit.
-    Pokud je qubit ve stavu, který chceme, `Set` ho nechá být, v opačném případě provedením operace `X` změní stav qubitu na požadovaný stav.
-
-### <a name="about-q-operations"></a>Operace v jazyce Q#
-
-Operace Q # je vlastně kvantový podprogram. To znamená, že se jedná o volanou rutinu, která obsahuje kvantové operace.
+Operace Q # je vlastně kvantový podprogram. To znamená, že se jedná o volanou rutinu, která obsahuje volání jiných operací.
 
 Argumenty operace jsou zadány jako řazené kolekce členů v závorkách.
 
-Návratový typ operace je určen za dvojtečkou. V našem případě operace `Set` nic nevrací, takže je označena jako vracející `Unit`. Toto je v jazyce Q# ekvivalentem pojmu `unit` v F#, což je hrubá analogie `void` v C# a prázdné řazené kolekci členů v Pythonu (`Tuple[()]`).
+Návratový typ operace je určen za dvojtečkou. V našem případě operace `SetQubitState` nic nevrací, takže je označena jako vracející `Unit`. Toto je v jazyce Q# ekvivalentem pojmu `unit` v F#, což je hrubá analogie `void` v C# a prázdné řazené kolekci členů v Pythonu (`Tuple[()]`).
 
 V naší první operaci Q# jsme použili dvě kvantové operace:
 
-* Operaci [M](xref:microsoft.quantum.intrinsic.m), která měří stav qubitu.
-* Operaci [X](xref:microsoft.quantum.intrinsic.x), která převrací stav qubitu.
+* [`M`](xref:microsoft.quantum.intrinsic.m)Operace, která měří stav qubit
+* [`X`](xref:microsoft.quantum.intrinsic.x)Operace, která Překlopí stav qubit
 
 Kvantová operace mění stav qubitu. Někdy se mluví o kvantových hradlech místo kvantových operacích, je totiž možná i analogie s klasickými logickými hradly. Tento koncept pochází z raných dob kvantových výpočtů, kdy byly algoritmy jen teoretické konstrukce a vizualizovaly se ve formě schémat odpovídacích obvodovým schématům klasických počítačů.
 
-### <a name="add-q-test-code"></a>Přidání testovacího kódu Q#
+### <a name="counting-measurement-outcomes"></a>Počítání výsledků měření
 
-1. Přidejte do souboru `Bell.qs` následující operaci, do oboru názvů za konec operace `Set`:
+Pro předvedení efektu operace `SetQubitState` je pak přidána operace `TestBellState`. Tato operace jako vstup přebírá `Zero` nebo `One`, několikrát s tímto vstupem zavolá operaci `SetQubitState` a spočítá, kolikrát byla z měření qubitu vrácena hodnota `Zero` a kolikrát `One`. Samozřejmě v této první simulaci operace `TestBellState` očekáváme, že všechna měření qubitu nastaveného pomocí vstupního parametru `Zero` vrátí hodnotu `Zero` a všechna měření qubitu nastaveného pomocí parametru `One` vrátí `One`. Dále přidáte kód k `TestBellState` předvedení entanglement a.
 
-    ```qsharp
+Přidejte do souboru `Bell.qs` následující operaci, do oboru názvů za konec operace `SetQubitState`:
+
+```qsharp
+   operation TestBellState(count : Int, initial : Result) : (Int, Int) {
+
+       mutable numOnes = 0;
+       using (qubit = Qubit()) {
+
+           for (test in 1..count) {
+               SetQubitState(initial, qubit);
+               let res = M(qubit);
+
+               // Count the number of ones we saw:
+               if (res == One) {
+                   set numOnes += 1;
+               }
+           }
+            
+           SetQubitState(Zero, qubit);
+       }
+
+       // Return number of times we saw a |0> and number of times we saw a |1>
+       Message("Test results (# of 0s, # of 1s): ");
+       return (count - numOnes, numOnes);
+   }
+```
+Všimněte si, že před `return` tiskem vysvětlující zprávy v konzole jsme přidali řádek s funkcí ( `Message` ) [Microsoft. prohlášeno. vnitřní. zpráva].
+
+Tato operace (`TestBellState`) se zopakuje v `count` iteracích, v každé nastaví zadanou hodnotu qubitu `initial` a pak změří výsledek (`M`). Shromáždí statistiku o počtu naměřených nul a jedniček a vrátí je volajícímu. Provede ale ještě jednu důležitou operaci. Před návratem resetuje qubit do známého stavu (`Zero`), aby ostatní mohli tento qubit použít ve známém stavu. To je provedeno příkazem `using`.
+
+#### <a name="about-variables-in-q"></a>O proměnných v Q\#
+
+Ve výchozím nastavení jsou proměnné v Q# neměnné; po jejich svázání už je nelze změnit. Klíčové slovo `let` slouží k označení vazby neměnné proměnné. Argumenty operace jsou vždycky neměnné.
+
+Pokud potřebujete proměnnou, jejíž hodnotu je možné změnit, například `numOnes` v našem příkladu, můžete proměnnou deklarovat pomocí klíčového slova `mutable`. Hodnotu proměnlivé proměnné lze změnit pomocí příkazu `setQubitState`.
+
+V obou případech je typ proměnné odvozen kompilátorem. Q# nevyžaduje pro proměnné žádné specifikace typu.
+
+#### <a name="about-using-statements-in-q"></a>O `using` příkazech v Q\#
+
+Příkaz `using` je také jedinečný pro jazyk Q#. Slouží k přidělení qubitů pro použití v bloku kódu. V Q# se všechny qubity dynamicky přidělují a uvolňují, protože se nejedná o pevné prostředky, které jsou k dispozici pro celou dobu běhu složitého algoritmu. Příkaz `using` přidělí sadu qubitů na začátku a uvolní je na konci bloku.
+
+## <a name="execute-the-code-from-the-command-line"></a>Spustit kód z příkazového řádku
+
+Aby bylo možné spustit kód, musíme zadat kompilátor, *který* se spustí při zadání `dotnet run` příkazu. K tomu dojde v případě jednoduché změny v souboru Q # přidáním řádku s `@EntryPoint()` přímo předcházejícím voláním: `TestBellState` operace v tomto případě. Úplný kód by měl být:
+
+```qsharp
+namespace Bell {
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+
+    operation SetQubitState(desired : Result, target : Qubit) : Unit {
+        if (desired != M(target)) {
+            X(target);
+        }
+    }
+
+    @EntryPoint()
     operation TestBellState(count : Int, initial : Result) : (Int, Int) {
 
         mutable numOnes = 0;
         using (qubit = Qubit()) {
 
             for (test in 1..count) {
-                Set(initial, qubit);
+                SetQubitState(initial, qubit);
                 let res = M(qubit);
 
                 // Count the number of ones we saw:
@@ -154,171 +194,45 @@ Kvantová operace mění stav qubitu. Někdy se mluví o kvantových hradlech m�
                     set numOnes += 1;
                 }
             }
-            Set(Zero, qubit);
+
+            SetQubitState(Zero, qubit);
         }
 
-        // Return number of times we saw a |0> and number of times we saw a |1>
-        return (count-numOnes, numOnes);
+    // Return number of times we saw a |0> and number of times we saw a |1>
+    Message("Test results (# of 0s, # of 1s): ");
+    return (count - numOnes, numOnes);
     }
-    ```
-
-    Tato operace (`TestBellState`) se zopakuje v `count` iteracích, v každé nastaví zadanou hodnotu qubitu `initial` a pak změří výsledek (`M`). Shromáždí statistiku o počtu naměřených nul a jedniček a vrátí je volajícímu. Provede ale ještě jednu důležitou operaci. Před návratem resetuje qubit do známého stavu (`Zero`), aby ostatní mohli tento qubit použít ve známém stavu. To je provedeno příkazem `using`.
-
-### <a name="about-variables-in-q"></a>Proměnné v jazyce Q#
-
-Ve výchozím nastavení jsou proměnné v Q# neměnné; po jejich svázání už je nelze změnit. Klíčové slovo `let` slouží k označení vazby neměnné proměnné. Argumenty operace jsou vždycky neměnné.
-
-Pokud potřebujete proměnnou, jejíž hodnotu je možné změnit, například `numOnes` v našem příkladu, můžete proměnnou deklarovat pomocí klíčového slova `mutable`. Hodnotu proměnlivé proměnné lze změnit pomocí příkazu `set`.
-
-V obou případech je typ proměnné odvozen kompilátorem. Q# nevyžaduje pro proměnné žádné specifikace typu.
-
-### <a name="about-using-statements-in-q"></a>Příkazy `using` v Q#
-
-Příkaz `using` je také jedinečný pro jazyk Q#. Slouží k přidělení qubitů pro použití v bloku kódu. V Q# se všechny qubity dynamicky přidělují a uvolňují, protože se nejedná o pevné prostředky, které jsou k dispozici pro celou dobu běhu složitého algoritmu. Příkaz `using` přidělí sadu qubitů na začátku a uvolní je na konci bloku.
-
-## <a name="create-the-host-application-code"></a>Vytvořte kód hostitelské aplikace
-
-#### <a name="python"></a>[Python](#tab/tabid-python)
-
-1. Otevřete soubor `host.py` a přidejte následující kód:
-
-    ```python
-    import qsharp
-
-    from qsharp import Result
-    from Quantum.Bell import TestBellState
-
-    initials = (Result.Zero, Result.One)
-
-    for i in initials:
-      res = TestBellState.simulate(count=1000, initial=i)
-      (num_zeros, num_ones) = res
-      print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4}')
-    ```
-
-#### <a name="c"></a>[C#](#tab/tabid-csharp)
-
-1. Obsah souboru `Driver.cs` nahraďte následujícím kódem:
-
-    ```csharp
-    using System;
-
-    using Microsoft.Quantum.Simulation.Core;
-    using Microsoft.Quantum.Simulation.Simulators;
-
-    namespace Quantum.Bell
-    {
-        class Driver
-        {
-            static void Main(string[] args)
-            {
-                using (var qsim = new QuantumSimulator())
-                {
-                    // Try initial values
-                    Result[] initials = new Result[] { Result.Zero, Result.One };
-                    foreach (Result initial in initials)
-                    {
-                        var res = TestBellState.Run(qsim, 1000, initial).Result;
-                        var (numZeros, numOnes) = res;
-                        System.Console.WriteLine(
-                            $"Init:{initial,-4} 0s={numZeros,-4} 1s={numOnes,-4}");
-                    }
-                }
-
-                System.Console.WriteLine("Press any key to continue...");
-                Console.ReadKey();
-            }
-        }
-    }
-    ```
-
-#### [](#tab/tabid-vs2019)
-
-* * *
-
-### <a name="about-the-host-application-code"></a>Kód hostitelské aplikace
-
-#### <a name="python"></a>[Python](#tab/tabid-python)
-
-Hostitelská aplikace v jazyce Python má tři části:
-
-* Vypočítá všechny argumenty vyžadované pro kvantový algoritmus. V příkladu je proměnná `count` nastavena pevně na 1000 a počáteční hodnota qubitu je `initial`.
-* Spusťte kvantový algoritmus zavoláním metody `simulate()` importované operace Q#.
-* Zpracujte výsledek operace. V příkladu bude `res` obsahovat výsledek operace. Zde je výsledkem řazená kolekce členů – počet nul (`num_zeros`) a počet jedniček (`num_ones`) změřených simulátorem. Z řazené kolekce členů získáme dvě pole a vytiskneme výsledky.
-
-#### <a name="c"></a>[C#](#tab/tabid-csharp)
-
-Hostitelská aplikace C# má čtyři části:
-
-* Vytvoření kvantového simulátoru. V tomto příkladu je simulátorem `qsim`.
-* Vypočítá všechny argumenty vyžadované pro kvantový algoritmus. V příkladu je proměnná `count` nastavena pevně na 1000 a počáteční hodnota qubitu je `initial`.
-* Spusťte kvantový algoritmus. Každá operace Q# vygeneruje třídu C# se stejným názvem. Tato třída má metodu `Run`, která operaci **asynchronně** provede. Spuštění je asynchronní, protože asynchronní bude i spuštění na skutečném hardwaru. Vzhledem k tomu, že metoda `Run` je asynchronní, načteme vlastnost `Result`; tím se běh zastaví do doby, dokud se úloha nedokončí a nevrátí výsledek synchronně.
-* Zpracujte výsledek operace. V příkladu bude `res` obsahovat výsledek operace. Zde je výsledkem řazená kolekce členů – počet nul (`numZeros`) a počet jedniček (`numOnes`) změřených simulátorem. To se vrátí v C# jako ValueTuple. Z řazené kolekce členů získáme dvě pole, vytiskneme výsledky a počkáme na stisk klávesy.
-
-#### [](#tab/tabid-vs2019)
-
-* * *
-
-## <a name="build-and-run"></a>Sestavení a spuštění
-
-#### <a name="python"></a>[Python](#tab/tabid-python)
-
-1. Zadejte v okně terminálu následující příkaz:
-
-    ```
-    python host.py
-    ```
-
-    Tento příkaz spustí hostitelskou aplikaci, která provede simulaci operace Q#.
-
-Výsledky by měly být:
-
-```Output
-Init:0    0s=1000 1s=0   
-Init:1    0s=0    1s=1000
+}
 ```
 
-#### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-csharp)
+Aby bylo možné spustit program, musíme zadat `count` `initial` argumenty a z příkazového řádku. Vybereme například `count = 1000` a `initial = One` . Zadejte následující příkaz:
 
-1. Spusťte v okně terminálu následující příkaz:
-
-    ```dotnetcli
-    dotnet run
-    ```
-
-    Tento příkaz automaticky stáhne všechny požadované balíčky, sestaví aplikaci a pak ji spustí na příkazovém řádku.
-
-1. Případně můžete stisknutím **F1** otevřít paletu příkazů a vybrat **Ladění: Spustit bez ladění.**
-Může se zobrazit výzva k vytvoření nového souboru ``launch.json`` popisujícího spuštění programu.
-Výchozí ``launch.json`` by měl dobře fungovat pro většinu aplikací.
-
-Výsledky by měly být:
-
-```Output
-Init:Zero 0s=1000 1s=0
-Init:One  0s=0    1s=1000
-Press any key to continue...
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
+A měli byste sledovat následující výstup:
 
-1. Stiskněte `F5` a váš program by měl sestavit a spustit!
-
-Výsledky by měly být:
-
-```Output
-Init:Zero 0s=1000 1s=0
-Init:One  0s=0    1s=1000
-Press any key to continue...
+```output
+Test results (# of 0s, # of 1s):
+(0, 1000)
 ```
 
-Program se ukončí po stisknutí klávesy.
+Pokud se o to pokusíte `initial = Zero` , měli byste sledovat:
 
-* * *
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s):
+(1000, 0)
+```
 
 ## <a name="prepare-superposition"></a>Příprava superpozice
 
-**Přehled** Nyní se podíváme na to, jak Q# vyjadřuje způsoby, jak uvést qubity do superpozice.  Připomeňme si, že stav qubitu může být superpozicí hodnot 0 a 1.  Dosáhneme toho operací `Hadamard`. Pokud je qubit v některém z klasických stavů (kdy měření vrátí vždy `Zero` nebo vždy `One`), pak operace `Hadamard` nebo `H` převede qubit do stavu, ve kterém měření vrátí v 50 % případů `Zero` a v 50 % případů `One`.  Můžete si to představit tak, že qubit je uprostřed mezi `Zero` a `One`.  Když teď budeme simulovat operaci `TestBellState`, uvidíme, že jednotlivá měření vrátí přibližně stejný počet hodnot `Zero` a `One`.  
+Teď se podíváme na to, jak Q # Express způsobs vložení qubitsu na pozici.  Připomeňme si, že stav qubitu může být superpozicí hodnot 0 a 1.  Dosáhneme toho operací `Hadamard`. Pokud je qubit v některém z klasických stavů (kdy měření vrátí vždy `Zero` nebo vždy `One`), pak operace `Hadamard` nebo `H` převede qubit do stavu, ve kterém měření vrátí v 50 % případů `Zero` a v 50 % případů `One`.  Můžete si to představit tak, že qubit je uprostřed mezi `Zero` a `One`.  Když teď budeme simulovat operaci `TestBellState`, uvidíme, že jednotlivá měření vrátí přibližně stejný počet hodnot `Zero` a `One`.  
+
+### <a name="x-flips-qubit-state"></a>`X`Překlopí stav qubit.
 
 Nejdřív zkusíme qubit překlopit (pokud je qubit ve stavu `Zero`, překlopíme ho na `One` a naopak). Toho se dosáhne použitím operace `X` před změřením v operaci `TestBellState`:
 
@@ -327,14 +241,30 @@ X(qubit);
 let res = M(qubit);
 ```
 
-Nyní jsou výsledky (po stisknutí `F5`) obrácené:
+Nyní jsou výsledky vráceny:
 
-```Output
-Init:Zero 0s=0    1s=1000
-Init:One  0s=1000 1s=0
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-Ovšem všechno, co jsme doposud viděli, je klasické. Pojďme se dostat ke kvantovým výsledkům. Stačí k tomu nahradit operaci `X` v předchozím běhu operací `H` (Hadamard). Místo úplného překlopení qubitu z 0 na 1 ho můžeme překlopit jen napůl. Změněné řádky v `TestBellState` teď vypadají takto:
+```output
+Test results (# of 0s, # of 1s):
+(1000, 0)
+```
+
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s):
+(0, 1000)
+```
+
+Teď se podíváme na vlastnosti pro qubits.
+
+### <a name="h-prepares-superposition"></a>`H`připraví nadpozici
+
+Stačí k tomu nahradit operaci `X` v předchozím běhu operací `H` (Hadamard). Místo úplného překlopení qubitu z 0 na 1 ho můžeme překlopit jen napůl. Změněné řádky v `TestBellState` teď vypadají takto:
 
 ```qsharp
 H(qubit);
@@ -343,18 +273,33 @@ let res = M(qubit);
 
 Teď už výsledky budou zajímavější:
 
-```Output
-Init:Zero 0s=484  1s=516
-Init:One  0s=522  1s=478
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
 
-Každým měřením požádáme o klasickou hodnotu, ale qubit je uprostřed mezi 0 a 1, takže (statisticky) dostaneme v polovině případů 0 a v polovině případů 1. To se označuje jako __superpozice__ a je to naše první seznámení s kvantovými stavy.
+```output
+Test results (# of 0s, # of 1s):
+(496, 504)
+```
+
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+
+```output
+Test results (# of 0s, # of 1s):
+(506, 494)
+```
+
+Každým měřením požádáme o klasickou hodnotu, ale qubit je uprostřed mezi 0 a 1, takže (statisticky) dostaneme v polovině případů 0 a v polovině případů 1.
+To se označuje jako **superpozice** a je to naše první seznámení s kvantovými stavy.
 
 ## <a name="prepare-entanglement"></a>Příprava provázání
 
-**Přehled:**  Teď se podíváme na to, jak se v Q# vyjadřuje kvantové provázání qubitů.  Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před změřením prvního qubitu použijeme novou operaci `CNOT`, což je zkratka pro Controlled-Not, kontrolovanou negaci.  Výsledkem provedení této operace na dvou qubitech je překlopení druhého qubitu, pokud je první ve stavu `One`.  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
+Teď se podíváme na to, jak se v Q# vyjadřuje kvantové provázání qubitů.
+Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před měřením prvního qubit používáme novou operaci ( `CNOT` ), která se zaznamená pro kontrolu ne.  Výsledkem provedení této operace na dvou qubitech je překlopení druhého qubitu, pokud je první ve stavu `One`.  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
 
-První věc, kterou je potřeba udělat, je přidělit v operaci `TestBellState` dva qubity místo jednoho:
+První věc, kterou je potřeba udělat, je přidělit dvě qubits místo jedné v `TestBellState` :
 
 ```qsharp
 using ((q0, q1) = (Qubit(), Qubit())) {
@@ -363,21 +308,21 @@ using ((q0, q1) = (Qubit(), Qubit())) {
 To nám umožní přidat novou operaci (`CNOT`) před změřením (`M`) v operaci `TestBellState`:
 
 ```qsharp
-Set(initial, q0);
-Set(Zero, q1);
+SetQubitState(initial, q0);
+SetQubitState(Zero, q1);
 
 H(q0);
 CNOT(q0, q1);
 let res = M(q0);
 ```
 
-Přidali jsme další operaci `Set` inicializující první qubit, abychom se ujistili, že je vždy v počátečním stavu `Zero`.
+Přidali jsme další operaci `SetQubitState` inicializující první qubit, abychom se ujistili, že je vždy v počátečním stavu `Zero`.
 
 Stejně tak musíme resetovat druhý qubit, než ho na konci uvolníme.
 
 ```qsharp
-Set(Zero, q0);
-Set(Zero, q1);
+SetQubitState(Zero, q0);
+SetQubitState(Zero, q1);
 ```
 
 Úplná rutina teď vypadá takto:
@@ -388,8 +333,8 @@ Set(Zero, q1);
         mutable numOnes = 0;
         using ((q0, q1) = (Qubit(), Qubit())) {
             for (test in 1..count) {
-                Set (initial, q0);
-                Set (Zero, q1);
+                SetQubitState(initial, q0);
+                SetQubitState(Zero, q1);
 
                 H(q0);
                 CNOT(q0,q1);
@@ -400,9 +345,9 @@ Set(Zero, q1);
                     set numOnes += 1;
                 }
             }
-            
-            Set(Zero, q0);
-            Set(Zero, q1);
+
+            SetQubitState(Zero, q0);
+            SetQubitState(Zero, q1);
         }
 
         // Return number of times we saw a |0> and number of times we saw a |1>
@@ -418,8 +363,8 @@ Když ji spustíme, získáme přesně stejný výsledek 50-50, jako předtím. 
         mutable agree = 0;
         using ((q0, q1) = (Qubit(), Qubit())) {
             for (test in 1..count) {
-                Set(initial, q0);
-                Set(Zero, q1);
+                SetQubitState(initial, q0);
+                SetQubitState(Zero, q1);
 
                 H(q0);
                 CNOT(q0, q1);
@@ -435,67 +380,35 @@ Když ji spustíme, získáme přesně stejný výsledek 50-50, jako předtím. 
                 }
             }
             
-            Set(Zero, q0);
-            Set(Zero, q1);
+            SetQubitState(Zero, q0);
+            SetQubitState(Zero, q1);
         }
 
-        // Return number of times we saw a |0> and number of times we saw a |1>
+        // Return times we saw |0>, times we saw |1>, and times measurements agreed
+        Message("Test results (# of 0s, # of 1s, # of agreements)");
         return (count-numOnes, numOnes, agree);
     }
 ```
 
-Nová návratová hodnota (`agree`) počítá případy, kdy se měření prvního qubitu shodovalo s měřením druhého qubitu. Také je potřeba odpovídajícím způsobem aktualizovat hostitelskou aplikaci:
+Nová návratová hodnota (`agree`) počítá případy, kdy se měření prvního qubitu shodovalo s měřením druhého qubitu.
 
-#### <a name="python"></a>[Python](#tab/tabid-python)
+Spuštění kódu, který získáme:
 
-```python
-import qsharp
-
-from qsharp import Result
-from Quantum.Bell import TestBellState
-
-initials = {Result.Zero, Result.One} 
-
-for i in initials:
-    res = TestBellState.simulate(count=1000, initial=i)
-    (num_zeros, num_ones, agree) = res
-    print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4} agree={agree: <4}')
+```dotnetcli
+dotnet run --count 1000 --initial One
 ```
-
-#### <a name="c"></a>[C#](#tab/tabid-csharp)
-
-```csharp
-            using (var qsim = new QuantumSimulator())
-            {
-                // Try initial values
-                Result[] initials = new Result[] { Result.Zero, Result.One };
-                foreach (Result initial in initials)
-                {
-                    var res = TestBellState.Run(qsim, 1000, initial).Result;
-                    var (numZeros, numOnes, agree) = res;
-                    System.Console.WriteLine(
-                        $"Init:{initial,-4} 0s={numZeros,-4} 1s={numOnes,-4} agree={agree,-4}");
-                }
-            }
-            
-            System.Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+```output
+(505, 495, 1000)
 ```
-
-#### [](#tab/tabid-vs2019)
-
-* * *
-
-Po spuštění dostaneme moc zajímavý výsledek:
-
-```Output
-Init:Zero 0s=499  1s=501  agree=1000
-Init:One  0s=490  1s=510  agree=1000
+```dotnetcli
+dotnet run --count 1000 --initial Zero
+```
+```output
+Test results (# of 0s, # of 1s, # of agreements)
+(507, 493, 1000)
 ```
 
 Jak jsme uvedli v přehledu, statistika prvního qubitu se nezměnila (stále šance 50:50, že získáme 0 nebo 1), ale teď když změříme stav druhého qubitu, bude __vždy__ stejný, jako změřený stav toho prvního, protože jsou provázané!
-
-Blahopřejeme, napsali jste svůj první kvantový program!
 
 ## <a name="next-steps"></a>Další kroky
 

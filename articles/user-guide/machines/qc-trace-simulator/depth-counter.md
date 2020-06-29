@@ -6,17 +6,17 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: d532a9f512b8c87d83d62ed26e3bb67e1b6f668b
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 0029a00e6a3563dc542daeda2afa7cabf42441fb
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274586"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415254"
 ---
 # <a name="depth-counter"></a>Čítač hloubky
 
 `Depth Counter`Je součástí [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)počítačů.
-Používá se k získání počtů hloubky každé operace vyvolané v programu pro práci v poli. Všechny operace z <xref:microsoft.quantum.intrinsic> jsou vyjádřeny v rámci jednoduchých qubit rotací, T Branch, qubitch Cliffordch bran, CNOT bran a měření multi-qubit Pauli observables. Uživatelé mohou nastavit hloubku pro jednotlivé primitivní operace prostřednictvím `gateTimes` pole <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
+Používá se ke shromáždění počtů, které reprezentují spodní hranici hloubky každé operace vyvolané v programu pro práci v poli. Všechny operace z <xref:microsoft.quantum.intrinsic> jsou vyjádřeny v rámci jednoduchých qubit rotací, T Branch, qubitch Cliffordch bran, CNOT bran a měření multi-qubit Pauli observables. Uživatelé mohou nastavit hloubku pro jednotlivé primitivní operace prostřednictvím `gateTimes` pole <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
 
 Ve výchozím nastavení mají všechny operace hloubku 0 s výjimkou brány T s hloubkou 1. To znamená, že ve výchozím nastavení je vypočítána pouze hloubka T operací (což je často žádoucí). Shromážděné statistiky jsou shrnuty přes všechny hrany grafu volání operací. 
 

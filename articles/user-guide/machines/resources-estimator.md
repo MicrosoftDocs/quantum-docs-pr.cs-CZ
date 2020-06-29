@@ -6,12 +6,12 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: b0c800c3946d2e4ba4457127fb9495dc9dcf2934
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: cbb1c274b64738cc4b47869563d7d02eb717afbc
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274566"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415250"
 ---
 # <a name="the-resources-estimator-target-machine"></a>Cílový počítač prostředků Estimator
 
@@ -98,8 +98,8 @@ Následuje seznam metrik odhadovaných podle `ResourcesEstimator` :
 * __Measure__: počet provedených měření.
 * __R__: počet spuštěných jednoduchých qubit otočení s výjimkou bran T, Clifford a Pauli.
 * __T__: Počet bran t a jejich sdružených, včetně brány T, T_x = H. t. H a T_y = hy. T. hy, proveden.
-* __Hloubka__: Hloubka okruhu nečinnosti, kterou provede operace Q #. Ve výchozím nastavení se tato hloubka počítá jenom u bran T. Podrobnosti najdete v části s informacemi o [čítači hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
-* __Width__: maximální počet qubits přidělených během provádění operace Q #.
+* __Hloubka__: spodní mez pro hloubku okruhu nečinnosti spouštěného operací Q #. Ve výchozím nastavení se tato hloubka počítá jenom u bran T. Podrobnosti najdete v části s informacemi o [čítači hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
+* __Width__: dolní mez pro maximální počet qubits přidělených během provádění operace Q #. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.
 * __BorrowedWidth__: maximální počet qubitsů v rámci operace Q # byl vypůjčen.
 
 

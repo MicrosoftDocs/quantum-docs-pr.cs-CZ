@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: e48f4157438fba063877b2b79fbc7629710fc9f3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 0fcdec1a304730b593224283421539ea3ca9c913
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274510"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415449"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -344,8 +344,6 @@ Pokud jste dříve rozšíření nainstalovali, budete ho muset nainstalovat zno
 
 Tato verze opravuje chybu, která bránila některým uživatelům v úspěšném načtení rozšíření sady Visual Studio.
 
-Pokud provádíte upgrade z verze 0.2 sady Quantum Development Kit, přečtěte si další informace o [změnách jazyka Q# a migraci programu Q#](xref:microsoft.quantum.relnotes.migration-0-3).
-
 ## <a name="version-031811203"></a>Verze 0.3.1811.203
 
 *Datum vydání: 2. listopadu 2018*
@@ -356,8 +354,6 @@ Tato verze zahrnuje několik oprav chyb, včetně:
 * Odebrání upozornění kompilace při sestavování projektů pomocí verze .NET Core dřívější než 2.1.403.
 * Vyčištění dokumentace, speciálně popisů zobrazovaných při najetí myší v editoru VS Code nebo sadě Visual Studio.
 
-Pokud provádíte upgrade z verze 0.2 sady Quantum Development Kit, přečtěte si další informace o [změnách jazyka Q# a migraci programu Q#](xref:microsoft.quantum.relnotes.migration-0-3).
-
 ## <a name="version-0318102508"></a>Verze 0.3.1810.2508
 
 *Datum vydání: 29. října 2018*
@@ -367,8 +363,6 @@ Tato verze zahrnuje nové funkce jazyka a vylepšené vývojové prostředí:
 * Tato verze zahrnuje jazykový server pro Q# a taky integrace klientů pro Visual Studio a Visual Studio Code. To umožňuje novou sadu funkcí IntelliSense spolu s živou odezvou během psaní ve formě podtržení chyb a upozornění. 
 * Tato aktualizace významně vylepšuje diagnostické zprávy, a to díky snadné navigaci a přesným rozsahům pro diagnostiku a dalším podrobnostem v informacích zobrazených při najetí myší.
 * Jazyk Q# byl rozšířen tak, že sjednocuje způsob, jakým vývojáři můžou provádět běžné operace a nová vylepšení jazykových funkcí, aby mohli účinně vyjádřit kvantové výpočty.  V této verzi je několik zásadních změn jazyka Q#.   
-
-Přečtěte si další informace o [změnách jazyka Q# a migraci programu Q#](xref:microsoft.quantum.relnotes.migration-0-3).
 
 Tato verze taky obsahuje novou kvantovou chemickou knihovnu.
 

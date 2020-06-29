@@ -6,118 +6,121 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: f7a3ac3813966c0ef695068297ce4d9949ead554
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: e37ce6e3a2dfad5395cdecf06178d64ec51b79f1
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327284"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415280"
 ---
 # <a name="types-in-q"></a>Typy v Q#
 
-Tato stránka obsahuje model typu Q # a popisuje syntaxi pro zadání a práci s typy.
-Na další stránce [Zadejte výrazy](xref:microsoft.quantum.guide.expressions), podrobnosti o tom, jak vytvořit a pracovat na výrazech těchto typů.
+Tento článek popisuje model typu Q # a syntaxi pro zadání a práci s typy. Podrobnosti o tom, jak vytvořit a pracovat na výrazech těchto typů, naleznete v tématu [Expression Types](xref:microsoft.quantum.guide.expressions).
 
 Upozorňujeme, že Q # je jazyk *silného typu* , takže pečlivé používání těchto typů může kompilátoru přispět, aby poskytovalo silné záruky na programy Q # v době kompilace.
-Aby bylo možné zajistit nejpřísnější záruky, převody mezi typy v Q # musí být explicitní pomocí volání funkcí, které tento převod vyjadřují. Celá řada takových funkcí je k dispozici jako součást <xref:microsoft.quantum.convert> oboru názvů.
-Přetypování na kompatibilní typy na druhé straně se implicitně stane. 
+Aby bylo možné zajistit nejpřísnější záruky, převody mezi typy v Q # musí být explicitní pomocí volání funkcí, které tento převod vyjadřují. Q # poskytuje celou řadu takových funkcí jako součást <xref:microsoft.quantum.convert> oboru názvů.
+Přetypování na kompatibilní typy se na druhé straně provede implicitně. 
 
-Q # poskytuje jak primitivní typy, které lze použít přímo, a různé způsoby, jak vytvořit nové typy z jiných typů.
-Popíšeme všechny ve zbývající části tohoto oddílu.
+Q # poskytuje oba primitivní typy, které se používají přímo, a různé způsoby, jak vytvořit nové typy z jiných typů.
+Každý ve zbývající části tohoto článku popisujeme.
 
 ## <a name="primitive-types"></a>Primitivní typy
 
-Jazyk Q # poskytuje několik *primitivních typů*, ze kterých lze sestavit další typy:
+Jazyk Q # poskytuje následující *primitivní typy*, které lze použít přímo v programech q #. Tyto primitivní typy lze také použít k vytvoření nových typů.
 
-- `Int`Typ představuje 64 celé číslo se znaménkem, např.: `2` , `107` , `-5` .
-- `BigInt`Typ představuje celé číslo se znaménkem libovolné velikosti, např. `2L` , `107L` , `-5L` .
+- `Int`Typ představuje 64 celé číslo se znaménkem, například `2` ,, `107` `-5` .
+- `BigInt`Typ představuje celé číslo se znaménkem libovolné velikosti, například,, `2L` `107L` `-5L` .
    Tento typ je založený na rozhraní .NET.<xref:System.Numerics.BigInteger>
    textový.
-- `Double`Typ představuje číslo s plovoucí desetinnou čárkou s dvojitou přesností, například: `0.0` , `-1.3` , `4e-7` .
-- `Bool`Typ představuje logickou hodnotu, která může být buď `true` nebo `false` .
+
+- `Double`Typ představuje číslo s plovoucí desetinnou čárkou s dvojitou přesností, například,, `0.0` `-1.3` `4e-7` .
+- `Bool`Typ představuje logickou hodnotu buď `true` nebo `false` .
 - `Range`Typ představuje sekvenci celých čísel, označených jako `start..step..stop` , kde označuje, že krok je nepovinný. 
-   To `start .. stop` odpovídá `start..1..stop` , a například `1..2..7` představuje sekvenci $ \{ 1, 3, 5, 7 \} $.
+   Například `start .. stop` odpovídá `start..1..stop` a `1..2..7` představuje sekvenci $ \{ 1, 3, 5, 7 \} $.
 - `String`Typ je posloupnost znaků Unicode, která je po vytvoření uživatelem neprůhledná.
-  Tento typ slouží k hlášení zpráv na klasického hostitele v případě chyby nebo diagnostické události.
-- `Unit`Typ je typ, který povoluje pouze jednu hodnotu `()` . 
-  Tento typ slouží k označení, že funkce Q # nebo operace nevrátí žádné informace. 
+  Použijte `string` typ k hlášení zpráv pro klasického hostitele v případě chyby nebo diagnostické události.
+- `Unit`Typ může mít pouze jednu hodnotu, `()` . 
+  Tento typ použijte k označení, že funkce Q # nebo operace nevrátí žádné informace. 
 - `Qubit`Typ představuje bit s podmnožinou nebo qubit.
-   `Qubit`s jsou neprůhlední pro uživatele; jedinou operací, která je k dispozici, je kromě jejich předání jiné operaci testovat identitu (rovnost).
-   V konečném případě `Qubit` jsou akce u s implementovány voláním vnitřních instrukcí na procesor nebo na základě jeho simulace.
+   `Qubit`s jsou neprůhlední pro uživatele. Jedinou operací, která je k dispozici, je kromě jejich předání jiné operaci testovat identitu (rovnost).
+   Nakonec implementujete akce v `Qubit` s voláním vnitřních pokynů na procesor s procesorem (nebo simulátorem pro plnění).
 - `Pauli`Typ představuje jednu ze čtyř operátorů Pauli s jedním qubit.
-   Tento typ slouží k označení základní operace pro rotace a určení pozorovatele, které se měří.
-   Toto je výčtový typ, který má čtyři možné hodnoty: `PauliI` , `PauliX` , `PauliY` a `PauliZ` , což jsou konstanty typu `Pauli` .
+   Tento typ použijte k označení základní operace pro otočení a určení pozorovatele, který se má měřit.
+   Jedná se o Výčtový typ, který má čtyři možné hodnoty: `PauliI` , `PauliX` , `PauliY` a `PauliZ` , což jsou konstanty typu `Pauli` .
 - `Result`Typ představuje výsledek měření.
-   Toto je výčtový typ se dvěma možnými hodnotami: `One` a `Zero` , což jsou konstanty typu `Result` .
-   `Zero`indikuje, že došlo k měření + 1 eigenvalue. `One`označuje eigenvalue-1.
+   Jedná se o Výčtový typ se dvěma možnými hodnotami: `One` a `Zero` , což jsou konstanty typu `Result` .
+   `Zero`indikuje, že došlo k měření + 1 eigenvalue. `One`indikuje, že byl změřen eigenvalue-1.
 
 Konstanty,,,,,, `true` `false` `PauliI` `PauliX` `PauliY` `PauliZ` `One` a `Zero` jsou všechny rezervované symboly v Q #.
 
 ## <a name="array-types"></a>Typy polí
 
-Vzhledem k platnému typu Q # `'T` existuje typ, který představuje pole hodnot typu `'T` .
-Tento typ pole je reprezentován jako, `'T[]` například `Qubit[]` nebo `Int[][]` .
-Například kolekce celých čísel je označena `Int[]` , zatímco pole `(Bool, Pauli)` hodnot pole je označeno `(Bool, Pauli)[][]` .
+* Pro libovolný platný typ Q # existuje typ, který představuje pole hodnot daného typu.
+    Například `Qubit[]` a `(Bool, Pauli)[]` představuje pole `Qubit` hodnot a `(Bool, Pauli)` hodnot řazené kolekce členů.
 
-V druhém příkladu si všimněte, že představuje potenciálně vícenásobné pole polí a ne obdélníkové dvourozměrné pole.
-Q # neposkytuje podporu pro pravoúhlá pole s multidimenzionálními hodnotami.
+* Pole polí je také platné. Rozbalení v předchozím příkladu, pole `(Bool, Pauli)` polí je označeno `(Bool, Pauli)[][]` .
 
-Hodnota pole může být napsána ve zdrojovém kódu Q # pomocí hranatých závorek kolem prvků pole, jako v `[PauliI, PauliX, PauliY, PauliZ]` .
-Typ literálu pole je určen běžným základním typem všech položek v poli. Proto se pokusíte vytvořit pole s prvky, které nemají žádný společný základní typ, vyvolá chybu.  
-Pro příklad tohoto příkladu se podívejte na [pole, která](xref:microsoft.quantum.guide.expressions#arrays-of-callables) se mají volat.
+> [!NOTE] 
+> V tomto příkladu `(Bool, Pauli)[][]` představuje potenciálně vícenásobné pole polí a ne obdélníkové dvourozměrné pole. Q # nepodporuje obdélníková multidimenzionální pole.
 
-> [!WARNING]
-> Po vytvoření pole nelze prvky pole změnit.
-> K vytvoření upraveného pole lze použít [Příkazy Update a Reassign](xref:microsoft.quantum.guide.variables#update-and-reassign-statements) a [výrazy Copy a Update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) .
+* Hodnota pole může být napsána ve zdrojovém kódu Q # pomocí hranatých závorek kolem prvků pole, jako v `[PauliI, PauliX, PauliY, PauliZ]` .
+Běžný základní typ všech položek v poli určuje typ literálu pole. Proto Sestavte pole s prvky, které nemají žádný společný základní typ, vyvolá chybu.  
+Příklad naleznete v tématu [pole volat](xref:microsoft.quantum.guide.expressions#arrays-of-callables).
 
-Alternativně lze pole vytvořit z jeho velikosti pomocí `new` klíčového slova:
+    > [!WARNING]
+    > Po vytvoření nelze prvky pole změnit.
+    > K vytvoření upraveného pole použijte [Příkazy Update-and-Reassign](xref:microsoft.quantum.guide.variables#update-and-reassign-statements) nebo [copy-and-Update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions).
 
-```qsharp
-let zeros = new Int[13];
-// new also allows for creating empty arrays:
-let emptyRegister = new Qubit[0];
-```
+* Alternativně lze pole vytvořit z jeho velikosti pomocí `new` klíčového slova:
 
-V obou případech lze po sestavení pole použít základní funkci `Length` k získání počtu prvků jako `Int` .
-Pole lze podskriptovat pomocí hranatých závorek s podscripty typu `Int` nebo typu `Range` , aby získaly buď jednotlivé prvky, nebo nová pole obsahující podmnožinu prvků pole.
-Dolní indexy polí jsou počítány od nuly:
+    ```qsharp
+    let zeros = new Int[13];
+    // you can also use new for creating empty arrays:
+    let emptyRegister = new Qubit[0];
+    ```
 
-```qsharp
-let arr = [10, 11, 36, 49];
-let ten = arr[0]; // 10
-let odds = arr[1..2..4]; // [11, 49]
-```
+* Použijte základní funkci `Length` k získání počtu prvků z pole jako `Int` .
+* Pole mohou být zastaralá, aby získala buď jednotlivé prvky, nebo nová pole obsahující podmnožinu prvků pole.
+Dolní indexy polí jsou založené na nule a musí být typu `Int` nebo typu `Range` :
+
+    ```qsharp
+    let arr = [10, 11, 36, 49];
+    let ten = arr[0]; // 10
+    let odds = arr[1..2..4]; // [11, 49]
+    ```
 
 ## <a name="tuple-types"></a>Typy řazené kolekce členů
 
-Vzhledem k nule nebo více různým typům, `T0` `T1` ,..., `Tn` můžeme jako *typ zadat nový typ řazené kolekce členů* `(T0, T1, ..., Tn)` .
+Řazené kolekce členů jsou účinným konceptem použitým v rámci Q # ke shromáždění hodnot dohromady do jedné hodnoty, což usnadňuje jejich předání.
+Zejména pomocí zápisu řazené kolekce členů můžete vyjádřit, že každá operace a možnost volat přebírá přesně jeden vstup a vrátí přesně jeden výstup.
+
+* Předanému nule nebo více různým typům, `T0` `T1` ,..., `Tn` můžete odznačte nový *typ řazené kolekce členů* jako `(T0, T1, ..., Tn)` .
 Typy použité k vytvoření nového typu řazené kolekce členů mohou být řazené kolekce členů, jako v `(Int, (Qubit, Qubit))` .
 Takové vnořování je vždy omezené, ale v případě, že typy řazené kolekce členů nemůžou za žádných okolností obsahovat samy sebe.
 
-Hodnoty nového typu řazené kolekce členů jsou řazené kolekce členů vytvořené pomocí sekvencí hodnot z každého typu v řazené kolekci členů.
+* Hodnoty nového typu řazené kolekce členů jsou řazené kolekce členů vytvořené pomocí sekvencí hodnot z každého typu v řazené kolekci členů.
 Například `(3, false)` je řazená kolekce členů, jejíž typ je typ řazené kolekce členů `(Int, Bool)` .
-Je možné vytvořit pole řazených kolekcí členů, řazené kolekce členů, řazené kolekce členů, atd.
+Je možné vytvořit pole řazených kolekcí členů, řazené kolekce členů polí, řazené kolekce členů a tak dále.
 
-Od Q # 0,3 `Unit` je název *typu* prázdné řazené kolekce členů; `()` používá se pro prázdnou *hodnotu*řazené kolekce členů.
+* Od Q # 0,3 `Unit` je název *typu* prázdné řazené kolekce členů; `()` používá se pro *hodnotu* prázdné řazené kolekce členů.
 
-Instance řazené kolekce členů jsou neměnné.
+* Instance řazené kolekce členů jsou neměnné.
 Q # neposkytuje mechanismus pro změnu obsahu řazené kolekce členů po vytvoření.
 
-Řazené kolekce členů jsou účinným konceptem použitým v rámci Q # ke shromáždění hodnot dohromady do jedné hodnoty, což usnadňuje jejich předání.
-Konkrétně při použití notace řazené kolekce členů můžeme vyjádřit, že každá operace a možnost volat přebírá přesně jeden vstup a vrátí přesně jeden výstup.
+
 
 ### <a name="singleton-tuple-equivalence"></a>Rovnost řazené kolekce členů singleton
 
-Je možné vytvořit singleton (jeden prvek) řazené kolekce členů, `('T1)` například `(5)` nebo `([1,2,3])` .
-Otázka č. Q však považuje typ Tuple typu Singleton za úplný ekvivalent hodnoty uzavřeného typu.
+Je možné vytvořit singleton (jeden prvek) řazené kolekce členů `('T1)` , například `(5)` nebo `([1,2,3])` .
+Q # však považuje typ Tuple typu Singleton za ekvivalent hodnoty uzavřeného typu.
 To znamená, že neexistuje žádný rozdíl mezi `5` a `(5)` , ani mezi `5` a `(((5)))` , ani mezi `(5, (6))` a `(5, 6)` .
-Je stejně platná pro zápis `(5)+3` jako k zápisu `5+3` a oba výrazy budou vyhodnoceny `8` .
+Je stejně platná pro zápis, `(5)+3` protože je možné zapisovat. `5+3` oba výrazy jsou vyhodnoceny `8` .
 
 Tato rovnocennost se vztahuje na všechny účely, včetně přiřazení a výrazů.
 V případě libovolného výrazu je stejný výraz uzavřený v závorkách výraz stejného typu.
-Například `(7)` výraz je výraz `Int` , `([1,2,3])` je výraz typu array `Int` s a `((1,2))` je výraz s typem `(Int, Int)` .
+Například `(7)` je výraz typu `Int` , `([1,2,3])` je výraz typu `Int[]` a `((1,2))` je výraz typu `(Int, Int)` .
 
-Konkrétně to znamená, že operace nebo funkce, jejíž vstupní řazená kolekce členů nebo výstupní řazená kolekce členů má jedno pole, může být považována za jeden argument nebo vrací jedinou hodnotu.
+Konkrétně to znamená, že můžete zobrazit operaci nebo funkci, jejíž typ řazené kolekce členů nebo výstupní řazené kolekce členů má jedno pole jako přebírání jednoho argumentu nebo vrácení jedné hodnoty.
 
 Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singleton_.
 
@@ -126,36 +129,35 @@ Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singlet
 
 Uživatelsky definovaná deklarace typu se skládá z klíčového slova `newtype` , následované názvem uživatelsky definovaného typu, a `=` platnou specifikací typu a ukončující středník.
 
-Příklad:
+Například:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
 ```
-
-Každý zdrojový soubor Q # může deklarovat libovolný počet uživatelsky definovaných typů.
-Názvy typů musí být v rámci oboru názvů jedinečné a nemusí být v konfliktu s názvy operací a funkcí.
-
-Uživatelsky definované typy jsou odlišné, i když základní typy jsou identické.
-Konkrétně neexistuje žádný automatický převod mezi hodnotami dvou uživatelsky definovaných typů i v případě, že jsou základní typy identické.
+    
+* Každý zdrojový soubor Q # může deklarovat libovolný počet uživatelsky definovaných typů.
+* Názvy typů musí být v rámci oboru názvů jedinečné a nemusí být v konfliktu s názvy operací a funkcí.
+* Uživatelsky definované typy jsou odlišné, i když základní typy jsou identické.
+Konkrétně neexistuje žádný automatický převod mezi hodnotami dvou uživatelsky definovaných typů, a to i v případě, že jsou základní typy identické.
 
 ### <a name="named-vs-anonymous-items"></a>Pojmenované vs. anonymní položky
 
 Soubor Q # může definovat nový pojmenovaný typ obsahující jednu hodnotu jakéhokoli právního typu.
-Pro libovolný typ řazené kolekce členů `T` můžeme deklarovat nový uživatelsky definovaný typ, který je podtypem `T` s `newtype` příkazem.
-V @"microsoft.quantum.math" oboru názvů je například komplexní čísla definována jako uživatelsky definovaný typ:
+Pro libovolný typ řazené kolekce členů `T` můžete deklarovat nový uživatelsky definovaný typ, který je podtypem `T` s `newtype` příkazem.
+V @"microsoft.quantum.math" oboru názvů jsou například komplexní čísla definovány jako uživatelsky definovaný typ:
 
 ```qsharp
 newtype Complex = (Double, Double);
 ```
 Tento příkaz vytvoří nový typ se dvěma anonymními položkami typu `Double` .   
 
-Kromě anonymních položek podporuje uživatelsky definované typy také *pojmenované položky* jako Q # verze 0,7 nebo vyšší. Například můžeme mít název k položkám `Re` pro dvojitou hodnotu představující reálnou část komplexního čísla a `Im` pro imaginární část: 
+Kromě anonymních položek podporuje uživatelsky definované typy také *pojmenované položky* jako Q # verze 0,7 nebo vyšší. Například můžete pojmenovat položky `Re` pro dvojitou hodnotu představující reálnou část komplexního čísla a `Im` pro imaginární část: 
 
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
 ```
 Pojmenování jedné položky v uživatelsky definovaném typu neznamená, že všechny položky musí být pojmenovány – podporuje se libovolná kombinace pojmenovaných a nepojmenovaných položek. Kromě toho mohou být také pojmenovány vnitřní položky.
-Typ `Nested` definovaný níže pro příklad má základní typ `(Double, (Int, String))` , z nějž `Int` je pojmenována pouze položka typu a všechny ostatní položky jsou anonymní. 
+Typ `Nested` , jak je definován níže, má například nadřízený typ `(Double, (Int, String))` , který `Int` je pojmenován pouze položka typu a všechny ostatní položky jsou anonymní. 
 
 ```qsharp
 newtype Nested = (Double, (ItemName : Int, String)); 
@@ -169,21 +171,19 @@ function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
 }
 ```
 
-Kromě poskytování krátkých aliasů pro potenciálně složité typy řazené kolekce členů, což je jedna významná výhoda pro definování takových typů, je, že mohou zdokumentovat záměr konkrétní hodnoty.
+Kromě poskytování krátkých aliasů pro potenciálně složité typy řazené kolekce členů, což je významná výhoda definování takových typů, je, že mohou zdokumentovat záměr konkrétní hodnoty.
 Návrat do příkladu `Complex` , jeden mohl také definovat 2D polární souřadnice jako uživatelsky definovaný typ:
 
 ```qsharp
 newtype Polar = (Radius : Double, Phase : Double);
 ```
 
-I když oba i mají `Complex` `Polar` základní typ `(Double, Double)` , jsou tyto dva typy zcela nekompatibilní v Q # a minimalizují riziko náhodného volání komplexní matematické funkce s polárními souřadnicemi a naopak.
-Tímto způsobem mají uživatelsky definované typy podobnou roli jako záznamy v F # například. 
-
+I když oba `Complex` i `Polar` oba mají základní typ `(Double, Double)` , jsou tyto dva typy zcela nekompatibilní v Q # a minimalizují riziko náhodného volání komplexní matematické funkce s polárními souřadnicemi a naopak.
 
 #### <a name="access-anonymous-items-with-the-unwrap-operator"></a>Přístup k anonymním položkám pomocí operátoru rozbalení
 
-Aby bylo možné přistupovat k anonymním položkám na druhé straně, je třeba zabalenou hodnotu nejprve extrahovat pomocí operátoru přípony `!` .
-Operátor "Unwrap" `!` umožňuje extrahovat hodnotu obsaženou v uživatelsky definovaném typu.
+Pro přístup k anonymním položkám nejprve extrahuje zabalenou hodnotu pomocí operátoru přípony `!` .
+Pomocí operátoru "Unwrap" `!` můžete extrahovat hodnotu obsaženou v uživatelsky definovaném typu.
 Typ takového výrazu "Unwrap" je základní typ uživatelsky definovaného typu. 
 
 ```qsharp
@@ -193,8 +193,7 @@ function PrintedMessage(value : Nested) : Unit {
 }
 ```
 
-Operátor rozbalení rozbalí právě jednu vrstvu obtékání.
-Pro přístup k hodnotě zabalené na násobení lze použít více operátorů rozbalení.
+Jeden operátor rozbalení rozbalí jednu vrstvu obtékání. Pro přístup k hodnotě zabalené v násobení použijte více operátorů rozbalení.
 
 Například:
 
@@ -212,18 +211,18 @@ newtype DoublyWrappedInt = WrappedInt;
 ...
 ```
 
-Další podrobnosti o operátoru rozbalení lze nalézt ve [výrazech typu v Q #](xref:microsoft.quantum.guide.expressions).
+Další informace o operátoru rozbalení naleznete v tématu [Expression Types in Q #](xref:microsoft.quantum.guide.expressions).
 
 ### <a name="creating-values-of-user-defined-types"></a>Vytváření hodnot uživatelsky definovaných typů
 
-Hodnoty uživatelsky definovaného typu lze vytvořit voláním odpovídajícího konstruktoru typu:
+Vytvořte hodnoty uživatelsky definovaného typu voláním odpovídajícího konstruktoru typu:
 
-```
+```qsharp
 let realUnit = Complex(1.0, 0.0);
 let imaginaryUnit = Complex(0.0, 1.0);
 ```
 
-Případně můžete nové hodnoty vytvořit z existujících pomocí [výrazů kopírování a aktualizace](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions). Podobně jako u polí tyto výrazy kopírují všechny hodnoty položky původního výrazu s výjimkou zadaných pojmenovaných položek. Pro tyto hodnoty jsou nastaveny na ty definované na pravé straně výrazu. Jakékoli jiné jazykové konstrukce, například [Příkazy Update-a-Reassign](xref:microsoft.quantum.guide.variables#update-and-reassign-statements), které jsou k dispozici pro položky pole existují také pro pojmenované položky v uživatelsky definovaných typech.
+Alternativně můžete vytvořit nové hodnoty z existujících pomocí [výrazů kopírování a aktualizace](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions). Stejně jako u polí, výrazy kopírování a aktualizace kopírují všechny hodnoty položky původního výrazu, s výjimkou zadaných pojmenovaných položek. Pro tyto výjimky jsou hodnoty těchto položek hodnotami definované na pravé straně výrazu. Jakékoli jiné jazykové konstrukce, které jsou k dispozici pro položky pole, například [Příkazy Update-a-Reassign](xref:microsoft.quantum.guide.variables#update-and-reassign-statements), existují také pro pojmenované položky v uživatelsky definovaných typech.
 
 ```qsharp
 newtype ComplexArray = (Count : Int, Data : Complex[]);
@@ -238,62 +237,65 @@ function AsComplexArray (data : Double[]) : ComplexArray {
 }
 ```
 
-Uživatelsky definované typy lze použít kdekoli v jakémkoli jiném typu.
+* Uživatelsky definované typy lze použít kdekoli, kde používáte jiné typy.
 Konkrétně je možné definovat pole uživatelsky definovaného typu a zahrnout uživatelsky definovaný typ jako prvek typu řazené kolekce členů.
 
-Poznámka: nemůžete vytvořit struktury rekurzivního typu.
+* Není možné vytvářet struktury rekurzivního typu.
 To znamená, že typ, který definuje uživatelsky definovaný typ, nemůže být typ řazené kolekce členů, který obsahuje prvek uživatelsky definovaného typu.
-Obecněji, uživatelsky definované typy nemůžou mít na sobě navzájem cyklické závislosti, takže následující sada definic typu by mohla být neplatná:
+Obecně platí, že uživatelsky definované typy nemůžou mít cyklicky závislé závislosti, takže následující sada definic typů je neplatná:
 
-```qsharp
-newtype TypeA = (Int, TypeB);
-newtype TypeB = (Double, TypeC);
-newtype TypeC = (TypeA, Range);
-```
+    ```qsharp
+    newtype TypeA = (Int, TypeB);
+    newtype TypeB = (Double, TypeC);
+    newtype TypeC = (TypeA, Range);
+    ```
 
 
 ## <a name="operation-and-function-types"></a>Typy operací a funkcí
 
-Základní typ pro všechny volat lze zapsat jako `('Tinput => 'Tresult)` nebo `('Tinput -> 'Tresult)` , kde `'Tinput` a `'Tresult` jsou typy.
+Zadané typy `'Tinput` a `'Tresult` :
+
+* `('Tinput => 'Tresult)`je základní typ pro každou *operaci*, například `((Qubit, Pauli) => Result)` .
+* `('Tinput -> 'Tresult)`je základní typ pro libovolnou *funkci*, například `(Int -> Int)` . 
+
 Nazývají se *signatury* , které lze volat.
 
-Všechny volat pomocí Q # se považují za vstupní hodnotu a jako výstup vrátí jedinou hodnotu.
-Vstupní i výstupní hodnoty mohou být řazené kolekce členů.
-Je k dispozici bez výsledku vrácení `Unit` .
-Volat, které nemají žádný vstup, přebírají jako vstup prázdnou řazenou kolekci členů.
+* Všechny volat s hodnotou Q # jako vstup mají jednu hodnotu a jako výstup vrátí jednu hodnotu.
+* Můžete použít řazené kolekce členů pro vstupní i výstupní hodnoty.
+* Volat, které nemají žádný výsledek, vrátí `Unit` .
+* Volat, které nemají žádný vstup, přebírají jako vstup prázdnou řazenou kolekci členů.
+
+### <a name="functors"></a>Funktory
+
+Typy *funkcí* jsou zcela určeny jejich signaturou. Například funkce, která vypočítá sinus úhlu, by měla typ `(Double -> Double)` . 
+
+*Operace* mají určité další vlastnosti, které se vyjadřují jako součást typu operace. Tyto vlastnosti obsahují informace o tom, které operace *funktory* podporuje.
+Například pokud provedení operace spoléhá na stav jiného qubits, pak by měla podporovat `Controlled` funktor; Pokud má operace hodnotu Inverted, měla by podporovat `Adjoint` funktor.
 
 > [!NOTE]
-> První formulář s, se `=>` používá pro operace, druhý formulář, with `->` , for Functions.
-> Například `((Qubit, Pauli) => Result)` představuje signaturu pro možnou operaci měření s jedním qubit.
-Typy *funkcí* jsou zcela určeny jejich signaturou.
-Například funkce, která vypočítá sinus úhlu, by měla typ `(Double -> Double)` .
+> Tento článek popisuje, jak funktory mění signaturu operace. Další podrobnosti o funktory a operacích naleznete [v tématu Operations and Functions in Q #](xref:microsoft.quantum.guide.operationsfunctions). 
 
-*Operations*---, ale funkce not---mají určité další vlastnosti, které se vyjadřují jako součást typu operace. Tyto vlastnosti zahrnují informace o tom, co *funktory* operace podporuje.
-Například pokud provádění operace může být podmíněně na stav jiného qubits, měla by podporovat `Controlled` funktor; Pokud má operace hodnotu INVERT, měla by podporovat `Adjoint` funktor. Funktory a operace jsou podrobněji popsány v tématu [operace a funkce v Q #](xref:microsoft.quantum.guide.operationsfunctions), ale v této části jednoduše probereme, jak tato změna signatura operace mění.
+Chcete-li `Controlled` v typu operace vyžadovat podporu pro a/nebo `Adjoint` funktor, je nutné přidat poznámku indikující odpovídající vlastnosti.
+Poznámka `is Ctl` (například `(Qubit => Unit is Ctl)` ) indikuje, že operace je ovladatelné. To znamená, že jeho spuštění spoléhá na stav jiného qubit nebo qubits. Podobně Poznámka `is Adj` znamená, že operace má sousední, to znamená, že se může jednat o "Inverted", který po sobě provede operaci, a pak její sousední vztah do stavu opustí stav beze změny. 
 
-Aby `Controlled` bylo nutné v typu operace vyžadovat podporu pro a/nebo `Adjoint` funktor, musíme přidat poznámku indikující odpovídající vlastnosti.
-Anotace `is Ctl` (např. `(Qubit => Unit is Ctl)` ) indikuje, že operace je ovladatelné---to znamená, že je vykonávání stavu jiného qubit nebo qubits. Podobně `is Adj` označuje, že operace má sousední, nebo jednoduše, může být "obrácená" tak, že se po sobě provede operace, a potom její sousední vztah do stavu opustí stav beze změny. 
-
-Pokud chceme vyžadovat, aby operace tohoto typu podporovala i `Adjoint` `Controlled` funktor, můžeme to vyjádřit jako `(Qubit => Unit is Adj + Ctl)` . Například integrovaná <xref:microsoft.quantum.intrinsic.x> operace Pauli je typu `(Qubit => Unit is Adj + Ctl)` . 
+Pokud chcete vyžadovat, aby operace tohoto typu podporovala i `Adjoint` `Controlled` funktor, můžete to vyjádřit jako `(Qubit => Unit is Adj + Ctl)` . Například integrovaná <xref:microsoft.quantum.intrinsic.x> operace Pauli je typu `(Qubit => Unit is Adj + Ctl)` . 
 
 Typ operace, který nepodporuje žádné funktory, je určen samotným typem vstupu a výstupu bez další poznámky.
 
 ### <a name="type-parameterized-functions-and-operations"></a>Typ – parametrizované funkce a operace
 
-Typy, které lze volat, mohou obsahovat parametry typu.
-Parametry typu jsou označeny symbolem, který je předponou jedné uvozovky. Například je platným `'A` parametrem typu.
-Podrobnosti o definování typu, který lze volat, jsou k dispozici na stránce [operace a funkce v Q #](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) .
+Typy, které lze volat, mohou obsahovat *parametry typu*.
+Použijte symbol, který je předponou jednoduché uvozovky k označení parametru typu; Například je platným `'A` parametrem typu.
+Další informace a podrobnosti o tom, jak definovat typ s parametry volat, naleznete v tématu [Operations and Functions in Q #](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables).
 
 Parametr typu se může v jednom podpisu objevit více než jednou.
-Například funkce, která použije jinou funkci na každý prvek pole a vrátí shromážděné výsledky, by měly signaturu `(('A[], 'A->'A) -> 'A[])` .
-Podobně funkce, která vrací složení dvou operací, může mít signaturu `((('A=>'B), ('B=>'C)) -> ('A=>'C))` .
+Například funkce, která použije jinou funkci na každý prvek pole a vrátí shromážděné výsledky má signaturu `(('A[], 'A->'A) -> 'A[])` .
+Podobně funkce, která vrací složení dvou operací, má signaturu `((('A=>'B), ('B=>'C)) -> ('A=>'C))` .
 
-Při vyvolání volání typu s parametrem typu musí být všechny argumenty, které mají stejný parametr typu, stejného typu.
+Když vyvoláte typ s parametrem Invoke, všechny argumenty, které mají stejný parametr typu, musí být stejného typu.
 
-Q # neposkytuje mechanismus pro omezení možných typů, které mohou být nahrazeny parametrem typu.
+Q # neposkytuje mechanismus pro omezení možných typů, které může uživatel nahradit parametrem typu.
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď, když jste viděli všechny typy, které tvoří jazyk Q #, můžete přejít na [typ výrazy v Q #](xref:microsoft.quantum.guide.expressions) a podívat se, jak vytvořit a manipulovat s výrazy těchto různých typů.
-
-
+Teď, když jste viděli všechny typy, které tvoří jazyk Q #, najdete informace [v tématu výrazy typu v Q #](xref:microsoft.quantum.guide.expressions) a Naučte se, jak vytvořit a manipulovat se výrazy těchto různých typů.
