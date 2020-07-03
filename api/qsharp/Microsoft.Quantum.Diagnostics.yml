@@ -39,6 +39,10 @@ operations:
   summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
   summary: Vyhodnocení, že zadané qubits jsou všechny ve stavu $ \ket {0} $ až do dané tolerance.
+- uid: microsoft.quantum.diagnostics.assertmeasurement
+  summary: Vyhodnotí, že měření daného qubits v dané Pauli základu bude mít vždy daný výsledek.
+- uid: microsoft.quantum.diagnostics.assertmeasurementprobability
+  summary: Vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
@@ -79,14 +83,14 @@ operations:
   summary: Vyhodnotí, že qubit `q` je v očekávané eigenstate operátoru Pauli z až po danou toleranci.
 newtypes:
 - uid: microsoft.quantum.diagnostics.enabletestingvianame
-  summary: Kompilátor rozpoznal atribut, pomocí kterého lze definovat alternativní název, který lze použít při načítání typu nebo volat pro účely testování.
+  summary: Atribut rozpoznaný kompilátorem, pomocí kterého lze definovat alternativní název, který lze použít při načítání typu nebo volat pro účely testování.
 - uid: microsoft.quantum.diagnostics.test
-  summary: Rozpoznaný atribut kompilátoru použitý k označení testu jednotky.
+  summary: Atribut rozpoznaný kompilátorem, který slouží k označení testu jednotky.
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace, které jsou užitečné pro diagnostické účely, včetně operací Assert a funkcí deklarací identity."
 metadata:
-  ms.openlocfilehash: 2c619ac283653d87f2917d7c780ed9fe6ccfa965
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: c8e1cd7f3458e736a47749dd057174eb4961c31d
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326587"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884569"

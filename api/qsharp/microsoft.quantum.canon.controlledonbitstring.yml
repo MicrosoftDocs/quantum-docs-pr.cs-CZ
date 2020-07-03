@@ -7,22 +7,24 @@ summary: >-
   Vrátí jednotnou operaci, která použije Oracle v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadané bitové masce.
 
 
-  Výstupem této funkce je operace, kterou může představovat jednotná transformace $U $ taková, že \begin{align} U \ket{b_0 b_1 \cdots B_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots B_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{if} (b_0 b_1 \cdots B_ {n-1}) = \texttt{BITS} \\ \\ \ket{\psi} & \textrm{Otherwise} \end{Cases}, \end{align}, kde $V $ je jednotná transformace, která představuje akci `oracle` operace.
+  Výstupem této funkce je operace, kterou může představovat jednotná transformace $U $ taková, že \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{if} (b_0 b_1 \cdots b_ {n-1}) = \texttt{BITS} \\ \\ \ket{\psi} & \textrm{Otherwise} \end{Cases}, \end{align}, kde $V $ je jednotná transformace, která představuje akci `oracle` operace.
 remarks: >-
-  Délka `bits` a `controlRegister` musí být rovna.
+  Vzor zadaný pomocí `bits` může být kratší než `controlRegister` , v takovém případě je další qubits ovládacího prvku ignorováno (to znamená, že není kontrolováno na $ \ket {0} $ ani $ \ket {1} $).
+
+  Pokud `bits` je delší než `controlRegister` , je vyvolána chyba.
 
 
-  V případě logického `bits` pole a jednotkové `oracle`operace je výstup této funkce operace, která provede následující kroky:
+  V případě logického pole `bits` a jednotkové operace `oracle` je výstup této funkce operace, která provede následující kroky:
 
 
-  * použijte `X` operaci na každý qubit registru ovládacího prvku, který odpovídá `false` elementu. `bits`
+  * použijte `X` operaci na každý qubit registru ovládacího prvku, který odpovídá `false` elementu `bits` .
 
   * platí `Controlled oracle` pro Registry ovládacího prvku a cíle;
 
   * použijte `X` operaci na každý qubit registru ovládacího prvku, který odpovídá `false` elementu `bits` znovu a vrátí registraci ovládacího prvku do původního stavu.
 
 
-  Výstupem `Controlled` funktor je zvláštní případ, `ControlledOnBitString` kde `bits` je rovno. `[true, ..., true]`
+  Výstupem `Controlled` funktor je zvláštní případ, `ControlledOnBitString` kde `bits` je rovno `[true, ..., true]` .
 examples: >-
   Následující fragmenty kódu jsou ekvivalentní:
 
@@ -48,7 +50,7 @@ examples: >-
   ```
 
 
-  {1}{2}Následující kód připraví stav $ \frac (\ket{00} -\ket{01} + \ket{10} + \ket{11}) $:
+  Následující kód připraví stav $ \frac {1} {2} (\ket {00} -\ket {01} + \ket {10} + \ket {11} ) $:
 
 
   ```qsharp
@@ -85,7 +87,7 @@ input:
 output:
   content: ((Qubit[], 'T) => Unit is Adj + Ctl)
   types:
-  - summary: Jednotná operace, která `oracle` platí v cílovém registru, pokud stav registru ovládacího prvku odpovídá bitové masce `bits`.
+  - summary: Jednotná operace, která platí `oracle` v cílovém registru, pokud stav registru ovládacího prvku odpovídá bitové masce `bits` .
     isOperation: true
     input:
       types:
@@ -102,9 +104,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: d5a6223c130150f42f83044aec19b1d5a875bb1d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 98bb8a9d5770e34257cd2fbc5456bcf70139af07
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680360"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885508"

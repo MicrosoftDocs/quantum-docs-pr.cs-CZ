@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.machinelearning
 name: Microsoft.Quantum.MachineLearning
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů poskytuje funkce a operace používané v aplikacích strojového učení.\n\n # <a name=\"references\"></a>Odkazy\n - Marie Schuld, Alex Bocharov, Krysta Svore, Nathan Wiebe, \"klasifikátory orientované na okruhy\", https://arxiv.org/abs/1804.00633."
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů poskytuje funkce a operace používané v aplikacích strojového učení.\n\n # <a name=\"references\"></a>Reference\n - Marie Schuld, Alex Bocharov, Krysta Svore, Nathan Wiebe, \"klasifikátory orientované na okruhy\", https://arxiv.org/abs/1804.00633 ."
 functions:
 - uid: microsoft.quantum.machinelearning.approximateinputencoder
   summary: Vzhledem k množině koeficientů a tolerance vrátí operaci přípravy stavu, která připraví každý koeficient jako odpovídající amplitudu výpočetního stavu až po danou toleranci.
@@ -56,7 +56,7 @@ newtypes:
 - uid: microsoft.quantum.machinelearning.samplingschedule
   summary: Plán pro vykreslování dávek ze sady vzorků.
 - uid: microsoft.quantum.machinelearning.sequentialmodel
-  summary: Popisuje model třídění podle počtu stavů sestávající z sekvence parametrizovaných a řízených otočení, přiřazení úhlů otočení a posunutí mezi dvěma třídami rozpoznávanými modelem.
+  summary: Popisuje model třídění podle počtu stavů složený z sekvence parametrizovaných a řízených otočení, přiřazení úhlů otočení a posunutí mezi dvěma třídami rozpoznávanými modelem.
 - uid: microsoft.quantum.machinelearning.stategenerator
   summary: Popisuje operaci, která připraví daný vstup na sekvenční třídění.
 - uid: microsoft.quantum.machinelearning.trainingoptions
@@ -64,9 +64,9 @@ newtypes:
 - uid: microsoft.quantum.machinelearning.validationresults
   summary: Výsledky z ověření klasifikátoru proti sadě vzorků.
 metadata:
-  ms.openlocfilehash: 43b40489e34a2483ff9331b34b6cd289e3a7bb56
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 85728552e323a640d5abd78f6a2bada5c37e6919
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673172"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885246"

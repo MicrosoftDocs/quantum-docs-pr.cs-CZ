@@ -1,7 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.arrays
 name: Microsoft.Quantum.Arrays
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
 functions:
 - uid: microsoft.quantum.arrays.all
   summary: Předané pole a predikát, který je definován pro prvky pole a kontroluje, zda všechny prvky pole odpovídají predikátu.
@@ -67,13 +66,16 @@ functions:
   summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
 - uid: microsoft.quantum.arrays.zip4
   summary: U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
 operations:
+- uid: microsoft.quantum.arrays.drawmany
+  summary: Opakuje operaci pro daný počet vzorků a shromažďuje jejich výstupy v poli.
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: 92eb956a1387a9765354f45e27eb084c6d73f51b
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 32aeecb419739a89792bdf1e9761e3821abcf380
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326706"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884695"

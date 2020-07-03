@@ -1,0 +1,49 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applytransposition
+name: ApplyTransposition
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: Tato operace zamění amplitudu s indexem `a` s amplitudou v indexu `b` v daném stavu – vektor `register` délky $n $.  Pokud `a` je rovno `b` , nemění se stavový vektor.
+examples: >-
+  Připravte jednotnou pozici číselných stavů $ | 1 \ rangle $, $ | 2 \ rangle $ a $ | 3 \ rangle $ on 2 qubits.
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    let register = LittleEndian(qubits);
+    PrepareUniformSuperposition(3, register);
+    ApplyTransposition(0, 3, register);
+  }
+
+  ```
+syntax: 'operation ApplyTransposition (a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: a
+    summary: První index (musí být hodnota od 0 do $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: Druhý index (musí být hodnota od 0 do $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: Seznam $n $ qubits, na který se aplikuje provedení.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: de888c27a7d897492283c7285c6d2d828fe5821b
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886308"

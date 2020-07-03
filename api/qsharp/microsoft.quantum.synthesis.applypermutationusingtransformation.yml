@@ -1,0 +1,61 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applypermutationusingtransformation
+name: ApplyPermutationUsingTransformation
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: >-
+  Permutes amplitudy ve stavu bez stavového pole s ohledem na permutaci pomocí syntézy založené na transformaci.
+
+
+  Tento postup implementuje jednosměrný postup syntézy založený na transformaci.  Vstup je permutace $ \pi $ over $2 ^ n $ elementy $ \{ 0, \dots, 2 ^ n-1 \} $, které představují funkci $n $-Variable vratné logické hodnoty.
+
+  Algoritmus provede iterativní provedení následujících kroků:
+
+
+  1. Najde nejmenší $x $ tak, že $x \Ne \pi (x) = y $.
+
+  2. Najděte více řízených Toffoli operací, které se aplikují na výstupy $ \pi (x) = x $ a neměňte $ \pi (x ') $ for All $x ' < x $
+examples: >-
+  Pro syntetizaci `SWAP` operace:
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    ApplyPermutationUsingTransformation([0, 2, 1, 3], LittleEndian(qubits));
+  }
+
+  ```
+syntax: 'operation ApplyPermutationUsingTransformation (perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+references: >-
+  - [*D. Michael Miller*, *Dmitri Maslov*, *Gerhard W. Dueck*, proc. DAC 2003, IEEE, PP. 318-323, 2003](https://doi.org/10.1145/775832.775915)
+
+  - [*Mathias Soeken*, *Gerhard W. Dueck*, *D. Michael Miller*, proc. RC 2016, Springer, PP. 307-321, 2016](https://doi.org/10.1007/978-3-319-40578-0_22)
+input:
+  content: '(perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: perm
+    summary: Permutace prvků $2 ^ n $ počínaje 0.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: Seznam $n $ qubits, na který se aplikuje permutace
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.synthesis.applypermutationusingdecomposition
+metadata:
+  ms.openlocfilehash: e611197ba2fbfc0271c17664acc23b4de2c90ff6
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886313"
