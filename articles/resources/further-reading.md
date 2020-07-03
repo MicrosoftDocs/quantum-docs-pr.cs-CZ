@@ -6,12 +6,12 @@ uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: bcc26f66a4ba3e861800ceca122b38b8d3ef6ad5
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: d3c252c6579e1286aae71a0f18ac7b6b02a5c1ed
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274504"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884150"
 ---
 # <a name="more-quantum-computing-learning-resources"></a>Další zdroje informací o studiu pro výpočetní prostředky
 
@@ -24,6 +24,14 @@ Tato část obsahuje vybrané odkazy na podrobné pokrytí výpočetních část
 + Kitaev, A. Y., Macek, A., & Vyalyi, M. N. (2002). Výpočet klasických a nenáročného zpracování (obj. 47). Providence: americká Matematická společnost.
 + Kaye, P., Laflamme, R., & Mosca, M. (2007). Úvod do výpočetního prostředí. Oxford univerzita Press
 + Rieffel, E. G. & Polak, W. H. (2011). Výpočetní výkon: mírné seznámení. MIT Press.
++ Sarah C. Kaiser a Christopher E. granade (program pro včasnou přístup k začala v dubnu 2019 publikace v 2020). [Naučte se s využitím Pythonu a Q # – získáte praktický přístup](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
+
+## <a name="online-courses"></a>Online kurzy ##
+
++ [Přečtěte si o výpočetních modulech v MS](https://docs.microsoft.com/users/buildcollections2020-6557/collections/1o2iogrmn8x4r). Steý kurz pro plnění výpočetních koncepcí a postupů. 
++ [Náročné na výpočetní výkon – skvělý kurz](https://brilliant.org/courses/quantum-computing/). Naučte se sestavovat algoritmy v terénu od základu po počítač, který se simuluje v prohlížeči.
++ [Seznámení se náročné na výpočetní výkon – učení LinkedInu](https://www.linkedin.com/learning/introduction-to-quantum-computing). Úvod k videu 1h25m 
++ [Výpočetní výkon až do Comics](https://hackaday.io/project/168554-introduction-to-quantum-computing). Týdenně se dojedná o třídu komunity. 
 
 ## <a name="elementary-techniques-for-building-controlled-gates"></a>Základní techniky pro sestavování řízených bran ##
 

@@ -3,39 +3,38 @@ title: Testování a ladění
 description: Naučte se používat testy jednotek, fakta a kontrolní výrazy a funkce výpisu paměti pro testování a ladění programů v počtu procesorů.
 author: tcNickolas
 ms.author: mamykhai@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: dd6c7ae8a016423f26c37f3eedf0ae9c1d126b78
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+ms.openlocfilehash: cd619607af9e2b601f3bec1304c5729d84312f35
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630032"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884085"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
-Stejně jako v případě klasického programování je nutné mít na úmysl kontrolu nad tím, že se programy budou chovat podle účelu a že je možné diagnostiku nesprávného programu.
+Stejně jako v případě klasického programování je důležité, abyste měli kontrolu nad tím, že se programy budou chovat podle účelu a že je možné diagnostikovat nesprávné chování.
 V této části se zaměříme na nástroje, které Q # nabízí pro testování a ladění programů v oblasti.
 
 ## <a name="unit-tests"></a>Testování částí
 
-Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek* , které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
-Můžeme třeba zajistit, aby se `Square(2)` vracely informace, `4` protože víme *předem* , že $2 ^ 2 = $4.
+Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek*, které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
+Můžete například zajistit, že se `Square(2)` vrátí, `4` protože víte *předem* , že $2 ^ 2 = $4.
 
-Q # podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou být provedeny jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
+Q # podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
 
 ### <a name="creating-a-test-project"></a>Vytvoření testovacího projektu
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Otevřete Visual Studio 2019. Přejděte do `File` nabídky a vyberte `New`  >  `Project...` .
-V pravém horním rohu vyhledejte `Q#` a vyberte `Q# Test Project` šablonu.
+Otevřete Visual Studio 2019. Přejděte do nabídky **soubor** a vyberte **Nový > projekt...**. V pravém horním rohu vyhledejte `Q#` a vyberte šablonu **projektu testu Q #** .
 
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
 Z oblíbeného příkazového řádku spusťte následující příkaz:
-```bash
+```dotnetcli
 $ dotnet new xunit -lang Q# -o Tests
 $ cd Tests
 $ code . # To open in Visual Studio Code
@@ -43,8 +42,8 @@ $ code . # To open in Visual Studio Code
 
 ****
 
-Nový projekt bude mít jeden soubor `Tests.qs` , který poskytuje pohodlný místo pro definování nových testů jednotek Q #.
-Zpočátku tento soubor obsahuje jeden ukázkový test jednotky `AllocateQubit` , který kontroluje, zda je nově přidělená qubit ve stavu $ \ket {0} $ a vytiskne zprávu:
+Váš nový projekt obsahuje jeden soubor `Tests.qs` , který poskytuje pohodlný místo pro definování nových testů jednotek Q #.
+Zpočátku tento soubor obsahuje jeden ukázkový test jednotek, `AllocateQubit` který kontroluje, zda je nově přidělená qubit ve stavu $ \ket {0} $ a vytiskne zprávu:
 
 ```qsharp
     @Test("QuantumSimulator")
@@ -58,28 +57,28 @@ Zpočátku tento soubor obsahuje jeden ukázkový test jednotky `AllocateQubit` 
     }
 ```
 
-: New: operace Q # nebo funkce, která přebírá argument typu `Unit` a vrácení, `Unit` může být označena jako test jednotky prostřednictvím `@Test("...")` atributu. Argument výše uvedeného atributu `"QuantumSimulator"` Určuje cíl, na kterém je test spuštěn. Jeden test může být proveden na více cílech. Přidejte například atribut `@Test("ResourcesEstimator")` výše `AllocateQubit` . 
+Jakákoli operace Q # nebo funkce, která přebírá argument typu `Unit` a vrácení, `Unit` může být označena jako test jednotky prostřednictvím `@Test("...")` atributu. V předchozím příkladu argument tohoto atributu `"QuantumSimulator"` Určuje cíl, na kterém je test spuštěn. Jeden test může běžet na více cílech. Například přidejte atribut `@Test("ResourcesEstimator")` před `AllocateQubit` . 
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
     operation AllocateQubit () : Unit {
         ...
 ```
-Uložte soubor a proveďte všechny testy. Nyní by měly být dvě testy jednotek, jedna kde AllocateQubit je spuštěna na QuantumSimulator a druhá, kde se spustí v ResourceEstimator. 
+Uložte soubor a spusťte všechny testy. Nyní by měly být dvě testy jednotek, jedna, kde se spouští v a `AllocateQubit` `QuantumSimulator` druhá, kde se spouští v `ResourcesEstimator` . 
 
-Kompilátor Q # rozpoznává předdefinované cíle "QuantumSimulator", "ToffoliSimulator" a "ResourcesEstimator" jako platné cíle provádění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle provádění. 
+Kompilátor Q # rozpoznává předdefinované cíle `"QuantumSimulator"` , `"ToffoliSimulator"` a `"ResourcesEstimator"` jako platné cíle provádění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle provádění. 
 
 ### <a name="running-q-unit-tests"></a>Spouštění testů jednotek Q #
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Jako jednorázové nastavení jednotlivých řešení přejděte do `Test` nabídky a vyberte `Test Settings`  >  `Default Processor Architecture`  >  `X64` .
+Jako jednorázové nastavení pro každé řešení přejděte do nabídky **test** a vyberte **nastavení testu > výchozí architektura procesoru > x64**.
 
 > [!TIP]
 > Výchozí nastavení architektury procesoru pro Visual Studio je uloženo v souboru možností řešení ( `.suo` ) pro každé řešení.
-> Pokud tento soubor odstraníte, budete ho muset `X64` znovu vybrat jako architekturu procesoru.
+> Pokud tento soubor odstraníte, budete muset jako architekturu procesoru vybrat **x64** .
 
-Sestavte projekt, přejděte do `Test` nabídky a vyberte `Windows`  >  `Test Explorer` . `AllocateQubit`zobrazí se v seznamu testů ve `Not Run Tests` skupině. Vyberte `Run All` nebo spusťte tento jednotlivý test a měl by být úspěch.
+Sestavte projekt, otevřete nabídku **test** a vyberte možnost **Windows > Průzkumník testů**. **AllocateQubit** se zobrazí v seznamu testů ve skupině **Nespuštěné testy** . Vyberte **Spustit vše** nebo spustit tento jednotlivý test.
 
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
@@ -125,7 +124,7 @@ Vnitřní funkce <xref:microsoft.quantum.intrinsic.message> má typ `(String -> 
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o spuštění testu: stav úspěch/selhání, uplynulý čas a "výstup". Pokud kliknete na odkaz "výstup", výstup testu se otevře v novém okně.
+Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o spuštění testu: stav předání/selhání, uplynulý čas a odkaz na výstup. Kliknutím na **výstup** otevřete výstup testu v novém okně.
 
 ![Výstup testu](~/media/unit-test-output.png)
 
@@ -138,9 +137,9 @@ V případě neúspěšných testů jsou výstupy také vytištěny do konzoly n
 
 ## <a name="facts-and-assertions"></a>Fakta a kontrolní výrazy
 
-Vzhledem k tomu, že funkce v Q # nemají žádné _logické_ vedlejší účinky, jakékoliv _jiné druhy_ účinků provádění funkce, jejíž výstupní typ je prázdná řazená kolekce členů, se v `()` programu Q # nikdy neprojeví.
+Vzhledem k tomu, že funkce v Q # nemají žádné _logické_ vedlejší účinky, nemůžete nikdy sledovat v rámci programu q # jiné druhy efektů ze spuštění funkce, jejíž výstupní typ je prázdná řazená kolekce členů `()` .
 To znamená, že cílový počítač se může rozhodnout, že nespustí žádnou funkci `()` , která se vrátí se zárukou, že toto opomenutí nebude upravovat chování žádného následujícího kódu Q #.
-To umožňuje funkcím vracet `()` (tj. `Unit` ) užitečný nástroj pro vkládání kontrolních výrazů a logiku ladění do programů Q #. 
+Toto chování vrací funkce `()` (například `Unit` ) užitečný nástroj pro vkládání kontrolních výrazů a logiku ladění do programů Q #. 
 
 Pojďme si vzít v úvahu jednoduchý příklad:
 
@@ -154,17 +153,17 @@ function PositivityFact(value : Double) : Unit
 }
 ```
 
-Zde klíčové slovo `fail` označuje, že výpočet by neměl pokračovat, vyvolání výjimky v cílovém počítači, na kterém je spuštěn program Q #.
-Podle definice nemůže být selhání tohoto druhu zjištěno v rámci Q #, protože po dosažení příkazu není spuštěn žádný další kód Q # `fail` .
-Proto, pokud budeme pokračovat po volání `PositivityFact` , můžeme si být jisti, že jeho vstup byl kladný.
+Zde klíčové slovo `fail` označuje, že výpočet by neměl pokračovat a vyvolá výjimku v cílovém počítači, na kterém je spuštěn program Q #.
+Podle definice nemůže být selhání tohoto druhu zjištěno v rámci Q #, protože cílový počítač již po dosažení příkazu nespustí kód Q # `fail` .
+Takže pokud budeme pokračovat po volání `PositivityFact` , můžeme si být jisti, že jeho vstup byl kladný.
 
 Všimněte si, že můžeme implementovat stejné chování jako při `PositivityFact` použití [`Fact`](xref:microsoft.quantum.diagnostics.fact) funkce z <xref:microsoft.quantum.diagnostics> oboru názvů:
 
 ```qsharp
-    Fact(value <= 0, "Expected a positive number.");
+    Fact(value > 0, "Expected a positive number.");
 ```
 
-*Kontrolní výrazy*jsou na druhé straně používány podobně jako fakta, ale mohou být závislé na stavu cílového počítače. Odpovídajícím způsobem jsou definovány jako operace, zatímco fakta jsou definována jako funkce (jak je uvedeno výše).
+*Kontrolní výrazy*na druhé straně se používají podobně jako fakta, ale můžou záviset na stavu cílového počítače. Odpovídajícím způsobem jsou definovány jako operace, zatímco fakta jsou definována jako funkce (jako v předchozím příkladu).
 Pro pochopení rozlišení zvažte následující použití faktu v rámci kontrolního výrazu:
 
 ```qsharp
@@ -175,12 +174,12 @@ operation AssertQubitsAreAvailable() : Unit
 ```
 
 V tomto příkladu používáme operaci <xref:microsoft.quantum.environment.getqubitsavailabletouse> k vrácení počtu qubits dostupných k použití.
-Vzhledem k tomu, že to jasně závisí na globálním stavu programu a jeho prováděcím prostředí, `AssertQubitsAreAvailable` musí být naše definice také operace.
+Vzhledem k tomu, že to závisí na globálním stavu programu a jeho prováděcím prostředí, `AssertQubitsAreAvailable` musí být naše definice také operace.
 Tento globální stav však můžeme použít k získání jednoduché `Bool` hodnoty jako vstupu do `Fact` funkce.
 
-[Předehru](xref:microsoft.quantum.libraries.standard.prelude) na těchto nápadech nabízí dva obzvláště užitečné kontrolní výrazy, které se <xref:microsoft.quantum.intrinsic.assert> <xref:microsoft.quantum.intrinsic.assertprob> modelují jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých se má provést měření, a hypotetický výsledek.
-V cílových počítačích, které pracují s simulací, nebudeme vázáni pomocí [věta bez klonování](https://en.wikipedia.org/wiki/No-cloning_theorem)a může provádět taková měření, aniž by došlo k narušení registru předaného do takových kontrolních výrazů.
-Simulátor pak může, podobně jako `PositivityFact` funkce výše, přerušit výpočet, pokud se hypotetický výsledek nepozoruje v praxi:
+[Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:microsoft.quantum.intrinsic.assert> a <xref:microsoft.quantum.intrinsic.assertprob> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
+Cílové počítače, které pracují podle simulace, nejsou vázány [větaem bez klonování](https://en.wikipedia.org/wiki/No-cloning_theorem)a mohou provádět taková měření bez narušení registru, který předává takové kontrolní výrazy.
+Simulátor může následně vypadat podobně jako `PositivityFact` předchozí funkce, zastavit výpočty, pokud se hypotetický výsledek nepozoruje v praxi:
 
 ```qsharp
 using (register = Qubit()) 
@@ -195,7 +194,7 @@ using (register = Qubit())
 
 U fyzických stavových procesorů, kde věta bez klonování brání prověřování stavu `Assert` `AssertProb` nečinnosti, operace a se jednoduše vrátí `()` bez dalšího účinku.
 
-<xref:microsoft.quantum.diagnostics>Obor názvů poskytuje několik dalších funkcí řady, `Assert` které nám umožňují kontrolovat pokročilejší podmínky. 
+<xref:microsoft.quantum.diagnostics>Obor názvů poskytuje několik funkcí `Assert` řady, se kterými můžete kontrolovat pokročilejší podmínky. 
 
 ## <a name="dump-functions"></a>Funkce výpisu paměti
 
@@ -221,7 +220,7 @@ Ostatní řádky popisují amplitudu pravděpodobnosti měření vektoru stavu $
 * **` == `**: `equal` znaménko odděluje rovnocenné reprezentace.
 * **`**********  `**: Grafická reprezentace velikosti, počet `*` je úměrný pravděpodobnosti měření tohoto vektoru stavu.
 * **`[ 0.500000 ]`**: číselná hodnota velikosti
-* **`    ---`**: Grafická reprezentace fáze amplitudy (viz níže).
+* **`    ---`**: Grafická reprezentace fáze amplitudy (viz následující výstup).
 * **`[ 0.0000 rad ]`**: číselná hodnota fáze (v radiánech).
 
 Velikost i fáze se zobrazí s grafickým znázorněním. Reprezentace velikosti je přímá – předána: zobrazuje pruh, což je `*` větší pravděpodobnost, po který se ovládací panel zvětšuje. Pro tuto fázi zobrazíme následující symboly, které reprezentují úhel na základě rozsahů:
@@ -288,7 +287,7 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
   > [!TIP]
-  > ID qubit v aplikaci Visual Studio můžete zjistit tak, že do kódu zadáte zarážku a zkontrolujete hodnotu proměnné qubit, například:
+  > ID qubit můžete v aplikaci Visual Studio vyhledat tak, že do kódu zadáte zarážku a zkontrolujete hodnotu proměnné qubit, například:
   > 
   > ![Zobrazit ID qubit v aplikaci Visual Studio](~/media/qubit_id.png)
   >
@@ -297,7 +296,7 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
   > [!TIP]
-  > ID qubit můžete zjistit pomocí <xref:microsoft.quantum.intrinsic.message> funkce a předáním proměnné qubit ve zprávě, například:
+  > ID qubit můžete vyhledat pomocí <xref:microsoft.quantum.intrinsic.message> funkce a předáním proměnné qubit ve zprávě, například:
   >
   > ```qsharp
   > Message($"0={register2[0]}; 1={register2[1]}");
@@ -312,7 +311,7 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
 
 ***
 
-<xref:microsoft.quantum.diagnostics.dumpmachine>je součástí <xref:microsoft.quantum.diagnostics> oboru názvů, takže aby ho bylo možné použít, je nutné přidat `open` příkaz:
+Vzhledem k <xref:microsoft.quantum.diagnostics.dumpmachine> tomu, že je součástí <xref:microsoft.quantum.diagnostics> oboru názvů, je nutné přidat `open` příkaz pro přístup k němu:
 
 ```qsharp
 namespace Samples {
@@ -331,7 +330,7 @@ namespace Samples {
 
 ### <a name="dumpregister"></a>DumpRegister
 
-<xref:microsoft.quantum.diagnostics.dumpregister>funguje podobně jako <xref:microsoft.quantum.diagnostics.dumpmachine> s tím rozdílem, že také přebírá pole qubits, které omezuje množství informací, které je relevantní pro odpovídající qubits.
+<xref:microsoft.quantum.diagnostics.dumpregister>funguje jako <xref:microsoft.quantum.diagnostics.dumpmachine> , s tím rozdílem, že také přebírá pole qubits k omezení množství informací, které je relevantní pro odpovídající qubits.
 
 Stejně jako u <xref:microsoft.quantum.diagnostics.dumpmachine> jsou informace vygenerované nástrojem <xref:microsoft.quantum.diagnostics.dumpregister> závislé na cílovém počítači. Pro plný stav simulátoru, který zapisuje do souboru, zapíše funkce Wave do globální fáze podsystému, který vygenerovala poskytnutá qubits ve stejném formátu jako <xref:microsoft.quantum.diagnostics.dumpmachine> .  Například znovu se přihlaste k počítači jenom se dvěma qubits přidělenými a ve stavu neobsazenosti $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} \ket {2} {1} ) \otimes) {2} {0} , \end{align} $ $ volá se, <xref:microsoft.quantum.diagnostics.dumpregister> aby se `qubit[0]` vygeneroval tento výstup:
 
@@ -382,6 +381,6 @@ namespace app
 
 ## <a name="debugging"></a>Ladění
 
-V rámci `Assert` funkcí a `Dump` operací Q # podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno možné při provádění kódu v simulátoru.
+V rámci `Assert` funkcí a `Dump` operací Q # podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno, co je možné při provádění kódu na simulátoru.
 
 Ladění v Visual Studio Code využívá možnosti ladění poskytované v jazyce C# pro Visual Studio Code rozšíření využívající OmniSharp a vyžaduje instalaci [nejnovější verze](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

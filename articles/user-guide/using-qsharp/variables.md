@@ -6,23 +6,23 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 456c05d4ca66a747e0cc514a30c6bbb33610f481
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 08301f408dcb2211ba25c582a5e5aa43310b714a
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327777"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885277"
 ---
 # <a name="variables-in-q"></a>Proměnné v Q #
 
-Q # rozlišuje proměnlivé a neproměnlivé symboly nebo "proměnné", které jsou vázány nebo přiřazeny výrazům.
+Q # rozlišuje proměnlivé a neproměnlivé symboly nebo *proměnné*, které jsou vázány nebo přiřazeny výrazům.
 Obecně platí, že použití neměnných symbolů je doporučováno, protože umožňuje kompilátoru provádět větší optimalizace.
 
-Levá strana vazby se skládá ze symbolů řazené kolekce členů a pravé strany výrazu.
+Levá strana vazby se skládá ze symbolů typu tuple a na pravé straně výrazu.
 
 ## <a name="immutable-variables"></a>Neměnné proměnné
 
-Hodnotu jakéhokoli typu v Q # lze přiřadit proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova.
+Hodnotu libovolného typu v Q # můžete přiřadit proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova. 
 
 Neproměnlivá vazba se skládá z klíčového slova `let` následovaný symbolem nebo řazenou kolekcí členů symbolu, znaménko rovná `=` se, výraz pro vazbu symbolů na a ukončující středník.
 
@@ -35,27 +35,28 @@ let measurementOperator = [PauliX, PauliZ, PauliZ, PauliX, PauliI];
 To přiřadí konkrétní pole operátorů Pauli k názvu proměnné (neboli symbol), `measurementOperator` .
 
 > [!NOTE]
-> Nemuseli explicitně zadat typ naší nové proměnné, protože výraz na pravé straně `let` příkazu je nejednoznačný a daný typ je odvozený kompilátorem. 
+> V předchozím příkladu není nutné explicitně zadat typ nové proměnné, protože výraz na pravé straně `let` příkazu je nejednoznačný a kompilátor odvodí správný typ. 
 
-Proměnné definované pomocí `let` jsou *neměnné*, což znamená, že po jejím definování již není možné je nijak měnit.
-To umožňuje několik užitečných optimalizací, včetně optimalizace klasické logiky, která působí na proměnné, aby se mohla použít `Adjoint` varianta operace.
+Proměnné definované pomocí `let` jsou *neměnné*, což znamená, že po jejím definování už je nebudete moct změnit jakýmkoli způsobem.
+To umožňuje několik užitečných optimalizací, včetně optimalizace klasické logiky, která funguje u proměnných, aby se mohla použít `Adjoint` varianta operace.
 
 ## <a name="mutable-variables"></a>Proměnlivé proměnné
 
-Jako alternativu k vytvoření proměnné pomocí `let` `mutable` klíčového slova vytvoří proměnlivou proměnnou, která *může* být po počátečním vytvoření pomocí `set` klíčového slova znovu svázána.
+Jako alternativu k vytváření proměnných pomocí `let` `mutable` klíčového slova vytvoří proměnlivou proměnnou, která *může* být po jeho počátečním vytvoření znovu svázána pomocí `set` klíčového slova.
 
-Symboly deklarované a svázané jako součást `mutable` příkazu mohou být později v kódu převázány na jinou hodnotu. Pokud je symbol převázán později v kódu, jeho typ se nezmění a nově vázané hodnoty musí být kompatibilní s tímto typem.
+Můžete znovu svázat symboly deklarované a svázané jako součást `mutable` příkazu s jinou hodnotou později v kódu. Pokud je symbol znovu svázán později v kódu, jeho typ se nemění a nově vázané hodnoty musí být kompatibilní s tímto typem.
 
 ### <a name="rebinding-of-mutable-symbols"></a>Obnovení vazby proměnlivých symbolů
 
-Proměnlivou proměnnou lze znovu svázat pomocí `set` příkazu.
+Můžete znovu navazovat proměnlivou proměnnou pomocí `set` příkazu.
 Taková revazba se skládá z klíčového slova `set` následovaný symbolem nebo řazenou kolekcí členů symbolů, znaménkem rovnosti `=` , výrazu pro opětovné svázání symbolů a zakončeným středníkem.
 
-Tady poskytujeme některé možné příklady technik revázání příkazů.
+Níže jsou uvedeny některé příklady technik příkazu resvázat.
 
-### <a name="apply-and-reassign-statements"></a>Příkazy Apply a Reassign
+#### <a name="apply-and-reassign-statements"></a>Příkazy Apply a Reassign
 
-Konkrétní druh `set` příkazu, který označujeme jako příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Třeba
+Konkrétní druh `set` příkazu, příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Třeba
+
 ```qsharp
 mutable counter = 0;
 for (i in 1 .. 2 .. 10) {
@@ -63,7 +64,8 @@ for (i in 1 .. 2 .. 10) {
     // ...
 }
 ```
-zvýší hodnotu čítače `counter` v každé iteraci `for` smyčky. Výše uvedený kód je stejný jako 
+zvýší hodnotu čítače `counter` v každé iteraci `for` smyčky. Předchozí kód je ekvivalentní 
+
 ```qsharp
 mutable counter = 0;
 for (i in 1 .. 2 .. 10) {
@@ -72,9 +74,9 @@ for (i in 1 .. 2 .. 10) {
 }
 ```
 
-Podobné příkazy jsou k dispozici pro všechny binární operátory, ve kterých typ levé strany odpovídá typu výrazu. To poskytuje například pohodlný způsob, jak nashromáždit hodnoty.
+Podobné příkazy jsou k dispozici pro všechny binární operátory, ve kterých typ levé strany odpovídá typu výrazu. Tyto příkazy poskytují pohodlný způsob, jak nashromáždit hodnoty.
 
-Například Supposing `qubits` je regsiter of qubits:
+Například Supposing `qubits` je registr qubits:
 ```qsharp
 mutable results = new Result[0];   // results is an empty array of type Result[]
 for (q in qubits) {
@@ -84,7 +86,7 @@ for (q in qubits) {
 ...                                // results contains the measurement outcomes from the whole register
 ```
 
-### <a name="update-and-reassign-statements"></a>Příkazy Update a Reassign
+#### <a name="update-and-reassign-statements"></a>Příkazy Update a Reassign
 
 Pro [výrazy kopírování a aktualizace](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) na pravé straně existuje podobný zřetězení.
 Odpovídající příkazy *Update-a-Reassign* existují pro *pojmenované položky* v uživatelsky definovaných typech a také pro *položky pole*.  
@@ -105,7 +107,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-V případě polí jsou [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) v naší standardní knihovně k dispozici potřebné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, takže se tak můžou vyhnout nutnosti aktualizovat položky pole na prvním místě. 
+V případě polí je [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) ve standardní knihovně Q # k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě. 
 
 Příkazy Update a Reassign poskytují v případě potřeby alternativu:
 
@@ -130,7 +132,7 @@ operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
 
 ```
 
-Pomocí nástrojů knihovny pro pole, která jsou k dispozici v systému [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , můžeme například snadno definovat funkci, která vrací pole Paul, kde Pauli on index `i` přebírá danou hodnotu a všechny ostatní položky jsou identity.
+Pomocí nástrojů knihovny pro pole, která jsou k dispozici v [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , můžete například snadno definovat funkci, která vrací pole typů, `Pauli` kde element v indexu `i` přebírá danou `Pauli` hodnotu a všechny ostatní položky jsou identity ( `PauliI` ).
 
 Tady jsou dvě definice této funkce s druhým využitím výhod těchto nástrojů.
 
@@ -139,13 +141,13 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
     mutable pauliArray = new Pauli[length];             // initialize pauliArray of given length
     for (index in 0 .. length - 1) {                    // iterate over the integers in the length range
         set pauliArray w/= index <-                     // change the value at index to input pauli or PauliI
-            index == location ? pauli | PauliI;         // cond. expression evaluating to pauli or PauliI dep. on whether index==location
+            index == location ? pauli | PauliI;         // cond. expression evaluating to pauli if index==location and PauliI if not
     }    
     return pauliArray;
 }
 ```
 
-Místo procházení každého indexu v poli a podmíněně jeho nastavování na `PauliI` nebo `Pauli` můžete místo toho použít `ConstantArray` z [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) k vytvoření pole `PauliI` a pak jednoduše vracet výraz kopie a aktualizace, ve kterém jsme změnili hodnotu specifc na indexu `location` :
+Místo toho, aby se při každém indexu v poli převzala iterace, a podmíněně ho nastaví na `PauliI` nebo daný `pauli` typ, můžete místo toho použít `ConstantArray` z [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) k vytvoření pole `PauliI` typů a pak jednoduše vrátit výraz kopírování a aktualizace, ve kterém jste změnili konkrétní hodnotu na indexu `location` :
 
 ```qsharp
 function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
@@ -155,10 +157,10 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
 
 ## <a name="tuple-deconstruction"></a>Dekonstrukce řazené kolekce členů
 
-Kromě přiřazování jedné proměnné, `let` `mutable` klíčová slova a---nebo ve skutečnosti jakékoliv jiné konstrukce vazby, například `set` (popsané níže)---také umožňují rozbalení obsahu [typu řazené kolekce členů](xref:microsoft.quantum.guide.types#tuple-types).
+Kromě přiřazování jedné proměnné můžete použít `let` `mutable` klíčová slova a a jakékoli jiné konstrukce vazby, například `set` -k rozbalení obsahu [typu řazené kolekce členů](xref:microsoft.quantum.guide.types#tuple-types).
 Přiřazení tohoto formuláře se říká k *dekonstrukci* prvků této řazené kolekce členů.
 
-Pokud je pravá strana vazby řazená kolekce členů, pak je možné po přiřazení dekonstruovat tuto řazenou kolekci členů.
+Pokud je pravá strana vazby řazená kolekce členů, můžete tuto řazenou kolekci členů dekonstruovat po přiřazení.
 Tato dekonstrukce může zahrnovat vnořené řazené kolekce členů a jakákoli úplná nebo částečná dekonstrukce je platná, pokud je tvar řazené kolekce členů na pravé straně kompatibilní s obrazcem řazené kolekce členů symbolů.
 
 Příklad:
@@ -177,14 +179,14 @@ Obecně se vazby symbolů přestanou přecházet z oboru a stanou se nefunkční
 Toto pravidlo obsahuje dvě výjimky:
 
 - Vazba proměnné smyčky `for` smyčky je v rozsahu pro tělo smyčky for, ale ne za koncem smyčky.
-- Všechny tři části `repeat` / `until` smyčky (tělo, test a oprava) se považují za jediný obor, takže symboly, které jsou svázané s textem, jsou k dispozici v testu a v opravě.
+- Všechny tři části `repeat` / `until` smyčky (tělo, test a oprava) fungují jako jeden obor, takže symboly, které jsou svázané s textem, jsou k dispozici v testu a opravě.
 
-U obou typů smyček projde smyčka ve vlastním oboru, takže vazby z dřívějšího průchodu nejsou k dispozici v pozdější fázi.
-Podrobnosti o těchto smyčkách najdete v [toku řízení](xref:microsoft.quantum.guide.controlflow).
+U obou typů smyček každý průchod cyklem spouští ve svém vlastním oboru, takže vazby z dřívějšího průchodu nejsou k dispozici v pozdější fázi.
+Další informace o těchto smyčkách najdete v tématu [tok řízení](xref:microsoft.quantum.guide.controlflow).
 
-Vazby symbolů z vnějších bloků jsou děděny pomocí vnitřních bloků.
-Symbol může být vázaný jenom jednou na blok; není povoleno definovat symbol se stejným názvem jako jiný symbol, který je v oboru (bez "stínování").
-Následující sekvence by byly platné:
+Vnitřní bloky dědí vazby symbolů z vnějších bloků.
+Pro každý blok můžete vytvořit pouze jeden symbol; není povoleno definovat symbol se stejným názvem jako jiný symbol, který je v oboru (bez "stínování").
+Platné jsou následující sekvence:
 
 ```qsharp
 if (a == b) {

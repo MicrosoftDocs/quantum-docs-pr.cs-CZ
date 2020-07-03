@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 0fcdec1a304730b593224283421539ea3ca9c913
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+ms.openlocfilehash: d10f81a1e49235be8e02661dcd6d3c839485af6e
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415449"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885036"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -20,6 +20,27 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01220070124"></a>0.12.20070124 verze
+
+*Datum vydání: 2. července 2020*
+
+Tato verze obsahuje následující:
+
+- Nový `qdk-chem` Nástroj pro převod formátů serializace ve starších verzích elektronické struktury (např.: FCIDUMP) do [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
+- Nové funkce a operace v [ `Microsoft.Quantum.Synthesis` oboru názvů](xref:microsoft.quantum.synthesis) pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
+- SWEETIQ # teď umožňuje argumenty v `%simulate` `%estimate` příkazech, a dalších příkazech Magic. Další podrobnosti najdete v referenčních informacích k [ `%simulate` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
+- Nové možnosti zobrazení fáze v SWEETIQ #. Další podrobnosti najdete v referenčních informacích k [ `%config` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
+- SWEETIQ # a `qsharp` balíček Pythonu jsou teď k dispozici prostřednictvím balíčků conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) a [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)), aby se zjednodušila místní instalace funkcí Q # Jupyter a Pythonu do conda prostředí. Další podrobnosti najdete v pokynech k instalaci v [poznámkových blocích q # Jupyter](xref:microsoft.quantum.install.jupyter) a [q # with Python](xref:microsoft.quantum.install.python) .
+- Při použití simulátoru už qubits není potřeba ve stavu | 0 ⟩ po vydaných verzích, ale dá se automaticky resetovat, pokud se naměřeny bezprostředně před vydáním.
+- Aktualizace usnadňující, aby uživatelé SWEETIQ # využili balíčky knihoven s různými verzemi QDK a nevyžadovali pouze hlavní & menší čísla verzí, nikoli přes stejnou verzi.
+- Odebraný nepoužívaný `Microsoft.Quantum.Primitive.*` obor názvů
+- Přesunuté operace:
+  - `Microsoft.Quantum.Intrinsic.Assert`je teď`Microsoft.Quantum.Diagnostics.AssertMeasurement`
+  - `Microsoft.Quantum.Intrinsic.AssertProb`je teď`Microsoft.Quantum.Diagnostics.AssertMeasurementProbability`
+- Opravy chyb 
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0112006403"></a>Verze 0.11.2006.403
 
