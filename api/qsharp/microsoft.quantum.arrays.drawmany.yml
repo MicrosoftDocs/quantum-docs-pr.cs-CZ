@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.drawmany
+name: DrawMany
+type: operation
+namespace: Microsoft.Quantum.Arrays
+summary: Opakuje operaci pro daný počet vzorků a shromažďuje jejich výstupy v poli.
+examples: >-
+  Následující ukázky celé číslo, s ohledem na operaci, která v jednom okamžiku vyčísluje jeden bit.
+
+
+  ```Q#
+
+  let randomInteger = BoolArrayAsInt(DrawMany(SampleRandomBit, 16, ()));
+
+  ```
+syntax: "operation DrawMany (op : ('TInput => 'TOutput), nSamples : Int, input : 'TInput) : 'TOutput[]"
+input:
+  content: "(op : ('TInput => 'TOutput), nSamples : Int, input : 'TInput)"
+  types:
+  - name: op
+    summary: Operace, která se má volat opakovaně
+    isOperation: true
+    input:
+      types:
+      - uid: "'TInput"
+        isLocal: true
+    output:
+      types:
+      - uid: "'TOutput"
+        isLocal: true
+  - name: nSamples
+    summary: Počet vzorků volání `op` ke shromáždění.
+    isPrimitive: true
+    uid: Int
+  - name: input
+    summary: Vstup, který má být předán `op` .
+    uid: "'TInput"
+    isLocal: true
+output:
+  content: "'TOutput[]"
+  types:
+  - isArray: true
+    uid: "'TOutput"
+    isLocal: true
+typeParameters:
+- uid: TInput
+  summary: Typ vstupu, který očekával `op` .
+- uid: TOutput
+  summary: Typ výstupu vrácený `op` .
+seeAlso:
+- microsoft.quantum.canon.repeat
+metadata:
+  ms.openlocfilehash: 8ed96fbb8b543cf8f9f167304e45e5f4fd82ad44
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886422"

@@ -1,0 +1,68 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applypermutationusingdecomposition
+name: ApplyPermutationUsingDecomposition
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: >-
+  Permutes amplitudy ve stavu, který má za následek permutaci s využitím syntézy založené na dekompozici.
+
+
+  Tento postup implementuje postup syntézy založený na dekompozici.  Vstup je permutace $ \pi $ over $2 ^ n $ elementy $ \{ 0, \dots, 2 ^ n-1 \} $, které představují funkci $n $-Variable vratné logické hodnoty.
+
+  Algoritmus iterativní provede následující kroky pro každý index proměnné $i $:
+
+
+  1. COMPUTE $ ((\ pi_l, \ pi_r), \pi ') $ tím, že obrázky $ \ pi_l $ a $ \ pi_r $ nemění bity ve svých prvcích v jiných rejstřících než $i $ a image $ \pi $ nemění bitovou $i $ ve svých prvcích.
+
+  2. Nastavte $ \pi \leftarrow \pi ' $ a odvodit pravdy tabulky z $ \ pi_l $ a $ \ pi_r $ na základě prvků, které nejsou pevnými body.
+
+
+  Po použití těchto kroků u všech indexů proměnných bude zbývající permutace $ \pi $ identita a na základě shromážděných tabulek a indexů pravdy může jedna použít operace kontrolované v tabulce s @"microsoft.quantum.intrinsic.x" použitím této @"microsoft.quantum.synthesis.applyxcontrolledontruthtable" operace.
+
+
+  Proměnná pořadí je $0, \dots, n-$1.  V operaci lze zadat vlastní proměnnou pořadí @"microsoft.quantum.synthesis.applypermutationusingdecompositionwithvariableorder" .
+examples: >-
+  Pro syntetizaci `SWAP` operace:
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    ApplyPermutationUsingDecomposition([0, 2, 1, 3], LittleEndian(qubits));
+  }
+
+  ```
+syntax: 'operation ApplyPermutationUsingDecomposition (perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+references: >-
+  - [*Alexis de Vos*, *Yvan van Rentergem*, ADV. v matematice. z comm. 2 (2), 2008, PP. 183--200](http://www.aimsciences.org/article/doi/10.3934/amc.2008.2.183)
+
+  - [*Mathias Soeken*, *Laura Tague*, *Gerhard W. Dueck*, *Rolf Drechsler*, deník symbolického výpočtu 73 (2016), PP. 1--26](https://www.sciencedirect.com/science/article/pii/S0747717115000188?via%3Dihub)
+input:
+  content: '(perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: perm
+    summary: Permutace prvků $2 ^ n $ počínaje 0.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: Seznam $n $ qubits, na který se aplikuje permutace
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.synthesis.applypermutationusingdecompositionwithvariableorder
+- microsoft.quantum.synthesis.applypermutationusingtransformation
+metadata:
+  ms.openlocfilehash: 2394b1260a848e590bea911e5b52d0e37d8c1bac
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886320"

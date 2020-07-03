@@ -1,0 +1,56 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applypermutationusingdecompositionwithvariableorder
+name: ApplyPermutationUsingDecompositionWithVariableOrder
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: >-
+  Permutes amplitudy ve stavu, který má za následek permutaci s využitím syntézy založené na dekompozici.
+
+
+  Tato operace je obecnější verze, @"microsoft.quantum.synthesis.applypermutationusingdecomposition" ve které lze určit pořadí proměnných. Jiné pořadí proměnných změní pořadí rozkladu a tabulky pravdy používané pro řízené @"microsoft.quantum.intrinsic.x" brány.  Proto změna pořadí proměnných změní počet všech bran používaných k realizaci permutace.
+examples: >-
+  Pro syntetizaci `SWAP` operace:
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    ApplyPermutationUsingDecompositionWithVariableOrder([0, 2, 1, 3], [1, 0], LittleEndian(qubits));
+  }
+
+  ```
+syntax: 'operation ApplyPermutationUsingDecompositionWithVariableOrder (perm : Int[], variableOrder : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(perm : Int[], variableOrder : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: perm
+    summary: Permutace prvků $2 ^ n $ počínaje 0.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: variableOrder
+    summary: Permutace $n $ prvků od 0.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: Seznam $n $ qubits, na který se aplikuje permutace
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- microsoft.quantum.synthesis.applypermutationusingdecomposition
+- microsoft.quantum.synthesis.applypermutationusingtransformation
+metadata:
+  ms.openlocfilehash: ef6b24fa5b9c010f01ade622f470aec7c0a25835
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85886319"

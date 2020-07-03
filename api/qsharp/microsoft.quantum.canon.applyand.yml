@@ -7,17 +7,17 @@ summary: >-
   Invertuje zadaný cílový qubit, pokud jsou oba ovládací prvky qubits ve 1 stavu, přičemž pomocí měření provede operaci sousedících operací.
 
 
-  `target` Invertuje pouze v případě, že jsou oba ovládací prvky 1, `target` ale předpokládá, že je ve stavu 0.  Operace má T-Count 4, T-Depth 2 a nevyžaduje žádné pomocné qubit a může proto být vhodnější pro operaci CCNOT, pokud `target` je známo, že má hodnotu 0.  Sousední operace této operace měří na základě měření a nevyžaduje žádné brány T.
+  Invertuje `target` pouze v případě, že jsou oba ovládací prvky 1, ale předpokládá, že `target` je ve stavu 0.  Operace má T-Count 4, T-Depth 2 a nevyžaduje žádné pomocné qubit a může proto být vhodnější pro operaci CCNOT, pokud `target` je známo, že má hodnotu 0.  Sousední operace této operace měří na základě měření a nevyžaduje žádné brány T.
 
 
-  Kontrolované použití této operace nevyžaduje žádné pomocné qubit, `2^c` `Rz` brány a není optimalizované pro hloubku, kde `c` je počet celkových ovládacích prvků qubits, včetně dvou ovládacích prvků z `ApplyAnd` operace.  Aplikace řízená pomocí souseda vyžaduje `2^c - 1` `Rz` , aby byly brány (s úhlem dvojnásobku velikosti nesousedících operací), žádné pomocné qubit a není optimalizované pro hloubku.
+  Kontrolované použití této operace nevyžaduje žádné pomocné qubit, `2^c` `Rz` brány a není optimalizované pro hloubku, kde `c` je počet celkových ovládacích prvků qubits, včetně dvou ovládacích prvků z `ApplyAnd` operace.  Aplikace řízená pomocí souseda vyžaduje, aby byly `2^c - 1` `Rz` brány (s úhlem dvojnásobku velikosti nesousedících operací), žádné pomocné qubit a není optimalizované pro hloubku.
 syntax: 'operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
 references: >-
   - Cody Novotný: "nové konstrukce pro bránu Toffoli odolné proti chybám", fyz. rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) doi: 10.1103/PhysRevA. 87.022328
 
   - Craig Gidney: "snížení nákladů na sčítání, 2. stranu, strana 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) doi: 10.1103/PhysRevA. 85.044302
 
-  - Mathias Soeken: "okruhy Oracle a vzor vánoční stromové struktury", [článek na blogu z Decemer 19.2019](https://msoeken.github.io/blog_qac.html) (Poznámka: vysvětlení vícenásobně řízené konstrukce)
+  - Mathias Soeken: "okruhy Oracle a vzor vánoční stromové struktury", [článek na blogu od 19. prosince 2019](https://msoeken.github.io/blog_qac.html) (Poznámka: vysvětlení více řízených konstrukcí)
 input:
   content: '(control1 : Qubit, control2 : Qubit, target : Qubit)'
   types:
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: target
-    summary: Cílová auxillary qubit; musí být ve stavu 0.
+    summary: Cílová pomocná qubit; musí být ve stavu 0.
     isPrimitive: true
     uid: Qubit
 output:
@@ -42,9 +42,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 973f7f618154720396be0bb4a01b52d763ccdd1c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2f040fd932236547baecaba241d44a8b9842bbe2
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680545"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884593"
