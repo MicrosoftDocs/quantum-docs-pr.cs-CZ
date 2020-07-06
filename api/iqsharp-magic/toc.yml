@@ -1,3 +1,17 @@
+- href: azure.connect.md
+  name: Příkaz magic %azure.connect
+- href: azure.execute.md
+  name: Příkaz magic %azure.execute
+- href: azure.jobs.md
+  name: Příkaz magic %azure.jobs
+- href: azure.output.md
+  name: Příkaz magic %azure.output
+- href: azure.status.md
+  name: Příkaz magic %azure.status
+- href: azure.submit.md
+  name: Příkaz magic %azure.submit
+- href: azure.target.md
+  name: Příkaz magic %azure.target
 - href: check_kata.md
   name: Příkaz magic %check_kata
 - href: chemistry.broombridge.md
