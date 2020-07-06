@@ -7,12 +7,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: 8d39716c4d4c96ad87862b4b185895aab66cd210
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 457083ea4756d64375834e5a276c2d91031138fe
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274044"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885143"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace sady Microsoft Quantum Development Kit (QDK)
 
@@ -151,14 +151,32 @@ Když teď máte aktualizované projekty Q#, podle následujících pokynů aktu
 Proces aktualizace sady QDK se liší v závislosti na vašem vývojovém jazyce a prostředí.
 Vyberte své vývojové prostředí níže.
 
-* [Python: aktualizace rozšíření IQ#](#update-iq-for-python)
-* [Jupyter Notebooks: aktualizace rozšíření IQ#](#update-iq-for-jupyter-notebooks)
+* [Python: aktualizace balíčku `qsharp`](#update-the-qsharp-python-package)
+* [Jupyter Notebooks: aktualizace jádra IQ#](#update-the-iq-jupyter-kernel)
 * [Visual Studio: aktualizace rozšíření QDK](#update-visual-studio-qdk-extension)
 * [VS Code: aktualizace rozšíření QDK](#update-vs-code-qdk-extension)
 * [Příkazový řádek a C#: aktualizace šablon projektů](#c-using-the-dotnet-command-line-tool)
 
 
-### <a name="update-iq-for-python"></a>Aktualizace IQ# pro Python
+### <a name="update-the-qsharp-python-package"></a>Aktualizace balíčku Pythonu `qsharp`
+
+Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pomocí prostředí conda, nebo pomocí rozhraní .NET CLI a pip.
+
+#### <a name="update-using-conda-recommended"></a>[Aktualizace pomocí prostředí conda (doporučeno)](#tab/tabid-conda)
+
+1. Aktivujte prostředí conda, do kterého jste nainstalovali balíček `qsharp`, a potom proveďte aktualizaci spuštěním tohoto příkazu:
+
+    ```
+    conda update -c quantum-engineering qsharp
+    ```
+
+1. Ve složce, kde jsou umístěné soubory `.qs`, spusťte následující příkaz:
+
+    ```
+    python -c "import qsharp; qsharp.reload()"
+    ```
+
+#### <a name="update-using-net-cli-and-pip-advanced"></a>[Aktualizace pomocí rozhraní .NET CLI a pip (rozšířené)](#tab/tabid-dotnetcli)
 
 1. Aktualizujte jádro `iqsharp` 
 
@@ -167,7 +185,7 @@ Vyberte své vývojové prostředí níže.
     dotnet iqsharp install
     ```
 
-2. Ověřte verzi `iqsharp`
+1. Ověřte verzi `iqsharp`
 
     ```dotnetcli
     dotnet iqsharp --version
@@ -176,19 +194,19 @@ Vyberte své vývojové prostředí níže.
     Měl by se zobrazit následující výstup:
 
     ```
-    iqsharp: 0.10.1912.501
-    Jupyter Core: 1.2.20112.0
+    iqsharp: 0.12.20070124
+    Jupyter Core: 1.4.0.0
     ```
 
-    Nedělejte si starosti, pokud je verze `iqsharp` vyšší, měla by odpovídat [nejnovějšímu vydání](xref:microsoft.quantum.relnotes).
+    Nedělejte si starosti, pokud je vaše verze `iqsharp` vyšší. Měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
-3. Aktualizujte balíček `qsharp`
+1. Aktualizujte balíček `qsharp`:
 
     ```
     pip install qsharp --upgrade
     ```
 
-4. Ověřte verzi `qsharp`
+1. Ověřte verzi `qsharp`:
 
     ```
     pip show qsharp
@@ -198,29 +216,49 @@ Vyberte své vývojové prostředí níže.
 
     ```
     Name: qsharp
-    Version: 0.10.1912.501
+    Version: 0.12.20070124
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
 
-5. Ve složce, kde jsou umístěné soubory `.qs`, spusťte následující příkaz
+1. Ve složce, kde jsou umístěné soubory `.qs`, spusťte následující příkaz:
 
     ```
     python -c "import qsharp; qsharp.reload()"
     ```
 
-6. Teď můžete pomocí aktualizované verze QDK zkusit spustit své kvantové programy.
+***
 
-### <a name="update-iq-for-jupyter-notebooks"></a>Aktualizace IQ# pro Jupyter Notebooks
+Teď můžete pomocí aktualizovaného balíčku Pythonu `qsharp` zkusit spustit své kvantové programy.
 
-1. Aktualizujte jádro `iqsharp`
+### <a name="update-the-iq-jupyter-kernel"></a>Aktualizace jádra IQ# Jupyter
+
+Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pomocí prostředí conda, nebo pomocí rozhraní .NET CLI a pip.
+
+#### <a name="update-using-conda-recommended"></a>[Aktualizace pomocí prostředí conda (doporučeno)](#tab/tabid-conda)
+
+1. Aktivujte prostředí conda, do kterého jste nainstalovali balíček `qsharp`, a potom proveďte aktualizaci spuštěním tohoto příkazu:
+
+    ```
+    conda update -c quantum-engineering qsharp
+    ```
+
+1. Z buňky v každém poznámkovém bloku Jupyter pro Q# spusťte následující příkaz:
+
+    ```
+    %workspace reload
+    ```
+
+#### <a name="update-using-net-cli-and-pip-advanced"></a>[Aktualizace pomocí rozhraní .NET CLI a pip (rozšířené)](#tab/tabid-dotnetcli)
+
+1. Aktualizujte balíček `Microsoft.Quantum.IQSharp`:
 
     ```dotnetcli
     dotnet tool update -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
 
-2. Ověřte verzi `iqsharp`
+1. Ověřte verzi `iqsharp`:
 
     ```dotnetcli
     dotnet iqsharp --version
@@ -229,19 +267,21 @@ Vyberte své vývojové prostředí níže.
     Výstup by měl vypadat přibližně takto:
 
     ```
-    iqsharp: 0.10.1912.501
-    Jupyter Core: 1.2.20112.0
+    iqsharp: 0.12.20070124
+    Jupyter Core: 1.4.0.0
     ```
 
-    Nedělejte si starosti, pokud je verze `iqsharp` vyšší, měla by odpovídat [nejnovějšímu vydání](xref:microsoft.quantum.relnotes).
+    Nedělejte si starosti, pokud je vaše verze `iqsharp` vyšší. Měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
-3. Z buňky v poznámkovém bloku Jupyter spusťte následující příkaz:
+1. Z buňky v každém poznámkovém bloku Jupyter pro Q# spusťte následující příkaz:
 
     ```
     %workspace reload
     ```
 
-4. Teď můžete otevřít existující Poznámkový blok Jupyter a spustit ho s aktualizovanou sadou QDK.
+***
+
+Nyní můžete pomocí aktualizovaného jádra IQ# spustit stávající poznámkové bloky Jupyter s kódem Q#.
 
 ### <a name="update-visual-studio-qdk-extension"></a>Aktualizace rozšíření QDK sady Visual Studio
 

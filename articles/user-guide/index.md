@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
-ms.openlocfilehash: c5611f3e2907791f2dfc1644be0a45515d50dfd7
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+ms.openlocfilehash: 078d86c808b26c7f0b7b2577020cd9cef9491a9d
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415356"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885013"
 ---
 # <a name="the-q-user-guide"></a>Uživatelská příručka Q#
 
@@ -22,6 +22,8 @@ V různých tématech této příručky najdete podrobný popis základních kon
 ## <a name="user-guide-contents"></a>Obsah uživatelské příručky
 
 - [Základy Q#:](xref:microsoft.quantum.guide.basics) Úvodní přehled účelu a funkcí programovacího jazyka Q#. 
+
+- [Způsoby spuštění programu Q#](xref:microsoft.quantum.guide.host-programs): popisuje, jak se spustí program Q#, a poskytuje přehled různých způsobů volání programu: z příkazového řádku, v poznámkových blocích Jupyter s kódem Q# nebo z klasického hostitelského programu napsaného v Pythonu nebo v jazyce .NET.
 
 ### <a name="q-language"></a>Jazyk Q#
 

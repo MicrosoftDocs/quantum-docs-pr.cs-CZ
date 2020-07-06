@@ -6,12 +6,12 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 4311ebf9f72254485a20ba721ea2ce19163f4371
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 15015d1673f47faf5a13dde516f834916b4319d6
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274064"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884281"
 ---
 # <a name="develop-with-q-command-line-applications"></a>Vývoj aplikací příkazového řádku v Q#
 
@@ -23,7 +23,7 @@ Programy Q# se dají spouštět samostatně, bez ovladače v hostitelském jazyc
 
 ## <a name="installation"></a>Instalace
 
-I když můžete aplikaci příkazového řádku Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE. Vývoj v těchto nástrojích poskytuje přístup k bohaté paletě funkcí.
+I když můžete aplikaci příkazového řádku Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE. Vývoj v těchto prostředích poskytuje bohaté funkce rozšíření QDK, mezi které patří upozornění, zvýrazňování syntaxe, šablony projektů a další.
 
 Konfigurace VS Code:
 
@@ -35,8 +35,17 @@ Konfigurace sady Visual Studio:
 1. Stáhněte si a nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 nebo novější s podporou multiplatformního vývoje .NET Core.
 2. Stáhněte si a nainstalujte [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
+Pokud chcete nainstalovat QDK pro jiné prostředí, zadejte do příkazového řádku:
 
-## <a name="develop-with-q-using-vs-code"></a>Vývoj v jazyce Q# s využitím VS Code
+```dotnetcli
+dotnet new -i Microsoft.Quantum.ProjectTemplates
+```
+
+## <a name="develop-with-q"></a>Vývoj s využitím Q#
+
+Postupujte podle pokynů na kartě odpovídající vašemu prostředí.
+
+### <a name="vs-code"></a>[VS Code](#tab/tabid-vscode)
 
 Nainstalujte šablony projektů Q#:
 
@@ -64,7 +73,7 @@ Spusťte aplikaci:
 > [!NOTE]
 > Rozšíření Q# pro VS Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami. Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.
 
-## <a name="develop-with-q-using-visual-studio"></a>Vývoj v Q# v sadě Visual Studio
+### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs)
 
 Ověřte instalaci sady Visual Studio vytvořením aplikace `Hello World` v jazyce Q#.
 
@@ -83,6 +92,30 @@ Spusťte aplikaci:
 > [!NOTE]
 > Pokud máte v jednom řešení sady Visual Studio více projektů, všechny projekty obsažené v řešení se musí nacházet ve stejné složce jako řešení nebo v jedné z jejích podsložek.  
 
+### <a name="other-editors-with-the-command-line"></a>[Další editory s příkazovým řádkem](#tab/tabid-cmdline)
+
+Ověřte instalaci vytvořením aplikace `Hello World` v jazyce Q#.
+
+1. Vytvoření nové aplikace:
+    ```dotnetcli
+    dotnet new console -lang Q# -o runSayHello
+    ```
+
+2. Přejděte do adresáře aplikace:
+    ```dotnetcli
+    cd runSayHello
+    ```
+
+    Tento adresář by měl nyní obsahovat soubor s názvem `Program.qs`, což je program Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu. Tuto šablonu můžete upravit pomocí textového editoru a přepsat ji vlastními kvantovými aplikacemi. 
+
+3. Spusťte program:
+    ```dotnetcli
+    dotnet run
+    ```
+
+4. Měl by se vypsat následující text: `Hello quantum world!`
+
+***
 
 ## <a name="next-steps"></a>Další kroky
 

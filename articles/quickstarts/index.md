@@ -7,12 +7,12 @@ ms.date: 5/8/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 6a52eb0a9cdf699e8bb37578ffa3d73fe96a990e
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: ee8d210d67a20cfea3bdc36162efc47f021a6dc6
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885468"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Instalace sady Microsoft Quantum Development Kit (QDK)
 
@@ -24,10 +24,11 @@ Naučte se nainstalovat sadu Microsoft Quantum Development Kit (QDK), abyste moh
 - Nástroje pro usnadnění vývoje
 
 Programy v Q# je možné spustit jako samostatné aplikace s využitím Visual Studio Code nebo sady Visual Studio nebo prostřednictvím poznámkových bloků Jupyter s jádrem IQ# Jupyter.
-
 Také je možné je spárovat s hostitelským programem v jazyce .NET (obvykle v jazyce C#) nebo Pythonu, abyste mohli volat kvantové operace z klasického programu.
 
-Sada QDK je k dispozici pro víc vývojových prostředí. Vyberte si upřednostňovanou instalaci z následujících možností:
+Pracovní postupy pro každé z těchto nastavení jsou popsány a porovnány ve [způsobech spuštění programu Q#](xref:microsoft.quantum.guide.host-programs).
+
+Pokud chcete pokračovat v instalaci sady QDK a vytváření projektů v jazyce Q#, vyberte upřednostňovanou instalaci:
 
 [Vývoj s využitím aplikací příkazového řádku v Q#](xref:microsoft.quantum.install.standalone) – Tento přístup zvolte, pokud chcete pracovat s Q# z příkazového řádku. Tato možnost nevyžaduje ovladač ani hostitelský program jako následující možnosti.
 

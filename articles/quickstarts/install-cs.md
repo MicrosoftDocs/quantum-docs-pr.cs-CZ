@@ -6,17 +6,19 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 2b0b16bdd9fccc3b668036e6df2b20e11b32f8b6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274050"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885499"
 ---
 # <a name="develop-with-q-and-net"></a>Vývoj s využitím Q# a .NET
 
 Jazyk Q# je navržen tak, aby dobře spolupracoval s jazyky používanými v prostředí .NET, jako je C# nebo F#.
 V tomto tématu vám ukážeme, jak použít Q# s hostitelským programem napsaným v jazyce .NET.
+
+Nejprve vytvoříme aplikaci v jazyce Q# a hostitele .NET, a potom ukážeme, jak volat Q# z hostitele.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -26,23 +28,8 @@ V tomto tématu vám ukážeme, jak použít Q# s hostitelským programem napsan
 
 Prvním krokem je vytvoření projektů pro vaši knihovnu Q# a pro hostitele .NET, který bude volat operace a funkce definované ve vaší knihovně Q#.
 
-### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
-
-- Vytvoření nové knihovny Q#
-  - Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
-  - Do vyhledávacího pole zadejte „Q#“.
-  - Vyberte **Q# Library**.
-  - Vyberte **Další**.
-  - Vyberte název a umístění knihovny.
-  - **Nezaškrtávejte** možnost „umístit projekt a řešení ve stejném adresáři“.
-  - Vyberte **Vytvořit**.
-- Vytvoření nového hostitelského programu C# nebo F#
-  - Přejděte na **Soubor** → **Nový** → **Projekt**
-  - Vyberte „Konzolová aplikace (.NET Core)“ pro C# nebo F#.
-  - Vyberte **Další**.
-  - V části *řešení*vyberte „přidat do řešení“.
-  - Zvolte název hostitelského programu.
-  - Vyberte **Vytvořit**.
+Postupujte podle pokynů na kartě odpovídající vašemu vývojovému prostředí.
+Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše postupujte podle kroků pro příkazový řádek.
 
 ### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code nebo Příkazový řádek](#tab/tabid-cmdline)
 
@@ -72,6 +59,24 @@ Prvním krokem je vytvoření projektů pro vaši knihovnu Q# a pro hostitele .N
   dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
   dotnet sln quantum-dotnet.sln add ./host/host.csproj
   ```
+
+### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+
+- Vytvoření nové knihovny Q#
+  - Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
+  - Do vyhledávacího pole zadejte „Q#“.
+  - Vyberte **Q# Library**.
+  - Vyberte **Další**.
+  - Vyberte název a umístění knihovny.
+  - **Nezaškrtávejte** možnost „umístit projekt a řešení ve stejném adresáři“.
+  - Vyberte **Vytvořit**.
+- Vytvoření nového hostitelského programu C# nebo F#
+  - Přejděte na **Soubor** → **Nový** → **Projekt**
+  - Vyberte „Konzolová aplikace (.NET Core)“ pro C# nebo F#.
+  - Vyberte **Další**.
+  - V části *řešení*vyberte „přidat do řešení“.
+  - Zvolte název hostitelského programu.
+  - Vyberte **Vytvořit**.
 
 ***
 
