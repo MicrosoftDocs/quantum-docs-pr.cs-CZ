@@ -1,87 +1,35 @@
 ---
-title: 'Instalace a ověření knihovny Microsoft Q # chemie'
+title: 'Instalace knihovny Microsoft Q # chemie'
 description: Naučte se, jak nainstalovat knihovnu Microsoft pro seznámení podle složení a jak ji používat s NWChem výpočetními chemie.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.chemistry.concepts.installation
-ms.openlocfilehash: 48bf7bc980e238e622053f5c2bdd09604c572596
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 0e870bb3421dddb632375a2fc8633249954f8c8b
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274697"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871528"
 ---
-# <a name="chemistry-library-installation-and-validation"></a>Instalace a ověření knihovny chemie
+# <a name="chemistry-library-installation"></a>Instalace knihovny chemie
 
-Sada pro vývoj pro všechna tato prostředí poskytuje podporu pro použití v rámci balíčku NuGet ke chemickému využití [`Microsoft.Quantum.Chemistry`](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) .
-Stejně jako u jiných balíčků NuGet je jednoduché přidat knihovnu chemie do projektu.
-
-**Visual Studio 2019:** Pokud používáte sadu Visual Studio 2019, můžete přidat balíčky pro práci pomocí Správce balíčků NuGet.
-Správce balíčků otevřete tak, že kliknete pravým tlačítkem na projekt, do kterého chcete přidat knihovnu chemie, a vyberete spravovat balíčky NuGet..., jako na snímku obrazovky níže.
-
-![Použití Správce balíčků NuGet v aplikaci Visual Studio 2019](~/media/vs2017-nuget-manage-packages.png)
-
-Na kartě Procházet vyhledejte název balíčku "Microsoft.. chemie".
-
-> [!NOTE]
-> Ujistěte se, že zaškrtnete políčko zahrnout předběžné verze.
-
-![Zahrnout zaškrtávací políčko pro předběžné vydání](~/media/vs2017-nuget-package-search.png)
-
-Zobrazí se seznam balíčků, které jsou k dispozici ke stažení.
-V levém podokně klikněte na Microsoft. proruku. chemie, v pravém podokně vyberte nejnovější verzi předběžného vydání a klikněte na nainstalovat:
-
-![Nainstalovat nejnovější balíček Microsoft.. chemie](~/media/vs2017-nuget-select-chem.png)
-
-Další podrobnosti najdete v příručce k [uživatelskému rozhraní Správce balíčků](https://docs.microsoft.com/nuget/tools/package-manager-ui).
-
-Alternativně můžete použít konzolu Správce balíčků a přidat do projektu knihovnu chemie pro práci s rozhraním příkazového řádku.
-
-![Použití konzoly Správce balíčků z příkazového řádku](~/media/vs2017-nuget-console-menu.png)
-
-V konzole správce balíčků spusťte následující příkaz:
-
-```
-Install-Package Microsoft.Quantum.Chemistry
-```
-
-Další podrobnosti najdete v [Průvodci konzolou správce balíčků](https://docs.microsoft.com/nuget/tools/package-manager-console).
-
-**Příkazový řádek nebo Visual Studio Code:** Pomocí příkazového řádku na svém vlastním nebo z Visual Studio Code můžete pomocí `dotnet` příkazu přidat do projektu odkaz na balíček NuGet:
-
-```dotnetcli
-dotnet add package Microsoft.Quantum.Chemistry
-```
-
-## <a name="verifying-your-installation"></a>Ověření instalace 
-
-Podobně jako v ostatních částech vývojové sady pro práci s více operačními systémy obsahuje knihovna složení množství plně dokumentovaných ukázek, které vám pomůžou rychle začít pracovat.
-K otestování instalace pomocí těchto ukázek naklonujte [hlavní úložiště ukázek](https://github.com/Microsoft/Quantum)a pak spusťte jednu z ukázek.  Například pro spuštění [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) ukázky:
-
-```bash
-git clone https://github.com/Microsoft/Quantum.git
-cd Quantum/samples/chemistry/MolecularHydrogen
-dotnet run
-```
-
-Chcete-li ověřit instalaci knihovny pro stanovení doby platnosti, pomocí Microsoft Visual Studio po klonování úložiště:
-    1. Ve složce chemická aplikace otevřete řešení ChemistrySamples. sln.  
-    2. Vyberte Samples/1. Jednoduché molekuly/MolecularHydrogen jako spouštěný projekt.
-    3. Stiskněte klávesu F5 ke spuštění ukázky pro odhad fáze nákladů na molekulový vodík.
-
-Další informace o odhadu hodnot úrovní energie najdete v tématu [získání odhadů úrovně energie](xref:microsoft.quantum.chemistry.examples.energyestimate) .   
-
-
-## <a name="using-the-quantum-development-kit-with-nwchem"></a>Použití nástroje pro vývoj pro všechna ta v sadě NWChem ##
-
-Ukázka MolecularHydrogen používá molekulová vstupní data, která jsou konfigurována ručně.  I když je to v malých příkladech jemné, je chemie ve velkém měřítku vyžadovat Hamiltonians s miliony nebo miliardami podmínek. Takové Hamiltonians, generované škálovatelnými výpočetními složeními, jsou příliš velké pro import rukou. 
+Ukázka [ **MolecularHydrogen** ](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) používá molekulová vstupní data, která jsou konfigurována ručně.
+I když je to v malých příkladech jemný, je chemie ve velkém rozsahu vyžaduje Hamiltonians s miliony nebo miliardami podmínek.
+Takové Hamiltonians, generované škálovatelnými výpočetními balíčky výpočtů, je příliš velké pro import rukou.
 
 Knihovna chemickéch procesorů pro práci s aplikacemi pro vývoj po závažnosti je navržená tak, aby dobře spolupracovala s výpočetními balíčky, zejména s výpočetními platformami [**NWChem**](http://www.nwchem-sw.org/) , které vyvinula laboratoř pro molekulární vědy (EMSL) v oblasti Tichomoří – severozápadní v národní laboratoři.
-Konkrétně `Microsoft.Quantum.Chemistry` balíček poskytuje nástroje pro načítání instancí pro nakládku nenaložených stavů, které představují problémy s simulací ve [schématu Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge), podporované také pro export pomocí nejnovějších verzí NWChem.
+Konkrétně [balíček **Microsoft. Broombridge. chemie** ](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) poskytuje nástroje pro načítání instancí pro načítající se problémy s simulací, které jsou znázorněné ve [schématu](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)a jsou podporované také pro export pomocí nejnovějších verzí NWChem.
 
-Pokud chcete začít pracovat s NWChem společně s vývojovou sadou pro práci s více operačními systémy, doporučujeme jednu z následujících metod:
+Knihovna pro vytváření nenáročného vývojového prostředí poskytuje také nástroj příkazového řádku `qdk-chem` pro převod mezi staršími formáty a [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge).
+
+Tato část podrobně popisuje, jak používat vývojová prostředí pro práci s NWChem a Broombridge, nebo starší formáty a `qdk-chem` .
+
+## <a name="using-the-quantum-development-kit-with-nwchem"></a>Použití nástroje pro vývoj pro všechna ta v sadě NWChem
+
+Pokud chcete začít pracovat s NWChem společně s vývojovou sadou pro práci s více operačními systémy, použijte jednu z následujících metod:
+
 - Začněte používat stávající soubory Broombridge dodávané s ukázkami v [IntegralData/YAML](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML).
 - Pro Microsoft Quantum Development Kit, což je webový front-end pro NWChem, můžete pomocí [Tvůrce šipek EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) vygenerovat nové Broombridge naformátované molekulární vstupní soubory.  
 - Použijte k spuštění NWChem [Image Docker](https://hub.docker.com/r/nwchemorg/nwchem-qc/) , kterou poskytuje PNNL, nebo
@@ -171,4 +119,27 @@ Další informace lze získat pomocí integrované funkce pomoci prostředí Pow
 ```powershell
 Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
+```
+
+## <a name="using-the-quantum-development-kit-with-qdk-chem"></a>Používání vývojové sady pro práci s využitím`qdk-chem`
+
+K instalaci `qdk-chem` můžete použít .NET Core SDK na příkazovém řádku:
+
+```dotnetcli
+dotnet tool install --global Microsoft.Quantum.Chemistry.Tools
+```
+
+Po nainstalování `qdk-chem` můžete použít `--help` možnost k získání dalších informací o funkcích nabízených `qdk-chem` nástrojem.
+
+Chcete-li převést na a z Broombridge, můžete použít `qdk-chem convert` příkaz:
+
+```
+qdk-chem convert --from fcidump --to broombridge data.fcidump --out data.yml
+```
+
+`qdk-chem convert`Příkaz může také přijmout svá data ze standardního vstupu a může zapisovat do standardního výstupu. to je zvláště užitečné v rámci skriptů a pro integraci s nástroji, které exportují do starších formátů.
+Příklad v prostředí Bash:
+
+```bash
+cat data.fcidump | qdk-convert --from fcidump --to broombridge - > data.yml
 ```

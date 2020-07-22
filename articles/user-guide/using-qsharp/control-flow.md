@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: 0cf62a128170bd0c28ff77f00fc23414567b1ea4
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+ms.openlocfilehash: b652736168a71b905deaf7c4fdb29a8751b3dfaf
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415299"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870987"
 ---
 # <a name="control-flow-in-q"></a>Tok řízení v Q #
 
@@ -42,7 +42,7 @@ Pokud je původní podmínka *if* a všechny klauzule else-if vyhodnoceny jako *
 Všimněte si, že všechny spuštěné bloky se spustí v rámci svého vlastního oboru.
 Vazby provedené v `if` `elif` bloku, nebo nejsou `else` po ukončení bloku viditelné.
 
-Třeba
+Příklad:
 
 ```qsharp
 if (result == One) {
@@ -166,7 +166,7 @@ while (index < Length(arr) && item < 0) {
 Příkaz return ukončí běh operace nebo funkce a vrátí hodnotu volajícímu.
 Skládá se z klíčového slova `return` , následovaný výrazem příslušného typu a ukončující středník.
 
-Třeba
+Příklad:
 ```qsharp
 return 1;
 ```
@@ -191,7 +191,7 @@ Příkaz vrátí řetězec klasického ovladače jako chybovou zprávu.
 Počet příkazů selhání v rámci operace není nijak omezen.
 Kompilátor může vygenerovat upozornění, pokud příkazy následují po příkazu neúspěchu v rámci bloku.
 
-Třeba
+Příklad:
 
 ```qsharp
 fail $"Impossible state reached";
@@ -278,9 +278,9 @@ Tady je příklad ru vzoru pro přípravu stavového pole $ \frac {1} {\sqrt {3}
 Mezi významné programové funkce uvedené v této operaci patří:
 
 * Složitější `fixup` součást smyčky, která zahrnuje operace po částech. 
-* Použití `AssertProb` příkazů k zjištění pravděpodobnosti měření stavu v určitém počtu bodů v programu.
+* Použití `AssertMeasurementProbability` příkazů k zjištění pravděpodobnosti měření stavu v určitém počtu bodů v programu.
 
-Další informace o [`Assert`](xref:microsoft.quantum.intrinsic.assert) [`AssertProb`](xref:microsoft.quantum.intrinsic.assertprob) operacích a naleznete v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
+Další informace o [`AssertMeasurement`](xref:microsoft.quantum.diagnostics.assertmeasurement) [`AssertMeasurementProbability`](xref:microsoft.quantum.diagnostics.assertmeasurementprobability) operacích a naleznete v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
 
 ```qsharp
 operation PrepareStateUsingRUS(target : Qubit) : Unit {
@@ -289,10 +289,10 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
         repeat {
             // We expect the target and auxiliary qubits to each be in
             // the |+> state.
-            AssertProb(
+            AssertMeasurementProbability(
                 [PauliX], [target], Zero, 1.0,
                 "target qubit should be in the |+> state", 1e-10 );
-            AssertProb(
+            AssertMeasurementProbability(
                 [PauliX], [auxiliary], Zero, 1.0,
                 "auxiliary qubit should be in the |+> state", 1e-10 );
 
@@ -302,7 +302,7 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 
             // The probability of measuring |+> state on the auxiliary qubit
             // is 3/4.
-            AssertProb(
+            AssertMeasurementProbability(
                 [PauliX], [auxiliary], Zero, 3. / 4.,
                 "Error: the probability to measure |+> in the first
                 auxiliary must be 3/4",

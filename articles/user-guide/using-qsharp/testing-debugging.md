@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: cd619607af9e2b601f3bec1304c5729d84312f35
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: db6e49e94e5ceb3b1b0b2d6ab57391618084072b
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884085"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870970"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -50,7 +50,7 @@ Zpočátku tento soubor obsahuje jeden ukázkový test jednotek, `AllocateQubit`
     operation AllocateQubit () : Unit {
 
         using (qubit = Qubit()) {
-            Assert([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
+            AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
         }
         
         Message("Test passed");
@@ -177,7 +177,7 @@ V tomto příkladu používáme operaci <xref:microsoft.quantum.environment.getq
 Vzhledem k tomu, že to závisí na globálním stavu programu a jeho prováděcím prostředí, `AssertQubitsAreAvailable` musí být naše definice také operace.
 Tento globální stav však můžeme použít k získání jednoduché `Bool` hodnoty jako vstupu do `Fact` funkce.
 
-[Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:microsoft.quantum.intrinsic.assert> a <xref:microsoft.quantum.intrinsic.assertprob> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
+[Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:microsoft.quantum.diagnostics.assertmeasurement> a <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
 Cílové počítače, které pracují podle simulace, nejsou vázány [větaem bez klonování](https://en.wikipedia.org/wiki/No-cloning_theorem)a mohou provádět taková měření bez narušení registru, který předává takové kontrolní výrazy.
 Simulátor může následně vypadat podobně jako `PositivityFact` předchozí funkce, zastavit výpočty, pokud se hypotetický výsledek nepozoruje v praxi:
 
@@ -185,14 +185,14 @@ Simulátor může následně vypadat podobně jako `PositivityFact` předchozí 
 using (register = Qubit()) 
 {
     H(register);
-    Assert([PauliX], [register], Zero);
+    AssertMeasurement([PauliX], [register], Zero);
     // Even though we do not have access to states in Q#,
     // we know by the anthropic principle that the state
     // of register at this point is |+〉.
 }
 ```
 
-U fyzických stavových procesorů, kde věta bez klonování brání prověřování stavu `Assert` `AssertProb` nečinnosti, operace a se jednoduše vrátí `()` bez dalšího účinku.
+U fyzických stavových procesorů, kde věta bez klonování brání prověřování stavu `AssertMeasurement` `AssertMeasurementProbability` nečinnosti, operace a se jednoduše vrátí `()` bez dalšího účinku.
 
 <xref:microsoft.quantum.diagnostics>Obor názvů poskytuje několik funkcí `Assert` řady, se kterými můžete kontrolovat pokročilejší podmínky. 
 

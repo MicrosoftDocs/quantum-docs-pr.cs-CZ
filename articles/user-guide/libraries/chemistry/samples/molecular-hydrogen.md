@@ -3,20 +3,22 @@ title: Získání odhadů energetické úrovně
 description: 'Projděte si ukázkový program Q #, který odhadne hodnoty energetické úrovně molekulové vodíky.'
 author: guanghaolow
 ms.author: gulow
-ms.date: 10/23/2018
+ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: 3242d8c6dc6fad2bd99055027dd7ce4ec3510ff4
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: b26538980366cf4cbe01fc2ef59580ae182f1e8a
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274686"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871564"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Získání odhadů energetické úrovně
-Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tady je přehled toho, jak to lze provést pro Kanonický příklad molekulové vodíku. Ukázka, na kterou se odkazuje v této části, je `MolecularHydrogen` v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je `MolecularHydrogenGUI` ukázkou.
+Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tento článek popisuje, jak to můžete udělat pro Kanonický příklad molekulové vodíkové podsystému. Ukázka, na kterou se odkazuje v této části, je [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) ukázkou.
 
-Naším prvním krokem je vytvoření Hamiltonian představující molekulovou vodíkovou hodnotu. I když se to dá provést pomocí nástroje NWChem, do této ukázky přidáme ručně Hamiltonianické výrazy pro zkrácení.
+## <a name="estimating-the-energy-values-of-molecular-hydrogen"></a>Odhad hodnot energie molekulové vodíky
+
+Prvním krokem je vytvoření Hamiltonian představující molekulovou vodíkovou hodnotu. I když to můžete vytvořit pomocí nástroje NWChem pro zkrácení, Tato ukázka přidá výrazy Hamiltonian ručně.
 
 ```csharp
     // These orbital integrals are represented using the OrbitalIntegral
@@ -35,11 +37,11 @@ Naším prvním krokem je vytvoření Hamiltonian představující molekulovou v
         new OrbitalIntegral(new int[] { }, energyOffset)
     };
 
-    // We initialize a fermion Hamiltonian data structure and add terms to it.
+    // Initialize a fermion Hamiltonian data structure and add terms to it.
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-Simulace Hamiltonian vyžaduje, abychom převedli operátory fermion na qubit operátory. Tento převod se provádí pomocí kódování Jordánska-Wigner následujícím způsobem.
+Simulace Hamiltonian vyžaduje převod operátorů fermion na qubit operátory. Tento převod se provádí pomocí kódování Jordánska-Wigner následujícím způsobem:
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -49,8 +51,8 @@ Simulace Hamiltonian vyžaduje, abychom převedli operátory fermion na qubit op
     // computer.
     var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Pauli.QubitEncoding.JordanWigner);
 
-    // We also need to create an input quantum state to this Hamiltonian.
-    // Let us use the Hartree-Fock state.
+    // You also need to create an input quantum state to this Hamiltonian.
+    // Use the Hartree-Fock state.
     var fermionWavefunction = fermionHamiltonian.CreateHartreeFockState(nElectrons);
 
     // This Jordan-Wigner data structure also contains a representation 
@@ -60,7 +62,7 @@ Simulace Hamiltonian vyžaduje, abychom převedli operátory fermion na qubit op
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Nyní předáte `qSharpData` reprezentaci Hamiltonian do `TrotterStepOracle` funkce při [simulaci Hamiltonian Dynamics](xref:microsoft.quantum.libraries.standard.algorithms). `TrotterStepOracle`Vrátí operaci s dobou platnosti, která se blíží skutečnému vývoji času Hamiltonian.
+Next, Pass `qSharpData` , který představuje Hamiltonian, do `TrotterStepOracle` funkce. `TrotterStepOracle`Vrátí operaci s dobou platnosti, která se blíží vývoji Hamiltonian v reálném čase. Další informace najdete v tématu [simulace Hamiltonian Dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
 
 ```qsharp
 // qSharpData passed from driver
@@ -74,13 +76,13 @@ let integratorOrder = 4;
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-Nyní můžeme použít algoritmy odhadu fáze standardní knihovny k získání informací o spotřebě energie v základní knihovně pomocí výše uvedené simulace. K tomu je potřeba připravit dobrý odhad stavu stavového provozu. Návrhy těchto sblížení jsou k dispozici ve `Broombridge` schématu, ale některé návrhy neexistují, výchozí přístup přičítá `hamiltonian.NElectrons` k greedily minimalizaci Electrons šikmého výskytu Energies. Funkce odhadu fáze a operace se nacházejí v [oboru názvů Microsoft. probíhají. charakterizace](xref:microsoft.quantum.characterization in DocFX notation).
+V tuto chvíli můžete použít [algoritmy odhadu fáze](xref:microsoft.quantum.libraries.characterization) standardní knihovny k získání informací o energii stavu pomocí předchozí simulace. K tomu je potřeba připravit dobrý odhad stavu stavového provozu. Návrhy těchto sblížení jsou uvedeny ve [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schématu. Ale tyto návrhy neexistují, ale výchozí přístup přičítá `hamiltonian.NElectrons` Electrons k greedily minimalizaci diagonálního krátkodobého termínu Energies. Funkce odhadu fáze a operace jsou k dispozici v zápisu DocFX v oboru názvů [Microsoft.](xref:microsoft.quantum.characterization) probíhají.
 
-Následující fragment kódu ukazuje, jak může být výstup pro vývoj v reálném čase integrací knihovny pro simulaci ve fázi kódu.
+Následující fragment kódu ukazuje, jak se výstup vývoje v reálném čase integrací knihovny pro simulaci chemického zpracování do fází odhaduje.
 
 ```qsharp
 operation GetEnergyByTrotterization (
@@ -93,42 +95,42 @@ operation GetEnergyByTrotterization (
     // `qSharpData`
     let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
     
-    // We use a Product formula, also known as `Trotterization` to
+    // Using a Product formula, also known as `Trotterization`, to
     // simulate the Hamiltonian.
     let (nQubits, (rescaleFactor, oracle)) = 
         TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
     
-    // The operation that creates the trial state is defined below.
+    // The operation that creates the trial state is defined here.
     // By default, greedy filling of spin-orbitals is used.
     let statePrep = PrepareTrialState(statePrepData, _);
     
-    // We use the Robust Phase Estimation algorithm
+    // Using the Robust Phase Estimation algorithm
     // of Kimmel, Low and Yoder.
     let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
     
     // This runs the quantum algorithm and returns a phase estimate.
     let estPhase = EstimateEnergy(nQubits, statePrep, oracle, phaseEstAlgorithm);
     
-    // We obtain the energy estimate by rescaling the phase estimate
+    // Now, obtain the energy estimate by rescaling the phase estimate
     // with the trotterStepSize. We also add the constant energy offset
     // to the estimated energy.
     let estEnergy = estPhase * rescaleFactor + energyOffset;
     
-    // We return both the estimated phase, and the estimated energy.
+    // Return both the estimated phase and the estimated energy.
     return (estPhase, estEnergy);
 }
 ```
 
-Tento kód Q # se teď dá vyvolat z programu ovladače. V následující části vytvoříme úplný stav simulátoru a spustíme se, abychom `GetEnergyByTrotterization` získali stavovou energii.
+Nyní můžete vyvolat kód Q # z hostitelského programu. Následující kód jazyka C# vytvoří simulátor s plným stavem a spustí `GetEnergyByTrotterization` se, aby se získal stav energie.
 
 ```csharp
 using (var qsim = new QuantumSimulator())
 {
-    // We specify the bits of precision desired in the phase estimation 
+    // Specify the bits of precision desired in the phase estimation 
     // algorithm
     var bits = 7;
 
-    // We specify the step-size of the simulated time-evolution. This needs to
+    // Specify the step size of the simulated time evolution. The step size needs to
     // be small enough to avoid aliasing of phases, and also to control the
     // error of simulation.
     var trotterStep = 0.4;
@@ -136,10 +138,10 @@ using (var qsim = new QuantumSimulator())
     // Choose the Trotter integrator order
     Int64 trotterOrder = 1;
 
-    // As the quantum algorithm is probabilistic, let us run a few trials.
+    // As the quantum algorithm is probabilistic, run a few trials.
 
     // This may be compared to true value of
-    Console.WriteLine("Exact molecular Hydrogen ground state energy: -1.137260278.\n");
+    Console.WriteLine("Exact molecular hydrogen ground state energy: -1.137260278.\n");
     Console.WriteLine("----- Performing quantum energy estimation by Trotter simulation algorithm");
     for (int i = 0; i < 5; i++)
     {
@@ -149,4 +151,7 @@ using (var qsim = new QuantumSimulator())
 }
 ```
 
-Všimněte si, že jsou vráceny dva parametry. `energyEst`je odhadem energetické energie a měla by být `-1.137` v průměru přibližně. `phaseEst`je nezpracovaným fází vráceným algoritmem odhadu fáze a je užitečné pro diagnostiku, když dojde k vytváření aliasů z důvodu `trotterStep` , že je příliš velký.
+Operace vrátí dva parametry: 
+
+- `energyEst`je odhad elektrické energie a měl by být `-1.137` v průměru. 
+- `phaseEst`je nezpracovaným fází vráceným algoritmem odhadu fáze. To je užitečné pro diagnostiku aliasů, když k nim dojde z důvodu `trotterStep` příliš velké hodnoty.

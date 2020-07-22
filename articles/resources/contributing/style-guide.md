@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 3ddb5d67b972f69df1774b476a10e74dd16d97b7
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 26de7d5f639ea1b4df24232127b6f95cee3a041e
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884199"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871378"
 ---
 # <a name="q-style-guide"></a>Průvodce stylem Q # #
 ## <a name="general-conventions"></a>Obecné konvence ##
@@ -64,7 +64,7 @@ V tomto případě mohou být užitečné i jiné akce, jako v `IterateThroughCa
 | ---- | ------ |
 | Použít | Nazývá se operace zadaná jako vstup. |
 | Assert | Hypotéza o výsledku možného měření doby využívání se kontroluje simulátorem. |
-| Estimate (Odhad) | Vrátí se klasická hodnota, která představuje odhad vykreslený z jedné nebo více měření. |
+| Odhad | Vrátí se klasická hodnota, která představuje odhad vykreslený z jedné nebo více měření. |
 | Measure | Měří se měření po sobě a výsledek se vrátí uživateli. |
 | Příprava | Daný registr qubits se inicializuje do určitého stavu. |
 | Ukázka | Z nějaké distribuce se náhodně vrátí klasická hodnota. |
@@ -93,7 +93,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Zrušením použití příkazu ("reflektování") označíte účinek operace. |
 | ☒ | <s>`operation XRotation`</s> | Místo operace použijte funkci navrhuje fráze substantivum. |
@@ -126,7 +126,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Jasně komunikuje účel vstupního bodu prostřednictvím názvu operace. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Použití nástroje `Main` nejednoznačně oznamuje účel vstupního bodu a je redundantní s `@EntryPoint()` atributem. |
@@ -168,7 +168,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☑ | `X` | Dobře srozumitelná zkrácený příkaz pro použití transformace $X $ |
 | ☑ | `CNOT` | Dobře srozumitelná zkrácená zkratka pro "řízená – ne" |
@@ -225,7 +225,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Výsledkem předpozice "do" je příkazová fráze, která značí operaci a nikoli funkci. |
 | ☒ | <s>`AsDouble`</s> | Typ vstupu není jasný od názvu funkce. |
@@ -248,7 +248,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Name | Popis |
+|   | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Nepoužívejte podtržítko `_` k označení toho, že tato operace je určena pouze pro interní použití. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Klíčové slovo na začátku jasně označuje, že tato operace je určena pouze pro interní použití. |
@@ -320,7 +320,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Popis |
+|   | Fragment kódu | Description |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Název `Apply` je příkazová `CamelCase` fráze formátovaná jako, což naznačuje, že pojmenovaná položka je operace. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Pojmenované položky by měly začínat počátečním velkým písmenem. |
@@ -386,9 +386,8 @@ Kompilátor, který je součástí vývojové sady pro všechna ta, extrahuje ty
 Podobně jazykový Server, který je součástí vývojové sady pro plnění, používá tyto komentáře k poskytnutí pomocníka uživatelům při přechodu myší na symboly v kódu Q #.
 Používání dokumentačních komentářů tak může pomoci uživatelům vydávat smysl kódu tím, že poskytuje užitečnou referenci pro podrobnosti, které nejsou snadno vyjádřeny pomocí dalších úmluv v tomto dokumentu.
 
-<div class="nextstepaction">
-    [Reference k syntaxi dokumentačních komentářů](xref:microsoft.quantum.guide.filestructure#documentation-comments)
-</div>
+> [!div class="nextstepaction"]
+> [Odkaz na syntaxi dokumentačních komentářů](xref:microsoft.quantum.guide.filestructure#documentation-comments).
 
 Aby bylo možné efektivně využít tuto funkci, doporučujeme, abyste při psaní dokumentačních komentářů měli na paměti pár věcí.
 
@@ -477,7 +476,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Popis |
+|   | Fragment kódu | Description |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Používejte mezery kolem binárních operátorů. |
 | ☒ | <s>`target:Qubit`</s> | Používejte mezery kolem dvojtečky typu anotace. |

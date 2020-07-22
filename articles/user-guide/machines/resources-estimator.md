@@ -1,28 +1,33 @@
 ---
-title: Estimator prostředky pro vývoj pro všechna ta
-description: 'Přečtěte si o Estimatorech prostředků, které odhadují prostředky potřebné ke spuštění dané instance operace Q # v počítači s více operačními systémy.'
+title: Prostředky pro procesory Estimator – pro vývojová prostředí
+description: 'Přečtěte si o QDK prostředcích Microsoft Estimator, které vydávají odhad prostředků potřebných ke spuštění dané instance operace Q # v počítači s více operačními systémy.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
-ms.date: 1/22/2019
+ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: cbb1c274b64738cc4b47869563d7d02eb717afbc
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+ms.openlocfilehash: 0909a050e89d6295664e54ab63cfda5d407a8f12
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415250"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870531"
 ---
-# <a name="the-resources-estimator-target-machine"></a>Cílový počítač prostředků Estimator
+# <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
-Jak název napovídá, `ResourcesEstimator` odhaduje prostředky potřebné ke spuštění dané instance operace Q # v počítači s operačním systémem.
-To dosahuje provedením operace s neskutečným simulací stavu počítače s více operačními počítači. z tohoto důvodu může odhadnout prostředky pro operace Q #, které používají tisíce qubits, pokud klasická část kódu může běžet v rozumnou dobu.
+Jak název implikuje, `ResourcesEstimator` Třída odhadne prostředky potřebné ke spuštění dané instance operace Q # v počítači s více operačními systémy. To dosahuje provedením operace s neskutečným simulací stavu počítače s více operačními počítači. z tohoto důvodu odhaduje prostředky pro operace Q #, které používají tisíce qubits, za předpokladu, že klasická část kódu běží v přiměřené době.
 
-## <a name="usage"></a>Využití
+Prostředky Estimator jsou postavené na [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro), který poskytuje bohatší sadu metrik a nástrojů, které vám pomůžou ladit programy Q #.
 
-`ResourcesEstimator`Je to pouze jiný typ cílového počítače, takže jej lze použít ke spuštění jakékoli operace Q #. 
+## <a name="invoking-and-running-the-resources-estimator"></a>Vyvolání a spuštění prostředků Estimator
 
-Jako jiné cílové počítače, pokud ho chcete použít v hostitelském programu C#, vytvořte instanci a předejte ji jako první parametr `Run` metody operace:
+Pomocí prostředků Estimator můžete spustit jakoukoli operaci Q #. Další podrobnosti najdete v tématu [způsoby spuštění programu Q #](xref:microsoft.quantum.guide.host-programs).
+
+### <a name="invoking-the-resources-estimator-from-c"></a>Vyvolání prostředků estimator z C # 
+
+Stejně jako u jiných cílových počítačů nejprve vytvoříte instanci `ResourceEstimator` třídy a pak ji předáte jako první parametr `Run` metody operace.
+
+Všimněte si, že na rozdíl od `QuantumSimulator` třídy `ResourceEstimator` třída neimplementuje <xref:System.IDisposable> rozhraní, takže je nemusíte v rámci `using` příkazu uzavřít.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -42,9 +47,9 @@ namespace Quantum.MyProgram
 }
 ```
 
-Jak ukazuje příklad, `ResourcesEstimator` poskytuje `ToTSV()` metodu pro generování tabulky s hodnotami oddělenými tabulátory (TSV), které lze uložit do souboru nebo zapsat do konzoly pro účely analýzy. Výstup výše uvedeného programu by měl vypadat přibližně takto:
+Jak ukazuje příklad, `ResourcesEstimator` poskytuje `ToTSV()` metodu, která generuje tabulku s hodnotami oddělenými tabulátory (TSV). Tabulku můžete uložit do souboru nebo zobrazit v konzole pro účely analýzy. Následuje ukázkový výstup z předchozího programu:
 
-```Output
+```output
 Metric          Sum
 CNOT            1000
 QubitClifford   1000
@@ -57,15 +62,37 @@ BorrowedWidth   0
 ```
 
 > [!NOTE]
-> Při `ResourcesEstimator` každém spuštění neresetuje své výpočty, pokud se stejná instance používá ke spuštění jiné operace, bude mít za následek agregaci počtů nad stávajícími výsledky.
-> Pokud potřebujete resetovat výpočty mezi běhy, vytvořte novou instanci pro každé spuštění.
+> `ResourcesEstimator`Instance neresetuje své výpočty při každém spuštění. Použijete-li stejnou instanci pro spuštění jiné operace, agreguje nové výsledky s existujícími výsledky. Pokud potřebujete resetovat výpočty mezi běhy, vytvořte novou instanci pro každé spuštění.
 
+### <a name="invoking-the-resources-estimator-from-python"></a>Vyvolání prostředků estimator z Pythonu
+
+Použijte metodu [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z knihovny Pythonu s importovanou operací Q #:
+
+```python
+qubit_result = myOperation.estimate_resources()
+```
+
+### <a name="invoking-the-resources-estimator-from-the-command-line"></a>Vyvolání prostředků estimator z příkazového řádku
+
+Při spuštění programu Q # z příkazového řádku použijte parametr **--simulátor** (nebo **-s** ) k určení `ResourcesEstimator` cílového počítače. Následující příkaz spustí program pomocí Estimator prostředků: 
+
+```dotnetcli
+dotnet run -s ResourcesEstimator
+```
+
+### <a name="invoking-the-resources-estimator-from-juptyer-notebooks"></a>Vyvolání prostředků estimator z poznámkových bloků Juptyer
+
+K provedení operace Q # použijte [odhad příkazu%](xref:microsoft.quantum.iqsharp.magic-ref.simulate) sweetiq # Magic.
+
+```
+%estimate myOperation
+```
 
 ## <a name="programmatically-retrieving-the-estimated-data"></a>Programové načítání odhadovaných dat
 
-Kromě tabulky TSV lze odhadované prostředky načíst programově prostřednictvím `ResourcesEstimator` `Data` Vlastnosti. `Data`poskytuje `System.DataTable` instanci se dvěma sloupci: `Metric` a `Sum` , indexované názvy metrik.
+Kromě tabulky TSV můžete programově načíst prostředky odhadované během běhu prostřednictvím `Data` vlastnosti prostředků Estimator. `Data`Vlastnost poskytuje `System.DataTable` instanci se dvěma sloupci: `Metric` a `Sum` , indexované názvy metrik.
 
-Následující kód ukazuje, jak načíst a vytisknout celkový počet a `QubitClifford` `T` `CNOT` brány používané operací Q #:
+Následující kód ukazuje, jak načíst a vytisknout celkový počet a `QubitClifford` operace, které `T` `CNOT` používá operace Q #:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -91,46 +118,25 @@ namespace Quantum.MyProgram
 
 ## <a name="metrics-reported"></a>Hlášené metriky
 
-Následuje seznam metrik odhadovaných podle `ResourcesEstimator` :
+Prostředky Estimator sledují následující metriky:
 
-* __CNOT__: počet spuštěných bran Pauli X pro CNOT (označovaný také jako řízená ovládaná brána X).
-* __QubitClifford__: počet spuštěných jednotlivých bran qubit Clifford a Pauli.
-* __Measure__: počet provedených měření.
-* __R__: počet spuštěných jednoduchých qubit otočení s výjimkou bran T, Clifford a Pauli.
-* __T__: Počet bran t a jejich sdružených, včetně brány T, T_x = H. t. H a T_y = hy. T. hy, proveden.
-* __Hloubka__: spodní mez pro hloubku okruhu nečinnosti spouštěného operací Q #. Ve výchozím nastavení se tato hloubka počítá jenom u bran T. Podrobnosti najdete v části s informacemi o [čítači hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
-* __Width__: dolní mez pro maximální počet qubits přidělených během provádění operace Q #. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.
-* __BorrowedWidth__: maximální počet qubitsů v rámci operace Q # byl vypůjčen.
+|Metrika|Popis|
+|----|----|
+|__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
+|__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
+|__Míra__    |Počet spuštění všech měření.  |
+|__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
+|__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
+|__Úrovní__|Dolní mez pro hloubku okruhu nečinnosti, kterou spouští operace Q #. Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Width (Šířka)__    |Dolní mez pro maximální počet qubits přidělených během běhu operace Q #. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.  |
+|__BorrowedWidth__    |Maximální počet qubits, který byl vypůjčen v rámci operace Q #.  |
 
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Zajištění pravděpodobnosti výsledků měření
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
-
-<xref:microsoft.quantum.intrinsic.assertprob>z <xref:microsoft.quantum.intrinsic> oboru názvů lze použít k poskytnutí informací o očekávané pravděpodobnosti měření, které vám pomůžou při provádění programu Q #. Ilustruje to následující příklad:
-
-```qsharp
-operation Teleport(source : Qubit, target : Qubit) : Unit {
-
-    using (qubit = Qubit()) {
-
-        H(q);
-        CNOT(qubit, target);
-
-        CNOT(source, qubit);
-        H(source);
-
-        AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [qubit], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-
-        if (M(source) == One)  { Z(target); X(source); }
-        if (M(qubit) == One) { X(target); X(qubit); }
-    }
-}
-```
-
-V případě, že `ResourcesEstimator` dojde k `AssertProb` tomu, bude zaznamenáno měření `PauliZ` `source` a `q` měl by být uveden výsledek `Zero` s pravděpodobností 0,5. Při `M` pozdějším spuštění nalezne zaznamenané hodnoty pravděpodobnosti výsledku a `M` vrátí `Zero` nebo `One` s pravděpodobností 0,5.
-
+Můžete použít <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> z <xref:microsoft.quantum.diagnostics> oboru názvů k poskytnutí informací o očekávané pravděpodobnosti operace měření. Další informace najdete v části [simulátor trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
 ## <a name="see-also"></a>Viz také
 
-`ResourcesEstimator`Je postaven na [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)počítačů s procesorem, který poskytuje bohatší sadu metrik, schopnost nahlásit metriky na plný graf volání a funkce, jako je například [Kontrola různých vstupů](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) , pomůžou najít chyby v programech Q #. Další informace najdete v dokumentaci [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
-
+- [Simulátor trasování doby využití](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+- [Simulátor Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Simulátor plného stavu pro plný stav](xref:microsoft.quantum.machines.full-state-simulator) 

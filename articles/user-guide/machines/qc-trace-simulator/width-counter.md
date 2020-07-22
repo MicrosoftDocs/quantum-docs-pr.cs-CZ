@@ -1,22 +1,35 @@
 ---
-title: Čítač šířky
-description: Přečtěte si o čítači šířky Microsoft QDKe, který spočítá počet qubits přidělených a vydaných každou operací v programu pro práci za sebou.
+title: Čítač šířky – sada pro vývoj všech procesorů
+description: 'Přečtěte si o čítači šířky Microsoft QDK, který používá simulátor trasování doby provozu k výpočtu počtu qubits přidělených a vypůjčených operacemi v programu Q #.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: a76292222950310acc90dded02980e4a5b792e76
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: af8609dc5c05f7a19b8d21755281427feb29b84c
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274570"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871514"
 ---
-# <a name="width-counter"></a>Čítač šířky
+# <a name="quantum-trace-simulator-width-counter"></a>Simulátor trasování doby využití: čítač šířky
 
-`Width Counter`Počítá počet qubits přidělených a vydaných jednotlivými operacemi.
-Všechny operace z `Microsoft.Quantum.Intrinsic` oboru názvů se vyjadřují v rámci jednoduchých qubit rotací, T Branch, qubitch Clifford bran, CNOT bran a měření multi-qubit Pauli observables. Některé primitivní operace mohou přidělit další qubits. Můžete například vynásobit kontrolované `X` brány nebo řízené `T` brány. Můžeme nám vypočítat počet dalších qubits přidělených implementací brány řízené vynásobením `X` :
+Čítač šířky je součástí [simulátoru pro sledování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)doby plnění. Můžete ji použít k výpočtu počtu qubits přidělených a vypůjčených každou operací v programu Q #. Některé primitivní operace mohou přidělit nadbytečné qubits, například vynásobit kontrolované `X` operace nebo kontrolované `T` operace.
+
+## <a name="invoking-the-width-counter"></a>Vyvolání čítače šířky
+
+Chcete-li spustit simulátor trasování doby provozu s čítačem šířky, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UseWidthCounter` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem jako. 
+
+```csharp
+var config = new QCTraceSimulatorConfiguration();
+config.UseWidthCounter = true;
+var sim = new QCTraceSimulator(config);
+```
+
+## <a name="using-the-width-counter-in-a-c-host-program"></a>Použití čítače šířky v hostitelském programu C#
+
+Příklad jazyka C#, který následuje v tomto oddílu, vypočítá počet extra qubits přidělených implementací operace s vynásobeným výsledkem <xref:microsoft.quantum.intrinsic.x> , který je založený na následujícím ukázkovém kódu Q #:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;
@@ -28,13 +41,11 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-## <a name="using-width-counter-within-a-c-program"></a>Použití čítače šířky v rámci programu v jazyce C#
-
-Vynásobení kontrolovaného `X` na základě celkového počtu 5 qubits přidělí 2 doplňkové qubits a jeho vstupní šířka bude 5. Chcete-li zjistit, zda se jedná o tento případ, můžeme použít následující program C#:
+Operace s hodnotou vynásobení <xref:microsoft.quantum.intrinsic.x> funguje na celkem pět qubits, přiděluje dvě [pomocné qubits](xref:microsoft.quantum.glossary#ancilla)a má vstupní šířku **5**. Pomocí následujícího programu v jazyce C# ověřte počty:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();
-config.useWidthCounter = true;
+config.UseWidthCounter = true;
 var sim = new QCTraceSimulator(config);
 int totalNumberOfQubits = 5;
 var res = ApplyMultiControlledX.Run(sim, totalNumberOfQubits).Result;
@@ -50,13 +61,16 @@ double inputWidth =
         functor: OperationFunctor.Controlled);
 ```
 
-První část programu se spustí `ApplyMultiControlledX` . V druhé části používáme metodu `QCTraceSimulator.GetMetric` k získání počtu přidělených qubits a také počtu qubits, které řízené `X` přijetí jako vstupu. 
+První část programu spustí `ApplyMultiControlledX` operaci. Druhá část používá [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) metodu pro načtení počtu přidělených qubits a také počet qubits, které `Controlled X` operace přijala jako vstup. 
 
-Nakonec můžete pro výstup všech statistik shromážděných pomocí čítače šířky ve formátu CSV použít následující:
+Nakonec můžete vystavit výstup všech statistik shromážděných pomocí čítače šířky ve formátu CSV pomocí následujících možností:
 ```csharp
 string csvSummary = sim.ToCSV()[MetricsCountersNames.widthCounter];
 ```
 
-## <a name="see-also"></a>Viz také ##
+## <a name="see-also"></a>Viz také
 
-- Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.
+- Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) pro všechna ta.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Reference k rozhraní API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Reference k rozhraní API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.MetricsNames.WidthCounter>Reference k rozhraní API.

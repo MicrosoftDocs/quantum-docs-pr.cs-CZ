@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: fa5173f710dd9e0b0b2c110e45aa0bf019111aca
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274606"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870630"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
@@ -61,19 +61,19 @@ Standardní knihovny Q # poskytují několik různých funkcí pro reprezentaci 
 
 Kontrolní výrazy v praxi spoléhají na skutečnost, že klasické simulace [přívětach hodnot nevyžadují řízení bez klonování](https://arxiv.org/abs/quant-ph/9607018), takže můžeme při použití simulátoru pro náš cílový počítač udělat nefyzická měření a kontrolní výrazy.
 Proto můžeme před nasazením na hardware otestovat jednotlivé operace na klasický simulátor.
-V cílových počítačích, které neumožňují vyhodnocování kontrolních výrazů, volání <xref:microsoft.quantum.intrinsic.assert> lze bezpečně ignorovat.
+V cílových počítačích, které neumožňují vyhodnocování kontrolních výrazů, volání <xref:microsoft.quantum.diagnostics.assertmeasurement> lze bezpečně ignorovat.
 
-Obecně platí, že operace vyhodnotí <xref:microsoft.quantum.intrinsic.assert> , že měření daného qubits v dané Pauli základu bude mít vždy daný výsledek.
+Obecně platí, že operace vyhodnotí <xref:microsoft.quantum.diagnostics.assertmeasurement> , že měření daného qubits v dané Pauli základu bude mít vždy daný výsledek.
 Pokud se kontrolní výraz nezdařil, spuštění skončí voláním `fail` dané zprávy.
 Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.
-`Assert`má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .
-Vzhledem k tomu `Assert` , že funkce s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `Assert` nejsou v programu Q # pozorovatelé žádné účinky volání.
+`AssertMeasurement`má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .
+Vzhledem k tomu `AssertMeasurement` , že funkce s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v programu Q # pozorovatelé žádné účinky volání.
 
-<xref:microsoft.quantum.intrinsic.assertprob>Funkce Operation vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.
+<xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funkce Operation vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.
 Tolerance je aditivní (např. `abs(expected-actual) < tol` ).
 Pokud se kontrolní výraz nezdařil, spuštění skončí voláním `fail` dané zprávy.
 Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.
-`AssertProb`má signaturu `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . První z `Double` parametrů poskytuje požadovanou pravděpodobnost výsledku a druhou pro toleranci.
+`AssertMeasurementProbability`má signaturu `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . První z `Double` parametrů poskytuje požadovanou pravděpodobnost výsledku a druhou pro toleranci.
 
 Můžeme provést více než vyhodnotit jedno měření, a to pomocí klasických informací používaných simulátorem, které reprezentují vnitřní stav qubit, snadněji ke kopírování. to znamená, že pro otestování tohoto kontrolního výrazu není nutné skutečně provádět měření.
 Konkrétně to nám umožní důvod na *nekompatibilní* měření, která by nebyla možná na skutečném hardwaru.
@@ -100,7 +100,7 @@ using (register = Qubit()) {
 ```
 
 Obecně řečeno, ale nemůžeme mít přístup k kontrolním hodnotám, které se neshodují s eigenstates operátorů Pauli.
-Například $ \ket{\psi} = (\ket {0} + e ^ {i \pi/8} \ket {1} )/\sqrt {2} $ není eigenstate žádného operátoru Pauli, takže nemůžeme použít <xref:microsoft.quantum.intrinsic.assertprob> k jednoznačnému určení toho, že se stav $ \ket{\psi} $ rovná $ \ket{\psi} $.
+Například $ \ket{\psi} = (\ket {0} + e ^ {i \pi/8} \ket {1} )/\sqrt {2} $ není eigenstate žádného operátoru Pauli, takže nemůžeme použít <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> k jednoznačnému určení toho, že se stav $ \ket{\psi} $ rovná $ \ket{\psi} $.
 Místo toho je nutné vyhodnotit kontrolní výraz $ \ket{\psi} = \ket{\psi} $ na předpoklady, které mohou být přímo testovány pomocí primitivních hodnot, které podporuje náš simulátor.
 Provedete to tak, že $ \ket{\psi} = \Alpha \ket {0} + \beta \ket {1} $ for Complex Numbers $ \Alpha = a \_ r + a \_ i $ a $ \beta $.
 Všimněte si, že tento výraz vyžaduje čtyři reálné hodnoty $ \{ a \_ r, a \_ i, b \_ r, b \_ i \} $, aby bylo možné určit, že každé komplexní číslo může být vyjádřeno jako součet reálné a imaginární části.

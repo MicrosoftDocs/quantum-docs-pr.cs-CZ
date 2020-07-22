@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: d10f81a1e49235be8e02661dcd6d3c839485af6e
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 4b5e7b657f0e11fb4a14308c20859f4007729146
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885036"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871548"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -21,6 +21,17 @@ Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
 
+
+## <a name="version-01220072031"></a>0.12.20072031 verze
+
+*Datum vydání: od 21. července 2020*
+
+Tato verze obsahuje následující:
+
+- Otevřené obory názvů v poznámkových blocích Q # jsou nyní k dispozici pro všechna budoucí spuštění buněk. To umožňuje například, aby se obory názvů otevíraly jednou v buňce v horní části poznámkového bloku místo nutnosti otevírat relevantní obory názvů v každé buňce kódu. Nový `%lsopen` příkaz Magic zobrazí seznam aktuálně otevřených oborů názvů.
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
 ## <a name="version-01220070124"></a>0.12.20070124 verze
 
 *Datum vydání: 2. července 2020*
@@ -28,7 +39,7 @@ Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quan
 Tato verze obsahuje následující:
 
 - Nový `qdk-chem` Nástroj pro převod formátů serializace ve starších verzích elektronické struktury (např.: FCIDUMP) do [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
-- Nové funkce a operace v [ `Microsoft.Quantum.Synthesis` oboru názvů](xref:microsoft.quantum.synthesis) pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
+- Nové funkce a operace v [`Microsoft.Quantum.Synthesis`](xref:microsoft.quantum.synthesis) oboru názvů pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
 - SWEETIQ # teď umožňuje argumenty v `%simulate` `%estimate` příkazech, a dalších příkazech Magic. Další podrobnosti najdete v referenčních informacích k [ `%simulate` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
 - Nové možnosti zobrazení fáze v SWEETIQ #. Další podrobnosti najdete v referenčních informacích k [ `%config` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
 - SWEETIQ # a `qsharp` balíček Pythonu jsou teď k dispozici prostřednictvím balíčků conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) a [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)), aby se zjednodušila místní instalace funkcí Q # Jupyter a Pythonu do conda prostředí. Další podrobnosti najdete v pokynech k instalaci v [poznámkových blocích q # Jupyter](xref:microsoft.quantum.install.jupyter) a [q # with Python](xref:microsoft.quantum.install.python) .
@@ -446,7 +457,7 @@ Toto vydání je jen rychlá oprava pro [problém č. 48 hlášený na GitHubu](
 
 *Datum vydání: 22. června 2018*
 
-Tato verze zahrnuje několik příspěvků komunity a také vylepšené prostředí pro ladění a lepší výkon.  Konkrétně:
+Tato verze zahrnuje několik příspěvků komunity a také vylepšené prostředí pro ladění a lepší výkon.  Konkrétně se jedná o tyto:
 
 * Zvýšení výkonu u malých i velkých simulací pro cílový počítač QuantumSimulator.
 * Vylepšené funkce ladění.

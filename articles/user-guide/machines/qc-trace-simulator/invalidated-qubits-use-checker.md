@@ -1,21 +1,25 @@
 ---
-title: Kontrola použití neplatných qubitů
-description: 'Přečtěte si o nástroji QDK s neplatnými Qubits pro Microsoft, který kontroluje kód Q # pro potenciálně neplatnou Qubits.'
+title: Kontrola použití neověřených qubits – sada pro vývoj všech procesorů
+description: 'Přečtěte si o nástroji QDK s neplatnými qubits pro Microsoft, který používá simulátor trasování doby provozu ke kontrole kódu Q # pro potenciálně neplatnou qubits.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: e2bbb12448e27f28db030a0084302fb24f46f26b
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: fccf6d5784b587f4ad9b659e23027619acd06ffa
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274573"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871089"
 ---
-# <a name="invalidated-qubits-use-checker"></a>Kontrola použití neověřené Qubits
+# <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Simulátor trasování provozu: neověřená Kontrola použití qubits
 
-`Invalidated Qubits Use Checker`Je součástí [TraceSimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítače, který je navržen pro detekci potenciálních chyb v kódu. Vezměte v úvahu následující část kódu Q # pro ilustraci problémů zjištěných nástrojem `Invalidated Qubits Use Checker` .
+Nástroj pro kontrolu použití neověřených qubits je součástí nástroje pro vybudování doby [provozu.](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Můžete ji použít ke zjištění potenciálních chyb v kódu způsobených neplatným qubits. 
+
+## <a name="invalid-qubits"></a>Neplatný qubits
+
+Vezměte v úvahu následující část kódu Q # pro ilustraci problémů zjištěných neověřeným qubits použití nástroje:
 
 ```qsharp
 operation UseReleasedQubit() : Unit {
@@ -27,12 +31,22 @@ operation UseReleasedQubit() : Unit {
 }
 ```
 
-Při `H` použití na `q[0]` odkazuje na již vydaný qubit. To může způsobit nedefinované chování. Když `Invalidated Qubits Use Checker` je povolená, výjimka se `InvalidatedQubitsUseCheckerException` vyvolá, pokud se operace použije na už vydaný qubit. Další podrobnosti najdete v dokumentaci k rozhraní API v [InvalidatedQubitsUseCheckerException](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException) .
+Při použití `H` operace na `q[0]` , odkazuje na již vydaný qubit, což může způsobit nedefinované chování. Pokud je povolená funkce Qubits pro kontrolu použití, vyvolá výjimku, `InvalidatedQubitsUseCheckerException` Pokud program použije operaci na už vydaný qubit. Další informace naleznete v tématu <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>.
 
-## <a name="using-the-invalidated-qubits-use-checker-in-your-c-program"></a>Použití funkce Qubits s neověřeným použitím nástroje pro kontrolu použití v programu v C#
+## <a name="invoking-the-invalidated-qubits-use-checker"></a>Vyvolává se qubits pro kontrolu použití neověřených
 
-Následuje příklad kódu ovladače C# pro použití počítače s příznakem pro práci `Trace
-Simulator` s `Invalidated Qubits Use Checker` povoleným: 
+Chcete-li spustit simulátor trasování doby provozu s neověřeným qubits, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UseInvalidatedQubitsUseChecker` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem. 
+
+```csharp
+var config = new QCTraceSimulatorConfiguration();
+config.UseInvalidatedQubitsUseChecker = true;
+var sim = new QCTraceSimulator(config);
+```
+
+
+## <a name="using-the-invalidated-qubits-use-checker-in-a-c-host-program"></a>Použití funkce qubits s neověřenou kontrolou v hostitelském programu C#
+
+Následuje příklad hostitelských programů v jazyce C#, které používají simulátor trasování doby provozu s povoleným qubitsm ověřováním pomocí služby invalidateed: 
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -46,7 +60,7 @@ namespace Quantum.MyProgram
         static void Main(string[] args)
         {
             var traceSimCfg = new QCTraceSimulatorConfiguration();
-            traceSimCfg.useInvalidatedQubitsUseChecker = true; // enables useInvalidatedQubitsUseChecker
+            traceSimCfg.UseInvalidatedQubitsUseChecker = true; // enables UseInvalidatedQubitsUseChecker
             QCTraceSimulator sim = new QCTraceSimulator(traceSimCfg);
             var res = MyQuantumProgram.Run().Result;
             System.Console.WriteLine("Press any key to continue...");
@@ -56,8 +70,9 @@ namespace Quantum.MyProgram
 }
 ```
 
-Třída `QCTraceSimulatorConfiguration` ukládá konfiguraci simulátoru trasování počítačů a je možné ho zadat jako argument pro `QCTraceSimulator` konstruktor. Když `useInvalidatedQubitsUseChecker` je nastavená hodnota true, `Invalidated Qubits Use Checker` je povolený. Další podrobnosti najdete v dokumentaci k rozhraní API na [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) a [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) .
+## <a name="see-also"></a>Viz také
 
-## <a name="see-also"></a>Viz také ##
-
-- Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.
+- Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) pro všechna ta.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Reference k rozhraní API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Reference k rozhraní API.
+- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>Reference k rozhraní API.

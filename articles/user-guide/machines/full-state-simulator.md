@@ -1,25 +1,29 @@
 ---
-title: Simulátor plného stavu
+title: Plný stav simulátoru pro náročné na všechna ta – vývojová sada
 description: 'Zjistěte, jak spustit programy Q # v simulátoru Microsoft Quantum Development Kit úplný stav.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
-ms.date: 12/7/2017
+ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.full-state-simulator
-ms.openlocfilehash: f73abbc4366b003e4b22366ed83ca9c897737307
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 563fdbd2a45461d112e4c46651eddd75c6fc3db2
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274590"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871174"
 ---
-# <a name="quantum-development-kit-full-state-simulator"></a>Úplný simulátor pro vývoj všech stavů v sadě
+# <a name="quantum-development-kit-qdk-full-state-simulator"></a>Simulátor úplného stavu pro sadu QDK (pro vytváření plně stavů)
 
-Sada pro vývoj všech stavových prostředí poskytuje úplný stav simulátoru, který se podobá [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) od Microsoft Research.
-Tento simulátor se dá použít ke spouštění a ladění algoritmů pro plnění a napsaných v Q # ve vašem počítači.
+QDK poskytuje úplný stav simulátoru, který simuluje počítač s více podsystémy na vašem místním počítači. Pomocí celého stavového simulátoru můžete spouštět a ladit algoritmy, které jsou napsané v Q #, a to s využitím až 30 qubits. Úplný stav simulátoru je podobný simulátoru při používání služby Microsoft Research na platformě [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) .
 
-Tento simulátor při přístavování se zveřejňuje prostřednictvím `QuantumSimulator` třídy. Chcete-li použít simulátor, jednoduše vytvořte instanci této třídy a předejte ji `Run` metodě operace, kterou chcete provést, spolu se zbytkem parametrů:
+## <a name="invoking-and-running-the-full-state-simulator"></a>Vyvolání a spuštění simulátoru úplného stavu
 
+Vystavíte plný stav simulátoru prostřednictvím `QuantumSimulator` třídy. Další podrobnosti najdete v tématu [způsoby spuštění programu Q #](xref:microsoft.quantum.guide.host-programs).
+
+### <a name="invoking-the-simulator-from-c"></a>Vyvolání simulátoru z C #
+
+Vytvořte instanci `QuantumSimulator` třídy a pak ji předejte `Run` metodě operace s více poli, spolu s dalšími parametry.
 ```csharp
     using (var sim = new QuantumSimulator())
     {
@@ -28,13 +32,35 @@ Tento simulátor při přístavování se zveřejňuje prostřednictvím `Quantu
     }
 ```
 
-## <a name="idisposable"></a>IDisposable
+Vzhledem k tomu `QuantumSimulator` , že třída implementuje <xref:System.IDisposable> rozhraní, je nutné zavolat `Dispose` metodu, jakmile již nepotřebujete instanci simulátoru. Nejlepším způsobem, jak to provést, je zabalit deklaraci a operace simulátoru do příkazu [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) , který automaticky volá `Dispose` metodu.
 
-`QuantumSimulator`Třída implementuje <xref:System.IDisposable> , takže `Dispose` by metoda měla být volána, jakmile se již nepoužívá instance simulátoru. Nejlepším způsobem, jak to provést, je zabalení simulátoru v rámci `using` příkazu, jako v předchozím příkladu.
+### <a name="invoking-the-simulator-from-python"></a>Vyvolání simulátoru z Pythonu
 
-## <a name="seed"></a>Sazení
+Použijte metodu [simulovat ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z knihovny Pythonu Q v knihovně Python s importovanou operací q #:
 
-`QuantumSimulator`Používá generátor náhodných čísel pro simulaci náhodnosti. Pro účely testování je někdy užitečné mít deterministické výsledky. To lze provést poskytnutím počáteční hodnoty generátoru náhodných čísel v `QuantumSimulator` konstruktoru konstruktoru pomocí `randomNumberGeneratorSeed` parametru:
+```python
+qubit_result = myOperation.simulate()
+```
+
+### <a name="invoking-the-simulator-from-the-command-line"></a>Vyvolání simulátoru z příkazového řádku
+
+Při spuštění programu Q # z příkazového řádku je úplným cílovým počítačem simulátor celého stavu. Volitelně můžete pomocí parametru **--simulátor** (nebo **-s** ) určit požadovaný cílový počítač. Oba následující příkazy spouštějí program pomocí kompletního simulátoru. 
+
+```dotnetcli
+dotnet run
+dotnet run -s QuantumSimulator
+```
+
+### <a name="invoking-the-simulator-from-juptyer-notebooks"></a>Vyvolání simulátoru z poznámkových bloků Juptyer
+
+Pomocí příkazu SWEETIQ # Magic [% simulovat](xref:microsoft.quantum.iqsharp.magic-ref.simulate) spusťte operaci Q #.
+
+```
+%simulate myOperation
+```
+## <a name="seeding-the-simulator"></a>Osazení simulátoru
+
+Ve výchozím nastavení používá simulátor celého stavu generátor náhodných čísel pro simulaci náhodnosti. Pro účely testování je někdy užitečné mít deterministické výsledky. V programu v jazyce C# můžete to dosáhnout poskytnutím počáteční hodnoty generátoru náhodných čísel v `QuantumSimulator` konstruktoru prostřednictvím `randomNumberGeneratorSeed` parametru.
 
 ```csharp
     using (var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
@@ -44,7 +70,12 @@ Tento simulátor při přístavování se zveřejňuje prostřednictvím `Quantu
     }
 ```
 
-## <a name="threads"></a>Vlákna
+## <a name="configuring-threads"></a>Konfigurace vláken
 
-`QuantumSimulator`Používá [OpenMP](http://www.openmp.org/) k paralelizovatí lineárního algebraický požadovaného. Ve výchozím nastavení používá OpenMP všechna dostupná hardwarová vlákna, což znamená, že programy s malým počtem qubitů budou často běžet pomalu, protože požadovaná koordinace bude převyšovat skutečnou práci. To se dá opravit nastavením proměnné prostředí `OMP_NUM_THREADS` na malé číslo. Hrubým odhadem je 1 vlákno vhodné až do přibližně 4 qubitů, a pak je dobré další vlákno na každý qubit, i když to velmi závisí na vašem algoritmu.
+Simulátor celého stavu používá [OpenMP](http://www.openmp.org/) k paralelizovatí lineárního algebraický. Ve výchozím nastavení používá OpenMP všechna dostupná hardwarová vlákna, což znamená, že programy s malým počtem qubits často běží pomalu, protože koordinace, která je vyžadována Dwarfs skutečnou práci. To můžete opravit nastavením proměnné prostředí `OMP_NUM_THREADS` na malé číslo. Jako pravidlo pro palec nakonfigurujte jedno vlákno pro až čtyři qubits a pak jedno další vlákno na qubit. Je možné, že budete muset proměnnou upravit v závislosti na algoritmu.
 
+## <a name="see-also"></a>Viz také
+
+- [Estimatory prostředků](xref:microsoft.quantum.machines.resources-estimator)
+- [Simulátor Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Simulátor trasování doby využití](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
