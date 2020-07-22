@@ -1,5 +1,5 @@
 - name: Úvod do kvantového strojového učení
-  href: introduction.md
+  href: intro.md
 - name: Základní klasifikace
   href: basic-classification.md
 - name: Návrh vlastního klasifikátoru
