@@ -1,5 +1,18 @@
+---
+title: Příkazy magic IQ#
+author: rmshaffer
+uid: microsoft.quantum.iqsharp.magic-ref.index
+ms.author: rmshaffer
+ms.date: 07/21/2020
+ms.topic: article
+ms.openlocfilehash: 971787adae03af35d2e5b408fb88356a8b7df90a
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870698"
+---
 # <a name="iq-magic-commands"></a>Příkazy magic IQ#
-
 | Příkaz magic | Souhrn |
 |---------------|---------|
 | [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) | Umožňuje připojení k pracovnímu prostoru Azure Quantum nebo zobrazení stavu aktuálního připojení. |
@@ -19,6 +32,7 @@
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Spustí danou funkci nebo operaci na cílovém počítači ResourcesEstimator. |
 | [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Provede jeden test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Vrátí seznam všech aktuálně dostupných příkazů magic. |
+| [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen) | Vypíše aktuálně otevřené obory názvů a jejich aliasy. |
 | [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Poskytuje možnost načíst balíček NuGet. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Hlásí aktuální metriky výkonu pro toto jádro. |
 | [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate) | Spustí danou funkci nebo operaci na cílovém počítači QuantumSimulator. |
