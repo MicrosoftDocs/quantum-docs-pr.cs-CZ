@@ -1,21 +1,37 @@
 ---
-title: Čítač primitivních operací
-description: Přečtěte si o čítači operací primitivního provozu Microsoft QDK, který sleduje počet primitivních spuštění používaných operacemi v programu za běhu.
+title: Čítač primitivních operací – sada pro vývoj všech procesorů
+description: 'Přečtěte si o čítači operací primitivního provozu Microsoft QDK, který používá simulátor trasování doby provozu ke sledování základních spouštění používaných operacemi v programu Q #.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
-ms.openlocfilehash: 8bdb0aed370e72b58b23025f1685ad7ce1a77a43
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: ea022d499354f7cefd60da690466496e0ce7c336
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274569"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871021"
 ---
-# <a name="primitive-operations-counter"></a><span data-ttu-id="78d6a-103">Čítač primitivních operací</span><span class="sxs-lookup"><span data-stu-id="78d6a-103">Primitive Operations Counter</span></span>  
+# <a name="quantum-trace-simulator-primitive-operations-counter"></a><span data-ttu-id="cd187-103">Simulátor trasování doby provozu: čítač primitivních operací</span><span class="sxs-lookup"><span data-stu-id="cd187-103">Quantum trace simulator: primitive operations counter</span></span>
 
-<span data-ttu-id="78d6a-104">`Primitive Operations Counter`Je součástí [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)počítačů.</span><span class="sxs-lookup"><span data-stu-id="78d6a-104">The `Primitive Operations Counter` is a part of the quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).</span></span> <span data-ttu-id="78d6a-105">Počítá počet primitivních spuštění používaných každou operací vyvolanou v programu pro řízení.</span><span class="sxs-lookup"><span data-stu-id="78d6a-105">It counts the number of primitive executions used by every operation invoked in a quantum program.</span></span> <span data-ttu-id="78d6a-106">Všechny operace z `Microsoft.Quantum.Intrinsic` jsou vyjádřeny v rámci jednoduchých qubit rotací, T Branch, qubitch Cliffordch bran, CNOT bran a měření multi-qubit Pauli observables.</span><span class="sxs-lookup"><span data-stu-id="78d6a-106">All operations from `Microsoft.Quantum.Intrinsic` are expressed in terms of single qubit rotations, T gates, single qubit Clifford gates, CNOT gates and measurements of multi-qubit Pauli observables.</span></span> <span data-ttu-id="78d6a-107">Shromážděné statistiky jsou shrnuty na okrajích grafu volání operací.</span><span class="sxs-lookup"><span data-stu-id="78d6a-107">Collected statistics are aggregated over the edges of the operations call graph.</span></span> <span data-ttu-id="78d6a-108">Pojďme nám teď počítat, kolik `T` bran je potřeba k implementaci této `CCNOT` operace.</span><span class="sxs-lookup"><span data-stu-id="78d6a-108">Let us now count how many `T` gates are needed to implement the `CCNOT` operation.</span></span> 
+<span data-ttu-id="cd187-104">Čítač primitivních operací je součástí nástroje pro vývoj provozu po částech [.](xref:microsoft.quantum.machines.qc-trace-simulator.intro)</span><span class="sxs-lookup"><span data-stu-id="cd187-104">The primitive operation counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).</span></span> <span data-ttu-id="cd187-105">Počítá počet primitivních spuštění používaných každou operací vyvolanou v programu pro řízení.</span><span class="sxs-lookup"><span data-stu-id="cd187-105">It counts the number of primitive executions used by every operation invoked in a quantum program.</span></span> 
+
+<span data-ttu-id="cd187-106">Všechny <xref:microsoft.quantum.intrinsic> operace se vyjadřují v souvislosti s qubit otočeními, T operacemi, qubitmi Clifford operacemi, operacemi CNOT a měřeními multi-qubit Pauli observables.</span><span class="sxs-lookup"><span data-stu-id="cd187-106">All <xref:microsoft.quantum.intrinsic> operations are expressed in terms of single-qubit rotations, T operations, single-qubit Clifford operations, CNOT operations, and measurements of multi-qubit Pauli observables.</span></span> <span data-ttu-id="cd187-107">Čítač primitivních operací agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.</span><span class="sxs-lookup"><span data-stu-id="cd187-107">The Primitive Operations Counter aggregates and collects statistics over all the edges of the operation's [call graph](https://en.wikipedia.org/wiki/Call_graph).</span></span>
+
+## <a name="invoking-the-primitive-operation-counter"></a><span data-ttu-id="cd187-108">Vyvolání čítače primitivní operace</span><span class="sxs-lookup"><span data-stu-id="cd187-108">Invoking the primitive operation counter</span></span>
+
+<span data-ttu-id="cd187-109">Chcete-li spustit simulátor trasování doby provozu pomocí čítače primitivních operací, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UsePrimitiveOperationsCounter` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem jako.</span><span class="sxs-lookup"><span data-stu-id="cd187-109">To run the quantum trace simulator with the primitive operation counter, you must create a <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instance, set the `UsePrimitiveOperationsCounter` property to **true**, and then create a new <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instance with the `QCTraceSimulatorConfiguration` as the parameter.</span></span>
+
+```csharp
+var config = new QCTraceSimulatorConfiguration();
+config.UsePrimitiveOperationsCounter = true;
+var sim = new QCTraceSimulator(config);
+```
+
+## <a name="using-the-primitive-operation-counter-in-a-c-host-program"></a><span data-ttu-id="cd187-110">Použití čítače primitivních operací v hostitelském programu C#</span><span class="sxs-lookup"><span data-stu-id="cd187-110">Using the primitive operation counter in a C# host program</span></span>
+
+<span data-ttu-id="cd187-111">Příklad v jazyce C#, který následuje v této části <xref:microsoft.quantum.intrinsic.t> , počítá, kolik operací je potřeba k implementaci <xref:microsoft.quantum.intrinsic.ccnot> operace, na základě následujícího ukázkového kódu Q #:</span><span class="sxs-lookup"><span data-stu-id="cd187-111">The C# example that follows in this section counts how many <xref:microsoft.quantum.intrinsic.t> operations are needed to implement the <xref:microsoft.quantum.intrinsic.ccnot> operation, based on the following Q# sample code:</span></span>
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;
@@ -24,19 +40,17 @@ operation ApplySampleWithCCNOT() : Unit {
     using (qubits = Qubit[3]) {
         CCNOT(qubits[0], qubits[1], qubits[2]);
         T(qubits[0]);
-    } 
+    }
 }
 ```
 
-## <a name="using-the-primitive-operations-counter-within-a-c-program"></a><span data-ttu-id="78d6a-109">Použití čítače primitivních operací v programu v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="78d6a-109">Using the Primitive Operations Counter within a C# Program</span></span>
-
-<span data-ttu-id="78d6a-110">Chcete-li ověřit, že `CCNOT` skutečně vyžaduje 7 `T` bran a že se `ApplySampleWithCCNOT` provede 8 `T` bran, můžeme použít následující kód jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="78d6a-110">To check that `CCNOT` indeed requires 7 `T` gates and that `ApplySampleWithCCNOT` executes 8 `T` gates we can use the following C# code:</span></span>
+<span data-ttu-id="cd187-112">Chcete-li ověřit, že `CCNOT` vyžaduje sedm `T` operací a `ApplySampleWithCCNOT` spouští osm `T` operací, použijte následující kód jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="cd187-112">To check that `CCNOT` requires seven `T` operations and that `ApplySampleWithCCNOT` runs eight `T` operations, use the following C# code:</span></span>
 
 ```csharp 
 // using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
 // using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
-config.usePrimitiveOperationsCounter = true;
+config.UsePrimitiveOperationsCounter = true;
 var sim = new QCTraceSimulator(config);
 var res = ApplySampleWithCCNOT.Run(sim).Result;
 
@@ -44,25 +58,23 @@ double tCountAll = sim.GetMetric<ApplySampleWithCCNOT>(PrimitiveOperationsGroups
 double tCount = sim.GetMetric<Primitive.CCNOT, ApplySampleWithCCNOT>(PrimitiveOperationsGroupsNames.T);
 ```
 
-<span data-ttu-id="78d6a-111">První část programu se spustí `ApplySampleWithCCNOT` .</span><span class="sxs-lookup"><span data-stu-id="78d6a-111">The first part of the program executes `ApplySampleWithCCNOT`.</span></span> <span data-ttu-id="78d6a-112">V druhé části používáme metodu `QCTraceSimulator.GetMetric` k získání počtu T bran, které provedly `ApplySampleWithCCNOT` :</span><span class="sxs-lookup"><span data-stu-id="78d6a-112">In the second part, we use the method `QCTraceSimulator.GetMetric` to get the number of T gates executed by `ApplySampleWithCCNOT`:</span></span> 
+<span data-ttu-id="cd187-113">První část programu se spustí `ApplySampleWithCCNOT` .</span><span class="sxs-lookup"><span data-stu-id="cd187-113">The first part of the program runs `ApplySampleWithCCNOT`.</span></span> <span data-ttu-id="cd187-114">Druhá část používá [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) metodu k načtení počtu `T` operací spuštěných pomocí `ApplySampleWithCCNOT` :</span><span class="sxs-lookup"><span data-stu-id="cd187-114">The second part uses the [`QCTraceSimulator.GetMetric`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) method to retrieve the number of `T` operations run by `ApplySampleWithCCNOT`:</span></span> 
 
-```csharp
-double tCount = sim.GetMetric<Primitive.CCNOT, ApplySampleWithCCNOT>(PrimitiveOperationsGroupsNames.T);
-double tCountAll = sim.GetMetric<ApplySampleWithCCNOT>(PrimitiveOperationsGroupsNames.T);
-```
+<span data-ttu-id="cd187-115">Při volání `GetMetric` pomocí dvou parametrů typu vrátí hodnotu metriky související s daným okrajem grafu volání.</span><span class="sxs-lookup"><span data-stu-id="cd187-115">When you call `GetMetric` with two type parameters, it returns the value of the metric associated with a given call graph edge.</span></span> <span data-ttu-id="cd187-116">V předchozím příkladu program volá `Primitive.CCNOT` operaci do `ApplySampleWithCCNOT` , a proto graf volání obsahuje hranici `<Primitive.CCNOT, ApplySampleWithCCNOT>` .</span><span class="sxs-lookup"><span data-stu-id="cd187-116">In the preceding example, the program calls the `Primitive.CCNOT` operation  within `ApplySampleWithCCNOT` and therefore the call graph contains the edge `<Primitive.CCNOT, ApplySampleWithCCNOT>`.</span></span> 
 
-<span data-ttu-id="78d6a-113">Když `GetMetric` je volána pomocí dvou parametrů typu, vrátí hodnotu metriky související s daným okrajem grafu volání.</span><span class="sxs-lookup"><span data-stu-id="78d6a-113">When `GetMetric` is called with two type parameters it returns the value of the metric associated with a given call graph edge.</span></span> <span data-ttu-id="78d6a-114">V našem příkladu `Primitive.CCNOT` se operace volá v `ApplySampleWithCCNOT` a proto graf volání obsahuje okraje `<Primitive.CCNOT, ApplySampleWithCCNOT>` .</span><span class="sxs-lookup"><span data-stu-id="78d6a-114">In our example operation `Primitive.CCNOT` is called within `ApplySampleWithCCNOT` and therefore the call graph contains the edge `<Primitive.CCNOT, ApplySampleWithCCNOT>`.</span></span> 
-
-<span data-ttu-id="78d6a-115">Pokud chcete získat počet `CNOT` použitých bran, můžeme přidat následující řádek:</span><span class="sxs-lookup"><span data-stu-id="78d6a-115">To get the number of `CNOT` gates used, we can add the following line:</span></span>
+<span data-ttu-id="cd187-117">Pokud chcete načíst počet `CNOT` využitých operací, přidejte následující řádek:</span><span class="sxs-lookup"><span data-stu-id="cd187-117">To retrieve the number of `CNOT` operations used, add the following line:</span></span>
 ```csharp
 double cxCount = sim.GetMetric<Primitive.CCNOT, ApplySampleWithCCNOT>(PrimitiveOperationsGroupsNames.CX);
 ```
 
-<span data-ttu-id="78d6a-116">Aby bylo možné vystavit výstup všech statistik shromažďovaných čítačem brány ve formátu CSV, můžeme použít následující:</span><span class="sxs-lookup"><span data-stu-id="78d6a-116">Finally, to output all the statistics collected by the gate counter in CSV format we can use the following:</span></span>
+<span data-ttu-id="cd187-118">Nakonec můžete výstup všech statistik shromažďovaných pomocí čítače primitivních operací ve formátu CSV pomocí následujících možností:</span><span class="sxs-lookup"><span data-stu-id="cd187-118">Finally, you can output all the statistics collected by the Primitive Operations Counter in CSV format using the following:</span></span>
 ```csharp
 string csvSummary = sim.ToCSV()[MetricsCountersNames.primitiveOperationsCounter];
 ```
 
-## <a name="see-also"></a><span data-ttu-id="78d6a-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="78d6a-117">See also</span></span> ##
+## <a name="see-also"></a><span data-ttu-id="cd187-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd187-119">See also</span></span>
 
-- <span data-ttu-id="78d6a-118">Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) počítačů ve službě.</span><span class="sxs-lookup"><span data-stu-id="78d6a-118">The quantum computer [Trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.</span></span>
+- <span data-ttu-id="cd187-120">Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) pro všechna ta.</span><span class="sxs-lookup"><span data-stu-id="cd187-120">The Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) overview.</span></span>
+- <span data-ttu-id="cd187-121"><xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Reference k rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="cd187-121">The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> API reference.</span></span>
+- <span data-ttu-id="cd187-122"><xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Reference k rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="cd187-122">The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> API reference.</span></span>
+- <span data-ttu-id="cd187-123"><xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.PrimitiveOperationsGroupsNames>Reference k rozhraní API.</span><span class="sxs-lookup"><span data-stu-id="cd187-123">The <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.PrimitiveOperationsGroupsNames> API reference.</span></span>
