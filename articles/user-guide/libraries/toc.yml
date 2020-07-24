@@ -3,6 +3,8 @@
 - name: Standardní knihovny
   topicHref: standard/index.md
   href: standard/toc.yml
+- name: 'Použití dalších knihoven Q #'
+  href: additional-libraries.md
 - name: Kvantová chemická knihovna
   topicHref: chemistry/index.md
   href: chemistry/toc.yml

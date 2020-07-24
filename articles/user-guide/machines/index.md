@@ -1,161 +1,54 @@
 ---
-title: Kvantové simulátory a hostitelské aplikace | Microsoft Docs
-description: Tento článek popisuje, jak ovládat kvantové simulátory z klasického jazyka .NET, obvykle buď C#, nebo Q#.
+title: Kvantové simulátory a programy v Q#
+description: Popisuje kvantové simulátory dostupné jako cílové počítače pro programy v Q#.
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
-ms.date: 12/11/2017
+ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: 14aed75ed0ed192f88699b1c7dbacfae23f74642
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: c81226ba3e50b65cb1012e885866bd6fcc3764d7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273334"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871157"
 ---
-# <a name="quantum-simulators-and-host-applications"></a><span data-ttu-id="b4c21-103">Kvantové simulátory a hostitelské aplikace</span><span class="sxs-lookup"><span data-stu-id="b4c21-103">Quantum simulators and host applications</span></span>
+# <a name="quantum-simulators"></a><span data-ttu-id="720c9-103">Kvantové simulátory</span><span class="sxs-lookup"><span data-stu-id="720c9-103">Quantum simulators</span></span>
 
-## <a name="what-youll-learn"></a><span data-ttu-id="b4c21-104">Co se naučíte</span><span class="sxs-lookup"><span data-stu-id="b4c21-104">What You'll Learn</span></span>
-
-> [!div class="checklist"]
-> * <span data-ttu-id="b4c21-105">Jak se spouštějí kvantové algoritmy</span><span class="sxs-lookup"><span data-stu-id="b4c21-105">How quantum algorithms are executed</span></span>
-> * <span data-ttu-id="b4c21-106">Jaké kvantové simulátory jsou součástí této verze</span><span class="sxs-lookup"><span data-stu-id="b4c21-106">What quantum simulators are included in this release</span></span>
-> * <span data-ttu-id="b4c21-107">Jak napsat ovladač v C# pro váš kvantový algoritmus</span><span class="sxs-lookup"><span data-stu-id="b4c21-107">How to write a C# driver for your quantum algorithm</span></span>
-
-## <a name="the-quantum-development-kit-execution-model"></a><span data-ttu-id="b4c21-108">Spouštěcí model sady Quantum Development Kit</span><span class="sxs-lookup"><span data-stu-id="b4c21-108">The Quantum Development Kit Execution Model</span></span>
-
-<span data-ttu-id="b4c21-109">V článku [Jak napsat kvantový program](xref:microsoft.quantum.write-program) jsme spustili kvantový algoritmus tak, že jsme předali objekt `QuantumSimulator` metodě `Run` třídy algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-109">In [Writing a quantum program](xref:microsoft.quantum.write-program), we executed our quantum algorithm by passing a `QuantumSimulator` object to the algorithm class's `Run` method.</span></span>
-<span data-ttu-id="b4c21-110">Třída `QuantumSimulator` provádí kvantový algoritmus úplnou simulací kvantového stavového vektoru, což je ideální pro spouštění a testování programu `Teleport`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-110">The `QuantumSimulator` class executes the quantum algorithm by fully simulating the quantum state vector, which is perfect for running and testing `Teleport`.</span></span>
-<span data-ttu-id="b4c21-111">Další informace o kvantových stavových vektorech najdete v článku [Průvodce koncepty](xref:microsoft.quantum.concepts.intro).</span><span class="sxs-lookup"><span data-stu-id="b4c21-111">See the [Concepts guide](xref:microsoft.quantum.concepts.intro) for more on quantum state vectors.</span></span>
-
-<span data-ttu-id="b4c21-112">Ke spuštění kvantového algoritmu se dají použít i jiné cílové počítače.</span><span class="sxs-lookup"><span data-stu-id="b4c21-112">Other target machines may be used to run a quantum algorithm.</span></span>
-<span data-ttu-id="b4c21-113">Počítač odpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus.</span><span class="sxs-lookup"><span data-stu-id="b4c21-113">The machine is responsible for providing implementations of quantum primitives for the algorithm.</span></span>
-<span data-ttu-id="b4c21-114">Mezi ně patří primitivní operace, jako je H, CNOT a M (měření), a také nástroje pro správu a sledování qubitů.</span><span class="sxs-lookup"><span data-stu-id="b4c21-114">This includes primitive operations such as H, CNOT, and Measure, as well as qubit management and tracking.</span></span>
-<span data-ttu-id="b4c21-115">Různé třídy kvantových počítačů představují různé modely spuštění pro stejný kvantový algoritmus.</span><span class="sxs-lookup"><span data-stu-id="b4c21-115">Different classes of quantum machines represent different execution models for the same quantum algorithm.</span></span>
-
-<span data-ttu-id="b4c21-116">Každý typ kvantového počítače může zajišťovat odlišnou implementaci těchto primitiv.</span><span class="sxs-lookup"><span data-stu-id="b4c21-116">Each type of quantum machine may provide different implementations of these primitives.</span></span>
-<span data-ttu-id="b4c21-117">Například trasovací simulátor kvantového počítače, zahrnutý ve vývojové sadě, neprovádí vůbec žádnou simulaci.</span><span class="sxs-lookup"><span data-stu-id="b4c21-117">For instance, the quantum computer trace simulator included in the development kit doesn't do any simulation at all.</span></span>
-<span data-ttu-id="b4c21-118">Místo toho sleduje hradla, qubity a další prostředky použité v algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-118">Rather, it tracks gate, qubit, and other resource usage for the algorithm.</span></span>
-
-### <a name="quantum-machines"></a><span data-ttu-id="b4c21-119">Kvantové počítače</span><span class="sxs-lookup"><span data-stu-id="b4c21-119">Quantum Machines</span></span>
-
-<span data-ttu-id="b4c21-120">V budoucnu budeme definovat další třídy kvantových počítačů s podporou jiných typů simulace a s podporou spouštění algoritmů na topologických kvantových počítačích.</span><span class="sxs-lookup"><span data-stu-id="b4c21-120">In the future, we will define additional quantum machine classes to support other types of simulation and to support execution on topological quantum computers.</span></span>
-<span data-ttu-id="b4c21-121">Díky tomu, že umožňujeme neměnnost algoritmů při změnách implementace samotného počítače, usnadňujeme testování a ladění algoritmů v simulaci a následné spouštění na reálném hardwaru s jistotou, že se algoritmus nezměnil.</span><span class="sxs-lookup"><span data-stu-id="b4c21-121">Allowing the algorithm to stay constant while varying the underlying machine implementation makes it easy to test and debug an algorithm in simulation and then run it on real hardware with confidence that the algorithm hasn't changed.</span></span>
-
-### <a name="whats-included-in-this-release"></a><span data-ttu-id="b4c21-122">Co je zahrnuto v této verzi</span><span class="sxs-lookup"><span data-stu-id="b4c21-122">What's Included in this Release</span></span>
-
-<span data-ttu-id="b4c21-123">Tato vydaná verze kvantové vývojové sady zahrnuje několik tříd kvantových počítačů.</span><span class="sxs-lookup"><span data-stu-id="b4c21-123">This release of the quantum developer kit includes several quantum machine classes.</span></span>
-<span data-ttu-id="b4c21-124">Všechny jsou definovány v oboru názvů `Microsoft.Quantum.Simulation.Simulators`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-124">All of them are defined in the `Microsoft.Quantum.Simulation.Simulators` namespace.</span></span>
-
-* <span data-ttu-id="b4c21-125">[Úplný simulátor stavových vektorů](xref:microsoft.quantum.machines.full-state-simulator), třída `QuantumSimulator`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-125">A [full state vector simulator](xref:microsoft.quantum.machines.full-state-simulator), the `QuantumSimulator` class.</span></span>
-* <span data-ttu-id="b4c21-126">[Jednoduchý estimátor prostředků](xref:microsoft.quantum.machines.resources-estimator), třída `ResourcesEstimator`, umožňuje na nejvyšší úrovni analýzu prostředků vyžadovaných ke spuštění kvantového algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-126">A [simple resources estimator](xref:microsoft.quantum.machines.resources-estimator), the `ResourcesEstimator` class, it allows a top level analysis of the resources needed to run a quantum algorithm.</span></span>
-* <span data-ttu-id="b4c21-127">[Trasovací estimátor prostředků](xref:microsoft.quantum.machines.qc-trace-simulator.intro), třída `QCTraceSimulator` umožňuje pokročilejší analýzu vyžadovaných prostředků v rámci celého grafu volání.</span><span class="sxs-lookup"><span data-stu-id="b4c21-127">A [trace-based resource estimator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), the `QCTraceSimulator` class, it allows advanced analysis of resources consumptions for the algorithm's entire call-graph.</span></span>
-* <span data-ttu-id="b4c21-128">[Simulátor Toffoli](xref:microsoft.quantum.machines.toffoli-simulator), třída `ToffoliSimulator`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-128">A [Toffoli simulator](xref:microsoft.quantum.machines.toffoli-simulator), the `ToffoliSimulator` class.</span></span>
-
-## <a name="writing-a-host-application"></a><span data-ttu-id="b4c21-129">Vytvoření hostitelské aplikace</span><span class="sxs-lookup"><span data-stu-id="b4c21-129">Writing a host application</span></span>
-
-<span data-ttu-id="b4c21-130">V článku [Jak napsat kvantový program](xref:microsoft.quantum.write-program) jsme pro náš teleportovací algoritmus napsali jednoduchý ovladač v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="b4c21-130">In [Writing a quantum program](xref:microsoft.quantum.write-program), we wrote a simple C# driver for our teleport algorithm.</span></span> <span data-ttu-id="b4c21-131">Ovladač C# má 4 hlavní úkoly:</span><span class="sxs-lookup"><span data-stu-id="b4c21-131">A C# driver has 4 main purposes:</span></span>
-
-* <span data-ttu-id="b4c21-132">Sestavení cílového počítače</span><span class="sxs-lookup"><span data-stu-id="b4c21-132">Constructing the target machine</span></span>
-* <span data-ttu-id="b4c21-133">Výpočet všech argumentů vyžadovaných pro kvantový algoritmus</span><span class="sxs-lookup"><span data-stu-id="b4c21-133">Computing any arguments required for the quantum algorithm</span></span>
-* <span data-ttu-id="b4c21-134">Spuštění kvantového algoritmu v simulátoru</span><span class="sxs-lookup"><span data-stu-id="b4c21-134">Running the quantum algorithm using the simulator</span></span>
-* <span data-ttu-id="b4c21-135">Zpracování výsledku operace</span><span class="sxs-lookup"><span data-stu-id="b4c21-135">Processing the result of the operation</span></span>
-
-<span data-ttu-id="b4c21-136">Teď se podíváme na každý krok podrobněji.</span><span class="sxs-lookup"><span data-stu-id="b4c21-136">Here we'll discuss each step in more detail.</span></span>
-
-### <a name="constructing-the-target-machine"></a><span data-ttu-id="b4c21-137">Sestavení cílového počítače</span><span class="sxs-lookup"><span data-stu-id="b4c21-137">Constructing the Target Machine</span></span>
-
-<span data-ttu-id="b4c21-138">Kvantové počítače jsou instancemi normálních tříd .NET, takže jsou vytvořeny vyvoláním jejich konstruktoru stejně jako u jakékoli jiné třídy .NET.</span><span class="sxs-lookup"><span data-stu-id="b4c21-138">Quantum machines are instances of normal .NET classes, so they are created by invoking their constructor, just like any .NET class.</span></span>
-<span data-ttu-id="b4c21-139">Některé simulátory, včetně `QuantumSimulator`, implementují rozhraní .NET <xref:System.IDisposable?displayProperty=nameWithType>, a proto je třeba je zabalit do příkazu C# `using`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-139">Some simulators, including the `QuantumSimulator`, implement the .NET <xref:System.IDisposable?displayProperty=nameWithType> interface, and so should be wrapped in a C# `using` statement.</span></span>
-
-### <a name="computing-arguments-for-the-algorithm"></a><span data-ttu-id="b4c21-140">Výpočet argumentů pro algoritmus</span><span class="sxs-lookup"><span data-stu-id="b4c21-140">Computing Arguments for the Algorithm</span></span>
-
-<span data-ttu-id="b4c21-141">V našem příkladu `Teleport` jsme vypočítali některé poměrně umělé argumenty, které předáme našemu kvantovému algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-141">In our `Teleport` example, we computed some relatively artificial arguments to pass to our quantum algorithm.</span></span>
-<span data-ttu-id="b4c21-142">Častěji ale kvantový algoritmus vyžaduje mnoho vstupních dat a je jednodušší poskytnout mu je z klasického ovladače.</span><span class="sxs-lookup"><span data-stu-id="b4c21-142">More typically, however, there is significant data required by the quantum algorithm, and it is easiest to provide it from the classical driver.</span></span>
-
-<span data-ttu-id="b4c21-143">Například u chemických simulací vyžaduje kvantový algoritmus velké tabulky integrálů molekulárních orbitálních interakcí.</span><span class="sxs-lookup"><span data-stu-id="b4c21-143">For instance, when doing chemical simulations, the quantum algorithm requires a large table of molecular orbital interaction integrals.</span></span>
-<span data-ttu-id="b4c21-144">Obecně se načítají ze souboru, který je k dispozici při spuštění algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-144">Generally these are read in from a file that is provided when running the algorithm.</span></span>
-<span data-ttu-id="b4c21-145">Protože jazyk Q# nemá mechanismy pro přístup k systému souborů, je shromáždění takovýchto dat a jejich předání metodě `Run` kvantového algoritmu úlohou pro klasický ovladač.</span><span class="sxs-lookup"><span data-stu-id="b4c21-145">Since Q# does not have a mechanism for accessing the file system, this sort of data is best collected by the classical driver and then passed to the quantum algorithm's `Run` method.</span></span>
-
-<span data-ttu-id="b4c21-146">Další případ, kdy klasický ovladač hraje klíčovou roli, je u variačních metod.</span><span class="sxs-lookup"><span data-stu-id="b4c21-146">Another case where the classical driver plays a key role is in variational methods.</span></span>
-<span data-ttu-id="b4c21-147">V této třídě algoritmů se kvantový stav připravuje na základě klasických parametrů, a teprve tento stav se pak použije k výpočtu požadované výsledné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="b4c21-147">In this class of algorithms, a quantum state is prepared based on some classical parameters, and that state is used to compute some value of interest.</span></span>
-<span data-ttu-id="b4c21-148">Parametry se pak upraví na základě určitého gradientního algoritmu nebo strojového učení a kvantový výpočet se spustí znovu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-148">The parameters are adjusted based on some type of hill climbing or machine learning algorithm and the quantum algorithm run again.</span></span>
-<span data-ttu-id="b4c21-149">V takových případech je nejlepší implementovat samotný gradientní algoritmus čistě klasicky a volat ho z klasického ovladače. Výsledky gradientního algoritmu se pak předají k dalšímu výpočtu kvantovému algoritmu.</span><span class="sxs-lookup"><span data-stu-id="b4c21-149">For such algorithms, the hill climbing algorithm itself is best implemented as a purely classical function that is called by the classical driver; the results of the hill climbing are then passed to the next execution of the quantum algorithm.</span></span>
-
-### <a name="running-the-quantum-algorithm"></a><span data-ttu-id="b4c21-150">Spuštění kvantového algoritmu</span><span class="sxs-lookup"><span data-stu-id="b4c21-150">Running the Quantum Algorithm</span></span>
-
-<span data-ttu-id="b4c21-151">Tato část je obecně velmi přímočará.</span><span class="sxs-lookup"><span data-stu-id="b4c21-151">This part is generally very straightforward.</span></span>
-<span data-ttu-id="b4c21-152">Každá operace Q# se zkompiluje do třídy, která poskytuje statickou metodu `Run`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-152">Each Q# operation is compiled into a class that provides a static `Run` method.</span></span>
-<span data-ttu-id="b4c21-153">Argumenty se této metodě předávají jako zploštěná řazená kolekce argumentů samotné operace, plus dodatečný první argument, který specifikuje požadovaný simulátor.</span><span class="sxs-lookup"><span data-stu-id="b4c21-153">The arguments to this method are given by the flattened argument tuple of the operation itself, plus an additional first argument which is the simulator to execute with.</span></span> <span data-ttu-id="b4c21-154">Pro operaci, která očekává pojmenovanou řazenou kolekci členů typu `(a: String, (b: Double, c: Double))` bude mít její zploštěný protějšek typ `(String a, Double b, Double c)`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-154">For an operation that expects the named tuple of type `(a: String, (b: Double, c: Double))` its flattened counterpart is of type `(String a, Double b, Double c)`.</span></span>
+<span data-ttu-id="720c9-104">Kvantové simulátory jsou softwarové programy spouštěné na klasických počítačích. Fungují jako *cílové počítače* pro programy v Q# a umožňují spouštět a testovat kvantové programy v prostředí, které předpovídá, jak budou qubity bude reagovat na různé operace.</span><span class="sxs-lookup"><span data-stu-id="720c9-104">Quantum simulators are software programs that run on classical computers and act as the *target machine* for a Q# program, making it possible to run and test quantum programs in an environment that predicts how qubits will react to different operations.</span></span> <span data-ttu-id="720c9-105">V tomto článku se dozvíte, které kvantové simulátory jsou součástí sady Quantum Development Kit (QDK), a seznámíte se s různými způsoby předání programů v Q# simulátorům, například prostřednictvím příkazového řádku nebo pomocí kódu ovladače napsaného v klasickém jazyce.</span><span class="sxs-lookup"><span data-stu-id="720c9-105">This article describes which quantum simulators are included with the Quantum Development Kit (QDK), and different ways that you can pass a Q# program to the quantum simulators, for example, via the command line or by using driver code written in a classical language.</span></span>  
 
 
-<span data-ttu-id="b4c21-155">Při předávání argumentů metodě `Run` je třeba brát v úvahu určité detaily:</span><span class="sxs-lookup"><span data-stu-id="b4c21-155">There are some subtleties when passing arguments to a `Run` method:</span></span>
 
-* <span data-ttu-id="b4c21-156">Pole musí být vždy zabalena v objektu `Microsoft.Quantum.Simulation.Core.QArray<T>`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-156">Arrays must be wrapped in a `Microsoft.Quantum.Simulation.Core.QArray<T>` object.</span></span>
-    <span data-ttu-id="b4c21-157">Třída `QArray` má konstruktor, kterému je možné předat jakoukoli uspořádanou kolekci vhodných objektů (`IEnumerable<T>`).</span><span class="sxs-lookup"><span data-stu-id="b4c21-157">A `QArray` class has a constructor that can take any ordered collection (`IEnumerable<T>`) of appropriate objects.</span></span>
-* <span data-ttu-id="b4c21-158">Prázdná řazená kolekce členů, `()` v jazyce Q#, je v C# reprezentována výrazem `QVoid.Instance`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-158">The empty tuple, `()` in Q#, is represented by `QVoid.Instance` in C#.</span></span>
-* <span data-ttu-id="b4c21-159">Neprázdné řazené kolekce členů jsou reprezentovány jako .NET instance `ValueTuple`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-159">Non-empty tuples are represented as .NET `ValueTuple` instances.</span></span>
-* <span data-ttu-id="b4c21-160">Uživatelem definované typy se v Q# předávají jako jejich základní typy.</span><span class="sxs-lookup"><span data-stu-id="b4c21-160">Q# user-defined types are passed as their base type.</span></span>
-* <span data-ttu-id="b4c21-161">Chcete-li metodě `Run` předat operaci nebo funkci, musíte získat instanci třídy operace nebo funkce pomocí metody `Get<>` simulátoru.</span><span class="sxs-lookup"><span data-stu-id="b4c21-161">To pass an operation or a function to a `Run` method, you have to obtain an   instance of the operation's or function's class, using the simulator's `Get<>` method.</span></span>
+## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a><span data-ttu-id="720c9-106">Kvantové simulátory sady Quantum Development Kit (QDK)</span><span class="sxs-lookup"><span data-stu-id="720c9-106">The Quantum Development Kit (QDK) quantum simulators</span></span>
 
-### <a name="processing-the-results"></a><span data-ttu-id="b4c21-162">Zpracování výsledků</span><span class="sxs-lookup"><span data-stu-id="b4c21-162">Processing the Results</span></span>
-
-<span data-ttu-id="b4c21-163">Výsledek kvantového výpočtu je vrácen v návratové hodnotě metody `Run`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-163">The results of the quantum algorithm are returned from the `Run` method.</span></span>
-<span data-ttu-id="b4c21-164">Metoda `Run` se spouští asynchronně a proto vrací instanci třídy <xref:System.Threading.Tasks.Task`1>.</span><span class="sxs-lookup"><span data-stu-id="b4c21-164">The `Run` method executes asynchronously thus it returns an instance of <xref:System.Threading.Tasks.Task`1>.</span></span>
-<span data-ttu-id="b4c21-165">Samotné výsledky operace je možné získat několika způsoby.</span><span class="sxs-lookup"><span data-stu-id="b4c21-165">There are multiple ways to get the actual operation's results.</span></span> <span data-ttu-id="b4c21-166">Nejjednodušší je použít z třídy `Task` vlastnost [`Result`](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result):</span><span class="sxs-lookup"><span data-stu-id="b4c21-166">The simplest is by using the `Task`'s [`Result` property](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result):</span></span>
-
-```csharp
-    var res = BellTest.Run(sim, 1000, initial).Result;
-```
-<span data-ttu-id="b4c21-167">ale fungovat budou i jiné techniky, třeba použití metody [`Wait`](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.wait) nebo klíčového slova C# [`await`](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await).</span><span class="sxs-lookup"><span data-stu-id="b4c21-167">but other techniques, like using the [`Wait` method](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.wait) or C# [`await` keyword](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await) will also work.</span></span>
-
-<span data-ttu-id="b4c21-168">Stejně jako u argumentů jsou v Q# řazené kolekce členů reprezentovány jako instance `ValueTuple` a pole jako instance `QArray`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-168">As with arguments, Q# tuples are represented as `ValueTuple` instances and Q# arrays are represented as `QArray` instances.</span></span>
-<span data-ttu-id="b4c21-169">Uživatelem definované typy se vracejí jako jejich základní typy.</span><span class="sxs-lookup"><span data-stu-id="b4c21-169">User-defined types are returned as their base types.</span></span>
-<span data-ttu-id="b4c21-170">Prázdná řazená kolekce členů `()` se vrací jako instance třídy `QVoid`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-170">The empty tuple, `()`, is returned as an instance of the `QVoid` class.</span></span>
-
-<span data-ttu-id="b4c21-171">Mnoho kvantových algoritmů vyžaduje k získání smysluplné odpovědi podstatné zpracování výsledků.</span><span class="sxs-lookup"><span data-stu-id="b4c21-171">Many quantum algorithms require substantial post-processing to derive useful answers.</span></span>
-<span data-ttu-id="b4c21-172">Například kvantová část Shorova algoritmu je jen začátkem náročného výpočtu, který najde samotný rozklad čísla.</span><span class="sxs-lookup"><span data-stu-id="b4c21-172">For instance, the quantum part of Shor's algorithm is just the beginning of a computation that finds the factors of a number.</span></span>
-
-<span data-ttu-id="b4c21-173">Ve většině případů je jednodušší a snazší tento typ výpočtů provádět v klasickém ovladači.</span><span class="sxs-lookup"><span data-stu-id="b4c21-173">In most cases, it is simplest and easiest to do this sort of post-processing in the classical driver.</span></span>
-<span data-ttu-id="b4c21-174">Pouze klasický ovladač může tyto výsledky zobrazit uživateli a zapsat je na disk.</span><span class="sxs-lookup"><span data-stu-id="b4c21-174">Only the classical driver can report results to the user or write them to disk.</span></span>
-<span data-ttu-id="b4c21-175">Klasický ovladač bude mít také přístup k analytickým knihovnám a dalším matematickým funkcím, které nejsou v Q# dostupné.</span><span class="sxs-lookup"><span data-stu-id="b4c21-175">The classical driver will have access to analytical libraries and other mathematical functions that are not exposed in Q#.</span></span>
+<span data-ttu-id="720c9-107">Kvantový simulátor zodpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus.</span><span class="sxs-lookup"><span data-stu-id="720c9-107">The quantum simulator is responsible for providing implementations of quantum primitives for an algorithm.</span></span> <span data-ttu-id="720c9-108">Mezi ně patří primitivní operace, jako je `H`, `CNOT` a `Measure`, a také nástroje pro správu a sledování qubitů.</span><span class="sxs-lookup"><span data-stu-id="720c9-108">This includes primitive operations such as `H`, `CNOT`, and `Measure`, as well as qubit management and tracking.</span></span> <span data-ttu-id="720c9-109">Sady QDK obsahuje různé třídy kvantových simulátorů reprezentujících různé modely spouštění pro stejný kvantový algoritmus.</span><span class="sxs-lookup"><span data-stu-id="720c9-109">The QDK includes different classes of quantum simulators representing different execution models for the same quantum algorithm.</span></span> 
 
 
-## <a name="failures"></a><span data-ttu-id="b4c21-176">Selhání</span><span class="sxs-lookup"><span data-stu-id="b4c21-176">Failures</span></span>
+<span data-ttu-id="720c9-110">Každý typ kvantového simulátoru může zajišťovat odlišnou implementaci těchto primitiv.</span><span class="sxs-lookup"><span data-stu-id="720c9-110">Each type of quantum simulator can provide different implementations of these primitives.</span></span> <span data-ttu-id="720c9-111">Například [simulátor celkového stavu](xref:microsoft.quantum.machines.full-state-simulator) spouští kvantový algoritmus kompletní simulací [kvantového stavového vektoru](xref:microsoft.quantum.glossary#quantum-state), zatímco [simulátor trasování kvantového počítače](xref:microsoft.quantum.machines.qc-trace-simulator.intro) vůbec nebere aktuální kvantový stav v úvahu.</span><span class="sxs-lookup"><span data-stu-id="720c9-111">For example, the [full state simulator](xref:microsoft.quantum.machines.full-state-simulator) runs the quantum algorithm by fully simulating the [quantum state vector](xref:microsoft.quantum.glossary#quantum-state), whereas the [quantum computer trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) doesn't consider the actual quantum state at all.</span></span> <span data-ttu-id="720c9-112">Místo toho sleduje hradla, qubity a další prostředky použité v algoritmu.</span><span class="sxs-lookup"><span data-stu-id="720c9-112">Rather, it tracks gate, qubit, and other resource usage for the algorithm.</span></span>
 
-<span data-ttu-id="b4c21-177">Když se při provádění operace narazí na příkaz `fail` jazyka Q#, vyvolá se výjimka `ExecutionFailException`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-177">When the Q# `fail` statement is reached during the execution of an operation, an `ExecutionFailException` is thrown.</span></span>
+### <a name="quantum-machine-classes"></a><span data-ttu-id="720c9-113">Třídy kvantových počítačů</span><span class="sxs-lookup"><span data-stu-id="720c9-113">Quantum machine classes</span></span>
 
-<span data-ttu-id="b4c21-178">Vzhledem k použití třídy `System.Task` v metodě `Run` se výjimka vyvolaná v důsledku příkazu `fail` zabalí do objektu `System.AggregateException`.</span><span class="sxs-lookup"><span data-stu-id="b4c21-178">Due to the use of `System.Task` in the `Run` method, the exception thrown as a result of a `fail` statement will be wrapped into a `System.AggregateException`.</span></span>
-<span data-ttu-id="b4c21-179">Chcete-li zjistit skutečnou příčinu selhání, je třeba iterovat přes  
-`InnerExceptions` objektu `AggregateException`, například:</span><span class="sxs-lookup"><span data-stu-id="b4c21-179">To find the actual reason for the failure, you need to iterate into the `AggregateException` 
-`InnerExceptions`, for example:</span></span>
+<span data-ttu-id="720c9-114">V budoucnu bude sady QDK definovat další třídy kvantových počítačů s podporou jiných typů simulace a s podporou spouštění algoritmů na kvantovém hardwaru.</span><span class="sxs-lookup"><span data-stu-id="720c9-114">In the future, the QDK will define additional quantum machine classes to support other types of simulation and to support execution on quantum hardware.</span></span> <span data-ttu-id="720c9-115">Díky tomu, že umožňujeme neměnnost algoritmů při změnách implementace samotného počítače, usnadňujeme testování a ladění algoritmů v simulaci a následné spouštění na reálném hardwaru s jistotou, že se algoritmus nezměnil.</span><span class="sxs-lookup"><span data-stu-id="720c9-115">Allowing the algorithm to stay constant while varying the underlying machine implementation makes it easy to test and debug an algorithm in simulation and then run it on real hardware with confidence that the algorithm hasn't changed.</span></span>
 
-```csharp
+<span data-ttu-id="720c9-116">Sada QDK zahrnuje několik tříd kvantových počítačů, které jsou definované v oboru názvů `Microsoft.Quantum.Simulation.Simulators`.</span><span class="sxs-lookup"><span data-stu-id="720c9-116">The QDK includes several quantum machine classes, all defined in the `Microsoft.Quantum.Simulation.Simulators` namespace.</span></span>
 
-            try
-            {
-                using(var sim = new QuantumSimulator())
-                {
-                    /// call your operations here...
-                }
-            }
-            catch (AggregateException e)
-            {
-                // Unwrap AggregateException to get the message from Q# fail statement.
-                // Go through all inner exceptions.
-                foreach (Exception inner in e.InnerExceptions)
-                {
-                    // If the exception of type ExecutionFailException
-                    if (inner is ExecutionFailException failException)
-                    {
-                        // Print the message it contains
-                        Console.WriteLine($" {failException.Message}");
-                    }
-                }
-            }
-```
+|<span data-ttu-id="720c9-117">Simulátor</span><span class="sxs-lookup"><span data-stu-id="720c9-117">Simulator</span></span> |<span data-ttu-id="720c9-118">Třída</span><span class="sxs-lookup"><span data-stu-id="720c9-118">Class</span></span>|<span data-ttu-id="720c9-119">Popis</span><span class="sxs-lookup"><span data-stu-id="720c9-119">Description</span></span>|
+|-----|------|---|
+|[<span data-ttu-id="720c9-120">Simulátor celkového stavu</span><span class="sxs-lookup"><span data-stu-id="720c9-120">Full state simulator</span></span>](xref:microsoft.quantum.machines.full-state-simulator)| `QuantumSimulator` | <span data-ttu-id="720c9-121">Spouští a ladí kvantové algoritmy a je omezený na zhruba 30 qubitů.</span><span class="sxs-lookup"><span data-stu-id="720c9-121">Runs and debugs quantum algorithms, and is limited to about 30 qubits.</span></span> |
+|[<span data-ttu-id="720c9-122">Jednoduchý estimátor prostředků</span><span class="sxs-lookup"><span data-stu-id="720c9-122">Simple resources estimator</span></span>](xref:microsoft.quantum.machines.resources-estimator)| `ResourcesEstimator` | <span data-ttu-id="720c9-123">Provádí nejvyšší úroveň analýz prostředků vyžadovaných ke spuštění kvantového algoritmu a podporuje tisíce qubitů.</span><span class="sxs-lookup"><span data-stu-id="720c9-123">Performs a top level analysis of the resources needed to run a quantum algorithm, and supports thousands of qubits.</span></span>|
+|[<span data-ttu-id="720c9-124">Trasovací estimátor prostředků</span><span class="sxs-lookup"><span data-stu-id="720c9-124">Trace-based resource estimator</span></span>](xref:microsoft.quantum.machines.qc-trace-simulator.intro)|  `QCTraceSimulator` |<span data-ttu-id="720c9-125">Spouští pokročilejší analýzy vyžadovaných prostředků v rámci celého grafu volání a podporuje tisíce qubitů.</span><span class="sxs-lookup"><span data-stu-id="720c9-125">Runs advanced analysis of resources consumptions for the algorithm's entire call-graph, and supports thousands of qubits.</span></span>|
+|[<span data-ttu-id="720c9-126">Simulátor Toffoli</span><span class="sxs-lookup"><span data-stu-id="720c9-126">Toffoli simulator</span></span>](xref:microsoft.quantum.machines.toffoli-simulator)| `ToffoliSimulator` |<span data-ttu-id="720c9-127">Simuluje kvantové algoritmy, které jsou omezené na kvantové operace `X` a `CNOT` vícenásobně řízené operace `X` a podporuje miliony qubitů.</span><span class="sxs-lookup"><span data-stu-id="720c9-127">Simulates quantum algorithms that are limited to `X`, `CNOT`, and multi-controlled `X` quantum operations, and supports million of qubits.</span></span> |
 
-## <a name="other-classical-languages"></a><span data-ttu-id="b4c21-180">Další klasické jazyky</span><span class="sxs-lookup"><span data-stu-id="b4c21-180">Other Classical Languages</span></span>
+## <a name="invoking-the-quantum-simulator"></a><span data-ttu-id="720c9-128">Vyvolání kvantového simulátoru</span><span class="sxs-lookup"><span data-stu-id="720c9-128">Invoking the quantum simulator</span></span>
 
-<span data-ttu-id="b4c21-181">Uvedené příklady jsou sice v C#, F# a Pythonu, ale Quantum Development Kit podporuje psaní klasických hostitelů i v jiných jazycích.</span><span class="sxs-lookup"><span data-stu-id="b4c21-181">While the samples we have provided are in C#, F#, and Python, the Quantum Development Kit also supports writing classical host programs in other languages.</span></span>
-<span data-ttu-id="b4c21-182">Například když budete chtít napsat hostitelský program ve Visual Basicu, [není to žádný problém](https://github.com/tcNickolas/MiscQSharp/blob/master/Quantum_VBNet/README.md#using-q-with-visual-basic-net).</span><span class="sxs-lookup"><span data-stu-id="b4c21-182">For example, if you want to write a host program in Visual Basic, [it should work just fine](https://github.com/tcNickolas/MiscQSharp/blob/master/Quantum_VBNet/README.md#using-q-with-visual-basic-net).</span></span>
+<span data-ttu-id="720c9-129">V tématu [Způsoby spuštění programu Q#](xref:microsoft.quantum.guide.host-programs) jsou popsané tři způsoby předávání kódu Q# do kvantového simulátoru:</span><span class="sxs-lookup"><span data-stu-id="720c9-129">In [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs), three ways of passing the Q# code to the quantum simulator are demonstrated:</span></span> 
+
+* <span data-ttu-id="720c9-130">Použití příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="720c9-130">Using the command line</span></span>
+* <span data-ttu-id="720c9-131">Použití hostitelského programu v Pythonu</span><span class="sxs-lookup"><span data-stu-id="720c9-131">Using a Python host program</span></span>
+* <span data-ttu-id="720c9-132">Použití hostitelského programu v C#</span><span class="sxs-lookup"><span data-stu-id="720c9-132">Using a C# host program</span></span>
+
+<span data-ttu-id="720c9-133">Kvantové počítače jsou instancemi normálních tříd .NET, takže jsou vytvořeny vyvoláním jejich konstruktoru stejně jako u jakékoli jiné třídy .NET.</span><span class="sxs-lookup"><span data-stu-id="720c9-133">Quantum machines are instances of normal .NET classes, so they are created by invoking their constructor, just like any .NET class.</span></span> <span data-ttu-id="720c9-134">Jak to uděláte, závisí na způsobu spuštění programu Q#.</span><span class="sxs-lookup"><span data-stu-id="720c9-134">How you do this depends on how you run the Q# program.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="720c9-135">Další kroky</span><span class="sxs-lookup"><span data-stu-id="720c9-135">Next steps</span></span>
+
+* <span data-ttu-id="720c9-136">Podrobné informace o vyvolání cílových počítačů pro programy Q# v různých prostředích najdete v tématu [Způsoby spuštění programu Q#](xref:microsoft.quantum.guide.host-programs).</span><span class="sxs-lookup"><span data-stu-id="720c9-136">For details about how to invoke target machines for Q# programs in different environments, see [Ways to run a Q# program](xref:microsoft.quantum.guide.host-programs).</span></span>
