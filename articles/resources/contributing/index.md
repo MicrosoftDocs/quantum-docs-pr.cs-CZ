@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: cf913a09395f0694a51645ec8f91171e5b1555c3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 108a50302422e5ae41e14b30ef22169370c2a35a
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273310"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871412"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit
 
@@ -61,10 +61,9 @@ Každý z těchto různých kousků je umístěn v jiném úložišti, takže je
 > [!NOTE]
 > V současné době bohužel nemůžeme přijímat příspěvky pro kód a dokumentaci v úložišti [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC), budeme však velmi vděční za zprávy o chybách.
 
-Existuje ještě několik dalších, specializovanějších úložišť, která se zaměřují na různé události nebo na doplňkové funkce související se sadou Quantum Development Kit.
+Existuje ještě několik dalších, specializovanějších úložišť, která se zaměřují na doplňkové funkce související se sadou Quantum Development Kit.
 
 - [**msr-quarc/qsharp.sty:** ](https://github.com/msr-quarc/qsharp.sty) Podpora formátování LaTeX pro syntaxi jazyka Q#.
-- [**msr-quarc/intern-workshop-2019:** ](https://github.com/msr-quarc/intern-workshop-2019) Poznámkový blok IQ# pro kurz k Deutschovu-Jozsovu algoritmu na workshopu pro stážisty v roce 2019.
 
 ## <a name="next-steps"></a>Další kroky
 

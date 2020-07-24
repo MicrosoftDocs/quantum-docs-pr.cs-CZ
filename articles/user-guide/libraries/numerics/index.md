@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.intro
-ms.openlocfilehash: efd1a712616534ac281433fc008f0983271881d7
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9552f3683e1df8cb10d19d0b3f85223df056f83d
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273399"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871344"
 ---
 # <a name="introduction-to-the-quantum-numerics-library"></a>Úvod do kvantové numerické knihovny
 
@@ -33,9 +33,10 @@ A proto sada Quantum Development Kit poskytuje podporu pro širokou řadu numeri
 
 Kromě zatím zmíněné celočíselné aritmetiky poskytuje numerická knihovna také
 
- - Funkce celého čísla se znaménkem (bez znaménka) (násobení, druhá mocnina, dělení se zbytkem, inverze) s jedním nebo dvěma kvantovými celými čísly jako vstupem
- - Funkce s pevnou desetinnou čárkou (sčítání, odečítání, násobení, druhá mocnina, 1/x, vyhodnocení polynomů) s jedním nebo dvěma kvantovými čísly s pevnou desetinnou čárkou jako vstupem
+- Funkce celého čísla se znaménkem (bez znaménka) (násobení, druhá mocnina, dělení se zbytkem, inverze) s jedním nebo dvěma kvantovými celými čísly jako vstupem
+- Funkce s pevnou desetinnou čárkou (sčítání, odečítání, násobení, druhá mocnina, 1/x, vyhodnocení polynomů) s jedním nebo dvěma kvantovými čísly s pevnou desetinnou čárkou jako vstupem
 
 ## <a name="getting-started"></a>Začínáme
 
-Pokud chcete začít pracovat s numerickou knihovnou, přečtěte si [průvodce instalací](xref:microsoft.quantum.numerics.installation) a další informace týkající se [používání numerické knihovny](xref:microsoft.quantum.numerics.usage).
+> [!div class="nextstepaction"]
+> [Další informace o použití numerické knihovny](xref:microsoft.quantum.numerics.usage)

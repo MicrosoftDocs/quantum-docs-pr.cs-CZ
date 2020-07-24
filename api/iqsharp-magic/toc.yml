@@ -32,6 +32,8 @@
   name: Příkaz magic %kata
 - href: lsmagic.md
   name: Příkaz magic %lsmagic
+- href: lsopen.md
+  name: Příkaz magic %lsopen
 - href: package.md
   name: Příkaz magic %package
 - href: performance.md

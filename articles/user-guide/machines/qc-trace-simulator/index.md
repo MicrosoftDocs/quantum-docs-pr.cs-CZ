@@ -1,53 +1,32 @@
 ---
-title: Simulátor trasování kvantového počítače
-description: Naučte se používat simulátor kvantového trasování od Microsoftu k ladění klasického kódu a odhadu požadavků na prostředky v kvantovém programu.
+title: Simulátor kvantového trasování – Quantum Development Kit
+description: Naučte se používat simulátor kvantového trasování od Microsoftu k ladění klasického kódu a odhadu požadavků na prostředky v programu Q#.
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
-ms.openlocfilehash: 4cec688da35951271d87396d9b6a8fed744defc6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: c01f01973ea08153cbfa35d87a588a4eae46f1b7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273325"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871106"
 ---
-# <a name="quantum-trace-simulator"></a>Simulátor kvantového trasování
+# <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Simulátor kvantového trasování sady Quantum Development Kit (QDK)
 
-Simulátor trasování kvantového počítače od Microsoftu spouští kvantový program, aniž by ve skutečnosti simuloval stav kvantového počítače.  Simulátor trasování proto může spouštět kvantové programy, které používají tisíce qubitů.  To je užitečné ze dvou hlavních důvodů: 
+Třída <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> v QDK spouští kvantové programy, aniž by simulovala stav kvantového počítače. Z tohoto důvodu může simulátor kvantového trasování spouštět kvantové programy, které používají tisíce qubitů.  To je užitečné ze dvou hlavních důvodů: 
 
 * Ladění klasického kódu, který je součástí kvantového programu. 
-* Odhad prostředků potřebných ke spuštění dané instance kvantového programu v kvantovém počítači.
+* Odhad prostředků potřebných ke spuštění dané instance kvantového programu v kvantovém počítači. [Estimátor prostředků](xref:microsoft.quantum.machines.resources-estimator), který poskytuje omezenější sadu metrik, je ve skutečnosti založený na simulátoru trasování.
 
-Simulátor trasování je závislý na dalších informacích poskytovaných uživatelem, když je třeba provést měření. Podrobnější informace najdete v části [Určování pravděpodobnosti výsledků měření](#providing-the-probability-of-measurement-outcomes). 
+## <a name="invoking-the-quantum-trace-simulator"></a>Vyvolání simulátoru kvantového trasování
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
+Simulátor kvantového trasování můžete využít ke spuštění libovolné operace Q#.
 
-V kvantových algoritmech se provádějí dva druhy měření. První druh má doplňující roli tam, kde uživatel zpravidla zná pravděpodobnost výsledků. V takovém případě může uživatel tuto znalost vyjádřit zapsáním operace <xref:microsoft.quantum.intrinsic.assertprob> z oboru názvů <xref:microsoft.quantum.intrinsic>. Ilustruje to následující příklad:
+Stejně jako u jiných cílových počítačů nejdřív vytvoříte instanci třídy `QCTraceSimulator` a předáte ji jako první parametr metody `Run` příslušné operace.
 
-```qsharp
-operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
-    using (qubit = Qubit()) {
-        H(qubit);
-        CNOT(qubit, target);
-        CNOT(source, qubit);
-        H(source);
-
-        AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-
-        if (M(source) == One)  { Z(target); X(source); }
-        if (M(q) == One) { X(target); X(q); }
-    }
-}
-```
-
-Když simulátor trasování provede operaci `AssertProb`, zaznamená, že pro měření `PauliZ` v umístění `source` a `q` by měl být uveden výstup `Zero` s pravděpodobností 0,5. Když simulátor později provede akci `M`, najde zaznamenané hodnoty pravděpodobnosti výstupu a akce `M` vrátí hodnotu `Zero` nebo `One` s pravděpodobností 0,5. Když je stejný kód spuštěn v simulátoru, který sleduje kvantový stav, tento simulátor ověří správnost pravděpodobností v rámci operace `AssertProb`.
-
-## <a name="running-your-program-with-the-quantum-computer-trace-simulator"></a>Spuštění programu v simulátoru trasování kvantového počítače 
-
-Simulátor trasování kvantového počítače lze vnímat pouze jako další cílový počítač. Program ovladače C# pro jeho použití je velmi podobný programu pro jakýkoli jiný kvantový simulátor. 
+Na rozdíl od třídy `QuantumSimulator` ale třída `QCTraceSimulator` neimplementuje rozhraní <xref:System.IDisposable>, a proto ji není nutné uzavírat příkazem `using`.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -69,18 +48,53 @@ namespace Quantum.MyProgram
 }
 ```
 
-Mějte na paměti, že pokud alespoň jedno měření nemá anotaci vytvořenou operací `AssertProb`, simulátor vygeneruje výjimku `UnconstrainedMeasurementException` z oboru názvů `Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators`. Podrobnější informace najdete v dokumentaci k rozhraní API pro výjimku [UnconstrainedMeasurementException](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.UnconstrainedMeasurementException).
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
 
-Kromě spouštění kvantových programů je simulátor trasování vybaven pěti komponentami pro zjišťování chyb v programech a zjišťování odhadů prostředků kvantových programů: 
+Vzhledem k tomu, že simulátor kvantového trasování nesimuluje skutečný kvantový stav, není možné vypočítat pravděpodobnost výsledků měření v rámci operace. 
 
-* [Kontrola odlišných vstupů](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs)
-* [Kontrola použití neplatných qubitů](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)
-* [Čítač primitivních operací](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)
-* [Čítač hloubky okruhu](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)
-* [Čítač šířky okruhu](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)
+Proto pokud operace obsahuje měření, je nutné explicitně poskytnout tyto pravděpodobnosti pomocí operace <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> z oboru názvů <xref:microsoft.quantum.diagnostics>. Ilustruje to následující příklad:
 
-Každou z těchto komponent je možné povolit nastavením příslušných příznaků v rámci třídy `QCTraceSimulatorConfiguration`. Podrobnější informace o používání jednotlivých komponent jsou k dispozici v příslušných referenčních souborech. Konkrétní podrobnosti najdete v dokumentaci k rozhraní API pro třídu [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+```qsharp
+operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
+    using (qubit = Qubit()) {
+        H(qubit);
+        CNOT(qubit, target);
+        CNOT(source, qubit);
+        H(source);
+
+        AssertMeasurementProbability([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertMeasurementProbability([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+
+        if (M(source) == One)  { Z(target); X(source); }
+        if (M(q) == One) { X(target); X(q); }
+    }
+}
+```
+
+Když simulátor kvantového trasování narazí na operaci `AssertMeasurementProbability`, zaznamená, že pro měření `PauliZ` v umístění `source` a `q` by měl být uveden výstup `Zero` s pravděpodobností **0,5**. Když později spustí operaci `M`, najde zaznamenané hodnoty pravděpodobnosti výsledků a `M` vrátí `Zero` nebo `One`, a to s pravděpodobností **0,5**. Pokud stejný kód běží v simulátoru, který sleduje kvantový stav, tento simulátor ověří správnost pravděpodobností v rámci operace `AssertMeasurementProbability`.
+
+Mějte na paměti, že pokud alespoň jedna operace měření nemá anotaci vytvořenou pomocí `AssertMeasurementProbability`, simulátor vygeneruje [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.unconstrainedmeasurementexception).
+
+## <a name="quantum-trace-simulator-tools"></a>Nástroje simulátoru kvantového trasování
+
+Sada QDK zahrnuje pět nástrojů, které můžete použít se simulátorem kvantového trasování k detekci chyb ve vašich programech a provádění odhadů prostředků kvantových programů: 
+
+|Nástroj | Popis |
+|-----| -----|
+|[Kontrola odlišných vstupů](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Kontroluje možné konflikty se sdílenými qubity. |
+|[Kontrola použití neplatných qubitů](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Kontroluje, jestli program používá operaci na qubit, který už je vydaný. |
+|[Čítač primitivních operací](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Zjišťuje počet primitivních spuštění použitých všemi operacemi vyvolanými kvantovým programem.  |
+|[Čítač hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Shromažďuje počty, které reprezentují dolní hranici hloubky operací vyvolaných v kvantovém programu.   |
+|[Čítač šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Zjišťuje počet qubitů přidělených a vypůjčených jednotlivými operacemi v kvantovém programu. |
+
+Každý z těchto nástrojů se aktivuje nastavením příslušných příznaků v `QCTraceSimulatorConfiguration` a následným předáním této konfigurace do deklarace `QCTraceSimulator`. Informace o použití každého z těchto nástrojů najdete pod odkazy v předchozím seznamu. Další informace týkající se konfigurace `QCTraceSimulator` najdete v tématu [QCTraceSimulatorConfiguration](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+
+## <a name="qctracesimulator-methods"></a>Metody QCTraceSimulatoru
+
+`QCTraceSimulator` má několik předdefinovaných metod pro načtení hodnot metrik trasovaných během kvantové operace. Příklady metod [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) a [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) najdete ve článcích [Čítač primitivních operací](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Čítač hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) a [Čítač šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter). Další informace o veškerých dostupných metodách najdete v referenčních informacích k rozhraní API pro Q# v tématu [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator).  
 
 ## <a name="see-also"></a>Viz také
-Reference ke kódu C# [simulátoru trasování](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) kvantového počítače 
 
+- [Estimátor kvantových prostředků](xref:microsoft.quantum.machines.resources-estimator)
+- [Kvantový simulátor Toffoli](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Simulátor celkového kvantového stavu](xref:microsoft.quantum.machines.full-state-simulator) 
