@@ -6,12 +6,12 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 15015d1673f47faf5a13dde516f834916b4319d6
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 3d70838289e72afdd0a48bbdff0bec407428d125
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884281"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871429"
 ---
 # <a name="develop-with-q-command-line-applications"></a>Vývoj aplikací příkazového řádku v Q#
 
@@ -23,7 +23,7 @@ Programy Q# se dají spouštět samostatně, bez ovladače v hostitelském jazyc
 
 ## <a name="installation"></a>Instalace
 
-I když můžete aplikaci příkazového řádku Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE. Vývoj v těchto prostředích poskytuje bohaté funkce rozšíření QDK, mezi které patří upozornění, zvýrazňování syntaxe, šablony projektů a další.
+I když můžete aplikaci příkazového řádku Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE nebo vyvíjet aplikace v Q# místně. Pro vývoj v cloudu prostřednictvím webového prohlížeče doporučujeme Visual Studio Codespaces. Vývoj v těchto prostředích poskytuje bohaté funkce rozšíření QDK, mezi které patří upozornění, zvýrazňování syntaxe, šablony projektů a další. 
 
 Konfigurace VS Code:
 
@@ -34,6 +34,13 @@ Konfigurace sady Visual Studio:
 
 1. Stáhněte si a nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 nebo novější s podporou multiplatformního vývoje .NET Core.
 2. Stáhněte si a nainstalujte [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
+
+Konfigurace Visual Studio Codespaces:
+
+1. Vytvořte [účet Azure](https://azure.microsoft.com/free/).
+2. Vytvořte prostředí Codespaces. Postupujte podle [průvodce rychlým zprovozněním](https://docs.microsoft.com/visualstudio/online/quickstarts/browser). Při vytváření Codespace doporučujeme do pole úložiště Git zadat `microsoft/Quantum` a načíst nastavení specifická pro QDK.
+3. Teď můžete nové prostředí spustit a začít vyvíjet v prohlížeči prostřednictvím [cloudového integrovaného vývojového prostředí VS Codespaces](https://online.visualstudio.com/environments). Další možností je využít místní instalaci editoru VS Code a použít Codespaces jako [vzdálené prostředí](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
+
 
 Pokud chcete nainstalovat QDK pro jiné prostředí, zadejte do příkazového řádku:
 
@@ -46,14 +53,6 @@ dotnet new -i Microsoft.Quantum.ProjectTemplates
 Postupujte podle pokynů na kartě odpovídající vašemu prostředí.
 
 ### <a name="vs-code"></a>[VS Code](#tab/tabid-vscode)
-
-Nainstalujte šablony projektů Q#:
-
-1. Otevřete VS Code.
-2. Klikněte na **Zobrazit** -> **Paleta příkazů**.
-3. Vyberte **Q#: Instalovat šablony projektů**.
-
-Když se zobrazí zpráva **Šablony projektů byly úspěšně nainstalovány**, sada QDK je připravena na vývoj vašich vlastních knihoven a aplikací.
 
 Vytvoření nového projektu:
 
@@ -96,24 +95,30 @@ Spusťte aplikaci:
 
 Ověřte instalaci vytvořením aplikace `Hello World` v jazyce Q#.
 
+1. Nainstalujte šablony projektů.
+
+    ```dotnetcli
+    dotnet new -i Microsoft.Quantum.ProjectTemplates
+    ```
+
 1. Vytvoření nové aplikace:
     ```dotnetcli
     dotnet new console -lang Q# -o runSayHello
     ```
 
-2. Přejděte do adresáře aplikace:
+1. Přejděte do adresáře aplikace:
     ```dotnetcli
     cd runSayHello
     ```
 
     Tento adresář by měl nyní obsahovat soubor s názvem `Program.qs`, což je program Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu. Tuto šablonu můžete upravit pomocí textového editoru a přepsat ji vlastními kvantovými aplikacemi. 
 
-3. Spusťte program:
+1. Spusťte program:
     ```dotnetcli
     dotnet run
     ```
 
-4. Měl by se vypsat následující text: `Hello quantum world!`
+1. Měl by se vypsat následující text: `Hello quantum world!`
 
 ***
 
