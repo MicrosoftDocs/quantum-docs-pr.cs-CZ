@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 108a50302422e5ae41e14b30ef22169370c2a35a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: c5acd6c2b3163488a9b4c6e52e6d34489a8f4056
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871412"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436560"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit
 
@@ -19,7 +19,7 @@ Sada Quantum Development Kit je víc než jen kolekce nástrojů pro psaní kvan
 Je součástí rozsáhlé komunity lidí, kteří objevují kvantové výpočty, provádějí výzkum v oblasti kvantových algoritmů, vyvíjejí nové aplikace pro kvantová zařízení nebo pracují jiným způsobem na maximálním využití kvantového programování.
 V rámci této komunity se sada Quantum Development Kit zaměřuje na to, aby kvantovým vývojářům nabízela funkce, které potřebují, pro široké spektrum prostředí.
 Vaše příspěvky pro sadu Quantum Development Kit pomůžou při realizaci tohoto cíle tím, že se budou zlepšovat nástroje používané jinými kvantovými vývojáři a způsob dokumentace těchto nástrojů, a také vytvářením nových funkcí, díky nimž bude celá komunita kvantového programování lepším místem pro objevování a tvorbu.
-Velice vám děkujeme za vaše laskavé příspěvky a za příležitost ke spolupráci na maximálním vylepšování naší komunity.
+Velice vám děkujeme za vaše laskavé příspěvky a za příležitost ke spolupráci na maximálním vylepšování naší komunity. 
 
 V tomto průvodci uvádíme několik rad, jak dosáhnout co největšího užitku z příspěvku pro širší komunitu kvantového programování.
 

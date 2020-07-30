@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 7ed92c29020ccf389faa099f5bd80516af525578
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274621"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436527"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -96,7 +96,7 @@ Přesné odvození bayesovského rozhodování je v praxi nevolatelné.
 Pokud se chcete podívat na tento příklad, chtěli bychom se naučit $n $-bitovou proměnnou $x $.
 Předchozí distribuce $ \Pr (x) $ podporuje více než $2 ^ n $ hypotetické hodnoty $x $.
 To znamená, že pokud potřebujeme vysoce přesný odhad $xí, odhad fáze bayesovského rozhodování může vyžadovat nepotřebnou paměť a dobu zpracování.
-I když některé aplikace, jako je například simulace provozu, limitted vyžaduje, že tyto metody nevylučuje jiné aplikace, jako je například algoritmus Shor, nemůže v rámci kroku odhadu fáze použít přesný odvozování bayesovského rozhodování.  Z tohoto důvodu poskytujeme implementace přibližných bayesovského rozhodování metod, jako je například [odhad fáze postupného procházení (RWPE)](xref:microsoft.quantum.research.randomwalkphaseestimation.randomwalkphaseestimation) , a také nebayesovského rozhodováníelné přístupy, jako je například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation).
+I když některé aplikace, jako je například simulace provozu, limitted vyžaduje, že tyto metody nevylučuje jiné aplikace, jako je například algoritmus Shor, nemůže v rámci kroku odhadu fáze použít přesný odvozování bayesovského rozhodování.  Z tohoto důvodu poskytujeme implementace přibližných bayesovského rozhodování metod, jako je například [odhad fáze postupného procházení (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) , a také nebayesovského rozhodováníelné přístupy, jako je například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation).
 
 ### <a name="robust-phase-estimation"></a>Robustní odhad fáze ###
 
