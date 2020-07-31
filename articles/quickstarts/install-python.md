@@ -6,12 +6,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: ec5e66e0c85d89888a8ff1e7d6bf18bf89ff44ac
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: 4d148435f01d975e690828dd02335758fc71dfe4
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871582"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436551"
 ---
 # <a name="develop-with-q-and-python"></a>Vývoj s využitím Q# a Pythonu
 
@@ -97,7 +97,7 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
     import qsharp
     from Qrng import SampleQuantumRandomNumberGenerator
 
-    SampleQuantumRandomNumberGenerator.simulate()
+    print(SampleQuantumRandomNumberGenerator.simulate())
     ```
 
 1. Z prostředí, které jste vytvořili během instalace (tj. prostředí conda nebo Python, kde jste nainstalovali `qsharp`), spusťte program:
@@ -106,7 +106,7 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
     python host.py
     ```
 
-1. Měl by se zobrazit výsledek vyvolané operace. V tomto případě, kdy vaše operace generuje náhodný výsledek, se na obrazovce zobrazí buď `Zero`, nebo `One`. Pokud program spouštíte opakovaně, měli by se oba výsledky zobrazovat přibližně stejně často.
+1. Měl by se zobrazit výsledek vyvolané operace. V tomto případě, kdy vaše operace generuje náhodný výsledek, se na obrazovce zobrazí buď `0`, nebo `1`. Pokud program spouštíte opakovaně, měli by se oba výsledky zobrazovat přibližně stejně často.
 
 > [!NOTE]
 > * Kód Pythonu je běžný program v Pythonu. K psaní programu Pythonu a volání operací Q# můžete použít libovolné prostředí Pythonu, včetně poznámkových bloků Jupyter založených na Pythonu. Program v Pythonu může importovat operace Q# z libovolného souboru .qs umístěného ve stejné složce jako samotný kód Pythonu.
