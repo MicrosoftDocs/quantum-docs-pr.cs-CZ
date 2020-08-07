@@ -6,12 +6,15 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/17/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.design
-ms.openlocfilehash: b304b9d1a15f164f4dfe758aaed31b7b2369b18c
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 60e694e9f7c2f01a6679ef960f5a7774c8bd6a62
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274682"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868932"
 ---
 # <a name="design-your-own-classifier"></a>Návrh vlastního klasifikátoru
 
@@ -47,6 +50,8 @@ Pojďme se podívat na příklad klasifikátoru. V [Moons ukázce](https://githu
 To, co definujeme tady, je funkce, která vrací pole `ControlledRotation` prvků, které spolu s polem parametrů a posunem definují [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Tento typ je zásadní v Machine Learning knihovně a definuje třídění. Okruh definovaný v funkci výše je součástí třídění, ve kterém každý vzorek datové sady obsahuje dvě funkce. Proto potřebujeme jenom dvě qubits. Grafické znázornění okruhu je:
 
  ![Příklad modelu okruhu](~/media/circuit_model_1.PNG)
+
+Všimněte si, že ve výchozím nastavení operace Machine Learning v rámci knihovny měří poslední qubit registru k odhadu pravděpodobností klasifikace. Měli byste si pamatovat na tento fakt při navrhování okruhu.
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Použití funkcí knihovny k psaní vrstev bran
 

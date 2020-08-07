@@ -5,12 +5,15 @@ ms.author: alexei.bocharov@microsoft.com
 ms.date: 11/22/2019
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.intro
-ms.openlocfilehash: 4a4ecbb85cc5bbfb1ccb1f111309578bcc5bce3d
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 9a24d0b4145d0db2fd8c4e16be807165fff5fb32
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86872630"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868912"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Seznámení s Machine Learningmi
 
@@ -63,6 +66,6 @@ Jasně $b $ musí být v intervalu $ (-0.5, + 0,5) $, aby byly smysluplné.
 
 Školicí případ $ (x, y) \in \mathcal{D} $ se považuje za chybnou *klasifikaci* daného posunutí $b $, pokud je popisek odvozený pro $x $ jako na RULE1 v podstatě jiný než $y $. Celkový počet chybných klasifikací je *školicím skórem* daného třídění, které odpovídá posunu $b $. *Optimální* posun klasifikátoru $b $ minimalizuje skóre školení. Je snadné zjistit, že s ohledem na odhad předpočítaných pravděpodobností $ \{ P (M = y_2 | U (\theta) x) | (x, *) \in\mathcal{D} \} $, optimální posun klasifikátoru lze najít pomocí binárního vyhledávání v intervalu $ (-0,5, + 0,5) $ tím, že se provede maximálně $ \ Log_2 (| \mathcal{D} |). $ kroky.
 
-### <a name="reference"></a>Reference
+### <a name="reference"></a>Referenční informace
 
 Tyto informace by měly být dostatečné pro zahájení přehrávání s kódem. Pokud ale chcete získat další informace o tomto modelu, přečtěte si prosím původní návrh: [ *"klasifikátory zaměřené na okruhy", Marie Schuld, Alex Bocharov, Krysta Svore a Nathan* Wiebe](https://arxiv.org/abs/1804.00633)

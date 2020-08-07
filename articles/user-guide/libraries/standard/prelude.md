@@ -6,16 +6,19 @@ uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 19674620475e68b41c855023807a5fd1f7945ec9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 283504a5f5635a4996c804e514a6f52eb4966d22
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274597"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868436"
 ---
 # <a name="the-prelude"></a>Předehru #
 
-Kompilátor Q # a cílové počítače, které jsou součástí vývojové sady pro plnění, poskytují sadu vnitřních funkcí a operací, které se dají použít při psaní programů v systému Q #.
+Q#Kompilátor a cílové počítače, které jsou součástí vývojové sady pro práci po částech, poskytují sadu vnitřních funkcí a operací, které se dají použít při psaní programů v poli Q# .
 
 ## <a name="intrinsic-operations-and-functions"></a>Vnitřní operace a funkce ##
 
@@ -27,11 +30,11 @@ Vnitřní operace definované ve standardní knihovně zhruba spadají do jedné
 - Operace implementující měření.
 
 Vzhledem k tomu, že sada Clifford + $T $ je [univerzální](xref:microsoft.quantum.concepts.multiple-qubits) pro práci s výpočetním prostředím, tyto operace postačují k tomu, aby se v negligibly malé chybě vyimplementovala jakákoli algoritmus.
-V případě, že zadáváte i rotace, Q # umožňuje programátorovi pracovat v rámci jedné qubit jednotkové a CNOTové knihovny brány. Tato knihovna je mnohem jednodušší, protože nepotřebuje programátora přímo vyjádřit $T Clifford a dekompozici $, protože pro kompilaci jednoduchých qubit unitaries do Clifford a $T $ Branch existují vysoce efektivní metody (Další informace najdete [tady](xref:microsoft.quantum.more-information) ).
+Díky poskytování rotací Q# umožňuje programátorům pracovat v rámci jedné qubit jednotkové a CNOTové knihovny brány. Tato knihovna je mnohem jednodušší, protože nepotřebuje programátora přímo vyjádřit $T Clifford a dekompozici $, protože pro kompilaci jednoduchých qubit unitaries do Clifford a $T $ Branch existují vysoce efektivní metody (Další informace najdete [tady](xref:microsoft.quantum.more-information) ).
 
 Pokud je to možné, operace definované v předehru, které fungují na qubits, umožňují použití `Controlled` varianty, takže cílový počítač provede příslušné rozklady.
 
-Mnohé z funkcí a operací, které jsou definovány v této části předehru, jsou v @"microsoft.quantum.intrinsic" oboru názvů, takže většina zdrojových souborů Q # bude následovat po `open Microsoft.Quantum.Intrinsic;` počáteční deklaraci oboru názvů direktivou.
+Mnohé z funkcí a operací, které jsou definovány v této části předehru, jsou v @"microsoft.quantum.intrinsic" oboru názvů, takže většina Q# zdrojových souborů bude obsahovat `open Microsoft.Quantum.Intrinsic;` direktivu hned po počáteční deklaraci oboru názvů.
 <xref:microsoft.quantum.core>Obor názvů se automaticky otevře, takže funkce, jako například, <xref:microsoft.quantum.core.length> lze použít bez `open` příkazu.
 
 ### <a name="common-single-qubit-unitary-operations"></a>Běžné operace s jedním qubit jednotkou ###
@@ -96,9 +99,9 @@ Má signaturu `(Qubit => Unit is Adj + Ctl)` a odpovídá qubit jednotkám v jed
 \begin{Equation} \begin{bmatrix} 1 & 0 \\ \\ % fixme: aktuálně používá napadení quadwhack.
 0 & \end{bmatrix} \end{Equation}
 
-#### <a name="rotations"></a>Rotace ####
+#### <a name="rotations"></a>Plány střídání ####
 
-Kromě výše uvedených Pauli a Clifford operací Q # předehru poskytuje celou řadu způsobů, jak vyjádřit rotace.
+Kromě výše uvedených Pauli a Clifford operací Q# poskytuje předehru řadu způsobů, jak vyjádřit rotace.
 Jak je popsáno v [qubit operacích](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), možnost otáčení je zásadní pro algoritmy.
 
 Začneme vrácením se změnami, kterou můžeme vyjádřit pomocí $H $ a $T $, kde $H $ je operace Hadamard a kde \begin{Equation} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ % fixme: to v současné době používá napadení ze čtyř back-qubit.
@@ -229,7 +232,7 @@ return rs;
 
 ## <a name="extension-functions-and-operations"></a>Funkce rozšíření a operace ##
 
-Kromě toho předehru definuje bohatou sadu matematických a typových funkcí pro převod na úrovni .NET pro použití v kódu Q #.
+Kromě toho předehru definuje bohatou sadu matematických a typových funkcí pro převod na úrovni .NET pro použití v rámci Q# kódu.
 Například <xref:microsoft.quantum.math> obor názvů definuje užitečné operace, jako například <xref:microsoft.quantum.math.sin> a <xref:microsoft.quantum.math.log> .
 Implementace poskytovaná vývojovou sadou pro plnění z více systémů používá knihovnu klasických tříd .NET Base, a proto může zahrnovat další komunikaci s výměnou mezi programy a jejich klasickými ovladači.
 I když to nepředstavuje problém pro místní simulátor, může to být problém s výkonem při použití vzdáleného simulátoru nebo skutečného hardwaru jako cílového počítače.
@@ -238,7 +241,7 @@ V takovém případě může jednotlivý cílový počítač zmírnit tento dopa
 ### <a name="math"></a>Matematické ###
 
 <xref:microsoft.quantum.math>Obor názvů poskytuje mnoho užitečných funkcí z [ `System.Math` třídy](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1)knihovny základní třídy .NET.
-Tyto funkce lze použít stejným způsobem jako jakékoli jiné funkce Q #:
+Tyto funkce lze použít stejným způsobem jako všechny další Q# funkce:
 
 ```qsharp
 open Microsoft.Quantum.Math;
@@ -246,7 +249,7 @@ open Microsoft.Quantum.Math;
 let y = Sin(theta);
 ```
 
-V případě přetížení statické metody rozhraní .NET na základě typu argumentů je odpovídající funkce Q # opatřena příponou, která označuje typ jejího vstupu:
+V případě přetížení statické metody .NET na základě typu argumentů Q# je odpovídající funkce opatřena příponou, která označuje typ jejího vstupu:
 
 ```qsharp
 let x = AbsI(-3); // x : Int = 3

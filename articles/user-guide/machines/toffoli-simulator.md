@@ -6,12 +6,15 @@ ms.author: ageller@microsoft.com
 ms.date: 6/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.toffoli-simulator
-ms.openlocfilehash: a6ceee592e628215511ec83475d9e25bf54674f7
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8a981645703423856e667be7c3dccf5270a5885f
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870613"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868096"
 ---
 # <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Simulátor QDK (Toffoliing Development Kit)
 
@@ -21,13 +24,13 @@ I když je simulátor Toffoliější s omezenou funkčností než [simulátor ú
 
 ## <a name="invoking-the-toffoli-simulator"></a>Vyvolání simulátoru Toffoli
 
-Simulátor Toffoli vystavíte prostřednictvím `ToffoliSimulator` třídy. Další podrobnosti najdete v tématu [způsoby spuštění programu Q #](xref:microsoft.quantum.guide.host-programs).
+Simulátor Toffoli vystavíte prostřednictvím `ToffoliSimulator` třídy. Další podrobnosti najdete v tématu [způsoby spuštění Q# programu](xref:microsoft.quantum.guide.host-programs).
 
 ### <a name="invoking-the-toffoli-simulator-from-c"></a>Vyvolání simulátoru Toffoli z C #
 
-Stejně jako u jiných cílových počítačů nejprve vytvoříte instanci `ToffoliSimulator` třídy a pak ji předáte jako první parametr `Run` metody operace.
+Stejně jako u jiných cílových počítačů nejdřív vytvoříte instanci třídy `ToffoliSimulator` a předáte ji jako první parametr metody `Run` příslušné operace.
 
-Všimněte si, že na rozdíl od `QuantumSimulator` třídy `ToffoliSimulator` třída neimplementuje <xref:System.IDisposable> rozhraní, takže je nemusíte v rámci `using` příkazu uzavřít.
+Na rozdíl od třídy `QuantumSimulator` ale třída `ToffoliSimulator` neimplementuje rozhraní <xref:System.IDisposable>, a proto ji není nutné uzavírat příkazem `using`.
 
 ```csharp
     var sim = new ToffoliSimulator();
@@ -37,7 +40,7 @@ Všimněte si, že na rozdíl od `QuantumSimulator` třídy `ToffoliSimulator` t
 
 ### <a name="invoking-the-toffoli-simulator-from-python"></a>Vyvolání simulátoru Toffoli z Pythonu
 
-Použijte metodu [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z knihovny Pythonu s importovanou operací Q #:
+Použijte metodu [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z knihovny Pythonu s importovanou Q# operací:
 
 ```python
 qubit_result = myOperation.toffoli_simulate()
@@ -45,7 +48,7 @@ qubit_result = myOperation.toffoli_simulate()
 
 ### <a name="invoking-the-toffoli-simulator-from-the-command-line"></a>Volání simulátoru Toffoli z příkazového řádku
 
-Při spuštění programu Q # z příkazového řádku použijte parametr **--simulátor** (nebo **-s** ) k zadání cílového počítače simulátoru Toffoli. Následující příkaz spustí program pomocí Estimator prostředků: 
+Při spuštění Q# programu z příkazového řádku použijte parametr **--simulátor** (nebo **-s** ) k zadání cílového počítače simulátoru Toffoli. Následující příkaz spustí program pomocí Estimator prostředků: 
 
 ```dotnetcli
 dotnet run -s ToffoliSimulator
@@ -53,7 +56,7 @@ dotnet run -s ToffoliSimulator
 
 ### <a name="invoking-the-toffoli-simulator-from-juptyer-notebooks"></a>Vyvolání simulátoru Toffoli z notebooků Juptyer
 
-Pomocí příkazu SWEETIQ # Magic [% Toffoli](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) spusťte operaci Q #.
+Q#Spusťte operaci pomocí příkazu I Magic [% Toffoli](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) Q# .
 
 ```
 %toffoli myOperation

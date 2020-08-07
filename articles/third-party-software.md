@@ -7,12 +7,15 @@ author: QuantumWriter
 ms.author: MSFT-alias-person-or-DL
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
-ms.openlocfilehash: 84d83bf65b3c01a630d98210a5ac3fe322fa501f
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 1d76e9c8532dd7818941d182773a8f85a86becee
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77906810"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869745"
 ---
 # <a name="third-party-software-notices-and-information"></a>OZNÁMENÍ A INFORMACE O SOFTWARU TŘETÍ STRANY
 
@@ -20,8 +23,8 @@ Tento soubor je založený na nebo zahrnuje materiály z níže uvedených proje
 
 1. YamlDotNet. podepsaná verze 4.2.2 (https://www.nuget.org/packages/YamlDotNet.Signed/4.2.2)
 2. xUnit. Runner. VisualStudio 2.3.1 (https://www.nuget.org/packages/xunit.runner.visualstudio/2.3.1)
-3. xUnit. Runner. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1)
-4. xUnit. rozšiřitelnost. provedení: 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.execution/2.3.1)
+3. xUnit. Runner. Console 2.3.1 ( https://www.nuget.org/packages/xunit.runner.console/2.3.1 )
+4. xunit.extensibility.execution 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.execution/2.3.1)
 5. xUnit. rozšiřitelnost. Core 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.core/2.3.1)
 6. xUnit. Core 2.3.1 (https://www.nuget.org/packages/xunit.core/2.3.1)
 7. xUnit. Assert 2.3.1 (https://www.nuget.org/packages/xunit.assert/2.3.1)
@@ -75,7 +78,7 @@ Podívejte se na licenci pro konkrétní jazyk řízení oprávnění a omezení
 
 
 
-## <a name="xunitextensibilityexecution-notices-and-information"></a>xUnit. rozšiřitelnost. oznámení o spuštění a informace
+## <a name="xunitextensibilityexecution-notices-and-information"></a>OZNÁMENÍ a informace xunit.extensibility.execution
 ---------------------------------------
 Copyright (c) .NET Foundation a přispěvatelé všechna práva vyhrazena
 
@@ -178,7 +181,7 @@ Termín "reprodukce", "rozmnožování", "odvozená práce" a "distribuce" mají
 
 2. Udělení práv
 
-(A) udělení autorského práva – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3, vám každý přispěvatel uděluje nevýhradní, celosvětovou a bezplatnou licenci k ochraně autorských práv, aby reprodukoval svůj příspěvek, připravil deriváty. spolupracuje se svým příspěvkem a distribuuje svůj příspěvek nebo jakékoli odvozené práce, které vytvoříte.
+(A) udělení autorského práva – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3, vám každý přispěvatel uděluje nevýhradní, celosvětovou a bezplatnou licenci copyrightu pro reprodukování svého příspěvku, přípravu odvozených děl na svůj příspěvek a distribuci svého příspěvku nebo jakékoli odvozené práce, kterou vytvoříte.
 
 (B) patentové udělení – v souladu s podmínkami této licence, včetně licenčních podmínek a omezení v oddílu 3 vám každý přispěvatel uděluje v rámci svých licencovaných patentů nevýlučnou a celosvětovou licenci bez poplatků za to, že provedl, využíval, prodává, nabízí prodej, dovoz nebo jiné využívání příspěvku v softwaru.
 
@@ -192,14 +195,14 @@ Termín "reprodukce", "rozmnožování", "odvozená práce" a "distribuce" mají
 
 (D) Pokud distribuujete jakoukoli část softwaru ve formuláři zdrojového kódu, můžete tak učinit pouze v rámci této licence, včetně úplné kopie této licence s distribucí. Pokud distribuujete jakoukoli část softwaru do formuláře kompilovaného nebo kódu objektu, můžete tak učinit pouze v rámci licence, která je v souladu s touto licencí.
 
-(E) software je licencován "tak, jak je". Berete na sebe rizika spojená s jeho používáním. Přispěvatelé neposkytují žádné výslovné záruky, záruky nebo podmínky. V rámci vašich místních zákonů můžete mít další spotřebitelská práva, která tato licence nemůže změnit. V rozsahu povoleném vašimi místními zákony přispěvatelé vylučují předpokládané záruky prodejnosti, vhodnosti pro určitý účel a neporušení předpisů.
+(E) software je licencován "tak, jak je". Riziko spojené s jejich použitím nesete vy. Přispěvatelé neposkytují žádné výslovné záruky, záruky nebo podmínky. V rámci vašich místních zákonů můžete mít další spotřebitelská práva, která tato licence nemůže změnit. V rozsahu povoleném vašimi místními zákony přispěvatelé vylučují předpokládané záruky prodejnosti, vhodnosti pro určitý účel a neporušení předpisů.
 
 ## <a name="fsharpcore-notices-and-information"></a>OZNÁMENÍ a informace FSharp. Core
 ---------------------------------------
 Licence MIT (MIT)
 
 Copyright (c) Microsoft Corporation.
-Všechna práva vyhrazena.
+All rights reserved.
 
 Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto softwaru a přidružených souborů dokumentace ("software"). aby bylo možné zabývat se softwarem bez omezení, včetně bez omezení práv k používání, kopírování, úpravy, sloučení, publikování, distribuci, podlicence a prodej kopií softwaru, a k tomu, aby bylo možné osobám, kterým je software poskytnutý, v souladu s těmito podmínkami:
 
@@ -218,7 +221,7 @@ Oprávnění se uděluje zdarma všem osobám, které získají kopii tohoto sof
 Výše uvedené oznámení o autorských právech a oznámení o oprávněních se zahrnou do všech kopií nebo podstatných částí softwaru.
 
 SOFTWARE JE POSKYTOVÁN TAK, JAK JE, BEZ ZÁRUKY JAKÉHOKOLI DRUHU, VÝSLOVNÉHO NEBO PŘEDPOKLÁDANÉHO, VČETNĚ OMEZENÍ OBCHODOVATELNOSTI, VHODNOSTI PRO URČITÝ ÚČEL A NEPORUŠENÍ PŘEDPISŮ. V ŽÁDNÉM PŘÍPADĚ MAJITELÉ NEBO AUTORSKÉHO PRÁVA NEJSOU ODPOVĚDNI ZA JAKÉKOLIV NÁROKY, ŠKODY NEBO JINÉ ZÁVAZKY, AŤ UŽ V AKCI SMLOUVY, OBČANSKOPRÁVNÍ DELIKTY NEBO JINAK, VYPLÝVAJÍCÍ Z, NEBO V SOUVISLOSTI SE SOFTWAREM NEBO JINÝM JEDNÁNÍM V SOFTWARU.
-Zabalené verze tohoto softwaru mohou zahrnovat kopie OxyPlot. Core. dll a OxyPlot. GtkSharp. dll, které jsou uvedeny níže.
+Zabalené verze tohoto softwaru mohou zahrnovat kopie OxyPlot.Core.dll a OxyPlot.GtkSharp.dll, licence níže.
 
 ---
 
@@ -236,7 +239,7 @@ SOFTWARE JE POSKYTOVÁN TAK, JAK JE, BEZ ZÁRUKY JAKÉHOKOLI DRUHU, VÝSLOVNÉHO
 ---------------------------------------
 Copyright (c) 2008-2014, kurt Schelfthout
 
-Všechna práva vyhrazena.
+All rights reserved.
 
 Opětovná distribuce a použití ve zdrojových a binárních formulářích, s úpravami nebo bez úprav, jsou povoleny, pokud jsou splněny následující podmínky:
 
@@ -244,7 +247,7 @@ Opětovná distribuce a použití ve zdrojových a binárních formulářích, s
 * Redistribuce v binárním formátu musí reprodukována výše uvedená oznámení o autorských právech, seznam podmínek a následující právní omezení v dokumentaci a dalších materiálech dodaných s distribucí.
 * Ani jméno FsCheck ani jména jeho přispěvatelů se dají použít k potvrzení nebo zvýšení úrovně produktů odvozených od tohoto softwaru bez konkrétního předchozího písemného oprávnění.
 
-TENTO SOFTWARE JE POSKYTOVÁN DRŽITELI AUTORSKÝCH PRÁV „TAK, JAK JE“ BEZ JAKÝCHKOLI PŘÍMÝCH ČI NEPŘÍMÝCH ZÁRUK, MIMO JINÉ, VČETNĚ, ALE BEZ OMEZENÍ, NEPŘÍMÝCH ZÁRUK OBCHODOVATELNOSTI, VHODNOSTI PRO URČITÝ ÚČEL. V ŽÁDNÉM PŘÍPADĚ SE VLASTNÍK AUTORSKÉHO PRÁVA NEBO PŘISPĚVATELÉ NEŠKODÍ ZA JAKÉKOLIV PŘÍMÉ, NEPŘÍMÉ, NÁHODNÉ, ZVLÁŠTNÍ, EXEMPLARYÉ NEBO NÁSLEDNÉ ŠKODY (VČETNĚ, ALE NE OMEZENÍ NA NÁHRADY NÁHRADNÍHO ZBOŽÍ NEBO SLUŽEB. ZTRÁTA POUŽITÍ, DAT NEBO ZISKU; NEBO PROVOZNÍ PŘERUŠENÍ) ALE ZPŮSOBILA I JAKÉKOLI TEORIE ZÁVAZKŮ, AŤ UŽ V KONTRAKTU, STRIKTNÍ ODPOVĚDNOST NEBO OBČANSKOPRÁVNÍ DELIKT (VČETNĚ NEDBALOSTI NEBO JINAK) VYPLÝVAJÍCÍCH Z POUŽITÍ TOHOTO SOFTWARU, A TO I V PŘÍPADĚ, ŽE JE TATO ŠKODA PORUŠENÁ.
+TENTO SOFTWARE POSKYTUJE DRŽITELŮM AUTORSKÉHO PRÁVA A PŘISPĚVATELŮM "TAK JAK JSOU" A JAKÉKOLI VÝSLOVNÉ NEBO MLČKY PŘEDPOKLÁDANÉ ZÁRUKY, VČETNĚ NEOMEZENÉHO DRUHU OBCHODOVATELNOSTI A VHODNOSTI PRO KONKRÉTNÍ ÚČEL, JSOU NENÁROKNÉ. V ŽÁDNÉM PŘÍPADĚ SE VLASTNÍK AUTORSKÉHO PRÁVA NEBO PŘISPĚVATELÉ NEŠKODÍ ZA JAKÉKOLIV PŘÍMÉ, NEPŘÍMÉ, NÁHODNÉ, ZVLÁŠTNÍ, EXEMPLARYÉ NEBO NÁSLEDNÉ ŠKODY (VČETNĚ, ALE NE OMEZENÍ NA NÁHRADY NÁHRADNÍHO ZBOŽÍ NEBO SLUŽEB. ZTRÁTA POUŽITÍ, DAT NEBO ZISKU; NEBO PROVOZNÍ PŘERUŠENÍ) ALE ZPŮSOBILA I JAKÉKOLI TEORIE ZÁVAZKŮ, AŤ UŽ V KONTRAKTU, STRIKTNÍ ODPOVĚDNOST NEBO OBČANSKOPRÁVNÍ DELIKT (VČETNĚ NEDBALOSTI NEBO JINAK) VYPLÝVAJÍCÍCH Z POUŽITÍ TOHOTO SOFTWARU, A TO I V PŘÍPADĚ, ŽE JE TATO ŠKODA PORUŠENÁ.
 
 ## <a name="argu-notices-and-information"></a>Argu oznámení a informace
 ---------------------------------------
@@ -265,22 +268,22 @@ SOFTWARE JE POSKYTOVÁN TAK, JAK JE, BEZ ZÁRUKY JAKÉHOKOLI DRUHU, VÝSLOVNÉHO
 
 S výjimkou případů, kdy je uvedeno jinak, je knihovna FParsec ve zdrojovém a binárním formuláři distribuována v rámci zjednodušené licence BSD. Zjednodušená licence BSD (označovaná také jako "2 k klauzule BSD License") je jednoduchá opravňující licence, která je kompatibilní s modelem OSI k. 
 
-FParsec zahrnuje data odvozená z databáze znaků Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., který je distribuován podle následujících podmínek: http://www.unicode.org/terms_of_use.html#Exhibit1 
+FParsec zahrnuje data odvozená z databáze znaků Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., který je distribuován za následující výrazy:http://www.unicode.org/terms_of_use.html#Exhibit1 
 
 Dokumentace ve složce doc je licencovaná v rámci nekomerční 3,0 nepřipojené licence k Creative \ nekomerčního přidělení. Tato licence Creative-licence vám neumožňuje používat dokumentaci pro komerční účely bez oprávnění. To znamená, že nemůžete prodávat dokumentaci ve formě knihy za účelem zisku nebo ji umístit do farmy webového obsahu, abyste mohli získat peníze pomocí reklam. Můžete ale samozřejmě použít dokumentaci v komerčním kontextu (například je umístit na intranet komerčního podniku), pokud se nepokoušíte přímo získat peníze z textu dokumentace. 
 
 2,1 zjednodušená licence BSD
 
-Copyright (c) 2007 \ u20122017, Stephana Tolksdorf. Všechna práva vyhrazena.
+Copyright (c) 2007 \ u20122017, Stephana Tolksdorf. All rights reserved.
 
 Opětovná distribuce a použití ve zdrojových a binárních formulářích, s úpravami nebo bez úprav, jsou povoleny, pokud jsou splněny následující podmínky: 
 * Opětovná distribuce zdrojového kódu musí uchovávat výše uvedené oznámení copyrightu, tento seznam podmínek a následující právní omezení.
 * Redistribuce v binárním formátu musí reprodukována výše uvedená oznámení o autorských právech, seznam podmínek a následující právní omezení v dokumentaci a dalších materiálech dodaných s distribucí. 
 
-Tento software poskytuje držitelé autorského práva "tak, jak je" a jakékoli výslovné nebo předpokládané záruky, včetně, ale ne omezení předpokládaných záruk prodejnosti a vhodnosti pro určitý účel. V žádném případě nepodléhají držitelům autorského práva žádná přímá, nepřímá, náhodná, zvláštní, exemplaryá ani následná náhrada za škody (včetně neomezeného nákupu náhradního zboží nebo služeb, ztráty použití, dat nebo zisků nebo podnikání). přerušení) ale způsobila i jakákoli teorie zodpovědnosti, ať už v kontraktu, striktní zodpovědnost nebo občanskoprávní delikt (včetně nedbalosti nebo jinak) vyplývajících z použití tohoto softwaru, a to i v případě, že je tato škoda z důvodu pravděpodobnosti. 
+Tento software poskytuje držitelé autorského práva "tak, jak je" a jakékoli výslovné nebo předpokládané záruky, včetně, ale ne omezení předpokládaných záruk prodejnosti a vhodnosti pro určitý účel. V žádném případě se držitelům autorských práv neručí za jakékoliv přímé, nepřímé, náhodné, zvláštní, Exemplary nebo následné škody (včetně, ale bez omezení na nákup náhradních zboží nebo služeb, ztráty použití, dat nebo zisků nebo přerušování provozu) ale způsobené a na základě jakékoli teorie závazků, ať už v rámci smlouvy, striktní zodpovědnosti nebo občanskoprávní delikty (včetně nedbalosti nebo jiného) způsobeného jakýmkoli způsobem používání tohoto softwaru , a to i v případě, že se jedná o možnost poškození. 
 
 2,2 Creative k navýšení nekomerčních 3,0 nelicencovaných licencí
 
-Shrnutí: https://creativecommons.org/licenses/by-nc/3.0/
+Shrnuthttps://creativecommons.org/licenses/by-nc/3.0/
 
-Úplný text licence: https://creativecommons.org/licenses/by-nc/3.0/legalcode 
+Úplný text licence:https://creativecommons.org/licenses/by-nc/3.0/legalcode 

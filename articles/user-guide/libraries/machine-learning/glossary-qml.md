@@ -5,12 +5,15 @@ ms.author: alexei.bocharov@microsoft.com
 ms.date: 2/27/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.training
-ms.openlocfilehash: f9b33a607a892179795d0700ba3080f9a24ab94a
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 52c3f69fb99384270a27e57c4f32212d18bee1a4
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274721"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868895"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Machine Learning Glosář
 
@@ -48,7 +51,7 @@ Jako pravidlo pro palec může být počáteční počet měření přibližně 
 
 ### <a name="training-threads"></a>Školicí vlákna
 
-Pravděpodobnost, která je přístupným nástrojem pro třídění, je velmi zřídka konvexní, což znamená, že má obvykle velké množství místních Optima v prostoru parametru, který může být významně odlišný od kvality. Vzhledem k tomu, že se proces SGD dá konvergovat pouze k jednomu konkrétnímu optimálnímu, je důležité prozkoumat více počátečních vektorů parametrů. Běžný postup ve strojovém učení je náhodným inicializací těchto počátečních vektorů. Rozhraní API pro školení Q # akceptuje libovolné pole těchto počátečních vektorů, ale podkladový kód je prozkoumá sekvenčně. Na vícejádrových počítačích nebo ve skutečnosti na jakékoli architektuře paralelního zpracování je vhodné provést několik volání rozhraní API pro školení Q # paralelně s různými inicializacemi parametrů napříč voláními.
+Pravděpodobnost, která je přístupným nástrojem pro třídění, je velmi zřídka konvexní, což znamená, že má obvykle velké množství místních Optima v prostoru parametru, který může být významně odlišný od kvality. Vzhledem k tomu, že se proces SGD dá konvergovat pouze k jednomu konkrétnímu optimálnímu, je důležité prozkoumat více počátečních vektorů parametrů. Běžný postup ve strojovém učení je náhodným inicializací těchto počátečních vektorů. Q#Rozhraní API pro školení akceptuje libovolné pole těchto počátečních vektorů, ale podkladový kód je prozkoumá sekvenčně. Na vícejádrových počítačích nebo ve skutečnosti na jakékoli architektuře paralelního zpracování je vhodné provést několik volání Q# rozhraní API pro školení paralelně s různými inicializacemi parametrů napříč voláními.
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Postup úpravy parametrů
 

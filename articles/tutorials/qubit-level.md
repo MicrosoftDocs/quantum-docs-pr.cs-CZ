@@ -1,30 +1,33 @@
 ---
-title: 'Zápis a simulace programů qubit na úrovni Q #'
+title: Zápis a simulace programů na úrovni qubit v nástrojiQ#
 description: Podrobný návod k psaní a simulaci programu pro období, který funguje na úrovni jednotlivých qubit
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
-ms.openlocfilehash: e7ebdec4cd1aa201030d82759a3aa56473b26417
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 22c79e4e01db1a0d0c291d0dcff81dbfa8df5cd3
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274499"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869711"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Kurz: zápis a simulace programů qubit na úrovni Q\#
 
 Vítá vás kurz pro vývoj všech automobilů při psaní a simulaci základního programu pro vyhlašování do více období, který funguje na jednotlivých qubits. 
 
-I když se otázka # vytvořila hlavně jako programovací jazyk vysoké úrovně pro velké množství procesorových procesorů, dá se jednoduše snadno použít k prozkoumání nižší úrovně programů v řádu, a to přímo na konkrétní qubits.
-Flexibilita Q # umožňuje uživatelům přistupovat k systémům na základě této úrovně z jakékoli takové úrovně abstrakce a v tomto kurzu jsme podrobněi qubits sami.
+I když Q# byl primárně vytvořen jako programovací jazyk vysoké úrovně pro velké množství procesorových procesorů, může to být stejně snadné použít k prozkoumávání nižší úrovně programů, které jsou určeny k tomu, že přímo řeší konkrétní qubits.
+Flexibilita Q# umožňuje uživatelům přístup k systémům z nedostatku z jakékoli takové úrovně abstrakce a v tomto kurzu jsme podrobněi qubits sami.
 Konkrétně se podívejme na digestoři [Fourierova transformace](https://en.wikipedia.org/wiki/Quantum_Fourier_transform), která je nedílnou součástí mnoha větších algoritmů.
 
 Všimněte si, že tento přehled zpracování informací o nedostatku na více procesorů je často popsaný v části "[okruhy](xref:microsoft.quantum.concepts.circuits)v obdobích", což představuje sekvenční použití bran na konkrétní qubits systému.
 
 Operace typu Single-a qubit, které se účtují sekvenčně, se proto dají snadno reprezentovat v "diagramu okruhu".
-V našem případě nadefinujeme operaci Q #, která provede úplnou qubitou transformaci po třech chvílích, která má následující reprezentaci jako okruh:
+V našem případě definujeme Q# operaci, která provede úplnou qubitou transformaci na tři procesory, která má následující reprezentaci jako okruh:
 
 <br/>
 <img src="../media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
@@ -38,33 +41,33 @@ V našem případě nadefinujeme operaci Q #, která provede úplnou qubitou tra
 ## <a name="in-this-tutorial-youll-learn-how-to"></a>V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
-> * Definování operací s více operačními operacemi v Q #
-> * Volání Q # operací přímo z příkazového řádku nebo pomocí klasického hostitelského programu
+> * Definování operací s více operačními operacemi vQ#
+> * Volání Q# operací přímo z příkazového řádku nebo pomocí klasického hostitelského programu
 > * Simulace operace s příchodem z přidělení qubit na výstup měření
 > * Sledujte, jak se v průběhu operace vyvíjí simulovaný wavefunction systému
 
 Běh programu pro práci s více operačními systémy od Microsoftu se bude obvykle skládat ze dvou částí:
-1. Samotný program, který je implementován pomocí programovacího jazyka Q # a následně vyvolán pro spuštění v počítači s více operačními systémy nebo simulátorem. Ty se skládají z 
-    - Operace Q #: subrutiny fungující na registrech v nečinnosti 
-    - Q # Functions: klasické podrutiny používané v rámci algoritmu doby.
+1. Samotný program, který je implementován pomocí programovacího jazyka pro práci po sobě Q# a následně vyvolán ke spuštění na počítači s více operačními systémy nebo simulátoru provozu. Ty se skládají z 
+    - Q#operace: podrutiny fungující na registrech v případě nečinnosti 
+    - Q#Functions: klasické podrutiny používané v rámci algoritmu doby.
 2. Vstupní bod, který slouží k volání programu pro práci s poli, a určení cílového počítače, na kterém by měl být spuštěn.
     To lze provést přímo z příkazového řádku nebo prostřednictvím hostitelského programu napsaného v klasickém programovacím jazyce, jako je Python nebo C#.
     Tento kurz obsahuje pokyny pro libovolný způsob, kterým dáváte přednost.
 
 ## <a name="allocate-qubits-and-define-quantum-operations"></a>Přidělte qubits a definujte operace
 
-První část tohoto kurzu se skládá z definice operace Q # `Perform3qubitQFT` , která provádí funkci Fourierova transformace na třech qubits. 
+První část tohoto kurzu se skládá z definice Q# operace `Perform3qubitQFT` , která provádí funkci Fourierova transformace na třech qubits. 
 
 Kromě toho budeme pomocí této [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) funkce sledovat, jak se simulované wavefunctiony našeho tří systémů qubit v rámci operace vyvíjely.
 
-Prvním krokem je vytvoření projektu a souboru Q #.
+Prvním krokem je vytvoření Q# projektu a souboru.
 Postup pro tyto kroky závisí na prostředí, které použijete pro volání programu, a podrobnosti najdete v příslušných [pokynech k instalaci](xref:microsoft.quantum.install).
 
 Provedeme vás jednotlivými komponentami souboru, ale kód je také k dispozici jako úplný blok níže.
 
-### <a name="namespaces-to-access-other-q-operations"></a>Obory názvů pro přístup k dalším operacím Q #
+### <a name="namespaces-to-access-other-no-locq-operations"></a>Obory názvů pro přístup k jiným Q# operacím
 V souboru nejdřív nadefinujeme obor názvů, ke `NamespaceQFT` kterému bude mít kompilátor přistup.
-Abychom mohli využít stávající operace Q #, otevřou se příslušné `Microsoft.Quantum.<>` obory názvů.
+Abychom mohli využít stávající Q# operace, otevřou se příslušné `Microsoft.Quantum.<>` obory názvů.
 
 ```qsharp
 namespace NamespaceQFT {
@@ -90,7 +93,7 @@ V současné době operace přebírá žádné argumenty a nevrátí nic---v tom
 Později ji Upravme, aby vracela pole výsledků měření. v tomto okamžiku se `Unit` nahradí `Result[]` . 
 
 ### <a name="allocate-qubits-with-using"></a>Přidělit qubits pomocí`using`
-V rámci naší operace Q # nejprve přidělíme registraci tří qubits pomocí `using` příkazu:
+V rámci naší Q# operace nejprve přidělíme registraci tří qubits pomocí `using` příkazu:
 
 ```qsharp
         using (qs = Qubit[3]) {
@@ -104,16 +107,16 @@ V rámci naší operace Q # nejprve přidělíme registraci tří qubits pomocí
 V `using` případě se qubits automaticky přiřazují ve stavu $ \ket {0} $. Můžete to ověřit pomocí [`Message(<string>)`](xref:microsoft.quantum.intrinsic.message) a [`DumpMachine()`](xref:microsoft.quantum.diagnostics.dumpmachine) , který vypíše řetězec a aktuální stav systému do konzoly.
 
 > [!NOTE]
-> `Message(<string>)`Funkce a `DumpMachine()` (v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Diagnostics`](xref:microsoft.quantum.diagnostics) uvedeném pořadí) se tisknou přímo do konzoly. Stejně jako u reálného výpočtu neumožňuje Q # přímý přístup k qubit státům.
+> `Message(<string>)`Funkce a `DumpMachine()` (v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Diagnostics`](xref:microsoft.quantum.diagnostics) uvedeném pořadí) se tisknou přímo do konzoly. Stejně jako u reálných výpočetních Q# stavů neumožňuje přímý přístup ke qubit státům.
 > `DumpMachine`Když ale vytisknete aktuální stav cílového počítače, může poskytnout cenné informace pro ladění a učení při použití ve spojení s simulátorem úplného stavu.
 
 
 ### <a name="applying-single-qubit-and-controlled-gates"></a>Použití jednoduchých qubit a řízených bran
 
 V dalším kroku použijeme brány, které tvoří samotnou operaci.
-Otázka č. Q již obsahuje mnoho základních bran jako operací v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) oboru názvů a nejsou to žádné výjimky. 
+Q#již obsahuje mnoho základních bran jako operací v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) oboru názvů a nejsou to žádné výjimky. 
 
-V rámci operace Q # se příkazy, které volají volání, spustí v sekvenčním pořadí.
+V rámci Q# operace se příkazy, které volají volání, spustí v sekvenčním pořadí.
 Proto první brána, která se má použít, je [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) na první qubit:
 
 <br/>
@@ -131,7 +134,7 @@ Kromě použití `H` brány (Hadamard) pro jednotlivé qubits se okruh QFT sklá
 
 #### <a name="controlled-operations"></a>Kontrolované operace
 
-Q # usnadňuje splnění podmínky provedení operace na jednom nebo několika qubits ovládacích prvků.
+Q#je velmi snadné podmínkou provedení operace na jednom nebo několika qubits ovládacích prvků.
 Obecně jsme zavedli pouze volání s `Controlled` a argumenty operace se mění jako:
 
  `Op(<normal args>)`$ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
@@ -176,12 +179,12 @@ Po použití relevantních `H` operací a řízených otočení na druhý a tře
 
 To je nezbytné vzhledem k tomu, že povaha Fourierova transformace vrací qubits v obráceném pořadí, takže swapy umožňují bezproblémovou integraci subrutiny do větších algoritmů.
 
-Proto jsme dokončili zápis operací na úrovni qubit ve službě Fourierova transformace do naší operace Q #:
+Proto jsme dokončili vytváření qubit operací na úrovni, které je potřeba transformovat, do naší Q# operace:
 
 <img src="../media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
 
 Nemůžeme ho ale ještě zavolat na den.
-Naše qubits byly ve stavu $ \ket {0} $, když je jsme jim přiřadili, a podobně jako v rámci životního cyklu v Q # máme stejné možnosti jako ty, které jsme je našli (nebo lepší!).
+Naše qubits byly ve stavu $ \ket {0} $, když je jsme jim přiřadili a podobně jako v životě Q# byste měli mít stejné možnosti jako v případě, že jsme je našli (nebo lepší!).
 
 ### <a name="deallocate-qubits"></a>Zrušit přidělení qubits
 
@@ -194,11 +197,11 @@ Znovu se zavoláme [`DumpMachine()`](xref:microsoft.quantum.diagnostics.dumpmach
             ResetAll(qs);
 ```
 
-Vyžadování, aby se všechny navrácené qubits explicitně nastavily na $ \ket {0} $, je základní funkcí Q #, protože díky tomu můžou jiné operace znát jejich stav přesně, když začnou používat stejné qubits (prostředek omezených).
+Vyžadování, aby všechny navrácené qubits byly explicitně nastavené na $ \ket {0} $, je základní funkcí Q# nástroje, protože umožňuje jiným operacím přesně znát jejich stav, když začnou používat stejné qubits (prostředek omezených).
 Navíc to zaručuje, že nebudou entangled s žádným jiným qubits v systému.
 Pokud se resetování neprovede na konci `using` bloku přidělení, bude vyvolána Běhová chyba.
 
-Úplný soubor Q # by teď měl vypadat takto:
+Úplný Q# soubor by teď měl vypadat takto:
 
 ```qsharp
 namespace NamespaceQFT {
@@ -239,18 +242,18 @@ namespace NamespaceQFT {
 ```
 
 
-Po dokončení souboru a operace Q # je náš program pro práci s více operačními systémem připravený k volání a simulaci.
+Po Q# dokončení souboru a operace je náš program pro práci s více operačními systémem připravený k volání a simulaci.
 
-## <a name="execute-the-program"></a>Spustit program
+## <a name="execute-the-program"></a>Spuštění programu
 
-V případě, že je v souboru definována operace Q # `.qs` , teď je potřeba zavolat tuto operaci a sledovat jakákoli získaná klasická data.
-Nyní se nevrátí cokoli (odvolání této operace definované výše `Unit` ), ale když později upravíte operaci Q #, která vrátí pole výsledků měření ( `Result[]` ), budeme to řešit.
+Po definování naší Q# operace v `.qs` souboru teď musíme tuto operaci zavolat a sledovat všechna vrácená klasická data.
+V současné době se nevrátí nic (odvolání této operace definované výše `Unit` ), ale když později tuto operaci upravíte, Q# aby vracela pole výsledků měření ( `Result[]` ), budeme na to řešit.
 
-I když je program Q # všudypřítomný napříč prostředími používanými k jeho volání, tak se postup bude lišit. Stačí postupovat podle pokynů na kartě, která odpovídá vaší instalaci: pracuje z aplikace příkazového řádku Q # nebo používá hostitelský program v Pythonu nebo C#.
+I když Q# je program všudypřítomný napříč prostředími používanými k jeho volání, tak se takovým způsobem bude samozřejmě lišit. Stačí postupovat podle pokynů na kartě, která odpovídá vaší instalaci: pracuje z Q# aplikace příkazového řádku nebo používá hostitelský program v Pythonu nebo C#.
 
 #### <a name="command-line"></a>[Příkazový řádek](#tab/tabid-cmdline)
 
-Spuštění programu Q # z příkazového řádku vyžaduje pouze malou změnu v souboru Q #.
+Spuštění Q# programu z příkazového řádku vyžaduje pouze malou změnu Q# souboru.
 
 Jednoduše přidejte `@EntryPoint()` na řádek před definici operace:
 
@@ -274,17 +277,17 @@ Po spuštění byste měli vidět `Message` `DumpMachine` výstupy a níže vyti
 Vytvořit soubor hostitele Pythonu: `host.py` .
 
 Hostitelský soubor je vytvořen takto: 
-1. Nejdřív naimportujeme `qsharp` modul, který registruje zavaděč modulů pro interoperabilitu Q #. 
-    To umožňuje, aby se obory názvů Q # (například `NamespaceQFT` definovali v souboru Q #) zobrazily jako moduly Pythonu, ze kterých můžeme importovat operace q #.
-2. Pak importujte operace Q #, které v tomto případě přímo vyvoláme--- `Perform3qubitQFT` .
-    Je potřeba importovat vstupní bod do programu Q # (tj. _nejedná_ se o operace `H` , jako `R1` jsou a, které jsou volány jinými operacemi q #, ale ne nikdy klasickým hostitelem).
-3. Při simulaci operací nebo funkcí Q # použijte formulář `<Q#callable>.simulate(<args>)` ke spuštění na `QuantumSimulator()` cílovém počítači. 
+1. Nejdřív naimportujeme `qsharp` modul, který registruje zavaděč modulu pro Q# interoperabilitu. 
+    To umožňuje Q# obory názvů (například `NamespaceQFT` jsme definovali v našem Q# souboru), aby se zobrazily jako moduly Pythonu, ze kterých můžeme importovat Q# operace.
+2. Pak importujte Q# operace, které v tomto případě přímo vyvoláme--- `Perform3qubitQFT` .
+    Je potřeba importovat vstupní bod do Q# programu (tj. _nejedná_ se o operace `H` , jako `R1` jsou a, které jsou volány jinými Q# operacemi, ale nikdy klasickým hostitelem).
+3. Při simulaci Q# operací nebo funkcí použijte formulář `<Q#callable>.simulate(<args>)` ke spuštění na `QuantumSimulator()` cílovém počítači. 
 
 > [!NOTE]
 > Pokud jsme chtěli volat operaci na jiném počítači, například `ResourceEstimator()` prostě, můžeme použít `<Q#callable>.estimate_resources(<args>)` .
-> Obecně se operace Q # nezávislá do počítačů, ve kterých jsou spuštěny, ale některé funkce se `DumpMachine` mohou chovat jinak.
+> Obecně platí, Q# že operace se nezávislá na počítače, na kterých jsou spuštěny, ale některé funkce se `DumpMachine` mohou chovat jinak.
 
-4. Po vykonání simulace vrátí volání operace hodnoty, jak je definováno v souboru Q #.
+4. Po vykonání simulace vrátí volání operace hodnoty, jak je definováno v Q# souboru.
     V případě, že se teď nic nevrátí, ale později se vám zobrazí příklad přiřazení a zpracování těchto hodnot.
     Díky tomu, že jsou výsledná data v našich rukou i zcela klasická, můžeme s ní dělat jakékoli věci.
 
@@ -310,7 +313,7 @@ Hostitel C# má čtyři části:
 2. Vypočítá všechny argumenty vyžadované pro kvantový algoritmus.
     V tomto příkladu nejsou žádné.
 3. Spusťte kvantový algoritmus. 
-    Každá operace Q# vygeneruje třídu C# se stejným názvem. 
+    Každá Q# operace vygeneruje třídu jazyka C# se stejným názvem. 
     Tato třída má metodu `Run`, která operaci **asynchronně** provede.
     Spuštění je asynchronní, protože asynchronní bude i spuštění na skutečném hardwaru. 
     Vzhledem k tomu `Run` , že metoda je asynchronní, zavoláme `Wait()` metodu; tyto bloky se spustí, dokud se úloha nedokončí a výsledek vrátí synchronně. 
@@ -407,7 +410,7 @@ Bohužel, na základě základu nečinnosti oznamujeme, že skutečný systém p
 Existuje mnoho druhů měření doby plnění, ale u jednotlivých qubits se zaměříme na nejvíc základní: měření při projekci.
 Po měření v daném základu (např. výpočetního základu $ \{ \ket {0} , \ket {1} \} $) se stav qubit prochází na základě stavu, který se měří,---proto zničení všech dvou míst.
 
-K implementaci měření v rámci programu Q # používáme `M` operaci (z `Microsoft.Quantum.Intrinsic` ), která vrací `Result` typ.
+K implementaci měření v rámci Q# programu používáme `M` operaci (z `Microsoft.Quantum.Intrinsic` ), která vrací `Result` typ.
 
 Nejdřív jsme tuto operaci změnili `Perform3QubitQFT` tak, aby vracela pole výsledků měření, `Result[]` a ne `Unit` .
 
@@ -438,7 +441,7 @@ Po operacích Fourierova transformace uvnitř `using` bloku vložte následujíc
 Každý měřený `Result` typ (buď `Zero` nebo `One` ) je poté přidán do odpovídající pozice indexu v `resultArray` příkazu s příkazem Update-a-Reassign.
 
 > [!NOTE]
-> Syntaxe tohoto příkazu je jedinečná pro Q #, ale odpovídá podobné změně přiřazení proměnné `resultArray[i] <- M(qs[i])` v jiných jazycích, například F # a R.
+> Syntaxe tohoto příkazu je jedinečná pro Q# , ale odpovídá podobné změně přiřazení proměnné `resultArray[i] <- M(qs[i])` v jiných jazycích, například F # a R.
 
 Klíčové slovo `set` se vždycky používá k opětovnému přiřazení proměnných vázaných pomocí `mutable` .
 
@@ -501,7 +504,7 @@ V opačném případě aktualizujte hostitelský program pro zpracování vráce
 
 #### <a name="command-line"></a>[Příkazový řádek](#tab/tabid-cmdline)
 
-Aby bylo možné porozumět vrácenému poli, které bude vytištěno v konzole, můžeme do `Message` souboru Q # přidat další těsně před `return` příkaz:
+Aby bylo možné porozumět vrácenému poli, které bude vytištěno v konzole, můžeme do souboru přidat další `Message` do Q# příkazu těsně před `return` příkazem:
 
 ```qsharp
         Message("Post-QFT measurement results [qubit0, qubit1, qubit2]: ");
@@ -694,12 +697,12 @@ se zbytkem příkazů oboru názvů `open` .
 Ve výsledném výstupu se při měření jednotlivých qubit zobrazí postupná projekce na podprostory.
 
 
-## <a name="use-the-q-libraries"></a>Použití knihoven Q #
-Jak jsme se už zmínili v úvodu, Velká část o výkonu Q # je ve skutečnosti, že vám umožní abstraktně začínat obavám při obchodování s jednotlivými qubits.
+## <a name="use-the-no-locq-libraries"></a>Použití Q# knihoven
+Jak jsme se už zmínili v úvodu, mnoho z Q# nich je ve skutečnosti, že vám umožní abstrakci vypořádat se s jednotlivými qubits.
 V případě, že chcete vyvíjet plně škálovatelné programy pro práci s více procesory, je třeba se obávat, zda `H` operace proběhne před nebo po určitém otočení, pouze zpomalení. 
 
-Knihovny Q # obsahují operaci [QFT](xref:microsoft.quantum.canon.qft) , kterou můžete jednoduše vzít a použít pro libovolný počet qubits.
-Pokud to chcete vyzkoušet, definujte novou operaci v souboru Q #, která má stejný obsah `Perform3QubitQFT` , ale s vše od prvního `H` až po `SWAP` nahrazené dvěma jednoduchými řádky:
+Q#Knihovny obsahují operaci [QFT](xref:microsoft.quantum.canon.qft) , kterou můžete jednoduše použít a použít pro libovolný počet qubits.
+Pokud to chcete vyzkoušet, definujte novou operaci v Q# souboru, která má stejný obsah `Perform3QubitQFT` , ale s vše od prvního `H` až po `SWAP` nahrazené dvěma jednoduchými řádky:
 ```qsharp
             let register = BigEndian(qs);    //from Microsoft.Quantum.Arithmetic
             QFT(register);                   //from Microsoft.Quantum.Canon
@@ -707,7 +710,7 @@ Pokud to chcete vyzkoušet, definujte novou operaci v souboru Q #, která má st
 První řádek jednoduše vytvoří [`BigEndian`](xref:microsoft.quantum.arithmetic.bigendian) výraz přiděleného pole qubits, `qs` což je to, co operace [QFT](xref:microsoft.quantum.canon.qft) přijímá jako argument.
 To odpovídá pořadí indexu qubits v registru.
 
-Chcete-li mít přístup k těmto operacím, přidejte `open` příkazy pro své příslušné obory názvů na začátek souboru Q #:
+Chcete-li mít přístup k těmto operacím, přidejte `open` příkazy pro příslušné obory názvů na začátku Q# souboru:
 ```qsharp
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Arithmetic;
@@ -715,7 +718,7 @@ Chcete-li mít přístup k těmto operacím, přidejte `open` příkazy pro své
 
 Nyní upravte hostitelský program tak, aby volal název vaší nové operace (např. `PerformIntrinsicQFT` ), a pojmenujte ho whirl.
 
-Chcete-li zjistit skutečnou výhodu použití operací knihovny Q #, změňte počet qubits na jinou hodnotu než `3` :
+Chcete-li zjistit skutečnou výhodu použití Q# operací knihovny, změňte počet qubits na jinou než `3` :
 ```qsharp
         mutable resultArray = new Result[4]; 
 

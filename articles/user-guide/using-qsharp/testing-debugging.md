@@ -6,30 +6,33 @@ ms.author: mamykhai@microsoft.com
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: db6e49e94e5ceb3b1b0b2d6ab57391618084072b
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870970"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867909"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
 Stejně jako v případě klasického programování je důležité, abyste měli kontrolu nad tím, že se programy budou chovat podle účelu a že je možné diagnostikovat nesprávné chování.
-V této části se zaměříme na nástroje, které Q # nabízí pro testování a ladění programů v oblasti.
+V této části se zabýváme nástroji, které nabízíme Q# pro testování a ladění programů.
 
 ## <a name="unit-tests"></a>Testování částí
 
 Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek*, které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
 Můžete například zajistit, že se `Square(2)` vrátí, `4` protože víte *předem* , že $2 ^ 2 = $4.
 
-Q # podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
+Q#podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
 
 ### <a name="creating-a-test-project"></a>Vytvoření testovacího projektu
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Otevřete Visual Studio 2019. Přejděte do nabídky **soubor** a vyberte **Nový > projekt...**. V pravém horním rohu vyhledejte `Q#` a vyberte šablonu **projektu testu Q #** .
+Otevřete Visual Studio 2019. Přejděte do nabídky **soubor** a vyberte **Nový > projekt...**. V pravém horním rohu vyhledejte `Q#` a vyberte šablonu ** Q# testovacího projektu** .
 
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
@@ -42,7 +45,7 @@ $ code . # To open in Visual Studio Code
 
 ****
 
-Váš nový projekt obsahuje jeden soubor `Tests.qs` , který poskytuje pohodlný místo pro definování nových testů jednotek Q #.
+Váš nový projekt obsahuje jeden soubor `Tests.qs` , který poskytuje pohodlný místo pro definování nových Q# testů jednotek.
 Zpočátku tento soubor obsahuje jeden ukázkový test jednotek, `AllocateQubit` který kontroluje, zda je nově přidělená qubit ve stavu $ \ket {0} $ a vytiskne zprávu:
 
 ```qsharp
@@ -57,7 +60,7 @@ Zpočátku tento soubor obsahuje jeden ukázkový test jednotek, `AllocateQubit`
     }
 ```
 
-Jakákoli operace Q # nebo funkce, která přebírá argument typu `Unit` a vrácení, `Unit` může být označena jako test jednotky prostřednictvím `@Test("...")` atributu. V předchozím příkladu argument tohoto atributu `"QuantumSimulator"` Určuje cíl, na kterém je test spuštěn. Jeden test může běžet na více cílech. Například přidejte atribut `@Test("ResourcesEstimator")` před `AllocateQubit` . 
+Jakákoli Q# operace nebo funkce, která přebírá argument typu `Unit` a vrácení, `Unit` může být označena jako test jednotky prostřednictvím `@Test("...")` atributu. V předchozím příkladu argument tohoto atributu `"QuantumSimulator"` Určuje cíl, na kterém je test spuštěn. Jeden test může běžet na více cílech. Například přidejte atribut `@Test("ResourcesEstimator")` před `AllocateQubit` . 
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
@@ -66,9 +69,9 @@ Jakákoli operace Q # nebo funkce, která přebírá argument typu `Unit` a vrá
 ```
 Uložte soubor a spusťte všechny testy. Nyní by měly být dvě testy jednotek, jedna, kde se spouští v a `AllocateQubit` `QuantumSimulator` druhá, kde se spouští v `ResourcesEstimator` . 
 
-Kompilátor Q # rozpoznává předdefinované cíle `"QuantumSimulator"` , `"ToffoliSimulator"` a `"ResourcesEstimator"` jako platné cíle provádění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle provádění. 
+Q#Kompilátor rozpoznává předdefinované cíle `"QuantumSimulator"` , `"ToffoliSimulator"` a `"ResourcesEstimator"` jako platné cíle provádění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle provádění. 
 
-### <a name="running-q-unit-tests"></a>Spouštění testů jednotek Q #
+### <a name="running-no-locq-unit-tests"></a>Spouštění Q# testů jednotek
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
@@ -137,9 +140,9 @@ V případě neúspěšných testů jsou výstupy také vytištěny do konzoly n
 
 ## <a name="facts-and-assertions"></a>Fakta a kontrolní výrazy
 
-Vzhledem k tomu, že funkce v Q # nemají žádné _logické_ vedlejší účinky, nemůžete nikdy sledovat v rámci programu q # jiné druhy efektů ze spuštění funkce, jejíž výstupní typ je prázdná řazená kolekce členů `()` .
-To znamená, že cílový počítač se může rozhodnout, že nespustí žádnou funkci `()` , která se vrátí se zárukou, že toto opomenutí nebude upravovat chování žádného následujícího kódu Q #.
-Toto chování vrací funkce `()` (například `Unit` ) užitečný nástroj pro vkládání kontrolních výrazů a logiku ladění do programů Q #. 
+Vzhledem k tomu, že funkce v Q# nemají žádné _logické_ vedlejší účinky, nemůžete v rámci programu nikdy sledovat Q# jiné druhy efektů od spuštění funkce, jejíž výstupní typ je prázdná řazená kolekce členů `()` .
+To znamená, že cílový počítač se může rozhodnout, že nespustí žádnou funkci `()` , která se vrátí se zárukou, že toto opomenutí nebude upravovat chování žádného následujícího Q# kódu.
+Toto chování zpřístupňuje funkce `()` (například `Unit` ) užitečným nástrojem pro vkládání kontrolních výrazů a logiku ladění do Q# programů. 
 
 Pojďme si vzít v úvahu jednoduchý příklad:
 
@@ -153,8 +156,8 @@ function PositivityFact(value : Double) : Unit
 }
 ```
 
-Zde klíčové slovo `fail` označuje, že výpočet by neměl pokračovat a vyvolá výjimku v cílovém počítači, na kterém je spuštěn program Q #.
-Podle definice nemůže být selhání tohoto druhu zjištěno v rámci Q #, protože cílový počítač již po dosažení příkazu nespustí kód Q # `fail` .
+Zde je klíčové slovo `fail` indikuje, že výpočet by neměl pokračovat a vyvolá výjimku v cílovém počítači, na kterém je spuštěný Q# program.
+V rámci definice nemůže být tento druh zjištěn v rámci Q# , protože cílový počítač již Q# po dosažení příkazu nespustí kód `fail` .
 Takže pokud budeme pokračovat po volání `PositivityFact` , můžeme si být jisti, že jeho vstup byl kladný.
 
 Všimněte si, že můžeme implementovat stejné chování jako při `PositivityFact` použití [`Fact`](xref:microsoft.quantum.diagnostics.fact) funkce z <xref:microsoft.quantum.diagnostics> oboru názvů:
@@ -354,7 +357,7 @@ Obecně platí, že stav registru, který je entangled s jiným registrem, je sm
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
-Následující příklad ukazuje, jak můžete použít jak <xref:microsoft.quantum.diagnostics.dumpregister> a <xref:microsoft.quantum.diagnostics.dumpmachine> v kódu Q #:
+Následující příklad ukazuje, jak lze použít jak <xref:microsoft.quantum.diagnostics.dumpregister> a <xref:microsoft.quantum.diagnostics.dumpmachine> v Q# kódu:
 
 ```qsharp
 namespace app
@@ -381,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Ladění
 
-V rámci `Assert` funkcí a `Dump` operací Q # podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno, co je možné při provádění kódu na simulátoru.
+Nad `Assert` a `Dump` funkcemi a operace Q# podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno možné během provádění kódu v simulátoru.
 
 Ladění v Visual Studio Code využívá možnosti ladění poskytované v jazyce C# pro Visual Studio Code rozšíření využívající OmniSharp a vyžaduje instalaci [nejnovější verze](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.docs
-ms.openlocfilehash: ed5ab5df9de5d71ccd922cd430cf15779806dd6a
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 1110f32a6486de1a346b115fa928a098749b6690
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274552"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866872"
 ---
 # <a name="improving-documentation"></a>Vylepšování dokumentace
 
@@ -25,7 +28,7 @@ Podobně připravujeme knihovnu [MathJax](https://www.mathjax.org/) , která umo
 Každá forma dokumentace se ale v podrobnostech liší:
 
 - V **Koncepční dokumentaci** se skládá ze sady článků, které jsou publikovány v nástroji https://docs.microsoft.com/quantum , a které popisují vše od základů pro práci s výpočetními prostředky až po technické specifikace formátů pro výměnu. Tyto články jsou napsány v [DocFX Markdownu (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), což je Markdownu varianta používaná pro vytváření bohatých sad dokumentace.
-- **Reference k rozhraní API** je sada stránek pro každou funkci Q #, operace a uživatelsky definované typy, které jsou publikovány do https://docs.microsoft.com/qsharp/api/ . Tyto stránky dokumentují vstupy a operace pro jednotlivé možné akce, spolu s příklady a odkazy na Další informace. Odkaz rozhraní API se automaticky extrahuje z malých dokumentů DFM ve zdrojovém kódu Q # jako součást každé vydané verze.
+- **Reference k rozhraní API** je sada stránek pro každou Q# funkci, operaci a uživatelsky definovaný typ, který je publikován do https://docs.microsoft.com/qsharp/api/ . Tyto stránky dokumentují vstupy a operace pro jednotlivé možné akce, spolu s příklady a odkazy na Další informace. Odkaz rozhraní API je automaticky extrahován z malých dokumentů DFM ve Q# zdrojovém kódu jako součást každé vydané verze.
 - Soubory **Readme <!----> . MD** , které jsou součástí jednotlivých ukázek a Kata, popisují, jak se používá tato ukázka nebo Kata, co se zabývá a jak se vztahuje na zbytek vývojové sady pro plnění. Tyto soubory jsou zapisovány pomocí [Markdownu (GFM)](https://github.github.com/gfm/), což je složitější alternativa k DFM, která je oblíbená pro připojení dokumentace přímo k úložištím kódu.
 
 ## <a name="contributing-to-the-conceptual-documentation"></a>Přispívání do koncepční dokumentace
@@ -49,7 +52,7 @@ Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
 ```
 
-Tento příkaz naimportuje řádky 4 do 8 [ `Game.qs` souboru z `chsh-game` ukázky](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)a označí je jako kód Q # pro účely zvýrazňování syntaxe.
+Tento příkaz naimportuje řádky 4 do 8 [ `Game.qs` souboru z `chsh-game` ukázky](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)a označí je jako Q# kód pro účely zvýrazňování syntaxe.
 Pomocí tohoto příkazu se můžete vyhnout duplikování kódu mezi koncepčními články a úložištěm ukázek, aby byl vzorový kód v dokumentaci vždy aktuální.
 
 ## <a name="contributing-to-the-api-references"></a>Přispívání do referencí rozhraní API
@@ -64,7 +67,7 @@ Když kompilujeme jednotlivé verze vývojářské sady pro plnění stavů, pou
 
 Zvažte například funkci `ControlledOnBitString<'T> (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)` .
 Komentář k dokumentaci by měl dát uživateli vědět, jak interpretovat `bits` a `oracle` co je funkce pro.
-Každou z těchto různých částí informací lze kompilátoru Q # poskytnout pomocí speciálně pojmenovaného oddílu Markdownu v komentáři k dokumentaci.
+Každou z těchto různých informací lze Q# kompilátoru poskytnout pomocí speciálně pojmenovaného oddílu Markdownu v komentáři k dokumentaci.
 Pro příklad `ControlledOnBitString` můžete napsat něco podobného jako následující:
 
 ```qsharp
@@ -139,7 +142,7 @@ Vykreslenou verzi kódu uvedenou výše můžete zobrazit v [dokumentaci k rozhr
 
 Kromě obecné praxe psaní dokumentace k rozhraní API, které vám pomůžou při psaní komentářů k rozhraní API, je potřeba mít na paměti pár věcí:
 
-- Formát každého komentáře k dokumentaci musí odpovídat, co kompilátor Q # očekává, aby se vaše dokumentace zobrazovala správně. Některé oddíly, jako `/// # Remarks` je například povolení pro volný obsah, zatímco oddíly, jako `/// # See Also` je oddíl, jsou přísnější.
+- Formát každého komentáře k dokumentaci musí odpovídat, co Q# kompilátor očekává, aby se vaše dokumentace zobrazovala správně. Některé oddíly, jako `/// # Remarks` je například povolení pro volný obsah, zatímco oddíly, jako `/// # See Also` je oddíl, jsou přísnější.
 - Čtenář si může přečíst dokumentaci k rozhraní API na hlavním referenčním webu rozhraní API, na shrnutí každého oboru názvů nebo dokonce i v rámci integrovaného vývojového prostředí pomocí informací o přechodu myší. Zajistěte, aby to `/// # Summary` ještě déle nepokračovalo v tom, že vaše čtečka rychle vyřadí, jestli je potřeba číst, nebo najít jiné místo a může vám pomoci při rychlém procházení souhrnů oborů názvů.
 - Vaše dokumentace může být hodně delší než samotný kód, ale je to v pořádku! I malá část kódu může mít neočekávané efekty pro uživatele, kteří neznají kontext, ve kterém tento kód existuje. Poskytnutím konkrétních příkladů a jasným vysvětlením můžete uživatelům pomáhat s tím, že budou mít k dispozici nejlepší využití kódu, který je k dispozici.
 

@@ -1,30 +1,33 @@
 ---
 title: Vytvoření kvantového generátoru náhodných čísel
-description: Vytvořte projekt v jazyku Q#, který ilustruje základní kvantové koncepce, jako je například superpozice, vytvořením kvantového generátoru náhodných čísel.
+description: Sestavte Q# projekt, který ukazuje základní koncepty, jako je například nadpozice, vytvořením generátor náhodných čísel.
 author: bromeg
 ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 18e8975e513a87c0a67a6dbb5586cc7dab5a93fb
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8db892091794cb1166e41744572d8938d975abf2
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274483"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869762"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Kurz: Implementace kvantového generátoru náhodných čísel v jazyku Q\#
 
-Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je kvantový generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo.
+Jednoduchý příklad algoritmu, který je v systému napsaný, Q# je generátor náhodných čísel. Tento algoritmus využívá charakter kvantové mechaniky a vytváří náhodné číslo.
 
 ## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Vytvořte projekt v jazyce Q# buď [pomocí jazyka Q# z příkazového řádku](xref:microsoft.quantum.install.standalone), [pomocí hostitelského programu v Pythonu](xref:microsoft.quantum.install.python), nebo [pomocí hostitelského programu v jazyce C#](xref:microsoft.quantum.install.cs).
+- Vytvořte Q# projekt pro buď [pomocí Q# z příkazového řádku](xref:microsoft.quantum.install.standalone), nebo pomocí [hostitelského programu Pythonu](xref:microsoft.quantum.install.python) nebo [hostitelského programu C#](xref:microsoft.quantum.install.cs).
 
-## <a name="write-a-q-operation"></a>Napište operaci Q#
+## <a name="write-a-no-locq-operation"></a>Zápis Q# operace
 
-### <a name="q-operation-code"></a>Kód operace Q#
+### <a name="no-locq-operation-code"></a>Q#kód operace
 
 1. Obsah souboru Program.qs nahraďte následujícím kódem:
 
@@ -32,13 +35,13 @@ Jednoduchým příkladem kvantového algoritmu implementovaného v jazyku Q# je 
 
 Jak je uvedeno v článku [Principy kvantových výpočtů](xref:microsoft.quantum.overview.understanding), qubit je jednotka kvantových informací, která může být v superpozici různých stavů. Při změření může mít qubit jenom hodnotu 0 nebo 1. Během zpracování však stav qubitu představuje pravděpodobnost přečtení hodnoty 0 anebo 1 při měření. Tento pravděpodobnostní stav se nazývá superpozice. Na základě této pravděpodobnosti můžeme generovat náhodná čísla.
 
-V rámci operace v jazyku Q # zavádíme datový typ `Qubit`, který je pro jazyk Q# nativní. Typ `Qubit` je možné přidělit jen pomocí příkazu `using`. Qubit je po přidělení vždycky ve stavu `Zero`. 
+V naší Q# operaci zavádíme `Qubit` datový typ, který je nativní pro Q# . Typ `Qubit` je možné přidělit jen pomocí příkazu `using`. Qubit je po přidělení vždycky ve stavu `Zero`. 
 
 Pomocí operace `H` můžeme `Qubit` převést do superpozice. Ke změření qubitu a přečtení jeho hodnoty použijte vnitřní operaci `M`.
 
 Když `Qubit` převedeme do superpozice a změříme ho, bude výsledkem při každém vyvolání kódu jiná hodnota.
 
-Pokud `Qubit` je zrušeno přidělení, musí být explicitně nastaveno zpět na `Zero` stav, jinak simulátor ohlásí chybu za běhu. Snadný způsob, jak toho dosáhnout, je vyvolat operaci `Reset`.
+Když je pro `Qubit` zrušeno přidělení, musí pro něj být znovu nastaven stav `Zero`, jinak simulátor ohlásí běhovou chybu. Snadný způsob, jak toho dosáhnout, je vyvolat operaci `Reset`.
 
 ### <a name="visualizing-the-code-with-the-bloch-sphere"></a>Vizualizace kódu pomocí Blochovy koule
 
@@ -61,13 +64,13 @@ Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Po
 
 ## <a name="creating-a-complete-random-number-generator"></a>Vytvoření kompletního generátoru náhodných čísel
 
-Teď když máme operaci Q#, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel. Můžeme použít aplikace příkazového řádku v Q # nebo hostitelský program.
+Teď, když máme Q# operaci, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel. Můžeme použít Q# aplikace příkazového řádku nebo použít hostitelský program.
 
 
 
-### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Aplikace příkazového řádku v Q# s využitím sady Visual Studio nebo editoru Visual Studio Code](#tab/tabid-qsharp)
+### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#aplikace příkazového řádku se sadou Visual Studio nebo Visual Studio Code](#tab/tabid-qsharp)
 
-Pokud chcete vytvořit kompletní aplikaci příkazového řádku v Q#, přidejte do programu v Q# následující vstupní bod: 
+Chcete-li vytvořit úplnou Q# aplikaci příkazového řádku, přidejte do programu následující vstupní bod Q# : 
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
@@ -91,7 +94,7 @@ dotnet run --no-build
 
 ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
 
-Pokud chcete nový program v jazyku Q# spustit z Pythonu, uložte jako soubor `host.py` tento kód:
+Chcete-li spustit nový Q# program z Pythonu, uložte následující kód jako `host.py` :
 
 :::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
 
@@ -105,7 +108,7 @@ Preparing Q# environment...
 
 ### <a name="c-with-visual-studio-code-or-visual-studio"></a>[C# s využitím editoru Visual Studio Code nebo sady Visual Studio](#tab/tabid-csharp)
 
-Pokud chcete nový program v jazyku Q# spustit z C#, upravte soubor `Driver.cs` tak, aby obsahoval tento kód C#:
+Chcete-li spustit nový Q# program z c#, upravte `Driver.cs` tak, aby obsahovalo následující kód C#:
 
 :::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
 

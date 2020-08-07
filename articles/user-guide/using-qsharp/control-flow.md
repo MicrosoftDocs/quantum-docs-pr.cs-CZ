@@ -1,19 +1,22 @@
 ---
-title: 'Tok řízení v Q #'
+title: Tok řízení vQ#
 description: Smyčky, podmíněnéy atd.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: b652736168a71b905deaf7c4fdb29a8751b3dfaf
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870987"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867943"
 ---
-# <a name="control-flow-in-q"></a>Tok řízení v Q #
+# <a name="control-flow-in-no-locq"></a>Tok řízení vQ#
 
 V rámci operace nebo funkce každý příkaz běží v uvedeném pořadí, podobně jako ostatní běžně imperativní klasické jazyky.
 Tok řízení lze však upravit třemi různými způsoby:
@@ -52,7 +55,7 @@ if (result == One) {
 } 
 // n is not bound
 ```
-nebo
+– nebo –
 ```qsharp
 if (i == 1) {
     X(target);
@@ -104,12 +107,12 @@ Všimněte si, že na konci jsme využili binární operátor aritmetické a pos
 
 ## <a name="repeat-until-success-loop"></a>Opakování do smyčky po úspěšném dokončení
 
-Jazyk Q # umožňuje, aby byl tok klasického řízení závislý na výsledcích měření qubits.
+Q#Jazyk umožňuje, aby tok klasického řízení byl závislý na výsledcích měření qubits.
 Tato funkce zase umožňuje implementovat výkonné pravděpodobnostní miniaplikace, které mohou snížit výpočetní náklady na implementaci unitaries.
-Příklady tohoto příkladu jsou vzory *Repeat-to-Success* (ru) v Q #.
+Příklady tohoto příkladu jsou vzory *opakování až po úspěch* (ru) v Q# .
 Tyto ru vzory jsou pravděpodobnostní programy, které mají *očekávané* nízké náklady v souvislosti s základními branami; vzniklé náklady závisí na skutečném běhu a prokládání několika možných větví.
 
-Aby bylo možné zjednodušit vzorce opakování až do úspěchu (ru), Q # podporuje konstrukce.
+Chcete-li zjednodušit vzory opakování až po úspěch (ru), Q# podporují konstrukce
 
 ```qsharp
 repeat {
@@ -147,9 +150,9 @@ Další příklady a podrobnosti najdete v [příkladech Zopakování kroků](#r
 
 ## <a name="while-loop"></a>Smyčka while
 
-Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu. Jsou široce používány v určitých třídách algoritmů pro stav, a to v rámci třídy Q #. Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka spuštění je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime. Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru. 
+Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu. Jsou široce používány v určitých třídách algoritmů pro plnění, což je tedy konstrukce vyhrazeného jazyka Q# . Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka spuštění je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime. Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru. 
 
-Q #, proto podporuje použití smyčky while pouze v rámci funkcí. `while`Příkaz se skládá z klíčového slova `while` , logického výrazu v závorkách a bloku příkazu.
+Q#Proto podporuje použití smyčky while pouze v rámci funkcí. `while`Příkaz se skládá z klíčového slova `while` , logického výrazu v závorkách a bloku příkazu.
 Blok příkazu (tělo smyčky) běží, pokud je podmínka vyhodnocena jako `true` .
 
 ```qsharp
@@ -170,7 +173,7 @@ Příklad:
 ```qsharp
 return 1;
 ```
-nebo
+– nebo –
 ```qsharp
 return (results, qubits);
 ```
@@ -205,7 +208,7 @@ fail $"Syndrome {syn} is incorrect";
 
 ### <a name="rus-pattern-for-single-qubit-rotation-about-an-irrational-axis"></a>RU vzor pro jednoduché qubit otočení o ose Irrational 
 
-V typickém případu použití následující operace Q # implementuje otočení kolem osy Irrational $ (I + 2i Z)/\sqrt {5} $ v koule Bloch. Implementace používá známý vzor ru:
+V typickém případu použití následující Q# operace implementuje otočení kolem osy Irrational $ (I + 2i Z)/\sqrt {5} $ v koule Bloch. Implementace používá známý vzor ru:
 
 ```qsharp
 operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
@@ -331,4 +334,4 @@ Další informace najdete v tématu [Ukázka testování částí, která je k d
 
 ## <a name="next-steps"></a>Další kroky
 
-Přečtěte si o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) v Q #.
+Přečtěte si o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) v Q# .

@@ -1,21 +1,24 @@
 ---
-title: Spuštění Groverova vyhledávacího algoritmu v jazyku Q# – Quantum Development Kit
-description: Sestavte projekt v jazyku Q#, který demonstruje Groverův algoritmus – jeden z kanonických kvantových algoritmů.
+title: Spuštění vyhledávacího algoritmu Grover v Q# sadě – pro vývojová prostředí
+description: Sestavte Q# projekt, který ukazuje algoritmus Grover, jeden z kanonických algoritmů pro stav.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 9e4c53b4d5159cf07f0654603c1d477ad09eb7c6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 5c23d71209eb484a510f102e8b581ba4ec21829a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274479"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869660"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Kurz: Implementace Groverova vyhledávacího algoritmu v jazyku Q\#
 
-V tomto kurzu se dozvíte, jak zkompilovat a spustit Groverův vyhledávácí algoritmus, který zrychluje hledání v nestrukturovaných datech.  Groverovo hledání je jedním z nejoblíbenějších kvantových výpočetních algoritmů a tato poměrně malá implementace v jazyce Q# poskytuje představu o některých výhodách programování kvantových řešení pomocí kvantového programovacího jazyka Q# vysoké úrovně při vyjádření kvantových algoritmů.  Na konci průvodce se zobrazí výstup simulace, který ukazuje úspěšné vyhledání konkrétního řetězce v seznamu neuspořádaných položek za zlomek času, než by trvalo prohledání celého seznamu v klasickém počítači.
+V tomto kurzu se dozvíte, jak zkompilovat a spustit Groverův vyhledávácí algoritmus, který zrychluje hledání v nestrukturovaných datech.  Grover je jedním z nejoblíbenějších výpočetních hodnot pro procesory a tato poměrně malá Q# implementace poskytuje představu o některých výhodách programování řešení s velkým množstvím programovacích procesorů, které jsou náročné Q# na výpočetní jazyk.  Na konci průvodce se zobrazí výstup simulace, který ukazuje úspěšné vyhledání konkrétního řetězce v seznamu neuspořádaných položek za zlomek času, než by trvalo prohledání celého seznamu v klasickém počítači.
 
 Groverův algoritmus hledá konkrétní položky v seznamu nestrukturovaných dat. Může například odpovědět na otázku: Je tato karta vytažená z balíčku karet srdcové eso? Popisek konkrétní položky se nazývá _označený vstup_.
 
@@ -39,7 +42,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 ## <a name="write-the-code"></a>Psaní kódu
 
-1. Pomocí sady Quantum Development Kit [vytvořte nový projekt v jazyku Q# pro aplikace příkazového řádku](xref:microsoft.quantum.install.standalone). Nazvěte projekt `Grover`.
+1. Pomocí vývojářské sady pro práci s [více podsystému vytvořte nový Q# projekt pro aplikaci příkazového řádku](xref:microsoft.quantum.install.standalone). Nazvěte projekt `Grover`.
 
 1. Do souboru `Program.qs` v projektu přidejte tento kód:
 
@@ -51,9 +54,9 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
     Operace `ReflectAboutMarked` definuje označený vstup, který hledáte: řetězec střídajících se nul a jedniček. V tomto příkladu je zadán pevný označený vstup. Je možné rozšířit ho a hledat jiné vstupy nebo obecně jakýkoli vstup.
 
-1. Dále spusťte nový program v jazyku Q# a vyhledejte položku označenou operací `ReflectAboutMarked`.
+1. V dalším kroku spusťte nový Q# program, abyste našli položku označenou `ReflectAboutMarked` .
 
-### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Aplikace příkazového řádku v Q# s využitím sady Visual Studio nebo editoru Visual Studio Code
+### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#aplikace příkazového řádku se sadou Visual Studio nebo Visual Studio Code
 
 Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
 
@@ -104,7 +107,7 @@ Reflecting about marked state...
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud se vám tento kurz líbil, podívejte se na některé zdroje níže, ze kterých se dozvíte víc o tom, jak můžete v jazyce Q# psát své vlastní kvantové aplikace:
+Pokud jste se seznámili s tímto kurzem, podívejte se na některé z níže uvedených prostředků, kde se dozvíte víc o tom, jak můžete použít Q# k psaní vlastních aplikací s využitím.
 
 - [Zpět na Začínáme pomocí průvodce sady QDK](xref:microsoft.quantum.welcome)
 - Vyzkoušejte [ukázku](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) obecnějšího Groverova vyhledávacího algoritmu

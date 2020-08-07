@@ -1,17 +1,20 @@
 ---
 title: Čítač hloubek – sada pro vývoj pro všechna procesory
-description: 'Přečtěte si o čítači hloubky Microsoft QDK, který používá simulátor trasování doby provozu ke shromáždění počtů hloubky každé operace vyvolané v programu Q #.'
+description: Přečtěte si o čítači hloubky Microsoft QDK, který používá simulátor trasování doby provozu ke shromáždění počtů hloubky každé operace vyvolané v Q# programu.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: 811e387fedf547d2681518ae0bb525c13dc84ff4
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 5c54f6fc479203d30c68c4958329605d4323f9ea
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871123"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868317"
 ---
 # <a name="quantum-trace-simulator-depth-counter"></a>Simulátor trasování doby využití: čítač hloubky
 
@@ -36,7 +39,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-depth-counter-in-a-c-host-program"></a>Použití čítače hloubky v hostitelském programu C#
 
-Příklad v jazyce C#, který následuje v tomto oddílu `T` , počítá hloubku `CCNOT` operace na základě následujícího ukázkového kódu Q #:
+Příklad v jazyce C#, který následuje v tomto oddílu `T` , počítá hloubku `CCNOT` operace na základě následujícího Q# ukázkového kódu:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

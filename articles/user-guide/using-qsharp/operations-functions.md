@@ -1,28 +1,31 @@
 ---
-title: 'Operace a funkce v Q #'
+title: Operace a funkce vQ#
 description: Definování a volání operací a funkcí, jakož i specializace řízených a sousedících operací.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
-ms.openlocfilehash: 08eaf150a38afd789f8a23f567ff111d002bac07
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 76437c83df894fa86409e680f961d97e267c6869
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884214"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867875"
 ---
-# <a name="operations-and-functions-in-q"></a>Operace a funkce v Q #
+# <a name="operations-and-functions-in-no-locq"></a>Operace a funkce vQ#
 
 ## <a name="defining-new-operations"></a>Definování nových operací
 
-Operace jsou základem Q #.
-Po deklaraci je lze volat buď z klasických aplikací .NET, například pomocí simulátoru nebo jiných operací v rámci Q #.
-Každá operace definovaná v Q # může volat libovolný počet dalších operací, včetně integrovaných vnitřních operací definovaných jazykem. Konkrétní způsob, jakým Q # definuje tyto vnitřní operace, závisí na cílovém počítači.
+Operace jsou základem Q# .
+Po deklarování mohou být buď volány z klasických aplikací .NET, například pomocí simulátoru nebo jiných operací v rámci Q# .
+Každá operace definovaná v nástroji Q# může volat libovolný počet jiných operací, včetně integrovaných vnitřních operací definovaných jazykem. Konkrétní způsob, jakým Q# tyto vnitřní operace definují, závisí na cílovém počítači.
 Při kompilaci je každá operace reprezentována jako typ třídy .NET, který lze poskytnout cílovým počítačům.
 
-Každý zdrojový soubor Q # může definovat libovolný počet operací.
+Každý Q# zdrojový soubor může definovat libovolný počet operací.
 Název operace musí být v rámci oboru názvů jedinečný a nemůže být v konfliktu s názvy typu nebo funkce.
 
 Deklarace operace se skládá z klíčového slova `operation` následovaný symbolem, který představuje název operace, typ řazené kolekce členů definující argumenty operace, dvojtečku `:` , anotaci typu, která popisuje typ výsledku operace, volitelně poznámku s charakteristikou operace, levou složenou závorku a pak tělo deklarace operace uzavřené v závorkách `{ }` .
@@ -61,16 +64,16 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 ```
 
 > [!NOTE]
-> Každá operace v Q # přebírá přesně jeden vstup a vrátí přesně jeden výstup.
+> Každá operace v Q# používá přesně jeden vstup a vrací přesně jeden výstup.
 > Více vstupů a výstupů je znázorněno pomocí *řazených kolekcí členů*, které shromažďují více hodnot dohromady do jedné hodnoty.
-> V tomto případě Q # je jazyk řazené kolekce členů v řazené kolekci členů.
+> V tomto ohledu je jazyk řazené kolekce členů (Tuple Q# ).
 > Po tomto konceptu by měla být sada prázdných závorek `()` načtena jako "prázdná" řazená kolekce členů, která má typ `Unit` .
 
 ## <a name="controlled-and-adjoint-operations"></a>Řízené a sousedící operace
 
-Pokud operace implementuje jednotnou transformaci, jako je případ mnoha operací v Q #, je možné definovat způsob, jakým operace funguje při *adjointed* nebo *řízeném*prvku. *Sousedící* specializace operace určuje způsob, jakým operace "INVERT" operace funguje, zatímco *řízená* specializace určuje, jak operace funguje, když je její aplikace podmíněně ve stavu konkrétního registru.
+Pokud operace implementuje jednotnou transformaci, jako je případ mnoha operací v nástroji Q# , je možné definovat způsob, jakým operace funguje při *adjointed* nebo *řízení*. *Sousedící* specializace operace určuje způsob, jakým operace "INVERT" operace funguje, zatímco *řízená* specializace určuje, jak operace funguje, když je její aplikace podmíněně ve stavu konkrétního registru.
 
-Adjoints operací je zásadní pro mnoho aspektů výpočetních operací. Příklad jedné takové situace popsané společně s užitečnou programovací technikou Q # najdete v tématu [conjugations](#conjugations) v tomto článku. 
+Adjoints operací je zásadní pro mnoho aspektů výpočetních operací. Příklad jedné takové situace popsané společně s užitečnou Q# programovací technikou najdete v tématu [conjugations](#conjugations) v tomto článku. 
 
 Řízená verze operace je nová operace, která efektivně aplikuje základní operaci pouze v případě, že všechny qubits ovládacího prvku jsou v zadaném stavu.
 Pokud je qubits ovládacího prvku na pozici, pak je základní operace použita v souvislém umístění na příslušné straně.
@@ -83,15 +86,15 @@ Přirozeně by mohla existovat *řízená sousední* specializace a určení ř�
 > Po sobě jdoucí použití operace a poté jejího souseda se stavem opustí stav beze změny, jak je znázorněno ve skutečnosti, že $UU ^ \dagger = U ^ \dagger U = \id $, matici identity.
 > Jednotná reprezentace kontrolované operace je trochu větší odlišit, ale další podrobnosti najdete na stránce s přehledem [výpočetních konceptů: více qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
-Následující část popisuje, jak volat tyto různé specializace v kódu Q # a jak definovat operace pro jejich podporu.
+Následující část popisuje, jak volat tyto různé specializace v Q# kódu a jak definovat operace pro jejich podporu.
 
 ### <a name="calling-operation-specializations"></a>Specializace operací volání
 
-*Funktor* v Q # je objekt pro vytváření, který definuje novou operaci z jiné operace.
-Dvě standardní funktory v Q # jsou `Adjoint` a `Controlled` .
+*Funktor* v Q# je objekt pro vytváření, který definuje novou operaci z jiné operace.
+Dvě standardní funktory v Q# jsou `Adjoint` a `Controlled` .
 
 Funktory má přístup k implementaci základní operace při definování implementace nové operace.
-Proto může funktory provádět složitější funkce než tradiční funkce vyšší úrovně. Funktory v systému typů Q # není reprezentace. V současné době není možné je navazovat na proměnnou nebo předat jako argumenty. 
+Proto může funktory provádět složitější funkce než tradiční funkce vyšší úrovně. Funktory v Q# systému typů není reprezentace. V současné době není možné je navazovat na proměnnou nebo předat jako argumenty. 
 
 Použijte funktor, protože ho použijete k operaci, která vrací novou operaci.
 Například použití `Adjoint` funktor pro `Y` operaci vrátí novou operaci `Adjoint Y` . Novou operaci můžete vyvolat jako jakoukoli jinou operaci.
@@ -109,7 +112,7 @@ Konkrétně Nová operace také podporuje `Adjoint` a podporuje `Controlled` pou
 Obdobně `Controlled X(controls, target)` aplikuje `Controlled` funktor na `X` operaci pro vygenerování nové operace a použije tuto novou operaci na `controls` a `target` .
 
 > [!NOTE]
-> V rámci Q # mají řízené verze vždycky převzít pole qubits ovládacího prvku a řízení je vždy založené na všech ovládacích qubits, které jsou ve stavu výpočtu ( `PauliZ` ) `One` , $ \ket {1} $.
+> V Q# rámci jsou řízené verze vždy přebírat pole qubits ovládacího prvku a ovládací prvek je vždy založen na všech kontrolních qubits ve stavu výpočty ( `PauliZ` ) `One` , $ \ket {1} $.
 > Řízení založené na dalších stavech se dosahuje tím, že se pro kontrolní qubits před kontrolovaným provozem aplikuje příslušná Jednotková operace a po kontrolované operaci se použijí inverzní funkce pro jednotnou operaci.
 > Například použití `X` operace na ovládací prvek qubit před a poté, co řízená operace způsobí, že operace bude řídit `Zero` stav ($ \ket {0} $) pro tento qubit; použití `H` operace před a po ovládacích prvcích ve `PauliX` `One` stavu, to znamená-1 eigenvalue z Pauli X, $ \ket {-} \mathrel{: =} (\ket {0} -\ket {1} )/\sqrt $, a {2} ne na `PauliZ` `One` stav.
 
@@ -140,7 +143,7 @@ V deklaraci první operace v předchozích příkladech operace `BitFlip` a `Dec
 Jak `DecodeSuperdense` zahrnuje měření, nejedná se o jednotkovou operaci, a proto by nemohly nastavovat žádné specializace nesousedících a (vrátit související požadavek, který taková operace vrátí `Unit` ).
 Jak ale `BitFlip` jednoduše provede jednotnou <xref:microsoft.quantum.intrinsic.x> operaci, můžete ji definovat s oběma specializacemi.
 
-Tato část podrobně popisuje, jak zahrnout existenci specializace v deklaracích operací Q #, takže jim umožní volat ve spojení s `Adjoint` nebo `Controlled` funktory.
+Tato část podrobně popisuje, jak zahrnout existenci specializace v Q# deklaracích operací, takže jim umožní volat ve spojení s `Adjoint` nebo `Controlled` funktory.
 Další informace o některých situacích, ve kterých je buď platný, nebo není platný pro deklaraci určitých specializací, naleznete v tématu [okolnosti pro platné definování specializací](#circumstances-for-validly-defining-specializations) v tomto článku.
 
 Charakteristiky operace definují, jaké druhy funktory můžete použít pro deklarovanou operaci a jaký má vliv. Existence těchto specializací se dá deklarovat jako součást signatury operace, konkrétně prostřednictvím poznámky s charakteristikou operace: buď `is Adj` , `is Ctl` nebo `is Adj + Ctl` .
@@ -189,7 +192,7 @@ Následující seznam uvádí celou řadu možností s některými příklady ex
 
 #### <a name="explicit-specialization-declarations"></a>Explicitní deklarace specializace
 
-Operace Q # můžou obsahovat následující explicitní deklarace specializace:
+Q#operace mohou obsahovat následující explicitní deklarace specializace:
 
 - `body`Specializace určuje implementaci operace bez použití funktory.
 - `adjoint`Specializace určuje implementaci operace s `Adjoint` použitým funktor.
@@ -224,7 +227,7 @@ Direktivy a `auto` všechny vyžadují uzavírací středník `;` .
 > [!TIP]   
 > Pokud je operace samostatně sousedící, explicitně určete buď sousední, nebo řízená sousední specializace pomocí direktivy generace, `self` aby kompilátor mohl používat tyto informace pro účely optimalizace.
 
-Deklarace specializace obsahující uživatelsky definovanou implementaci se skládá z argumentů řazené kolekce členů následovaný blokem příkazu Q #, který implementuje specializaci.
+Deklarace specializace obsahující uživatelsky definovanou implementaci se skládá z argumentů řazené kolekce členů následovaný blokem příkazu s Q# kódem, který implementuje specializaci.
 V seznamu argumentů `...` se používá k reprezentaci argumentů deklarovaných pro operaci jako celku.
 Pro `body` a `adjoint` by měl seznam argumentů vždy být `(...)` ; pro `controlled` a by `adjoint controlled` měl být seznam argumentů symbol reprezentující pole qubits ovládacího prvku následovaný znakem `...` uzavřeným v závorkách, například `(controls,...)` .
 
@@ -326,9 +329,9 @@ Pro operaci, jejíž tělo obsahuje volání na jiné operace, které nemají ř
 
 Použijte operaci s dalšími funktory podporovanými kdekoli, kde použijete operaci s méně funktory, ale stejnou signaturou. Například použijte operaci typu kdekoli, kde používáte `(Qubit => Unit is Adj)` operaci typu `(Qubit => Unit)` .
 
-Q # je *kovariantní* s ohledem na možné návratové typy: volat, která vrací typ, `'A` je kompatibilní s typem volat se stejným vstupním typem a typem výsledku, který je kompatibilní s `'A` .
+Q#je *kovariantní* s ohledem na možné návratové typy: volat, které vrací typ, `'A` je kompatibilní s typem volat se stejným vstupním typem a typem výsledku, který je kompatibilní s `'A` .
 
-Q # je *kontravariantní* s ohledem na typy vstupu: dá se volat, který přebírá typ `'A` jako vstup je kompatibilní s typem, který se dá volat se stejným typem výsledku a vstupním typem, který je kompatibilní s `'A` .
+Q#je *kontravariantní* s ohledem na typy vstupu: dá se volat, který přebírá typ `'A` jako vstup, je kompatibilní s volat se stejným typem výsledku a vstupním typem, který je kompatibilní s `'A` .
 
 To znamená, že s ohledem na následující definice
 
@@ -357,7 +360,7 @@ Můžeš
 - Vrátí hodnotu typu `(Qubit[] => Unit is Adj + Ctl)` z `ConjugateInvertWith` .
 
 > [!IMPORTANT]
-> Otázka č. 0,3 představila značný rozdíl v chování uživatelsky definovaných typů.
+> Q#0,3 představil v chování uživatelsky definovaných typů značný rozdíl.
 
 Uživatelsky definované typy jsou považovány za zabalenou verzi základního typu, nikoli jako podtyp.
 To znamená, že hodnota uživatelsky definovaného typu není použitelná, pokud očekáváte hodnotu základního typu.
@@ -380,7 +383,7 @@ operation ApplyWith<'T>(
 }
 ```
 
-Počínaje verzí 0,9 verze Q # podporuje příkaz conjugation, který implementuje předchozí transformaci. Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:
+Počínaje verzí 0,9 Q# podporuje příkaz conjugation, který implementuje předchozí transformaci. Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:
 
 ```qsharp
 operation ApplyWith<'T>(
@@ -405,12 +408,12 @@ Vzhledem k tomu, že jakékoli proměnlivé proměnné použité jako součást 
 
 ## <a name="defining-new-functions"></a>Definování nových funkcí
 
-Funkce jsou čistě deterministické, klasické rutiny v Q #, které se liší od operací v tom, že nemají dovoleno mít žádné účinky přesahující výpočet výstupní hodnoty.
+Funkce jsou čistě deterministické, klasické rutiny v Q# , které se liší od operací v tom, že nemají dovoleno mít žádné účinky přesahující výpočet výstupní hodnoty.
 Konkrétně funkce nemohou volat operace; působit na, přidělit nebo vypůjčit qubits; Ukázka náhodných čísel; nebo jinak závisí na stavu nad rámec vstupní hodnoty s funkcí.
-V důsledku toho jsou funkce Q # *čisté*, v tom, že vždycky mapují stejné vstupní hodnoty na stejné výstupní hodnoty.
-Toto chování umožňuje kompilátoru Q # bezpečně změnit pořadí, jak a kdy volat funkce při generování specializací operace.
+V důsledku toho Q# jsou funkce *čisté*, v tom, že vždycky mapují stejné vstupní hodnoty na stejné výstupní hodnoty.
+Toto chování umožňuje Q# kompilátoru bezpečně změnit pořadí, jak a kdy volat funkce při generování specializací operace.
 
-Každý zdrojový soubor Q # může definovat libovolný počet funkcí.
+Každý Q# zdrojový soubor může definovat libovolný počet funkcí.
 Názvy funkcí musí být jedinečné v rámci oboru názvů a nemohou být v konfliktu s názvy operací nebo typů.
 
 Definování funkce funguje podobně jako při definování operace s tím rozdílem, že pro funkci nelze definovat žádné sousedící a řízené specializace.
@@ -422,7 +425,7 @@ function Square(x : Double) : (Double) {
 }
 ```
 
-nebo 
+– nebo – 
 
 ```qsharp
 function DotProduct(a : Double[], b : Double[]) : Double {
@@ -442,7 +445,7 @@ function DotProduct(a : Double[], b : Double[]) : Double {
 
 Kdykoli je to možné, je vhodné napsat klasický Logic z pojmu Functions namísto operací, aby je mohl snadněji použít. Například pokud jste napsali předchozí `Square` deklaraci jako *operaci*, kompilátor by nedokázal zaručit, že volání stejného vstupu by konzistentně vytvořilo stejné výstupy.
 
-Pro podtržení rozdílu mezi funkcemi a operacemi zvažte problém klasického vzorkování náhodného čísla v rámci operace Q #:
+Pro podtržení rozdílu mezi funkcemi a operacemi zvažte problém klasického vzorkování náhodného čísla v rámci Q# operace:
 
 ```qsharp
 operation U(target : Qubit) : Unit {
@@ -464,7 +467,7 @@ Proto izolování co nejvíc klasických logických funkcí do funkcí umožňuj
 
 Mnoho funkcí a operací, které můžete chtít definovat, se ve skutečnosti nespoléhá na typy jejich vstupů, ale místo toho pouze implicitně používají jejich typy prostřednictvím jiné funkce nebo operace.
 Představte si třeba koncept *mapy* společný pro mnoho funkčních jazyků. po předané funkci $f (x) $ a kolekci hodnot $ \{ x_1, x_2, \dots, x_n \} $, map vrátí novou kolekci $ \{ f (x_1), f (x_2), \dots, f (x_n) \} $.
-Chcete-li implementovat tento postup ve verzi Q #, využijte fakt, že funkce jsou první třídy.
+Chcete-li implementovat tento postup v, využijte Q# výhod fakt, že funkce jsou první třídy.
 Tady je rychlý příklad, který `Map` se používá `T` jako zástupný symbol při zjištění, jaké typy potřebujete.
 
 ```qsharp
@@ -504,17 +507,17 @@ Kromě toho, pokud vytváříte nové řazené kolekce členů nebo UDT, musíte
 I když je to pro malý počet takových funkcí rušivý, když shromáždíte více a více funkcí stejného formuláře jako `Map` , náklady na zavedení nových typů se v poměrně krátkém pořadí změní na nepřiměřeně velké.
 
 Mnohé z těchto potíží však jsou výsledkem faktu, že jste kompilátor neudělili informace, které potřebuje k tomu, abyste rozpoznali, jak různé verze nástroje `Map` souvisejí.
-Efektivně budete chtít, aby kompilátor považoval `Map` jako nějaký druh matematické funkce z q # Functions *types* do funkce q #.
+Efektivně budete chtít, aby kompilátor považoval `Map` jako nějaký druh matematické funkce od Q# *typů* do Q# funkce.
 
-Q # formalizes tento pojem tím, že povoluje funkce a operace pro *parametry typu*a také jejich běžné parametry řazené kolekce členů.
+Q#formalizes tento pojem tím, že povolíte funkcím a operacím *parametry typu*a také jejich běžné parametry řazené kolekce členů.
 V předchozích příkladech si přejete si představit `Map` jako parametry typu `Int, Pauli` v prvním a `Double, String` druhém případě.
 Ve většině případů použijte tyto parametry typu, jako by se jednalo o běžné typy. Použijte hodnoty parametrů typu pro vytvoření polí a řazených kolekcí členů, volání funkcí a operací a přiřazení k běžným nebo proměnlivým proměnným.
 
 > [!NOTE]
-> Největším případem nepřímé závislosti je to, že qubits, kde se program Q # nemůže přímo spoléhat na strukturu `Qubit` typu, ale **musí** předat takové typy jiným operacím a funkcím.
+> Nejextrémním případem nepřímé závislosti je to, že qubits, kde Q# program nemůže přímo spoléhat na strukturu `Qubit` typu, ale **musí** předat takové typy jiným operacím a funkcím.
 
 Návrat k předchozímu příkladu, vidíte, že `Map` musí mít parametry typu, jeden pro reprezentaci vstupu a druhý, který `fn` představuje výstup z `fn` .
-V Q # se to zapisuje přidáním lomených závorek (to znamená `<>` Not brakets $ \braket {} $!) za názvem funkce nebo operace v deklaraci a výpisem každého parametru typu.
+V Q# je tento zápis napsán přidáním lomených závorek (to znamená `<>` Not brakets $ \braket {} $!) za názvem funkce nebo operace v deklaraci a výpisem každého parametru typu.
 Název každého parametru typu musí začínat značkou `'` , která značí, že se jedná o parametr typu a ne běžný typ (označovaný také jako *konkrétní* typ).
 Proto `Map` je zapsána:
 
@@ -541,8 +544,8 @@ let paulis = Map(IntToPauli, ints);
 ```
 
 > [!TIP]
-> Zápis obecných funkcí a operací je jedním z míst, kde "řazená kolekce členů" v řazené kolekci členů "je velmi užitečným způsobem, jak se zamyslet na funkce a operace Q #.
-> Vzhledem k tomu, že každá funkce používá přesně jeden vstup a vrátí přesně jeden výstup, vstup typu `'T -> 'U` odpovídá *libovolné* funkci Q #.
+> Zápis obecných funkcí a operací je jeden místo, kde "řazená kolekce členů" v řazené kolekci členů "je velmi užitečným způsobem, jak se zabývat Q# funkcemi a operacemi.
+> Vzhledem k tomu, že každá funkce používá přesně jeden vstup a vrátí přesně jeden výstup, vstup typu `'T -> 'U` odpovídá *libovolné* Q# funkci.
 > Podobně můžete předat jakoukoli operaci do vstupu typu `'T => 'U` .
 
 V druhém příkladu zvažte, jak napsat funkci, která vrací kompozici dvou dalších funkcí:
@@ -571,15 +574,15 @@ function Compose<'A, 'B, 'C>(outerFn : ('B -> 'C), innerFn : ('A -> 'B)) : ('A -
 }
 ```
 
-Standardní knihovny Q # poskytují rozsah takových operací, které jsou parametrizované pro typ, a usnadňují tak vyjádření toku řízení vyšším řádu.
-Tyto postupy jsou podrobněji popsány v [příručce ke standardní knihovně Q #](xref:microsoft.quantum.libraries.standard.intro).
+Q#Standardní knihovny poskytují rozsah těchto operací s parametrizovanými typy a funkce, které usnadňují vyjádření toku řízení vyšším řádu.
+Tyto postupy jsou podrobněji popsány v [ Q# příručce ke standardní knihovně](xref:microsoft.quantum.libraries.standard.intro).
 
 
 ## <a name="callables-as-first-class-values"></a>Se bude volat jako hodnoty první třídy.
 
-Jednou z kritických postupů pro rozhodnutí o toku řízení a klasické logice pomocí funkcí místo operací je využití těchto operací a funkcí v Q # jsou *prvními třídami*.
+Jedním z kritických postupů pro rozhodnutí o toku řízení a klasické logice pomocí funkcí místo operací je použití těchto operací v nástroji jako Q# *první třídy*.
 To znamená, že jsou všechny hodnoty v jazyce v pravém.
-Například následující je naprosto platný kód Q #, pokud je trochu nepřímá:
+Například následující příklad je naprosto platný Q# kód, pokud je málo nepřímý:
 
 ```qsharp
 operation FirstClassExample(target : Qubit) : Unit {
@@ -649,12 +652,12 @@ function SquareOperation(op : (Qubit => Unit)) : (Qubit => Unit) {
 }
 ```
 
-V zásadě byla klasická logika v rámci `SquareOperation` může být mnohem více zapojena, ale je stále izolovaná od zbytku operace zárukami, které může kompilátor nabízet o funkcích. Standardní knihovna Q # používá tento přístup v celém pro účely exprese klasického toku řízení způsobem, který mohou programy snadno použít.
+V zásadě byla klasická logika v rámci `SquareOperation` může být mnohem více zapojena, ale je stále izolovaná od zbytku operace zárukami, které může kompilátor nabízet o funkcích. Q#Standardní knihovna používá tento přístup v celém pro účely exprese klasického toku řízení způsobem, který mohou programy snadno použít.
 
 
 ## <a name="recursion"></a>Rekurze
 
-Je možné, že volat v Q # můžou být přímo nebo nepřímo rekurzivní.
+Q#je možné, že lze volat přímo nebo nepřímo rekurzivní.
 To znamená, že operace nebo funkce může volat sám sebe nebo může zavolat jinou metodu, kterou přímo nebo nepřímo volá operaci, kterou lze volat.
 
 Existují dva důležité komentáře k použití rekurze, ale:
@@ -662,8 +665,8 @@ Existují dva důležité komentáře k použití rekurze, ale:
 - Použití rekurze v operacích může být v konfliktu s některými optimalizacemi.
   Toto rušení může mít zásadní vliv na dobu provádění algoritmu.
 - Při spuštění na skutečném zařízení ve formátu paměti může být velikost zásobníku omezená, takže hluboká rekurze může vést k chybě za běhu.
-  Konkrétně kompilátor Q # a modul runtime neidentifikují a optimalizují koncovou rekurzi.
+  Konkrétně Q# kompilátor a modul runtime neidentifikují a optimalizují koncovou rekurzi.
 
 ## <a name="next-steps"></a>Další kroky
 
-Přečtěte si o [proměnných](xref:microsoft.quantum.guide.variables) v Q #.
+Přečtěte si o [proměnných](xref:microsoft.quantum.guide.variables) v Q# .

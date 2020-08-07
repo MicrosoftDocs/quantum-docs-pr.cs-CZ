@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.samples
-ms.openlocfilehash: 3bd0de04a448c74eea6c3e8e3a15dcbb19f9d705
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 20da0e1765a242c172cc595f03d7791a0e8b8d2d
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274515"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867503"
 ---
 # <a name="contributing-samples-to-the-quantum-development-kit"></a>Přispívání ukázek do vývojové sady pro všechna ta
 
@@ -45,10 +48,10 @@ Každá ukázka v rámci složky pro každou oblast obsahuje jednu složku, kter
 
 Podívejte se na soubory, které tvoří každou složku, a pojďme se podrobně do [`algorithms/chsh-game/`](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/chsh-game) ukázky.
 
-| Soubor              | Description                                                |
+| File              | Popis                                                |
 |-------------------|------------------------------------------------------------|
-| `CHSHGame.csproj` | Projekt Q # použitý k sestavení ukázky s .NET Core SDK |
-| `Game.qs`         | Operace a funkce Q # pro ukázku                 |
+| `CHSHGame.csproj` | Q#projekt použitý k sestavení ukázky s .NET Core SDK |
+| `Game.qs`         | Q#operace a funkce pro ukázku                 |
 | `Host.cs`         | Hostitelský program C# použitý ke spuštění ukázky                     |
 | `host.py`         | Hostitelský program Pythonu použitý ke spuštění ukázky                 |
 | `README.md`       | Dokumentace k tomu, co ukázka dělá a jak ji používat    |

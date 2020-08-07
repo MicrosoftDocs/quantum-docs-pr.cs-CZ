@@ -1,29 +1,32 @@
 ---
-title: 'Výrazy typu v Q #'
-description: 'Pochopte, jak zadat, odkazovat a kombinovat konstanty, proměnné, operátory, operace a funkce jako výrazy v Q #.'
+title: Výrazy vQ#
+description: Pochopte, jak zadat, odkazovat a kombinovat konstanty, proměnné, operátory, operace a funkce jako výrazy v Q# .
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 1821df6a3a51a62b44f3ccd96b127577c5db990a
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b6cc97dfee05dc843e213e84f17043714a8a9656
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415384"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869609"
 ---
-# <a name="type-expressions-in-q"></a>Výrazy typu v Q #
+# <a name="expressions-in-no-locq"></a>Výrazy vQ#
 
 ## <a name="numeric-expressions"></a>Číselné výrazy
 
 Číselné výrazy jsou výrazy typu `Int` , `BigInt` nebo `Double` .
 To znamená, že jsou buď celá čísla, nebo čísla s plovoucí desetinnou čárkou.
 
-`Int`literály v Q # jsou zapsány jako posloupnost číslic.
+`Int`literály v Q# jsou zapsány jako sekvence číslic.
 Šestnáctková a binární celá čísla jsou podporována a zapsána `0x` `0b` předponou a v uvedeném pořadí.
 
-`BigInt`literály v Q # mají koncovou `l` nebo `L` příponu.
+`BigInt`literály v Q# mají koncovou `l` nebo `L` příponu.
 Hexadecimální Velká celá čísla jsou podporována a napsána předponou "0x".
 Následující jsou tedy všechna platná použití `BigInt` literálů:
 
@@ -33,7 +36,7 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-`Double`literály v Q # jsou čísla s plovoucí desetinnou čárkou napsaná pomocí desítkových číslic.
+`Double`literály v jsou čísla s plovoucí desetinnou čárkou Q# napsaná pomocí desítkových číslic.
 Je možné je zapsat s desetinnou čárkou nebo bez nich, `.` nebo exponenciální částí označenou písmenem "e" nebo "e" (po které jsou platné pouze možné záporné znaménko a desítkové číslice).
 Níže jsou uvedené platné `Double` literály: `0.0` , `1.2e5` , `1e-5` .
 
@@ -63,7 +66,7 @@ To znamená, že posun jednoho kroku doleva nebo doprava je stejný jako vynáso
 
 Celočíselné dělení a celočíselné zbytky se řídí stejným chováním pro záporná čísla jako C#.
 To znamená, že `a % b` vždy má stejné znaménko jako `a` a `b * (a / b) + a % b` vždy se rovná `a` .
-Například:
+Příklad:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -86,7 +89,7 @@ Dvě `Bool` hodnoty literálu jsou `true` a `false` .
 Vzhledem k jakýmkoliv dvěma výrazům stejného primitivního typu lze `==` `!=` použít binární operátory a k vytvoření `Bool` výrazu.
 Výraz má hodnotu true, pokud jsou dva výrazy stejné a false, pokud ne.
 
-Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty. Například pomocí operátoru "Unwrap" `!` (popsaný v podrobnostech na [typech v Q #](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),
+Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty. Například pomocí operátoru "Unwrap" `!` (popsaný v podrobnostech [v Q# typech ](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -110,24 +113,24 @@ S ohledem na logický výraz `not` může být unární operátor použit k vytv
 
 ## <a name="string-expressions"></a>Řetězcové výrazy
 
-Q # povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:microsoft.quantum.intrinsic.message) funkci Standard. Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během programu Q #.
+Q#povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:microsoft.quantum.intrinsic.message) funkci Standard. Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během Q# programu.
 
-Řetězce v Q # jsou buď literály nebo interpolované řetězce.
+Řetězce v Q# jsou buď literály, nebo interpolované řetězce.
 
 Řetězcové literály jsou podobně jako jednoduché řetězcové literály ve většině jazyků: sekvence znaků Unicode uzavřených v uvozovkách `" "` .
 V řetězci použijte znak zpětného lomítka `\` k úniku znaku dvojité uvozovky ( `\"` ) nebo k vložení nového řádku (), návratu na začátek řádku `\n` ( `\r` ) nebo tabulátoru ( `\t` ).
-Například:
+Příklad:
 
 ```qsharp
 "\"Hello world!\", she said.\n"
 ```
 ### <a name="interpolated-strings"></a>Interpolované řetězce
 
-Syntaxe Q # pro řetězcové interpolace je podmnožinou syntaxe jazyka C#. Níže jsou uvedené klíčové body, které se týkají Q #:
+Q#Syntaxe pro řetězcové interpolace je podmnožinou syntaxe jazyka C#. Níže jsou uvedené klíčové body, které se týkají Q# :
 
 * Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho `$` symbolem. Mezi znakem `$` a `"` , který začíná řetězcovým literálem, nesmí být mezera.
 
-* Následuje základní příklad použití [`Message`](xref:microsoft.quantum.intrinsic.message) funkce k zápisu výsledku měření do konzoly spolu s dalšími výrazy Q #.
+* Následuje základní příklad použití [`Message`](xref:microsoft.quantum.intrinsic.message) funkce pro zápis výsledku měření do konzoly spolu s ostatními Q# výrazy.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -135,9 +138,9 @@ Syntaxe Q # pro řetězcové interpolace je podmnožinou syntaxe jazyka C#. Ní�
     Message($"Number: {num}, Result: {res}");
 ```
 
-* Libovolný platný výraz Q # se může objevit v interpolované řetězci.
+* Libovolný platný Q# výraz se může objevit v interpolované řetězci.
 
-* Výrazy uvnitř interpolované řetězce následují syntax Q #, nikoli syntaxe jazyka C#. Nejvýraznějším rozdílem je, že Q # nepodporuje doslovné (víceřádkové) interpolované řetězce.
+* Výrazy uvnitř interpolované řetězce následují Q# syntax, nikoli syntaxe jazyka C#. Nejvýraznějším rozdílem je, že Q# nepodporují doslovné (víceřádkové) interpolované řetězce.
 
 Další podrobnosti o syntaxi jazyka C# naleznete v tématu [*interpolované řetězce*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings).
 
@@ -197,7 +200,7 @@ Kromě literálů jsou jedinými výrazy uživatelsky definovaného typu symboly
 
 ## <a name="unwrap-expressions"></a>Rozbalit výrazy
 
-V Q # se operátor rozbalení označuje jako koncová značka vykřičník `!` .
+V Q# , operátor rozbalení je koncovým vykřičníkem `!` .
 Například pokud `IntPair` je uživatelem definovaný typ s podkladovým typem `(Int, Int)` a `s` je proměnná s hodnotou `IntPair(2, 3)` , pak `s!` je `(2, 3)` .
 
 Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech můžete zopakovat operátor rozbalení. Například `s!!` označuje zdvojnásobení nezabalenou hodnotu `s` .
@@ -208,7 +211,7 @@ Proto, pokud `WrappedPair` je uživatelem definovaný typ s podkladovým typem `
 
 Priorita `!` operátoru má jeden dopad, který nemusí být zřejmý.
 Vrátí-li funkce nebo operace hodnotu, která je poté nezabalena, musí být volání funkce nebo operace uzavřena v závorkách, aby se argumenty řazené kolekce členů navázaly na volání, nikoli na rozbalení.
-Například:
+Příklad:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -270,7 +273,7 @@ Například pokud `a` a `b` jsou obě pole typu `Int` , je prvek z zřetězení 
 (a + b)[13]
 ```
 
-Všechna pole v Q # jsou založená na nule.
+Všechna pole v Q# jsou založená na nule.
 To znamená, že první prvek pole `a` je vždy `a[0]` .
 
 
@@ -318,7 +321,7 @@ let slice10 = arr[...];       // slice10 is [1,2,3,4,5,6];
 
 ### <a name="copy-and-update-expressions"></a>Výrazy kopírování a aktualizace
 
-Vzhledem k tomu, že všechny typy Q # jsou typy hodnot (s qubits, které pobírají trochu speciální role), tvoří kopii "kopie", když je hodnota vázána na symbol nebo když je symbol převázán. To znamená, že chování Q # je stejné jako při vytvoření kopie pomocí operátoru přiřazení. 
+Vzhledem k tomu, že všechny Q# typy jsou typy hodnot (s qubits, které pobírají trochu speciální role), tvoří kopii "kopie", když je hodnota svázána se symbolem nebo při převázání symbolu. To znamená, že chování Q# je stejné jako při vytvoření kopie pomocí operátoru přiřazení. 
 
 Samozřejmě jsou v praxi v případě potřeby znovu vytvořeny pouze příslušné součásti. To má vliv na to, jak kopírujete pole, protože není možné aktualizovat položky pole. Chcete-li upravit existující pole, je nutné využít mechanismus *kopírování a aktualizace* .
 
@@ -381,7 +384,7 @@ Nicméně zatímco operace `(Qubit[] => Unit is Adj)` a `(Qubit[] => Unit is Ctl
 
 Například `[[Op1], [Op2]]` by aktuálně vyvolala chybu, protože se pokusí vytvořit pole dvou nekompatibilních typů polí `(Qubit[] => Unit is Adj)[]` a `(Qubit[] => Unit is Ctl)[]` .
 
-Další informace o tom, jak volat, najdete v tématu věnovaném vydaným [výrazům](#callable-expressions) na této stránce nebo [operacích a funkcích v Q #](xref:microsoft.quantum.guide.operationsfunctions).
+Další informace o tom, jak volat, najdete v tématu věnovaném vydaným [výrazům](#callable-expressions) na této stránce nebo [operacích a funkcích v Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="conditional-expressions"></a>Podmíněné výrazy
 
@@ -446,7 +449,7 @@ Proto pokud chcete vyvolat výsledek volání `Builder` z předchozího odstavce
 ```
 
 Při vyvolání [typu](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) , který je možné volat, můžete zadat skutečné parametry typu v rámci lomených závorek `< >` po volání.
-Tato akce je obvykle zbytečná, protože kompilátor Q # odvodí skutečné typy.
+Tato akce je obvykle zbytečná, protože Q# kompilátor odvodí skutečné typy.
 Nicméně *je* vyžadován pro [částečnou aplikaci](xref:microsoft.quantum.guide.operationsfunctions#partial-application) , pokud je argument typu bez parametrů ponechán neurčen.
 To je užitečné také při předávání operací s různými funktory, které jsou schopné volat.
 
@@ -469,7 +472,7 @@ Specifikace typu je povinná `Op3` , protože a `Op1` má jiné typy, takže kom
 
 * Kulaté závorky pro operace a volání funkce se také vážou před libovolným operátorem, ale po vyřazení a funktory pole.
 
-Operátory Q # v pořadí podle priority, od nejvyšší po nejnižší:
+Q#operátory v pořadí podle priority, od nejvyšších po nejnižší:
 
 Operátor | Aritou | Popis | Typy operandů
 ---------|----------|---------|---------------
@@ -492,4 +495,4 @@ Operátor | Aritou | Popis | Typy operandů
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď, když můžete pracovat s výrazy v Q #, přejít k [operacím a funkcím v q #](xref:microsoft.quantum.guide.operationsfunctions) a zjistit, jak definovat a volat operace a funkce.
+Teď, když můžete pracovat s výrazy v Q# , přejděte k [operacím a funkcím Q# v](xref:microsoft.quantum.guide.operationsfunctions) , abyste se dozvěděli, jak definovat a volat operace a funkce.

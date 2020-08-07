@@ -1,17 +1,20 @@
 ---
 title: Kontrola použití neověřených qubits – sada pro vývoj všech procesorů
-description: 'Přečtěte si o nástroji QDK s neplatnými qubits pro Microsoft, který používá simulátor trasování doby provozu ke kontrole kódu Q # pro potenciálně neplatnou qubits.'
+description: Přečtěte si o nástroji Microsoft QDK invalidateed qubits pro kontrolu použití, který používá simulátor trasování doby provozu ke kontrole Q# kódu pro potenciálně neplatnou qubits.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: fccf6d5784b587f4ad9b659e23027619acd06ffa
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: c451747badba03801bd4ecd419420f131ac502d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871089"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868283"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Simulátor trasování provozu: neověřená Kontrola použití qubits
 
@@ -19,7 +22,7 @@ Nástroj pro kontrolu použití neověřených qubits je součástí nástroje p
 
 ## <a name="invalid-qubits"></a>Neplatný qubits
 
-Vezměte v úvahu následující část kódu Q # pro ilustraci problémů zjištěných neověřeným qubits použití nástroje:
+Vezměte v úvahu následující část Q# kódu pro ilustraci problémů zjištěných neověřeným qubits použití nástroje:
 
 ```qsharp
 operation UseReleasedQubit() : Unit {

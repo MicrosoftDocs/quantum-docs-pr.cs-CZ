@@ -1,22 +1,25 @@
 ---
-title: 'Průvodce stylem Microsoft Q #'
-description: 'Přečtěte si o názvech, vstupech, dokumentaci a konvencích formátování pro programy a knihovny Q #.'
+title: Q#Průvodce stylem Microsoft
+description: Přečtěte si o názvech, vstupech, dokumentaci a konvencích formátování pro Q# programy a knihovny.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 26de7d5f639ea1b4df24232127b6f95cee3a041e
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 27a2ae5ae9d00329fc369268edae24228a9a9d0d
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871378"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867585"
 ---
-# <a name="q-style-guide"></a>Průvodce stylem Q # #
+# <a name="no-locq-style-guide"></a>Q#Průvodce stylem #
 ## <a name="general-conventions"></a>Obecné konvence ##
 
-Konvence navržené v této příručce jsou určené k tomu, aby usnadnily čtení a pochopení programů a knihoven ve službě Q #.
+Konvence navržené v této příručce jsou určené k tomu, aby Q# usnadnily čtení a pochopení programů a knihoven.
 
 ## <a name="guidance"></a>Pokyny
 
@@ -29,13 +32,13 @@ Navrhujeme:
 V rámci nabídky vývojové sady pro práci s více operačními společnostmi usilujeme o názvy funkcí a operací, které vývojářům usnadňují psaní programů, které se snadno čtou a které minimalizují neočekávaně.
 Důležitou součástí toho je, že když vybíráme názvy pro funkce, operace a typy, vytvoříme *slovník* , který programátoři používají pro vyjádření základních konceptů. Díky našim možnostem vám pomůžeme nebo je bráníme v jejich úsilí, aby mohli jasně komunikovat.
 Tím se na nás zaručí zodpovědnost, aby se zajistilo, že názvy, které zavádíme, představují srozumitelnější místo neprůhlednosti.
-V této části podrobně uvádíme, jak splňujeme tuto povinnost z hlediska explicitních pokynů, abychom nám mohli co nejlépe udělat komunitou pro vývoj Q.
+V této části podrobně uvádíme, jak splňujeme tuto povinnost z hlediska explicitních pokynů, které nám pomáhají s Q# vývojovou komunitou.
 
 ### <a name="operations-and-functions"></a>Operace a funkce ###
 
 Jedna z prvních věcí, které by měl název vytvořit, je, zda daný symbol představuje funkci nebo operaci.
 Rozdíl mezi funkcemi a operacemi je zásadní pro porozumění způsobu, jakým se chová blok kódu.
-Pro sdělování rozdílů mezi funkcemi a operacemi pro uživatele spoléháme na to, že modely Q # využívají vedlejší účinky na tyto operace.
+Pro sdělování rozdílů mezi funkcemi a operacemi pro uživatele spoléháme na to, že Q# modely využívají vedlejší účinky na tyto operace.
 To znamená, že operace *dělá* něco.
 
 Naopak funkce popisují matematické vztahy mezi daty.
@@ -97,8 +100,8 @@ Navrhujeme:
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Zrušením použití příkazu ("reflektování") označíte účinek operace. |
 | ☒ | <s>`operation XRotation`</s> | Místo operace použijte funkci navrhuje fráze substantivum. |
-| ☒ | <s>`operation search_oracle`</s> | Použití `snake_case` odporu Q # Notation. |
-| ☒ | <s>`operation Search_Oracle`</s> | Použití podtržítek s podtržítkem pro název operace je v rozporu s zápisem Q #. |
+| ☒ | <s>`operation search_oracle`</s> | Použití `snake_case` porušeného Q# zápisu. |
+| ☒ | <s>`operation Search_Oracle`</s> | Použití podtržítka v interních operacích s názvem operace odporuje Q# zápisu. |
 | ☑ | `function StatePreparationOracle` | Použití fráze substantivum naznačuje, že funkce vrátí operaci. |
 | ☑ | `function EqualityFact` | Zrušte použití podstatného jména ("fakt"), abyste označili, že se jedná o funkci, ale jeho jméno. |
 | ☒ | <s>`function GetRotationAngles`</s> | Použití příkazu ("Get") naznačuje, že se jedná o operaci. |
@@ -110,9 +113,9 @@ Navrhujeme:
 
 ### <a name="entry-points"></a>Vstupní body
 
-Při definování vstupního bodu do programu Q # kompilátor Q # rozpoznává [ `@EntryPoint()` atribut](xref:microsoft.quantum.core.entrypoint) , ale vyžaduje, aby vstupní body měly konkrétní název (např.: `main` , `Main` nebo `__main__` ).
-To znamená, že z perspektivy pro vývojáře Q # jsou vstupními body běžné operace s poznámkami `@EntryPoint()` .
-Kromě toho může být vstupní body Q # vstupními body pro celou aplikaci (tj. ve spustitelných souborech se systémem Q #) nebo může představovat rozhraní mezi programem Q # a hostitelským programem pro aplikaci (tj.: při použití Q # s Pythonem nebo .NET), aby byl název Main mohl být zavádějící při použití na vstupním bodu Q #.
+Při definování vstupního bodu do Q# programu Q# rozpozná kompilátor [ `@EntryPoint()` atribut](xref:microsoft.quantum.core.entrypoint) , spíše než vyžaduje, aby vstupní body měly konkrétní název (např.: `main` , `Main` nebo `__main__` ).
+To znamená, že z perspektivy Q# vývojáře jsou vstupními body běžné operace s poznámkami `@EntryPoint()` .
+Q#Vstupní body také mohou být vstupními body pro celou aplikaci (tj. v Q# samostatných spustitelných souborech) nebo mohou být rozhraní mezi Q# programem a hostitelským programem pro aplikaci (tj.: při použití Q# s Pythonem nebo .NET), což znamená, že název Main může být zavádějící při použití na Q# vstupním bodu.
 
 Doporučujeme používat vstupní body pro pojmenování k vyjádření použití `@EntryPoint()` atributu pomocí obecných rad pro pojmenování výše uvedených operací.
 
@@ -190,11 +193,11 @@ Especially in a field such as quantum computing that is rich with domain experti
 In naming code symbols, one way that this cognizance expresses itself is as an awareness of the convention from physics of adopting as the names of algorithms and operations the names of their original publishers.
 While we must maintain the history and intellectual provenance of concepts in quantum computing, demanding that all users be versed in this history to use even the most basic of functions and operations places a barrier to entry that is in most cases severe enough to even present an ethical compromise. -->
 Proto doporučujeme, abyste při každém rozumném a běžném výskytu, který popisuje pojem koncept, přijali v rámci silné Předvolby na řádné podstatné jméno, které popisují historii publikace konceptu.
-Jako konkrétní příklad se v rámci akademické literatury často označují samostatně kontrolované SWAPy a dvakrát kontrolované operace, ale v rámci akademické literatury se identifikují v Q # hlavně jako `CSWAP` a `CCNOT` .
+Jako konkrétní příklad se v rámci akademické literatury často označují samostatně kontrolované SWAPy a dvakrát kontrolované operace, ale jsou určené Q# hlavně jako `CSWAP` a `CCNOT` .
 V obou případech komentáře k rozhraní API poskytují synonymum názvů na základě správných podstatných jmen a spolu se všemi příslušnými citacemi.
 
-Tato předvolba je obzvláště důležitá vzhledem k tomu, že některé použití řádných podstatných jmen bude vždy nutné – Q # následuje po sadě pro řadu klasických jazyků, například a odkazuje na `Bool` typy v odkazu na logickou logiku, která je zase pojmenována při respektování bool typu Jiří.
-Několik základních principů je obdobně pojmenováno podobným způsobem, včetně `Pauli` integrovaného typu do jazyka Q #.
+Tato předvolba je obzvláště důležitá vzhledem k tomu, že některé použití řádných podstatných jmen bude vždy nutné – Q# následuje po sadě tradice v řadě klasických jazyků, například a odkazuje na `Bool` typy v odkazu na logickou logiku, která je zase pojmenována při respektování bool typu Jiří.
+Několik základních principů je obdobně pojmenováno podobným způsobem, včetně `Pauli` integrovaného typu do Q# jazyka.
 Minimalizací použití řádných podstatných jmen, kde takové použití není nezbytné, snižujeme dopad na to, kde nelze rozumně obejít řádná podstatná jména.
 
 # <a name="guidance"></a>[Pokyny](#tab/guidance) 
@@ -209,9 +212,9 @@ Navrhujeme:
 
 ### <a name="type-conversions"></a>Převody typu ###
 
-Vzhledem k tomu, že Q # je silně a staticky typovaného jazyka, hodnota jednoho typu může být použita pouze jako hodnota jiného typu pomocí explicitního volání funkce pro převod typu.
+Vzhledem k Q# tomu, že se jedná o silný a staticky typový jazyk, lze hodnotu jednoho typu použít pouze jako hodnotu jiného typu pomocí explicitního volání funkce pro převod typu.
 To je v kontrastu s jazyky, které umožňují hodnotám měnit typy implicitně (např.: povýšení typu) nebo prostřednictvím přetypování.
-Výsledkem je, že funkce pro převod typu hrají důležitou roli ve vývoji knihovny Q # a sestávají z nich jedno z častých rozhodnutí o pojmenování.
+Výsledkem je, že funkce pro převod typu hrají důležitou roli při Q# vývoji knihovny a sestávají z nich jedno z častých rozhodnutí o pojmenování.
 Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_, můžou být zapsány jako funkce a tak do výše uvedených rad.
 Konkrétně doporučujeme, aby funkce pro převod typu neměly být nikdy pojmenovány jako slovesa (např.:) nebo typu příznaku příznaku `ConvertToX` ( `ToX` ), ale měly by být pojmenovány jako textová fráze s předumístěním, které označují zdrojové a cílové typy ( `XAsY` ).
 Při výpisu typů polí v názvech funkcí pro převod typu doporučujeme zkrácený `Arr` .
@@ -244,7 +247,7 @@ Pokud operace nebo funkce není určena k přímému použití, ale měla by bý
 
 Navrhujeme:
 
-- Není-li funkce, operace nebo uživatelsky definovaný typ součástí veřejného rozhraní API pro knihovnu nebo program Q #, zajistěte, aby byla označena jako interní, vložením `internal` klíčového slova před `function` deklarací, `operation` nebo `newtype` .
+- Není-li funkce, operace nebo uživatelsky definovaný typ součástí veřejného rozhraní API pro Q# knihovnu nebo program, ujistěte se, že je označen jako interní, vložením `internal` klíčového slova před `function` `operation` deklarací, nebo `newtype` .
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
@@ -256,7 +259,7 @@ Navrhujeme:
 ***
 ### <a name="variants"></a>Varianty ###
 
-I když toto omezení nemusí být v budoucích verzích Q # trvalé, je v současné době v případě, že budou často skupiny souvisejících operací nebo funkcí, které jsou odlišené funktory jejich vstupy, nebo konkrétními typy jejich argumentů.
+I když toto omezení v budoucích verzích nástroje nemusí Q# být trvalé, je v současné době často skupiny souvisejících operací nebo funkcí, které jsou odlišené funktory jejich vstupy, nebo konkrétními typy jejich argumentů.
 Tyto skupiny lze odlišit pomocí stejného kořenového názvu, následovaný jedním nebo dvěma písmeny, která označují jeho variantu.
 
 | Auditování | Význam |
@@ -281,7 +284,7 @@ Navrhujeme:
 
 ### <a name="arguments-and-variables"></a>Argumenty a proměnné ###
 
-Klíčový cíl kódu Q # pro funkci nebo operaci je, aby jej bylo možné snadno přečíst a pochopit.
+Klíčovým cílem Q# kódu pro funkci nebo operaci je, aby byla snadno čitelná a srozumitelná.
 Podobně názvy vstupů a argumentů typu by měly sdělit, jak se bude funkce nebo argument používat, jakmile bude k dispozici.
 
 
@@ -320,7 +323,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Description |
+|   | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Název `Apply` je příkazová `CamelCase` fráze formátovaná jako, což naznačuje, že pojmenovaná položka je operace. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Pojmenované položky by měly začínat počátečním velkým písmenem. |
@@ -380,10 +383,10 @@ Navrhujeme:
 
 ## <a name="documentation-conventions"></a>Konvence dokumentace ##
 
-Jazyk Q # umožňuje připojit dokumentaci k operacím, funkcím a uživatelsky definovaným typům pomocí speciálně formátovaných dokumentačních komentářů.
+Q#Jazyk umožňuje připojit dokumentaci k operacím, funkcím a uživatelsky definovaným typům pomocí speciálně formátovaných dokumentačních komentářů.
 `///`Tyto komentáře k dokumentaci představují malé lomítka (), které jsou označeny malým [DocFXým Markdownu](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) dokumentům, které lze použít k popisu účelu jednotlivých operací, funkcí a uživatelsky definovaného typu, které vstupy očekává a tak dále.
 Kompilátor, který je součástí vývojové sady pro všechna ta, extrahuje tyto komentáře a použije je k tomu, aby pomohly sázení dokumentaci podobnou dokumentaci https://docs.microsoft.com/quantum .
-Podobně jazykový Server, který je součástí vývojové sady pro plnění, používá tyto komentáře k poskytnutí pomocníka uživatelům při přechodu myší na symboly v kódu Q #.
+Podobně jazykový Server, který je součástí vývojové sady pro plnění, používá tyto komentáře k poskytnutí pomocníka uživatelům při najetí myší na symboly ve svém Q# kódu.
 Používání dokumentačních komentářů tak může pomoci uživatelům vydávat smysl kódu tím, že poskytuje užitečnou referenci pro podrobnosti, které nejsou snadno vyjádřeny pomocí dalších úmluv v tomto dokumentu.
 
 > [!div class="nextstepaction"]
@@ -454,8 +457,8 @@ is Adj + Ctl {
 
 Kromě výše uvedených návrhů je užitečné pomoct, aby byl kód co čitelný, aby bylo možné použít konzistentní pravidla formátování.
 Taková pravidla formátování podle povahy mají za následek trochu libovolné a silně silné až do osobních estetických.
-Nicméně doporučujeme, abyste zachovali konzistentní sadu formátovacích konvencí v rámci skupiny spolupracovníky a zejména u rozsáhlých projektů Q #, jako je například vývojová sada.
-Tato pravidla lze automaticky použít pomocí nástroje formátování integrovaného s kompilátorem Q #.
+Nicméně doporučujeme, abyste zachovali konzistentní sadu formátovacích konvencí v rámci skupiny spolupracovníků, a to hlavně pro velké Q# projekty, jako je například vývojová sada.
+Tato pravidla lze automaticky použít pomocí nástroje formátování integrovaného s Q# kompilátorem.
 
 # <a name="guidance"></a>[Pokyny](#tab/guidance) 
 
@@ -476,7 +479,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Description |
+|   | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Používejte mezery kolem binárních operátorů. |
 | ☒ | <s>`target:Qubit`</s> | Používejte mezery kolem dvojtečky typu anotace. |

@@ -1,17 +1,20 @@
 ---
-title: 'Oprava chyb v knihovně Q # Standard'
-description: 'Naučte se, jak používat chyby oprav kódů v programech Q # při ochraně stavu qubits.'
+title: Oprava chyb ve Q# standardních knihovnách
+description: Naučte se, jak používat chyby při opravování kódů v Q# programech při ochraně stavu qubits.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 514fe68f603b9a3a0b4607390719b08a43fe4967
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8b1f008793281121bc547d1a6ac3b960feb082ab
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274610"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868487"
 ---
 # <a name="error-correction"></a>Oprava chyb #
 
@@ -48,7 +51,7 @@ Všimněte si, že $Z _0 Z_1 \ket {000} = \ket {000} $ a $Z _0 Z_1 \ket {111} = 
 Na druhé straně $Z _0 Z_1 \ket {100} =-\ket {100} $ a $Z _0 Z_1 \ket {011} =-\ket {011} $, takže výsledek měření $Z _0 Z_1 $ odhalí užitečné informace o tom, která chyba nastala.
 
 Pokud to chcete zdůraznit, opakujeme tabulku výše, ale do každého řádku přidejte výsledky měření $Z _0 Z_1 $ a $Z _1y Z_2 $.
-Poznamenejte si výsledky každého měření podle znaménka eigenvalue, který je pozorován, buď $ + $ nebo $-$, který odpovídá hodnotám Q # a v `Result` `Zero` `One` uvedeném pořadí.
+Poznamenejte si výsledky každého měření pomocí znaménka eigenvalue, který je pozorován, buď $ + $ nebo $-$, který odpovídá Q# `Result` hodnotám v `Zero` a v `One` uvedeném pořadí.
 
 | Chyba $E $ | $E \ket{\overline {0} } $ | $E \ket{\overline {1} } $ | Výsledek $Z _0 Z_1 $ | Výsledek $Z _1 Z_2 $ |
 | --- | --- | --- | --- | --- |
@@ -68,16 +71,16 @@ Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který
 > Obecněji je možné vytvářet kódy pro zpracování většího počtu chyb a zpracovávat chyby $Z $ a také chyby $X $.
 
 Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci*.
-Q # Canon poskytuje rozhraní pro popis kódování a dekódování z kódů stabilizace a pro popis toho, jak se jedno obnovuje z chyb.
+Q#Canon poskytuje rozhraní pro popis kódování a dekódování z kódů stabilizovaných a pro popis toho, jak se jedno obnovuje z chyb.
 V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduchých chybných procesorů.
 
 > [!TIP]
 > Úplný Úvod k formalitám na stabilizaci je nad rámec této části.
 > Čtenářům, kteří mají zájem o další informace, se dozvíte o [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## <a name="representing-error-correcting-codes-in-q"></a>Reprezentace chybových oprav kódů v Q # ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a>Reprezentace chybových oprav kódů vQ# ##
 
-Aby bylo možné zadat chybné kódy, je v Q # Canon k dispozici několik jedinečných uživatelsky definovaných typů:
+Aby bylo možné zadat chyby oprav kódů, Q# Canon poskytuje několik různých uživatelsky definovaných typů:
 
 - <xref:microsoft.quantum.errorcorrection.logicalregister>`= Qubit[]`: Označuje, že registr qubits by měl být interpretován jako blok kódu pro chybu s opravou kódu.
 - <xref:microsoft.quantum.errorcorrection.syndrome>`= Result[]`: Označuje, že pole výsledků měření by mělo být interpretováno jako Syndrome měřené na bloku kódu.
@@ -119,4 +122,4 @@ using (scratch = Qubit[nScratch]) {
 
 Podrobněji o tom prozkoumáme v [ukázce bitové překlopení kódu](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
 
-Kromě překlápění kódu je k dispozici Q # Canon s implementacemi [qubit dokonalého kódu](https://arxiv.org/abs/quant-ph/9602019)a [sedmi qubit kódem](https://arxiv.org/abs/quant-ph/9705052), který může opravit libovolnou chybu s jedním qubit.
+Kromě kódu překlápění, Q# je technologie Canon k dispozici s implementacemi [qubit dokonalého kódu](https://arxiv.org/abs/quant-ph/9602019)a [sedmi qubit kódem](https://arxiv.org/abs/quant-ph/9705052), který může opravit libovolnou chybu s jedním qubit.

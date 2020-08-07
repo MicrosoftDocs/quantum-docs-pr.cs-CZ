@@ -1,21 +1,24 @@
 ---
-title: 'Struktura souborů Q #'
-description: 'Popisuje strukturu a syntaxi souboru Q #.'
+title: Q#Struktura souborů
+description: Popisuje strukturu a syntaxi Q# souboru.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
-ms.openlocfilehash: 54efc2b9d6b7f1956cdf9a335c88620b29f7729d
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ac73962b1a718cd04aa87ee3476c66781fe3ac2b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884184"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867926"
 ---
-# <a name="q-file-structure"></a>Struktura souborů Q #
+# <a name="no-locq-file-structure"></a>Q#Struktura souborů
 
-Soubor Q # se skládá z sekvence *deklarací oboru názvů*.
+Q#Soubor se skládá z sekvence *deklarací oboru názvů*.
 Každá deklarace oboru názvů obsahuje deklarace pro uživatelsky definované typy, operace a funkce a může obsahovat libovolný počet každého typu deklarace a v libovolném pořadí.
 Další informace o deklaracích v rámci oboru názvů najdete v tématu [uživatelsky definované typy](xref:microsoft.quantum.guide.types#user-defined-types), [operace](xref:microsoft.quantum.guide.operationsfunctions#defining-new-operations)a [funkce](xref:microsoft.quantum.guide.operationsfunctions#defining-new-functions).
 
@@ -24,10 +27,10 @@ Konkrétně dokumentační komentáře pro obor názvů předcházejí deklaraci
 
 ## <a name="namespace-declarations"></a>Deklarace oboru názvů
 
-Soubor Q # má obvykle pouze jednu deklaraci oboru názvů, ale může mít hodnotu None (a být prázdný nebo obsahovat pouze komentáře) nebo může obsahovat více oborů názvů.
+Q#Soubor obvykle obsahuje pouze jednu deklaraci oboru názvů, ale může mít hodnotu None (a být prázdný nebo obsahovat pouze komentáře) nebo může obsahovat více oborů názvů.
 Deklarace oboru názvů nelze vnořovat.
 
-Můžete deklarovat stejný obor názvů ve více souborech Q #, které jsou kompilovány společně, pokud neexistují deklarace typu, operace nebo funkce se stejným názvem.
+Můžete deklarovat stejný obor názvů ve více Q# souborech, které jsou kompilovány společně, pokud neexistují deklarace typu, operace nebo funkce se stejným názvem.
 Konkrétně je neplatný pro definování stejného typu ve stejném oboru názvů ve více souborech, a to i v případě, že deklarace jsou identické.
 
 Deklarace oboru názvů se skládá z klíčového slova `namespace` , následovaný názvem oboru názvů a deklaracemi obsaženými v oboru názvů uzavřenými ve složených závorkách `{ }` .
@@ -61,7 +64,7 @@ Pokud deklarovaná operace používá operaci `Op` z `Microsoft.Quantum.Intrinsi
 Chcete-li však volat určitou funkci `Fn` z `Microsoft.Quantum.Math` , je nutné ji volat pomocí `Math.Fn` .
 
 `open`Direktiva se vztahuje na celý blok oboru názvů v rámci souboru.
-Proto pokud definujete další obor názvů ve stejném souboru Q # jako `NS` dříve, pak všechny operace, funkce/typy definované v druhém oboru názvů nebudou mít přístup k cokoli z `Microsoft.Quantum.Intrinsic` nebo, `Microsoft.Quantum.Math` Pokud jste neopakovali direktivy Open v rámci. 
+Proto pokud definujete další obor názvů ve stejném Q# souboru jako `NS` dříve, pak všechny operace, funkce/typy definované v druhém oboru názvů nebudou mít přístup k cokoli z `Microsoft.Quantum.Intrinsic` nebo, `Microsoft.Quantum.Math` Pokud jste neopakovali direktivy Open v rámci. 
 
 Chcete-li odkazovat na typ nebo volat, který je definován v jiném oboru názvů, *který není otevřen* v aktuálním oboru názvů, je nutné na něj odkazovat pomocí plně kvalifikovaného názvu.
 Například s ohledem na operaci s názvem `Op` z `X.Y` oboru názvů:
@@ -73,13 +76,13 @@ Například s ohledem na operaci s názvem `Op` z `X.Y` oboru názvů:
 Je obvykle lepší zahrnout obor názvů pomocí `open` direktivy.
 Použití plně kvalifikovaného názvu je vyžadováno, pokud dva obory názvů definují konstrukce se stejným názvem a aktuální zdroj používá konstrukce z obou.
 
-Q # se řídí stejnými pravidly pro pojmenování jako jiné jazyky .NET.
-Q # ale nepodporuje relativní odkazy na obory názvů.
+Q#řídí se stejnými pravidly pro pojmenování jako jiné jazyky .NET.
+Nicméně nepodporuje Q# relativní odkazy na obory názvů.
 Například pokud je obor názvů `a.b` otevřený, odkaz na operaci s názvem se `c.d` nevyřeší na *not* operaci s úplným názvem `a.b.c.d` .
 
 ## <a name="formatting"></a>Formátování
 
-Většina příkazů Q # a direktiv končí zakončeným středníkem, `;` .
+Většina Q# příkazů a direktiv končí zakončeným středníkem, `;` .
 Příkazy a deklarace, jako například `for` a `operation` , které končí blokem příkazu (viz následující oddíl), nevyžadují ukončující středník.
 Každý Popis příkazu Poznamenejte, zda je nutný ukončovací středník.
 
@@ -88,14 +91,14 @@ Vyhněte se vložení více příkazů na jeden řádek.
 
 ## <a name="statement-blocks"></a>Bloky příkazů
 
-Příkazy Q # jsou seskupeny do bloků příkazů, které jsou obsaženy ve složených závorkách `{ }` . Blok příkazu začíná levou `{` a ukončenou uzávěrkou `}` .
+Q#příkazy jsou seskupeny do bloků příkazů, které jsou obsaženy ve složených závorkách `{ }` . Blok příkazu začíná levou `{` a ukončenou uzávěrkou `}` .
 
 Blok příkazu, který je vložený v jiném bloku, se považuje za dílčí blok obsahujícího bloku. obsahující a dílčí bloky se označují také jako vnější a vnitřní bloky.
 
 ## <a name="comments"></a>Komentáře
 
 Komentáře začínají dvěma lomítky, `//` a pokračují až do konce řádku.
-Komentář se může objevit kdekoli ve zdrojovém souboru Q #.
+Komentář se může objevit kdekoli ve Q# zdrojovém souboru.
 
 ## <a name="documentation-comments"></a>Komentáře dokumentace
 
@@ -103,7 +106,7 @@ Komentáře, které začínají třemi lomítky, `///` , jsou zpracovány speci�
 V takovém případě ho kompilátor považuje za dokumentaci pro definovaný typ, který je k nebo uživatelsky definovaný, stejně jako ostatní jazyky .NET.
 
 V rámci `///` komentářů se text, který se má zobrazit jako součást dokumentace k rozhraní API, formátuje jako [Markdownu](https://daringfireball.net/projects/markdown/syntax), s různými částmi dokumentace, které jsou označeny pomocí hlaviček se speciálně jmenovanými.
-V Markdownu použijte `@"<ref target>"` rozšíření pro operace křížového odkazu, funkce a uživatelsky definované typy v Q #. Nahraďte `<ref target>` plně kvalifikovaným názvem odkazovaného objektu kódu.
+V Markdownu použijte `@"<ref target>"` rozšíření pro operace křížového odkazu, funkce a uživatelsky definované typy v Q# . Nahraďte `<ref target>` plně kvalifikovaným názvem odkazovaného objektu kódu.
 Různé moduly dokumentace můžou podporovat i další rozšíření Markdownu.
 
 Příklad:
@@ -153,4 +156,4 @@ Následující názvy jsou platné jako hlavičky komentáře k dokumentaci.
 
 ## <a name="next-steps"></a>Další kroky
 
-Přečtěte si o [operacích a funkcích](xref:microsoft.quantum.guide.operationsfunctions) v Q #.
+Přečtěte si o [operacích a funkcích](xref:microsoft.quantum.guide.operationsfunctions) v Q# .

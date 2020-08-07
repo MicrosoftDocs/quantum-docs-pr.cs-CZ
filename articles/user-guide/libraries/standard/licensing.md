@@ -1,19 +1,22 @@
 ---
 title: Licencování open source pro QDK
-description: 'Přečtěte si informace o licencování pro používání a přispívání do knihoven Microsoft Q # Standard – licencování a přispívání.'
+description: Přečtěte si informace o licencování pro používání a přispívání na Q# standardní knihovny Microsoftu – licencování a přispívání.
 author: martinro
 ms.author: martinro@microsoft.com
 ms.date: 2/16/2018
 ms.topic: article
 uid: microsoft.quantum.libraries.licensing
-ms.openlocfilehash: 4bc0fb7fbeb4a71b891619218905d509e50911c9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: f964d5f4a4c20c8d53ceb4375c869030cd53ff07
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274593"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868453"
 ---
-# <a name="licensing"></a>Licensing #
+# <a name="licensing"></a>Licencování #
 
 Vývojová sada pro všechna provozní prostředí je poskytována s rozsáhlou kolekcí Open Source funkcí a operací licencovaných v rámci [licence MIT](https://github.com/Microsoft/Quantum/blob/master/LICENSE.txt).
 Části standardní knihovny, které jsou přenosné napříč cílovými počítači, se dají získat z úložiště [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries) na GitHubu spolu s jinými knihovnami, jako jsou například a jiné knihovny, jako je například [Knihovna pro chemické](xref:microsoft.quantum.chemistry.concepts.intro)množství.

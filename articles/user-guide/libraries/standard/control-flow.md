@@ -1,22 +1,25 @@
 ---
-title: 'Řízení toku ve standardu Q # libararies'
-description: 'Přečtěte si o operacích a funkcích řízení toku v knihovně Microsoft Q # Standard.'
+title: Řízení toku ve Q# standardním libararies
+description: Přečtěte si o operacích a funkcích řízení toku v Q# knihovně Microsoft Standard.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: b41b3edd7a3e3ac13dbda106a869f4cba8183600
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: a440f1ef2b901b18593816ca27aeadf7ab827104
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274618"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868572"
 ---
 # <a name="higher-order-control-flow"></a>Tok řízení vyššího řádu #
 
 Jednou z primárních rolí standardní knihovny je usnadnit rychlé vyjádření vysoce kvalitních nápadů, jako jsou [programy](https://en.wikipedia.org/wiki/Quantum_programming)v počtu procesorů.
-Proto Q # Canon poskytuje celou řadu různých konstrukcí řízení toku, z nichž každý je implementován pomocí částečného použití funkcí a operací.
+Proto Q# Canon poskytuje celou řadu různých konstrukcí řízení toku, z nichž každý je implementován pomocí částečného použití funkcí a operací.
 Přejít okamžitě na příklad, zvažte případ, ve kterém jeden chce vytvořit "CNOT žebřík" v registru:
 
 ```qsharp
@@ -47,7 +50,7 @@ Ve zbývající části tohoto oddílu nabídneme několik příkladů, jak pou�
 
 Jednou z primárních abstrakcí, které poskytuje Canon, je iterace.
 Předpokládejme například, že ve formuláři $U \otimes U \otimes \cdots \otimes U $ pro každou qubit jednotkovou $U $.
-V Q # můžeme použít <xref:microsoft.quantum.arrays.indexrange> k reprezentaci jako smyčky v rámci `for` registru:
+V nástroji Q# můžeme použít <xref:microsoft.quantum.arrays.indexrange> k reprezentaci jako smyčky v rámci `for` registru:
 
 ```qsharp
 /// # Summary
@@ -88,7 +91,7 @@ Podobně <xref:microsoft.quantum.canon.applytoeachindex> je vhodný pro reprezen
 > Pak `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` použije chybovou opravu kódu `code` a funkci obnovení `recoveryFn` na každý blok nezávisle.
 > To i pro klasické vstupy: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` použije rotaci $ \pi/$2 o $X $ následovaný otočením $PI/$3 o $Y $.
 
-Q # Canon také poskytuje podporu pro klasické vzory výčtů, které jsou známé pro funkční programování.
+Q#Canon také poskytuje podporu pro klasické vzory výčtů, které jsou známé pro funkční programování.
 Například <xref:microsoft.quantum.arrays.fold> implementuje vzor $f (f (s \_ {\Text{Initial}}, x \_ 0), x \_ 1), \dots) $ pro snížení funkce na seznam.
 Tento model se dá použít k implementaci součtů, produktů, minima, Maxim a dalších takových funkcí:
 
@@ -100,7 +103,7 @@ function Sum(xs : Int[]) {
 }
 ```
 
-Podobně funkce jako <xref:microsoft.quantum.arrays.mapped> a <xref:microsoft.quantum.arrays.mappedbyindex> lze použít k vyjádření konceptů programování funkcí v Q #.
+Podobně funkce jako <xref:microsoft.quantum.arrays.mapped> a <xref:microsoft.quantum.arrays.mappedbyindex> lze použít pro vyjádření konceptů funkčního programování v Q# .
 
 ## <a name="composing-operations-and-functions"></a>Vytváření operací a funkcí ##
 
@@ -170,7 +173,7 @@ Tento vzor iterace implementuje <xref:microsoft.quantum.canon.decomposeintotimes
 DecomposeIntoTimeStepsCA((2, U), 1);
 ```
 
-Signatura `DecomposeIntoTimeStepsCA` následuje společný vzor v Q #, kde kolekce, které mohou být zálohovány buď pomocí polí, nebo něco, které výpočetní prvky za běhu jsou reprezentovány řazenými kolekcemi členů, jejichž první prvky jsou hodnoty, které `Int` určují jejich délku.
+Signatura `DecomposeIntoTimeStepsCA` následuje společný vzor v Q# , kde kolekce, které mohou být zálohovány buď pomocí polí, nebo něco, které výpočetní prvky v průběhu jsou reprezentovány řazenými kolekcemi členů, jejichž první prvky jsou `Int` hodnoty, které určují jejich délku.
 
 ## <a name="putting-it-together-controlling-operations"></a>Vložení dohromady: řízení operací ##
 
@@ -215,7 +218,7 @@ Tato činnost ponechá `ApplyWith` v závorce řídicího registru pomocí $P $,
 
 V tuto chvíli jsme se mohli udělat, ale nevyhovuje tomu, že se naše nová operace neshoduje s tím, jako když použijete `Controlled` funktor.
 Proto jsme dokončili definování našeho nového konceptu toku řízení vytvořením funkce, která bude mít pod kontrolou Oracle a který vrátí novou operaci.
-Díky tomu by naše nová funkce vypadala a vypadala velmi dobře `Controlled` , což ilustruje, že můžeme snadno definovat výkonné nové konstrukce toku ovládacích prvků pomocí Q # a Canon společně:
+Díky tomu naše nová funkce vypadá a je příliš velká `Controlled` , což ilustruje, že můžeme snadno definovat výkonné nové konstrukce toku ovládacích prvků pomocí Q# a Canon společně:
 
 ```qsharp
 function ControlledOnBitString(

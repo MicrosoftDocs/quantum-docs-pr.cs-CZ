@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: edc52dc4434e91258bece28812fd76b66329c6f9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 956b0957a5261b8a77bf18d776fbcc2853bfbfe7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274546"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866905"
 ---
 # <a name="contributing-code"></a>Přispívání do kódu
 
@@ -28,10 +31,10 @@ Proto je užitečné, pokud je funkce přidaná v příspěvku dobře testována
 
 ### <a name="unit-tests"></a>Testování částí
 
-Funkce Q #, operace a uživatelsky definované typy, které vytvářejí knihovny, jako je například Canon, se automaticky testují jako součást vývoje v úložišti [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
+Q#Funkce, operace a uživatelsky definované typy, které vytvářejí knihovny, jako je například Canon, se automaticky testují jako součást vývoje v úložišti [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Když se otevře nová žádost o přijetí změn, například naše konfigurace [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) ověří, že změny v žádosti o přijetí změn neruší žádné stávající funkce, na kterých je komunita programování.
 
-S nejnovější verzí Q # je test jednotek definován pomocí `@Test("QuantumSimulator")` atributu. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému vyžádání může být připojeno několik atributů definujících různé cíle provádění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zveřejňuje všechny funkce Q # a operace končící rozhraním `Test` [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
+S nejnovější Q# verzí je test jednotky definován pomocí `@Test("QuantumSimulator")` atributu. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému vyžádání může být připojeno několik atributů definujících různé cíle provádění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zpřístupňuje všechny Q# funkce a operace končící rozhraním `Test` [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
 
 Následující funkce se používá k zajištění, že <xref:microsoft.quantum.canon.fst> funkce a <xref:microsoft.quantum.canon.snd> vrátí v reprezentativním příkladu správné výstupy.
 Pokud výstup `Fst` nebo `Snd` není správný, `fail` příkaz slouží k selhání testu.
@@ -92,7 +95,7 @@ To všechno může být obtížné, takže si naplánujeme, na jaké funkce mám
 Může to být jiný případ, kdy vydání funkce jako knihovny třetích stran může mít spoustu smyslů.
 Alternativně můžeme požádat o pomoc při úpravě funkce, aby lépe vyhovovala vašemu plánu, abychom mohli co nejlépe udělat, abychom s ním mohli pracovat.
 
-Také požádáme o změny žádosti o přijetí změn, pokud to vyžaduje další dokumentaci nebo testy jednotek, které nám pomohou ji využít, nebo pokud se liší ve stylu od zbylých knihoven Q #, které jim pro uživatele umožní najít vaši funkci.
+Také požádáme o změny žádosti o přijetí změn, pokud to vyžaduje další dokumentaci nebo testy jednotek, které nám pomohou ji využít, nebo pokud se liší ve stylu od zbytku Q# knihoven, které by uživatelům usnadnily hledání vaší funkce.
 V těchto případech se pokusíme nabídnout několik rad v revizích kódu o tom, co je možné přidat nebo změnit, abychom mohli přispět k tomu, aby mohl být váš příspěvek snáze zahrnutý.
 
 Nakonec nemůžeme přijmout příspěvky, které způsobují poškození komunity s nárokem na výpočetní výkon, jak je uvedeno v [kódu chování pro Microsoft Open Source](https://opensource.microsoft.com/codeofconduct/).
@@ -102,10 +105,10 @@ Oceňujeme vám vaši technickou podporu při realizaci tohoto cíle.
 ## <a name="next-steps"></a>Další kroky
 
 Děkujeme, že se vám pomůže zajistit vývojovou sadu pro všechna ta, což je skvělý prostředek pro celou komunitu programování.
-Další informace najdete v následující příručce ke stylu Q #.
+Pokud se chcete dozvědět víc, pokračujte prosím následujícím vodítkem na Q# styl.
 
 > [!div class="nextstepaction"]
-> [Seznamte se s pokyny pro styl Q #](xref:microsoft.quantum.contributing.style)
+> [Seznamte se s Q# pokyny ke stylům](xref:microsoft.quantum.contributing.style)
 
 V závislosti na tom, jaký typ kódu přispíváte, může docházet k dalším akcím, které vám pomůžou zajistit, aby váš příspěvek byl co nejvíc pro komunitu co nejužitečnější.
 

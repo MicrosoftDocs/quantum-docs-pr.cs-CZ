@@ -1,17 +1,20 @@
 ---
-title: 'Datové struktury v knihovně Q # Standard'
-description: 'Přečtěte si o datových strukturách, Oracle a dynamických generátorech v knihovnách Microsoft Q # Standard.'
+title: Datové struktury ve Q# standardních knihovnách
+description: Přečtěte si o datových strukturách, Oracle a dynamických generátorech ve Q# standardních knihovnách společnosti Microsoft.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 46ac6794d1e21e111aa1d98e11a6f83194f8d54e
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 222fa7d0d33d4ac6c15e9ee9e6e97f380867a145
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274613"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868511"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
@@ -34,7 +37,7 @@ ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ### <a name="arrays"></a>Pole ###
 
 Canon nabízí několik funkcí pro manipulaci s poli.
-Tyto funkce jsou typově parametrizované a dají se použít s poli typu Q #.
+Tyto funkce jsou typu parametrizované, a proto je lze použít s poli libovolného Q# typu.
 Například <xref:microsoft.quantum.arrays.reversed> funkce vrátí nové pole, jehož prvky jsou v opačném pořadí, od vstupu.
 Dá se použít ke změně způsobu, jakým se při volání operací reprezentuje registr s hodnotou:
 
@@ -72,7 +75,7 @@ Ve [fázi odhadu](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorit
 V tomto případě se pojem Oracle vztahuje na podprogramovou rutinu Blackbox, která funguje na sadě qubits, a vrátí odpověď jako fázi.
 Tato podrutina se často může považovat za vstup do algoritmu pro plnění hodnoty, který přijímá Oracle, kromě některých dalších parametrů a používá řadu operací po sobě a zpracovává volání této podprocesu, jako by šlo o základní bránu.
 Aby bylo možné skutečně implementovat větší algoritmus, je nutné poskytnout konkrétní rozložené rozhraní Oracle do základních bran, ale takové rozložené není nutné, aby bylo možné pochopit algoritmus, který volá Oracle.
-V Q # je tato abstrakce reprezentována pomocí těchto operací, které představují hodnoty první třídy, což znamená, že operace mohou být předány do implementace algoritmů pro plnění v černém poli.
+V Q# nástroji je tato abstrakce reprezentována pomocí těchto operací jsou hodnoty první třídy, což znamená, že operace mohou být předány do implementace algoritmů pro plnění v černém poli.
 Kromě toho uživatelsky definované typy se používají k označení různých reprezentace Oracle bezpečným způsobem, což ztěžuje náhodné rozlišit různé druhy operací černého boxu.
 
 Tyto Oracle se zobrazují v řadě různých kontextů, včetně slavnýchch příkladů, jako jsou například [Grover vyhledávání](https://en.wikipedia.org/wiki/Grover%27s_algorithm) a simulace.
@@ -189,7 +192,7 @@ Jednotná, která popisuje takové pole s dobou provozu, je $U (t) = R_z (2 \ Om
 V tomto kontextu můžeme simulovat $U (t) $ pro všechny $t $ pomocí jedné $R _z $ a nemusíte tak omezovat dodržovali jenom na diskrétní dotazy.
 Tento souvislý model má také vlastnost, že frekvence větší než $2 \ PI $ se dají poznat z procesů odhadů fází, které používají průběžné dotazy, protože informace o fázi, které by jinak byly maskovány pomocí děleného průřezu funkce, se dají vykrýt z výsledků experimentů provedených na neúměrných hodnotách $t $.
 Proto jsou problémy, jako jsou tyto průběžné modely dotazů pro fáze odhadující fáze Oracle, nejen vhodné, ale jsou také vhodnější pro diskrétní model dotazů.
-Z tohoto důvodu má Q # funkci pro obě formy dotazů a zároveň ji ponechat uživateli k rozhodnutí o algoritmu odhadu fáze podle svých potřeb a typu Oracle, který je k dispozici.
+Z tohoto důvodu Q# má funkčnost jak pro formy dotazů, tak pro uživatele, aby se rozhodla o algoritmu odhadu fáze podle svých potřeb a typu Oracle, který je k dispozici.
 
 ## <a name="dynamical-generator-modeling"></a>Modely dynamického generátoru ##
 

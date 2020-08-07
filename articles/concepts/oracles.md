@@ -1,6 +1,8 @@
 ---
 title: počet, ve kterém se nacházejí Oracle s popisem: Naučte se pracovat s Oracle, operacemi s černým polem, které se používají jako vstup pro jiný algoritmus.
 Autor: cgranade UID: Microsoft.. koncepty. Oracle MS. Author: Christopher.Granade@microsoft.com MS. Date: 07/11/2018 MS. téma: No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -105,7 +107,7 @@ $$
 Nyní $ o o = ^ \dagger $ podle konstrukce, proto jsme vyřešili obě předchozí problémy.
 
 > [!TIP]
->Chcete-li se podívat, že o ^ $ = { \dagger } $ $ 2, = \boldone $ od $ \oplus b \oplus b = a $ pro všechny $ a, b \in \[ ! Evřít. NO – LOC ({)] 0, 1 \[ ! Evřít. NO – LOC (})] $ .
+>Chcete-li vidět, že o ^ $ = { \dagger } $ $ 2, = \boldone $ od $ \oplus b \oplus b = a $ pro všechny $ a, b \in \: :: No-Loc ({):: 0, 1 \: :: No-Loc (})::: $ .
 >V důsledku toho se $ O \ket { x } \ket { a \oplus f (x) } = \ket { x } \ket { y \oplus f (x) \oplus f (x) } = \ket { x } \ket { y } $ .
 
 V důležitém případě je třeba definovat Oracle tímto způsobem pro každý výpočetní stav x y, a to $ \ket { } \ket { } $ i $ v případě $ , že funguje pro jakýkoliv jiný stav.

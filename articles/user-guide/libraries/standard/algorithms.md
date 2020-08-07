@@ -1,23 +1,26 @@
 ---
-title: 'Algoritmy doby ve Q #'
+title: Algoritmy doby veQ#
 description: Seznamte se se základními výpočetními algoritmy, včetně zesílení amplitud, Fourierova transformace, Draper a Beauregard přidávání a odhadu fází.
 author: QuantumWriter
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 7f4916353c53d6459356243098281ccb16b17278
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871310"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868810"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
 ## <a name="amplitude-amplification"></a>Zvětšování amplitudy ##
 
-*Zesílení amplitud* je jedním z základních nástrojů pro výpočetní výkon. Je to základní nápad, který představuje hledání Grover, odhad amplitud a mnoho hlavních algoritmů strojového učení.  Existuje mnoho variant a v Q # poskytujeme obecnou verzi na základě zesílení amplitud oblivious s částečnými odrazy, které umožňují nejširší oblast aplikace.
+*Zesílení amplitud* je jedním z základních nástrojů pro výpočetní výkon. Je to základní nápad, který představuje hledání Grover, odhad amplitud a mnoho hlavních algoritmů strojového učení.  Existuje mnoho variant a Q# poskytujeme obecnou verzi na základě zesílení amplitud oblivious s částečnými odrazy, které umožňují nejširší oblast aplikace.
 
 Centrální nápad na zesílení amplitud je rozšířit pravděpodobnost požadovaného výsledku, ke kterému dochází, provedením posloupnosti odrazů.  Tyto odrazy otočí počáteční stav blíže k požadovanému cílovému stavu, který se často označuje jako označený stav.  Konkrétně platí, že pokud je pravděpodobnost měření počátečního stavu v označeném stavu, je $ \sin ^ 2 (\theta) $ poté, co se použije amplituda amplitud $m $ kolikrát se pravděpodobnost úspěchu stala $ \sin ^ 2 ((2 min + 1) \theta) $.  To znamená, že pokud $ \theta = \ PI/[2 (2n + 1)] $ pro určitou hodnotu $n $ pak amplituda zesílení, dokáže zvýšit pravděpodobnost úspěchu až $100 \\ % $ po $n $ iterace zesílení amplitudy.  Vzhledem k tomu, že $ \theta = \sin ^ {-1} (\sqrt{\Pr (úspěch)}) $) $ to znamená, že počet iterací potřebných k obdržení úspěchu je kvadratickě nižší než očekávané číslo, které je potřeba k nalezení označeného stavu bez deterministického použití náhodného vzorkování.
 
@@ -27,7 +30,7 @@ Logika za zesílením amplitudy následuje přímo z Eigen-dekompozice $Q $.  Ko
 
 Další užitečnou vlastností, která se z nich nachází, je, že eigenvalue $ \theta $ přímo souvisí s pravděpodobností, že počáteční stav bude označený (v případě, že $P _0 $ je projektor pouze do počátečního stavu).  Vzhledem k tomu, že eigenphases $Q $ jsou $2 \ théta = 2 \ Sin ^ {-1} (\sqrt{\Pr (úspěch)}) $, pak se vám postupuje podle toho, že pokud použijete odhad fáze pro $Q $, můžeme se dozvědět pravděpodobnost úspěchu při použití v rámci jednotkového řízení.  To je užitečné, protože pro zjištění pravděpodobnosti úspěšnosti, která by jinak vyžadovala, je nutné, aby bylo v případě, že vyžaduje kvadratickou, méně aplikací tohoto postupu
 
-Q # zavádí zesílení amplitud jako specializace zesílení amplitudy oblivious.  Zesílení amplitud oblivious umožňuje získat tento moniker, protože projektor na počáteční eigenspace nemusí být projektor do počátečního stavu.  V tomto smyslu je protokol oblivious do počátečního stavu.  Klíčová aplikace zesílení amplitud oblivious je v některých *lineárních kombinacích* Hamiltonian metod simulace, přičemž je v tom, že počáteční stav není znám, ale je entangled s registrem ancilla v protokolu simulace.  Pokud by byl tento registr ancilla měřen jako pevná hodnota, řekněme $0 $, pak tyto metody simulace aplikují požadovanou jednotnou transformaci na zbývající qubits (označované jako systémový registr).  U všech ostatních výsledků měření se ale povede k selhání.  Zesílení amplitud oblivious umožňuje zvýšit pravděpodobnost úspěchu tohoto měření na $100 \\ % $ pomocí výše uvedeného důvodu.  Navíc běžné zesílení amplitudy odpovídá případu, kde je systémový registr prázdný.  Důvodem je, proč Q # používá zesílení oblivious amplitud jako základní podprogram amplitudy zesílení.
+Q#zavádí zesílení amplitud jako specializace zesílení amplitudy oblivious.  Zesílení amplitud oblivious umožňuje získat tento moniker, protože projektor na počáteční eigenspace nemusí být projektor do počátečního stavu.  V tomto smyslu je protokol oblivious do počátečního stavu.  Klíčová aplikace zesílení amplitud oblivious je v některých *lineárních kombinacích* Hamiltonian metod simulace, přičemž je v tom, že počáteční stav není znám, ale je entangled s registrem ancilla v protokolu simulace.  Pokud by byl tento registr ancilla měřen jako pevná hodnota, řekněme $0 $, pak tyto metody simulace aplikují požadovanou jednotnou transformaci na zbývající qubits (označované jako systémový registr).  U všech ostatních výsledků měření se ale povede k selhání.  Zesílení amplitud oblivious umožňuje zvýšit pravděpodobnost úspěchu tohoto měření na $100 \\ % $ pomocí výše uvedeného důvodu.  Navíc běžné zesílení amplitudy odpovídá případu, kde je systémový registr prázdný.  Proto Q# používá zesílení amplitud oblivious jako základní podprogram amplitudy zesílení.
 
 Obecná rutina ( `AmpAmpObliviousByReflectionPhases` ) má dva Registry, které voláme `ancillaRegister` a `systemRegister` . Přijímá také dva Oracle pro nezbytné odrazy. `ReflectionOracle`Funguje pouze v době, `ancillaRegister` kdy v `ObliviousOracle` obou registrech funguje dohromady. Vstup do `ancillaRegister` musí být inicializován na hodnotu-1 eigenstate prvního operátoru reflexe $ \boldone-2P_1 $.
 
@@ -116,4 +119,4 @@ V tomto případě můžeme získat registraci formuláře \begin{align} \ket{\p
 Pokud předpokládáme, že $ \phi = 2 \pi p/2 ^ k $ pro celé číslo $p $, rozpoznáme to jako $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, kde $p _J $ je $j ^ {\textrm{th}} $ bit of $2 \pi \phi $.
 Když použijete sousedící transformaci Fourierova transformace, získáme proto binární reprezentace fáze kódované jako stav pro stav.
 
-V Q # to je implementováno <xref:microsoft.quantum.characterization.quantumphaseestimation> operací, která přebírá <xref:microsoft.quantum.oracles.discreteoracle> implementaci aplikace $U ^ m $ jako funkci kladových celých čísel $m $.
+V systému Q# je tato operace implementována <xref:microsoft.quantum.characterization.quantumphaseestimation> operací, která přebírá <xref:microsoft.quantum.oracles.discreteoracle> implementaci aplikace $U ^ m $ jako funkci kladových celých čísel $m $.

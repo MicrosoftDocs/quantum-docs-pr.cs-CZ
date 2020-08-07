@@ -1,21 +1,24 @@
 ---
-title: 'Diagnostika v knihovně Q # Standard'
-description: 'Přečtěte si o diagnostických funkcích a operacích v knihovnách Q # Standard používaných k zachycení chyb nebo chyb v programech pro práci s poli.'
+title: Diagnostika ve Q# standardních knihovnách
+description: Přečtěte si o diagnostických funkcích a operacích v rámci Q# standardních knihoven používaných k zachycení chyb nebo chyb v programech pro práci s poli.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870630"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868538"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
 Stejně jako u klasického vývoje je důležité, abyste mohli diagnostikovat chyby a chyby v programech za běhu.
-Standardní knihovny Q # poskytují celou řadu různých způsobů, jak zajistit správnost programových chyb, jak je popsáno v <xref:microsoft.quantum.guide.testingdebugging> .
+Q#Standardní knihovny poskytují celou řadu různých způsobů, jak zajistit správnost programů v řadě, jak je popsáno v <xref:microsoft.quantum.guide.testingdebugging> .
 Z velké části řečeno tato podpora přichází ve formě funkcí a operací, které buď instruují cílový počítač, aby poskytoval další diagnostické informace pro hostitelský program nebo vývojáře, nebo vynutil správnost podmínek a invariant vyjádřených voláním funkce nebo operace.
 
 ## <a name="machine-diagnostics"></a>Diagnostika počítače ##
@@ -30,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`má signaturu `(String -> Unit)` , která reprezentuje, že se ve Q # nedokáže vygenerovat zpráva protokolu ladění.
+> `Message`má signaturu `(String -> Unit)` , která reprezentuje, že generování zprávy protokolu ladění není možné pozorovat v rámci Q# .
 
 <xref:microsoft.quantum.diagnostics.dumpmachine>A <xref:microsoft.quantum.diagnostics.dumpregister> volat cílové počítače instruují, aby poskytovaly diagnostické informace o všech aktuálně přidělených qubits nebo o konkrétním registru qubits, v uvedeném pořadí.
 Každý cílový počítač se liší v tom, jaké diagnostické informace jsou k dispozici v reakci na instrukci výpisu paměti.
@@ -49,7 +52,7 @@ Tyto podmínky můžou být ve formě obou _skutečností_, které kontrolují h
 Například `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` představuje matematický fakt, který $1 + 1 = $2, zatímco `AssertQubit(One, qubit)` představuje podmínku, kterou měření `qubit` vrátí `One` s jistotou.
 V bývalém případě můžeme ověřit správnost podmínky, pokud jsou k disqubity jenom jeho hodnoty, ale v druhém případě je potřeba, abyste zjistili něco o stavu, abyste mohli kontrolní výraz vyhodnotit.
 
-Standardní knihovny Q # poskytují několik různých funkcí pro reprezentaci faktů, včetně:
+Q#Standardní knihovny poskytují několik různých funkcí pro reprezentaci faktů, včetně:
 
 - <xref:microsoft.quantum.diagnostics.fact>
 - <xref:microsoft.quantum.diagnostics.equalitywithintolerancefact>
@@ -67,7 +70,7 @@ Obecně platí, že operace vyhodnotí <xref:microsoft.quantum.diagnostics.asser
 Pokud se kontrolní výraz nezdařil, spuštění skončí voláním `fail` dané zprávy.
 Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.
 `AssertMeasurement`má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .
-Vzhledem k tomu `AssertMeasurement` , že funkce s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v programu Q # pozorovatelé žádné účinky volání.
+Vzhledem k tomu `AssertMeasurement` , že se jedná o funkci s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v rámci programu pozorovatelé žádné účinky volání Q# .
 
 <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funkce Operation vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.
 Tolerance je aditivní (např. `abs(expected-actual) < tol` ).

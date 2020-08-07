@@ -1,6 +1,8 @@
 ---
 title: Popis pokročilých konceptů matrice: Přečtěte si o exponenciálních eigenvectors, eigenvalues a matricích, základních nástrojích, které se používají k popisu a simulaci algoritmů.
 Autor: QuantumWriter UID: Microsoft.. koncepty. Matrix-rozšířené MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: article No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -124,7 +126,7 @@ $$
 e ^ A = \boldone + a + \frac { a ^ 2 } { 2! } + \frac { A ^ 3 } { 3!}+\cdots
 $$
 
-To je důležité kvůli tomu, že při vývoji v mechanickém čase je popsána jednotná matice formuláře $ e ^ { IB } $ pro Hermitian Matrix $ B $ .  Z tohoto důvodu je provádění exponenciálních exponenciálních výpočetních operací základní částí výpočetní funkce a jako takové Q # nabízí vnitřní rutiny pro popis těchto operací.
+To je důležité kvůli tomu, že při vývoji v mechanickém čase je popsána jednotná matice formuláře $ e ^ { IB } $ pro Hermitian Matrix $ B $ .  Z tohoto důvodu je provádění exponenciálních exponenciálních výpočetních operací základní částí výpočetní funkce a jako taková Q# nabízí vnitřní rutiny pro popis těchto operací.
 Existuje mnoho způsobů, jak na klasický počítač vypočítat exponenciální exponenciálu matrice, a obecně numericky přibližně fraught s Peril.  Viz [*Cleve Moler a Charles Van půjčka. "Devatenáct podezřelých způsoby výpočtu exponenciálního podílu matice." SIAM revize 20,4 (1978): 801-836*](https://doi.org/10.1137/S00361445024180) pro další informace o problémech, které se týkají.
 
 Nejjednodušší způsob, jak porozumět tomu, jak vypočítat exponenciální část matice, je prostřednictvím eigenvalues a eigenvectors této matrice.  Konkrétně věta spektrální popis uvádí, že pro každou Hermitian nebo jednotnou matrici $ $ existuje jednotná matice $ u $ a šikmá matice $ D $ tak, že $ = u ^ \dagger D u $ .  Vzhledem k tomu, že vlastnosti unitarity máme $ ^ 2 = u ^ \dagger d ^ 2 u $ a podobně pro všechny síly $ p $ $ a ^ p = u ^ \dagger D ^ p u $ .  Pokud tuto část nasadíme do definice operátora exponenciálního operátoru, získáte:

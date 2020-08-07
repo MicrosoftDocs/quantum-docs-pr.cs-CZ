@@ -6,12 +6,15 @@ uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: d3c252c6579e1286aae71a0f18ac7b6b02a5c1ed
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 7c5063fccbe73478aeb917e0cd2fe2f7fe51c070
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884150"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866838"
 ---
 # <a name="more-quantum-computing-learning-resources"></a>Další zdroje informací o studiu pro výpočetní prostředky
 
@@ -24,7 +27,7 @@ Tato část obsahuje vybrané odkazy na podrobné pokrytí výpočetních část
 + Kitaev, A. Y., Macek, A., & Vyalyi, M. N. (2002). Výpočet klasických a nenáročného zpracování (obj. 47). Providence: americká Matematická společnost.
 + Kaye, P., Laflamme, R., & Mosca, M. (2007). Úvod do výpočetního prostředí. Oxford univerzita Press
 + Rieffel, E. G. & Polak, W. H. (2011). Výpočetní výkon: mírné seznámení. MIT Press.
-+ Sarah C. Kaiser a Christopher E. granade (program pro včasnou přístup k začala v dubnu 2019 publikace v 2020). [Naučte se s využitím Pythonu a Q # – získáte praktický přístup](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
++ Sarah C. Kaiser a Christopher E. granade (program pro včasnou přístup k začala v dubnu 2019 publikace v 2020). [Naučte se s využitím Pythonu a Q# praktického přístupu](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
 
 ## <a name="online-courses"></a>Online kurzy ##
 

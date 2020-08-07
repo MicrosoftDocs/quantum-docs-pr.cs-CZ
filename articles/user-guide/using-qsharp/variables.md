@@ -1,28 +1,31 @@
 ---
-title: 'Proměnné v Q #'
+title: Proměnné vQ#
 description: Popis výplně
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 08301f408dcb2211ba25c582a5e5aa43310b714a
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 00af0989cd5a1f9ccc7d9f2545acd0d256bc7eb9
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885277"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867841"
 ---
-# <a name="variables-in-q"></a>Proměnné v Q #
+# <a name="variables-in-no-locq"></a>Proměnné vQ#
 
-Q # rozlišuje proměnlivé a neproměnlivé symboly nebo *proměnné*, které jsou vázány nebo přiřazeny výrazům.
+Q#rozlišuje mezi proměnlivými a neproměnlivými symboly nebo *proměnnými*, které jsou vázány nebo přiřazeny k výrazům.
 Obecně platí, že použití neměnných symbolů je doporučováno, protože umožňuje kompilátoru provádět větší optimalizace.
 
 Levá strana vazby se skládá ze symbolů typu tuple a na pravé straně výrazu.
 
 ## <a name="immutable-variables"></a>Neměnné proměnné
 
-Hodnotu libovolného typu v Q # můžete přiřadit proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova. 
+Můžete přiřadit hodnotu libovolného typu v Q# proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova. 
 
 Neproměnlivá vazba se skládá z klíčového slova `let` následovaný symbolem nebo řazenou kolekcí členů symbolu, znaménko rovná `=` se, výraz pro vazbu symbolů na a ukončující středník.
 
@@ -55,7 +58,7 @@ Níže jsou uvedeny některé příklady technik příkazu resvázat.
 
 #### <a name="apply-and-reassign-statements"></a>Příkazy Apply a Reassign
 
-Konkrétní druh `set` příkazu, příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Třeba
+Konkrétní druh `set` příkazu, příkaz *Apply a Reassign* , poskytuje pohodlný způsob zřetězení, pokud se pravá strana skládá z aplikace binárního operátoru a výsledek je převázán na levý argument operátoru. Příklad:
 
 ```qsharp
 mutable counter = 0;
@@ -107,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-V případě polí je [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) ve standardní knihovně Q # k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě. 
+V případě polí je [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) ve Q# standardní knihovně k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě. 
 
 Příkazy Update a Reassign poskytují v případě potřeby alternativu:
 
@@ -236,4 +239,4 @@ if (a == b) {
 
 ## <a name="next-steps"></a>Další kroky
 
-Přečtěte si o [práci s Qubits](xref:microsoft.quantum.guide.qubits) v Q #.
+Přečtěte si o [práci s Qubits](xref:microsoft.quantum.guide.qubits) v Q# .

@@ -1,17 +1,20 @@
 ---
 title: Kontrola různých vstupů – pro vývojová prostředí
-description: 'Přečtěte si o nástroji Microsoft QDK DISTINCT Inputs Checker, který používá simulátor trasování doby využívání, ke kontrole kódu Q # pro případné konflikty se sdílenými qubits.'
+description: Přečtěte si o kontrolách různých vstupů Microsoft QDK, které používají simulátor trasování doby využívání, ke kontrole Q# kódu pro potenciální konflikty se sdílenými qubits.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 49a1ccc5f37acfeaa1ee08bd974be45a40a76f93
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 750c94e7f861678d37f051619ff5b29bf4fd3d3e
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871140"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868266"
 ---
 # <a name="quantum-trace-simulator-distinct-inputs-checker"></a>Simulátor trasování doby využití: Kontrola různých vstupů
 
@@ -19,7 +22,7 @@ Nástroj pro kontrolu různých vstupů je součástí nástroje pro vývoj po �
 
 ## <a name="conflicts-with-shared-qubits"></a>Konflikty se sdílenými qubits
 
-Vezměte v úvahu následující část kódu Q # a ilustrujte problémy zjištěné nástrojem pro kontrolu různých vstupů:
+Zvažte následující část Q# kódu pro ilustraci problémů zjištěných nástrojem pro kontrolu různých vstupů:
 
 ```qsharp
 operation ApplyBoth(
@@ -47,7 +50,7 @@ operation ApplyWithNonDistinctInputs() : Unit {
 }
 ```
 
-Všimněte si, že `op1` a `op2` jsou získány pomocí částečné aplikace a sdílejí qubit. Při volání `ApplyBoth` v tomto příkladu výsledek operace závisí na pořadí `op1` a `op2` uvnitř `ApplyBoth` Not, co byste měli očekávat. Povolíte-li nástroj pro kontrolu různých vstupů, detekuje takové situace a vyvolá `DistinctInputsCheckerException` . Další informace najdete v tématu <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> v knihovně rozhraní API Q #.
+Všimněte si, že `op1` a `op2` jsou získány pomocí částečné aplikace a sdílejí qubit. Při volání `ApplyBoth` v tomto příkladu výsledek operace závisí na pořadí `op1` a `op2` uvnitř `ApplyBoth` Not, co byste měli očekávat. Povolíte-li nástroj pro kontrolu různých vstupů, detekuje takové situace a vyvolá `DistinctInputsCheckerException` . Další informace najdete v tématu <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> v Q# knihovně rozhraní API.
 
 ## <a name="invoking-the-distinct-inputs-checker"></a>Vyvolání kontroly různých vstupů
 

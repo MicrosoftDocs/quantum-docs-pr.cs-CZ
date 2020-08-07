@@ -1,18 +1,21 @@
 ---
-title: Příkazy magic IQ#
-description: 'Rychlá referenční stránka pro příkazy SWEETIQ # Magic s poznámkovým blokům Q # Jupyter'
+title: Q#Příkazy Magic
+description: Rychlá referenční stránka pro Q# příkazy Magic s Q# Jupyter poznámkovým blokem
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 uid: microsoft.quantum.guide.quickref.iqsharp
-ms.openlocfilehash: 2fb542df8723fa437c82b4a1dfada77e22c1d6e4
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: fb7b5543ef9222e6bab2b1cbbc7e3ebb54863438
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870532"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867977"
 ---
-# <a name="iq-magic-commands"></a>Příkazy magic IQ#
+# <a name="ino-locq-magic-commands"></a>Q#Příkazy Magic
 
 ### <a name="general"></a>Obecné
 
@@ -23,7 +26,7 @@ ms.locfileid: "86870532"
 - [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance): Oznamuje aktuální metriku výkonu pro toto jádro.
 - [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate): Spustí danou funkci nebo operaci na cílovém počítači QuantumSimulator.
 - [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli): Spustí danou funkci nebo operaci na cílovém počítači ToffoliSimulator.
-- [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who): Vypíše operace Q #, které jsou k dispozici v aktuální relaci.
+- [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who): Zobrazí seznam Q# operací, které jsou k dispozici v aktuální relaci.
 - [`%workspace`](xref:microsoft.quantum.iqsharp.magic-ref.workspace): Poskytuje akce související s aktuálním pracovním prostorem.
 
 ### <a name="azure-quantum-integration"></a>Integrace Azure pro všechna úložiště
@@ -34,12 +37,12 @@ ms.locfileid: "86870532"
 - [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output): Zobrazí výsledky úlohy v aktuálním pracovním prostoru Azure ve službě Azure.
 - [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status): Zobrazí stav úlohy v aktuálním pracovním prostoru Azure.
 - [`%azure.submit`](xref:microsoft.quantum.iqsharp.magic-ref.azure.submit): Odešle úlohu do pracovního prostoru Azure ve službě.
-- [`%azure.target`](xref:microsoft.quantum.iqsharp.magic-ref.azure.target): Nastaví nebo zobrazí aktivní cíl spuštění pro odeslání úlohy Q # v pracovním prostoru Azure pro plnění.
+- [`%azure.target`](xref:microsoft.quantum.iqsharp.magic-ref.azure.target): Nastaví nebo zobrazí aktivní cíl spuštění pro Q# odeslání úlohy v pracovním prostoru Azure ve službě Azure.
 
 ### <a name="chemistry-from-microsoftquantumchemistry-package"></a>Chemie (z balíčku Microsoft.. chemie)
 
 - [`%chemistry.broombridge`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.broombridge): Načte a vrátí reprezentaci Broombridge elektronické struktury z daného souboru. yaml.
-- [`%chemistry.encode`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.encode): Zakóduje Hamiltonian fermion do formátu příspotřebního příznaku Q #.
+- [`%chemistry.encode`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.encode): Kóduje fermion Hamiltonian na formát, který je spotřební přísystémem Q# .
 - [`%chemistry.fh.add_terms`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.fh.add_terms): Přidá výrazy do fermion Hamiltonian.
 - [`%chemistry.fh.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.fh.load): Načte Hamiltonian fermion pro problém s elektronickými strukturami. Problém se načte ze souboru nebo předá jako argument.
 - [`%chemistry.inputstate.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.inputstate.load): Načte problém elektronické struktury Broombridge a vrátí vybraný vstupní stav.

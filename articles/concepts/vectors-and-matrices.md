@@ -1,6 +1,8 @@
 ---
 title: vektory a matice v popisu pro výpočetní výkon – Popis: Naučte se základy práce s vektory a maticemi.
 Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -87,7 +89,7 @@ Pro pochopení výpočetního prostředí je nezbytné, aby byly v některých z
 
 Vektor sloupce (nebo jednoduše [*Vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $ v $ rozměru (nebo velikosti) $ n $ je kolekce $ n $ komplexních čísel $ (v_1, v_2, \ldots, v_n) $ uspořádaných jako sloupec:
 
-$$ICES=\begin{bmatrix}
+$$v =\begin{bmatrix}
 v_1\\\\
 v_2\\\\
 \vdots\\\\
@@ -242,7 +244,7 @@ $$
     \ ch \ DG \ DH \end{bmatrix} .
 $$
 
-Konečná užitečná konvence zápisu okolních produktů tensor je to, že pro všechny vektory $ v $ nebo matrici $ M $ , $ v ^ { \otimes n } $ nebo $ m ^ { \otimes n } $ je krátká ruka pro $ n $ -přeložení opakovaného tensor produktu.  Zde je příklad:
+Konečná užitečná konvence zápisu okolních produktů tensor je to, že pro všechny vektory $ v $ nebo matrici $ M $ , $ v ^ { \otimes n } $ nebo $ m ^ { \otimes n } $ je krátká ruka pro $ n $ -přeložení opakovaného tensor produktu.  Příklad:
 
 \begin{align}
 &\begin{bmatrix}1 \\\\ 0 1 \end{bmatrix} ^ { \otimes } = \begin{bmatrix} \\\\ \end{bmatrix} , \qquad \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} ^ { \otimes 2 } = \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} , \qquad \begin{bmatrix} 1 \\\\ -1 \end{bmatrix} ^ { \otimes 2 } = \begin{bmatrix} 1 \\\\ -1 \\\\ -1 \\\\ 1 \end{bmatrix} ,\\\\

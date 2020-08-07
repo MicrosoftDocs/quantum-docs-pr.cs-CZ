@@ -1,28 +1,31 @@
 ---
 title: Základní klasifikace s Machine Learningovou knihovnou
-description: 'Naučte se spouštět sekvenční třídění na základě počtu počátečních a napsaných v Q # pomocí Machine Learning knihovny s využitím služby Microsoft QDK.'
+description: Naučte se spouštět sekvenční třídění na základě počtu počátečních a napsaných v Q# Machine Learning knihovně Microsoft QDK.
 author: geduardo
 ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
-ms.openlocfilehash: 1d2538fd164c4c61c2712978d3b5c57b0eb766e6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: f9c3e7ab85c0f0d1a6063e593607d35c5cb76936
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274626"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868963"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Základní klasifikace: klasifikace dat pomocí QDK
 
-V tomto rychlém startu se dozvíte, jak spustit sekvenční třídění na základě počtu počátečních a napsaný v Q # pomocí Machine Learning knihovny QDK. 
+V tomto rychlém startu se dozvíte, jak spustit sekvenční třídění na základě počtu počátečních a popsaných informací Q# pomocí Machine Learning knihovny QDK. 
 
-V této příručce použijeme datovou sadu s poloviční měsíc pomocí struktury klasifikátoru definované v Q #.
+V této příručce použijeme datovou sadu s poloviční měsíc pomocí struktury klasifikátoru definované v Q# .
 
 ## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Vytvořte projekt Q # pro [hostitelský program Pythonu](xref:microsoft.quantum.install.python) nebo pro [hostitelský program C#](xref:microsoft.quantum.install.cs).
+- Vytvořte Q# projekt pro [hostitelský program Pythonu](xref:microsoft.quantum.install.python) nebo pro [hostitelský program C#](xref:microsoft.quantum.install.cs).
 
 ## <a name="host-program"></a>Hostitelský program
 
@@ -34,7 +37,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
 
-    Pokud chcete spustit klasifikátor Q # z Pythonu, uložte následující kód jako `host.py` . Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
+    Pokud chcete spustit Q# klasifikátor z Pythonu, uložte následující kód jako `host.py` . Nezapomeňte, že také potřebujete Q# soubor `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="python" source="~/quantum/samples/machine-learning/half-moons/host.py" range="3-42":::
 
@@ -49,7 +52,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-csharp)
 
-    Pokud chcete spustit klasifikátor Q # z C#, uložte následující kód jako `Host.cs` . Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
+    Chcete-li spustit Q# klasifikátor z C#, uložte následující kód jako `Host.cs` . Nezapomeňte, že také potřebujete Q# soubor `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -63,7 +66,7 @@ Hostitelský program se skládá ze tří částí:
 
     ### <a name="c-with-visual-studio-2019"></a>[C# s Visual Studiem 2019](#tab/tabid-vs2019)
 
-    Chcete-li spustit nový program Q # z C# v aplikaci Visual Studio, upravte `Host.cs` tak, aby obsahovalo následující kód jazyka C#. Nezapomeňte, že potřebujete také soubor Q # `Training.qs` , který je vysvětlen dále v tomto kurzu.
+    Chcete-li spustit nový Q# program z c# v aplikaci Visual Studio, upravte `Host.cs` tak, aby obsahovalo následující kód jazyka c#. Nezapomeňte, že také potřebujete Q# soubor `Training.qs` , který je vysvětlen dále v tomto kurzu.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -78,7 +81,7 @@ Hostitelský program se skládá ze tří částí:
 
 ## <a name="q-classifier-code"></a>\#Kód třídění Q
 
-Teď se podívejme, jak se operace vyvolané hostitelským programem definují v Q #.
+Teď se podíváme, jak se operace vyvolané hostitelským programem definují v tématu Q# .
 Následující kód ukládáme do souboru s názvem `Training.qs` .
 
 :::code language="qsharp" source="~/quantum/samples/machine-learning/half-moons/Training.qs" range="4-116":::

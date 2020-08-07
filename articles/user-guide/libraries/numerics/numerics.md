@@ -1,17 +1,20 @@
 ---
-title: 'Použití knihovny Microsoft Q # Numerics'
+title: Použití knihovny Microsoft Q# Numerics
 description: Seznamte se s typy a operacemi, které jsou k dispozici v knihovně numerických hodnot společnosti Microsoft.
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: 10d5675e0ef182211a38db4d09347b05afe109c3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 474fc74b9c92fbf28c0618a3090905d025699d32
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274701"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868793"
 ---
 # <a name="using-the-numerics-library"></a>Použití knihovny numerických knihoven
 
@@ -64,7 +67,7 @@ Pro každý ze tří typů uvedených výše je k dispozici celá řada operací
     - Oboustranný (1/x)
     - Měření (klasická dvojitá přesnost)
 
-Další informace a podrobnou dokumentaci ke každé z těchto operací najdete v tématu Referenční dokumentace knihovny Q # na adrese [docs.Microsoft.com](https://docs.microsoft.com/quantum) .
+Další informace a podrobnou dokumentaci ke každé z těchto operací najdete v Q# knihovně Referenční dokumentace knihovny na adrese [docs.Microsoft.com](https://docs.microsoft.com/quantum) .
 
 ## <a name="sample-integer-addition"></a>Ukázka: sčítání celých čísel
 
@@ -99,7 +102,7 @@ EvaluatePolynomialFxP([1.0, 2.0], x, y);
 Výsledek, $P (x) = 1 + 2x $, bude uložen v `yFxP` .
 
 Druhý, `EvaluateEvenPolynomialFxP` a třetí, `EvaluateOddPolynomialFxP` jsou specializace pro případy sudé a lichých funkcí v uvedeném pořadí. To znamená, že pro sudé/liché funkce $f (x) $ a $ $ P_ {sudý} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ je přibližná, že $P _ {sudý} (x) $ nebo $P _ {lichý} (x): = x\cdot P_ {sudý} (x) $, v uvedeném pořadí.
-V Q # lze tyto dva případy zpracovat následujícím způsobem:
+V nástroji Q# lze tyto dva případy zpracovat následujícím způsobem:
 ```qsharp
 EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
 ```

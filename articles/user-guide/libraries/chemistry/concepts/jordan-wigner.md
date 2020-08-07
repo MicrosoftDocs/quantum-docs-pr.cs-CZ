@@ -6,12 +6,15 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
-ms.openlocfilehash: 17cb473c6d33e3356d5da886f47985c3828d4d1f
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 9f1455ebbecf6a3500ec11a5196e7662455c9a78
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274657"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869507"
 ---
 # <a name="jordan-wigner-representation"></a>Jordánsko – reWigner reprezentace
 
@@ -28,7 +31,7 @@ Pak to máme $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ a $a ^ \ dagger_j \ket 
 Je snadné ověřit, že \begin{Align} a ^ \ dagger_j &= \begin{bmatrix}0 & 0 \\ \ 1 &0 \end{bmatrix} = \frac{X_j-iY_j} {2} , \nonumber \\ \\ a_j &= \begin{bmatrix}0 & 1 \\ \ 0 &0 \end{bmatrix} = \frac{X_j + iY_j} {2} , \end{align} kde $X _J $ a $Y _j $ jsou operátory Pauli-$X $ a-$Y $ fungující na qubit $j $.
 
 >[!NOTE]
-> Ve stavu Q #, který obsahuje $ \ket {0} $, představuje + 1 eigenstate operátoru $Z $. V některých oblastech fyzika $ \ket {0} $ představuje stav s nízkou spotřebou energie, tedy i-1 eigenstate operátoru $Z $. Některé vzorce se proto mohou od oblíbené literatury lišit.
+> Ve Q# stavu $ \ket {0} $ představuje + 1 eigenstate operátoru $Z $. V některých oblastech fyzika $ \ket {0} $ představuje stav s nízkou spotřebou energie, tedy i-1 eigenstate operátoru $Z $. Některé vzorce se proto mohou od oblíbené literatury lišit.
 
 V knihovně chemie používáme $ \ket {0} $ k reprezentaci neobsazeného číselníku Orbital.
 To ukazuje, že pro jednoduché Orbital se snadno reprezentují operátory vytváření a Annihilation v souvislosti s jednotnými matricemi, které počítače rozumí.

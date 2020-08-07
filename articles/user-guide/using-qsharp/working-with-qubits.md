@@ -6,18 +6,21 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
-ms.openlocfilehash: 1655d18ab9d8638ad356e6fb90994b5c1fd76a25
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 6808a852ee0de7d3a38ea44e9637eeaa6bea382a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885307"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867858"
 ---
 # <a name="working-with-qubits"></a>Práce s qubity
 
 Qubits jsou zásadním objektem informací ve výpočetním prostředí. Obecné seznámení s qubits najdete v tématu [porozumění výpočetnímu](xref:microsoft.quantum.overview.understanding)prostředí a podrobně hlouběji do jejich matematické reprezentace, viz [qubit](xref:microsoft.quantum.concepts.qubit). 
 
-Tento článek popisuje, jak používat qubits a pracovat s nimi v programu Q #. 
+Tento článek popisuje, jak používat qubits v programu a pracovat s nimi Q# . 
 
 > [!IMPORTANT]
 >Žádný z příkazů popsaných v tomto článku není platný v těle funkce. Jsou platné pouze v rámci operací.
@@ -25,7 +28,7 @@ Tento článek popisuje, jak používat qubits a pracovat s nimi v programu Q #.
 ## <a name="allocating-qubits"></a>Přidělování Qubits
 
 Vzhledem k tomu, že fyzický qubits jsou cenným prostředkem v počítači, který je součástí úlohy, je nutné se ujistit, že jsou používány co nejúčinnějším způsobem.
-V takovém případě je nutné sdělit Q # a *přidělit* qubits pro použití v rámci konkrétního bloku příkazu.
+V takovém případě je třeba říct, že Q# chcete *přidělit* qubits pro použití v rámci konkrétního bloku příkazu.
 Můžete přidělit qubits jako jeden qubit nebo jako pole qubits, které se označuje jako *registr*. 
 
 ### <a name="clean-qubits"></a>Vyčistit qubits
@@ -36,7 +39,7 @@ Příkaz se skládá z klíčového slova `using` , za nímž následuje vazba u
 Vazba se řídí stejným vzorem jako `let` příkazy: buď jeden symbol, nebo záznamovou sadu symbolů následovaný symbolem rovná `=` se, a buď jedinou hodnotou, nebo porovnáním řazené kolekce členů *inicializátorů*.
 
 Inicializátory jsou k dispozici buď pro jeden qubit, který `Qubit()` je označen jako nebo jako pole qubits, `Qubit[n]` , kde `n` je `Int` výraz.
-Třeba
+Příklad:
 
 ```qsharp
 using (qubit = Qubit()) {
@@ -65,7 +68,7 @@ Tyto qubits nejsou obecně v čistém stavu, to znamená, že nejsou nutně inic
 Ty se často označují jako "nequbitsé", protože jejich stav je neznámý a může být dokonce entangled s ostatními částmi paměti počítače.
 
 Vazba následuje stejný vzor a pravidla jako `using` příkaz.
-Třeba
+Příklad:
 ```qsharp
 borrowing (qubit = Qubit()) {
     // ...
@@ -82,17 +85,17 @@ Při výpůjčkě qubits se systém nejprve pokusí vyplnit požadavek z qubits,
 Pokud není dostatek takových qubits, přidělí nové qubits k dokončení žádosti.
 
 Mezi známé případy použití undirty qubits jsou implementace více řízených CNOTch bran, které vyžadují jenom velmi málo qubits a implementaci přírůstku.
-Příklad jejich použití v Q # najdete v tématu [výpůjčka Qubits příklad](#borrowing-qubits-example) v tomto článku nebo vytváření papírů [*pomocí 2n + 2 Qubits s modulárním násobení*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler a Svore 2017) pro algoritmus, který využívá vypůjčený Qubits.
+Příklad použití v Q# najdete v tématu [výpůjčka Qubits příklad](#borrowing-qubits-example) v tomto článku nebo vytváření papírů [*pomocí 2n + 2 Qubits s modulárním násobení*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler a Svore 2017) pro algoritmus, který využívá vypůjčený Qubits.
 
 ## <a name="intrinsic-operations"></a>Vnitřní operace
 
 Po přidělení můžete předat qubit funkcím a operacím.
-V některých případech to znamená, že program Q # může s qubit provádět, protože akce, které lze provést, jsou definovány jako operace.
+V některých případech to znamená, že Q# program může s qubit provádět, protože akce, které lze provést, jsou definovány jako operace.
 
-Tento článek popisuje několik užitečných operací Q #, které můžete použít k interakci s qubits.
+Tento článek popisuje několik užitečných Q# operací, které můžete použít k interakci s qubits.
 Další podrobnosti o těchto a dalších funkcích najdete v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude). 
 
-Za prvé, qubit Pauli Operators $X $, $Y $ a $Z $ jsou v Q # reprezentovány vnitřními operacemi [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) a [`Z`](xref:microsoft.quantum.intrinsic.z) , z nichž každý má typ `(Qubit => Unit is Adj + Ctl)` .
+Za prvé, qubit Pauli Operators $X $, $Y $ a $Z $ jsou reprezentovány v rámci Q# vnitřních operací [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) a [`Z`](xref:microsoft.quantum.intrinsic.z) , z nichž každý má typ `(Qubit => Unit is Adj + Ctl)` .
 
 Jak je popsáno v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude), uvažujte o $X $, a to proto, že se jedná o `X` operaci PŘEklápění nebo ne o hradlo.
 Operaci můžete použít `X` k přípravě stavů ve formátu $ \ket{s_0 S_1 \dots S_N} $ pro některý z klasických bitových řetězců $s $:
@@ -124,7 +127,7 @@ operation RunExample() : Unit {
 > [!TIP]
 > Později se zobrazí více kompaktních způsobů psaní této operace, která nevyžaduje ruční tok řízení.
 
-Můžete také připravit stavy, jako je $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ a $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $, pomocí Hadamard Transforming $H $, který je reprezentován v Q # vnitřní operací [`H`](xref:microsoft.quantum.intrinsic.h) (také typ (qubit => jednotka je ADJ + CTL)):
+Můžete také připravit stavy, jako je $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ a $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $, pomocí Hadamard Transforming $H $, který je reprezentován Q# vnitřní operací [`H`](xref:microsoft.quantum.intrinsic.h) (také typ (qubit => jednotka je ADJ + CTL)):
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -242,4 +245,4 @@ Je povede k porovnání tohoto kódu s jinou funkcí Canon, `MultiControlledXCle
 
 ## <a name="next-steps"></a>Další kroky
 
-Přečtěte si o [toku řízení](xref:microsoft.quantum.guide.controlflow) v Q #.
+Přečtěte si o [toku řízení](xref:microsoft.quantum.guide.controlflow) v nástroji Q# .

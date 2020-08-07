@@ -1,38 +1,41 @@
 ---
-title: 'Způsoby spuštění programu Q #'
-description: 'Přehled různých způsobů spouštění programů Q #. Z příkazového řádku, poznámkových bloků Q # Jupyter a klasických hostitelských programů v Pythonu nebo v jazyce .NET.'
+title: Způsoby spuštění Q# programu
+description: Přehled různých způsobů spouštění Q# programů. Z příkazového řádku, Q# poznámkových bloků Jupyter a klasických hostitelských programů v Pythonu nebo v jazyce .NET.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 05/15/2020
 ms.topic: article
 uid: microsoft.quantum.guide.host-programs
-ms.openlocfilehash: 132c138d7c392ed2b4bd3d0079180b68adae4cfc
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8e3fa83700417a4ffaf9e3be91796c9e9513b253
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85887656"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869728"
 ---
-# <a name="ways-to-run-a-q-program"></a>Způsoby spuštění programu Q #
+# <a name="ways-to-run-a-no-locq-program"></a>Způsoby spuštění Q# programu
 
 Jednou z největších silou pro vývojová prostředí pro životní prostředí je jeho flexibilita napříč platformami a vývojovým prostředím.
-To ale také znamená, že noví uživatelé Q # můžou najít zaměňování nebo zahlcení řadou možností, které najdete v [instalační příručce](xref:microsoft.quantum.install).
-Na této stránce vysvětlete, co se stane, když se spustí program Q #, a porovnejte různé způsoby, jak to uživatelé můžou udělat.
+To ale také znamená, že noví Q# Uživatelé můžou při [instalaci v instalační příručce](xref:microsoft.quantum.install)najít nebo přesvědčit o mnoha možnostech.
+Na této stránce vysvětlete, co se stane Q# , když se program spustí, a porovnejte různé způsoby, jak to uživatelé můžou udělat.
 
-Zásadním rozdílem je, že Q # lze spustit:
-- jako samostatná aplikace, kde Q # je jediný jazyk, který je součástí programu a který je vyvolán přímo. Do této kategorie ve skutečnosti patří dvě metody:
+Primární rozdíl je, že Q# lze spustit:
+- jako samostatná aplikace, kde Q# je jediný jazyk, který je součástí jediného jazyka a který program je vyvolán přímo. Do této kategorie ve skutečnosti patří dvě metody:
   - rozhraní příkazového řádku
-  - Aplikace Jupyter Notebook v Q#
+  - Q#Jupyter poznámkové bloky
 - s dalším *hostitelským programem*, který je napsán v Pythonu nebo v jazyce .NET (např. C# nebo F #), který potom vyvolá program a může pokračovat ve zpracování vrácených výsledků.
 
-Abychom těmto procesům a jejich rozdílům nejlépe pochopili, Uvažujme o jednoduchém programu Q # a porovnejte způsob, jakým je možné ho spustit.
+Abychom těmto procesům a jejich rozdílům nejlépe pochopili, Uvažujme o jednoduchém Q# programu a porovnejte způsob, jakým je možné ho spustit.
 
-## <a name="basic-q-program"></a>Základní program Q #
+## <a name="basic-no-locq-program"></a>Základní Q# program
 
 Základní program pro vystavování se může skládat z přípravy qubit do stejné pozice stavů $ \ket {0} $ a $ \ket {1} $, měření a vrácení výsledku, který bude náhodně buď jedna z těchto dvou stavů, se stejnou pravděpodobností.
 Tento proces je skutečně v jádru pro rychlý Start [generátoru náhodných čísel](xref:microsoft.quantum.quickstarts.qrng) .
 
-V Q # by to bylo provedeno následujícím kódem:
+V nástroji Q# by to bylo provedeno následujícím kódem:
 
 ```qsharp
         using (q = Qubit()) {    // allocates qubit for use (automatically in |0>)
@@ -41,7 +44,7 @@ V Q # by to bylo provedeno následujícím kódem:
         }
 ```
 
-Samotný kód však nelze spustit pomocí Q #.
+Samotný kód však nelze spustit pomocí Q# .
 V takovém případě musí sestavovat tělo [operace](xref:microsoft.quantum.guide.basics#q-operations-and-functions), která se pak spustí při volání---, a to buď přímo, nebo jinou operací. Proto můžete napsat operaci následujícího formuláře:
 ```qsharp
     operation MeasureSuperposition() : Result {
@@ -53,20 +56,20 @@ V takovém případě musí sestavovat tělo [operace](xref:microsoft.quantum.gu
 ```
 Definovali jste operaci, `MeasureSuperposition` která nepřijímá žádné vstupy a vrací hodnotu typu [Result](xref:microsoft.quantum.guide.types).
 
-I když příklady na této stránce sestávají jenom s *operacemi*q #, všechny koncepty, které budeme projednávat, se budou týkat i *funkcí*q #, a proto je budeme v souhrnně *označovat jako možné*. Jejich rozdíly jsou popsány v tématu [základní informace o funkci Q #: operace a funkce](xref:microsoft.quantum.guide.basics#q-operations-and-functions)a další informace o jejich definování najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
+Zatímco příklady na této stránce se skládají jenom z Q# *operací*, všechny koncepce, které budeme projednávat, se budou vztahovat i na Q# *funkce*, a proto jsme na ně odkázali jako *volatelné*. Jejich rozdíly jsou vysvětleny na [ Q# základních základech: operace a funkce](xref:microsoft.quantum.guide.basics#q-operations-and-functions)a další podrobnosti o jejich definování najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
-### <a name="callable-defined-in-a-q-file"></a>Navolatelné v souboru Q #
+### <a name="callable-defined-in-a-no-locq-file"></a>V souboru se nedá volat definice. Q#
 
-Volání je přesně to, co se volá a spouští se Q #.
-Nicméně vyžaduje několik dalších přídavků, které obsahují úplný `*.qs` soubor Q #.
+Volání je přesně to, co se volá a spouští Q# .
+Nicméně vyžaduje několik dalších přídavků, které tvoří úplný `*.qs` Q# soubor.
 
-Všechny typy Q # a volatelné (ty, které definujete i u těchto vnitřních jazyků) jsou definovány v rámci *oborů názvů*, které poskytují každý úplný název, na který lze následně odkazovat.
+Všechny Q# typy a výzvy (které definujete i u těchto vnitřních objektů) jsou definovány v rámci *oborů názvů*, které poskytují každý úplný název, na který lze odkazovat.
 
-Například [`H`](xref:microsoft.quantum.intrinsic.h) [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operace a se nacházejí v [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) oborech názvů a (součást [standardních knihoven Q #](xref:microsoft.quantum.qsharplibintro)).
+Například [`H`](xref:microsoft.quantum.intrinsic.h) [`MResetZ`](xref:microsoft.quantum.measurement.mresetz) operace a se nacházejí v [`Microsoft.Quantum.Instrinsic`](xref:microsoft.quantum.intrinsic) [`Microsoft.Quantum.Measurement`](xref:microsoft.quantum.measurement) oborech názvů a (součást [ Q# standardních knihoven](xref:microsoft.quantum.qsharplibintro)).
 V takovém případě mohou být vždy volány prostřednictvím jejich *úplných* názvů, `Microsoft.Quantum.Intrinsic.H(<qubit>)` `Microsoft.Quantum.Measurement.MResetZ(<qubit>)` ale vždy to vede k tomu, že by to vedlo k velmi zbytečnému kódu.
 
 Místo toho `open` příkazy umožňují volat odkazování pomocí výstižnější zkratky, jak jsme udělali v těle operace výše.
-Úplný soubor Q # obsahující naši operaci se proto skládá z definování vlastního oboru názvů, otevření oborů názvů pro ty, které používají naši operaci, a pak naší operace:
+Úplný Q# soubor obsahující naši operaci by se tedy sestávat z definice vlastního oboru názvů, otevřením oborů názvů pro ty, které používá naše operace, a pak naší operace:
 
 ```qsharp
 namespace NamespaceName {
@@ -92,50 +95,50 @@ namespace NamespaceName {
 
 ### <a name="execution-on-target-machines"></a>Spouštění na cílových počítačích
 
-Nyní bude obecný model spuštění programu Q # jasný.
+Nyní se model obecného spuštění Q# programu bude jasný.
 
 <br/>
 <img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
 
 Za prvé, konkrétní spuštění, které se má spustit, má přístup k jakýmkoli jiným přívolat a typům definovaným ve stejném oboru názvů.
-Také k nim přistupuje z libovolné [knihovny Q #](xref:microsoft.quantum.libraries), ale musí být odkazovány buď prostřednictvím jejich úplného názvu, nebo pomocí `open` příkazů popsaných výše.
+Také k nim přistupuje z libovolné [ Q# knihovny](xref:microsoft.quantum.libraries), ale musí být odkazovány buď prostřednictvím jejich úplného názvu, nebo pomocí `open` příkazů popsaných výše.
 
 Sama se pak spustí na *[cílovém počítači](xref:microsoft.quantum.machines)*.
 Tyto cílové počítače můžou být skutečným hardwarem nebo s více simulátory, které jsou k dispozici jako součást QDK.
 Pro naše účely je nejužitečnější cílový počítač instancí [simulátoru s plným stavem](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` který počítá chování programu, jako kdyby bylo spuštěno na počítači se systémem, který je bezproblémový.
 
-Zatím jsme popsali, co se stane, když se spustí konkrétní Q # volat.
-Bez ohledu na to, zda je v samostatné aplikaci nebo v hostitelském programu používáno Q #, je tento obecný proces více nebo méně stejný,---QDK, tedy flexibilitu.
-Rozdíly mezi různými způsoby volání do vývojového prostředí pro plnění obsahu si proto samy odhalí, *jak* je volání Q # Called provedeno a v jakém způsobem jsou vráceny výsledky.
+Zatím jsme popsali, co se stane, když Q# se spustí konkrétní volat.
+Bez ohledu na to, jestli Q# se používá v samostatné aplikaci nebo v hostitelském programu, je tento obecný proces více nebo méně stejný,---QDK, takže flexibilita.
+Rozdíly mezi různými způsoby volání do vývojové sady pro plnění stavových prostředí se proto odhalují ve *způsobu, jakým* se volá, aby se dala Q# provést, a v jakém způsobu se vrátí výsledky.
 Přesněji řečeno, rozdíly obtéká kolem 
-1. označuje, kterou hodnotu Q # volat se má provést.
+1. indikuje, že se má Q# Spustit,
 2. jak jsou k dispozici možné argumenty pro možnost použití,
 3. zadání cílového počítače, na kterém se má spustit, a
 4. způsob, jakým jsou vráceny výsledky.
 
-Nejdřív se podíváme na to, jak se to dělá pomocí samostatné aplikace Q # z příkazového řádku, a pak pokračujte pomocí hostitelských programů Pythonu a C#.
-Vyhrazujeme si samostatnou aplikaci poznámkových bloků Q # Jupyter, protože na rozdíl od prvních tří nezáleží na tom, že se jedná o místní funkce na střed souboru Q #.
+Nejdřív se podíváme na to, jak se to dělá u Q# samostatné aplikace z příkazového řádku, a pak budete pokračovat v používání hostitelských programů Pythonu a C#.
+Vyhrazujeme si samostatnou aplikaci Q# Jupyter poznámkových bloků jako poslední, protože na rozdíl od prvních tří nezáleží na tom, že se jedná o primární funkce na střed místního Q# souboru.
 
 > [!NOTE]
-> I když ho v těchto příkladech neilustruje, jedná se o jeden společný vztah mezi metodami spuštění, protože všechny zprávy vytištěné z programu Q # (například v případě [`Message`](xref:microsoft.quantum.intrinsic.message) [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) , že) se obvykle vždy vytisknou do příslušné konzoly.
+> I když ho v těchto příkladech neilustruje, jedna ze dvou metod provádění je, že všechny zprávy vytištěné zevnitř Q# programu (například uživatelem [`Message`](xref:microsoft.quantum.intrinsic.message) [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) ) budou obvykle vždy vytištěny do příslušné konzoly.
 
-## <a name="q-from-the-command-line"></a>Q # z příkazového řádku
-Jedním z nejjednodušších způsobů, jak začít psát do programu Q #, je zabránit tomu, abyste se mohli zcela starat o samostatné soubory a druhý jazyk.
-Pomocí Visual Studio Code nebo sady Visual Studio s rozšířením QDK umožňuje bezproblémové pracovní postup, při kterém se spustí Q #, který se dá volat jenom z jednoho souboru Q #.
+## <a name="no-locq-from-the-command-line"></a>Q#z příkazového řádku
+Jedním z nejjednodušších způsobů, jak začít psát Q# programy, je zabránit tomu, aby se nemuseli starat o samostatné soubory a druhý jazyk.
+Pomocí Visual Studio Code nebo sady Visual Studio s rozšířením QDK umožňuje bezproblémové pracovní postup, ve kterém se spouští Q# volat jenom z jednoho Q# souboru.
 
 V tomto případě budeme vyvolávat spuštění programu tím, že zadáte
 ```dotnetcli
 dotnet run
 ```
 na příkazovém řádku.
-Nejjednodušší pracovní postup je v případě, že je umístění adresáře terminálu stejné jako soubor Q #, který je možné snadno zpracovat vedle úprav souborů Q # pomocí integrovaného terminálu v VS Code.
-[ `dotnet run` Příkaz](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) však akceptuje mnoho možností a program lze také spustit z jiného umístění pouhým poskytnutím `--project <PATH>` umístění souboru Q #.
+Nejjednodušší pracovní postup je v případě, že je umístění adresáře terminálu stejné jako Q# soubor, který je možné snadno zpracovávat společně s Q# úpravami souborů pomocí integrovaného terminálu v vs Code, například.
+[ `dotnet run` Příkaz](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) však akceptuje mnoho možností a program lze také spustit z jiného umístění pouhým poskytnutím `--project <PATH>` umístění Q# souboru.
 
 
-### <a name="add-entry-point-to-q-file"></a>Přidat vstupní bod do souboru Q #
+### <a name="add-entry-point-to-no-locq-file"></a>Přidat vstupní bod do Q# souboru
 
-Většina souborů Q # bude obsahovat více než jednu vykonatelné, takže je potřeba, aby kompilátor věděl, *který* volat, aby se spustil při zadání `dotnet run` příkazu.
-To se provádí jednoduchou změnou samotného souboru Q #: 
+Většina Q# souborů bude obsahovat více než jednu vykonatelné, takže je potřeba, aby kompilátor věděl, *který* volat, aby se spustil při zadání `dotnet run` příkazu.
+To se provádí jednoduchou změnou Q# samotného souboru: 
     - Přidejte řádek, který `@EntryPoint()` je přímo před volat.
 
 Náš soubor výše by se proto stal
@@ -194,7 +197,7 @@ získávání výstupu podobného
 Tento kurz rozšiřuje na více argumentů.
 
 > [!NOTE]
-> Názvy argumentů definované v `camelCase` jsou mírně změněny kompilátorem, aby byly přijaty jako vstupy Q #. Například, pokud místo `n` , jsme použili název `numQubits` uvedený výše, a tento vstup by se zadal na příkazovém řádku pomocí `--num-qubits 4` místo `-n 4` .
+> Názvy argumentů definované v `camelCase` jsou mírně změněny kompilátorem tak, aby byly přijaty jako Q# vstupy. Například, pokud místo `n` , jsme použili název `numQubits` uvedený výše, a tento vstup by se zadal na příkazovém řádku pomocí `--num-qubits 4` místo `-n 4` .
 
 Chybová zpráva taky obsahuje další možnosti, které se dají použít, včetně toho, jak změnit cílový počítač.
 
@@ -229,23 +232,23 @@ Podrobnosti o tom, co tyto metriky naznačují, najdete v tématu věnovaném [E
 <br/>
 <img src="../media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
 
-### <a name="non-q-dotnet-run-options"></a>Možnosti bez Q # `dotnet run`
+### <a name="non-no-locq-dotnet-run-options"></a>Jiné než Q# `dotnet run` Možnosti
 
-Jak jsme se na tuto možnost krátce zmínili `--project` , [ `dotnet run` příkaz](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) také přijímá možnosti, které nesouvisí s argumenty volat v parametru Q #.
-Pokud zadáváte oba druhy možností, `dotnet` musí být nejprve zadány možnosti specifické pro konkrétní parametry, následované oddělovač `--` a pak parametry specifické pro Q #.
+Jak jsme se na tuto možnost krátce zmínili `--project` , [ `dotnet run` příkaz](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) také přijímá možnosti, které nesouvisí s argumenty, které lze Q# volat.
+Pokud jsou zadány oba typy možností, `dotnet` musí být nejprve poskytnuty možnosti specifické pro, následované oddělovač `--` a Q# možnosti specifické pro.
 Například specifiying cestu spolu s číslem qubits pro operaci výše, kterou by bylo provedeno prostřednictvím `dotnet run --project <PATH> -- -n <n>` .
 
-## <a name="q-with-host-programs"></a>Q # s hostitelskými programy
+## <a name="no-locq-with-host-programs"></a>Q#s hostitelskými programy
 
-S naším souborem Q # je alternativou pro volání operace nebo funkce přímo z příkazového řádku použití *hostitelského programu* v jiném klasickém jazyce. Konkrétně to lze provést buď pomocí Pythonu, nebo jazyka .NET, jako je C# nebo F # (za účelem zkrácení budeme podrobnosti pouze C#).
+U našeho Q# souboru je alternativou k volání operace nebo funkce přímo z příkazového řádku použití *hostitelského programu* v jiném klasickém jazyce. Konkrétně to lze provést buď pomocí Pythonu, nebo jazyka .NET, jako je C# nebo F # (za účelem zkrácení budeme podrobnosti pouze C#).
 K povolení interoperability je potřeba trochu dalších nastavení, ale tyto podrobnosti najdete v [pokynech k instalaci](xref:microsoft.quantum.install).
 
-V kostce nyní tato situace zahrnuje soubor hostitelského programu (například `*.py` nebo `*.cs` ) ve stejném umístění jako náš soubor Q #.
-Nyní je *hostitelský* program, který se spustí, a v průběhu jeho provádění může volat konkrétní operace Q # a funkce ze souboru q #.
-Základ interoperability je založen na kompilátoru Q # vytvoření obsahu souboru Q # přístupného pro hostitelský program, aby bylo možné je volat.
+V kostce nyní tato situace zahrnuje soubor hostitelského programu (například `*.py` nebo `*.cs` ) ve stejném umístění jako náš Q# soubor.
+Nyní je *hostitelský* program, který se spustí, a v průběhu jeho provádění může volat konkrétní Q# operace a funkce ze Q# souboru.
+Základem interoperability je Q# vytvoření obsahu Q# souboru přístupného pro hostitelský program, aby bylo možné je volat.
 
-Jednou z hlavních výhod používání hostitelského programu je to, že klasická data vrácená programem Q # je pak možné dále zpracovat v jazyce hostitele.
-Může se jednat o některé pokročilé zpracování dat (například něco, co se v Q # nedaří provést interně) a potom na základě těchto výsledků zavolat další akce Q # nebo něco jednoduchého jako vykreslení výsledků Q #.
+Jednou z hlavních výhod používání hostitelského programu je to, že klasická data vrácená Q# programem se pak dají dál zpracovat v jazyce hostitele.
+Může se jednat o některé pokročilé zpracování dat (například něco, co se v nástroji nedá interně provést Q# ) a pak na Q# základě těchto výsledků volat další akce nebo něco jednoduchého jako vykreslení Q# výsledků.
 
 Tady se zobrazí obecné schéma a v následující části se podíváme na konkrétní implementace pro Python a C#. Ukázku použití hostitelského programu F # najdete v [ukázkách interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
 
@@ -253,11 +256,11 @@ Tady se zobrazí obecné schéma a v následující části se podíváme na kon
 <img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
 
 > [!NOTE]
-> `@EntryPoint()`Atribut použitý pro aplikace příkazového řádku Q # nelze použít s hostitelskými programy.
-> Pokud se objeví v souboru Q #, který volá hostitel, bude vyvolána chyba. 
+> `@EntryPoint()`Atribut používaný pro Q# aplikace příkazového řádku nelze použít s hostitelskými programy.
+> Pokud se nachází v souboru, který Q# Host volá, bude vyvolána chyba. 
 
-Pro práci s různými hostitelskými programy nejsou v souboru Q # vyžadovány žádné změny `*.qs` .
-Následující hostitelské programy implementují všechny práce se stejným souborem Q #:
+Pro práci s různými hostitelskými programy nejsou k dispozici žádné změny `*.qs` Q# souboru.
+Následující hostitelské programy implementují všechny práce se stejným Q# souborem:
 
 ```qsharp
 namespace NamespaceName {
@@ -286,17 +289,17 @@ Vyberte kartu odpovídající vašemu hostitelskému jazyku, který vás zajím�
 
 ### <a name="python"></a>[Python](#tab/tabid-python)
 Hostitelský program Pythonu je vytvořený takto:
-1. Importujte `qsharp` modul, který registruje zavaděč modulů pro interoperabilitu Q #. 
-    To umožňuje, aby se obory názvů Q # zobrazovaly jako moduly Pythonu, ze kterých můžeme "importovat" Q # volat.
-    Všimněte si, že se nejedná o vlastní volání Q #, která se naimportují, ale namísto zástupných procedur v Pythonu, které jim umožňují zavolat.
+1. Importujte `qsharp` modul, který registruje zavaděč modulu pro Q# interoperabilitu. 
+    To umožňuje Q# , aby se obory názvů zobrazovaly jako moduly Pythonu, ze kterých můžeme "importovat" Q# .
+    Všimněte si, že se nejedná o nepřímo Q# přizpůsobitelné metody, které jsou naimportovány, ale spíše jako zástupné procedury Pythonu, které umožňují
     Ty se pak chovají jako objekty tříd Pythonu, na kterých používáme metody k určení cílových počítačů k odeslání operace k provedení.
 
-2. Naimportují se volání Q #, která v tomto případě budeme v tomto případě volat přímo--- `MeasureSuperposition` a `MeasureSuperpositionArray` .
+2. Naimportujte ty Q# , které budou v tomto případě přímo vyvolány--- `MeasureSuperposition` a `MeasureSuperpositionArray` .
     ```python
     import qsharp
     from NamespaceName import MeasureSuperposition, MeasureSuperpositionArray
     ```
-    Pomocí `qsharp` importovaného modulu můžete také naimportovat volatelné přímo z oboru názvů knihovny Q #.
+    Pomocí `qsharp` importovaného modulu můžete také naimportovat volatelné přímo z Q# oboru názvů knihoven.
 
 3. V jakémkoli jiném kódu Pythonu teď můžete zavolat tyto výzvy na konkrétní cílové počítače a přiřadit jejich návrat k proměnným (Pokud vrátí hodnotu) pro další použití.
 
@@ -305,7 +308,7 @@ Volání operace, která se má spustit na konkrétním cílovém počítači, s
 Například `.simulate(<args>)` používá `QuantumSimulator` ke spuštění operace, zatímco `.estimate_resources(<args>)` to dělá na `ResourcesEstimator` .
 
 #### <a name="passing-inputs-to-q"></a>Předání vstupů do Q\#
-Argumenty pro parametr Q # volat by měly být zadány ve formě argumentu klíčového slova, kde klíčové slovo je název argumentu v definici Q # volat.
+Argumenty pro Q# volat by měly být zadány ve formě argumentu klíčového slova, kde klíčové slovo je název argumentu v Q# definici volat.
 To znamená, že `MeasureSuperpositionArray.simulate(n=4)` je platná, zatímco `MeasureSuperpositionArray.simulate(4)` by vyvolala chybu.
 
 Proto hostitelský program Pythonu 
@@ -343,10 +346,10 @@ Multiple qubits:
 
 Hostitelský program v jazyce C# má více komponent a pracuje velmi pečlivě s některými komponentami QDK, jako jsou například simulátory, které jsou samy postaveny na C#.
 
-Kompilátor Q # zde funguje tak, že generuje ekvivalentně pojmenovaný obor názvů jazyka C# z oboru názvů Q # v našem souboru Q #.
-Dále vygeneruje ekvivalentní název třídy jazyka C# pro každé volání nebo typy, které jsou definovány v jazyce Q.
+Q#Kompilátor tady funguje tak, že generuje ekvivalentně pojmenovaný obor názvů C# z Q# oboru názvů v našem Q# souboru.
+Dále vygeneruje ekvivalentní název třídy jazyka C# pro každý z určených volání Q# nebo typů, které jsou definovány v rámci.
 
-Nejprve zpřístupníme všechny třídy, které jsou v našem hostitelském programu k dispozici s `using` příkazy, které jsou zhruba analagous na `open` příkazy v našem souboru Q #:
+Nejprve zpřístupníme všechny třídy, které jsou k dispozici v našem hostitelském programu s `using` příkazy, které jsou zhruba analagous na `open` příkazy v našem Q# souboru:
 
 ```csharp
 using System;
@@ -355,12 +358,12 @@ using Microsoft.Quantum.Simulation.Simulators;    // contains the target machine
 using NamespaceName;                              // make the Q# namespace available
 ```
 
-Dále deklarujeme náš obor názvů C#, několik dalších bitů a částí (viz úplný blok kódu níže) a pak jakékoli klasické programování, které bychom chtěli (například výpočetní argumenty pro volat pro Q #).
+Dále deklarujeme náš obor názvů C#, několik dalších bitů a částí (viz úplný blok kódu níže) a pak jakékoli klasické programování, které bychom chtěli (například výpočetní argumenty pro Q# volatelné).
 Ta není v našem případě nutná, ale příklad takového použití najdete v [ukázce interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Cílové počítače
 
-Když se vrátíte zpět k verzi Q #, musíme vytvořit instanci libovolného cílového počítače, na které budeme provádět operace.
+Když se vrátíte zpátky Q# , musíme vytvořit instanci libovolného cílového počítače, na které provedeme operace.
 
 ```csharp
             using var sim = new QuantumSimulator();
@@ -369,7 +372,7 @@ Když se vrátíte zpět k verzi Q #, musíme vytvořit instanci libovolného c�
 Použití jiných cílových počítačů je stejně jednoduché jako vytvoření instance jiného, přestože způsob, jak to udělat, a zpracování vrácených změn může být mírně odlišné.
 V případě zkrácení se [`QuantumSimulator`](xref:microsoft.quantum.machines.full-state-simulator) pro teď používáme a zařadíme [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) [níže](#including-the-resources-estimator).
 
-Každá třída jazyka C# vygenerovaná z operací Q # má `Run` metodu, jejímž prvním argumentem musí být instance cílového počítače.
+Každá třída jazyka C# vygenerovaná z Q# operací má `Run` metodu, první argument, který musí být instancí cílového počítače.
 Takže pokud chcete spustit `MeasureSuperposition` v `QuantumSimulator` , používáme `MeasureSuperposition.Run(sim)` .
 Vrácené výsledky lze následně přiřadit proměnným v jazyce C#:
 
@@ -380,7 +383,7 @@ Vrácené výsledky lze následně přiřadit proměnným v jazyce C#:
 > [!NOTE]
 > `Run`Metoda je prováděna asynchronně, protože se jedná o případ reálného hardwaru s `await` více jádry, a proto klíčové slovo zablokuje další provádění až do dokončení úkolu.
 
-Pokud funkce Q # volat neobsahuje žádné vratky (tj. má návratový typ `Unit` ), může být provádění stále provedeno stejným způsobem bez přiřazení k proměnné.
+Pokud je k Q# dispozici žádná vrácení (tj. má návratový typ `Unit` ), lze provádění provést stejným způsobem bez přiřazení k proměnné.
 V takovém případě by se celý řádek měl jednoduše skládat z 
 ```csharp
 await <callable>.Run(<simulator>);
@@ -388,7 +391,7 @@ await <callable>.Run(<simulator>);
 
 #### <a name="arguments"></a>Arguments
 
-Jakékoli argumenty pro volat v Q # jsou jednoduše předány jako další argumenty grafice cílový počítač.
+Jakékoli argumenty, které lze Q# volat, jsou jednoduše předány jako další argumenty grafice cílový počítač.
 Proto výsledky z `MeasureSuperpositionArray` `n=4` qubits by se načetly prostřednictvím 
 
 ```csharp
@@ -432,7 +435,7 @@ Multiple qubit result: [One,One,Zero,Zero]
 ```
 
 > [!NOTE]
-> S ohledem na interoperabilitu kompilátoru s obory názvů můžeme Alternativně zpřístupnit naši adresu Q #, která je k dispozici bez `using NamespaceName;` příkazu, a jednoduše odpovídat názvu oboru názvů C#.
+> Z důvodu interoperability kompilátoru s obory názvů můžeme Alternativně zpřístupnit Q# k dispozici bez `using NamespaceName;` příkazu a jednoduše tak, aby se k němu přishodoval název oboru názvů C#.
 > To znamená nahrazením `namespace host` pomocí `namespace NamespaceName` .
 
 #### <a name="including-the-resources-estimator"></a>Zahrnutí prostředků Estimator
@@ -446,7 +449,7 @@ Nejprve místo toho, aby se vytvořila instance jako proměnná s `using` přík
             var estimatorMultiQ = new ResourcesEstimator();
 ```
 
-Všimněte si, že místo jednoho cílového simulátoru, který má být použit více operacemi Q #, byl pro každou instanci vytvořen jeden. Důvodem je to, že při použití jako cílové počítače jsou změněny samotné objekty a jejich výsledky lze následně načíst pomocí metody třídy `.ToTSV()` .
+Všimněte si, že místo jediného cílového simulátoru, který má být použit více Q# operacemi, jsme pro každý z nich nastavili instanci. Důvodem je to, že při použití jako cílové počítače jsou změněny samotné objekty a jejich výsledky lze následně načíst pomocí metody třídy `.ToTSV()` .
 
 Pro spuštění operací na odhady prostředků používáme
 
@@ -523,25 +526,25 @@ BorrowedWidth   0
 
 ***
 
-## <a name="q-jupyter-notebooks"></a>Aplikace Jupyter Notebook v Q#
-Q # Jupyter poznámkové bloky využívají jádro SWEETIQ #, které umožňuje definovat, kompilovat a spouštět Q # volat v jednom poznámkovém bloku---všech společně s pokyny, poznámkami a dalšími obsahy.
-To znamená, že přestože je možné importovat a používat obsah `*.qs` souborů Q #, nejsou v modelu spuštění nutné.
+## <a name="no-locq-jupyter-notebooks"></a>Q#Jupyter poznámkové bloky
+Q#Jupyter poznámkové bloky využívají jádro I Q# , které umožňuje definovat, kompilovat a spouštět Q# volat v jednom poznámkovém bloku---všech společně s pokyny, poznámkami a dalšími obsahy.
+To znamená, že přestože je možné importovat a používat obsah `*.qs` Q# souborů, nejsou nezbytné v modelu spuštění.
 
-Tady si podrobně podíváme, jak spustit výše uvedené operace Q #, ale v [úvodu do notebooků q # a Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)je k dispozici širší Úvod k použití notebooků q # Jupyter.
+Zde podrobně pomůžeme, jak spustit Q# výše uvedené operace, ale obecnější Úvod k používání Q# notebooků Jupyter je k dispozici na stránce [Úvod do Q# a Jupyter poznámkových blocích](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
 
 ### <a name="defining-operations"></a>Definování operací
 
-V Jupyter Notebook Q # zadáte kód Q # stejně jako v rámci oboru názvů souboru Q #.
+V Q# Jupyter notebook zadáte Q# kód stejně jako v rámci oboru názvů Q# souboru.
 
-Proto můžeme povolit přístup k volat z [standartní knihovny Q #](xref:microsoft.quantum.qsharplibintro) s `open` příkazy pro jejich příslušné obory názvů.
+Proto můžeme povolit přístup k volat ze [ Q# standardních knihoven](xref:microsoft.quantum.qsharplibintro) s `open` příkazy pro jejich příslušné obory názvů.
 Po spuštění buňky s takovým příkazem jsou definice z těchto oborů názvů dostupné v celém pracovním prostoru.
 
 > [!NOTE]
-> K operacím definovaným v [Microsoft.Quantum.Intrinsic](xref:microsoft.quantum.intrinsic) rámci buněk v [Microsoft.Quantum.Canon](xref:microsoft.quantum.canon) [`H`](xref:microsoft.quantum.intrinsic.h) [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) poznámkových blocích Q # Jupyter se budou automaticky přivolat z Microsoft. probíhají. vnitřní a Microsoft.. Canon (např. a).
-> To však není pravdivé pro kód, který je součástí z externích zdrojových souborů Q # (proces zobrazený v [úvodu do poznámkových bloků q # a Jupyter](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
+> K operacím [Microsoft.Quantum.Intrinsic](xref:microsoft.quantum.intrinsic) definovaným v rámci buněk [Microsoft.Quantum.Canon](xref:microsoft.quantum.canon) [`H`](xref:microsoft.quantum.intrinsic.h) [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) v poznámkových blocích Jupyter jsou automaticky dostupné operace od Microsoftu. probíhají. vnitřní a Microsoft.. Canon (např. a) Q# .
+> Nicméně to není pravdivé pro kód převedený z externích Q# zdrojových souborů (proces zobrazený v [úvodu do Q# a Jupyter poznámkových bloků](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
 > 
 
-Podobně definování operací vyžaduje pouze zápis kódu Q # a spuštění buňky.
+Podobně definování operací vyžaduje pouze zápis Q# kódu a spuštění buňky.
 
 <img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="600">
 
@@ -549,7 +552,7 @@ Výstup pak obsahuje seznam operací, které je možné volat z budoucích buně
 
 ### <a name="target-machines"></a>Cílové počítače
 
-Funkce pro spouštění operací na konkrétních cílových počítačích se poskytuje prostřednictvím [příkazů sweetiq # Magic](xref:microsoft.quantum.guide.quickref.iqsharp).
+Funkce pro spouštění operací na konkrétních cílových počítačích je poskytována prostřednictvím [ Q# příkazů I Magic](xref:microsoft.quantum.guide.quickref.iqsharp).
 Například využívá `%simulate` `QuantumSimulator` a `%estimate` používá `ResourcesEstimator` :
 
 <img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Simulate and estimate resources Jupyter cell" width="500">

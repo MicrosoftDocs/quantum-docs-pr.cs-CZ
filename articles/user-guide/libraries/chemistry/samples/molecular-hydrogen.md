@@ -1,17 +1,20 @@
 ---
 title: Získání odhadů energetické úrovně
-description: 'Projděte si ukázkový program Q #, který odhadne hodnoty energetické úrovně molekulové vodíky.'
+description: Projděte si ukázkový Q# program, který odhadne hodnoty energetické úrovně molekulové vodíky.
 author: guanghaolow
 ms.author: gulow
 ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: b26538980366cf4cbe01fc2ef59580ae182f1e8a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: a2df4b829a3f4946c6de6e6b80ad72a5bc192b2c
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871564"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869201"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Získání odhadů energetické úrovně
 Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tento článek popisuje, jak to můžete udělat pro Kanonický příklad molekulové vodíkové podsystému. Ukázka, na kterou se odkazuje v této části, je [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) ukázkou.
@@ -121,7 +124,7 @@ operation GetEnergyByTrotterization (
 }
 ```
 
-Nyní můžete vyvolat kód Q # z hostitelského programu. Následující kód jazyka C# vytvoří simulátor s plným stavem a spustí `GetEnergyByTrotterization` se, aby se získal stav energie.
+Nyní můžete vyvolat Q# kód z hostitelského programu. Následující kód jazyka C# vytvoří simulátor s plným stavem a spustí `GetEnergyByTrotterization` se, aby se získal stav energie.
 
 ```csharp
 using (var qsim = new QuantumSimulator())

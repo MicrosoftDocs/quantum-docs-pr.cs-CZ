@@ -6,12 +6,15 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436527"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868623"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -19,7 +22,7 @@ Je důležité být schopné charakterizovat účinky operací, aby bylo možné
 To je náročné, protože každé měření systému doby využívání hodnot vychází z více bitů informací.
 Aby se zjistilo, že se eigenvalue sám, může se stát, že se výsledky mnoha měření spojí dohromady, aby uživatel mohl glean spoustu informací potřebných k reprezentaci těchto konceptů.
 Stavy nestavových stavů jsou obzvláště Vexing, protože [věta bez klonování](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem) znamená, že neexistuje žádný způsob, jak zjistit libovolný stav z jedné kopie stavu, protože by to vedlo k vytváření kopií stavu.
-Toto zmatení stavu nečinnosti od uživatele se projeví ve skutečnosti, že Q # nevystavuje nebo dokonce nedefinuje, k čemu *dochází* v programu.
+Toto zmatení stavu nečinnosti od uživatele se projeví ve skutečnosti, která Q# nezveřejňuje nebo ani nedefinuje, co stav *je* pro program.
 Přiblížíme se k charakterizaci stavových polí tím, že se operace a stavy považují za černé. Tento přístup sdílí mnohem společné s experimentální praxí charakterizace, ověřování a ověřování (QCVV).
 
 Popis je odlišný od mnoha dalších výše popsaných knihoven.
@@ -36,7 +39,7 @@ To má výhodu, že pro provedení fáze kickbacku, která je popsaná v přípa
 Každá z metod navrhovaných níže používá jinou strategii pro navrhování experimentů a různé metody zpracování dat pro učení fáze.  Každá z nich má jedinečné výhody od dodržování přísných chybových vazeb, k schopnostem začlenit předchozí informace, tolerovat chyby nebo spouštět na paměťově limitted klasických počítačích.
 
 V diskuzi za iterativní fázi odhad budeme uvažovat o $U $, který je zadaný jako operace s černým polem.
-Jak je popsáno v části pro Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q # Canon odkazuje na operace podle <xref:microsoft.quantum.oracles.discreteoracle> uživatelsky definovaného typu definovaného typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Jak je popsáno v části v tématu Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q# tyto operace modely Canon jsou <xref:microsoft.quantum.oracles.discreteoracle> určené uživatelem definovaným typem, který je definovaný typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 V konkrétním případě `U : DiscreteOracle` `U(m)` implementuje $U ^ m $ pro `m : Int` .
 
 V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že se připraví pomocná qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ KET {\ fí} $.  
@@ -47,7 +50,7 @@ Pomocné qubity, které se používají jako ovládací prvek pro, `U(m)` se pak
 
 V tomto okamžiku je rekonstrukce fáze z `Result` hodnot získaných pomocí iterační fáze odhadem klasický problém při odvozování.
 Hledání hodnoty $m $, která získala získané informace, s ohledem na pevnou odvozenou metodu, je jednoduše problémem ve statistice.
-Zdůrazňujeme to stručně popisující odhad iterativní fáze na teoretické úrovni v parametru bayesovského rozhodování, který se odhaduje formalitou před tím, než budete pokračovat v popisu statistických algoritmů, které jsou k dispozici v Q # Canon pro řešení problému s klasickým odvozem.
+Zdůrazňujeme to tak, že stručně popisuje odhad iterativní fáze na teoretickou úroveň v parametru bayesovského rozhodování, který provede odhad formalit před tím, než budete pokračovat v popisu statistických algoritmů, které jsou součástí Q# Canon, pro řešení problému s klasickým odvozem.
 
 ### <a name="iterative-phase-estimation-without-eigenstates"></a>Odhad iterační fáze bez Eigenstates ###
 
@@ -127,7 +130,7 @@ Proto použití fáze odhadu se souvislými dotazy nám umožní zjistit simulov
 
 ### <a name="random-walk-phase-estimation"></a>Odhad fáze náhodného procházení ###
 
-Q # poskytuje užitečnou aproximaci odhadu fáze bayesovského rozhodování, která je navržena pro použití blízko u zařízení, která fungují s podmínkou náhodného procházení záznamu dat získaných z iterativní fáze odhadu.
+Q#poskytuje užitečnou aproximaci odhadu fáze bayesovského rozhodování, která je navržena pro použití blízko u zařízení, která fungují s podmínkou náhodného procházení datových záznamů získaných z iterativní fáze odhadu.
 Tato metoda je adaptivní i zcela deterministický a umožňuje téměř optimální škálování chyb v odhadovaných fázích $ \hat{\phi} $ s velmi nízkými náklady na paměť.
 
 Protokol používá přibližnou bayesovského rozhodování odvozenou metodu, která předpokládá, že předchozí distribuce je Gaussovské.
@@ -141,7 +144,7 @@ Možnost krokovat zpět také umožňuje, aby se algoritmus zjistil i v případ
 
 ## <a name="calling-phase-estimation-algorithms"></a>Algoritmy odhadu volání fáze ##
 
-Každá operace odhadu fáze dodaná s Q # Canon používá jinou sadu vstupů Parametrizace kvality, kterou vydáváme z konečného odhadu $ \hat{\phi} $.
+Každá operace odhadu fáze dodaná s Q# Canon používá jinou sadu vstupů Parametrizace kvality, kterou vydáváme z konečného odhadu $ \hat{\phi} $.
 U těchto různých vstupů se ale sdílí několik běžných vstupů, takže částečná aplikace přes parametry kvality má za následek společný podpis.
 Například <xref:microsoft.quantum.characterization.robustphaseestimation> operace popsaná v následující části má následující signaturu:
 

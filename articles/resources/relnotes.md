@@ -6,12 +6,15 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 4b5e7b657f0e11fb4a14308c20859f4007729146
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 869d13acd5cb82fac73be514d6622a616ddceb54
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871548"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866668"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -28,9 +31,9 @@ Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quan
 
 Tato verze obsahuje následující:
 
-- Otevřené obory názvů v poznámkových blocích Q # jsou nyní k dispozici pro všechna budoucí spuštění buněk. To umožňuje například, aby se obory názvů otevíraly jednou v buňce v horní části poznámkového bloku místo nutnosti otevírat relevantní obory názvů v každé buňce kódu. Nový `%lsopen` příkaz Magic zobrazí seznam aktuálně otevřených oborů názvů.
+- Otevřené obory názvů v Q# poznámkových blocích jsou nyní k dispozici pro všechna budoucí spuštění buněk. To umožňuje například, aby se obory názvů otevíraly jednou v buňce v horní části poznámkového bloku místo nutnosti otevírat relevantní obory názvů v každé buňce kódu. Nový `%lsopen` příkaz Magic zobrazí seznam aktuálně otevřených oborů názvů.
 
-Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01220070124"></a>0.12.20070124 verze
 
@@ -40,24 +43,24 @@ Tato verze obsahuje následující:
 
 - Nový `qdk-chem` Nástroj pro převod formátů serializace ve starších verzích elektronické struktury (např.: FCIDUMP) do [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
 - Nové funkce a operace v [`Microsoft.Quantum.Synthesis`](xref:microsoft.quantum.synthesis) oboru názvů pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
-- SWEETIQ # teď umožňuje argumenty v `%simulate` `%estimate` příkazech, a dalších příkazech Magic. Další podrobnosti najdete v referenčních informacích k [ `%simulate` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
-- Nové možnosti zobrazení fáze v SWEETIQ #. Další podrobnosti najdete v referenčních informacích k [ `%config` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
-- SWEETIQ # a `qsharp` balíček Pythonu jsou teď k dispozici prostřednictvím balíčků conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) a [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)), aby se zjednodušila místní instalace funkcí Q # Jupyter a Pythonu do conda prostředí. Další podrobnosti najdete v pokynech k instalaci v [poznámkových blocích q # Jupyter](xref:microsoft.quantum.install.jupyter) a [q # with Python](xref:microsoft.quantum.install.python) .
+- Q#Nyní povolujem argumenty pro `%simulate` příkazy, `%estimate` a další Magic. Další podrobnosti najdete v referenčních informacích k [ `%simulate` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
+- Nové možnosti zobrazení fáze Q# v I Další podrobnosti najdete v referenčních informacích k [ `%config` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
+- I Q# a `qsharp` balíček Pythonu jsou teď k dispozici prostřednictvím balíčků conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) a [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)), aby se zjednodušila místní instalace Q# funkcí Jupyter a Pythonu do conda prostředí. Další podrobnosti najdete v [ Q# poznámkových blocích Jupyter](xref:microsoft.quantum.install.jupyter) a v Průvodci instalací [ Q# Pythonu](xref:microsoft.quantum.install.python) .
 - Při použití simulátoru už qubits není potřeba ve stavu | 0 ⟩ po vydaných verzích, ale dá se automaticky resetovat, pokud se naměřeny bezprostředně před vydáním.
-- Aktualizace usnadňující, aby uživatelé SWEETIQ # využili balíčky knihoven s různými verzemi QDK a nevyžadovali pouze hlavní & menší čísla verzí, nikoli přes stejnou verzi.
+- Aktualizace, které usnadňují Q# uživatelům využívání balíčků knihoven s různými VERZEMI QDK a vyžadují jenom hlavní čísla & menší verze, nikoli jenom přesnou stejnou verzi
 - Odebraný nepoužívaný `Microsoft.Quantum.Primitive.*` obor názvů
 - Přesunuté operace:
   - `Microsoft.Quantum.Intrinsic.Assert`je teď`Microsoft.Quantum.Diagnostics.AssertMeasurement`
   - `Microsoft.Quantum.Intrinsic.AssertProb`je teď`Microsoft.Quantum.Diagnostics.AssertMeasurementProbability`
 - Opravy chyb 
 
-Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0112006403"></a>Verze 0.11.2006.403
 
 *Datum vydání: 4. června 2020*
 
-Tato verze opravuje chybu ovlivňující kompilaci projektů v Q#.
+Tato verze opravuje chybu ovlivňující kompilaci Q# projektů.
 
 ## <a name="version-0112006207"></a>Verze 0.11.2006.207
 
@@ -65,15 +68,15 @@ Tato verze opravuje chybu ovlivňující kompilaci projektů v Q#.
 
 Tato verze obsahuje následující:
 
-- Poznámkové bloky v Q# a hostitelské programy v Pythonu už neselžou při přítomnosti vstupního bodu Q#
+- Q#poznámkové bloky a hostitelské programy Pythonu už nebudou úspěšné, když Q# je přítomen vstupní bod.
 - Aktualizace [standardní knihovny](xref:microsoft.quantum.libraries.standard.intro) pro použití modifikátorů přístupu
 - Kompilátor teď povoluje modul plug-in pro kroky přepsání mezi vestavěnými kroky přepsání.
-- V souladu s plánem popsaným v našich [principech rozhraní API](xref:microsoft.quantum.contributing.api-design) bylo odebráno několik vyřazených funkcí a operací. Knihovny a programy v Q#, které se ve verzi 0.11.2004.2825 sestavovaly bez varování, budou dál běžet beze změny.
+- V souladu s plánem popsaným v našich [principech rozhraní API](xref:microsoft.quantum.contributing.api-design) bylo odebráno několik vyřazených funkcí a operací. Q#programy a knihovny, které sestavují bez upozornění ve verzi 0.11.2004.2825, budou i nadále fungovat beze změny.
 
-Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 > [!NOTE]
-> Tato verze obsahuje chybu ovlivňující kompilaci projektů v Q#. Doporučujeme upgradovat na novější verzi.
+> Tato verze obsahuje chybu ovlivňující kompilaci Q# projektů. Doporučujeme upgradovat na novější verzi.
 
 ## <a name="version-01120042825"></a>Verze 0.11.2004.2825
 
@@ -81,12 +84,12 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nová podpora pro aplikace příkazového řádku v Q#, která už nevyžadují hostitelský soubor v C# nebo Pythonu. Další informace o zahájení práce s aplikacemi příkazového řádku v Q# najdete [tady](xref:microsoft.quantum.install.standalone).
+- Nová podpora pro Q# aplikace příkazového řádku, která už nevyžadují hostitelský soubor C# nebo Python. Další informace o tom, jak začít s Q# aplikacemi příkazového řádku, najdete [tady](xref:microsoft.quantum.install.standalone).
 - Aktualizovali jsme rychlý start generátoru náhodných čísel, takže už nevyžaduje hostitelský soubor v C# nebo Pythonu. Podívejte se na aktualizovaný [Rychlý start](xref:microsoft.quantum.quickstarts.qrng).
-- Vylepšení výkonu imagí Dockeru IQ#
+- Vylepšení výkonu Q# Docker images
 
 > [!NOTE]
-> Aplikace příkazového řádku v Q# s použitím nového atributu [`@EntryPoint()`](xref:microsoft.quantum.core.entrypoint) aktuálně nelze volat z hostitelských programů Pythonu nebo .NET.
+> Q#aplikace příkazového řádku používající nový [`@EntryPoint()`](xref:microsoft.quantum.core.entrypoint) atribut se aktuálně nedají volat z hostitelských programů Pythonu nebo .NET.
 > Další informace najdete v tématech týkajících se [Pythonu](xref:microsoft.quantum.install.python) a [interoperability rozhraní .NET](xref:microsoft.quantum.install.cs).
 
 ## <a name="version-01120033107"></a>Verze 0.11.2003.3107
@@ -101,7 +104,7 @@ Toto vydání obsahuje menší opravy chyb pro verzi 0.11.2003.2506.
 
 Tato verze obsahuje následující:
 
-- Nová podpora pro modifikátory přístupu v Q#; další informace viz [struktury souborů](xref:microsoft.quantum.guide.filestructure)
+- Nová podpora modifikátorů přístupu v nástroji Q# , další informace najdete v tématu [struktury souborů](xref:microsoft.quantum.guide.filestructure) .
 - Aktualizováno na .NET Core SDK 3.1
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -113,7 +116,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 Tato verze obsahuje následující:
 
 - Nová knihovna pro kvantové strojové učení. Další informace najdete na naší [dokumentační stránce QML](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview).
-- Opravy chyb IQ#. Výsledkem je 10- až 20násobné zvýšení výkonu při načítání balíčků NuGet.
+- I Q# opravy chyb, což při načítání balíčků NuGet přináší až 10 20krát zvýšení výkonu
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -124,12 +127,12 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 Tato verze obsahuje následující:
 
 - Nový balíček NuGet Microsoft.Quantum.SDK, který nahradí balíček NuGet Microsoft.Quantum.Development.Kit při vytváření nových projektů. Balíček NuGet Microsoft.Quantum.Development.Kit se bude dál podporovat pro už existující projekty. 
-- Podpora pro rozšíření kompilátoru Q# s podporou nového balíčku NuGet Microsoft.Quantum.SDK NuGet. Další informace najdete v [dokumentaci na Githubu](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), v [ukázce rozšíření kompilátoru](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) a na [blogu vývojářů v Q#](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/).
+- Podpora pro Q# rozšíření kompilátoru, která jsou povolená novým Microsoftem. balíček NuGet NuGet, další informace najdete v [dokumentaci k GitHubu](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), [ukázce rozšíření kompilátoru](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) a blogu pro [ Q# vývoj](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/) .
 - Přidání podpory pro .NET Core 3.1 – důrazně doporučujeme mít nainstalovanou verzi 3.1.100, protože sestavování se staršími verzemi .NET Core SDK může způsobovat problémy
 - Nové transformace kompilátoru dostupné v oboru názvů Microsoft.Quantum.QsCompiler.Experimental
-- Nová funkce pro vystavení vektorů výstupního stavu ve formátu HTML v IQ#
+- Nová funkce pro vystavení vektorů výstupního stavu jako HTML vQ#
 - Přidání podpory pro EstimateFrequencyA do oboru názvů Microsoft.Quantum.Characterization kvůli Hadamardovu a SWAP testu
-- Obor názvů AmplitudeAmplification teď používá průvodce stylem Q#
+- AmplitudeAmplification Namespace teď používá Q# vodítko stylu.
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -139,8 +142,8 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nový atribut Test pro test jednotek Q#, viz aktualizovaná dokumentace k API [zde](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizovaný průvodce testováním a laděním [zde](xref:microsoft.quantum.guide.testingdebugging)
-- Přidání trasování zásobníku v případě chyby spuštění programu v jazyku Q#
+- Nový atribut testu pro Q# testování částí, viz aktualizovaná dokumentace k rozhraní API [tady](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizované testování & Průvodce laděním [tady](xref:microsoft.quantum.guide.testingdebugging)
+- Přidání trasování zásobníku v případě Q# chyby spuštění programu
 - Podpora zarážek v editoru Visual Studio Code vzhledem k aktualizaci [rozšíření OmniSharp C# Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -175,7 +178,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nová podpora pro doplňování kódu Q# v sadě Visual Studio 2019 (verze 16.3 a novější) a editoru Visual Studio Code
+- Nová podpora pro Q# doplňování kódu v aplikaci Visual Studio 2019 (verze 16,3 & novější) & Visual Studio Code
 - Nová [kvantová kata](https://github.com/Microsoft/QuantumKatas) pro kvantové sčítačky
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -186,7 +189,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nová podpora [příkazů konjugace](xref:microsoft.quantum.guide.operationsfunctions#conjugations) v Q#
+- Nová podpora pro [příkazy conjugation](xref:microsoft.quantum.guide.operationsfunctions#conjugations) vQ#
 - Nové akce kódu v kompilátoru, například náhrada, přidání dokumentace a aktualizace položky jednoduchého pole
 - Přidané instalační šablony a nové příkazy projektu do rozšíření editoru Visual Studio Code
 - Přidané nové varianty kombinátoru ApplyIf, například [Microsoft.Quantum.Canon.ApplyIfOne](xref:microsoft.quantum.canon.applyifone)
@@ -195,7 +198,7 @@ Tato verze obsahuje následující:
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Další informace o těchto změnách najdete v [blogu vývojářů Q#](https://devblogs.microsoft.com/qsharp).
+Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Přečtěte si další informace o těchto změnách na [ Q# blogu pro vývoj](https://devblogs.microsoft.com/qsharp).
 
 ## <a name="version-08-packagereference-0819071701"></a>Verze 0.8 (*PackageReference 0.8.1907.1701*)
 
@@ -204,7 +207,7 @@ Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících
 Tato verze obsahuje následující:
 
 - Nová umístění indexů pro řezy polí, další informace najdete v [referenční příručce jazyka](xref:microsoft.quantum.guide.expressions#array-slices).
-- Přidání souboru Dockerfile hostovaného ve službě [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry), další informace najdete v [úložišti IQ#](https://github.com/microsoft/iqsharp/blob/master/README.md).
+- Přidání souboru Dockerfile hostovaného na [Container Registry Microsoftu](https://github.com/microsoft/ContainerRegistry), další informace najdete v [ Q# úložišti](https://github.com/microsoft/iqsharp/blob/master/README.md) .
 - Zásadní změna [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro), aktualizace nastavení konfigurace, změny názvů; aktualizované názvy najdete v [prohlížeči rozhraní .NET API](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
@@ -214,16 +217,16 @@ Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) p
 *Datum vydání: 31. května 2019*
 
 Tato verze obsahuje následující:
-- přídavky k jazyku Q# 
+- přidání do Q# jazyka, 
 - aktualizace chemické knihovny 
 - nová numerická knihovna
 
 Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Další informace o těchto změnách najdete v [blogu vývojářů Q#](https://devblogs.microsoft.com/qsharp).
+Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Přečtěte si další informace o těchto změnách na [ Q# blogu pro vývoj](https://devblogs.microsoft.com/qsharp).
 
-### <a name="q-language-syntax"></a>Syntaxe jazyka Q#
-Tato verze přidává novou syntaxi jazyka Q#:
+### <a name="no-locq-language-syntax"></a>Q#syntaxe jazyka
+Tato verze přidává novou Q# jazykovou syntaxi:
 * Byly přidány pojmenované položky pro [uživatelsky definované typy](xref:microsoft.quantum.guide.types#user-defined-types).  
 * Konstruktory uživatelsky definovaných typů se teď dají použít jako funkce.
 * Byla přidána podpora pro příkazy [copy-and-update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) a [apply-and-reassign](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols) v uživatelsky definovaných typech.
@@ -246,15 +249,15 @@ Tato verze reorganizuje rozšíření a aktualizuje chemickou knihovnu:
 *Datum vydání: 3. května 2019*
 
 Tato verze obsahuje následující:
-- provedené změny v jazyce Q# 
+- provede změny v Q# jazyce. 
 - restrukturalizace knihoven sady Quantum Development Kit 
 - přidání nových ukázek 
 - oprava chyb  Několik uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
 Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Další informace o těchto změnách si můžete přečíst v blogu devblogs.microsoft.com/qsharp.
 
-### <a name="q-language-syntax"></a>Syntaxe jazyka Q#
-Tato verze přidává novou syntaxi jazyka Q#:
+### <a name="no-locq-language-syntax"></a>Q#syntaxe jazyka
+Tato verze přidává novou Q# jazykovou syntaxi:
 * Přidán [zkrácený způsob, jak vyjádřit specializace kvantových operací](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations) (řízení a adjungace) pomocí operátorů `+`.  Stará syntaxe je zastaralá.  Programy, které používají starou syntaxi (například `: adjoint`), budou i nadále fungovat, ale vygeneruje se upozornění v době kompilace.  
 * Přidán nový operátor pro příkaz [copy-and-update](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions), `w/`, který lze použít k rychlému vytvoření pole jako modifikace existujícího pole.
 * Přidán běžný [příkaz apply-and-update](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols), například `+=`, `w/=`.
@@ -266,7 +269,7 @@ V této verzi už nepovolujeme zadat prvek pole na levé straně příkazu set. 
 Tato verze reorganizuje knihovny, aby se umožnil jejich růst konzistentním způsobem:
 * Přejmenovává obor názvů Microsoft.Quantum.Primitive na Microsoft.Quantum.Intrinsic.  Tyto operace se implementují cílovým počítačem.  Obor názvů Microsoft.Quantum.Primitive je zastaralý.  Za běhu dojde k upozornění, pokud programy volají operace a funkce pomocí zastaralých názvů.
 
-* Balíček Microsoft.Quantum.Canon se přejmenoval na Microsoft.Quantum.Standard.  Tento balíček obsahuje obory názvů, které jsou společné pro většinu programů v Q#.  To zahrnuje:  
+* Balíček Microsoft.Quantum.Canon se přejmenoval na Microsoft.Quantum.Standard.  Tento balíček obsahuje obory názvů, které jsou společné pro většinu Q# programů.  To zahrnuje:  
     - Microsoft.Quantum.Canon pro běžné operace
     - Microsoft.Quantum.Arithmetic pro aritmetické operace pro obecné účely
     - Microsoft.Quantum.Preparation pro operace používané k přípravě stavu qubitu
@@ -278,13 +281,13 @@ V důsledku této změny můžou u programů, které obsahují jediný příkaz 
 
 * Obor názvů Microsoft.Quantum.Arithmetic byl normalizován, aby používal uživatelsky definovaný typ <xref:microsoft.quantum.arithmetic.littleendian>. V případě potřeby převodu na formát Little Endian použijte funkci [BigEndianAsLittleEndian](xref:microsoft.quantum.arithmetic.bigendianaslittleendian).  
 
-* Názvy několika volatelných položek (funkcí a operací) se změnily tak, aby byly v souladu s [průvodcem správným stylem jazyka Q#](xref:microsoft.quantum.contributing.style).  Staré názvy volatelných položek jsou zastaralé.  Programy, které používají staré volatelné položky, budou i nadále fungovat s upozorněním v době kompilace. 
+* Názvy několika volat (funkce a operace) byly změněny tak, aby odpovídaly [ Q# vodítku stylu](xref:microsoft.quantum.contributing.style).  Staré názvy volatelných položek jsou zastaralé.  Programy, které používají staré volatelné položky, budou i nadále fungovat s upozorněním v době kompilace. 
 
 ### <a name="new-samples"></a>Nové ukázky
 
-Přidali jsme [ukázku použití Q# s ovladačem F#](https://github.com/Microsoft/Quantum/pull/164).  
+Přidali jsme [ukázku použití Q# s ovladačem F #](https://github.com/Microsoft/Quantum/pull/164).  
 
-**Děkujeme** následujícímu přispěvateli do našeho otevřeného základu kódu na webu http://github.com/Microsoft/Quantum. Tyto příspěvky se významně podílí na bohaté nabídce ukázek kódu Q#:
+**Děkujeme** následujícímu přispěvateli do našeho otevřeného základu kódu na webu http://github.com/Microsoft/Quantum. Tyto příspěvky se významně přidávají do bohatých ukázek Q# kódu:
 
 * Mathias Soeken ([@msoeken](https://github.com/msoeken)): Syntéza funkcí Oracle. [PR č. 135](https://github.com/Microsoft/Quantum/pull/135).
 
@@ -292,7 +295,7 @@ Přidali jsme [ukázku použití Q# s ovladačem F#](https://github.com/Microsof
 
 Pokyny k aktualizaci sady QDK najdete v [instalační příručce](xref:microsoft.quantum.install).
   
-Pokud máte existující projekty Q# z verze 0.5 sady Quantum Development Kit, dál jsou uvedené kroky, jak tyto projekty migrovat na nejnovější verzi.
+Pokud máte existující Q# projekty ze sady pro vývoj pro všechna množství 0,5, postupujte podle kroků pro migraci těchto projektů na nejnovější verzi.
 
     1. Projekty je potřeba upgradovat postupně.  Pokud máte řešení s více projekty, aktualizujte jednotlivé projekty v pořadí, ve kterém jsou odkazovány.
     2. Z příkazového řádku spusťte příkaz `dotnet clean`, abyste odebrali všechny existující binární a přechodné soubory.
@@ -305,7 +308,7 @@ Pokud máte existující projekty Q# z verze 0.5 sady Quantum Development Kit, d
     4. Z příkazového řádku spusťte tento příkaz: `dotnet msbuild`  
     5. Po jeho spuštění může být pořád potřeba ručně vyřešit chyby kvůli dříve uvedeným změnám.  V mnoha případech budou tyto chyby hlášené funkcí IntelliSense v sadě Visual Studio nebo editoru Visual Studio Code.
         - Otevřete kořenovou složku projektu nebo obsahující řešení v sadě Visual Studio 2019 nebo editoru Visual Studio Code.
-        - Po otevření souboru .qs v editoru by se měl výstup rozšíření jazyka Q# zobrazit v okně výstupu.
+        - Po otevření souboru. QS v editoru by se měl zobrazit výstup Q# rozšíření jazyka v okně výstup.
         - Po úspěšném načtení projektu (indikovaném v okně výstupu) otevřete jednotlivé soubory a vyřešte všechny zbývající problémy.
 
 > [!NOTE]
@@ -327,7 +330,7 @@ Tato verze obsahuje opravy chyb.
 
 Tato verze obsahuje následující:
 
-- Přidává podporu pro Jupyter Notebook, která nabízí skvělý způsob, jak se o jazyku Q# dozvědět víc.  [Podívejte se na nové ukázky Jupyter Notebook a naučte se psát vlastní poznámkové bloky](xref:microsoft.quantum.install). 
+- Přidává podporu pro Jupyter Notebook, která nabízí skvělý způsob, jak se dozvědět víc Q# .  [Podívejte se na nové ukázky Jupyter Notebook a naučte se psát vlastní poznámkové bloky](xref:microsoft.quantum.install). 
 
 - Přidává do knihovny Quantum Canon aritmetiku celočíselné sčítačky.  Projděte si také Jupyter Notebook, který [popisuje způsob použití nových celočíselných sčítaček](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
 
@@ -344,7 +347,7 @@ Tato verze obsahuje následující:
 
 Tato verze obsahuje následující:
 
-- Přidává podporu pro hostitele Pythonu pro různé platformy.  Balíček `qsharp` pro Python usnadňuje simulaci operací a funkcí jazyka Q# v rámci Pythonu. Přečtěte si další informace o [interoperabilitě Pythonu](xref:microsoft.quantum.install). 
+- Přidává podporu pro hostitele Pythonu pro různé platformy.  `qsharp`Balíček pro Python usnadňuje simulaci Q# operací a funkcí v rámci Pythonu. Přečtěte si další informace o [interoperabilitě Pythonu](xref:microsoft.quantum.install). 
 
 - Rozšíření sady Visual Studio a editoru Visual Studio Code nyní podporují přejmenování symbolů (například funkcí a operací).
 
@@ -358,7 +361,7 @@ Tato verze obsahuje následující:
 
 - Přidává podporu pro nový primitivní typ, BigInt, který představuje celé číslo se znaménkem libovolné velikosti.  Přečtěte si další informace o [typu BigInt](xref:microsoft.quantum.guide.types).
 - Přidává nový simulátor Toffoli, rychlý simulátor pro zvláštní účely, který může simulovat kvantové operace X, CNOT a vícenásobně řízené operace X s velkým počtem qubitů.  Přečtěte si další informace o [simulátoru Toffoli](xref:microsoft.quantum.machines.toffoli-simulator).
-- Přidává jednoduchý estimátor prostředků, který odhadne prostředky potřebné ke spuštění dané instance operace Q# v kvantovém počítači.  Přečtěte si další informace o [estimátoru prostředků](xref:microsoft.quantum.machines.resources-estimator).
+- Přidá jednoduchý Estimator prostředků, který odhadne prostředky potřebné ke spuštění dané instance Q# operace v počítači s více operačními systémy.  Přečtěte si další informace o [estimátoru prostředků](xref:microsoft.quantum.machines.resources-estimator).
 
 
 ## <a name="version-0318112802"></a>Verze 0.3.1811.2802
@@ -392,9 +395,9 @@ Tato verze zahrnuje několik oprav chyb, včetně:
 
 Tato verze zahrnuje nové funkce jazyka a vylepšené vývojové prostředí:
 
-* Tato verze zahrnuje jazykový server pro Q# a taky integrace klientů pro Visual Studio a Visual Studio Code. To umožňuje novou sadu funkcí IntelliSense spolu s živou odezvou během psaní ve formě podtržení chyb a upozornění. 
+* Tato verze zahrnuje jazykový Server pro i Q# integraci klientů pro Visual Studio a Visual Studio Code. To umožňuje novou sadu funkcí IntelliSense spolu s živou odezvou během psaní ve formě podtržení chyb a upozornění. 
 * Tato aktualizace významně vylepšuje diagnostické zprávy, a to díky snadné navigaci a přesným rozsahům pro diagnostiku a dalším podrobnostem v informacích zobrazených při najetí myší.
-* Jazyk Q# byl rozšířen tak, že sjednocuje způsob, jakým vývojáři můžou provádět běžné operace a nová vylepšení jazykových funkcí, aby mohli účinně vyjádřit kvantové výpočty.  V této verzi je několik zásadních změn jazyka Q#.   
+* Q#Jazyk se rozšířil způsobem, který sjednocuje způsob, jakým vývojáři můžou provádět běžné operace, a nové vylepšení jazykových funkcí pro výkonné okamžité výpočty.  V této verzi jsme několik zásadní změny Q# jazyka.   
 
 Tato verze taky obsahuje novou kvantovou chemickou knihovnu.
 
@@ -408,7 +411,7 @@ Tato verze taky obsahuje novou kvantovou chemickou knihovnu.
     - Vizualizace energií základního a excitovaného stavu hydridu lithného pomocí odhadu fáze.
     - Provádění odhadů prostředků pro kvantovou chemickou simulaci.
     - Odhad energetických úrovní molekul reprezentovaných schématem Broombridge.
-* Dokumentace popisuje, jak používat NWChem k vygenerování dalších chemických modelů pro kvantovou simulaci pomocí Q#.
+* Dokumentace popisuje, jak používat NWChem k vygenerování dalších chemických modelů pro simulaci provozu Q# .
 
 Přečtěte si další informace o [chemické knihovně sady Quantum Development Kit](xref:microsoft.quantum.chemistry.concepts.intro).
 
@@ -416,7 +419,7 @@ S novou chemickou knihovnou oddělíme knihovny do nového úložiště GitHub [
 
 Tato verze zahrnuje opravy chyb a funkce pro problémy hlášené komunitou:
 
-* Intellisense pro Q#? ([UserVoice](https://quantum.uservoice.com/forums/906943/suggestions/32656918)).
+* IntelliSense pro Q# ? ([UserVoice](https://quantum.uservoice.com/forums/906943/suggestions/32656918)).
 * Soubory .qs ([UserVoice](https://quantum.uservoice.com/forums/906097/suggestions/32593049)).
 * Vylepšení chybové zprávy při zkrácení složených závorek v příkazu if ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/34718518)).
 * Podpora dekonstrukce řazené kolekce členů při proměnlivé (opakované) vazbě ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/35020444)).
@@ -425,9 +428,9 @@ Tato verze zahrnuje opravy chyb a funkce pro problémy hlášené komunitou:
 
 ### <a name="community-contributions"></a>Komunitní příspěvky
 
-**Děkujeme** následujícím přispěvatelům do našeho otevřeného základu kódu na webu http://github.com/Microsoft/Quantum. Tyto příspěvky se významně podílí na bohaté nabídce ukázek kódu Q#:
+**Děkujeme** následujícím přispěvatelům do našeho otevřeného základu kódu na webu http://github.com/Microsoft/Quantum. Tyto příspěvky se významně přidávají do bohatých ukázek Q# kódu:
 
-* Rolf Huisman ([@RolfHuisman](https://github.com/RolfHuisman)): Vylepšené prostředí pro vývojáře QASM/Q# vytvořením překladače z QASM do Q#. [PR č. 58](https://github.com/Microsoft/Quantum/pull/58).
+* Rolf Huisman ( [@RolfHuisman](https://github.com/RolfHuisman) ): vylepšené prostředí pro QASM/ Q# vývojáře vytvořením QASM pro Q# překladatele. [PR č. 58](https://github.com/Microsoft/Quantum/pull/58).
 
 * Andrew Helwer ([@ahelwer](https://github.com/ahelwer)):  Příspěvek ukázky implementace hry CHSH, kvantové hry související s nelokalitou.  [PR č. 84](https://github.com/Microsoft/Quantum/pull/84).
 
@@ -451,13 +454,13 @@ Děkujeme!
 
 *Datum vydání: 30. června 2018*
 
-Toto vydání je jen rychlá oprava pro [problém č. 48 hlášený na GitHubu](https://github.com/Microsoft/Quantum/issues/48) (Pokud uživatelské jméno obsahuje mezeru, kompilace Q# se nezdaří). Použijte stejné pokyny k aktualizaci jako pro `0.2.1806.1503` s odpovídající novou verzí (`0.2.1806.3001-preview`).
+Tato vydání je jenom Rychlá oprava pro [problém #48 nahlášená na GitHubu](https://github.com/Microsoft/Quantum/issues/48) ( Q# Pokud uživatelské jméno obsahuje prázdné místo), kompilace se nezdařila. Použijte stejné pokyny k aktualizaci jako pro `0.2.1806.1503` s odpovídající novou verzí (`0.2.1806.3001-preview`).
 
 ## <a name="version-0218061503"></a>Verze 0.2.1806.1503
 
 *Datum vydání: 22. června 2018*
 
-Tato verze zahrnuje několik příspěvků komunity a také vylepšené prostředí pro ladění a lepší výkon.  Konkrétně se jedná o tyto:
+Tato verze zahrnuje několik příspěvků komunity a také vylepšené prostředí pro ladění a lepší výkon.  Konkrétně:
 
 * Zvýšení výkonu u malých i velkých simulací pro cílový počítač QuantumSimulator.
 * Vylepšené funkce ladění.
@@ -478,9 +481,9 @@ Přečtěte si další informace o [testování a ladění](xref:microsoft.quant
 
 ### <a name="community-contributions"></a>Komunitní příspěvky
 
-Komunita programátorů v jazyce Q# roste a my s radostí vidíme první knihovny a ukázky, kterými přispěli uživatelé a které byly odeslány do našeho otevřeného základu kódu na webu http://github.com/Microsoft/quantum.  **Opravdu děkujeme** následujícím přispěvatelům:
-* Mathias Soeken ([@msoeken](https://github.com/msoeken)): přispěl ukázkou definující metodu logické syntézy na základě transformace, která konstruuje Toffoliho sítě pro implementaci dané permutace. Kód je napsán zcela pomocí funkcí a operací jazyka Q#.  [PR č. 41](https://github.com/Microsoft/Quantum/pull/41).
-* Rolf Huisman ([@RolfHuisman](https://github.com/RolfHuisman)): Rolf Huisman, MVP Microsoftu, přispěl ukázkou, která generuje nestrukturovaný kód QASM z kódu Q# pro omezenou třídu programů, které nemají klasický tok řízení, a omezené kvantové operace. [PR č. 59](https://github.com/Microsoft/Quantum/pull/59)
+Q#Komunita programátor roste a jsme nadšená Zi, aby viděli prvního uživatele, který přispěl ke knihovně a ukázkám, které byly odeslány na náš základ pro otevření kódu na adrese http://github.com/Microsoft/quantum .  **Opravdu děkujeme** následujícím přispěvatelům:
+* Mathias Soeken ([@msoeken](https://github.com/msoeken)): přispěl ukázkou definující metodu logické syntézy na základě transformace, která konstruuje Toffoliho sítě pro implementaci dané permutace. Kód se zapisuje výhradně v rámci Q# funkcí a operací.  [PR č. 41](https://github.com/Microsoft/Quantum/pull/41).
+* RolfHuisman ( [@RolfHuisman](https://github.com/RolfHuisman) ): Microsoft MVP Rolf Huisman navrhl ukázku, která generuje nestrukturovaný QASM kód z Q# kódu pro omezenou třídu programů, které nemají tok klasického řízení a omezené operace. [PR č. 59](https://github.com/Microsoft/Quantum/pull/59)
 * Sarah Kasier ([@crazy4pi314](https://github.com/crazy4pi314)): pomohla zlepšit náš základ kódu odesláním knihovní funkce pro řízené operace. [PR č. 53](https://github.com/Microsoft/Quantum/pull/53)
 * Jessica Lemieux ([@Lemj3111](https://github.com/Lemj3111)): opravila @"microsoft.quantum.canon.quantumphaseestimation" a vytvořila nové testy jednotek.  [PR č. 54](https://github.com/Microsoft/Quantum/pull/54)
 * Tama McGlinn ([@TamaHobbit](https://github.com/TamaHobbit)): vyčistil ukázku teleportace zajištěním, že se instance QuantumSimulator odstraní. [PR č. 20](https://github.com/Microsoft/Quantum/pull/20)
@@ -559,7 +562,7 @@ Vzhledem k tomu, že předchozí verze sady Quantum Development Kit podporovaly 
 ### <a name="project-migration"></a>Migrace projektu
 
 Projekty vytvořené pomocí předchozích verzí sady Quantum Development Kit budou pořád fungovat, dokud neaktualizujete balíčky NuGet, které jste v nich použili. Chcete-li migrovat existující kód na novou verzi, proveďte následující kroky:
-1. Vytvořte nový projekt .NET Core pomocí správného typu šablony projektu Q# (aplikace, knihovna nebo projekt testů).
+1. Vytvořte nový projekt .NET Core pomocí správného typu Q# šablony projektu (aplikace, knihovna nebo projekt testů).
 2. Zkopírujte existující soubory .qs a .cs/.fs z původního projektu do nového projektu (pomocí Přidat > Existující položka). Nekopírujte soubor AssemblyInfo.cs.
 3. Sestavte a spusťte nový projekt.
 
@@ -567,7 +570,7 @@ Počítejte s tím, že operace RandomWalkPhaseEstimation z oboru názvů Micros
 
 ### <a name="known-issues"></a>Známé problémy
 
-- Možnost `--filter` pro `dotnet test` nefunguje správně u testů napsaných v Q#.
+- `--filter`Možnost `dotnet test` nefunguje správně u testů napsaných v Q# .
   V důsledku toho nelze jednotlivé testy jednotek spouštět v editoru Visual Studio Code. K opětovnému spuštění všech testů doporučujeme použít příkaz `dotnet test` na příkazovém řádku.
 
 ## <a name="version-0118011707"></a>Verze 0.1.1801.1707
@@ -577,7 +580,7 @@ Počítejte s tím, že operace RandomWalkPhaseEstimation z oboru názvů Micros
 Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 
 - Simulátor teď funguje s dřívějšími procesory bez podpory AVX.
-- Místní nastavení desítkových čísel nebude mít za následek selhání analyzátoru Q#.
+- Místní nastavení typu Decimal nebude způsobit Q# selhání analyzátoru.
 - Primitivní operace `SignD` nyní vrací typ `Int`, a ne `Double`.
 
 
@@ -594,15 +597,15 @@ Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 
 #### <a name="project-creation"></a>Vytvoření projektu
 
-- Při vytváření řešení (.sln), které bude používat Q#, musí být řešení o jeden adresář výš než každý projekt (.csproj). Při vytváření nového řešení to můžete udělat tak, že v dialogovém okně Nový projekt zaškrtnete políčko Vytvořit adresář pro řešení. Pokud to neuděláte, balíčky NuGet sady Quantum Development Kit budou muset být nainstalovány ručně.
+- Při vytváření řešení (. sln), které bude používat Q# , musí být řešením jeden adresář vyšší než každý projekt (. csproj) v řešení. Při vytváření nového řešení to můžete udělat tak, že v dialogovém okně Nový projekt zaškrtnete políčko Vytvořit adresář pro řešení. Pokud to neuděláte, balíčky NuGet sady Quantum Development Kit budou muset být nainstalovány ručně.
 
-#### <a name="q"></a>Q#
+#### Q#
 
-- IntelliSense nezobrazuje správné chyby pro kód Q#. Aby se zobrazovaly správné chyby Q#, zkontrolujte, že se v Seznamu chyb sady Visual Studio zobrazují chyby sestavení. Všimněte si také, že chyby Q# se nebudou zobrazovat, dokud sestavení nedokončíte.
+- Technologie IntelliSense nezobrazí správné chyby pro Q# kód. Ujistěte se, že se zobrazují chyby sestavení v aplikaci Visual Studio Seznam chyb, aby se zobrazily správné Q# chyby. Všimněte si také, že Q# chyby nebudou zobrazeny až po dokončení sestavení.
 - Použití měnitelného pole v částečné aplikaci může vést k neočekávanému chování.
 - Vazba neměnného pole s měnitelným polem (let a = b, kde b je měnitelné pole) může vést k neočekávanému chování.
-- Profilace, pokrytí kódu a jiné moduly plug-in VS nemusí vždy počítat řádky a bloky Q# přesně.
-- Kompilátor Q# neověřuje interpolované řetězce. Je možné vytvořit chyby kompilace C# pomocí chybně napsaných názvů proměnných nebo pomocí výrazů v interpolovaných řetězcích Q#.
+- Profilace, pokrytí kódu a jiné moduly plug-in VS nemůžou vždycky počítat Q# řádky a bloky přesně.
+- Q#Kompilátor neověřuje interpolované řetězce. Je možné vytvořit chyby kompilace C# pomocí názvů proměnných s chybou pravopisu nebo pomocí výrazů v Q# interpolovaná řetězce.
 
 #### <a name="simulation"></a>Simulace
 
@@ -610,8 +613,8 @@ Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 
 #### <a name="debugging"></a>Ladění
 
-- F11 (vstoupit) v kódu Q# nefunguje.
-- Zvýrazňování kódu v kódu Q# na zarážce nebo u pozastavení v jednom kroku je někdy nepřesné. Bude zvýrazněn správný řádek, ale v některých případech bude zvýraznění na řádku začínat a končit v nesprávném sloupci.
+- F11 (krok in) nefunguje v Q# kódu.
+- Zvýrazňování kódu v Q# kódu na zarážce nebo pozastavení v jednom kroku je někdy nepřesné. Bude zvýrazněn správný řádek, ale v některých případech bude zvýraznění na řádku začínat a končit v nesprávném sloupci.
 
 #### <a name="testing"></a>Testování
 

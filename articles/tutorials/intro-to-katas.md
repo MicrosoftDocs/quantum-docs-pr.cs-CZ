@@ -6,16 +6,19 @@ ms.author: bradben
 ms.date: 06/02/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.katas
-ms.openlocfilehash: 1c4dfa5c47aa38935cd5936cd256e357b6605371
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b2a3b25bf90109468f02c98c6c687befb83648bc
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274722"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869677"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Učte se provádět kvantové výpočty s kvantovými katami
 
-Procesory [katas](https://github.com/Microsoft/QuantumKatas/) představují Open Source kurzy s vlastním tempem a programovací cvičení zaměřené na výuku prvků pro práci s procesory a příznakem Q # ve stejnou dobu.
+[Katasch](https://github.com/Microsoft/QuantumKatas/) procesorů jsou Open Source kurzy s vlastním tempem a programovací cvičení zaměřené na výuku prvků pro plnění výpočetního prostředí a Q# programování ve stejnou dobu.
 
 ## <a name="learning-by-doing"></a>Praktická výuka
 
@@ -36,27 +39,27 @@ Seznamte se se základními a základními informacemi o výpočetním prostřed
 
 ### <a name="introduction-to-quantum-computing-concepts"></a>Úvod do koncepcí kvantových výpočtů
 
-| Kata | Description |
+| Kata | Popis |
 |:-----|-------------|
 |[Komplexní aritmetika](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ComplexArithmetic)|V tomto kurzu se dozvíte o některých matematických pozadích potřebných pro práci s výpočetním prostředím, jako je například imaginární a komplexní číslo.|
 |[Lineární algebra](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra)|Lineární algebraický se používá k reprezentování stavových a provozních operací ve výpočetním prostředí. Tento kurz se zabývá základy, včetně matric a vektorů.|
 |[Koncepce qubitu](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/Qubit)|Seznamte se s qubits – jednou ze základních konceptů náročné na výpočetní výkon. |
 |[Jednoqubitová kvantová hradla](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/SingleQubitGates)|V tomto kurzu se seznámíte s qubitmi nehlášenými procesory, které fungují jako stavební kameny algoritmů pro plnění a transformují qubit stavy v různých způsobech.|
-|[Vícequbitové systémy](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitSystems)|Tento kurz zavádí qubit systémy, jejich reprezentace v matematickém zápisu a v kódu Q # a koncept entanglement.|
+|[Vícequbitové systémy](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitSystems)|Tento kurz zavádí qubit systémy, jejich reprezentace v matematickém zápisu a v Q# kódu a koncept entanglement.|
 |[Qubitch procesorů pro více procesorů](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitGates)|Tento kurz se řídí kurzem qubit pro každý [procesor](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/SingleQubitGates) a zaměřuje se na použití bran na více procesorech k qubit systémům.|
 
 ### <a name="quantum-computing-fundamentals"></a>Základní kvantových výpočtů
 
-| Kata | Description |
+| Kata | Popis |
 |:-----|-------------|
-|[Rozlišování kvantových hradel](https://github.com/microsoft/QuantumKatas/tree/master/BasicGates)|Série cvičení navržených tak, aby se seznámili se základními branami pro plnění v Q #. Zahrnuje cvičení pro základní qubit a multi-qubit brány, sousední a řízené brány a použití bran pro úpravu stavu qubit.|
-|[Vytváření kvantové superpozice](https://github.com/microsoft/QuantumKatas/tree/master/Superposition)|Pomocí těchto cvičení seznámení s konceptem základní pozice a programování v Q #. Zahrnuje cvičení pro základní qubit a multi-qubit brány, nadpozice a řízení toku a rekurze v Q #.|
+|[Rozlišování kvantových hradel](https://github.com/microsoft/QuantumKatas/tree/master/BasicGates)|Série cvičení navržených tak, aby se seznámili se základními branami pro plnění Q# . Zahrnuje cvičení pro základní qubit a multi-qubit brány, sousední a řízené brány a použití bran pro úpravu stavu qubit.|
+|[Vytváření kvantové superpozice](https://github.com/microsoft/QuantumKatas/tree/master/Superposition)|Pomocí těchto cvičení seznámení s konceptem základní pozice a programování v nástroji Q# . Zahrnuje cvičení pro základní qubit a multi-qubit brány, nadpozice a řízení toku a rekurze v Q# .|
 |[Rozlišování kvantových stavů pomocí měření](https://github.com/microsoft/QuantumKatas/tree/master/Measurements)|Tyto cvičení vyřešte při učení o měřeních a kolmých a nekolmých státech. |
 |[Spojená měření](https://github.com/microsoft/QuantumKatas/tree/master/JointMeasurements)|Přečtěte si o společných měřeních parity a o tom, jak použít operaci [měření](xref:microsoft.quantum.intrinsic.measure) k odlišení stavových stavů.|
 
 ### <a name="algorithms"></a>Algoritmy
 
-| Kata | Description |
+| Kata | Popis |
 |:-----|-------------|
 |[Kvantová teleportace](https://github.com/microsoft/QuantumKatas/tree/master/Teleportation)|V tomto Kata se prozkoumá navýšení stavových procesorů – protokol, který umožňuje komunikaci se stavem po jednotlivých klasických komunikacích a dříve sdílených entanglement.|
 |[Superhusté kódování](https://github.com/microsoft/QuantumKatas/tree/master/SuperdenseCoding)|Zhuštěné kódování je protokol, který umožňuje přenos dvou bitů klasických informací tím, že posílá jenom jeden qubit s využitím dříve sdílených entanglement.  |
@@ -68,16 +71,16 @@ Seznamte se se základními a základními informacemi o výpočetním prostřed
 
 ### <a name="protocols-and-libraries"></a>Protokoly a knihovny
 
-| Kata | Description |
+| Kata | Popis |
 |:-----|-------------|
 |[Protokol BB84 pro distribuci kvantových klíčů](https://github.com/microsoft/QuantumKatas/tree/master/KeyDistribution_BB84)|Přečtěte si o a implementujte protokol distribuce klíčů pro [BB84](https://en.wikipedia.org/wiki/BB84), který používá qubits k výměně kryptografických klíčů. |
 |[Bit-překlopit chybovou korekci kódu](https://github.com/microsoft/QuantumKatas/tree/master/QEC_BitFlipCode)|Prozkoumejte opravy chyb na základě stavových procesorů nejjednodušším z kódů pro opravu chyb s příznakem chyby (QEC) – tři qubit kód pro překlopení.|
-|[Odhad fáze](https://github.com/microsoft/QuantumKatas/blob/master/PhaseEstimation)|Algoritmy odhadu fáze jsou některé z nejdůležitějších stavebních bloků pro výpočetní výkon. Přečtěte si o odhadu fáze pomocí těchto cvičení, která zahrnují odhad fáze a postup přípravy a spuštění rutin odhadu fáze v Q #.|
+|[Odhad fáze](https://github.com/microsoft/QuantumKatas/blob/master/PhaseEstimation)|Algoritmy odhadu fáze jsou některé z nejdůležitějších stavebních bloků pro výpočetní výkon. Přečtěte si o odhadu fáze pomocí těchto cvičení, která zahrnují odhad fáze a postup přípravy a spuštění rutin odhadu fáze v Q# .|
 |[Aritmetické operace: sestavování Ripple – přenosná přidání](https://github.com/microsoft/QuantumKatas/blob/master/RippleCarryAdder)|Podrobná řada cvičení, která prochází [Ripple](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder) , se doplňují do počítače s procesorem. Sestavte přihlašování na místě, rozbalte ho s jiným algoritmem a nakonec vytvořte místní tahač za běhu na místě.   |
 
 ### <a name="entanglement-games"></a>Hry s provázáním
 
-| Kata | Description |
+| Kata | Popis |
 |:-----|-------------|
 |[Hra CHSH](https://github.com/microsoft/QuantumKatas/tree/master/CHSHGame)|Prozkoumejte plnění entanglement s implementací hry [CHSH](https://en.wikipedia.org/wiki/CHSH_inequality) . Tato [nemístní](https://en.wikipedia.org/wiki/Quantum_refereed_game) hra ukazuje, jak se dá entanglement používat ke zvýšení pravděpodobnosti výhry hráčů nad rámec toho, co by bylo možné s čistě klasickými strategiemi.|
 |[Hra GHZ](https://github.com/microsoft/QuantumKatas/tree/master/GHZGame)|Hra GHZ je jinou nemístní hrou, ale zahrnuje tři hráče.|
