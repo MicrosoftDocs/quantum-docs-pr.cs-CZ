@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: c5acd6c2b3163488a9b4c6e52e6d34489a8f4056
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0fbbe127b9f4c6b98bdc2cf0e46098bf40a816e3
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436560"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866855"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit
 
@@ -52,7 +55,7 @@ Každý z těchto různých kousků je umístěn v jiném úložišti, takže je
 
 - [**microsoft/Quantum:** ](https://github.com/Microsoft/Quantum) Ukázky a nástroje, které vám pomůžou začít používat sadu Quantum Development Kit.
 - [**microsoft/QuantumLibraries:** ](https://github.com/Microsoft/QuantumLibraries) Standardní knihovny a knihovny specifické pro konkrétní doménu pro sadu Quantum Development Kit.
-- [**microsoft/QuantumKatas:** ](https://github.com/Microsoft/QuantumKatas) Programovací cvičení umožňující postupovat vlastním tempem při studiu kvantových výpočtů a programovacího jazyka Q#.
+- [**microsoft/QuantumKatas:** ](https://github.com/Microsoft/QuantumKatas) Programovací cvičení umožňující při studiu kvantových výpočtů a programovacího jazyka Q# postupovat vlastním tempem.
 - [**microsoft/qsharp-compiler:** ](https://github.com/microsoft/qsharp-compiler) Kompilátor jazyka Q#, rozšíření sady Visual Studio a rozšíření editoru Visual Studio Code.
 - [**microsoft/qsharp-runtime:** ](https://github.com/microsoft/qsharp-runtime) Architektura pro simulace, generování kódu a cílové počítače simulací pro sadu Quantum Development Kit.
 - [**microsoft/iqsharp:** ](https://github.com/microsoft/iqsharp) Funkce jádra Jupyter a hostitele Pythonu pro jazyk Q# a také image Dockeru pro používání IQ# v cloudových prostředích.

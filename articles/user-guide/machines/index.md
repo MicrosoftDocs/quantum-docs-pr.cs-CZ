@@ -6,12 +6,15 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: c81226ba3e50b65cb1012e885866bd6fcc3764d7
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 77401ca3642b89d708f338f852dc60bf7346b87b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871157"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868300"
 ---
 # <a name="quantum-simulators"></a>Kvantové simulátory
 
@@ -41,14 +44,14 @@ Sada QDK zahrnuje několik tříd kvantových počítačů, které jsou definova
 
 ## <a name="invoking-the-quantum-simulator"></a>Vyvolání kvantového simulátoru
 
-V tématu [Způsoby spuštění programu Q#](xref:microsoft.quantum.guide.host-programs) jsou popsané tři způsoby předávání kódu Q# do kvantového simulátoru: 
+V tématu [Způsoby spuštění programu v Q#](xref:microsoft.quantum.guide.host-programs) jsou popsané tři způsoby předávání kódu Q# do kvantového simulátoru: 
 
 * Použití příkazového řádku
 * Použití hostitelského programu v Pythonu
 * Použití hostitelského programu v C#
 
-Kvantové počítače jsou instancemi normálních tříd .NET, takže jsou vytvořeny vyvoláním jejich konstruktoru stejně jako u jakékoli jiné třídy .NET. Jak to uděláte, závisí na způsobu spuštění programu Q#.
+Kvantové počítače jsou instancemi normálních tříd .NET, takže jsou vytvořeny vyvoláním jejich konstruktoru stejně jako u jakékoli jiné třídy .NET. Jak to uděláte, závisí na způsobu spuštění programu v Q#.
 
 ## <a name="next-steps"></a>Další kroky
 
-* Podrobné informace o vyvolání cílových počítačů pro programy Q# v různých prostředích najdete v tématu [Způsoby spuštění programu Q#](xref:microsoft.quantum.guide.host-programs).
+* Podrobné informace o vyvolání cílových počítačů pro programy v Q# v různých prostředích najdete v tématu [Způsoby spuštění programu v Q#](xref:microsoft.quantum.guide.host-programs).

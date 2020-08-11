@@ -1,28 +1,31 @@
 ---
-title: Vývoj v Q# a Jupyter Notebooks
+title: Vývoj s využitím aplikací Jupyter Notebook s podporou Q#
 author: bradben
 ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: bbd1f58ba7de205e452be7bac72b5fd78e7acd56
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 10b1faafa70c87a99ea09916e2c386b32f9a570f
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871446"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866804"
 ---
-# <a name="develop-with-q-jupyter-notebooks"></a>Vývoj v Q# a Jupyter Notebooks
+# <a name="develop-with-no-locq-jupyter-notebooks"></a>Vývoj s využitím aplikací Jupyter Notebook s podporou Q#
 
-Nainstalujte QDK pro vývoj operací Q# v Jupyter Notebooks.
+Nainstalujte QDK pro vývoj operací Q# v aplikacích Jupyter Notebook s podporou Q#.
 
 Jupyter Notebooks umožňuje místní spouštění kódu přímo z poznámkového bloku a jeho doplnění o instrukce, poznámky a další obsah. Toto prostředí je ideální pro psaní kódu Q# s vloženými vysvětleními nebo pro interaktivní kurzy kvantových výpočtů. Podívejte se, co všechno k vytváření vlastních poznámkových bloků v Q# potřebujete.
 
 > [!NOTE]
-> * V poznámkových blocích Jupyter s kódem Q# můžete spouštět pouze kód Q# a operace nelze volat z externích hostitelských programů (např. souborů Python nebo C#). Toto prostředí není vhodné, pokud je vaším cílem kombinování externího klasického hostitelského programu s programem kvantovým.
+> * V aplikacích Jupyter Notebook s podporou Q# můžete spouštět pouze kód Q# a operace nelze volat z externích hostitelských programů (např. souborů Python nebo C#). Toto prostředí není vhodné, pokud je vaším cílem kombinování externího klasického hostitelského programu s programem kvantovým.
 
-## <a name="install-the-iq-jupyter-kernel"></a>Instalace jádra IQ# Jupyter
+## <a name="install-the-ino-locq-jupyter-kernel"></a>Instalace jádra IQ# Jupyter
 
 IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primárně využívané Jupyterem a Pythonem, které poskytuje základní funkce pro kompilaci a simulaci operací v jazyce Q#.
 
@@ -34,7 +37,7 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
 
    - Případně pokud dáváte přednost použití PowerShellu nebo pwsh: otevřete prostředí, spusťte příkaz `conda init powershell` a pak prostředí zavřete a znovu otevřete.
 
-1. Vytvořte a aktivujte nové prostředí conda s názvem `qsharp-env` s požadovanými balíčky (včetně Jupyter Notebook a IQ#) spuštěním následujících příkazů:
+1. Spuštěním následujících příkazů vytvořte a aktivujte nové prostředí conda s názvem `qsharp-env` s požadovanými balíčky (včetně Jupyter Notebook a IQ#):
 
     ```
     conda create -n qsharp-env -c quantum-engineering qsharp notebook
@@ -70,11 +73,11 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
     
 ***
 
-A to je vše! Nyní máte jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a provádění operací Q# z poznámkových bloků Jupyter s kódem Q#.
+A to je vše! Nyní máte jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a provádění operací Q# z aplikací Jupyter Notebook s podporou Q#.
 
-## <a name="create-your-first-q-notebook"></a>Vytvoření prvního poznámkového bloku Q#
+## <a name="create-your-first-no-locq-notebook"></a>Vytvoření prvního poznámkového bloku v Q#
 
-Teď jste připravení ověřit instalaci Q# Jupyter Notebook napsáním a spuštěním jednoduché operace v jazyce Q#.
+Teď jste připravení ověřit instalaci aplikace Jupyter Notebook s podporou Q# napsáním a spuštěním jednoduché operace v jazyce Q#.
 
 1. Z prostředí, které jste vytvořili během instalace (tj. buď z prostředí conda, které jste vytvořili, nebo prostředí Pythonu, do kterého jste nainstalovali Jupyter), spusťte následující příkaz, který spustí server Jupyter Notebook:
 
@@ -84,15 +87,15 @@ Teď jste připravení ověřit instalaci Q# Jupyter Notebook napsáním a spuš
 
     - Pokud se Jupyter Notebook neotevřete automaticky, zkopírujte a vložte do prohlížeče adresu URL poskytnutou příkazovým řádkem.
 
-1. Zvolte New (Nový) → Q# a vytvořte poznámkový blok Jupyter s použitím jádra Q#. Do první buňky poznámkového bloku přidejte následující kód:
+1. Zvolte New (Nový) → Q# a vytvořte Jupyter Notebook s použitím jádra Q#. Do první buňky poznámkového bloku přidejte následující kód:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="6-13":::
 
 1. Spusťte tuto buňku poznámkového bloku:
 
-    ![Buňka poznámkového bloku Jupyter s kódem Q#](~/media/install-guide-jupyter.png)
+    ![Buňka aplikace Jupyter Notebook s kódem Q#](~/media/install-guide-jupyter.png)
 
-    Ve výstupu buňky by se měl zobrazit text `SampleQuantumRandomNumberGenerator`. Při spouštění v poznámkových blocích Jupyter se kód Q# kompiluje a výstupem buňky jsou názvy všech nalezených operací.
+    Ve výstupu buňky by se měl zobrazit text `SampleQuantumRandomNumberGenerator`. Při spouštění v aplikacích Jupyter Notebook se kód Q# kompiluje a výstupem buňky jsou názvy všech nalezených operací.
 
 1. V nové buňce spusťte právě vytvořenou operaci (v simulátoru) pomocí příkazu `%simulate`:
 
@@ -102,9 +105,9 @@ Teď jste připravení ověřit instalaci Q# Jupyter Notebook napsáním a spuš
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď, když jste nainstalovali QDK pro poznámkové bloky Jupyter s kódem Q#, můžete napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.quickstarts.qrng) v jazyce Q# tak, že kód Q# budete psát přímo v prostředí Jupyter Notebook.
+Teď, když jste nainstalovali QDK pro aplikace Jupyter Notebook s podporou Q#, můžete napsat a spustit svůj [první kvantový program](xref:microsoft.quantum.quickstarts.qrng) tak, že kód Q# budete psát přímo v prostředí Jupyter Notebook.
 
-Další příklady použití jazyka Q# v prostředí Jupyter Notebooks najdete v těchto tématech:
+Další příklady použití aplikací Jupyter Notebook s podporou Q# najdete v těchto tématech:
 
-- [Úvod do Q# a Jupyter Notebooks](https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/). V tomto článku najdete poznámkový blok Jupyter s kódem Q#, který ukazuje další podrobnosti, jak používat jazyk Q# v prostředí Jupyter.
-- [Quantum Katas](xref:microsoft.quantum.overview.katas), open source sbírka kurzů s vlastním tempem a sady programovacích cvičení ve formě poznámkových bloků Jupyter s kódem Q#. [Poznámkové bloky kurzů Quantum Katas](https://github.com/microsoft/QuantumKatas#tutorial-topics) jsou dobrým výchozím bodem. Quantum Katas se zaměřují současně na výuku základních prvků kvantových výpočtů i na programování v jazyce Q#. Skvělým způsobem předvádějí, jaký typ obsahu můžete pomocí poznámkových bloků Jupyter s kódem Q# vytvářet.
+- [Úvod k Q# a aplikacím Jupyter Notebook](https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/). V tomto článku najdete Jupyter Notebook s podporou Q#, který ukazuje další podrobnosti, jak používat jazyk Q# v prostředí Jupyter.
+- [Quantum Katas](xref:microsoft.quantum.overview.katas), opensourcová kolekce kurzů umožňujících postupovat vlastním tempem a sady programovacích cvičení ve formě aplikací Jupyter Notebook s podporou Q#. [Poznámkové bloky kurzů Quantum Katas](https://github.com/microsoft/QuantumKatas#tutorial-topics) jsou dobrým výchozím bodem. Quantum Katas se zaměřují současně na výuku základních prvků kvantových výpočtů i na programování v jazyce Q#. Skvělým způsobem předvádějí, jaký typ obsahu můžete pomocí aplikací Jupyter Notebook s podporou Q# vytvářet.

@@ -6,25 +6,28 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885499"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867552"
 ---
-# <a name="develop-with-q-and-net"></a>Vývoj s využitím Q# a .NET
+# <a name="develop-with-no-locq-and-net"></a>Vývoj s využitím Q# a .NET
 
-Jazyk Q# je navržen tak, aby dobře spolupracoval s jazyky používanými v prostředí .NET, jako je C# nebo F#.
-V tomto tématu vám ukážeme, jak použít Q# s hostitelským programem napsaným v jazyce .NET.
+Jazyk Q# je navržený tak, aby dobře spolupracoval s jazyky používanými v prostředí .NET, jako je C# nebo F#.
+V této příručce vám ukážeme, jak použít Q# s hostitelským programem napsaným v jazyce .NET.
 
-Nejprve vytvoříme aplikaci v jazyce Q# a hostitele .NET, a potom ukážeme, jak volat Q# z hostitele.
+Nejprve vytvoříme aplikaci v jazyce Q# a hostitele .NET, a potom ukážeme, jak volat Q# z tohoto hostitele.
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte sadu Quantum Development Kit [pro práci s projekty Q# na příkazovém řádku](xref:microsoft.quantum.install.standalone).
+- Nainstalujte sadu Quantum Development Kit [pro práci s projekty v Q# na příkazovém řádku](xref:microsoft.quantum.install.standalone).
 
-## <a name="creating-a-q-library-and-a-net-host"></a>Vytvoření knihovny Q# a hostitele .NET
+## <a name="creating-a-no-locq-library-and-a-net-host"></a>Vytvoření knihovny Q# a hostitele .NET
 
 Prvním krokem je vytvoření projektů pro vaši knihovnu Q# a pro hostitele .NET, který bude volat operace a funkce definované ve vaší knihovně Q#.
 
@@ -64,8 +67,8 @@ Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše post
 
 - Vytvoření nové knihovny Q#
   - Přejděte do části **Soubor** -> **Nový** -> **Projekt**.
-  - Do vyhledávacího pole zadejte „Q#“.
-  - Vyberte **Q# Library**.
+  - Do vyhledávacího pole zadejte Q#.
+  - Vyberte **knihovnu Q#** .
   - Vyberte **Další**.
   - Vyberte název a umístění knihovny.
   - **Nezaškrtávejte** možnost „umístit projekt a řešení ve stejném adresáři“.
@@ -80,9 +83,9 @@ Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše post
 
 ***
 
-## <a name="calling-into-q-from-net"></a>Volání Q# z .NET
+## <a name="calling-into-no-locq-from-net"></a>Volání Q# z .NET
 
-Jakmile budete mít projekty nastavené podle výše uvedených pokynů, můžete z konzolové aplikace zavolat program Q#.
+Jakmile budete mít projekty nastavené podle výše uvedených pokynů, můžete z konzolové aplikace zavolat program v Q#.
 Kompilátor Q# vytvoří třídy .NET pro každou operaci a funkci Q#, které umožní spouštění kvantových programů v simulátoru.
 
 Například [ukázka interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) obsahuje následující příklad operace Q#:
@@ -103,4 +106,4 @@ K volání této operace z prostředí .NET na kvantovém simulátoru můžete p
     
 ## <a name="next-steps"></a>Další kroky
 
-Když teď máte sadu Quantum Development Kit konfigurovanou pro programy Q# na příkazovém řádku i pro spolupráci s prostředím .NET, můžete začít psát [svůj první kvantový program](xref:microsoft.quantum.quickstarts.qrng).
+Když teď máte sadu Quantum Development Kit konfigurovanou pro programy v Q# na příkazovém řádku i pro spolupráci s prostředím .NET, můžete začít psát svůj [první kvantový program](xref:microsoft.quantum.quickstarts.qrng).

@@ -6,16 +6,19 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: 4d148435f01d975e690828dd02335758fc71dfe4
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 01a5c31a7a920a69f4f90701d370f3a772d2c4d2
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436551"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866736"
 ---
-# <a name="develop-with-q-and-python"></a>Vývoj s využitím Q# a Pythonu
+# <a name="develop-with-no-locq-and-python"></a>Vývoj s využitím Q# a Pythonu
 
-Nainstalujte sadu QDK pro vývoj hostitelských programů v Pythonu, volajících operace v Q#.
+Nainstalujte sadu QDK pro vývoj hostitelských programů v Pythonu pro volání operací v Q#.
 
 ## <a name="install-the-qsharp-python-package"></a>Instalace balíčku Pythonu `qsharp`
 
@@ -27,7 +30,7 @@ Nainstalujte sadu QDK pro vývoj hostitelských programů v Pythonu, volajícíc
 
    - Případně pokud dáváte přednost použití PowerShellu nebo pwsh: otevřete prostředí, spusťte příkaz `conda init powershell` a pak prostředí zavřete a znovu otevřete.
 
-1. Vytvořte a aktivujte nové prostředí conda s názvem `qsharp-env` s požadovanými balíčky (včetně Jupyter Notebook a IQ#) spuštěním následujících příkazů:
+1. Spuštěním následujících příkazů vytvořte a aktivujte nové prostředí conda s názvem `qsharp-env` s požadovanými balíčky (včetně Jupyter Notebook a IQ#):
 
     ```
     conda create -n qsharp-env -c quantum-engineering qsharp notebook
@@ -70,11 +73,11 @@ Nainstalujte sadu QDK pro vývoj hostitelských programů v Pythonu, volajícíc
     
 ***
 
-A to je vše! Nyní máte balíček Pythonu `qsharp` i jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a provádění operací Q# z Pythonu a umožňuje používat poznámkové bloky Jupyter s kódem Q#.
+A to je vše! Nyní máte k dispozici balíček Pythonu `qsharp` i jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a spouštění operací Q# z Pythonu a umožňuje používat aplikace Jupyter Notebook s podporou Q#.
 
 ## <a name="choose-your-ide"></a>Volba prostředí IDE
 
-I když Q# s Pythonem můžete použít v jakémkoli integrovaném vývojovém prostředí, důrazně doporučujeme pro vaše aplikace Q# + Python používat rozhraní IDE Visual Studio Code (VS Code). Pomocí rozšíření QDK Visual Studio Code získáte přístup k rozsáhlejším funkcím, jako jsou například upozornění, zvýrazňování syntaxe, šablony projektů a další.
+I když Q# s Pythonem můžete použít v jakémkoli integrovaném vývojovém prostředí, důrazně doporučujeme pro vaše aplikace v Q# a Pythonu používat rozhraní IDE Visual Studio Code (VS Code). Pomocí rozšíření QDK Visual Studio Code získáte přístup k rozsáhlejším funkcím, jako jsou například upozornění, zvýrazňování syntaxe, šablony projektů a další.
 
 Pokud chcete použít VS Code:
 
@@ -83,7 +86,7 @@ Pokud chcete použít VS Code:
 
 Pokud chcete použít jiný editor, výše uvedené pokyny se nastavily.
 
-## <a name="write-your-first-q-program"></a>Vytvoření prvního programu v jazyce Q#
+## <a name="write-your-first-no-locq-program"></a>Vytvoření prvního programu v jazyce Q#
 
 Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním a spuštěním jednoduchého programu v jazyce Q#.
 
@@ -91,7 +94,7 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="3-14":::
 
-1. Ve stejné složce, kde je soubor `Operation.qs`, vytvořte program v Pythonu s názvem `host.py` pro simulování operace v jazyce Q# `SampleQuantumRandomNumberGenerator()`:
+1. Ve stejné složce, kde je soubor `Operation.qs`, vytvořte program v Pythonu s názvem `host.py` pro simulování operace Q# v `SampleQuantumRandomNumberGenerator()`:
 
     ```python
     import qsharp
@@ -109,7 +112,7 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
 1. Měl by se zobrazit výsledek vyvolané operace. V tomto případě, kdy vaše operace generuje náhodný výsledek, se na obrazovce zobrazí buď `0`, nebo `1`. Pokud program spouštíte opakovaně, měli by se oba výsledky zobrazovat přibližně stejně často.
 
 > [!NOTE]
-> * Kód Pythonu je běžný program v Pythonu. K psaní programu Pythonu a volání operací Q# můžete použít libovolné prostředí Pythonu, včetně poznámkových bloků Jupyter založených na Pythonu. Program v Pythonu může importovat operace Q# z libovolného souboru .qs umístěného ve stejné složce jako samotný kód Pythonu.
+> * Kód Pythonu je běžný program v Pythonu. K psaní programu Pythonu a volání operací Q# můžete použít libovolné prostředí Pythonu, včetně aplikací Jupyter Notebook založených na Pythonu. Program v Pythonu může importovat operace Q# z libovolného souboru .qs umístěného ve stejné složce jako samotný kód Pythonu.
 
 ## <a name="next-steps"></a>Další kroky
 

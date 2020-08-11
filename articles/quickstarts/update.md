@@ -1,18 +1,21 @@
 ---
 title: Aktualizace sady Quantum Development Kit (QDK)
-description: Tento článek popisuje aktualizaci projektů Q# a sady Microsoft Quantum Development Kit na aktuální verzi.
+description: Tento článek popisuje aktualizaci projektů v Q# a sady Microsoft Quantum Development Kit na aktuální verzi.
 author: bradben
 ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: 69b83997773896583258a4996a61b6f334edf407
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: dd7360961aa728a6aa63b8d8c4e4840f5bf2afe8
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871395"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866753"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace sady Microsoft Quantum Development Kit (QDK)
 
@@ -21,12 +24,12 @@ Přečtěte si, jak aktualizovat sadu Microsoft Quantum Development Kit (QDK) na
 Tento článek předpokládá, že už máte sadu QDK nainstalovanou. Pokud ji instalujete poprvé, přečtěte si informace v [průvodci instalací](xref:microsoft.quantum.install).
 
 Doporučujeme, abyste sadu QDK udržovali stále aktuální. Podle tohoto průvodce upgradujte na nejnovější verzi sady QDK. Proces se skládá ze dvou částí:
-1. Aktualizace stávajících souborů a projektů Q# podle aktualizované syntaxe.
+1. Aktualizace stávajících souborů a projektů v Q# podle aktualizované syntaxe.
 2. Aktualizace samotné sady QDK pro zvolené vývojové prostředí.
 
-## <a name="updating-q-projects"></a>Aktualizace projektů Q#. 
+## <a name="updating-no-locq-projects"></a>Aktualizace projektů v Q# 
 
-Své projekty Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k hostování operací Q# používáte jazyk C#, nebo Python.
+Své projekty v Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k hostování operací Q# používáte jazyk C#, nebo Python.
 
 1. Nejdřív ověřte, že máte nejnovější verzi [.NET Core SDK 3.1](https://dotnet.microsoft.com/download). Na příkazovém řádku spusťte následující příkaz:
 
@@ -36,7 +39,7 @@ Své projekty Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k h
 
     Zkontrolujte, že výsledek je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkontrolujte ji znovu. Pak postupujte podle pokynů níže v závislosti na vaší instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
 
-### <a name="update-q-projects-in-visual-studio"></a>Aktualizace projektů Q# v sadě Visual Studio
+### <a name="update-no-locq-projects-in-visual-studio"></a>Aktualizace projektů v Q# v sadě Visual Studio
  
 1. Aktualizujte na nejnovější verzi sady Visual Studio 2019, pokyny najdete [zde](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019).
 2. Otevřete své řešení v prostředí Visual Studio.
@@ -77,13 +80,13 @@ Své projekty Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k h
 Nyní můžete přeskočit na [aktualizaci rozšíření sady Visual Studio QDK](#update-visual-studio-qdk-extension).
 
 
-### <a name="update-q-projects-in-visual-studio-code"></a>Aktualizace projektů Q# v sadě Visual Studio Code
+### <a name="update-no-locq-projects-in-visual-studio-code"></a>Aktualizace projektů v Q# v editoru Visual Studio Code
 
 1. V sadě Visual Studio Code otevřete složku obsahující projekt, který chcete aktualizovat.
 2. Vyberte **Terminál** -> **Nový Terminál**.
 3. Postupujte podle následujících pokynů pro aktualizaci pomocí příkazového řádku.
 
-### <a name="update-q-projects-using-the-command-line"></a>Aktualizace projektů Q# pomocí příkazového řádku
+### <a name="update-no-locq-projects-using-the-command-line"></a>Aktualizace projektů v Q# pomocí příkazového řádku
 
 1. Přejděte do složky, která obsahuje váš hlavní soubor projektu.
 
@@ -144,7 +147,7 @@ Nyní můžete přeskočit na [aktualizaci rozšíření sady Visual Studio QDK]
     dotnet build [project_name].csproj
     ```
 
-Když teď máte aktualizované projekty Q#, podle následujících pokynů aktualizujte samotnou sadu QDK.
+Když teď máte projekty v Q# aktualizované, podle následujících pokynů aktualizujte samotnou sadu QDK.
 
 ## <a name="updating-the-qdk"></a>Aktualizace sady QDK
 
@@ -152,7 +155,7 @@ Proces aktualizace sady QDK se liší v závislosti na vašem vývojovém jazyce
 Vyberte své vývojové prostředí níže.
 
 * [Python: aktualizace balíčku `qsharp`](#update-the-qsharp-python-package)
-* [Jupyter Notebooks: aktualizace jádra IQ#](#update-the-iq-jupyter-kernel)
+* [Aplikace Jupyter Notebook: aktualizace jádra IQ#](#update-the-iq-jupyter-kernel)
 * [Visual Studio: aktualizace rozšíření QDK](#update-visual-studio-qdk-extension)
 * [VS Code: aktualizace rozšíření QDK](#update-vs-code-qdk-extension)
 * [Příkazový řádek a C#: aktualizace šablon projektů](#c-using-the-dotnet-command-line-tool)
@@ -231,7 +234,7 @@ Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pom
 
 Teď můžete pomocí aktualizovaného balíčku Pythonu `qsharp` zkusit spustit své kvantové programy.
 
-### <a name="update-the-iq-jupyter-kernel"></a>Aktualizace jádra IQ# Jupyter
+### <a name="update-the-ino-locq-jupyter-kernel"></a>Aktualizace jádra IQ# Jupyter
 
 Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pomocí prostředí conda, nebo pomocí rozhraní .NET CLI a pip.
 
@@ -243,7 +246,7 @@ Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pom
     conda update -c quantum-engineering qsharp
     ```
 
-1. Z buňky v každém poznámkovém bloku Jupyter pro Q# spusťte následující příkaz:
+1. Z buňky v každé aplikaci Jupyter Notebook s podporou Q# spusťte následující příkaz:
 
     ```
     %workspace reload
@@ -273,7 +276,7 @@ Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pom
 
     Nedělejte si starosti, pokud je vaše verze `iqsharp` vyšší. Měla by odpovídat [nejnovější verzi](xref:microsoft.quantum.relnotes).
 
-1. Z buňky v každém poznámkovém bloku Jupyter pro Q# spusťte následující příkaz:
+1. Z buňky v každé aplikaci Jupyter Notebook s podporou Q# spusťte následující příkaz:
 
     ```
     %workspace reload
@@ -281,7 +284,7 @@ Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pom
 
 ***
 
-Nyní můžete pomocí aktualizovaného jádra IQ# spustit stávající poznámkové bloky Jupyter s kódem Q#.
+Teď můžete pomocí aktualizovaného jádra IQ# spustit stávající služby Jupyter Notebook s podporou Q#.
 
 ### <a name="update-visual-studio-qdk-extension"></a>Aktualizace rozšíření QDK sady Visual Studio
 

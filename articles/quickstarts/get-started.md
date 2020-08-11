@@ -6,12 +6,15 @@ author: bradben
 ms.author: bradben
 ms.date: 5/10/2020
 ms.topic: overview
-ms.openlocfilehash: ff4a3dc829423525e18d89d5ed3d621079d1a524
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274069"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867507"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Začínáme se sadou Quantum Development Kit (QDK)
 
@@ -29,7 +32,7 @@ Pokud s kvantovými výpočty teprve začínáte, přečtěte si [Přehled](xref
 Sada Quantum Development Kit nabízí řadu způsobů, jak se naučit vyvíjet kvantové programy s využitím Q#.
 Chcete-li rychle začít pracovat na kvantových výpočtech, vyzkoušejte některý z našich kurzů:
 
-* [Kvantový generátor náhodných čísel](xref:microsoft.quantum.quickstarts.qrng) – Začněte od kvantové varianty aplikace „Q# Hello World“, která vám poskytne stručné seznámení s koncepcí kvantových výpočtů a umožní vám během několika minut sestavit a spustit první kvantovou aplikaci.
+* [Kvantový generátor náhodných čísel](xref:microsoft.quantum.quickstarts.qrng) – Začněte od kvantové varianty aplikace Q# Hello World, která vám poskytne stručné seznámení s koncepcí kvantových výpočtů a umožní vám během několika minut sestavit a spustit první kvantovou aplikaci.
 * [Základy kvantových výpočtů s využitím jazyka Q#](xref:microsoft.quantum.write-program) – Tento kurz vás provede napsáním programu v Q#, který ukazuje některé ze základních konceptů kvantového programování.
     Pokud na programování nejste připravení, můžete pokračovat i bez instalace sady QDK. Získáte přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
 * [Groverův vyhledávací algoritmus](xref:microsoft.quantum.quickstarts.search) – Prozkoumáním tohoto příkladu programu v jazyce Q# získáte představu o síle jazyka Q# při vyjadřování kvantových algoritmů způsobem abstrahujícím od kvantových operací nízké úrovně.
@@ -54,12 +57,12 @@ Uvědomujeme si, že pokud s kvantovým vývojem teprve začínáte, může vám
 
 Aktuální dokumentace obsahuje následující dodatečná témata.
 
-### <a name="q-developer-guides"></a>Příručky pro vývojáře v Q#
+### <a name="no-locq-developer-guides"></a>Příručky pro vývojáře v Q#
 
 * [Uživatelská příručka Q#](xref:microsoft.quantum.guide) podrobně popisuje základní koncepty, které se používají k vytvoření kvantových programů v jazyce Q#.
 * Oddíl [Kvantové simulátory a hostitelské aplikace](xref:microsoft.quantum.machines) popisuje, jak se spouštějí kvantové algoritmy, jaké kvantové počítače jsou k dispozici a jak napsat ovladač pro kvantový program v jiném jazyce než Q#.
 
-### <a name="q-libraries"></a>Knihovny Q#
+### <a name="no-locq-libraries"></a>Knihovny Q#
 
 * Oddíl [Standardní knihovny Q#](xref:microsoft.quantum.libraries.standard.intro) popisuje operace a funkce, které podporují jak požadavky řízení klasických jazyků, tak kvantové algoritmy v jazyce Q#. 
     Jednotlivá témata se zaměřují na tok řízení, datové struktury, opravy chyb, testování a ladění. 
@@ -79,7 +82,7 @@ Aktuální dokumentace obsahuje následující dodatečná témata.
 * [Poznámky k verzi sady Microsoft Quantum Development Kit](xref:microsoft.quantum.relnotes)
 
 
-## <a name="be-a-part-of-the-q-open-source-community"></a>Staňte se součástí opensourcové komunity Q#
+## <a name="be-a-part-of-the-no-locq-open-source-community"></a>Staňte se součástí opensourcové komunity Q#
 
 Quantum Development Kit je opensourcová vývojářská sada, která umožňuje vývojářům zpřístupnit kvantové výpočty všem, abychom mohli začít řešit některé z nejnáročnějších výzev dnešní doby.  Akademické instituce, které vyžadují opensourcový software, budou schopné nasadit Q# pro svoji kvantovou výuku a vývoj. Skutečnost, že se tato vývojářská sada poskytuje jako open source, také dává vývojářům a odborníkům v jednotlivých oblastech příležitost, aby prostřednictvím svého kódu přispívali svými nápady a vylepšeními.
 

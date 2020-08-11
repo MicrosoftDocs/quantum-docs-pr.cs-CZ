@@ -6,12 +6,15 @@ ms.author: bradben
 ms.date: 05/05/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.introduction
-ms.openlocfilehash: 7c55420bd35f9b6e0e7ec80ddffe8a861cb7df39
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 59cb595ac207d6e84358fc6ba742e0e0019c76f9
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430777"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866974"
 ---
 # <a name="introduction-to-quantum-computing-and-the-quantum-development-kit"></a>Úvod do kvantových výpočtů a sady Quantum Development Kit
 
@@ -62,19 +65,19 @@ Strojové učení na klasických počítačích způsobilo ve světě vědy a ob
 
 Sada Quantum Development Kit obsahuje [knihovnu pro kvantové strojové učení](xref:microsoft.quantum.machine-learning.concepts.intro), které umožňuje spouštění hybridních experimentů kvantového/klasického strojového učení. Knihovna obsahuje ukázky a kurzy a poskytuje nezbytné nástroje pro implementaci nového hybridního kvantově-klasického algoritmu – klasifikátoru obvodů, který umožňuje řešit úlohy dozorované klasifikace.
 
-## <a name="q-and-the-microsoft-quantum-development-kit-qdk"></a>Q# a sada Microsoft Quantum Development Kit (QDK)
+## <a name="no-locq-and-the-microsoft-quantum-development-kit-qdk"></a>Q# a sada Microsoft Quantum Development Kit (QDK)
 
-Q# je opensourcový programovací jazyk od Microsoftu pro vývoj a spouštění kvantových algoritmů. Je součástí [QDK](https://docs.microsoft.com/quantum/), plnohodnotné vývojové sady v jazyce Q#, kterou můžete používat se standardními nástroji a jazyky pro vývoj kvantových aplikací, které můžete spouštět v různých prostředích, včetně integrovaného plnostavového kvantového simulátoru.
+Q# je opensourcový programovací jazyk od společnosti Microsoft pro vývoj a spouštění kvantových algoritmů. Je součástí [QDK](https://docs.microsoft.com/quantum/), plnohodnotné vývojové sady v jazyce Q#, kterou můžete používat se standardními nástroji a jazyky pro vývoj kvantových aplikací, které můžete spouštět v různých prostředích, včetně integrovaného plnostavového kvantového simulátoru.
 
 Existují rozšíření pro Visual Studio a VS Code a balíčky pro použití v prostředích Python a Jupyter Notebook.
 
 QDK nabízí standardní knihovnu a dále specializované knihovny pro chemii, strojové učení a numerické výpočty.
 
-Dokumentace obsahuje průvodce jazykem Q#, kurzy a ukázkové programy pro rychlý začátek práce, stejně jako bohaté články, které vás seznámí s hlubšími koncepty kvantových výpočtů.  
+Dokumentace obsahuje průvodce jazykem Q#, kurzy a ukázkové programy pro rychlý začátek práce, stejně jako spoustu článků, které vás seznámí s koncepcí kvantových výpočtů hlouběji.  
 
 ## <a name="microsoft-quantum-hardware-partners"></a>Partneři společnosti Microsoft v oblasti kvantového hardwaru
 
-Microsoft spolupracuje se společnostmi vyvíjejícími kvantový hardware, aby zajistil vývojářům cloudový přístup k hardwaru. Díky platformě [Azure Quantum](https://azure.microsoft.com/services/quantum/) a jazyku Q# budou vývojáři moci zkoumat kvantové algoritmy a spouštět své kvantové programy na nejrůznějších typech kvantového hardwaru.
+Microsoft spolupracuje se společnostmi vyvíjejícími kvantový hardware, aby zajistil vývojářům cloudový přístup k hardwaru. Využití platformy [Azure Quantum](https://azure.microsoft.com/services/quantum/) a jazyka Q# vývojářům umožní zkoumat kvantové algoritmy a spouštět kvantové programy na nejrůznějších typech kvantového hardwaru.
 
 [IonQ](https://ionq.com/news/november-4-2019-microsoft-partnership) a [Honeywell](https://www.honeywell.com/en-us/newsroom/news/2019/11/the-future-of-quantum-computing) používají procesor na bázi **iontových pastí**, v kterých jsou jednotlivé ionty zachycené v elektromagnetickém poli, zatímco [QCI](https://quantumcircuits.com/news-and-publications/quantum-circuits-partners-with-microsoft-on-azure-quantum) pracuje se supravodivými okruhy.
 

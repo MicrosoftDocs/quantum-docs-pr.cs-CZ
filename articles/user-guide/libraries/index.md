@@ -6,18 +6,21 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/17/2018
 ms.topic: article
 uid: microsoft.quantum.libraries
-ms.openlocfilehash: 09fc723d27f2e026430b358c62b817c106c135c2
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: d61fe459362fdb5f3550768a26b34656a8a538a7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871497"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869099"
 ---
-# <a name="overview-of-q-libraries"></a>Přehled knihoven Q #
-Sada Quantum Development Kit je poskytována s několika knihovnami, které usnadňují vývoj kvantových aplikací v jazyce Q#.
+# <a name="overview-of-no-locq-libraries"></a>Přehled knihoven Q#
+Sada Quantum Development Kit se poskytuje s několika knihovnami, které usnadňují vývoj kvantových aplikací v jazyce Q#.
 V této části dokumentace popisujeme tyto knihovny a způsob jejich použití ve vašich programech.
 
-- [**Standardní knihovny**](xref:microsoft.quantum.libraries.standard.intro): Tato část popisuje předehru, která definuje rozhraní mezi programy Q# a cílovými počítači, a kánon, knihovnou Q#, která poskytuje operace a funkce pro obecné účely k použití při psaní programů Q#.
+- [**Standardní knihovny**](xref:microsoft.quantum.libraries.standard.intro): Tato část popisuje předehru, která definuje rozhraní mezi programy v Q# a cílovými počítači, a kánon, knihovnou Q#, která poskytuje operace a funkce pro obecné účely k použití při psaní programů v Q#.
 - [**Kvantová chemická knihovna**](xref:microsoft.quantum.chemistry.concepts.intro): Tato část popisuje kvantovou chemickou knihovnu, která poskytuje datový model pro načítání reprezentace fermionových hamiltoniánů, a operace a funkce kvantové simulace, které fungují na základě těchto reprezentací.
 - [**Kvantová numerická knihovna**](xref:microsoft.quantum.numerics.intro): Tato část popisuje kvantovou numerickou knihovnu, která poskytuje implementace pro hostitele matematických funkcí. Podporuje reprezentace celých čísel (se znaménkem i bez znaménka) a čísel s pevnou desetinnou čárkou.
 - [**Knihovna pro kvantové strojové učení**](xref:microsoft.quantum.machine-learning.concepts.intro): Tato část popisuje knihovnu pro kvantové strojového učení, která poskytuje implementaci sekvenčních klasifikátorů využívajících výpočetní výkon pro pochopení dat.
