@@ -1,4 +1,4 @@
-- name: 'Typy v Q#'
+- name: Typy v Q#
   href: types.md
-- name: Výrazy typu
+- name: Výrazy
   href: expressions.md
