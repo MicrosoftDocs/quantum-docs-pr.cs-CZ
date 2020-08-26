@@ -53,9 +53,9 @@ functions:
 - uid: microsoft.quantum.math.complexpolarascomplex
   summary: Převede komplexní číslo typu `ComplexPolar` na komplexní číslo typu `Complex` .
 - uid: microsoft.quantum.math.continuedfractionconvergenti
-  summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno`denominatorBound`
+  summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno `denominatorBound`
 - uid: microsoft.quantum.math.continuedfractionconvergentl
-  summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno`denominatorBound`
+  summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno `denominatorBound`
 - uid: microsoft.quantum.math.cos
   summary: Vrací kosinus určeného úhlu.
 - uid: microsoft.quantum.math.cosh
@@ -243,17 +243,17 @@ newtypes:
 summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje klasické matematické funkce a datové typy."
 operations:
 - uid: microsoft.quantum.math.randomint
-  summary: Generuje stejnoměrně vzorkované náhodné celé číslo větší nebo rovno nule a menší než poskytnutá horní mez.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRandomInt se už nepoužívá. @\"microsoft.quantum.random.drawrandomint\"Místo toho ho použijte."
 - uid: microsoft.quantum.math.randomintpow2
-  summary: Generuje náhodné celé číslo ze všech celých čísel, které lze reprezentovat v daném počtu bitů.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRandomIntPow2 se už nepoužívá. @\"microsoft.quantum.random.drawrandomint\"Místo toho ho použijte."
 - uid: microsoft.quantum.math.randomreal
-  summary: Vrátí náhodné reálné číslo v intervalu, který je větší nebo roven nule a menší než 1.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRandomReal se už nepoužívá. @\"microsoft.quantum.random.drawrandomdouble\"Místo toho ho použijte."
 - uid: microsoft.quantum.math.randomsinglequbitpauli
-  summary: Vrátí jednu z qubitch Pauliých operátorů s jednou náhodným rozsahem.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nRandomSingleQubitPauli se už nepoužívá. @\"microsoft.quantum.random.drawrandompauli\"Místo toho ho použijte."
 metadata:
-  ms.openlocfilehash: 03b75e3dbaa8be699e58fcbcd13db4fbf1c82f12
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 9df4513399d0b2d1ac534c7ba106189483ef49cc
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326486"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863066"
