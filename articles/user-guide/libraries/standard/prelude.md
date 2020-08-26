@@ -2,19 +2,19 @@
 title: Vnitřní operace a funkce v QDK
 description: Seznamte se s vnitřními operacemi a funkcemi v QDK, včetně klasických funkcí a operací s jednotkou, rotací a měřením.
 author: QuantumWriter
-uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
+uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 283504a5f5635a4996c804e514a6f52eb4966d22
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 4eb10e82a64381c503703be440be90e60f3a8622
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868436"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863729"
 ---
 # <a name="the-prelude"></a>Předehru #
 
@@ -128,27 +128,27 @@ V rámci algoritmů doby použitelnosti je často užitečné vyjádřit rotace 
 Liší se od <xref:microsoft.quantum.intrinsic.r> v tom, že úhel otočení je zadán jako dva vstupy typu `Int` , interpretovány jako dyadic zlomek.
 Proto `RFrac` má signaturu `((Pauli, Int, Int, Qubit) => Unit is Adj + Ctl)` .
 Implementuje jedinou qubit jednotk $ \exp (i \pi k \sigma/2 ^ n) $, kde $ \sigma $ je Pauli matice odpovídající prvnímu argumentu, $k $ je druhý argument a $n $ je třetí argument.
-`RFrac(_,k,n,_)`je stejná jako `R(_,-πk/2^n,_)` ; Všimněte si, že úhel je *záporný* pro zlomek.
+`RFrac(_,k,n,_)` je stejná jako `R(_,-πk/2^n,_)` ; Všimněte si, že úhel je *záporný* pro zlomek.
 
 <xref:microsoft.quantum.intrinsic.rx>Operace implementuje otočení kolem osy Pauli $X $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Rx(_, _)`je stejná jako `R(PauliX, _, _)` .
+`Rx(_, _)` je stejná jako `R(PauliX, _, _)` .
 
 <xref:microsoft.quantum.intrinsic.ry>Operace implementuje otočení kolem osy Pauli $Y $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Ry(_, _)`je stejná jako `R(PauliY,_ , _)` .
+`Ry(_, _)` je stejná jako `R(PauliY,_ , _)` .
 
 <xref:microsoft.quantum.intrinsic.rz>Operace implementuje otočení kolem osy Pauli $Z $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Rz(_, _)`je stejná jako `R(PauliZ, _, _)` .
+`Rz(_, _)` je stejná jako `R(PauliZ, _, _)` .
 
 <xref:microsoft.quantum.intrinsic.r1>Operace implementuje rotaci o danou velikost kolem $ \ket {1} $, $-$1 eigenstate z $Z $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
-`R1(phi,_)`je stejný jako `R(PauliZ,phi,_)` následováno `R(PauliI,-phi,_)` .
+`R1(phi,_)` je stejný jako `R(PauliZ,phi,_)` následováno `R(PauliI,-phi,_)` .
 
 <xref:microsoft.quantum.intrinsic.r1frac>Operace implementuje zlomkové otočení o zadanou hodnotu kolem hodnoty z = 1 eigenstate.
 Má signaturu `((Int,Int, Qubit) => Unit is Adj + Ctl)` .
-`R1Frac(k,n,_)`je stejný jako `RFrac(PauliZ,-k.n+1,_)` následováno `RFrac(PauliI,k,n+1,_)` .
+`R1Frac(k,n,_)` je stejný jako `RFrac(PauliZ,-k.n+1,_)` následováno `RFrac(PauliI,k,n+1,_)` .
 
 Příklad operace otočení (kolem osy Pauli $Z $, v této instanci) mapované na Bloch koule, je uveden níže:
 
@@ -160,17 +160,17 @@ Kromě qubit operací uvedených výše definuje předehru také několik operac
 
 Nejprve <xref:microsoft.quantum.intrinsic.cnot> operace provede standardní řízenou `NOT` bránu, \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 0 & \\ \\ 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}.
 \end{Equation} má signaturu `((Qubit, Qubit) => Unit is Adj + Ctl)` , která představuje $ \operatorname{CNOT} $ chová unitarily na dvou individuálních qubits.
-`CNOT(q1, q2)`je stejná jako `(Controlled X)([q1], q2)` .
+`CNOT(q1, q2)` je stejná jako `(Controlled X)([q1], q2)` .
 Vzhledem k `Controlled` tomu, že funktor umožňuje řízení v registru, používáme literál pole `[q1]` k označení toho, že chceme mít pouze jeden ovládací prvek.
 
 Tato <xref:microsoft.quantum.intrinsic.ccnot> operace provádí nebránu s neřízenými dvěma procesory, někdy také známou jako Toffoli brána.
 Má signaturu `((Qubit, Qubit, Qubit) => Unit is Adj + Ctl)` .
-`CCNOT(q1, q2, q3)`je stejná jako `(Controlled X)([q1, q2], q3)` .
+`CCNOT(q1, q2, q3)` je stejná jako `(Controlled X)([q1, q2], q3)` .
 
 <xref:microsoft.quantum.intrinsic.swap>Operace prohodí stavy se dvěma qubitsy.
 To znamená, že implementuje jednotnou matrici \begin{Equation} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \end{bmatrix}.
 \end{Equation} má signaturu `((Qubit, Qubit) => Unit is Adj + Ctl)` .
-`SWAP(q1,q2)`je ekvivalentem pro `CNOT(q1, q2)` následovaný `CNOT(q2, q1)` a pak `CNOT(q1, q2)` .
+`SWAP(q1,q2)` je ekvivalentem pro `CNOT(q1, q2)` následovaný `CNOT(q2, q1)` a pak `CNOT(q1, q2)` .
 
 > [!NOTE]
 > Brána *swap není stejná* jako změna uspořádání prvků proměnné s typem `Qubit[]` .
@@ -202,7 +202,7 @@ Měření operací nepodporuje ani `Adjoint` `Controlled` funktor.
 
 Tato <xref:microsoft.quantum.intrinsic.measure> operace provede společné měření jednoho nebo více qubits v zadaném produktu Pauli Operators.
 Pokud se pole Pauli a qubit liší od různých délek, operace se nezdařila.
-`Measure`má signaturu `((Pauli[], Qubit[]) => Result)` .
+`Measure` má signaturu `((Pauli[], Qubit[]) => Result)` .
 
 Počítejte s tím, že společná měření není shodná s měřením jednotlivých qubit jednotlivě.
 Zvažte například stav $ \ket {11} = \ket {1} \otimes \Ket {1} = X\otimes X \ket {00} $.
@@ -215,11 +215,11 @@ Tato vlastnost bude v podstatě pozdější, protože se zabývá opravami chyb.
 Pro usnadnění práce předehru poskytuje také dvě další operace pro měření qubits.
 Vzhledem k tomu, že provádění qubit měření je poměrně běžné, definuje předehru pro tento případ Zkrácený Zkrácený tvar.
 Tato <xref:microsoft.quantum.intrinsic.m> operace měří operátor Pauli $Z $ v jednom qubit a má signaturu `(Qubit => Result)` .
-`M(q)`je ekvivalentem k `Measure([PauliZ], [q])` .
+`M(q)` je ekvivalentem k `Measure([PauliZ], [q])` .
 
 <xref:microsoft.quantum.measurement.multim>Měří operátor Pauli $Z $ *samostatně* pro každé pole qubits a vrací *pole* `Result` hodnot získaných pro každé qubit.
 V některých případech je to možné optimalizovat. Má signaturu ( `Qubit[] => Result[])` .
-`MultiM(qs)`je ekvivalentem:
+`MultiM(qs)` je ekvivalentem:
 
 ```qsharp
 mutable rs = new Result[Length(qs)];

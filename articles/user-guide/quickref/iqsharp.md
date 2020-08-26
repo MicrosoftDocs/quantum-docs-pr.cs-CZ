@@ -8,12 +8,12 @@ uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fb7b5543ef9222e6bab2b1cbbc7e3ebb54863438
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1d2d092588e1a5c69d12e5d50377e3e26412c094
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867977"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863695"
 ---
 # <a name="ino-locq-magic-commands"></a>Q#Příkazy Magic
 
@@ -22,8 +22,10 @@ ms.locfileid: "87867977"
 - [`%config`](xref:microsoft.quantum.iqsharp.magic-ref.config): Umožňuje nastavení nebo dotazování možností konfigurace.
 - [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate): Spustí danou funkci nebo operaci na cílovém počítači ResourcesEstimator.
 - [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic): Vrátí seznam všech aktuálně dostupných příkazů Magic.
+- [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen): Vypíše aktuálně otevřené obory názvů a jejich aliasy.
 - [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package): Poskytuje možnost načtení balíčku NuGet.
 - [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance): Oznamuje aktuální metriku výkonu pro toto jádro.
+- [`%project`](xref:microsoft.quantum.iqsharp.magic-ref.project): Poskytuje možnost zobrazit nebo přidat Q# odkazy na projekt. 
 - [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate): Spustí danou funkci nebo operaci na cílovém počítači QuantumSimulator.
 - [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli): Spustí danou funkci nebo operaci na cílovém počítači ToffoliSimulator.
 - [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who): Zobrazí seznam Q# operací, které jsou k dispozici v aktuální relaci.

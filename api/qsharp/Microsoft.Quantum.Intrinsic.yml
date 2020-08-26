@@ -86,12 +86,7 @@ operations:
 
     > Tato operace používá **opačnou** konvenci znaménka z @"microsoft.quantum.intrinsic.r" a nezahrnuje faktor $1/2 $ zahrnutý do @"microsoft.quantum.intrinsic.r1" .
 - uid: microsoft.quantum.intrinsic.random
-  summary: >-
-    Náhodná operace přebírá pole Double jako vstup a vrátí náhodně vybraný index do pole jako `Int` .
-
-    Pravděpodobnost výběru konkrétního indexu je úměrná hodnotě prvku pole v daném indexu.
-
-    Prvky pole, které jsou rovny nule, se ignorují a jejich indexy se nikdy nevrátí. Pokud je některý prvek pole menší než nula, nebo pokud žádný element pole není větší než nula, operace se nezdařila.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nNáhodné je zastaralé. @\"microsoft.quantum.random.drawcategorical\"Místo toho ho použijte."
 - uid: microsoft.quantum.intrinsic.reset
   summary: V případě jednoho qubitu je měří a zajišťuje, že je ve stavu | 0 ⟩, takže je možné ho bezpečně uvolnit.
 - uid: microsoft.quantum.intrinsic.resetall
@@ -157,9 +152,9 @@ operations:
 
     \end{align}
 metadata:
-  ms.openlocfilehash: c0be1da035393f32fa2949214d79ecb8a4c5ccb3
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 87002c73fd66a4b05e690daec1bed37d09708118
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85885238"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88862713"

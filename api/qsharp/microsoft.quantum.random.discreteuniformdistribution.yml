@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.random.discreteuniformdistribution
+name: DiscreteUniformDistribution
+type: function
+namespace: Microsoft.Quantum.Random
+summary: Vrátí jednotnou distribuci v rámci daného celkového rozsahu.
+remarks: Dojde k chybě `max <= min` , pokud.
+examples: >-
+  Následující fragment Q # náhodně zavede na šestou kostku:
+
+
+  ```Q#
+
+  let dieDistribution = DiscreteUniformDistribution(1, 6);
+
+  let dieRoll = dieDistribution::Sample();
+
+  ```
+syntax: 'function DiscreteUniformDistribution (min : Int, max : Int) : Microsoft.Quantum.Random.DiscreteDistribution'
+input:
+  content: '(min : Int, max : Int)'
+  types:
+  - name: min
+    summary: Nejmenší celé číslo, které se má vykreslit.
+    isPrimitive: true
+    uid: Int
+  - name: max
+    summary: Největší celé číslo, které se má vykreslit.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Microsoft.Quantum.Random.DiscreteDistribution
+  types:
+  - summary: Distribuce, jejíž náhodná variates jsou celá čísla v rozsahu, od `min` do `max` s jednotnou pravděpodobností.
+    uid: microsoft.quantum.random.discretedistribution
+seeAlso:
+- microsoft.quantum.drawrandomdouble
+metadata:
+  ms.openlocfilehash: 3a74db8f7dec3050bd92cae3768760ca67c87002
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864082"

@@ -8,18 +8,18 @@ uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9a24d0b4145d0db2fd8c4e16be807165fff5fb32
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 65b0aa6a7f385765933d4d89ce34901f77cf76ec
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868912"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863106"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Seznámení s Machine Learningmi
 
 ## <a name="framework-and-goals"></a>Architektura a cíle
 
-Zátěžové kódování a zpracování informací je neplatnou alternativou pro třídění klasických procesorů strojového učení, zejména kódování dat v registrech v obdobích, která jsou stručně relativní vzhledem k počtu funkcí
+Zátěžové kódování a zpracování informací je neefektivní alternativou pro třídění klasických procesorů strojového učení. Konkrétně umožňuje kódovat data v registrech v obdobích, která jsou stručně relativní vzhledem k počtu funkcí a systematicky se využívaly entanglement jako výpočetní prostředky a využívají měření za běhu pro odvození třídy.
 Klasifikátor pro nedodržení okruhu je poměrně jednoduché řešení pro všechna množství, které kombinuje kódování dat s rychle entanglingm nebo disentanglingm okruhem, za nímž následuje měření pro odvození popisků tříd v ukázkách dat.
 Cílem je zajistit v případě extrémně velkých prostorů funkcí klasický popis a ukládání okruhů předmětu a také hybridních a klasických školení parametrů okruhu.
 
@@ -29,14 +29,18 @@ Klasifikace je úloha strojového učení pod dohledem, kde cílem je odvozovat 
 Podobně jako u tradičních metod se klasifikace nestandardních hodnot skládá ze tří kroků:
 - kódování dat
 - Příprava stavu třídění
-- měření z důvodu pravděpodobnostní povahy měření se tyto tři kroky musí opakovat několikrát. Měření se může zobrazit jako nelineární aktivace, která odpovídá nelineární aktivaci.
-Jak kódování, tak i výpočet stavu třídění se provádí prostřednictvím *okruhů*v počtu. I když je okruh kódování obvykle řízený daty a bez parametrů, okruh třídění obsahuje dostatečnou sadu podrobnějších parametrů. 
+- měření z důvodu pravděpodobnostní povahy měření se tyto tři kroky musí opakovat několikrát. Jak kódování, tak i výpočet stavu třídění se provádí prostřednictvím *okruhů*v počtu. I když je okruh kódování obvykle řízený daty a bez parametrů, okruh třídění obsahuje dostatečnou sadu podrobnějších parametrů. 
 
 V navrhovaném řešení se okruh třídění skládá z qubit otočení a dvou qubit řízených otočení. Zde popsané parametry jsou úhly otočení. Pro výpočet nenáročných hodnot se ví, že se u zařízení pro rotaci a řízenému otočení označují *univerzální* , což znamená, že jakákoli Jednotková matice je možné rozložit do dostatečně dlouhého okruhu skládajícího se z těchto bran
 
+V navržené verzi se podporuje jenom jeden okruh následovaný jedním odhadem frekvence.
+Proto řešení je obdobou nenáročného na počítač, který podporuje Vektorový procesor s nízkou úrovní polynomu.
+
 ![Multilayer Perceptron vs. třídění orientované na okruhy](~/media/DLvsQCC.png)
 
-Tento model můžeme porovnat s Multilayer Perceptron a získat tak lepší porozumění základní struktuře. V Perceptron prediktivní $p (y | x, \theta) $ je parametr podle sady závaží $ \theta $, která určuje lineární funkce připojující nelineární funkce aktivace (neurons). Tyto parametry mohou být vyškolené pro vytvoření modelu. Ve výstupní vrstvě můžeme získat pravděpodobnost vzorku patřícího ke třídě pomocí nelineárních funkcí aktivace, jako je softmax. V klasifikátoru zaměřeném na okruhy se předpokládá, že se v rozstředcích rozqubit a ve dvou qubit řízených otočeních modelu přesměrují úhly otočení. Podobným způsobem mohou být tyto parametry vyškoleny pomocí hybridního počtu chyb/klasických verzí algoritmu gradientu. Chcete-li vypočítat výstup namísto použití nelineárních funkcí aktivace, je pravděpodobnost třídy získána čtením opakovaných měření v konkrétní qubit po řízených otočeních. Pro kódování klasických dat ve státě, který používá ovladatelného okruhu kódování pro přípravu stavu.
+Jednoduchý návrh klasifikátoru pro období se dá porovnat s tradičním řešením SVM (support Vector Machine). Odvození pro ukázku dat $x $ v případě SVM se provádí pomocí optimálního formuláře jádra $ \sum \ alpha_j k (x_j, x) $, kde $k $ je určitá funkce jádra.
+
+Naproti tomu klasifikátorní využití používá prediktivní $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) × 〉 $, která je v duchu podobná, ale technicky poměrně odlišná. Proto když se používá přímočarý kódovací kódování, $p (y │ x, U (\theta)) $ je kvadratická forma ve amplitudách $x $, ale součinitele tohoto formuláře se již nenaučí. místo toho jsou agregovány z prvků matice $U okruhu (\theta) $, což obvykle má výrazně méně možností s možností učení $ \theta $, než je dimenze vektoru $x $. Stupeň polynomu $p (y │ x, U (\theta)) $ v původních funkcích se dá zvýšit na $2 ^ l $ pomocí kódování produktového pole v $l $ kopiích $x $.
 
 Naše architektura zkoumá relativně omezené okruhy, které proto musí být *rychle Entangling* , aby bylo možné zachytit všechny korelace mezi funkcemi dat ve všech oblastech. Příkladem nejužitečnější komponenty pro rychlé Entangling okruhy vidíte na obrázku níže. I když okruh s touto geometrií sestává jenom z $3 n + 1 $ bran, matice s jednotkou váhy, kterou COMPUTE počítá, zajišťuje významné vzájemné rozhovory mezi funkcemi $2 ^ n $.
 
@@ -69,3 +73,5 @@ Jasně $b $ musí být v intervalu $ (-0.5, + 0,5) $, aby byly smysluplné.
 ### <a name="reference"></a>Referenční informace
 
 Tyto informace by měly být dostatečné pro zahájení přehrávání s kódem. Pokud ale chcete získat další informace o tomto modelu, přečtěte si prosím původní návrh: [ *"klasifikátory zaměřené na okruhy", Marie Schuld, Alex Bocharov, Krysta Svore a Nathan* Wiebe](https://arxiv.org/abs/1804.00633)
+
+Kromě ukázky kódu, který se zobrazí v dalších krocích, můžete také začít zkoumat klasifikaci nepočátečních hodnot v [tomto kurzu](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/QuantumClassification) . 

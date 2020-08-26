@@ -1,0 +1,45 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.random
+name: Microsoft.Quantum.Random
+functions:
+- uid: microsoft.quantum.random.categoricaldistribution
+  summary: Vrátí samostatnou distribuci kategorií, ve které je explicitně určena pravděpodobnost pro každý konečný seznam daných výsledků.
+- uid: microsoft.quantum.random.continuousuniformdistribution
+  summary: Vrátí jednotnou distribuci v rámci daného intervalu zahrnujícího interval.
+- uid: microsoft.quantum.random.discreteuniformdistribution
+  summary: Vrátí jednotnou distribuci v rámci daného celkového rozsahu.
+- uid: microsoft.quantum.random.normaldistribution
+  summary: Vrací normální rozdělení s daným významem a odchylkou.
+- uid: microsoft.quantum.random.standardnormaldistribution
+  summary: Vrací normální rozdělení s průměrem 0 a odchylku 1.
+- uid: microsoft.quantum.random.transformedcontinuousdistribution
+  summary: S ohledem na průběžnou distribuci vrátí novou distribuci, která transformuje originál pomocí dané funkce.
+operations:
+- uid: microsoft.quantum.random.drawcategorical
+  summary: Nakreslí náhodný vzorek z kategorií distribuce určené seznamem probablities.
+- uid: microsoft.quantum.random.drawrandombool
+  summary: S ohledem na pravděpodobnost úspěchu vrátí jednu Bernoulliho zkušební verzi, která je pravdivá s danou pravděpodobností.
+- uid: microsoft.quantum.random.drawrandomdouble
+  summary: Vykreslí náhodné reálné číslo v daném intervalu.
+- uid: microsoft.quantum.random.drawrandomint
+  summary: Vykreslí náhodné celé číslo v daném rozsahu.
+- uid: microsoft.quantum.random.drawrandompauli
+  summary: Nakreslí náhodnou hodnotu Pauli.
+- uid: microsoft.quantum.random.maybechooseelement
+  summary: V případě pole dat a distribuce v rámci indexů se pokusí zvolit element náhodně.
+newtypes:
+- uid: microsoft.quantum.random.bigdiscretedistribution
+  summary: Představuje rozdělení pravděpodobnosti univariate v celých číslech libovolné velikosti.
+- uid: microsoft.quantum.random.complexdistribution
+  summary: Představuje univariate rozdělení pravděpodobnosti v rámci složitých čísel.
+- uid: microsoft.quantum.random.continuousdistribution
+  summary: Představuje univariateou distribuci pravděpodobnosti v reálných číslech.
+- uid: microsoft.quantum.random.discretedistribution
+  summary: Představuje univariate rozdělení pravděpodobnosti v celých číslech.
+metadata:
+  ms.openlocfilehash: 04ceecba6c304e33452dd5eac014f59522a76e91
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864003"

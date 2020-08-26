@@ -9,12 +9,12 @@ uid: microsoft.quantum.quickstarts.search
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5c23d71209eb484a510f102e8b581ba4ec21829a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f2ae56bdca893e8a317c16d0a993da15b9f021b5
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869660"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863110"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Kurz: Implementace Groverova vyhledávacího algoritmu v jazyku Q\#
 
@@ -42,7 +42,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 ## <a name="write-the-code"></a>Psaní kódu
 
-1. Pomocí vývojářské sady pro práci s [více podsystému vytvořte nový Q# projekt pro aplikaci příkazového řádku](xref:microsoft.quantum.install.standalone). Nazvěte projekt `Grover`.
+1. Pomocí vývojářské sady pro práci s více podsystému [vytvořte nový Q# projekt pro aplikaci](xref:microsoft.quantum.install.standalone). Nazvěte projekt `Grover`.
 
 1. Do souboru `Program.qs` v projektu přidejte tento kód:
 
@@ -56,7 +56,7 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 1. V dalším kroku spusťte nový Q# program, abyste našli položku označenou `ReflectAboutMarked` .
 
-### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#aplikace příkazového řádku se sadou Visual Studio nebo Visual Studio Code
+### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>Q# aplikace se sadou Visual Studio nebo Visual Studio Code
 
 Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
 

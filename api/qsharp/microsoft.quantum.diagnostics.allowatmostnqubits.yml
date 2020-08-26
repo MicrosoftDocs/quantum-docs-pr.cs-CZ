@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.allowatmostnqubits
+name: AllowAtMostNQubits
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: Mezi voláním této operace a jejím sousedním objektem, výrazy, které mají maximálně daný počet dalších qubits, jsou přiděleny pomocí příkazů using.
+remarks: Tato operace může být nahrazena operací no-op u cílů, které ji nepodporují.
+examples: >-
+  Následující fragment kódu se při spuštění na počítačích, které podporují tuto diagnostiku, nezdaří:
+
+
+  ```Q#
+
+  within {
+      AllowAtMostNQubits(3, "Too many qubits allocated.");
+  } apply {
+      // Fails since this allocates four qubits.
+      using (register = Qubit[4]) {
+      }
+  }
+
+  ```
+syntax: 'operation AllowAtMostNQubits (nQubits : Int, message : String) : Unit'
+input:
+  content: '(nQubits : Int, message : String)'
+  types:
+  - name: nQubits
+    summary: Maximální počet qubits, které mohou být přiděleny.
+    isPrimitive: true
+    uid: Int
+  - name: message
+    summary: Zpráva, která se má zobrazit při selhání
+    isPrimitive: true
+    uid: String
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+metadata:
+  ms.openlocfilehash: 154bcc5f67a44e436e42907d8679c14f68c88021
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864017"

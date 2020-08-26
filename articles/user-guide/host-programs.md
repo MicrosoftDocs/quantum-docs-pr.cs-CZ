@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8e3fa83700417a4ffaf9e3be91796c9e9513b253
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: e44a366b7eea133499beb44dbb338a02174c0073
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869728"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863205"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Způsoby spuštění Q# programu
 
@@ -25,7 +25,7 @@ Na této stránce vysvětlete, co se stane Q# , když se program spustí, a poro
 Primární rozdíl je, že Q# lze spustit:
 - jako samostatná aplikace, kde Q# je jediný jazyk, který je součástí jediného jazyka a který program je vyvolán přímo. Do této kategorie ve skutečnosti patří dvě metody:
   - rozhraní příkazového řádku
-  - Q#Jupyter poznámkové bloky
+  - Q# Jupyter poznámkové bloky
 - s dalším *hostitelským programem*, který je napsán v Pythonu nebo v jazyce .NET (např. C# nebo F #), který potom vyvolá program a může pokračovat ve zpracování vrácených výsledků.
 
 Abychom těmto procesům a jejich rozdílům nejlépe pochopili, Uvažujme o jednoduchém Q# programu a porovnejte způsob, jakým je možné ho spustit.
@@ -122,7 +122,7 @@ Vyhrazujeme si samostatnou aplikaci Q# Jupyter poznámkových bloků jako posled
 > [!NOTE]
 > I když ho v těchto příkladech neilustruje, jedna ze dvou metod provádění je, že všechny zprávy vytištěné zevnitř Q# programu (například uživatelem [`Message`](xref:microsoft.quantum.intrinsic.message) [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) ) budou obvykle vždy vytištěny do příslušné konzoly.
 
-## <a name="no-locq-from-the-command-line"></a>Q#z příkazového řádku
+## <a name="no-locq-from-the-command-prompt"></a>Q# z příkazového řádku
 Jedním z nejjednodušších způsobů, jak začít psát Q# programy, je zabránit tomu, aby se nemuseli starat o samostatné soubory a druhý jazyk.
 Pomocí Visual Studio Code nebo sady Visual Studio s rozšířením QDK umožňuje bezproblémové pracovní postup, ve kterém se spouští Q# volat jenom z jednoho Q# souboru.
 
@@ -157,7 +157,7 @@ namespace NamespaceName {
 }
 ```
 
-Nyní volání `dotnet run` z příkazového řádku vede ke `MeasureSuperposition` spuštění a vrácená hodnota je poté vytištěna přímo na terminálu.
+Nyní volání `dotnet run` z příkazového řádku vede ke `MeasureSuperposition` spuštění a vrácená hodnota je následně vytištěna přímo na terminálu.
 Zobrazí se buď `One` nebo `Zero` vytištěno. 
 
 Mějte na paměti, že pokud máte více než jedno navýšení volat, `MeasureSuperposition` bude spuštěno.
@@ -179,7 +179,7 @@ Taková operace by mohla být zapsána jako
 kde vrácená hodnota je pole výsledků měření.
 Všimněte si, že [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) a [`ForEach`](xref:microsoft.quantum.arrays.foreach) jsou [`Microsoft.Quantum.Canon`](xref:microsoft.quantum.canon) v [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) oborech názvů a, vyžadování dalších `open` příkazů pro každý z nich.
 
-Pokud přesouváme `@EntryPoint()` atribut tak, aby předcházel této nové operaci (Všimněte si, že v souboru může být jenom jeden řádek), pokus o jeho spuštění s jednoduchým `dotnet run` výsledkem je chybová zpráva, která indikuje, co je potřeba pro další možnosti příkazového řádku, a jak je vyjádřit.
+Pokud přesouváte `@EntryPoint()` atribut tak, aby předchází této nové operaci (Všimněte si, že může být pouze jeden řádek v souboru), pokus o jeho spuštění s jednoduchým `dotnet run` výsledkem je chybová zpráva s informací o tom, jaké další možnosti příkazového řádku jsou vyžadovány a jak je vyjádřit.
 
 Obecný formát příkazového řádku je ve skutečnosti `dotnet run [options]` a k dispozici jsou argumenty, které jsou zde k dispozici.
 V tomto případě `n` chybí argument a ukazuje, že je nutné zadat možnost `-n <n>` . Pro spuštění `MeasureSuperpositionArray` pro `n=4` qubits proto používáme
@@ -203,7 +203,7 @@ Chybová zpráva taky obsahuje další možnosti, které se dají použít, vče
 
 ### <a name="different-target-machines"></a>Různé cílové počítače
 
-Vzhledem k tomu, že výstupy z našich operací byly doposud očekávané výsledky jejich akce v reálném qubits, je jasné, že výchozí cílový počítač z příkazového řádku je quauntum simulátor `QuantumSimulator` .
+Vzhledem k tomu, že výstupy z našich operací byly doposud očekávané výsledky jejich akce v reálném qubits, je jasné, že výchozí cílový počítač z příkazového řádku je plný stav simulátoru `QuantumSimulator` .
 Dá se ale dát pokyn ke spuštění na konkrétním cílovém počítači s možností `--simulator` (nebo zkráceným `-s` ).
 
 Můžete ho například spustit na [`ResourcesEstimator`](xref:microsoft.quantum.machines.resources-estimator) :
@@ -238,7 +238,7 @@ Jak jsme se na tuto možnost krátce zmínili `--project` , [ `dotnet run` pří
 Pokud jsou zadány oba typy možností, `dotnet` musí být nejprve poskytnuty možnosti specifické pro, následované oddělovač `--` a Q# možnosti specifické pro.
 Například specifiying cestu spolu s číslem qubits pro operaci výše, kterou by bylo provedeno prostřednictvím `dotnet run --project <PATH> -- -n <n>` .
 
-## <a name="no-locq-with-host-programs"></a>Q#s hostitelskými programy
+## <a name="no-locq-with-host-programs"></a>Q# s hostitelskými programy
 
 U našeho Q# souboru je alternativou k volání operace nebo funkce přímo z příkazového řádku použití *hostitelského programu* v jiném klasickém jazyce. Konkrétně to lze provést buď pomocí Pythonu, nebo jazyka .NET, jako je C# nebo F # (za účelem zkrácení budeme podrobnosti pouze C#).
 K povolení interoperability je potřeba trochu dalších nastavení, ale tyto podrobnosti najdete v [pokynech k instalaci](xref:microsoft.quantum.install).
@@ -256,7 +256,7 @@ Tady se zobrazí obecné schéma a v následující části se podíváme na kon
 <img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
 
 > [!NOTE]
-> `@EntryPoint()`Atribut používaný pro Q# aplikace příkazového řádku nelze použít s hostitelskými programy.
+> `@EntryPoint()`Atribut používaný pro Q# aplikace nelze použít s hostitelskými programy.
 > Pokud se nachází v souboru, který Q# Host volá, bude vyvolána chyba. 
 
 Pro práci s různými hostitelskými programy nejsou k dispozici žádné změny `*.qs` Q# souboru.
@@ -332,7 +332,7 @@ print(multi_qubit_resources)
 
 Výsledkem bude výstup podobný následujícímu:
 
-```python
+```output
 Single qubit:
 1
 {'CNOT': 0, 'QubitClifford': 1, 'R': 0, 'Measure': 1, 'T': 0, 'Depth': 0, 'Width': 1, 'BorrowedWidth': 0}
@@ -341,6 +341,56 @@ Multiple qubits:
 [0, 1, 1, 1]
 {'CNOT': 0, 'QubitClifford': 4, 'R': 0, 'Measure': 4, 'T': 0, 'Depth': 0, 'Width': 4, 'BorrowedWidth': 0}
 ```
+
+#### <a name="using-no-locq-code-from-other-projects-or-packages"></a>Použití Q# kódu z jiných projektů nebo balíčků
+
+Ve výchozím nastavení `import qsharp` příkaz načte všechny `.qs` soubory v aktuální složce a zpřístupní jejich Q# operace a funkce pro použití zevnitř skriptu Pythonu.
+
+Chcete-li načíst Q# kód z jiné složky, [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp/qsharp.projects.projects) lze použít k přidání odkazu na `.csproj` soubor pro Q# projekt (tj. projekt, který odkazuje `Microsoft.Quantum.Sdk` ).
+Tento příkaz zkompiluje všechny `.qs` soubory ve složce obsahující `.csproj` a jejích podsložkách. Bude také rekurzivně načítat jakékoli balíčky, na které se odkazuje přes `PackageReference` Q# , nebo `ProjectReference` na projekty, na které se odkazuje v tomto `.csproj` souboru.
+
+Například následující kód Pythonu Importuje externí projekt, odkazuje na jeho cestu relativní vzhledem k aktuální složce a vyvolá jednu z jeho Q# operací:
+
+```python
+import qsharp
+qsharp.projects.add("../qrng/Qrng.csproj")
+from Qrng import SampleQuantumRandomNumberGenerator
+print(f"Qrng result: {SampleQuantumRandomNumberGenerator.simulate()}")
+```
+
+Výsledkem bude výstup podobný následujícímu:
+
+```output
+Adding reference to project: ../qrng/Qrng.csproj
+Qrng result: 0
+```
+
+Chcete-li načíst externí balíčky obsahující Q# kód, použijte [ `qsharp.packages` rozhraní API](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages).
+
+Pokud Q# kód v aktuální složce závisí na externích projektech nebo balíčcích, mohou se při spuštění zobrazit chyby `import qsharp` , protože závislosti ještě nebyly načteny.
+Pokud chcete načíst požadované externí balíčky nebo Q# projekty v rámci `import qsharp` příkazu, ujistěte se, že složka se skriptem Pythonu obsahuje `.csproj` soubor, který odkazuje na `Microsoft.Quantum.Sdk` . V takovém `.csproj` případě přidejte vlastnost `<IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>` do `<PropertyGroup>` . Tím se dá dát Q# k rekurzivnímu načtení libovolných `ProjectReference` `PackageReference` položek nebo nalezených v `.csproj` rámci `import qsharp` příkazu.
+
+Například tady je jednoduchý `.csproj` soubor, který způsobí, že Q# se má automaticky načíst `Microsoft.Quantum.Chemistry` balíček:
+
+```xml
+<Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.12.20072031" />
+    </ItemGroup>
+</Project>
+```
+
+> [!NOTE]
+> V současné době `<IQSharpLoadAutomatically>` je tato vlastní vlastnost vyžadována v hostitelích Pythonu, ale v budoucnu se to může stát výchozím chováním pro `.csproj` soubor umístěný ve stejné složce jako skript Pythonu.
+
+> [!NOTE]
+> V současné době `<QsharpCompile>` je nastavení v rozhraní `.csproj` ignorováno hostiteli Pythonu a `.qs` `.csproj` jsou načteny a kompilovány všechny soubory ve složce (včetně podsložek). `.csproj`V budoucnu se zlepší podpora nastavení (další podrobnosti najdete v tématu [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) ).
+
 
 ### <a name="c"></a>[C#](#tab/tabid-csharp)
 
@@ -359,7 +409,7 @@ using NamespaceName;                              // make the Q# namespace avail
 ```
 
 Dále deklarujeme náš obor názvů C#, několik dalších bitů a částí (viz úplný blok kódu níže) a pak jakékoli klasické programování, které bychom chtěli (například výpočetní argumenty pro Q# volatelné).
-Ta není v našem případě nutná, ale příklad takového použití najdete v [ukázce interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
+Ta není v našem případě nutná, ale příklad takového použití najdete v  [ukázce interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Cílové počítače
 
@@ -526,8 +576,8 @@ BorrowedWidth   0
 
 ***
 
-## <a name="no-locq-jupyter-notebooks"></a>Q#Jupyter poznámkové bloky
-Q#Jupyter poznámkové bloky využívají jádro I Q# , které umožňuje definovat, kompilovat a spouštět Q# volat v jednom poznámkovém bloku---všech společně s pokyny, poznámkami a dalšími obsahy.
+## <a name="no-locq-jupyter-notebooks"></a>Q# Jupyter poznámkové bloky
+Q# Jupyter poznámkové bloky využívají jádro I Q# , které umožňuje definovat, kompilovat a spouštět Q# volat v jednom poznámkovém bloku---všech společně s pokyny, poznámkami a dalšími obsahy.
 To znamená, že přestože je možné importovat a používat obsah `*.qs` Q# souborů, nejsou nezbytné v modelu spuštění.
 
 Zde podrobně pomůžeme, jak spustit Q# výše uvedené operace, ale obecnější Úvod k používání Q# notebooků Jupyter je k dispozici na stránce [Úvod do Q# a Jupyter poznámkových blocích](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
@@ -546,7 +596,7 @@ Po spuštění buňky s takovým příkazem jsou definice z těchto oborů názv
 
 Podobně definování operací vyžaduje pouze zápis Q# kódu a spuštění buňky.
 
-<img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="600">
+<img src="../media/hostprograms_jupyter_op_def_crop.png" alt="Jupyter cell defining Q# operations" width="773">
 
 Výstup pak obsahuje seznam operací, které je možné volat z budoucích buněk.
 
@@ -555,12 +605,49 @@ Výstup pak obsahuje seznam operací, které je možné volat z budoucích buně
 Funkce pro spouštění operací na konkrétních cílových počítačích je poskytována prostřednictvím [ Q# příkazů I Magic](xref:microsoft.quantum.guide.quickref.iqsharp).
 Například využívá `%simulate` `QuantumSimulator` a `%estimate` používá `ResourcesEstimator` :
 
-<img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Simulate and estimate resources Jupyter cell" width="500">
+<img src="../media/hostprograms_jupyter_no_args_sim_est_crop.png" alt="Jupyter cell simulating a Q# operation and running resource estimation" width="773">
 
 ### <a name="passing-inputs-to-functions-and-operations"></a>Předávání vstupů do funkcí a operací
 
-V současné době se příkazy pro spuštění Magic dají použít jenom s operacemi, které nevyužívají žádné argumenty. Takže aby bylo možné spustit `MeasureSuperpositionArray` , musíme definovat operaci "Obálka", která pak zavolá operaci s argumenty:
+Aby bylo možné předat vstupy do Q# provozu, argumenty mohou být předány jako `key=value` páry příkazu pro spuštění Magic.
+Takže pokud chcete spustit `MeasureSuperpositionArray` se čtyřmi qubits, můžeme spustit `%simulate MeasureSuperpositionArray n=4` :
 
-<img src="../media/hostprograms_jupyter_wrapper_def_sim_crop.png" alt="Wrapper function and simulate Jupyter cell" width="550">
+<img src="../media/hostprograms_jupyter_args_sim_crop.png" alt="Jupyter cell simulating a Q# operation with arguments" width="773">
 
-Tuto operaci je možné použít podobně jako v rámci `%estimate` a dalších příkazů pro spuštění.
+Tento model lze použít podobně jako `%estimate` a jiné příkazy spuštění.
+
+### <a name="using-no-locq-code-from-other-projects-or-packages"></a>Použití Q# kódu z jiných projektů nebo balíčků
+
+Ve výchozím nastavení Q# Jupyter notebook načítá všechny `.qs` soubory v aktuální složce a zpřístupňuje jejich Q# operace a funkce pro použití v rámci poznámkového bloku. [ `%who` Příkaz Magic](xref:microsoft.quantum.iqsharp.magic-ref.who) vypíše všechny aktuálně dostupné Q# operace a funkce.
+
+Chcete-li načíst Q# kód z jiné složky, lze pomocí [ `%project` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.project) přidat odkaz na `.csproj` soubor pro Q# projekt (tj. projekt, který odkazuje na `Microsoft.Quantum.Sdk` ). Tento příkaz zkompiluje všechny `.qs` soubory ve složce obsahující `.csproj` (a podsložek). Bude také rekurzivně načítat jakékoli balíčky, na které se odkazuje přes `PackageReference` Q# , nebo `ProjectReference` na projekty, na které se odkazuje v tomto `.csproj` souboru. 
+
+Například následující buňky simulují Q# operaci z externího projektu, kde je odkazováno na cestu k projektu vzhledem k aktuální složce:
+
+<img src="../media/hostprograms_jupyter_project_crop.png" alt="Jupyter cell simulating a Q# operation from an external project" width="773">
+
+Pokud chcete načíst externí balíčky obsahující Q# kód, použijte [ `%package` příkaz Magic](xref:microsoft.quantum.iqsharp.magic-ref.package).
+Načtení balíčku také zpřístupní všechny vlastní příkazy Magic nebo zobrazovací kodéry, které jsou obsaženy ve všech sestaveních, která jsou součástí balíčku.
+
+Pokud chcete načíst externí balíčky nebo Q# projekty v průběhu inicializace poznámkového bloku, ujistěte se, že složka Poznámkový blok obsahuje `.csproj` soubor, který odkazuje na `Microsoft.Quantum.Sdk` . V takovém `.csproj` případě přidejte vlastnost `<IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>` do `<PropertyGroup>` . Tím se dá dát Q# k rekurzivnímu načítání libovolných `ProjectReference` `PackageReference` položek nebo nalezených v `.csproj` době načítání poznámkového bloku.
+
+Například tady je jednoduchý `.csproj` soubor, který způsobí, že Q# se má automaticky načíst `Microsoft.Quantum.Chemistry` balíček:
+
+```xml
+<Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.12.20072031" />
+    </ItemGroup>
+</Project>
+```
+
+> [!NOTE]
+> V současné době `<IQSharpLoadAutomatically>` je tato vlastní vlastnost požadována Q# Jupyter notebook hostiteli, ale v budoucnu se to může stát výchozím chováním pro `.csproj` soubor umístěný ve stejné složce jako soubor poznámkového bloku.
+
+> [!NOTE]
+> V současné době `<QsharpCompile>` je nastavení v rozhraní `.csproj` ignorováno Q# Jupyter notebook hostitelé a všechny `.qs` soubory ve složce `.csproj` (včetně podsložek) jsou načteny a kompilovány. `.csproj`V budoucnu se zlepší podpora nastavení (další podrobnosti najdete v tématu [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) ).

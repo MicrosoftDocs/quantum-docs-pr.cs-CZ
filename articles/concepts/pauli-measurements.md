@@ -91,8 +91,8 @@ Když pracujete s Q# , nejběžnější druh měření, na který budete pracova
 V takových případech je běžné projednávat měření operátoru Pauli, a to obecně operátor, jako je $ x, Y, Z $ nebo $ z \otimes , x \otimes x, x \otimes Y $ a tak dále.
 
 > [!TIP]
->V nástroji Q# jsou operátory qubit Pauli obvykle zastoupeny poli typu `Pauli[]` .
->Například pro reprezentaci $ X \otimes Z \otimes Y $ lze použít pole `[PauliX, PauliZ, PauliY]` .
+> V nástroji Q# jsou operátory qubit Pauli obvykle zastoupeny poli typu `Pauli[]` .
+> Například pro reprezentaci $ X \otimes Z \otimes Y $ lze použít pole `[PauliX, PauliZ, PauliY]` .
 
 Projednávání měření v rámci Pauli operátorů je zvlášť běžné v podpoli s opravou chyb pro každé z nich.
 V systému Q# se používá podobná konvence. nyní Vysvětleme toto alternativní zobrazení měření.
@@ -175,13 +175,13 @@ $$
     \otimes \boldone Z =\begin{bmatrix}
         1 & 0 0 0 & &\\\\
         0 & 1 & 0 &\\\\
-        0 & 0 & -1 & 0\\\\
+        0 &  0 & -1 &  0 \\\\
         0 0 0 & & & -1 \end{bmatrix} .
 \end{align}
 $$
 
 Stejně jako v případě jakékoli jednotkové transformace těchto matic také popisuje dvě poloviční prostory označené $ \Pm 1 $ eigenvalues.
-Například $ x \otimes x = h \otimes H (z \otimes ) h \otimes h $ od identity, která $ z = HXH $ .
+Například $ x \otimes x = h \otimes H (z \otimes ) h \otimes h $  od identity, která $ z = HXH $ .
 Podobně jako u qubitového případu je možné všechny qubit Pauli-měření zapsat jako $ u ^ \dagger (Z \otimes \id ) u $ pro $ 4 \times 4 $ jednotkové matice $ u $ . Vytvoříme výčet transformací v následující tabulce.
 
 > [!NOTE]
@@ -190,15 +190,14 @@ Podobně jako u qubitového případu je možné všechny qubit Pauli-měření 
 >     \operatorname{Prohodit } &=
 >     \left( \begin { matice}
 >1 & 0 0 0 & &\\\\
->0 & 0 & 1 & 0\\\\
+>         0 & 0 & 1 & 0 \\\\
 >0 & 1 & 0 &\\\\
 >0 & & & > \end { } \right matice > 0 0 1     \end{align}
 > $$
->slouží k simulaci vnitřní operace [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> slouží k simulaci vnitřní operace [`SWAP`](xref:microsoft.quantum.intrinsic) .
 
 ||Jednotná transformace měření Pauli|
 |----------------------|------------------------|
-|$ \otimes \boldone Z $ | $\boldone \otimes \boldone$|
 |$ \otimes \boldone Z $ | $\boldone\otimes \boldone$|
 |$ \otimes \boldone X $ | $ \otimes \boldone H $|
 |$ \otimes \boldone A $ | $ HS – ^ \dagger \otimes \boldone $|
@@ -240,7 +239,7 @@ Proto se shodují s výše uvedenými požadavky.
 V Q# , taková měření vrátí hodnotu $ j, $ Pokud měření vede k výsledku eigenspace znaménka $ (-1) ^ j $ .
 Pauli měření jako integrovaná funkce v nástroji Q# je užitečné, protože měření takových operátorů vyžaduje dlouhé řetězy řízených a nevratných operací a základní transformace, které popisují $ bránu diagonalizing U, která $ se potřebuje k tomu, aby se operace mohla vyjádřit jako tensor produkt z $ $ a $ \id $ .
 Díky možnosti určit, že chcete provést jedno z těchto předdefinovaných měření, nemusíte si dělat starosti s tím, jak transformovat svůj základ, aby výpočetní základní měření poskytovalo potřebné informace.
-Q#zpracuje všechny potřebné základní transformace automaticky.
+Q# zpracuje všechny potřebné základní transformace automaticky.
 Další informace najdete v tématu [`Measure`](xref:microsoft.quantum.intrinsic.measure) operace a [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) .
 
 ## <a name="the-no-cloning-theorem"></a>Věta bez klonování
@@ -257,7 +256,7 @@ Důkaz věta je výjimečně přímočarý.
 
 V případě takového počítače s více operačními systémem musí být operace klonování popsána jednotnou maticí.
 Nezakážeme měření, protože by došlo k poškození stavu, který se snažíme klonovat.
-Pro simulaci operace klonování chceme, aby jednotná matice používala vlastnost, která$$
+Pro simulaci operace klonování chceme, aby jednotná matice používala vlastnost, která $$
   U \ket { \psi } \ket { 0 } = \ket { \psi }\ket{\psi}
 $$
 pro libovolný stav $ \ket { \psi } $ .

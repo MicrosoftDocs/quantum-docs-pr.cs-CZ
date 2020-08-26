@@ -9,12 +9,12 @@ uid: microsoft.quantum.quickstarts.qrng
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8db892091794cb1166e41744572d8938d975abf2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d80f1c640ac7ddb0104ccbbb6de6d0e26ba05fd6
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869762"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863631"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Kurz: Implementace kvantového generátoru náhodných čísel v jazyku Q\#
 
@@ -23,11 +23,11 @@ Jednoduchý příklad algoritmu, který je v systému napsaný, Q# je generátor
 ## <a name="prerequisites"></a>Požadavky
 
 - Sada Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Vytvořte Q# projekt pro buď [pomocí Q# z příkazového řádku](xref:microsoft.quantum.install.standalone), nebo pomocí [hostitelského programu Pythonu](xref:microsoft.quantum.install.python) nebo [hostitelského programu C#](xref:microsoft.quantum.install.cs).
+- Vytvořte Q# projekt pro [ Q# aplikaci](xref:microsoft.quantum.install.standalone), pomocí [hostitelského programu Pythonu](xref:microsoft.quantum.install.python)nebo [hostitelského programu jazyka C#](xref:microsoft.quantum.install.cs).
 
 ## <a name="write-a-no-locq-operation"></a>Zápis Q# operace
 
-### <a name="no-locq-operation-code"></a>Q#kód operace
+### <a name="no-locq-operation-code"></a>Q# kód operace
 
 1. Obsah souboru Program.qs nahraďte následujícím kódem:
 
@@ -64,13 +64,13 @@ Jelikož je výsledek měření zcela náhodný, získali jsme náhodný bit. Po
 
 ## <a name="creating-a-complete-random-number-generator"></a>Vytvoření kompletního generátoru náhodných čísel
 
-Teď, když máme Q# operaci, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel. Můžeme použít Q# aplikace příkazového řádku nebo použít hostitelský program.
+Teď, když máme Q# operaci, která generuje náhodné bity, můžeme ji použít k sestavení kompletního generátoru náhodných čísel. Můžeme použít Q# aplikaci nebo použít hostitelský program.
 
 
 
-### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#aplikace příkazového řádku se sadou Visual Studio nebo Visual Studio Code](#tab/tabid-qsharp)
+### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>[Q# aplikace se sadou Visual Studio nebo Visual Studio Code](#tab/tabid-qsharp)
 
-Chcete-li vytvořit úplnou Q# aplikaci příkazového řádku, přidejte do programu následující vstupní bod Q# : 
+Chcete-li vytvořit úplnou Q# aplikaci, přidejte do programu následující vstupní bod Q# : 
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
@@ -92,13 +92,13 @@ Pro následná spuštění není potřeba ho sestavovat znovu. Pokud ho chcete s
 dotnet run --no-build
 ```
 
-### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python s Visual Studio Code nebo příkazovým řádkem](#tab/tabid-python)
+### <a name="python-with-visual-studio-code-or-the-command-prompt"></a>[Python s Visual Studio Code nebo příkazový řádek](#tab/tabid-python)
 
 Chcete-li spustit nový Q# program z Pythonu, uložte následující kód jako `host.py` :
 
 :::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
 
-Pak můžete hostitelský program Pythonu spustit z příkazového řádku:
+Hostitelský program Pythonu pak můžete spustit z příkazového řádku:
 
 ```bash
 $ python host.py
@@ -112,7 +112,7 @@ Chcete-li spustit nový Q# program z c#, upravte `Driver.cs` tak, aby obsahovalo
 
 :::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
 
-Pak můžete hostitelský program v C# spustit z příkazového řádku (v sadě Visual Studio byste měli stisknout F5):
+Pak můžete spustit hostitelský program C# z příkazového řádku (v aplikaci Visual Studio byste měli stisknout klávesu F5):
 
 ```bash
 $ dotnet run

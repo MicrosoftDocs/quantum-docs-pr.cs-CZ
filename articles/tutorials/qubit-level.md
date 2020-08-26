@@ -1,5 +1,5 @@
 ---
-title: Zápis a simulace programů na úrovni qubit v nástrojiQ#
+title: Zápis a simulace programů na úrovni qubit v nástroji Q#
 description: Podrobný návod k psaní a simulaci programu pro období, který funguje na úrovni jednotlivých qubit
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,12 +9,12 @@ ms.topic: tutorial
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 22c79e4e01db1a0d0c291d0dcff81dbfa8df5cd3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 39b2d762c0efbfa4bb3a60a1dcee6bcbe2bd91a9
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869711"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863338"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Kurz: zápis a simulace programů qubit na úrovni Q\#
 
@@ -32,7 +32,7 @@ V našem případě definujeme Q# operaci, která provede úplnou qubitou transf
 <br/>
 <img src="../media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 * [Nainstalujte](xref:microsoft.quantum.install) sadu pro vývoj pro práci s více jazyky pomocí vašeho preferovaného jazykového a vývojového prostředí.
 * Pokud už máte sadu QDK nainstalovanou, zkontrolujte, že je [aktualizovaná na nejnovější verzi](xref:microsoft.quantum.update)
@@ -41,15 +41,15 @@ V našem případě definujeme Q# operaci, která provede úplnou qubitou transf
 ## <a name="in-this-tutorial-youll-learn-how-to"></a>V tomto kurzu se naučíte:
 
 > [!div class="checklist"]
-> * Definování operací s více operačními operacemi vQ#
+> * Definování operací s více operačními operacemi v Q#
 > * Volání Q# operací přímo z příkazového řádku nebo pomocí klasického hostitelského programu
 > * Simulace operace s příchodem z přidělení qubit na výstup měření
 > * Sledujte, jak se v průběhu operace vyvíjí simulovaný wavefunction systému
 
 Běh programu pro práci s více operačními systémy od Microsoftu se bude obvykle skládat ze dvou částí:
 1. Samotný program, který je implementován pomocí programovacího jazyka pro práci po sobě Q# a následně vyvolán ke spuštění na počítači s více operačními systémy nebo simulátoru provozu. Ty se skládají z 
-    - Q#operace: podrutiny fungující na registrech v případě nečinnosti 
-    - Q#Functions: klasické podrutiny používané v rámci algoritmu doby.
+    - Q# operace: podrutiny fungující na registrech v případě nečinnosti 
+    - Q# Functions: klasické podrutiny používané v rámci algoritmu doby.
 2. Vstupní bod, který slouží k volání programu pro práci s poli, a určení cílového počítače, na kterém by měl být spuštěn.
     To lze provést přímo z příkazového řádku nebo prostřednictvím hostitelského programu napsaného v klasickém programovacím jazyce, jako je Python nebo C#.
     Tento kurz obsahuje pokyny pro libovolný způsob, kterým dáváte přednost.
@@ -92,7 +92,7 @@ Dále definujeme `Perform3qubitQFT` operaci:
 V současné době operace přebírá žádné argumenty a nevrátí nic---v tomto případě zapíšeme, že vrátí `Unit` objekt, který je podobají `void` v jazyce C# nebo prázdná řazená kolekce členů `Tuple[()]` v Pythonu.
 Později ji Upravme, aby vracela pole výsledků měření. v tomto okamžiku se `Unit` nahradí `Result[]` . 
 
-### <a name="allocate-qubits-with-using"></a>Přidělit qubits pomocí`using`
+### <a name="allocate-qubits-with-using"></a>Přidělit qubits pomocí `using`
 V rámci naší Q# operace nejprve přidělíme registraci tří qubits pomocí `using` příkazu:
 
 ```qsharp
@@ -114,7 +114,7 @@ V `using` případě se qubits automaticky přiřazují ve stavu $ \ket {0} $. M
 ### <a name="applying-single-qubit-and-controlled-gates"></a>Použití jednoduchých qubit a řízených bran
 
 V dalším kroku použijeme brány, které tvoří samotnou operaci.
-Q#již obsahuje mnoho základních bran jako operací v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) oboru názvů a nejsou to žádné výjimky. 
+Q# již obsahuje mnoho základních bran jako operací v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) oboru názvů a nejsou to žádné výjimky. 
 
 V rámci Q# operace se příkazy, které volají volání, spustí v sekvenčním pořadí.
 Proto první brána, která se má použít, je [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) na první qubit:
@@ -134,10 +134,10 @@ Kromě použití `H` brány (Hadamard) pro jednotlivé qubits se okruh QFT sklá
 
 #### <a name="controlled-operations"></a>Kontrolované operace
 
-Q#je velmi snadné podmínkou provedení operace na jednom nebo několika qubits ovládacích prvků.
+Q# je velmi snadné podmínkou provedení operace na jednom nebo několika qubits ovládacích prvků.
 Obecně jsme zavedli pouze volání s `Controlled` a argumenty operace se mění jako:
 
- `Op(<normal args>)`$ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
+ `Op(<normal args>)` $ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
 
 Všimněte si, že qubits ovládacího prvku musí být poskytnut jako pole, i když se jedná o jediný qubit.
 
@@ -157,7 +157,7 @@ Všimněte si, že používáme [`PI()`](xref:microsoft.quantum.math.pi) funkci 
 Kromě toho jsme vydělíme `Double` (např. `2.0` ), protože rozdělením pomocí celého čísla `2` by vyvolalo chybu typu. 
 
 > [!TIP]
-> `R1(π/2)`a `R1(π/4)` jsou ekvivalentem `S` operací a `T` (také v `Microsoft.Quantum.Intrinsic` ).
+> `R1(π/2)` a `R1(π/4)` jsou ekvivalentem `S` operací a `T` (také v `Microsoft.Quantum.Intrinsic` ).
 
 
 Po použití relevantních `H` operací a řízených otočení na druhý a třetí qubits:
@@ -249,9 +249,9 @@ Po Q# dokončení souboru a operace je náš program pro práci s více operačn
 Po definování naší Q# operace v `.qs` souboru teď musíme tuto operaci zavolat a sledovat všechna vrácená klasická data.
 V současné době se nevrátí nic (odvolání této operace definované výše `Unit` ), ale když později tuto operaci upravíte, Q# aby vracela pole výsledků měření ( `Result[]` ), budeme na to řešit.
 
-I když Q# je program všudypřítomný napříč prostředími používanými k jeho volání, tak se takovým způsobem bude samozřejmě lišit. Stačí postupovat podle pokynů na kartě, která odpovídá vaší instalaci: pracuje z Q# aplikace příkazového řádku nebo používá hostitelský program v Pythonu nebo C#.
+I když Q# je program všudypřítomný napříč prostředími používanými k jeho volání, tak se takovým způsobem bude samozřejmě lišit. Stačí postupovat podle pokynů na kartě, která odpovídá vaší instalaci: pracuje z Q# aplikace nebo používá hostitelský program v Pythonu nebo C#.
 
-#### <a name="command-line"></a>[Příkazový řádek](#tab/tabid-cmdline)
+#### <a name="command-prompt"></a>[Příkazový řádek](#tab/tabid-cmdline)
 
 Spuštění Q# programu z příkazového řádku vyžaduje pouze malou změnu Q# souboru.
 
@@ -445,7 +445,7 @@ Každý měřený `Result` typ (buď `Zero` nebo `One` ) je poté přidán do od
 
 Klíčové slovo `set` se vždycky používá k opětovnému přiřazení proměnných vázaných pomocí `mutable` .
 
-#### <a name="return-resultarray"></a>Vrátit`resultArray`
+#### <a name="return-resultarray"></a>Vrátit `resultArray`
 
 Se všemi třemi qubitsy změřenými a výsledky přidanými do je `resultArray` bezpečné resetování a navrácení qubits jako dříve.
 Po `using` zavření bloku vložte
@@ -502,7 +502,7 @@ Kód poslední operace by měl vypadat takto:
 Pokud pracujete z příkazového řádku, vrácené pole bude jednoduše vytištěno přímo do konzoly na konci provádění.
 V opačném případě aktualizujte hostitelský program pro zpracování vráceného pole.
 
-#### <a name="command-line"></a>[Příkazový řádek](#tab/tabid-cmdline)
+#### <a name="command-prompt"></a>[Příkazový řádek](#tab/tabid-cmdline)
 
 Aby bylo možné porozumět vrácenému poli, které bude vytištěno v konzole, můžeme do souboru přidat další `Message` do Q# příkazu těsně před `return` příkazem:
 

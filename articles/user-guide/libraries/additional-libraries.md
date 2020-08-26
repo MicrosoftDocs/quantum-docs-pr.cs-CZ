@@ -9,20 +9,20 @@ uid: microsoft.quantum.libraries.using
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ef88ca765a394a7092eb0a60bf6f3615c082ef6a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c558e25bf0d906ba6480cd7c41d3ece4ea97c2d1
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869575"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863089"
 ---
 # <a name="using-additional-no-locq-libraries"></a>Použití dalších Q# knihoven
 
 Sada pro vývoj všech procesorů poskytuje další funkce specifické pro doménu prostřednictvím _balíčků NuGet_ , které je možné přidat do vašich Q# projektů.
 
-| Q#Knihovna  | Balíček NuGet | Poznámky |
+| Q# Knihovna  | Balíček NuGet | Poznámky |
 |---------|---------|--------|
-| [Q#Standardní knihovna](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. nestandardní**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Zahrnuto ve výchozím nastavení |
+| [Q# Standardní knihovna](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. nestandardní**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Zahrnuto ve výchozím nastavení |
 | [Kvantová chemická knihovna](xref:microsoft.quantum.chemistry.concepts.intro) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
 | [Kvantová numerická knihovna](xref:microsoft.quantum.numerics.intro) | [**Microsoft.... NUMERIC**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 | [Knihovna pro kvantové strojové učení](xref:microsoft.quantum.libraries.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
@@ -33,9 +33,9 @@ Jakmile nainstalujete sadu pro vývoj všech automobilů pro použití s prefero
 > Některé Q# knihovny můžou fungovat dobře s dalšími nástroji, které fungují společně Q# s vašimi programy, nebo které se integrují s vašimi hostitelskými aplikacemi.
 > Například [pokyny k instalaci knihovny chemického](xref:microsoft.quantum.chemistry.concepts.installation) zpracování popisují, jak použít balíček [ **Microsoft. NWChem. chemie** ](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) společně s platformou výpočetních dat a jak nainstalovat `qdk-chem` nástroje příkazového řádku pro práci s daty ze chemie.
 
-## <a name="no-locq-command-line-applications-or-net-interopability"></a>[Q#aplikace příkazového řádku nebo interoperabilita rozhraní .NET](#tab/tabid-csproj)
+## <a name="no-locq-applications-or-net-interopability"></a>[Q# aplikace nebo interoperabilita rozhraní .NET](#tab/tabid-csproj)
 
-**Příkazový řádek nebo Visual Studio Code:** Pomocí příkazového řádku samostatně nebo v rámci Visual Studio Code můžete pomocí `dotnet` příkazu přidat do projektu odkaz na balíček NuGet.
+**Příkazový řádek nebo Visual Studio Code:** Pomocí příkazového řádku vlastní nebo v rámci Visual Studio Code můžete pomocí `dotnet` příkazu přidat do projektu odkaz na balíček NuGet.
 Pokud například chcete přidat balíček [**Microsoft. probíhat. Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) , spusťte následující příkaz:
 
 ```dotnetcli

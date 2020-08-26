@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.dumpoperation
+name: DumpOperation
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: V případě určité operace zobrazí diagnostiku operace, které jsou zpřístupněny aktuálním cílem provedení.
+remarks: >-
+  Volání této operace nemá žádný pozorovatelný účinek v rámci Q #. Přesná diagnostika, která se zobrazí, je-li k, závisí na aktuálním cílovém spuštění a prostředí editoru.
+
+  Například při použití v případě simulátoru s plným stavem se zobrazí jednotná matice, která se reprezentuje `op` .
+
+
+  Všimněte si, že při spuštění simulátorů, které připouštějí nejednoznačnost globální fáze (např. simulátor s plným stavem), se můžou vrátit reprezentace, která se může lišit až do globální fáze.
+
+
+  Podobně pořadí reprezentace řádků a sloupců se může lišit od konvencí používaných jednotlivými simulátory podporující tuto operaci.
+examples: >-
+  V případě, že je v cíli simulátoru provozu, následující fragment kódu vypíše matici $ $ \begin{aligned} \left (\begin{Matrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \end{Matrix}\right) \end{aligned}.
+
+  $$
+
+
+  ```Q#
+
+  operation DumpCnot() : Unit {
+      DumpOperation(2, ApplyToFirstTwoQubitsCA(CNOT, _));
+  }
+
+  ```
+syntax: 'operation DumpOperation (nQubits : Int, op : (Qubit[] => Unit is Adj)) : Unit'
+input:
+  content: '(nQubits : Int, op : (Qubit[] => Unit is Adj))'
+  types:
+  - name: nQubits
+    summary: Počet qubits, na kterých daná operace funguje.
+    isPrimitive: true
+    uid: Int
+  - name: op
+    summary: Operace, která se má diagnostikovat
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+metadata:
+  ms.openlocfilehash: ba2e3c4dd42faa0919b5777a6db82ce787acb80a
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864011"

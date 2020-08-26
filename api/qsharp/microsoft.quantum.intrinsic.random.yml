@@ -3,31 +3,24 @@ uid: microsoft.quantum.intrinsic.random
 name: Random
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
-summary: >-
-  Náhodná operace přebírá pole Double jako vstup a vrátí náhodně vybraný index do pole jako `Int`.
-
-  Pravděpodobnost výběru konkrétního indexu je úměrná hodnotě prvku pole v daném indexu.
-
-  Prvky pole, které jsou rovny nule, se ignorují a jejich indexy se nikdy nevrátí. Pokud je některý prvek pole menší než nula, nebo pokud žádný element pole není větší než nula, operace se nezdařila.
+summary: Náhodné je zastaralé. @"microsoft.quantum.random.drawcategorical"Místo toho ho použijte.
 syntax: 'operation Random (probs : Double[]) : Int'
 input:
   content: '(probs : Double[])'
   types:
   - name: probs
-    summary: Pole čísel s plovoucí desetinnou čárkou, které je úměrné pravděpodobnosti výběru každého indexu.
     isArray: true
     isPrimitive: true
     uid: Double
 output:
   content: Int
   types:
-  - summary: Celé číslo $i $ s pravděpodobností $ \Pr (i) = p_i/\ sum_i p_i $, kde $p _i $ je prvek $i $ th `probs`.
-    isPrimitive: true
+  - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: b269b780b5e8ad048d1563e3dca98524a5ed63d2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: eb8c26f5085dc728c558bb996ebc6cf068fa6cb4
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686810"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863358"

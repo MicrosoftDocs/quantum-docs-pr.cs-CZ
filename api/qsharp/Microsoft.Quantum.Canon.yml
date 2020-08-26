@@ -450,11 +450,7 @@ operations:
 - uid: microsoft.quantum.canon.assertlessthanphasele
   summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertLessThanPhaseLE se už nepoužívá. @\"microsoft.quantum.arithmetic.assertphaselessthan\"Místo toho ho použijte.\nPoužívejte @\"Microsoft.Quantum.Arithmetic.AssertPhaseLessThan\"."
 - uid: microsoft.quantum.canon.assertphase
-  summary: >-
-    Vyhodnotí, že fáze rovného stavu pozice má očekávanou hodnotu.
-
-
-    Konkrétně vyhodnotí, že fáze $ \phi $ pro stav, který může být vyjádřen jako $ \frac{e ^ {i t}} {\sqrt {2} } (e ^ {i\phi} \ KET {0} + e ^ {-i\phi} \ KET {1} ) $ pro libovolnou skutečnou hodnotu t má očekávanou hodnotu.
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nAssertPhase se už nepoužívá. @\"microsoft.quantum.diagnostics.assertphase\"Místo toho ho použijte."
 - uid: microsoft.quantum.canon.cascadeccnot
   summary: "\n> [!WARNING]\n> Zastaralé\n\nCascadeCCNOT se už nepoužívá. @\"microsoft.quantum.canon.applyccnotchain\"Místo toho ho použijte."
 - uid: microsoft.quantum.canon.cascadecnot
@@ -585,9 +581,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Zastaralé\n\nResultStack se už nepoužívá."
 metadata:
-  ms.openlocfilehash: ab6e8a58dd163e4a9b2ea299e544a4e487d61e23
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 72e806d0a44fdcc372ab0d10edcaceb501713180
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85884668"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88862952"

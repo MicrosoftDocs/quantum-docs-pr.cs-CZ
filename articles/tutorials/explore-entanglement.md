@@ -1,5 +1,5 @@
 ---
-title: Prozkoumejte entanglement sQ#
+title: Prozkoumejte entanglement s Q#
 description: Přečtěte si, jak napsat program pro vypisování do Q# . Vývoj aplikace demonstrující Bellovy stavy pomocí nástroje Quantum Development Kit (QDK)
 author: geduardo
 ms.author: v-edsanc@microsoft.com
@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c66d26b5ea253d6fc2633fbe52fa35ba703d185d
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d815a9a25b8ba5e9489b6d3d27fb0d64ab4aaa1d
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869694"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863444"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -52,11 +52,11 @@ Nyní jsme připraveni předvést, jak Q# Toto chování vyjadřuje.  Začneme s
 
 ## <a name="creating-a-no-locq-project"></a>Vytvoření Q# projektu
 
-První věc, kterou je potřeba udělat, je vytvoření nového Q# projektu. V tomto kurzu použijeme prostředí založené na [aplikacích příkazového řádku s vs Code](xref:microsoft.quantum.install.standalone).
+První věc, kterou je potřeba udělat, je vytvoření nového Q# projektu. V tomto kurzu použijeme prostředí založené na [ Q# aplikacích s vs Code](xref:microsoft.quantum.install.standalone).
 
 Chcete-li vytvořit nový projekt, v VS Code: 
 
-1. Klikněte na tlačítko **Zobrazit**  ->  **paletu příkazů** a vyberte ** Q# : vytvořit nový projekt**.
+1. Klikněte na **Zobrazení** -> **Paleta příkazů** a vyberte **Q#: Vytvořit nový projekt**.
 2. Klikněte na **Samostatná konzolová aplikace**.
 3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **Vytvořit projekt**.
 4. Po úspěšném vytvoření projektu klikněte na **Otevřít nový projekt...** v pravém dolním rohu.
@@ -125,7 +125,7 @@ Kvantová operace mění stav qubitu. Někdy se mluví o kvantových hradlech m�
 
 Pro předvedení efektu operace `SetQubitState` je pak přidána operace `TestBellState`. Tato operace jako vstup přebírá `Zero` nebo `One`, několikrát s tímto vstupem zavolá operaci `SetQubitState` a spočítá, kolikrát byla z měření qubitu vrácena hodnota `Zero` a kolikrát `One`. Samozřejmě v této první simulaci operace `TestBellState` očekáváme, že všechna měření qubitu nastaveného pomocí vstupního parametru `Zero` vrátí hodnotu `Zero` a všechna měření qubitu nastaveného pomocí parametru `One` vrátí `One`. Dále přidáte kód k `TestBellState` předvedení entanglement a.
 
-Přidejte do souboru `Bell.qs` následující operaci, do oboru názvů za konec operace `SetQubitState`:
+Přidejte do souboru `Program.qs` následující operaci, do oboru názvů za konec operace `SetQubitState`:
 
 ```qsharp
    operation TestBellState(count : Int, initial : Result) : (Int, Int) {
@@ -161,13 +161,13 @@ Ve výchozím nastavení proměnné v Q# jsou neměnné; jejich hodnota nesmí b
 
 Pokud potřebujete proměnnou, jejíž hodnotu je možné změnit, například `numOnes` v našem příkladu, můžete proměnnou deklarovat pomocí klíčového slova `mutable`. Hodnotu proměnlivé proměnné lze změnit pomocí příkazu `setQubitState`.
 
-V obou případech je typ proměnné odvozen kompilátorem. Q#pro proměnné nevyžadují žádné anotace typu.
+V obou případech je typ proměnné odvozen kompilátorem. Q# pro proměnné nevyžadují žádné anotace typu.
 
 #### <a name="about-using-statements-in-q"></a>O `using` příkazech v Q\#
 
 `using`Příkaz je také speciální pro Q# . Slouží k přidělení qubitů pro použití v bloku kódu. V systému se Q# všechny qubits dynamicky přidělují a uvolňují, ale nejedná se o pevné prostředky, které jsou pro celou dobu života komplexního algoritmu. Příkaz `using` přidělí sadu qubitů na začátku a uvolní je na konci bloku.
 
-## <a name="execute-the-code-from-the-command-line"></a>Spustit kód z příkazového řádku
+## <a name="run-the-code-from-the-command-prompt"></a>Spuštění kódu z příkazového řádku
 
 Aby bylo možné spustit kód, musíme zadat kompilátor, *který* se spustí při zadání `dotnet run` příkazu. To se provádí v případě jednoduché změny v Q# souboru přidáním řádku s `@EntryPoint()` přímo předcházejícím voláním: `TestBellState` operace v tomto případě. Úplný kód by měl být:
 
@@ -235,7 +235,7 @@ Test results (# of 0s, # of 1s):
 
 Teď se podíváme na to, jak vyjadřuje způsob, jak Q# umístit qubits na pozici.  Připomeňme si, že stav qubitu může být superpozicí hodnot 0 a 1.  Dosáhneme toho operací `Hadamard`. Pokud je qubit v některém z klasických stavů (kdy měření vrátí vždy `Zero` nebo vždy `One`), pak operace `Hadamard` nebo `H` převede qubit do stavu, ve kterém měření vrátí v 50 % případů `Zero` a v 50 % případů `One`.  Můžete si to představit tak, že qubit je uprostřed mezi `Zero` a `One`.  Když teď budeme simulovat operaci `TestBellState`, uvidíme, že jednotlivá měření vrátí přibližně stejný počet hodnot `Zero` a `One`.  
 
-### <a name="x-flips-qubit-state"></a>`X`Překlopí stav qubit.
+### <a name="x-flips-qubit-state"></a>`X` Překlopí stav qubit.
 
 Nejdřív zkusíme qubit překlopit (pokud je qubit ve stavu `Zero`, překlopíme ho na `One` a naopak). Toho se dosáhne použitím operace `X` před změřením v operaci `TestBellState`:
 
@@ -265,7 +265,7 @@ Test results (# of 0s, # of 1s):
 
 Teď se podíváme na vlastnosti pro qubits.
 
-### <a name="h-prepares-superposition"></a>`H`připraví nadpozici
+### <a name="h-prepares-superposition"></a>`H` připraví nadpozici
 
 Stačí k tomu nahradit operaci `X` v předchozím běhu operací `H` (Hadamard). Místo úplného překlopení qubitu z 0 na 1 ho můžeme překlopit jen napůl. Změněné řádky v `TestBellState` teď vypadají takto:
 
