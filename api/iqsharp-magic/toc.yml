@@ -38,10 +38,14 @@
   name: Příkaz magic %package
 - href: performance.md
   name: Příkaz magic %performance
+- href: project.md
+  name: Příkaz magic %project
 - href: simulate.md
   name: Příkaz magic %simulate
 - href: toffoli.md
   name: Příkaz magic %toffoli
+- href: trace.md
+  name: Příkaz magic %trace
 - href: who.md
   name: Příkaz magic %who
 - href: workspace.md

@@ -3,14 +3,14 @@ title: Příkazy magic IQ#
 author: rmshaffer
 uid: microsoft.quantum.iqsharp.magic-ref.index
 ms.author: rmshaffer
-ms.date: 07/21/2020
+ms.date: 08/25/2020
 ms.topic: article
-ms.openlocfilehash: 971787adae03af35d2e5b408fb88356a8b7df90a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: d6bf8407e40be092689b38cf90514c88f798cc2f
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870698"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88862968"
 ---
 # <a name="iq-magic-commands"></a>Příkazy magic IQ#
 | Příkaz magic | Souhrn |
@@ -35,7 +35,9 @@ ms.locfileid: "86870698"
 | [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen) | Vypíše aktuálně otevřené obory názvů a jejich aliasy. |
 | [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Poskytuje možnost načíst balíček NuGet. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Hlásí aktuální metriky výkonu pro toto jádro. |
+| [`%project`](xref:microsoft.quantum.iqsharp.magic-ref.project) | Poskytuje možnost zobrazit nebo přidat odkazy na projekt v Q#. |
 | [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate) | Spustí danou funkci nebo operaci na cílovém počítači QuantumSimulator. |
 | [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) | Spustí danou funkci nebo operaci na cílovém počítači ToffoliSimulator. |
+| [`%trace`](xref:microsoft.quantum.iqsharp.magic-ref.trace) | Vizualizuje postup provádění dané operace. |
 | [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who) | Vypíše operace Q#, které jsou k dispozici v aktuální relaci. |
 | [`%workspace`](xref:microsoft.quantum.iqsharp.magic-ref.workspace) | Poskytuje akce související s aktuálním pracovním prostorem. |

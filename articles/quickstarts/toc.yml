@@ -6,7 +6,7 @@ items:
     items:
       - name: Přehled instalace
         href: index.md
-      - name: Aplikace příkazového řádku v Q#
+      - name: Aplikace v Q#
         href: install-command-line.md
       - name: Aplikace Jupyter Notebook v Q#
         href: install-jupyter.md
