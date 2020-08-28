@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d5338eb740716d9d7f408703347f572688bbccb2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1892431c3e332385a5bcefa357eb64a9fac3f381
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868181"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992237"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
@@ -69,7 +69,7 @@ BorrowedWidth   0
 
 ### <a name="invoking-the-resources-estimator-from-python"></a>Vyvolání prostředků estimator z Pythonu
 
-Použijte metodu [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z knihovny Pythonu s importovanou Q# operací:
+Použijte metodu [estimate_resources ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) z knihovny Pythonu s importovanou Q# operací:
 
 ```python
 qubit_result = myOperation.estimate_resources()
@@ -127,7 +127,7 @@ Prostředky Estimator sledují následující metriky:
 |----|----|
 |__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
 |__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
-|__Míra__    |Počet spuštění všech měření.  |
+|__Measure__    |Počet spuštění všech měření.  |
 |__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
 |__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
 |__Úrovní__|Dolní mez pro hloubku okruhu provozu, kterou Q# operace spouští. Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |

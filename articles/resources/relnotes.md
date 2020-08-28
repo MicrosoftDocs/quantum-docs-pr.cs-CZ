@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f94c20281c5a242aac6a731a5091264dc2847712
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 70d0c9b61e49d4ee6142edbe2767310403885f01
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863764"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992254"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -32,7 +32,7 @@ Tato verze obsahuje následující:
 
 - Nový [obor názvů Microsoft... Random](xref:microsoft.quantum.random)nabízí pohodlnější způsob, jak v rámci programů vzorkovat náhodné hodnoty Q# . ([QuantumLibraries # 311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime # 328](https://github.com/microsoft/qsharp-runtime/pull/328))
 - Byl vylepšen [obor názvů Microsoft. NázevOperace. Diagnostics](xref:microsoft.quantum.diagnostics) s novou [ `DumpOperation` operací](xref:microsoft.quantum.diagnostics.dumpoperation)a nové operace pro omezení přidělení qubit a volání Oracle. ([QuantumLibraries # 302](https://github.com/microsoft/QuantumLibraries/pull/302))
-- Nový [ `%project` příkaz Magic](xref:microsoft.quantum.iqsharp.magic-ref.project) v jazyce Q# Python a [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp/qsharp.projects.projects) v Pythonu pro podporu odkazů na Q# projekty mimo aktuální složku pracovního prostoru. Aktuální omezení této funkce naleznete v tématu [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) . 
+- Nový [ `%project` příkaz Magic](xref:microsoft.quantum.iqsharp.magic-ref.project) v jazyce Q# Python a [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects) v Pythonu pro podporu odkazů na Q# projekty mimo aktuální složku pracovního prostoru. Aktuální omezení této funkce naleznete v tématu [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) . 
 - Podpora pro automatické načítání `.csproj` souborů pro I Q# hostitele/Python, které umožňují načtení externích projektů nebo odkazů na balíčky v době inicializace. Další podrobnosti najdete v příručce pro použití [ Q# s poznámkovým blokům Python a Jupyter](xref:microsoft.quantum.guide.host-programs) .
 - Byl přidán vzorek ErrorCorrection. Syndrome.
 - Přidání propojení přizpůsobitelné k SimpleIsing.

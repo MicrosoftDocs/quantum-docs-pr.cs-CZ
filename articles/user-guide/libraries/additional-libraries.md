@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.using
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c558e25bf0d906ba6480cd7c41d3ece4ea97c2d1
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 39bf7dc52f4670a6e4536efc437d001c96f9584a
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863089"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992135"
 ---
 # <a name="using-additional-no-locq-libraries"></a>Použití dalších Q# knihoven
 
@@ -83,7 +83,7 @@ Pokud chcete balíček zpřístupnit z Q# kódu v aktuálním pracovním prostor
 ## <a name="python-interoperability"></a>[Interoperabilita Pythonu](#tab/tabid-python)
 
 
-Další balíčky můžete zpřístupnit pro použití v hostitelském programu Pythonu pomocí [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages) metody.
+Další balíčky můžete zpřístupnit pro použití v hostitelském programu Pythonu pomocí [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages) metody.
 Pokud například chcete přidat balíček [**Microsoft. probíhat. Numerics**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) pro použití v Q# poznámkovém bloku, spusťte následující kód Pythonu:
 
 ```python

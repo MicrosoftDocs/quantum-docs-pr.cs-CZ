@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e44a366b7eea133499beb44dbb338a02174c0073
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: f1eca44dabd72cd107d72d3b9e3ad1081c19c27d
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863205"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992186"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Způsoby spuštění Q# programu
 
@@ -346,7 +346,7 @@ Multiple qubits:
 
 Ve výchozím nastavení `import qsharp` příkaz načte všechny `.qs` soubory v aktuální složce a zpřístupní jejich Q# operace a funkce pro použití zevnitř skriptu Pythonu.
 
-Chcete-li načíst Q# kód z jiné složky, [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp/qsharp.projects.projects) lze použít k přidání odkazu na `.csproj` soubor pro Q# projekt (tj. projekt, který odkazuje `Microsoft.Quantum.Sdk` ).
+Chcete-li načíst Q# kód z jiné složky, [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects) lze použít k přidání odkazu na `.csproj` soubor pro Q# projekt (tj. projekt, který odkazuje `Microsoft.Quantum.Sdk` ).
 Tento příkaz zkompiluje všechny `.qs` soubory ve složce obsahující `.csproj` a jejích podsložkách. Bude také rekurzivně načítat jakékoli balíčky, na které se odkazuje přes `PackageReference` Q# , nebo `ProjectReference` na projekty, na které se odkazuje v tomto `.csproj` souboru.
 
 Například následující kód Pythonu Importuje externí projekt, odkazuje na jeho cestu relativní vzhledem k aktuální složce a vyvolá jednu z jeho Q# operací:
@@ -365,7 +365,7 @@ Adding reference to project: ../qrng/Qrng.csproj
 Qrng result: 0
 ```
 
-Chcete-li načíst externí balíčky obsahující Q# kód, použijte [ `qsharp.packages` rozhraní API](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages).
+Chcete-li načíst externí balíčky obsahující Q# kód, použijte [ `qsharp.packages` rozhraní API](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages).
 
 Pokud Q# kód v aktuální složce závisí na externích projektech nebo balíčcích, mohou se při spuštění zobrazit chyby `import qsharp` , protože závislosti ještě nebyly načteny.
 Pokud chcete načíst požadované externí balíčky nebo Q# projekty v rámci `import qsharp` příkazu, ujistěte se, že složka se skriptem Pythonu obsahuje `.csproj` soubor, který odkazuje na `Microsoft.Quantum.Sdk` . V takovém `.csproj` případě přidejte vlastnost `<IQSharpLoadAutomatically>true</IQSharpLoadAutomatically>` do `<PropertyGroup>` . Tím se dá dát Q# k rekurzivnímu načtení libovolných `ProjectReference` `PackageReference` položek nebo nalezených v `.csproj` rámci `import qsharp` příkazu.

@@ -9,16 +9,16 @@ uid: microsoft.quantum.machines.full-state-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b15af66123dadae09815cde1966c69b3ce2e9e64
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a27cece9858d62814b9d80c47e61c5d7d3b8c885
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868334"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992214"
 ---
 # <a name="quantum-development-kit-qdk-full-state-simulator"></a>Simulátor úplného stavu pro sadu QDK (pro vytváření plně stavů)
 
-QDK poskytuje úplný stav simulátoru, který simuluje počítač s více podsystémy na vašem místním počítači. Pomocí kompletního simulátoru stavu můžete spouštět a ladit algoritmy, které jsou napsané v rámci Q# , a to s využitím až 30 qubits. Úplný stav simulátoru je podobný simulátoru při používání služby Microsoft Research na platformě [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) .
+QDK poskytuje úplný stav simulátoru, který simuluje počítač s více podsystémy na vašem místním počítači. Pomocí kompletního simulátoru stavu můžete spouštět a ladit algoritmy, které jsou napsané v rámci Q# , a to s využitím až 30 qubits. Úplný stav simulátoru je podobný simulátoru při používání služby Microsoft Research na platformě  [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) .
 
 ## <a name="invoking-and-running-the-full-state-simulator"></a>Vyvolání a spuštění simulátoru úplného stavu
 
@@ -39,7 +39,7 @@ Vzhledem k tomu `QuantumSimulator` , že třída implementuje <xref:System.IDisp
 
 ### <a name="invoking-the-simulator-from-python"></a>Vyvolání simulátoru z Pythonu
 
-Použijte metodu [simulovat ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) z Q# knihovny Pythonu s importovanou Q# operací:
+Použijte metodu [simulovat ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) z Q# knihovny Pythonu s importovanou Q# operací:
 
 ```python
 qubit_result = myOperation.simulate()
