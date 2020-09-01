@@ -9,12 +9,12 @@ ms.topic: overview
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 06198f3b5b806bab49abf9fca38b5d2f15cfb65f
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867507"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863742"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Začínáme se sadou Quantum Development Kit (QDK)
 
@@ -36,7 +36,7 @@ Chcete-li rychle začít pracovat na kvantových výpočtech, vyzkoušejte někt
 * [Základy kvantových výpočtů s využitím jazyka Q#](xref:microsoft.quantum.write-program) – Tento kurz vás provede napsáním programu v Q#, který ukazuje některé ze základních konceptů kvantového programování.
     Pokud na programování nejste připravení, můžete pokračovat i bez instalace sady QDK. Získáte přehled o programovacím jazyku Q# a základních koncepcích kvantových výpočtů.
 * [Groverův vyhledávací algoritmus](xref:microsoft.quantum.quickstarts.search) – Prozkoumáním tohoto příkladu programu v jazyce Q# získáte představu o síle jazyka Q# při vyjadřování kvantových algoritmů způsobem abstrahujícím od kvantových operací nízké úrovně.
-    Tento kurz vás provede vývojem programu v jazyce Q# ve formě aplikace příkazového řádku pomocí sady Visual Studio nebo Visual Studio Code.
+    Tento kurz vás provede vývojem programu v jazyce Q# ve formě aplikace pomocí sady Visual Studio nebo Visual Studio Code.
 
 ### <a name="learning-further"></a>Získávání dalších informací
 * [Moduly Microsoft Learn pro kvantové výpočty](https://docs.microsoft.com/learn/browse/?term=quantum) vás seznámí se základními koncepty vaší vlastní rychlostí a podle vašich časových možností. Základní informace o tom, jak pomocí sady QDK vytvářet kvantové programy, najdete v [prvním modulu](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).

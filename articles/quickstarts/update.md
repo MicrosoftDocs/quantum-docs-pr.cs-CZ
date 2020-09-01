@@ -10,12 +10,12 @@ uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dd7360961aa728a6aa63b8d8c4e4840f5bf2afe8
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 84782d1628dd100c0939b2b12aa0a9aa8ab2b80e
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866753"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863645"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace sady Microsoft Quantum Development Kit (QDK)
 
@@ -37,7 +37,7 @@ Své projekty v Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k
     dotnet --version
     ```
 
-    Zkontrolujte, že výsledek je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkontrolujte ji znovu. Pak postupujte podle pokynů níže v závislosti na vaší instalaci (Visual Studio, Visual Studio Code nebo přímo na příkazovém řádku).
+    Zkontrolujte, že výsledek je `3.1.100` nebo vyšší. Pokud ne, nainstalujte [nejnovější verzi](https://dotnet.microsoft.com/download) a zkontrolujte ji znovu. Pak postupujte podle pokynů níže v závislosti na vaší instalaci (Visual Studio, Visual Studio Code nebo přímo z příkazového řádku).
 
 ### <a name="update-no-locq-projects-in-visual-studio"></a>Aktualizace projektů v Q# v sadě Visual Studio
  
@@ -86,7 +86,7 @@ Nyní můžete přeskočit na [aktualizaci rozšíření sady Visual Studio QDK]
 2. Vyberte **Terminál** -> **Nový Terminál**.
 3. Postupujte podle následujících pokynů pro aktualizaci pomocí příkazového řádku.
 
-### <a name="update-no-locq-projects-using-the-command-line"></a>Aktualizace projektů v Q# pomocí příkazového řádku
+### <a name="update-no-locq-projects-using-the-command-prompt"></a>Aktualizace projektů v Q# pomocí příkazového řádku
 
 1. Přejděte do složky, která obsahuje váš hlavní soubor projektu.
 
@@ -309,7 +309,7 @@ Teď můžete pomocí aktualizovaného jádra IQ# spustit stávající služby J
 
 1. Aktualizujte šablony projektu Quantum pro rozhraní .NET.
 
-    Z příkazového řádku:
+    Na příkazovém řádku zadejte:
 
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates

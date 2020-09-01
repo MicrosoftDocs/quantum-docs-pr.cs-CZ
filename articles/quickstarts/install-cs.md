@@ -9,12 +9,12 @@ uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 24318380e0e63957a51961762a33446fe0121b21
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867552"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863677"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Vývoj s využitím Q# a .NET
 
@@ -25,7 +25,7 @@ Nejprve vytvoříme aplikaci v jazyce Q# a hostitele .NET, a potom ukážeme, ja
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Nainstalujte sadu Quantum Development Kit [pro práci s projekty v Q# na příkazovém řádku](xref:microsoft.quantum.install.standalone).
+- Nainstalujte sadu Quantum Development Kit [pro práci s projekty v Q#](xref:microsoft.quantum.install.standalone).
 
 ## <a name="creating-a-no-locq-library-and-a-net-host"></a>Vytvoření knihovny Q# a hostitele .NET
 
@@ -34,7 +34,7 @@ Prvním krokem je vytvoření projektů pro vaši knihovnu Q# a pro hostitele .N
 Postupujte podle pokynů na kartě odpovídající vašemu vývojovému prostředí.
 Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše postupujte podle kroků pro příkazový řádek.
 
-### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code nebo Příkazový řádek](#tab/tabid-cmdline)
+### <a name="visual-studio-code-or-command-prompt"></a>[Visual Studio Code nebo příkazový řádek](#tab/tabid-cmdline)
 
 - Vytvoření nové knihovny Q#
 
@@ -106,4 +106,4 @@ K volání této operace z prostředí .NET na kvantovém simulátoru můžete p
     
 ## <a name="next-steps"></a>Další kroky
 
-Když teď máte sadu Quantum Development Kit konfigurovanou pro programy v Q# na příkazovém řádku i pro spolupráci s prostředím .NET, můžete začít psát svůj [první kvantový program](xref:microsoft.quantum.quickstarts.qrng).
+Když teď máte sadu Quantum Development Kit konfigurovanou pro aplikace v Q# i pro spolupráci s prostředím .NET, můžete začít psát svůj [první kvantový program](xref:microsoft.quantum.quickstarts.qrng).

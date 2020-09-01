@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.q-sharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3ee9e897eb142bbc9503a617cc3e25c1a665ff35
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 5db574b0380ffa1616cb3959d84925854df4e321
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866940"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863779"
 ---
 # <a name="what-are-the-no-locq-programming-language-and-qdk"></a>Co je programovací jazyk Q# a sada QDK?
 
@@ -24,7 +24,7 @@ Jako programovací jazyk přebírá Q# známé prvky z Pythonu, C# a F# a podpor
 
 ## <a name="what-can-i-do-with-the-qdk"></a>Co mohu s QDK dělat?
 
-QDK je plnohodnotná vývojová sady pro jazyk Q#, kterou můžete používat s běžnými nástroji a jazyky při vývoji kvantových aplikací, které pak můžete spouštět v různých prostředích. Programy v Q# lze spouštět jako aplikace příkazového řádku, prostřednictvím aplikací Jupyter Notebook nebo v rámci hostitelského programu v Pythonu nebo .NET.
+QDK je plnohodnotná vývojová sady pro jazyk Q#, kterou můžete používat s běžnými nástroji a jazyky při vývoji kvantových aplikací, které pak můžete spouštět v různých prostředích. Programy v Q# lze spouštět jako konzolové aplikace, prostřednictvím aplikací Jupyter Notebook nebo v rámci hostitelského programu v Pythonu nebo .NET.
 
 ### <a name="develop-in-common-tools-and-environments"></a>Vývoj ve známých nástrojích a prostředích
 
@@ -48,7 +48,7 @@ Kvantové programy je možné spouštět na plnostavovém kvantovém simulátoru
 
 ## <a name="how-does-no-locq-work"></a>Jak Q# funguje?
 
-Program v Q# je možné kompilovat do samostatné aplikace příkazového řádku nebo volat z hostitelského programu napsaného v Pythonu nebo .NET.
+Program v Q# je možné kompilovat do samostatné aplikace nebo volat z hostitelského programu napsaného v Pythonu nebo .NET.
 
 Když zkompilujete a spustíte program, vytvoří instanci kvantového simulátoru a předá mu váš kód Q#. Simulátor podle kódu Q# vytvoří simulované qubity a podle zadaných transformací bude manipulovat s jejich stavy. Výsledky kvantových operací ze simulátoru se pak vrátí do programu.  
 
@@ -60,7 +60,7 @@ Izolování kódu Q# v simulátoru zajišťuje, že algoritmy budou odpovídat z
 
 Vše, co potřebujete k psaní a spouštění programů v Q#, včetně kompilátoru Q#, knihoven Q# a kvantových simulátorů, můžete nainstalovat a spouštět v místním počítači. Časem budete moci spouštět své programy v Q# vzdáleně na skutečných kvantových počítačích, do té doby mohou poskytovat přesné a spolehlivé výsledky simulátory obsažené v sadě QDK.
 
-- Spouštění [programů v Q# z příkazového řádku](xref:microsoft.quantum.install.standalone) je nejrychlejší způsob, jak začít.
+- Vývoj [aplikací v Q#](xref:microsoft.quantum.install.standalone) je nejrychlejším způsobem, jak začít.
 
 - Kompilovat, simulovat a vizualizovat programy v Q# můžete také pomocí rozšíření [Jupyter Notebooks with Q#](xref:microsoft.quantum.install.jupyter).
 
