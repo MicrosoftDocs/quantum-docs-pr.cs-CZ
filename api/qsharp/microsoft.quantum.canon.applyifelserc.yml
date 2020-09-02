@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifelserc
 name: ApplyIfElseRC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednu ze dvou přizpůsobených operací v závislosti na hodnotě klasického výsledku.
 
 
-  `result`Výsledkem `zeroOp` je, že použije operaci s `zeroInput` jako vstup `result` `Zero`, pokud je rovna, a platí při `oneOp(oneInput)` `result == One`použití.
+  Výsledkem `result` je, že použije operaci `zeroOp` s `zeroInput` jako vstup `result` , pokud je rovna `Zero` , a platí při použití `oneOp(oneInput)` `result == One` .
 syntax: "operation ApplyIfElseRC (result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U))"
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Result
   - name: zeroOp
-    summary: Ověřitelné operace, která se má použít, `result == Zero`když.
+    summary: Ověřitelné operace, která se má použít `result == Zero` , když.
     isOperation: true
     input:
       types:
@@ -30,11 +30,11 @@ input:
     functors:
     - Controlled
   - name: zeroInput
-    summary: Vstup, který má být k `zeroOp` dispozici v případě `result == Zero`.
+    summary: Vstup, který má být k dispozici v `zeroOp` případě `result == Zero` .
     uid: "'T"
     isLocal: true
   - name: oneOp
-    summary: Ověřitelné operace, která se má použít, `result == One`když.
+    summary: Ověřitelné operace, která se má použít `result == One` , když.
     isOperation: true
     input:
       types:
@@ -47,7 +47,7 @@ input:
     functors:
     - Controlled
   - name: oneInput
-    summary: Vstup, který má být k `oneOp` dispozici v případě `result == One`.
+    summary: Vstup, který má být k dispozici v `oneOp` případě `result == One` .
     uid: "'U"
     isLocal: true
 output:
@@ -69,9 +69,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: aeb4c7f86ac1f41140bb14436d9dee39b4c4d98b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b31ace845d04b3c279b54e0dfea575632ce575f8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672727"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350213"
