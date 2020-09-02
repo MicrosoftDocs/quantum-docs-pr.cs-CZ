@@ -2,8 +2,8 @@
 uid: microsoft.quantum.math.abssquaredcomplexpolar
 name: AbsSquaredComplexPolar
 type: function
-namespace: Microsoft.Quantum.Math
-summary: Vrátí kolmou absolutní hodnotu komplexního čísla typu `ComplexPolar`.
+namespace: microsoft.quantum.math
+summary: Vrátí kolmou absolutní hodnotu komplexního čísla typu `ComplexPolar` .
 syntax: 'function AbsSquaredComplexPolar (input : Microsoft.Quantum.Math.ComplexPolar) : Double'
 input:
   content: '(input : Microsoft.Quantum.Math.ComplexPolar)'
@@ -18,9 +18,9 @@ output:
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 0118f138e19f314c301af6f4649442f36459409a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 8351d5b4f93f8f89a864795e1d8db35270fc90f5
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82674015"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89335134"

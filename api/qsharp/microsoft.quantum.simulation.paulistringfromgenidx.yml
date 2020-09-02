@@ -2,19 +2,19 @@
 uid: microsoft.quantum.simulation.paulistringfromgenidx
 name: PauliStringFromGenIdx
 type: function
-namespace: Microsoft.Quantum.Simulation
-summary: Extrahuje řetězec Pauli a jeho qubit indexy Pauliho výrazu, který je `GeneratorIndex`popsán v.
+namespace: microsoft.quantum.simulation
+summary: Extrahuje řetězec Pauli a jeho qubit indexy Pauliho výrazu, který je popsán v `GeneratorIndex` .
 syntax: 'function PauliStringFromGenIdx (generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex) : (Pauli[], Int[])'
 input:
   content: '(generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex)'
   types:
   - name: generatorIndex
-    summary: '`GeneratorIndex`typ, který zakóduje Pauli termín.'
+    summary: '`GeneratorIndex` typ, který zakóduje Pauli termín.'
     uid: microsoft.quantum.simulation.generatorindex
 output:
   content: (Pauli[], Int[])
   types:
-  - summary: Pauli řetězec termínu `GeneratorIndex`, který popisuje, a indexy pro qubits, na kterých působí.
+  - summary: Pauli řetězec termínu, který popisuje `GeneratorIndex` , a indexy pro qubits, na kterých působí.
     types:
     - isArray: true
       isPrimitive: true
@@ -23,9 +23,9 @@ output:
       isPrimitive: true
       uid: Int
 metadata:
-  ms.openlocfilehash: 585cac037696e370f3fc3ca4364db6f753b2c642
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7c924d806130c1181290a3154c5dba1f337f787c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82687035"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89329490"

@@ -2,16 +2,16 @@
 uid: microsoft.quantum.arithmetic.assertprobint
 name: AssertProbInt
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Vyhodnotí, že pravděpodobnost konkrétního stavu registru pro nepodmíněných hodnot má očekávanou hodnotu.
 
 
   Je-li zadána hodnota $n $-qubit se stavem $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \ alpha_j \ket{j} $, vyhodnotí, že pravděpodobnost $ | \ alpha_j | ^ 2 $ stavu $ \ket{j} $ indexovaného $j $ má očekávanou hodnotu.
 examples: >-
-  Předpokládejme, že `qubits` registr zakóduje qubit stav 3 \ket{\psi} = \ sqrt {1/8} \ KET{0}+ \ sqrt {7/8} \ KET{6}$ ve formátu Little endian.
+  Předpokládejme, že `qubits` registr zakóduje qubit stav 3 \ket{\psi} = \ sqrt {1/8} \ KET {0} + \ sqrt {7/8} \ KET {6} $ ve formátu Little endian.
 
-  To znamená, že počet stavů ${0}\ket{0}\equiv\ket{0}\ket{0}\ket $ a ${6}\ket{0}\equiv\ket{1}\ket{1}\ket $. Následující kontrolní výrazy jsou úspěšné:
+  To znamená, že počet stavů $ \ket {0} \equiv\ket {0} \ket {0} \ket {0} $ a $ \ket \equiv\ket \ket {6} {0} {1} \ket {1} $. Následující kontrolní výrazy jsou úspěšné:
 
 
   - `AssertProbInt(0,0.125,qubits,10e-10);`
@@ -42,9 +42,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 247dcb78921bfe5df96c56b74e251d0413cfab3d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e5269b46849da17602447491e77e756e999cb3d9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675254"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342325"

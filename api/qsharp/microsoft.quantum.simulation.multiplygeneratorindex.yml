@@ -2,8 +2,8 @@
 uid: microsoft.quantum.simulation.multiplygeneratorindex
 name: MultiplyGeneratorIndex
 type: function
-namespace: Microsoft.Quantum.Simulation
-summary: Vynásobí koeficient v `GeneratorIndex`.
+namespace: microsoft.quantum.simulation
+summary: Vynásobí koeficient v `GeneratorIndex` .
 examples: >-
   ```qsharp
 
@@ -23,19 +23,19 @@ input:
     isPrimitive: true
     uid: Double
   - name: generatorIndex
-    summary: '`GeneratorIndex` Vynásobeno.'
+    summary: '`GeneratorIndex`Vynásobeno.'
     uid: microsoft.quantum.simulation.generatorindex
 output:
   content: Microsoft.Quantum.Simulation.GeneratorIndex
   types:
-  - summary: '`GeneratorIndex` Představuje výraz s `multiplier` větším koeficientem součinitele.'
+  - summary: '`GeneratorIndex`Představuje výraz s větším koeficientem součinitele `multiplier` .'
     uid: microsoft.quantum.simulation.generatorindex
 seeAlso:
 - microsoft.quantum.canon.generatorindex
 metadata:
-  ms.openlocfilehash: 37a7981f62881e1b8f1a6874508df87c042c6382
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: a39adc439e4e7712458695869296aaefff4760b9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682574"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89329762"
