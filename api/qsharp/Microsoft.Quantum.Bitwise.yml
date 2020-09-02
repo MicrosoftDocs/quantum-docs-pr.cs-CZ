@@ -36,11 +36,11 @@ functions:
     Provede se stejný výpočet jako vestavěný `^^^` operátor.
 - uid: microsoft.quantum.bitwise.zbits
   summary: Vrací celé číslo představující bity Z pole operátorů Pauli.
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro práci s bitovým znázorněním klasických datových typů."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce pro práci s bitovým znázorněním klasických datových typů."
 metadata:
-  ms.openlocfilehash: fb52d02d38d31b96b46dfc469ee07ee62e29a9d4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 02fa75fd66a8f6dfeda42bc7e9e8832b34ecba40
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673381"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341577"

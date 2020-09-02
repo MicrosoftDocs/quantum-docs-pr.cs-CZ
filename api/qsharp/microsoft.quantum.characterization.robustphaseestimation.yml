@@ -2,11 +2,11 @@
 uid: microsoft.quantum.characterization.robustphaseestimation
 name: RobustPhaseEstimation
 type: operation
-namespace: Microsoft.Quantum.Characterization
-summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané `U` Oracle a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
+namespace: microsoft.quantum.characterization
+summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané Oracle `U` a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
 remarks: V případě velkého počtu dotazů Cramer-Rao dolní meze pro směrodatnou odchylku odhadu $ \phi $ vyhovuje $ \sigma \ge 2 \pi/\Text{# dotazů} $.
 syntax: 'operation RobustPhaseEstimation (bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[]) : Double'
-references: '- Robustní kalibrace univerzální qubit brány, která je nastavená pomocí robustního odhadu fáze Shelby Kimmel, Guang vystoupí hao nízká, Theodora J. Yoderhttps://arxiv.org/abs/1502.02677'
+references: '- Robustní kalibrace univerzální qubit brány, která je nastavená pomocí robustního odhadu fáze Shelby Kimmel, Guang vystoupí hao nízká, Theodora J. Yoder https://arxiv.org/abs/1502.02677'
 input:
   content: '(bitsPrecision : Int, oracle : Microsoft.Quantum.Oracles.DiscreteOracle, targetState : Qubit[])'
   types:
@@ -28,9 +28,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 5fa87e4da621871685501d58fa4a70b172f973b7
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 098cb9bbf804d93d2e03d4f776bd0e88cb5b25bb
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677601"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354259"

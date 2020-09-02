@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.convert
 name: Microsoft.Quantum.Convert
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro převod mezi různými datovými typy Q #."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce pro převod mezi různými datovými typy Q #."
 functions:
 - uid: microsoft.quantum.convert.bigintasboolarray
   summary: >-
@@ -18,9 +18,9 @@ functions:
 - uid: microsoft.quantum.convert.boolarrayaspauli
   summary: V případě bitového řetězce vrátí operátor qubit Pauli, který je reprezentován jako pole operátorů s jedním qubit Pauli.
 - uid: microsoft.quantum.convert.boolarrayasresultarray
-  summary: '`Bool[]` Převede `Result[]` typ na typ, kde `true` je mapován na `One` a `false` je mapován na. `Zero`'
+  summary: Převede `Bool[]` typ na `Result[]` typ, kde `true` je mapován na `One` a `false` je mapován na `Zero` .
 - uid: microsoft.quantum.convert.boolasresult
-  summary: '`Bool` Převede `Result` typ na typ, kde `true` je mapován na `One` a `false` je mapován na. `Zero`'
+  summary: Převede `Bool` typ na `Result` typ, kde `true` je mapován na `One` a `false` je mapován na `Zero` .
 - uid: microsoft.quantum.convert.boolasstring
   summary: Převede danou logickou hodnotu na ekvivalentní řetězcové vyjádření.
 - uid: microsoft.quantum.convert.doubleasstring
@@ -47,20 +47,20 @@ functions:
 - uid: microsoft.quantum.convert.pauliarrayasint
   summary: Zakóduje qubit Pauli operátor reprezentovaný jako pole operátorů s jedním qubit Pauli do celého čísla.
 - uid: microsoft.quantum.convert.rangeasintarray
-  summary: Vytvoří pole `arr` celých čísel, která jsou vyhodnocena spuštěním.. krok.. účelu.
+  summary: Vytvoří pole celých čísel, která jsou vyhodnocena spuštěním `arr` .. krok.. účelu.
 - uid: microsoft.quantum.convert.resultarrayasboolarray
-  summary: '`Result[]` Převede `Bool[]` typ na typ, kde `One` je mapován na `true` a `Zero` je mapován na. `false`'
+  summary: Převede `Result[]` typ na `Bool[]` typ, kde `One` je mapován na `true` a `Zero` je mapován na `false` .
 - uid: microsoft.quantum.convert.resultarrayasint
   summary: Vytvoří kladné celé číslo z řetězce výsledků ve formátu Little endian.
 - uid: microsoft.quantum.convert.resultasbool
-  summary: '`Result` Převede `Bool` typ na typ, kde `One` je mapován na `true` a `Zero` je mapován na. `false`'
+  summary: Převede `Result` typ na `Bool` typ, kde `One` je mapován na `true` a `Zero` je mapován na `false` .
 operations:
 - uid: microsoft.quantum.convert.call
   summary: Volá funkci s daným vstupem.
 metadata:
-  ms.openlocfilehash: d435979692fe94efb64af82f4a7a949cb2341ef8
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7ab5e02631823dcf4dee36f98c14212b43381b74
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676997"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341356"

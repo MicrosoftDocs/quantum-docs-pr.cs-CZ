@@ -1,32 +1,32 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.extensions.convert
 name: Microsoft.Quantum.Extensions.Convert
-summary: " # <a name=\"summary\"></a>Souhrn\n Jedná se o některé funkce z oboru názvů System. Convert rozhraní .NET CLR, které jsou relevantní v rámci systému Q # Type.\n\n # <a name=\"remarks\"></a>Poznámky\n Pokud existuje několik verzí funkce pro bool, int a Double Type, příslušné funkce mají příponu B, I I D."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Jedná se o některé funkce z oboru názvů System. Convert rozhraní .NET CLR, které jsou relevantní v rámci systému Q # Type.\n\n # <a name=\"remarks\"></a>Poznámky\n Pokud existuje několik verzí funkce pro bool, int a Double Type, příslušné funkce mají příponu B, I I D."
 functions:
 - uid: microsoft.quantum.extensions.convert.biginttobools
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nBigIntToBools se už nepoužívá. Místo toho @\"microsoft.quantum.convert.bigintasboolarray\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.bigintasboolarray\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBigIntToBools se už nepoužívá. @\"microsoft.quantum.convert.bigintasboolarray\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.bigintasboolarray\"."
 - uid: microsoft.quantum.extensions.convert.boolstobigint
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nBoolsToBigInt se už nepoužívá. Místo toho @\"microsoft.quantum.convert.boolarrayasbigint\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.boolarrayasbigint\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nBoolsToBigInt se už nepoužívá. @\"microsoft.quantum.convert.boolarrayasbigint\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.boolarrayasbigint\"."
 - uid: microsoft.quantum.extensions.convert.pauliarraytoint
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nPauliArrayToInt se už nepoužívá. Místo toho @\"microsoft.quantum.convert.pauliarrayasint\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.pauliarrayasint\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nPauliArrayToInt se už nepoužívá. @\"microsoft.quantum.convert.pauliarrayasint\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.pauliarrayasint\"."
 - uid: microsoft.quantum.extensions.convert.tobigint
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToBigInt se už nepoužívá. Místo toho @\"microsoft.quantum.convert.intasbigint\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.intasbigint\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToBigInt se už nepoužívá. @\"microsoft.quantum.convert.intasbigint\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.intasbigint\"."
 - uid: microsoft.quantum.extensions.convert.todouble
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToDouble – se už nepoužívá. Místo toho @\"microsoft.quantum.convert.intasdouble\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.intasdouble\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToDouble – se už nepoužívá. @\"microsoft.quantum.convert.intasdouble\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.intasdouble\"."
 - uid: microsoft.quantum.extensions.convert.tostringb
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringB se už nepoužívá. Místo toho @\"microsoft.quantum.convert.boolasstring\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.boolasstring\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringB se už nepoužívá. @\"microsoft.quantum.convert.boolasstring\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.boolasstring\"."
 - uid: microsoft.quantum.extensions.convert.tostringd
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToString se už nepoužívá. Místo toho @\"microsoft.quantum.convert.doubleasstring\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.doubleasstring\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToString se už nepoužívá. @\"microsoft.quantum.convert.doubleasstring\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.doubleasstring\"."
 - uid: microsoft.quantum.extensions.convert.tostringdformat
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringDFormat se už nepoužívá. Místo toho @\"microsoft.quantum.convert.doubleasstringwithformat\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.doubleasstringwithformat\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringDFormat se už nepoužívá. @\"microsoft.quantum.convert.doubleasstringwithformat\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.doubleasstringwithformat\"."
 - uid: microsoft.quantum.extensions.convert.tostringi
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToString a se už nepoužívá. Místo toho @\"microsoft.quantum.convert.intasstring\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.intasstring\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToString a se už nepoužívá. @\"microsoft.quantum.convert.intasstring\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.intasstring\"."
 - uid: microsoft.quantum.extensions.convert.tostringiformat
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringIFormat se už nepoužívá. Místo toho @\"microsoft.quantum.convert.intasstringwithformat\" ho použijte.\nPoužijte @\"microsoft.quantum.convert.intasstringwithformat\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nToStringIFormat se už nepoužívá. @\"microsoft.quantum.convert.intasstringwithformat\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.convert.intasstringwithformat\"."
 metadata:
-  ms.openlocfilehash: 8196882d8f7edf417f65bcd1651ecb770c4286f4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6f307cfeabec132c2b3b3953f30a2b0ad208f57a
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673295"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341016"

@@ -66,16 +66,16 @@ functions:
   summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
 - uid: microsoft.quantum.arrays.zip4
   summary: U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
 operations:
 - uid: microsoft.quantum.arrays.drawmany
   summary: Opakuje operaci pro daný počet vzorků a shromažďuje jejich výstupy v poli.
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: 32aeecb419739a89792bdf1e9761e3821abcf380
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: f84118178b46d8c65fbffa00562bbb1b21099353
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85884695"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341271"

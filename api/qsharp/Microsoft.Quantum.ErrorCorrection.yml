@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.errorcorrection
 name: Microsoft.Quantum.ErrorCorrection
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce, operace a uživatelsky definované typy pro opravu chyb."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce, operace a uživatelsky definované typy pro opravu chyb."
 functions:
 - uid: microsoft.quantum.errorcorrection.bitflipcode
   summary: Vrátí hodnotu QECC představující ⟦ 3, 1, 1 ⟧ bit převráceného kodéru a dekodéru pomocí místního měření Syndrome.
@@ -70,9 +70,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Představuje operaci, která slouží k měření Syndrome bloku kódu chyby.
 metadata:
-  ms.openlocfilehash: eed1de587e6bfbfc197113c5cd280ae72df1ce7e
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 6b8fe65de09adf6297ca40420f77719ef19285eb
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326604"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341135"
