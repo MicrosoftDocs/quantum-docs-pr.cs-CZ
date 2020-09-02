@@ -2,9 +2,9 @@
 uid: microsoft.quantum.simulation.generatorindex
 name: GeneratorIndex
 type: newtype
-namespace: Microsoft.Quantum.Simulation
+namespace: microsoft.quantum.simulation
 summary: >-
-  Představuje jeden primitivní výraz v sadě všech dynamických generátorů, např. Hermitian operátory, pro které existuje mapa od tohoto generátoru k časovému vývoji tohoto generátoru prostřednictvím `EvolutionSet`.
+  Představuje jeden primitivní výraz v sadě všech dynamických generátorů, např. Hermitian operátory, pro které existuje mapa od tohoto generátoru k časovému vývoji tohoto generátoru prostřednictvím `EvolutionSet` .
 
 
   První prvek (int []; Double []) je index, který je jedním termínem--například řetězec Pauli XXY s koeficientem 0,5 by byl indexován ([1, 1, 2], [0,5]). Alternativně je Hamiltonians Parametrizovaná souvislou proměnnou, jako je například X cos φ + Y Sin φ, může být instance reprezentovaná ([], [φ]). Druhý prvek indexuje podsystém, na kterém generátor působí.
@@ -16,7 +16,7 @@ remarks: >-
 
   ### <a name="examples"></a>Příklady
 
-  Pomocí <xref:microsoft.quantum.simulation.paulievolutionset>, operátor $ \pi X_2 X_5 Y_9 $ je reprezentován jako:
+  Pomocí  <xref:microsoft.quantum.simulation.paulievolutionset> , operátor $ \pi X_2 X_5 Y_9 $ je reprezentován jako:
 
 
   ```qsharp
@@ -29,9 +29,9 @@ seeAlso:
 - evolutionset
 - paulievolutionset
 metadata:
-  ms.openlocfilehash: d633ecdc11075eb45a40a58bb2a1ca67af577c3c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b291cc0b0adc4799e49403fb76f0f47dbadcaf5c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82655149"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330170"
