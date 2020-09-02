@@ -3,13 +3,13 @@ uid: microsoft.quantum.extensions.diagnostics
 name: Microsoft.Quantum.Extensions.Diagnostics
 functions:
 - uid: microsoft.quantum.extensions.diagnostics.dumpmachine
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nDumpMachine se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.dumpmachine\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.dumpmachine\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nDumpMachine se už nepoužívá. @\"microsoft.quantum.diagnostics.dumpmachine\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.diagnostics.dumpmachine\"."
 - uid: microsoft.quantum.extensions.diagnostics.dumpregister
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nDumpRegister se už nepoužívá. Místo toho @\"microsoft.quantum.diagnostics.dumpregister\" ho použijte.\nPoužijte @\"microsoft.quantum.diagnostics.dumpregister\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nDumpRegister se už nepoužívá. @\"microsoft.quantum.diagnostics.dumpregister\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.diagnostics.dumpregister\"."
 metadata:
-  ms.openlocfilehash: dcd10bf143cd50e937cb6ad0d81f15247401c2b8
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6c810a74938b7280a81b57c6cf7707f505303122
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673272"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340982"

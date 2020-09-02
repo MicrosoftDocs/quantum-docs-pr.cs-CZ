@@ -1,16 +1,16 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.characterization
 name: Microsoft.Quantum.Characterization
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce a operace pro učení vlastností stavů a procesů, včetně odhadu tomography a fáze."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce a operace pro učení vlastností stavů a procesů, včetně odhadu tomography a fáze."
 operations:
 - uid: microsoft.quantum.characterization.continuousphaseestimationiteration
   summary: Provádí jednu iteraci iteračního (klasického) algoritmu fáze odhadu pomocí libovolného reálného výkonu jednotkové databáze Oracle.
 - uid: microsoft.quantum.characterization.discretephaseestimationiteration
   summary: Provádí jednu iteraci iteračního (klasického) algoritmu fáze odhadu pomocí celočíselné mocniny jednotkové databáze Oracle.
 - uid: microsoft.quantum.characterization.estimatefrequency
-  summary: S ohledem na přípravu a měření odhadne četnost, s jakou měření probíhají (vrátí `Zero`), provedením daného počtu testů.
+  summary: S ohledem na přípravu a měření odhadne četnost, s jakou měření `Zero` probíhají (vrátí), provedením daného počtu testů.
 - uid: microsoft.quantum.characterization.estimatefrequencya
-  summary: S ohledem na přípravu, která je sousední a měření, odhadne četnost, s jakou měření vychází (vrátí `Zero`) provedením daného počtu zkušebních hodnot.
+  summary: S ohledem na přípravu, která je sousední a měření, odhadne četnost, s jakou měření vychází (vrátí `Zero` ) provedením daného počtu zkušebních hodnot.
 - uid: microsoft.quantum.characterization.estimateimagoverlapbetweenstates
   summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne imaginární část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
 - uid: microsoft.quantum.characterization.estimateoverlapbetweenstates
@@ -18,19 +18,19 @@ operations:
 - uid: microsoft.quantum.characterization.estimaterealoverlapbetweenstates
   summary: Vzhledem k tomu, že jednotlivé operace připravují kopie stavu, odhadne skutečnou část překrytí mezi stavy, které jsou připraveny jednotlivými operacemi.
 - uid: microsoft.quantum.characterization.measureallz
-  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureAllZ se už nepoužívá. Místo toho @\"microsoft.quantum.measurement.measureallz\" ho použijte.\nPoužijte @\"microsoft.quantum.measurement.measureAllZ\"prosím."
+  summary: "\n> [!WARNING]\n> Zastaralé\n\nMeasureAllZ se už nepoužívá. @\"microsoft.quantum.measurement.measureallz\"Místo toho ho použijte.\nPoužívejte @\"microsoft.quantum.measurement.measureAllZ\"."
 - uid: microsoft.quantum.characterization.measureidentity
   summary: Měří operátor identity v registru qubits.
 - uid: microsoft.quantum.characterization.quantumphaseestimation
-  summary: Provádí pro daný Oracle `U` algoritmus odhadu doby přírůstku `targetState`a přečtení fáze do pokladny na základě služby big-endian.
+  summary: Provádí pro daný Oracle algoritmus odhadu doby přírůstku `U` a `targetState` přečtení fáze do pokladny na základě služby big-endian.
 - uid: microsoft.quantum.characterization.robustphaseestimation
-  summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané `U` Oracle a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
+  summary: Provádí robustní neiterativní algoritmus odhadu neiteračních procesorů pro dané Oracle `U` a eigenstate a poskytuje jeden odhad ve fázi s proměnlivým škálováním v Heisenberg limitu.
 - uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
   summary: Provede qubit proces tomography měření v Pauli, a to s ohledem na konkrétní kanál zájmu.
 metadata:
-  ms.openlocfilehash: 2ae4ee28cf6e87a3fde1f8107194760c388b462c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b8b7c1b7e6fc3dad00e62d7722ef4cb38b96b82f
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673365"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341475"

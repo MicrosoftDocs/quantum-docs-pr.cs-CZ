@@ -1,19 +1,19 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.environment
 name: Microsoft.Quantum.Environment
-summary: " # <a name=\"summary\"></a>Souhrn\n Tyto funkce poskytují informace o prostředí, ve kterém dochází k výpočtu doby."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tyto funkce poskytují informace o prostředí, ve kterém dochází k výpočtu doby."
 operations:
 - uid: microsoft.quantum.environment.getqubitsavailabletoborrow
   summary: >-
     Vrátí počet qubitsů, které jsou aktuálně k dispozici k vypůjčení.
 
-    To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits, který vrátil `GetQubitsAvailableToUse`.
+    To zahrnuje nepoužívané qubits; To znamená, že zahrnuje qubits, který vrátil `GetQubitsAvailableToUse` .
 - uid: microsoft.quantum.environment.getqubitsavailabletouse
   summary: Vrátí počet qubits aktuálně dostupných k použití.
 metadata:
-  ms.openlocfilehash: bd6d442aabb179f4c5fea0a0f48efaa472ec00cf
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7f597d8f429089b0ebf2c22cef1d1b98ea270402
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673349"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341152"
