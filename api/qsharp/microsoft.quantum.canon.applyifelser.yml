@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifelser
 name: ApplyIfElseR
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednu ze dvou operací v závislosti na hodnotě klasického výsledku.
 
 
-  `result`Výsledkem `zeroOp` je, že použije operaci s `zeroInput` jako vstup `result` `Zero`, pokud je rovna, a platí při `oneOp(oneInput)` `result == One`použití.
+  Výsledkem `result` je, že použije operaci `zeroOp` s `zeroInput` jako vstup `result` , pokud je rovna `Zero` , a platí při použití `oneOp(oneInput)` `result == One` .
 syntax: "operation ApplyIfElseR (result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U))"
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Result
   - name: zeroOp
-    summary: Operace, která se má použít `result == Zero`, když.
+    summary: Operace, která se má použít, když `result == Zero` .
     isOperation: true
     input:
       types:
@@ -28,11 +28,11 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: zeroInput
-    summary: Vstup, který má být k `zeroOp` dispozici v případě `result == Zero`.
+    summary: Vstup, který má být k dispozici v `zeroOp` případě `result == Zero` .
     uid: "'T"
     isLocal: true
   - name: oneOp
-    summary: Operace, která se má použít `result == One`, když.
+    summary: Operace, která se má použít, když `result == One` .
     isOperation: true
     input:
       types:
@@ -43,7 +43,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: oneInput
-    summary: Vstup, který má být k `oneOp` dispozici v případě `result == One`.
+    summary: Vstup, který má být k dispozici v `oneOp` případě `result == One` .
     uid: "'U"
     isLocal: true
 output:
@@ -63,9 +63,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 4623c321aa2b802b8f27f6a3ec8e65463083b314
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1614a00214bdebe8d5b761cc8ca0732d76a919f7
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672746"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350247"

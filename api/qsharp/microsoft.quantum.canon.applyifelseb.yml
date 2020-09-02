@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifelseb
 name: ApplyIfElseB
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednu ze dvou operací v závislosti na hodnotě klasického bitu.
 
 
-  V případě bitu `bit`použije operaci `trueOp` s `trueInput` jako vstup, pokud `bit` je `true`, a platí `falseOp(falseInput)` , kdy `bit` je. `false`
+  V případě bitu `bit` použije operaci `trueOp` s `trueInput` jako vstup `bit` , pokud je `true` , a platí, `falseOp(falseInput)` kdy `bit` je `false` .
 syntax: "operation ApplyIfElseB (bit : Bool, (trueOp : ('T => Unit), trueInput : 'T), (falseOp : ('U => Unit), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit), trueInput : 'T), (falseOp : ('U => Unit), falseInput : 'U))"
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Operace, která se má použít `bit` , `true`Pokud je.
+    summary: Operace, která se má použít, pokud `bit` je `true` .
     isOperation: true
     input:
       types:
@@ -28,11 +28,11 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: trueInput
-    summary: Vstup, který má být k `trueOp` dispozici, když `bit` je `true`.
+    summary: Vstup, který má být k dispozici, `trueOp` Když `bit` je `true` .
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Operace, která se má použít `bit` , `false`Pokud je.
+    summary: Operace, která se má použít, pokud `bit` je `false` .
     isOperation: true
     input:
       types:
@@ -43,7 +43,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: falseInput
-    summary: Vstup, který má být k `falseOp` dispozici, když `bit` je `false`.
+    summary: Vstup, který má být k dispozici, `falseOp` Když `bit` je `false` .
     uid: "'U"
     isLocal: true
 output:
@@ -63,9 +63,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: cce5dba2473874f5af7c8cbb41a69ed6ba62e7c7
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 756cfb829ce29e658641e9e7a4e42c626bce4798
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675038"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350417"

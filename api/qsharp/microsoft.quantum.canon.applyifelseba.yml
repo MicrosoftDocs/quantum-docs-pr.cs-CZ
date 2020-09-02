@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifelseba
 name: ApplyIfElseBA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednu ze dvou sousedících operací v závislosti na hodnotě klasického bitu.
 
 
-  V případě bitu `bit`použije operaci `trueOp` s `trueInput` jako vstup, pokud `bit` je `true`, a platí `falseOp(falseInput)` , kdy `bit` je. `false`
+  V případě bitu `bit` použije operaci `trueOp` s `trueInput` jako vstup `bit` , pokud je `true` , a platí, `falseOp(falseInput)` kdy `bit` je `false` .
 syntax: "operation ApplyIfElseBA (bit : Bool, (trueOp : ('T => Unit is Adj), trueInput : 'T), (falseOp : ('U => Unit is Adj), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit is Adj), trueInput : 'T), (falseOp : ('U => Unit is Adj), falseInput : 'U))"
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Operace sousedících, která se má použít `bit` , `true`Pokud je.
+    summary: Operace sousedících, která se má použít `bit` , pokud je `true` .
     isOperation: true
     input:
       types:
@@ -30,11 +30,11 @@ input:
     functors:
     - Adjoint
   - name: trueInput
-    summary: Vstup, který má být k `trueOp` dispozici, když `bit` je `true`.
+    summary: Vstup, který má být k dispozici, `trueOp` Když `bit` je `true` .
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Operace sousedících, která se má použít `bit` , `false`Pokud je.
+    summary: Operace sousedících, která se má použít `bit` , pokud je `false` .
     isOperation: true
     input:
       types:
@@ -47,7 +47,7 @@ input:
     functors:
     - Adjoint
   - name: falseInput
-    summary: Vstup, který má být k `falseOp` dispozici, když `bit` je `false`.
+    summary: Vstup, který má být k dispozici, `falseOp` Když `bit` je `false` .
     uid: "'U"
     isLocal: true
 output:
@@ -69,9 +69,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 6e84acfbad8d1811ee0ab41de1f51fbcab4c286c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: ec84d5f11aefafd44bd2a4a2ef9fff21a6f6d1b8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675014"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350366"

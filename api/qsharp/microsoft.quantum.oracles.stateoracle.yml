@@ -2,7 +2,7 @@
 uid: microsoft.quantum.oracles.stateoracle
 name: StateOracle
 type: newtype
-namespace: Microsoft.Quantum.Oracles
+namespace: microsoft.quantum.oracles
 summary: >-
   Představuje Oracle pro přípravu stavu.
 
@@ -12,16 +12,16 @@ summary: >-
 
   - Celé číslo, které označuje příznak qubit $f $.
 
-  - Systém registruje $s $, ve kterém bude uložen požadovaný stav \ket{\psi}\_$ s $.
+  - Systém registruje $s $, ve kterém bude uložen požadovaný stav \ket{\psi} $ \_ s $.
 remarks: >-
-  Tento jazyk Oracle definovaný pomocí $ ${0}\_O\ket {f}{0}\_\ket s ={1}\_\lambda\ket f\ket {\ psí\_} s + \sqrt{1-| \lambda | ^ 2}{0}\_\ket f\cdots, $ $ funguje na výpočetním stavu na bázi výpočtů ${0}\_\ket {f}{0}\_\ket s $, který vytvoří cílový stav $\_\ket{\psi} s $ s amplitudou $ \lambda $ v tomto případě příznakem{1}\_$ \ket f $.
+  Tento jazyk Oracle definovaný pomocí $ $ O\ket {0} \_ {f} \ket {0} \_ s = \lambda\ket {1} \_ f\ket {\ psí} \_ s + \sqrt{1-| \lambda | ^ 2} \ket {0} \_ f\cdots, $ $ funguje na výpočetním stavu na bázi výpočtů $ \ket {0} \_ {f} \ket {0} \_ s $, který vytvoří cílový stav $ \ket{\psi} s \_ $ s amplitudou $ \lambda $ v tomto případě příznakem $ \ket {1} \_ f $.
 
-  První parametr je index qubit registrace \ket{0}\_f $. Druhý parametr zahrnuje oba Registry.
+  První parametr je index qubit registrace \ket {0} \_ f $. Druhý parametr zahrnuje oba Registry.
 syntax: newtype StateOracle = ((Int, Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: fe7ced83927d709bcc6fe82d8866b221446c7d73
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1a303e51638a792fb31ee7cca58bd3662d86897b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673488"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331751"

@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifelsebca
 name: ApplyIfElseBCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednu ze dvou jednotkových operací v závislosti na hodnotě klasického bitu.
 
 
-  V případě bitu `bit`použije operaci `trueOp` s `trueInput` jako vstup, pokud `bit` je `true`, a platí `falseOp(falseInput)` , kdy `bit` je. `false`
+  V případě bitu `bit` použije operaci `trueOp` s `trueInput` jako vstup `bit` , pokud je `true` , a platí, `falseOp(falseInput)` kdy `bit` je `false` .
 syntax: "operation ApplyIfElseBCA (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U))"
@@ -17,7 +17,7 @@ input:
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Jednotná operace, která se má `bit` použít `true`, pokud je.
+    summary: Jednotná operace, která se má `bit` použít `true` , pokud je.
     isOperation: true
     input:
       types:
@@ -31,11 +31,11 @@ input:
     - Adjoint
     - Controlled
   - name: trueInput
-    summary: Vstup, který má být k `trueOp` dispozici, když `bit` je `true`.
+    summary: Vstup, který má být k dispozici, `trueOp` Když `bit` je `true` .
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Jednotná operace, která se má `bit` použít `false`, pokud je.
+    summary: Jednotná operace, která se má `bit` použít `false` , pokud je.
     isOperation: true
     input:
       types:
@@ -49,7 +49,7 @@ input:
     - Adjoint
     - Controlled
   - name: falseInput
-    summary: Vstup, který má být k `falseOp` dispozici, když `bit` je `false`.
+    summary: Vstup, který má být k dispozici, `falseOp` Když `bit` je `false` .
     uid: "'U"
     isLocal: true
 output:
@@ -72,9 +72,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 3f0d704d33fc1d3e964e804c2ff68cb893069445
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 608808f776ac0d187571adc415abc0c7d1666ef9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672771"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350349"
