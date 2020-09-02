@@ -2,7 +2,7 @@
 uid: microsoft.quantum.diagnostics.dumpoperation
 name: DumpOperation
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: V případě určité operace zobrazí diagnostiku operace, které jsou zpřístupněny aktuálním cílem provedení.
 remarks: >-
   Volání této operace nemá žádný pozorovatelný účinek v rámci Q #. Přesná diagnostika, která se zobrazí, je-li k, závisí na aktuálním cílovém spuštění a prostředí editoru.
@@ -55,9 +55,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: ba2e3c4dd42faa0919b5777a6db82ce787acb80a
-  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.openlocfilehash: c9005373fb2be7bbfcd19870fa741cf4b0d8d754
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 08/25/2020
-  ms.locfileid: "88864011"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337344"

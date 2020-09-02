@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.dumpmachine
 name: DumpMachine
 type: function
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: Vypíše stav aktuálního cílového počítače.
 remarks: >-
   Tato metoda umožňuje vypsat informace o aktuálním stavu cílového počítače do souboru nebo jiného umístění.
 
-  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění (`()`) nebo pouhého vynechání `location` parametru obvykle znamená, že výstup bude vygenerován do konzoly.
+  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění ( `()` ) nebo pouhého vynechání `location` parametru obvykle znamená, že výstup bude vygenerován do konzoly.
 
 
   U místních úplných simulátorů distribuovaných jako součást vývojové sady pro plnění stavových prostředí očekává Tato metoda řetězec s cestou k souboru, ve kterém bude zapisovat funkci Wave jako jednorozměrné pole komplexních čísel, kde každý prvek představuje amplitudy pravděpodobnosti měření odpovídajícího stavu.
@@ -22,13 +22,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: Žádné.
+  - summary: Žádné
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 7511e0bdded689c84cb90794860dd79e48950414
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7b30ac476cd8c3f5db5344d7ac9cabffd670f1a1
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82656562"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337361"

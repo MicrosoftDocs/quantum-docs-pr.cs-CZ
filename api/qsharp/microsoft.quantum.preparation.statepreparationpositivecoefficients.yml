@@ -2,7 +2,7 @@
 uid: microsoft.quantum.preparation.statepreparationpositivecoefficients
 name: StatePreparationPositiveCoefficients
 type: function
-namespace: Microsoft.Quantum.Preparation
+namespace: microsoft.quantum.preparation
 summary: >-
   Vrátí operaci, která připraví daný stav.
 
@@ -13,9 +13,9 @@ summary: >-
   Akce U nově přiděleného registru je dána $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} \ alpha_j \ket{j}}{\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | \ alpha_j | ^ 2}}.
 
   \end{align} $ $
-remarks: Negativní vstupní koeficienty $ \ alpha_j < $0 budou považovány za kladné s hodnotou $ | \ alpha_j | $. `coefficients`budou doplněny elementy $ \ alpha_j = $0,0, pokud je zadána méně než $2 ^ n $.
+remarks: Negativní vstupní koeficienty $ \ alpha_j < $0 budou považovány za kladné s hodnotou $ | \ alpha_j | $. `coefficients` budou doplněny elementy $ \ alpha_j = $0,0, pokud je zadána méně než $2 ^ n $.
 examples: >-
-  Následující fragment kódu připraví stav pro stav, který je v registru{0}{2} `qubitsLE`qubit připraven na \ket{\psi} = \ sqrt {1/8} \ KET + \ sqrt {7/8} \ KET $.
+  Následující fragment kódu připraví stav pro stav, který je v registru qubit připraven na \ket{\psi} = \ sqrt {1/8} \ KET {0} + \ sqrt {7/8} \ KET {2} $ `qubitsLE` .
 
 
   ```qsharp
@@ -55,9 +55,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: d419fd88ed037001cc51dbd354b5c89dbe334246
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7f801c02044195aa2b85bf6fd941923cf474a36b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686465"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331224"

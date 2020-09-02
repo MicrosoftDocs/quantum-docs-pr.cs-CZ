@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.all
 name: All
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Předané pole a predikát, který je definován pro prvky pole a kontroluje, zda všechny prvky pole odpovídají predikátu.
-remarks: "Funkce je `'T[]` definována pro obecné typy, tj., kdykoli máme pole a funkci `predicate: 'T -> Bool` , můžeme vytvořit `Bool` hodnotu, která označuje, zda všechny prvky vyhoví. `predicate`"
+remarks: "Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a funkci, `predicate: 'T -> Bool` můžeme vytvořit `Bool` hodnotu, která označuje, zda všechny prvky vyhoví `predicate` ."
 examples: >-
   Následující kód kontroluje, zda jsou všechny prvky pole nenulové:
 
@@ -39,23 +39,23 @@ input:
       - isPrimitive: true
         uid: Bool
   - name: array
-    summary: Pole prvků nad `'T`.
+    summary: Pole prvků nad `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
 output:
   content: Bool
   types:
-  - summary: '`Bool` Hodnota funkce a predikátu použité pro všechny elementy.'
+  - summary: '`Bool`Hodnota funkce a predikátu použité pro všechny elementy.'
     isPrimitive: true
     uid: Bool
 typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 metadata:
-  ms.openlocfilehash: 116a2a537c4712c968187785873c0546ec236762
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 515dcb29844277e626158e44da4202fae0e7fd61
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676580"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352644"

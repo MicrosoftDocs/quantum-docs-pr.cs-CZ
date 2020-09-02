@@ -2,9 +2,9 @@
 uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
 name: AssertOperationsEqualInPlaceCompBasis
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: >-
-  Kontroluje, zda je `givenU` operace shodná s operací `expectedU` na dané vstupní velikosti tím, že kontroluje akci operací pouze na vektorech z výpočetního základu.
+  Kontroluje `givenU` , zda je operace shodná s operací `expectedU` na dané vstupní velikosti tím, že kontroluje akci operací pouze na vektorech z výpočetního základu.
 
   To je nezbytné, ale nedostatečné, podmínkou rovnosti dvou unitaries.
 syntax: 'operation AssertOperationsEqualInPlaceCompBasis (nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj)) : Unit'
@@ -28,7 +28,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: expectedU
-    summary: Operace reference na $n $ qubits, `givenU` která se má porovnat s.
+    summary: Operace reference na $n $ qubits, která se má `givenU` Porovnat s.
     isOperation: true
     input:
       types:
@@ -47,9 +47,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: c3a98dee80b9e41ea3c27e1e52c3046751307912
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1c49d1e32852be40d94621da2a8c1fa53b6e666c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677274"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337514"

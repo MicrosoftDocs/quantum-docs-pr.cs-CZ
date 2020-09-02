@@ -2,17 +2,17 @@
 uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
 name: AssertOperationsEqualInPlace
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: >-
   Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
 
 
-  Tento kontrolní výraz je implementován pomocí kontroly akce operací ve všech stavech formuláře $V _0 \otimes... \otimes v_ {n-1} $, kde $V _k $ je jedna ze stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ (+ 1 eigenstate of Pauli Y operator).
+  Tento kontrolní výraz je implementován pomocí kontroly akce operací ve všech stavech formuláře $V _0 \otimes... \otimes V_ {n-1} $, kde $V _k $ je jedna ze stavů $ \ket {0} $, $ \ket {1} $, $ \ket{+} $ a $ \ket{i} $ (+ 1 Eigenstate of Pauli Y operator).
 
 
   Tento kontrolní výraz používá $n $ qubits a vyžaduje více volání operací, které jsou porovnány.
 syntax: 'operation AssertOperationsEqualInPlace (nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj)) : Unit'
-references: Základem stavů $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ a $ \ket{i} $ je Čuangština-Nielsen, který je popsaný v části [ *i. L. Čuangština, M. A. Nielsen* ](https://arxiv.org/abs/quant-ph/9610001).
+references: Základem stavů $ \ket {0} $, $ \ket {1} $, $ \ket{+} $ a $ \ket{i} $ je Čuangština-Nielsen, který je popsaný v části [ *i. L. Čuangština, M. A. Nielsen* ](https://arxiv.org/abs/quant-ph/9610001).
 input:
   content: '(nQubits : Int, givenU : (Qubit[] => Unit), expectedU : (Qubit[] => Unit is Adj))'
   types:
@@ -33,7 +33,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: expectedU
-    summary: Operace reference na $n $ qubits, `givenU` která se má porovnat s.
+    summary: Operace reference na $n $ qubits, která se má `givenU` Porovnat s.
     isOperation: true
     input:
       types:
@@ -54,9 +54,9 @@ output:
 seeAlso:
 - assertoperationsequalreferenced
 metadata:
-  ms.openlocfilehash: 007bb4b3dedd5a95fc464608fe8160784b02341b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 477ee177c1db07a9e92d11599ed3d7c0a822e10e
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82657017"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337547"
