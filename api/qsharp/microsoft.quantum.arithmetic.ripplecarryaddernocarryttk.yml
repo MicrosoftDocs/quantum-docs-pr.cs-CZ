@@ -2,12 +2,12 @@
 uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
 name: RippleCarryAdderNoCarryTTK
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Vratný, místní Ripple – přidání dvou celých čísel bez nutnosti provádět.
 
 
-  Tato dvě $nová celá čísla `xs` kódovaná v registrech LittleEndian a `ys`operace vypočítají součet dvou celých čísel modulo $2 ^ n $, kde $n $ je bitová velikost vstupů `xs` a. `ys` Nepočítá se z něj bit provozování.
+  Tato dvě $nová celá čísla kódovaná v registrech LittleEndian `xs` a `ys` operace vypočítají součet dvou celých čísel modulo $2 ^ n $, kde $n $ je bitová velikost vstupů `xs` a `ys` . Nepočítá se z něj bit provozování.
 remarks: Tato operace má stejné funkce jako RippleCarryAdderTTK, ale nevrací bit přenosu.
 syntax: 'operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 references: >-
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: cf6855325edc354d22b0324f5949a435a11ce8bb
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 88ebe0e7799d446d4a3ff668a9abe8dd71601642
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676687"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352797"

@@ -2,16 +2,16 @@
 uid: microsoft.quantum.preparation.prepareuniformsuperposition
 name: PrepareUniformSuperposition
 type: operation
-namespace: Microsoft.Quantum.Preparation
+namespace: microsoft.quantum.preparation
 summary: >-
-  Vytvoří jednotnou polohu přes stavy, které zakódují 0 `nIndices`do.
+  Vytvoří jednotnou polohu přes stavy, které zakódují 0 do `nIndices` .
 
 
-  To znamená, že tato Jednotková $U $ vytvoří jednotnou polohu ve všech číselných stavech $0 $ to $M-$1 a zadá vstupní stav $ \ket{0\cdots 0} $. Jinými slovy $ $ \begin{align} U\ket{0}= \Frac{1}{\sqrt{m}}\ sum_ {j = 0} ^ {M-1} \ket{j}.
+  To znamená, že tato Jednotková $U $ vytvoří jednotnou polohu ve všech číselných stavech $0 $ to $M-$1 a zadá vstupní stav $ \ket{0\cdots 0} $. Jinými slovy $ $ \begin{align} U\ket {0} = \frac {1} {\sqrt{m}}\ sum_ {j = 0} ^ {M-1} \ket{j}.
 
   \end{align} $ $.
 examples: >-
-  Následující příklad připraví stav $ \frac{1}{\sqrt{6}} \ sum_ {j = 0} ^{5}\ket{j} $ na $3 $ qubits.
+  Následující příklad připraví stav $ \frac {1} {\sqrt {6} } \ sum_ {j = 0} ^ {5} \ket{j} $ na $3 $ qubits.
 
 
   ```Q#
@@ -33,7 +33,7 @@ input:
     uid: Int
   - name: indexRegister
     summary: >-
-      Registr qubit, ve kterém se ukládají číselné stavy `LittleEndian` ve formátu
+      Registr qubit, ve kterém se ukládají číselné stavy ve `LittleEndian` formátu
 
       Tento registr musí být schopný ukládat číslo $M-$1 a předpokládá se, že bude inicializovaný ve stavu $ \ket{0\cdots 0} $.
     uid: microsoft.quantum.arithmetic.littleendian
@@ -46,9 +46,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: a697f4d410ed47c8be3908e2206080a9393260f7
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 442daa4affb6b59191af9117a8094f7bfbf71302
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686528"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331326"

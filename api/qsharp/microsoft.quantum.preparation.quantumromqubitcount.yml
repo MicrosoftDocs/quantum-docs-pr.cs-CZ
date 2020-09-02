@@ -2,8 +2,8 @@
 uid: microsoft.quantum.preparation.quantumromqubitcount
 name: QuantumROMQubitCount
 type: function
-namespace: Microsoft.Quantum.Preparation
-summary: Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM`.
+namespace: microsoft.quantum.preparation
+summary: Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM` .
 syntax: 'function QuantumROMQubitCount (targetError : Double, nCoeffs : Int) : (Int, (Int, Int))'
 input:
   content: '(targetError : Double, nCoeffs : Int)'
@@ -13,7 +13,7 @@ input:
     isPrimitive: true
     uid: Double
   - name: nCoeffs
-    summary: Počet koeficientů, které jsou zadány v `QuantumROM`.
+    summary: Počet koeficientů, které jsou zadány v `QuantumROM` .
     isPrimitive: true
     uid: Int
 output:
@@ -23,7 +23,7 @@ output:
       ## <a name="first-parameter"></a>První parametr
 
 
-      Řazená `(x,(y,z))` kolekce `x = y + z` členů, kde je celkový počet přidělených `y` qubits, je počet qubits pro `LittleEndian` registr a `z` počet qubitsů paměti.
+      Řazená kolekce členů `(x,(y,z))` `x = y + z` , kde je celkový počet přidělených qubits, `y` je počet qubits pro `LittleEndian` registr a `z` počet qubitsů paměti.
     types:
     - isPrimitive: true
       uid: Int
@@ -33,9 +33,9 @@ output:
       - isPrimitive: true
         uid: Int
 metadata:
-  ms.openlocfilehash: 717de1097641dcbabf6441424e88d77b71e05738
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 897b91f985883ede77c3920c541bea53097d434c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82685106"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331241"

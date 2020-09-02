@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.squarefxp
 name: SquareFxP
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: Čtverce číslo s pevnou desetinnou čárkou.
 syntax: 'operation SquareFxP (fp : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
 input:
@@ -12,7 +12,7 @@ input:
     summary: Číslo s pevnou desetinnou čárkou.
     uid: microsoft.quantum.arithmetic.fixedpoint
   - name: result
-    summary: Výsledek s pevnou desetinnou čárkou, musí být ve stavu{0}$ \ket $ původně.
+    summary: Výsledek s pevnou desetinnou čárkou, musí být ve stavu $ \ket {0} $ původně.
     uid: microsoft.quantum.arithmetic.fixedpoint
 output:
   content: Unit
@@ -23,9 +23,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 872599fb948f3f9bcfdede64ddeb5d8bb58debab
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7fbc89e5a1986f633330a2f8c019bd0cf57930f9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676623"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352746"

@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.sum
 name: Sum
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Implementuje bránu vratného součtu. Má-li `carryIn` bit zakódovaný v qubit a dvě summand bity zakódované v `summand1` a `summand2`, vypočítá logickou XOR `carryIn` `summand1` a `summand2` v qubit. `summand2`
+namespace: microsoft.quantum.arithmetic
+summary: Implementuje bránu vratného součtu. Má-li bit zakódovaný v qubit `carryIn` a dvě summand bity zakódované v `summand1` a `summand2` , vypočítá logickou XOR `carryIn` `summand1` a `summand2` v qubit `summand2` .
 remarks: Na rozdíl od `Carry` operace to nepočítá bit přenosu.
 syntax: 'operation Sum (carryIn : Qubit, summand1 : Qubit, summand2 : Qubit) : Unit'
 input:
@@ -18,7 +18,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: summand2
-    summary: Druhý summand qubit je nahrazen nižším bitem součtu `summand1` a. `summand2`
+    summary: Druhý summand qubit je nahrazen nižším bitem součtu `summand1` a `summand2` .
     isPrimitive: true
     uid: Qubit
 output:
@@ -30,9 +30,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: d72ec97c01944b73ed459afcddbdfb3aa1cf3c49
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 076a767177b20b04d029d3512ecf73bc26902824
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681051"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352678"

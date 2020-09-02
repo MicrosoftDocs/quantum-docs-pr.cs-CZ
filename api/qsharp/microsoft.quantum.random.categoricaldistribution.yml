@@ -2,7 +2,7 @@
 uid: microsoft.quantum.random.categoricaldistribution
 name: CategoricalDistribution
 type: function
-namespace: Microsoft.Quantum.Random
+namespace: microsoft.quantum.random
 summary: Vrátí samostatnou distribuci kategorií, ve které je explicitně určena pravděpodobnost pro každý konečný seznam daných výsledků.
 examples: >-
   Následující kód Q # bude zobrazovat 0 s pravděpodobností 30% a 1 s pravděpodobností 70%:
@@ -33,9 +33,9 @@ output:
   - summary: Index `i` s pravděpodobností `probs[i] / sum` , kde `sum` je součet `probs` vydaný pomocí `Fold(PlusD, 0.0, probs)` .
     uid: microsoft.quantum.random.discretedistribution
 metadata:
-  ms.openlocfilehash: e81b286a1268e9ad1819a8f77bb375760f95af71
-  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.openlocfilehash: a298d84d177c15d67d9d1ec24c8f6a9c11f1cd8b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 08/25/2020
-  ms.locfileid: "88864119"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331105"
