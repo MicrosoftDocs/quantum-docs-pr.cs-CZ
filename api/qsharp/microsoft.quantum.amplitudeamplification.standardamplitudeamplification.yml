@@ -2,9 +2,9 @@
 uid: microsoft.quantum.amplitudeamplification.standardamplitudeamplification
 name: StandardAmplitudeAmplification
 type: function
-namespace: Microsoft.Quantum.AmplitudeAmplification
+namespace: microsoft.quantum.amplitudeamplification
 summary: Algoritmus zesílení standardní amplitudy
-remarks: Toto je standardní algoritmus zesílení amplitud, který získá volba fází odrazů počítaných `AmpAmpPhasesStandard` za předpokladu,{0}\_že \begin{align} A\ket {{0}\_f} \ket{1}\_s = \lambda\ket f\ket {\ text {\_Target}} s + \sqrt{1-| \lambda | ^{0}\_2} \ket f\cdots, \end{align} Tato operace připraví{0}\_stav \begin{align} \operatorname{AmpAmpByOracle}\ket {{0}\_f} \ket s = \sin ((2n + 1{-1}) \sin ^ (\lambda{1}\_)) \ket f\ket {\ text {\_Target}}{0}\_s + \cdots\ket f \end{align} ve `flagQubit` většině `auxiliaryRegister` případů a je inicializovaný ve stavu ${0}\_\ket{0}\_f\ket a $.
+remarks: Toto je standardní algoritmus zesílení amplitud, který získá volba fází odrazů počítaných `AmpAmpPhasesStandard` za předpokladu, že \Begin{align} A\ket {0} \_ {f} \ket {0} \_ s = \lambda\ket {1} \_ f\ket {\ text {Target}} \_ s + \sqrt{1-| \lambda | ^ 2} \ket {0} \_ F\cdots, \end{align} Tato operace připraví stav \begin{align} \operatorname{AmpAmpByOracle}\ket {0} \_ {f} \ket {0} \_ s = \sin ((2n + 1) \sin ^ {-1} (\lambda)) \ket {1} \_ f\ket {\ text {Target}} \_ s + \cdots\ket {0} \_ f \end{align} ve většině případů `flagQubit` a `auxiliaryRegister` je inicializovaný ve stavu $ \ket {0} \_ f\ket {0} \_ a $.
 syntax: 'function StandardAmplitudeAmplification (nIterations : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int) : (Qubit[] => Unit is Adj + Ctl)'
 references: '- [*G. Brassard, P. Hoyer, M. Mosca, a. klepnutí*](https://arxiv.org/abs/quant-ph/0005055)'
 input:
@@ -38,9 +38,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 0fc7ceb390a64ce6224a084147207663d96c3b75
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: f78b541045b309403387962128a3cfda3290cade
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676916"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341866"

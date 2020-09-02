@@ -2,8 +2,8 @@
 uid: microsoft.quantum.extensions.math.log10
 name: Log10
 type: function
-namespace: Microsoft.Quantum.Extensions.Math
-summary: Log10 – se už nepoužívá. Místo toho @"microsoft.quantum.math.log10" ho použijte.
+namespace: microsoft.quantum.extensions.math
+summary: Log10 – se už nepoužívá. @"microsoft.quantum.math.log10"Místo toho ho použijte.
 syntax: 'function Log10 (input : Double) : Double'
 input:
   content: '(input : Double)'
@@ -17,9 +17,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: f3d3e47b15291d6cc58229ed50f9e7564b9952ae
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 71d9b21139b0b078ab4623b1949d650dd8a6ecca
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686273"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89348313"

@@ -2,8 +2,8 @@
 uid: microsoft.quantum.characterization.estimatefrequencya
 name: EstimateFrequencyA
 type: operation
-namespace: Microsoft.Quantum.Characterization
-summary: S ohledem na přípravu, která je sousední a měření, odhadne četnost, s jakou měření vychází (vrátí `Zero`) provedením daného počtu zkušebních hodnot.
+namespace: microsoft.quantum.characterization
+summary: S ohledem na přípravu, která je sousední a měření, odhadne četnost, s jakou měření vychází (vrátí `Zero` ) provedením daného počtu zkušebních hodnot.
 remarks: U sousedních operací lze určit určité předpoklady, jako je například volání operace, připraví qubits na přesně stejný stav, což umožňuje cílovým počítačům provádět některé optimalizace výkonu.
 syntax: 'operation EstimateFrequencyA (preparation : (Qubit[] => Unit is Adj), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
 input:
@@ -46,13 +46,13 @@ input:
 output:
   content: Double
   types:
-  - summary: Odhad $ \hat{p} $ frekvence, se kterou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0}) `Zero`) $ vrátí, získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n\_{\uparrow}/n\_{\Text{Measurements}} $, kde $n\_{\uparrow} $ je počet zjištěných `Zero` výsledků.
+  - summary: Odhad $ \hat{p} $ frekvence, se kterou $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ vrátí `Zero` , získaný pomocí nevyváženého binomického Estimator $ \hat{p} = n \_ {\uparrow}/n \_ {\Text{Measurements}} $, kde $n \_ {\uparrow} $ je počet `Zero` zjištěných výsledků.
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 064f6d3cf9c075d635ed27ac4192b5aa4045e4d8
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 00d54b9dec4e2b57002b04dda4072b9d186baba4
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677702"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354531"
