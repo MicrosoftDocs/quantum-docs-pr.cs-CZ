@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.foreach
 name: ForEach
 type: operation
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
-remarks: "Operace je definována pro obecné typy, tj. kdykoli máme pole `'T[]` a operaci `action : 'T -> 'U` , můžeme namapovat prvky pole a vytvořit nové pole typu. `'U[]`"
+remarks: "Operace je definována pro obecné typy, tj. kdykoli máme pole `'T[]` a operaci, `action : 'T -> 'U` můžeme namapovat prvky pole a vytvořit nové pole typu `'U[]` ."
 syntax: "operation ForEach (action : ('T => 'U), array : 'T[]) : 'U[]"
 input:
   content: "(action : ('T => 'U), array : 'T[])"
@@ -21,7 +21,7 @@ input:
       - uid: "'U"
         isLocal: true
   - name: array
-    summary: Pole prvků nad `'T`.
+    summary: Pole prvků nad `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
@@ -38,9 +38,9 @@ typeParameters:
 - uid: "'U"
   summary: Typ výsledku `action` operace.
 metadata:
-  ms.openlocfilehash: af4b6b469017e4cee581a9bdd96ef6171d9b1deb
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c630f23c57ccba1588e553641acf61312411f146
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681036"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352270"

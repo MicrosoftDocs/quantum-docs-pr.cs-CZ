@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.dumpregister
 name: DumpRegister
 type: function
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: Vypíše stav aktuálního cílového počítače přidružený k danému qubits.
 remarks: >-
   Tato metoda umožňuje vypsat informace přidružené ke stavu daného qubits do souboru nebo do jiného umístění.
 
-  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění (`()`) však obvykle znamená, že výstup bude vygenerován do konzoly.
+  Vlastní vygenerované informace a sémantika `location` jsou specifické pro každý cílový počítač. Poskytnutí prázdné řazené kolekce členů jako umístění ( `()` ) však obvykle znamená, že výstup bude vygenerován do konzoly.
 
 
   U místních úplných simulátorů distribuovaných jako součást vývojové sady pro plnění stavových prostředí očekává Tato metoda řetězec s cestou k souboru, ve kterém bude zapisovat stav daného qubits (tj. funkce Wave odpovídajícího subsystému) jako jednorozměrné pole komplexních čísel, kde každý prvek představuje amplitudy pravděpodobnosti měření odpovídajícího stavu.
@@ -29,13 +29,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: Žádné.
+  - summary: Žádné
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 3bf5302364b37cb1ccef651935833b966ff84464
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 384ce2373081545129c569ea6acc6b01733587fc
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677226"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337293"

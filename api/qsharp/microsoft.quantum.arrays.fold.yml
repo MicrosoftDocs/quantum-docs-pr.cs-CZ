@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arrays.fold
 name: Fold
 type: function
-namespace: Microsoft.Quantum.Arrays
-summary: Opakuje funkci `f` prostřednictvím pole `array`a vrátí. `f(f(f(initialState, array[0]), array[1]), ...)`
+namespace: microsoft.quantum.arrays
+summary: Opakuje funkci `f` prostřednictvím pole `array` a vrátí `f(f(f(initialState, array[0]), array[1]), ...)` .
 examples: >-
   ```qsharp
 
@@ -45,7 +45,7 @@ input:
 output:
   content: "'State"
   types:
-  - summary: Konečný stav vrácený složkou po provedení iterace u všech prvků `array`.
+  - summary: Konečný stav vrácený složkou po provedení iterace u všech prvků `array` .
     uid: "'State"
     isLocal: true
 typeParameters:
@@ -54,9 +54,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 metadata:
-  ms.openlocfilehash: d02d20c049e8b8d21214028efcd6a647067bf71f
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 584344137b498a9c5348cb1f0a0cb85aeec127bd
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676450"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352304"
