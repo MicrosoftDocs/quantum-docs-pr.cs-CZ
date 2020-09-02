@@ -2,10 +2,10 @@
 uid: microsoft.quantum.canon.transformedoperationc
 name: TransformedOperationC
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Výsledkem funkce a operace je nová operace, jejíž vstup je transformovaná pomocí dané funkce.
 examples: >-
-  Následující volání slouží @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" k transformaci operace navržené pro @"Microsoft.Quantum.Arithmetic.BigEndian" vstupy do operace, která přijímá vstupy typu: @"Microsoft.Quantum.Arithmetic.LittleEndian"
+  Následující volání slouží @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" k transformaci operace navržené pro @"Microsoft.Quantum.Arithmetic.BigEndian" vstupy do operace, která přijímá vstupy typu @"Microsoft.Quantum.Arithmetic.LittleEndian" :
 
 
   ```qsharp
@@ -44,7 +44,7 @@ input:
 output:
   content: ('U => Unit is Ctl)
   types:
-  - summary: Nová operace tbat volání `fn` s jeho vstupem a pak předává výsledný výstup do `op`.
+  - summary: Nová operace tbat volání `fn` s jeho vstupem a pak předává výsledný výstup do `op` .
     isOperation: true
     input:
       types:
@@ -63,9 +63,9 @@ seeAlso:
 - applywithinputtransformation
 - compose
 metadata:
-  ms.openlocfilehash: 7f71aa5549ee813d0e53ed5b043479a7e7f3ffb6
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 669504254894fcc4bcde7b7591d3d71d66097b8f
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82678044"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354956"

@@ -2,28 +2,28 @@
 uid: microsoft.quantum.simulation.intstopaulis
 name: IntsToPaulis
 type: function
-namespace: Microsoft.Quantum.Simulation
+namespace: microsoft.quantum.simulation
 summary: Převede pole celých čísel na pole qubitch operátorů Pauli s jedním.
 syntax: 'function IntsToPaulis (ints : Int[]) : Pauli[]'
 input:
   content: '(ints : Int[])'
   types:
   - name: ints
-    summary: Pole celých čísel v rozsahu `0..3` , který má být převeden na Pauli operátory.
+    summary: Pole celých čísel v rozsahu `0..3`  , který má být převeden na Pauli operátory.
     isArray: true
     isPrimitive: true
     uid: Int
 output:
   content: Pauli[]
   types:
-  - summary: Pole `paulis` operátorů `Pauli[]` `ints` Pauli se stejnou délkou, která `paulis[idxPauli]` je rovna elementu z `[PauliI, PauliX, PauliY, PauliZ]` daného. `ints[idxPauli]`
+  - summary: Pole `paulis` operátorů Pauli `Pauli[]` se stejnou délkou `ints` , která `paulis[idxPauli]` je rovna elementu z `[PauliI, PauliX, PauliY, PauliZ]` daného `ints[idxPauli]` .
     isArray: true
     isPrimitive: true
     uid: Pauli
 metadata:
-  ms.openlocfilehash: 1159e3db02663b0588d12ea9d297e055be84ac4a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: f4d7e34cc7555fab89c6fd4d8371837da2296015
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682620"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89329811"

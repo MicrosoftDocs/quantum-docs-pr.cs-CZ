@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.computereciprocali
 name: ComputeReciprocalI
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Vypočítá protější hodnotu 1/x pro unsigned integer x pomocí dělení celého čísla. Výsledek, který je interpretován jako celé číslo, bude `floor(2^(2*n-1) / x)`.
+namespace: microsoft.quantum.arithmetic
+summary: Vypočítá protější hodnotu 1/x pro unsigned integer x pomocí dělení celého čísla. Výsledek, který je interpretován jako celé číslo, bude `floor(2^(2*n-1) / x)` .
 remarks: U vstupu x = 0 bude výstup všech.
 syntax: 'operation ComputeReciprocalI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
@@ -13,7 +13,7 @@ input:
     summary: n-bit unsigned integer
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: 2N výstup musí být zpočátku v $ \ket{0}$.
+    summary: 2N výstup musí být zpočátku v $ \ket {0} $.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -24,9 +24,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: b371c7c1e7442e49aab01793fdaa9c99bcafa35d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 824bc89e8d6290c98d505b0b17d4521edaa36384
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679724"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342291"
