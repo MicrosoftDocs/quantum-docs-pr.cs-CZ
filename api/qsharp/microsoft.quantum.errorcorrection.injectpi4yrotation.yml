@@ -2,15 +2,15 @@
 uid: microsoft.quantum.errorcorrection.injectpi4yrotation
 name: InjectPi4YRotation
 type: operation
-namespace: Microsoft.Quantum.ErrorCorrection
+namespace: microsoft.quantum.errorcorrection
 summary: >-
   Otočí jeden qubit o π/4 o ose Y.
 
 
-  Provede rotaci π/4 o `Y`.
+  Provede rotaci π/4 o `Y` .
 
 
-  Rotace se provádí spotřebou Magic State; To znamená, že kopie stavu $ $ \begin{align}{8} \cos\frac{\pi} \ket{0} + \sin \frac{\pi}{8} \ket.{1}
+  Rotace se provádí spotřebou Magic State; To znamená, že kopie stavu $ $ \begin{align} \cos\frac{\pi} {8} \ket {0} + \sin \frac{\pi} {8} \ket {1} .
 
   \end{align} $ $
 remarks: >-
@@ -48,7 +48,7 @@ input:
     isPrimitive: true
     uid: Qubit
   - name: magic
-    summary: Qubit je zpočátku ve stavu Magic. Po provedení této operace `magic` se vrátí do stavu $ \ket{0}$.
+    summary: Qubit je zpočátku ve stavu Magic. Po provedení této operace `magic` se vrátí do stavu $ \ket {0} $.
     isPrimitive: true
     uid: Qubit
 output:
@@ -59,9 +59,9 @@ output:
 functors:
 - Adjoint
 metadata:
-  ms.openlocfilehash: cb0efd896b4d8f9b4b81c061b644a1e2f7f74e96
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: bf39fac578e364b5b228490484525f044d40b29d
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82684878"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89336222"

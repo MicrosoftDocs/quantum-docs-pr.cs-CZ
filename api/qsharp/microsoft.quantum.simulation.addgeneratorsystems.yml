@@ -2,14 +2,14 @@
 uid: microsoft.quantum.simulation.addgeneratorsystems
 name: AddGeneratorSystems
 type: function
-namespace: Microsoft.Quantum.Simulation
-summary: Přidá dvě `GeneratorSystem`s pro vytvoření nového `GeneratorSystem`.
+namespace: microsoft.quantum.simulation
+summary: Přidá dvě `GeneratorSystem` s pro vytvoření nového `GeneratorSystem` .
 syntax: 'function AddGeneratorSystems (generatorSystemA : Microsoft.Quantum.Simulation.GeneratorSystem, generatorSystemB : Microsoft.Quantum.Simulation.GeneratorSystem) : Microsoft.Quantum.Simulation.GeneratorSystem'
 input:
   content: '(generatorSystemA : Microsoft.Quantum.Simulation.GeneratorSystem, generatorSystemB : Microsoft.Quantum.Simulation.GeneratorSystem)'
   types:
   - name: generatorSystemA
-    summary: První `GeneratorSystem`.
+    summary: První `GeneratorSystem` .
     uid: microsoft.quantum.simulation.generatorsystem
   - name: generatorSystemB
     summary: Druhý objekt `GeneratorSystem`.
@@ -17,14 +17,14 @@ input:
 output:
   content: Microsoft.Quantum.Simulation.GeneratorSystem
   types:
-  - summary: '`GeneratorSystem` Představuje systém, který představuje součet systémů generátorů vstupu.'
+  - summary: Představuje `GeneratorSystem` systém, který představuje součet systémů generátorů vstupu.
     uid: microsoft.quantum.simulation.generatorsystem
 seeAlso:
 - microsoft.quantum.canon.generatorsystem
 metadata:
-  ms.openlocfilehash: 09ce9de385a86207d69224ed3d90a3294f93fdb4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 69090e620f3333391e0138bf38ab292dff48a37e
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82683077"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330289"
