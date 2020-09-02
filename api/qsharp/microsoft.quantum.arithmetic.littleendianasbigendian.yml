@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.littleendianasbigendian
 name: LittleEndianAsBigEndian
 type: function
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: Převede `LittleEndian` qubit registraci na `BigEndian` qubit registr vrácením řazení qubit.
 syntax: 'function LittleEndianAsBigEndian (input : Microsoft.Quantum.Arithmetic.LittleEndian) : Microsoft.Quantum.Arithmetic.BigEndian'
 input:
@@ -17,9 +17,9 @@ output:
   - summary: Qubit registr ve `BigEndian` formátu.
     uid: microsoft.quantum.arithmetic.bigendian
 metadata:
-  ms.openlocfilehash: 179ed8c442a92cee65cab540b83921a4dfb99002
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 014b80a8cb065f6900209a33f599053913ce9c68
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676822"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341883"

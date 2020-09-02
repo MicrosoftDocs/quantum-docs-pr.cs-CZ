@@ -2,27 +2,27 @@
 uid: microsoft.quantum.simulation.sumgeneratorsystems
 name: SumGeneratorSystems
 type: function
-namespace: Microsoft.Quantum.Simulation
-summary: Přidá více `GeneratorSystem`s pro vytvoření nové GeneratorSystem.
+namespace: microsoft.quantum.simulation
+summary: Přidá více `GeneratorSystem` s pro vytvoření nové GeneratorSystem.
 syntax: 'function SumGeneratorSystems (generatorSystems : Microsoft.Quantum.Simulation.GeneratorSystem[]) : Microsoft.Quantum.Simulation.GeneratorSystem'
 input:
   content: '(generatorSystems : Microsoft.Quantum.Simulation.GeneratorSystem[])'
   types:
   - name: generatorSystems
-    summary: Pole typu `GeneratorSystem[]`
+    summary: Pole `GeneratorSystem[]` typu
     isArray: true
     uid: microsoft.quantum.simulation.generatorsystem
 output:
   content: Microsoft.Quantum.Simulation.GeneratorSystem
   types:
-  - summary: '`GeneratorSystem` Představuje systém, který představuje součet systémů generátorů vstupu.'
+  - summary: Představuje `GeneratorSystem` systém, který představuje součet systémů generátorů vstupu.
     uid: microsoft.quantum.simulation.generatorsystem
 seeAlso:
 - microsoft.quantum.canon.generatorsystem
 metadata:
-  ms.openlocfilehash: 5474e35cb303a6f490794a77483aafd609724eaa
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: cf4fe3793578c1050f7a95773112985ad671a695
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82687327"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89328385"
