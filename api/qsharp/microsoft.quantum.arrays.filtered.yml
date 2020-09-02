@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.filtered
 name: Filtered
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Předané pole a predikát, který je definován pro prvky pole, vrátí pole, které se skládá z prvků, které odpovídají predikátu.
 remarks: Funkce je definována pro obecné typy, tj., kdykoli máme pole `'T[]` a predikát `'T -> Bool` můžeme filtrovat prvky.
 examples: >-
@@ -44,7 +44,7 @@ input:
       - isPrimitive: true
         uid: Bool
   - name: array
-    summary: Pole prvků nad `'T`.
+    summary: Pole prvků nad `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
@@ -59,9 +59,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ `array` prvků.
 metadata:
-  ms.openlocfilehash: 6aa19a279425672675182f3c8098e7c47fb5cce6
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 3b586b356e18c71f1721fbce0ec26e2ea37bfd73
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676469"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352287"

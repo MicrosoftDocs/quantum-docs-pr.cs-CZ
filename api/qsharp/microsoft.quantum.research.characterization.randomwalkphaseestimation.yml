@@ -2,13 +2,13 @@
 uid: microsoft.quantum.research.characterization.randomwalkphaseestimation
 name: RandomWalkPhaseEstimation
 type: operation
-namespace: Microsoft.Quantum.Research.Characterization
+namespace: microsoft.quantum.research.characterization
 summary: Provádí odhad iterativní fáze pomocí náhodného prohledání přibližné bayesovského rozhodování odvození na výsledky klasických měření z daných Oracle a eigenstate.
 remarks: >-
   ### <a name="iterative-phase-estimation-and-eigenstates"></a>Odhad iterační fáze a Eigenstates
 
 
-  Obecně platí, že vstupní registr `eigenstate` nemusí být eigenstate $ \ket{\phi} $ of $U $, ale může být na pozici nad eigenstates. Předpokládejme\_, že vstupní stav je dán \begin{align} \ket{\psi} & = \sum {j} \Alpha\_j \ket{\phi\_j}, \end{align}, kde $\{\Alpha\_j\}$ jsou složité, například $ \sum\_j | \Alpha\_j | ^ 2 = $1 a kde $U \ket{\phi\_j} = \phi\_j\ket {\ fí\_j} $.
+  Obecně platí, že vstupní registr `eigenstate` nemusí být eigenstate $ \ket{\phi} $ of $U $, ale může být na pozici nad eigenstates. Předpokládejme, že vstupní stav je dán \begin{align} \ket{\psi} & = \sum \_ {j} \Alpha \_ j \ket{\phi \_ j}, \end{align}, kde $ \{ \Alpha \_ j \} $ jsou složité, například $ \sum \_ j | \Alpha \_ j | ^ 2 = $1 a kde $U \ket{\phi \_ j} = \phi \_ j\ket {\ fí \_ j} $.
 
 
   Následný odhad iterační fáze se nakonec konverguje na jeden eigenstate, jak je popsáno v příručce pro [vývoj](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).
@@ -17,7 +17,7 @@ remarks: >-
   ### <a name="experiment-design"></a>Experimentovat návrh
 
 
-  Doba měření $t $ a inverze úhlů $ \theta $ předaná do `oracle` jsou zvolena v souladu s *heuristikou pro odhad částic*, \begin{align} \theta \sim \Pr (\phi), \quad{1}t \approx \frac {\variance{\phi}}.
+  Doba měření $t $ a inverze úhlů $ \theta $ předaná do `oracle` jsou zvolena v souladu s *heuristikou pro odhad částic*, \Begin{align} \theta \sim \Pr (\phi), \quad t \approx \frac {1} {\variance{\phi}}.
 
   \end{align} tato heuristická metoda je ideální pro snížení očekávané další odchylky v iterativní fázi odhadu v rámci předběžného normálního předběžného.
 
@@ -74,9 +74,9 @@ output:
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 719c8583cb0fe7f0c9c0f7fa617fa469080a9588
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 27841784ec8961f7a5a78c425411fcf0ae8e8f15
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82706733"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330578"

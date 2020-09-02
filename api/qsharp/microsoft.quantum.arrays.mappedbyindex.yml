@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.mappedbyindex
 name: MappedByIndex
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Pro pole a funkci, která je definována pro indexované prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci funkce.
 examples: >-
   Následující dva řádky jsou ekvivalentní:
@@ -41,7 +41,7 @@ input:
       - uid: "'U"
         isLocal: true
   - name: array
-    summary: Pole prvků nad `'T`.
+    summary: Pole prvků nad `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
@@ -60,9 +60,9 @@ typeParameters:
 seeAlso:
 - mapped
 metadata:
-  ms.openlocfilehash: 64741df4a3d7b7937f13614ffc9c7c7ec1aa3f7b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: d6f50c3fe90998431b71050a953ec5dc08e31e92
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680935"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351930"
