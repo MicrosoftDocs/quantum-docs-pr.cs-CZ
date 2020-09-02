@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifc
 name: ApplyIfC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje naovladatelné operace s podmíněným klasickým bitem.
 
 
-  `target` Pokud `bit` je `true`zadaná `op` operace a bitová `bit`hodnota, `op` platí pro if. V `false`případě, že `target`se nic nestane s.
+  `op`Pokud je zadaná operace a bitová hodnota `bit` , platí `op` pro `target` if `bit` `true` . `false`V případě, že se nic nestane s `target` .
 
   Přípona `C` označuje, že operace, která se má použít, je ovladatelné.
 examples: >-
@@ -65,9 +65,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: a41eea8aafeabd5bda6bcc55b958598e58f52184
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 0c4a650eabe75c3ab62556daf19647e63c1a2b46
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680495"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350519"

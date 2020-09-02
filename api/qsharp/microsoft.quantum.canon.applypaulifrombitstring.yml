@@ -2,7 +2,7 @@
 uid: microsoft.quantum.canon.applypaulifrombitstring
 name: ApplyPauliFromBitString
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Aplikuje operátor Pauli na každou qubit v poli, pokud odpovídající bit logického pole odpovídá danému vstupu.
 remarks: Pole Boolean a registr s police musí mít stejnou délku.
 syntax: 'operation ApplyPauliFromBitString (pauli : Pauli, bitApply : Bool, bits : Bool[], qubits : Qubit[]) : Unit'
@@ -10,7 +10,7 @@ input:
   content: '(pauli : Pauli, bitApply : Bool, bits : Bool[], qubits : Qubit[])'
   types:
   - name: pauli
-    summary: Operátor Pauli, který se `qubits[idx]` má použít na WHERE`bitsApply == bits[idx]`
+    summary: Operátor Pauli, který se má použít na `qubits[idx]` WHERE `bitsApply == bits[idx]`
     isPrimitive: true
     uid: Pauli
   - name: bitApply
@@ -18,7 +18,7 @@ input:
     isPrimitive: true
     uid: Bool
   - name: bits
-    summary: Logický registr určující, který odpovídající qubit `qubits` v by měl být provozován
+    summary: Logický registr určující, který odpovídající qubit v `qubits` by měl být provozován
     isArray: true
     isPrimitive: true
     uid: Bool
@@ -36,9 +36,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 5a65ec2aae17a1469e820e8cd14a0d50d0639015
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7efea4ea34ee1ae68695aa74142ebf6bce93d289
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672427"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89357965"

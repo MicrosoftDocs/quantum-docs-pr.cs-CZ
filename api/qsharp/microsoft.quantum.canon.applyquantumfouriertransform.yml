@@ -2,7 +2,7 @@
 uid: microsoft.quantum.canon.applyquantumfouriertransform
 name: ApplyQuantumFourierTransform
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Provádí operaci Fourierova transformace v registru s jednou hodnotou, která obsahuje celé číslo v reprezentaci Little-endian.
 remarks: U vstupu a výstupu se předpokládá kódování ve Little endian.
 syntax: 'operation ApplyQuantumFourierTransform (qs : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
@@ -23,9 +23,9 @@ functors:
 seeAlso:
 - applyquantumfouriertransformbe
 metadata:
-  ms.openlocfilehash: 7aabfba5f152a6d37ca137ebeb4d99a253e5f8b6
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 0c459dd5e7aa640eee92acb873a59483f2ade7c8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672416"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89357982"
