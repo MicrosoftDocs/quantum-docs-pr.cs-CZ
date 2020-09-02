@@ -2,15 +2,15 @@
 uid: microsoft.quantum.amplitudeamplification.applyobliviousamplitudeamplification
 name: ApplyObliviousAmplitudeAmplification
 type: operation
-namespace: Microsoft.Quantum.AmplitudeAmplification
+namespace: microsoft.quantum.amplitudeamplification
 summary: Oblivious amplitudy tím, že se určí částečné odrazy.
 remarks: >-
-  S ohledem na určitý pomocný stav spuštění $\_\ket{\Text{Start}} a $, konkrétní pomocný cílový stav $ \ket{\Text{Target}}\_a $ a jakýkoli stav systému $ \ket{\psi}\_s $, Předpokládejme, že \begin{align} O\ket {\ text {Start}}\_a\ket {\ psí}\_s = \lambda\ket{\Text{Target}}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{\Text{Target} ^ \perp}\_a\cdots \end{align} pro některé jednotkové $U $.
+  S ohledem na určitý pomocný stav spuštění $ \ket{\Text{Start}} \_ a $, konkrétní pomocný cílový stav $ \ket{\Text{Target}} a \_ $ a jakýkoli stav systému $ \ket{\psi} \_ s $, Předpokládejme, že \begin{align} O\ket {\ text {Start}} \_ a\ket {\ psí} \_ s = \lambda\ket{\Text{Target}} \_ a U \ket{\psi} \_ s + \sqrt{1-| \lambda | ^ 2} \ket{\Text{Target} ^ \perp} \_ a\cdots \end{align} pro některé jednotkové $U $.
 
   V rámci posloupnosti odrazů týkajících se stavů Start a target u pomocného registru, který prochází aplikace `signalOracle` a její sousedníci, pravděpodobnost úspěchu při použití U může být změněna.
 
 
-  Ve většině případů `auxiliaryRegister` je inicializován ve stavu $ \ket{\Text{Start}}\_a $.
+  Ve většině případů `auxiliaryRegister` je inicializován ve stavu $ \ket{\Text{Start}} \_ a $.
 syntax: 'operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit'
 references: >-
   Seznamte se s 
@@ -32,7 +32,7 @@ input:
     summary: Operátor reflexe pro cílový stav pomocného zápisu
     uid: microsoft.quantum.oracles.reflectionoracle
   - name: signalOracle
-    summary: Jednotkový typ `ObliviousOracle` Oracle $O $, který pracuje společně na pomocných a systémových registrech.
+    summary: Jednotkový typ Oracle $O $ `ObliviousOracle` , který pracuje společně na pomocných a systémových registrech.
     uid: microsoft.quantum.oracles.obliviousoracle
   - name: auxiliaryRegister
     summary: Pomocný registr
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 7452686a76d9ff89c0eb79290e7dae23347778ac
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 21bdb88716a07c32673425fd4f5276559b56d266
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672946"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340523"

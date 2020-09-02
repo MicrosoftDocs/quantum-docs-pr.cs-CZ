@@ -2,14 +2,14 @@
 uid: microsoft.quantum.amplitudeamplification.applyamplitudeamplification
 name: ApplyAmplitudeAmplification
 type: operation
-namespace: Microsoft.Quantum.AmplitudeAmplification
+namespace: microsoft.quantum.amplitudeamplification
 summary: U daného registru aplikuje zesílení amplitud pomocí dané sady fází a Oracle, aby odrážely počáteční a konečné stavy.
 syntax: 'operation ApplyAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[]) : Unit'
 input:
   content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[])'
   types:
   - name: phases
-    summary: Sada fází popisujících částečné odrazy u každého kroku algoritmu zesílení amplitud. Příklad @"microsoft.quantum.amplitudeamplification.standardreflectionphases" najdete v tématu.
+    summary: Sada fází popisujících částečné odrazy u každého kroku algoritmu zesílení amplitud. Příklad najdete v tématu @"microsoft.quantum.amplitudeamplification.standardreflectionphases" .
     uid: microsoft.quantum.amplitudeamplification.reflectionphases
   - name: startStateReflection
     summary: Oracle, který odpovídá počátečnímu stavu.
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: d9381587b10f24411e9b712559e15345784e36e1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1c7069bf0e404ce043c242e9f546904b642b8bb0
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672975"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340591"
