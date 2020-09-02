@@ -2,8 +2,8 @@
 uid: microsoft.quantum.extensions.math.arctan2
 name: ArcTan2
 type: function
-namespace: Microsoft.Quantum.Extensions.Math
-summary: ArcTan2 se už nepoužívá. Místo toho @"microsoft.quantum.math.arctan2" ho použijte.
+namespace: microsoft.quantum.extensions.math
+summary: ArcTan2 se už nepoužívá. @"microsoft.quantum.math.arctan2"Místo toho ho použijte.
 syntax: 'function ArcTan2 (y : Double, x : Double) : Double'
 input:
   content: '(y : Double, x : Double)'
@@ -20,9 +20,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 543815dc32e69cc7e96a963efbd305d4a8f7f38b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: de81cc68e09424827af72736d79ab445ded21c0d
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82685510"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89348649"

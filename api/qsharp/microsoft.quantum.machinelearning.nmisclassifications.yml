@@ -2,7 +2,7 @@
 uid: microsoft.quantum.machinelearning.nmisclassifications
 name: NMisclassifications
 type: function
-namespace: Microsoft.Quantum.MachineLearning
+namespace: microsoft.quantum.machinelearning
 summary: Vzhledem k sadě odvozených popisků a sadě správných popisků vrátí počet indexů, na kterých se každá sada popisků liší.
 examples: >-
   ```Q#
@@ -27,13 +27,13 @@ input:
 output:
   content: Int
   types:
-  - summary: Počet indexů `idx` , které `inferredLabels[idx] != actualLabels[idx]`.
+  - summary: Počet indexů `idx` , které `inferredLabels[idx] != actualLabels[idx]` .
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 0fb65949c86d41412148ae9fc8cda993c518e9e9
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6cdc97f48ed8ecca1d7d347b5fbfc6f36326ed55
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82684445"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89335814"
