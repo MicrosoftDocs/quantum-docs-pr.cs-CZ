@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifzeroc
 name: ApplyIfZeroC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje přizpůsobitelné operace s podmínkou pro klasický výsledek s hodnotou nula.
 
 
-  `target` Pokud `result` je `Zero`zadaná `op` operace a výsledná `result`hodnota, `op` platí pro pravidlo if. V `One`případě, že `target`se nic nestane s.
+  `op`Pokud je zadaná operace a výsledná hodnota `result` , platí `op` pro pravidlo `target` if `result` `Zero` . `One`V případě, že se nic nestane s `target` .
 
   Přípona `C` označuje, že operace, která se má použít, je ovladatelné.
 syntax: "operation ApplyIfZeroC (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit"
@@ -50,9 +50,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifzeroa
 - microsoft.quantum.canon.applyifzeroca
 metadata:
-  ms.openlocfilehash: 12484848b3208dcb0a52e1f2084bbc3a5f4ec359
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e7963a6055306d00d6e7ec2d18f805f6e0fb3e11
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672600"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358135"

@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifzero
 name: ApplyIfZero
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje operaci s podmíněnou hodnotou pro klasický výsledek nula.
 
 
-  `target` Pokud `result` je `Zero`zadaná `op` operace a výsledná `result`hodnota, `op` platí pro pravidlo if. V `One`případě, že `target`se nic nestane s.
+  `op`Pokud je zadaná operace a výsledná hodnota `result` , platí `op` pro pravidlo `target` if `result` `Zero` . `One`V případě, že se nic nestane s `target` .
 syntax: "operation ApplyIfZero (result : Result, (op : ('T => Unit), target : 'T)) : Unit"
 input:
   content: "(result : Result, (op : ('T => Unit), target : 'T))"
@@ -44,9 +44,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifzeroa
 - microsoft.quantum.canon.applyifzeroca
 metadata:
-  ms.openlocfilehash: def6af6461ea91bc1df4ce347a1a35c6fb31cb8a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 65a20b30d6b0330e870407f31ecb216e2e06cb29
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672634"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358186"

@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifoneca
 name: ApplyIfOneCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Aplikuje jednotnou operaci v rámci klasické hodnoty výsledků.
 
 
-  `target` Pokud `result` je `One`zadaná `op` operace a výsledná `result`hodnota, `op` platí pro pravidlo if. V `Zero`případě, že `target`se nic nestane s.
+  `op`Pokud je zadaná operace a výsledná hodnota `result` , platí `op` pro pravidlo `target` if `result` `One` . `Zero`V případě, že se nic nestane s `target` .
 
   Přípona `CA` označuje, že operace, která se má použít, je jednotná (přivedená a přiléhající).
 syntax: "operation ApplyIfOneCA (result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T)) : Unit"
@@ -52,9 +52,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifonea
 - microsoft.quantum.canon.applyifoneca
 metadata:
-  ms.openlocfilehash: f8837e549ec1fc70b76e8151a211c4bf9f71168e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1e4aa4a8b7d4947ee72b322aaccb0b360992f1f9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672648"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358203"

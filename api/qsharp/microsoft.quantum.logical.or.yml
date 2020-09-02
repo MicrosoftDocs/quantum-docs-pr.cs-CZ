@@ -2,7 +2,7 @@
 uid: microsoft.quantum.logical.or
 name: Or
 type: function
-namespace: Microsoft.Quantum.Logical
+namespace: microsoft.quantum.logical
 summary: Vrátí logickou disjunkci dvou hodnot.
 remarks: >-
   Na rozdíl od `or` operátoru Tato funkce nemá krátký okruh, takže oba vstupy jsou plně vyhodnoceny.
@@ -33,13 +33,13 @@ input:
 output:
   content: Bool
   types:
-  - summary: '`true`pouze v případě, že `a` jsou `b` `true`nebo.'
+  - summary: '`true` pouze v případě, že `a` `b` jsou nebo `true` .'
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: fb3d62473ec3fd7c40b44bfa919b69d54c5d0218
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e95ecbda0b5a51b7380d77f514af76644689757c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82683570"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89345079"

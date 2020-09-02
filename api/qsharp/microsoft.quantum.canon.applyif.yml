@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyif
 name: ApplyIf
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Použije operaci s podmíněným klasickým bitem.
 
 
-  `target` Pokud `bit` je `true`zadaná `op` operace a bitová `bit`hodnota, `op` platí pro if. V `false`případě, že `target`se nic nestane s.
+  `op`Pokud je zadaná operace a bitová hodnota `bit` , platí `op` pro `target` if `bit` `true` . `false`V případě, že se nic nestane s `target` .
 examples: >-
   Následující připraví registr qubits do výpočetního stavu, který je reprezentován klasickým bitem řetězce, který byl zadán jako pole `Bool` hodnot:
 
@@ -59,9 +59,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: b3a573c55d461eb3c1a2af0cb7bacd0a4cfecbe5
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7d74e21954daef04543dfc42534502b2fa8aab2e
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676367"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350553"
