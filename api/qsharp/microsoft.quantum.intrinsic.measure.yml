@@ -2,12 +2,12 @@
 uid: microsoft.quantum.intrinsic.measure
 name: Measure
 type: operation
-namespace: Microsoft.Quantum.Intrinsic
+namespace: microsoft.quantum.intrinsic
 summary: >-
   Provede společné měření jednoho nebo více qubits v zadaných základech Pauli.
 
 
-  Výsledek výstupu je dán distribucí: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} kde $P _i $ je $i $ th prvek `bases`a kde $N = \texttt{Length} (\texttt{Bases}) $.
+  Výsledek výstupu je dán distribucí: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} kde $P _i $ je $i $ th prvek `bases` a kde $N = \texttt{Length} (\texttt{Bases}) $.
 
   To znamená, že měření vrátí `Result` $d $ tak, že eigenvalue účinek pozorovaného měření je $ (-1) ^ d $.
 remarks: Pokud jsou pole základu a qubit různými délkami, operace se nezdaří.
@@ -28,13 +28,13 @@ input:
 output:
   content: Result
   types:
-  - summary: '`Zero`Pokud se eigenvalue $ + $1, a `One` Pokud je zjištěna $-$1 eigenvalue.'
+  - summary: '`Zero` Pokud se eigenvalue $ + $1, a `One` Pokud je zjištěna $-$1 eigenvalue.'
     isPrimitive: true
     uid: Result
 metadata:
-  ms.openlocfilehash: a2f89d1eea48ac0a4dab7e35ef661d89a40ae84a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 24392c0995ca21931d4fa80663f72398c7a9937b
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682857"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89346830"
