@@ -2,7 +2,7 @@
 uid: microsoft.quantum.chemistry.htermtogenidx
 name: HTermToGenIdx
 type: function
-namespace: Microsoft.Quantum.Chemistry
+namespace: microsoft.quantum.chemistry
 summary: Převede výraz Hamiltonian ve `HTerm` formátu dat na GeneratorIndex.
 syntax: 'function HTermToGenIdx (term : Microsoft.Quantum.Chemistry.HTerm, termType : Int[]) : Microsoft.Quantum.Simulation.GeneratorIndex'
 input:
@@ -19,12 +19,12 @@ input:
 output:
   content: Microsoft.Quantum.Simulation.GeneratorIndex
   types:
-  - summary: GeneratorIndex reprezentující Hamiltonian termín `term`, který představuje, spolu s dalšími informacemi, které `termType`přidal.
+  - summary: GeneratorIndex reprezentující Hamiltonian termín, který představuje `term` , spolu s dalšími informacemi, které přidal `termType` .
     uid: microsoft.quantum.simulation.generatorindex
 metadata:
-  ms.openlocfilehash: cf8f527c6acf2762b5ce415b707358f1011997ef
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 670f5dbc8a836f644fbd4f9ada01fa99e78d35c5
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677516"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354089"

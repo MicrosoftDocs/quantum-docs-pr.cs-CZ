@@ -2,7 +2,7 @@
 uid: microsoft.quantum.chemistry.htermstogensys
 name: HTermsToGenSys
 type: function
-namespace: Microsoft.Quantum.Chemistry
+namespace: microsoft.quantum.chemistry
 summary: Převede Hamiltonian ve `HTerm[]` formátu dat na GeneratorSystem.
 syntax: 'function HTermsToGenSys (data : Microsoft.Quantum.Chemistry.HTerm[], termType : Int[]) : Microsoft.Quantum.Simulation.GeneratorSystem'
 input:
@@ -20,12 +20,12 @@ input:
 output:
   content: Microsoft.Quantum.Simulation.GeneratorSystem
   types:
-  - summary: GeneratorSystem představující Hamiltonian reprezentovaný vstupem `data`.
+  - summary: GeneratorSystem představující Hamiltonian reprezentovaný vstupem `data` .
     uid: microsoft.quantum.simulation.generatorsystem
 metadata:
-  ms.openlocfilehash: de0e035fd51537ab3e70792a8a31b64a7651a14a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1c51930d60a481039ad30c57b3883d23d8a20ab1
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677529"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354157"
