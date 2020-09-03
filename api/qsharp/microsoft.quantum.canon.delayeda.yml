@@ -2,7 +2,7 @@
 uid: microsoft.quantum.canon.delayeda
 name: DelayedA
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Vrátí operaci, která aplikuje danou operaci s daným argumentem.
 syntax: "function DelayedA (op : ('T => Unit is Adj), arg : 'T) : (Unit => Unit is Adj)"
 input:
@@ -28,7 +28,7 @@ input:
 output:
   content: (Unit => Unit is Adj)
   types:
-  - summary: Nová operace, která se `op` vztahuje na vstup`arg`
+  - summary: Nová operace, která se vztahuje na `op` vstup `arg`
     isOperation: true
     input:
       types:
@@ -47,9 +47,9 @@ seeAlso:
 - microsoft.quantum.canon.delayed
 - microsoft.quantum.canon.delay
 metadata:
-  ms.openlocfilehash: ee329ba4febb8b8bf9a0748a42d5c6522aa91be1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 57b03ffbc135303d43caf4f473d29a5e8c85d9ad
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675642"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356418"

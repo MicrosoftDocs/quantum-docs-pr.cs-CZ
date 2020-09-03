@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.machinelearning
 name: Microsoft.Quantum.MachineLearning
-summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů poskytuje funkce a operace používané v aplikacích strojového učení.\n\n # <a name=\"references\"></a>Reference\n - Marie Schuld, Alex Bocharov, Krysta Svore, Nathan Wiebe, \"klasifikátory orientované na okruhy\", https://arxiv.org/abs/1804.00633 ."
+summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů poskytuje funkce a operace používané v aplikacích strojového učení.\n\n # <a name=\"references\"></a>Odkazy\n - Marie Schuld, Alex Bocharov, Krysta Svore, Nathan Wiebe, \"klasifikátory orientované na okruhy\", https://arxiv.org/abs/1804.00633 ."
 functions:
 - uid: microsoft.quantum.machinelearning.approximateinputencoder
   summary: Vzhledem k množině koeficientů a tolerance vrátí operaci přípravy stavu, která připraví každý koeficient jako odpovídající amplitudu výpočetního stavu až po danou toleranci.
@@ -64,9 +64,9 @@ newtypes:
 - uid: microsoft.quantum.machinelearning.validationresults
   summary: Výsledky z ověření klasifikátoru proti sadě vzorků.
 metadata:
-  ms.openlocfilehash: 85728552e323a640d5abd78f6a2bada5c37e6919
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 8d36a7ce9650ab42103e2b22e1e2ec5948d1a0ac
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85885246"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340030"
