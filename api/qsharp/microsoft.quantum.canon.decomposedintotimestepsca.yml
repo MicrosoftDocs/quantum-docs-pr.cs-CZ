@@ -2,13 +2,13 @@
 uid: microsoft.quantum.canon.decomposedintotimestepsca
 name: DecomposedIntoTimeStepsCA
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Vrátí operaci implementující integrátoru Trotter – Suzuki pro danou operaci.
 remarks: >-
-  Při volání s `order` hodnotou Equal `1`vrátí tato funkce operaci, kterou lze simulovat pomocí nejnižšího řádu Trotter – Suzuki integrátor $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ tam, kde jsme následovali zápis [quant-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) a let $ \lambda $ bude časem vývoje (reprezentovaný prvním vstupem vrácené operace), a nechat $\{H_j\}_ {j = 1} ^ {m} $ být sadou (zkosit-Hermitian) dynamické generátory, které `op(j, lambda, _)` jsou simulované jednotkovým operátorem $e ^ {H_j \lambda} $.
+  Při volání s `order` hodnotou Equal `1` vrátí tato funkce operaci, kterou lze simulovat pomocí nejnižšího řádu Trotter – Suzuki integrátor $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ tam, kde jsme následovali zápis [quant-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) a let $ \lambda $ bude časem vývoje (reprezentovaný prvním vstupem vrácené operace), a nechat $ \{ H_j \} _ {j = 1} ^ {m} $ být sadou (zkosit-Hermitian) dynamické generátory, které `op(j, lambda, _)` jsou simulované jednotkovým operátorem $e ^ {H_j \lambda} $.
 
 
-  Podobně vrátí objekt `order` z `2` druhé objednávky symetrický Trotter – Suzuki integrátor $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m} ^{1} e ^ {H_ {j '} \lambda/2}.
+  Podobně vrátí objekt `order` z `2` druhé objednávky symetrický Trotter – Suzuki integrátor $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m} ^ {1} e ^ {H_ {j '} \lambda/2}.
 
   \end{align} $ $
 
@@ -24,7 +24,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: op
-    summary: Operace, která přijímá vstup indexu (typ `Int`) a vstupní čas (typ `Double`) pro rozklad.
+    summary: Operace, která přijímá vstup indexu (typ `Int` ) a vstupní čas (typ `Double` ) pro rozklad.
     isOperation: true
     input:
       types:
@@ -68,11 +68,11 @@ output:
     - Controlled
 typeParameters:
 - uid: "'T"
-  summary: Typ, na který má každý krok reagovat; obvykle buď `Qubit[]` nebo `Qubit`.
+  summary: Typ, na který má každý krok reagovat; obvykle buď `Qubit[]` nebo `Qubit` .
 metadata:
-  ms.openlocfilehash: 1fdb15e9a28c24ac58f026a89779951b982edb27
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e3febe45478ca86a36844d6af75884872cb12680
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680257"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356537"
