@@ -2,10 +2,10 @@
 uid: microsoft.quantum.core.rangeend
 name: RangeEnd
 type: function
-namespace: Microsoft.Quantum.Core
+namespace: microsoft.quantum.core
 summary: Vrátí definovanou koncovou hodnotu daného rozsahu, což není nutně poslední prvek v sekvenci.
 remarks: >-
-  První prvek `start`výrazu rozsahu je, jeho druhý prvek je `start+step`, třetí prvek je `start+step+step`atd., dokud `end` není předán.
+  První prvek výrazu rozsahu je `start` , jeho druhý prvek je, `start+step` třetí prvek je `start+step+step` atd., dokud `end` není předán.
 
 
   Všimněte si, že definovaná koncová hodnota rozsahu se může lišit od posledního prvku v pořadí určeném rozsahem. například v rozsahu 0.. 2... 5 poslední prvek je 4, ale koncová hodnota je 5.
@@ -23,9 +23,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 85e9006f73cd5f7b5a78b57148cbd7ad5b764878
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 08a7e70a8e12ef85902f03d7e24f99d3b5082f38
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82657636"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337990"
