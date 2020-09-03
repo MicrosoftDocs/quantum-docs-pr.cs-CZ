@@ -2,7 +2,7 @@
 uid: microsoft.quantum.logical.greaterthani
 name: GreaterThanI
 type: function
-namespace: Microsoft.Quantum.Logical
+namespace: microsoft.quantum.logical
 summary: Vrátí hodnotu true pouze v případě, že je číslo větší než jiné číslo.
 remarks: >-
   Následují ekvivalenty:
@@ -30,13 +30,13 @@ input:
 output:
   content: Bool
   types:
-  - summary: '`true`pouze v případě, `a` že je pouze striktně `b`větší než.'
+  - summary: '`true` pouze v případě, že `a` je pouze striktně větší než `b` .'
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: c4cd046280e255f41d0f93035d09ab08d53ac112
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 9a96cc731f5926351990c5cc4fde91ac519c7228
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82685846"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89345827"

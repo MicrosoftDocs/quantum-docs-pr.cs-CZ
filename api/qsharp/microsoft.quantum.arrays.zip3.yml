@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.zip3
 name: Zip3
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
 syntax: "function Zip3 (first : 'T1[], second : 'T2[], third : 'T3[]) : ('T1, 'T2, 'T3)[]"
 input:
@@ -26,7 +26,7 @@ input:
 output:
   content: ('T1, 'T2, 'T3)[]
   types:
-  - summary: Pole obsahující 3 – řazené kolekce členů formuláře `(first[idx], second[idx], third[idx])` pro každý. `idx` Pokud se tři pole neshodují, bude výstup, který je kratší než tento počet vstupů.
+  - summary: Pole obsahující 3 – řazené kolekce členů formuláře `(first[idx], second[idx], third[idx])` pro každý `idx` . Pokud se tři pole neshodují, bude výstup, který je kratší než tento počet vstupů.
     isArray: true
     types:
     - uid: "'T1"
@@ -46,9 +46,9 @@ seeAlso:
 - zip
 - zip4
 metadata:
-  ms.openlocfilehash: 899066b309e41df3a1bb2bdce93382ff58de2662
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: d16fb3da1b11fbed9487ef8555dd83bb6b3a16a5
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680738"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351386"

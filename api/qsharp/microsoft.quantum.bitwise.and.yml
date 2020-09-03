@@ -2,12 +2,12 @@
 uid: microsoft.quantum.bitwise.and
 name: And
 type: function
-namespace: Microsoft.Quantum.Bitwise
+namespace: microsoft.quantum.bitwise
 summary: >-
   Vrátí bitové a dvě celá čísla.
 
   Provede se stejný výpočet jako vestavěný `&&&` operátor.
-remarks: Další podrobnosti najdete v tématu [operátor jazyka C# &amp; ](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/and-operator) (binární).
+remarks: Další podrobnosti najdete v tématu [ &amp; operátor jazyka C#](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/and-operator) (binární).
 examples: >-
   ```qsharp
 
@@ -34,9 +34,9 @@ output:
   - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 502101daebe79aeb14732f6e484f96e45e65d089
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 74bc26f5b9f113573e51a0f3e066403d2bfbbb50
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680716"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351318"
