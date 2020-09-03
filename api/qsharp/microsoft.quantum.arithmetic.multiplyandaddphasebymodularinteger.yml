@@ -2,10 +2,10 @@
 uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
 name: MultiplyAndAddPhaseByModularInteger
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: Stejné jako MultiplyAndAddByModularInteger, ale předpokládá, že summand kóduje celá čísla v QFT základ.
 remarks: >-
-  Předpokládá, `phaseSummand` že má nejvyšší bit nastavený na hodnotu 0.
+  Předpokládá, že `phaseSummand` má nejvyšší bit nastavený na hodnotu 0.
 
   Také předpokládá, že hodnota `phaseSummand` je menší než $N $.
 syntax: 'operation MultiplyAndAddPhaseByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian, phaseSummand : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
@@ -20,7 +20,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: multiplier
-    summary: Registr v bajtech představuje unsigned integer, jehož hodnota má být přidána do každého popisku stavu `summand`.
+    summary: Registr v bajtech představuje unsigned integer, jehož hodnota má být přidána do každého popisku stavu `summand` .
     uid: microsoft.quantum.arithmetic.littleendian
   - name: phaseSummand
     summary: Registr nečinnosti, který představuje unsigned integer, který se má použít jako cíl pro tuto operaci.
@@ -36,9 +36,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
 metadata:
-  ms.openlocfilehash: 029ff8fb767ae018b7462f19a5fe09e83e606c6e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c1a7fd9523ee9056215cfbd5f2c89134f250bf1c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672804"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89353545"

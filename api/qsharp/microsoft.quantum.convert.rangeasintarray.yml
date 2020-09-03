@@ -2,8 +2,8 @@
 uid: microsoft.quantum.convert.rangeasintarray
 name: RangeAsIntArray
 type: function
-namespace: Microsoft.Quantum.Convert
-summary: Vytvoří pole `arr` celých čísel, která jsou vyhodnocena spuštěním.. krok.. účelu.
+namespace: microsoft.quantum.convert
+summary: Vytvoří pole celých čísel, která jsou vyhodnocena spuštěním `arr` .. krok.. účelu.
 examples: >-
   ```qsharp
 
@@ -17,20 +17,20 @@ input:
   content: '(range : Range)'
   types:
   - name: range
-    summary: '`Range` Hodnoty `start..step..end` , které mají být převedeny na pole.'
+    summary: '`Range`Hodnoty, `start..step..end` které mají být převedeny na pole.'
     isPrimitive: true
     uid: Range
 output:
   content: Int[]
   types:
-  - summary: Nové pole celých čísel odpovídající hodnotám, které `range`prochází.
+  - summary: Nové pole celých čísel odpovídající hodnotám, které prochází `range` .
     isArray: true
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: f909319a624459b2453db2ac73d3ceaec38f6911
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 22077ab84984e3701fef26c28fefefd325ea4627
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677381"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89338313"

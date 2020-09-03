@@ -2,28 +2,28 @@
 uid: microsoft.quantum.convert.resultarrayasboolarray
 name: ResultArrayAsBoolArray
 type: function
-namespace: Microsoft.Quantum.Convert
-summary: '`Result[]` Převede `Bool[]` typ na typ, kde `One` je mapován na `true` a `Zero` je mapován na. `false`'
+namespace: microsoft.quantum.convert
+summary: Převede `Result[]` typ na `Bool[]` typ, kde `One` je mapován na `true` a `Zero` je mapován na `false` .
 syntax: 'function ResultArrayAsBoolArray (input : Result[]) : Bool[]'
 input:
   content: '(input : Result[])'
   types:
   - name: input
-    summary: '`Result[]`má být převedeno.'
+    summary: '`Result[]` má být převedeno.'
     isArray: true
     isPrimitive: true
     uid: Result
 output:
   content: Bool[]
   types:
-  - summary: '`Bool[]` Představuje `input`.'
+  - summary: '`Bool[]`Představuje `input` .'
     isArray: true
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: 19a9287931dddf1a302a66cb85d4e925163688ad
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 9eb9414ca3b58dea5c58d0e305a6fddcdf1032c8
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677356"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89338262"
