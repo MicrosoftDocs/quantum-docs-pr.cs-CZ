@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.zip
 name: Zip
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
 examples: >-
   ```qsharp
@@ -31,7 +31,7 @@ input:
 output:
   content: ('T, 'U)[]
   types:
-  - summary: Pole obsahující páry formuláře `(left[idx], right[idx])` pro každý. `idx` Pokud tato dvě pole nemají stejnou délku, výstup bude až na kratší dobu.
+  - summary: Pole obsahující páry formuláře `(left[idx], right[idx])` pro každý `idx` . Pokud tato dvě pole nemají stejnou délku, výstup bude až na kratší dobu.
     isArray: true
     types:
     - uid: "'T"
@@ -47,9 +47,9 @@ seeAlso:
 - zip3
 - zip4
 metadata:
-  ms.openlocfilehash: ae3a66ee226cdc0e26ec0cc0e87b1822bad45579
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 448a5f66cbb8d927f357d83420c593ee80555705
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675089"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351454"

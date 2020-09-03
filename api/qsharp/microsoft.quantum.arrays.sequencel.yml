@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.sequencel
 name: SequenceL
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Získá pole celých čísel v daném intervalu.
-remarks: Rozdíl mezi `from` a `to` se musí vejít do `Int` hodnoty.
+remarks: Rozdíl mezi `from` a se `to` musí vejít do `Int` hodnoty.
 examples: >-
   ```qsharp
 
@@ -24,20 +24,20 @@ input:
     isPrimitive: true
     uid: BigInt
   - name: to
-    summary: Celkový index v intervalu, který není menší než `from`.
+    summary: Celkový index v intervalu, který není menší než `from` .
     isPrimitive: true
     uid: BigInt
 output:
   content: BigInt[]
   types:
-  - summary: Pole obsahující sekvenci čísel `from`, `from + 1`,...,. `to`
+  - summary: Pole obsahující sekvenci čísel `from` , `from + 1` ,..., `to` .
     isArray: true
     isPrimitive: true
     uid: BigInt
 metadata:
-  ms.openlocfilehash: 7271856286009cfd1651f19f69f932e79d79c2bf
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c39259d5c39ff523464b1defc3c29c7dca6551ee
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680810"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89351658"
