@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d815a9a25b8ba5e9489b6d3d27fb0d64ab4aaa1d
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 3e95f142572e104fe1e133b109d197ed5bb01d9a
+ms.sourcegitcommit: af2e9691c1900ced7e09d6320255617c9939ed55
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863444"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90063236"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -112,7 +112,7 @@ Q#Operace je podprogram nečinnosti. To znamená, že se jedná o volanou rutinu
 
 Argumenty operace jsou zadány jako řazené kolekce členů v závorkách.
 
-Návratový typ operace je určen za dvojtečkou. V našem případě operace `SetQubitState` nic nevrací, takže je označena jako vracející `Unit`. Toto je Q# ekvivalent `unit` v F #, který je zhruba podobný `void` v jazyce C# a prázdná řazená kolekce členů ( `Tuple[()]` ) v Pythonu.
+Návratový typ operace je určen za dvojtečkou. V našem případě operace `SetQubitState` nic nevrací, takže je označena jako vracející `Unit`. Toto je Q# ekvivalent `unit` v F #, který je zhruba podobný `void` v jazyce C# a prázdná řazená kolekce členů v Pythonu ( `()` reprezentovaná parametrem typu `Tuple[()]` ).
 
 V první operaci jste použili dvě provozní operace Q# :
 
