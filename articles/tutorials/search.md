@@ -2,19 +2,19 @@
 title: Spuštění vyhledávacího algoritmu Grover v Q# sadě – pro vývojová prostředí
 description: Sestavte Q# projekt, který ukazuje algoritmus Grover, jeden z kanonických algoritmů pro stav.
 author: cgranade
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f2ae56bdca893e8a317c16d0a993da15b9f021b5
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 86c6a651a117b788eb4c8fdd805ead7ab8f54dd7
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863110"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834801"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Kurz: Implementace Groverova vyhledávacího algoritmu v jazyku Q\#
 
@@ -58,9 +58,9 @@ Počet postupných zvýšení je menší než počet položek v seznamu. Proto G
 
 ### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>Q# aplikace se sadou Visual Studio nebo Visual Studio Code
 
-Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
+Program spustí operaci nebo funkci označenou `@EntryPoint()` atributem simulátoru nebo Estimator prostředku v závislosti na konfiguraci projektu a možnostech příkazového řádku.
 
-V sadě Visual Studio se skript jednoduše spustí stisknutím Ctrl + F5.
+V aplikaci Visual Studio stačí stisknout kombinaci kláves CTRL + F5 ke spuštění skriptu.
 
 V editoru VS Code při prvním použití sestavte `Program.qs` zadáním následujícího příkazu na terminálu:
 
@@ -89,7 +89,7 @@ operations.qs [options] [command]
 Commands:
 ```
 
-Důvodem je to, že jste nezadali počet qubitů, které chcete použít, takže terminál vás upozorní na příkazy, které jsou pro spustitelný soubor k dispozici. Pokud chcete použít 5 qubitů, měli byste zadat:
+Důvodem je to, že jste nezadali počet qubits, které jste chtěli použít, takže terminál zobrazí příkazy, které jsou k dispozici pro spustitelný program. Pokud chceme použít 5 qubits, měli byste zadat:
 
 ```Command line
 dotnet run --n-qubits 5
@@ -110,7 +110,7 @@ Reflecting about marked state...
 Pokud jste se seznámili s tímto kurzem, podívejte se na některé z níže uvedených prostředků, kde se dozvíte víc o tom, jak můžete použít Q# k psaní vlastních aplikací s využitím.
 
 - [Zpět na Začínáme pomocí průvodce sady QDK](xref:microsoft.quantum.welcome)
-- Vyzkoušejte [ukázku](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search) obecnějšího Groverova vyhledávacího algoritmu
+- Vyzkoušejte [ukázku](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/database-search) obecnějšího Groverova vyhledávacího algoritmu
 - [Další informace o Groverově vyhledávání v kvantových katách](xref:microsoft.quantum.overview.katas)
 - Další informace o [zvětšování amplitudy][amplitude-amplification], technice kvantových výpočtů, která stojí za Groverovým vyhledávacím algoritmem
 - [Koncepce kvantových výpočtů](xref:microsoft.quantum.concepts.intro)

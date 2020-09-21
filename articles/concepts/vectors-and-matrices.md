@@ -1,6 +1,6 @@
 ---
 title: vektory a matice v popisu pro výpočetní výkon – Popis: Naučte se základy práce s vektory a maticemi.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ $$v =\begin{bmatrix}
 v_1\\\\
 v_2\\\\
 \vdots\\\\
-v_n\end{bmatrix}$$
+v_n \end{bmatrix}$$
 
 Norma vektoru $ v $ je definována jako $ \sqrt { \sum \_ i | v \_ i | ^ 2 } $ . Vektor je označován jako Jednotková norma (nebo případně se nazývá [*vektor jednotky*](https://en.wikipedia.org/wiki/Unit_vector)), pokud je jeho norma $ 1 $ . [*Sousední objekt vektoru*](https://en.wikipedia.org/wiki/Adjoint_matrix) $ v $ je označený $ v ^ \dagger $ a je definován jako následující vektor řádku $ \* $ , kde označuje komplexně sdružené,
 
@@ -114,12 +114,12 @@ u_1\\\\
 u_2\\\\
 \vdots\\\\
 u_n \end{bmatrix} ~ \mathrm { a}~
-ICES=\begin{bmatrix}
+ICES =\begin{bmatrix}
     v_1\\\\
     v_2\\\\
     \vdots\\\\
     v_n \end{bmatrix} a ~ \mathrm { potom}~
-Au a BV=\begin{bmatrix}
+Au a BV =\begin{bmatrix}
 au_1 + bv_1\\\\
 au_2 + bv_2\\\\
 \vdots\\\\
@@ -128,7 +128,7 @@ $$
 
 [*Matice*](https://en.wikipedia.org/wiki/Matrix_(mathematics)) o velikosti $ m \times n $ je kolekcí $ $ komplexních čísel MN uspořádaných v $ m $ řádcích a $ n $ sloupcích, jak je znázorněno níže:
 
-$$4m= 
+$$4m = 
 \begin{bmatrix}
 M_ { 11 } ~~ M_ { 12 } ~~ \cdots ~~ M_ { 1N}\\\\
 M_ { 21 } ~~ M_ { 22 } ~~ \cdots ~~ M_ { 2N}\\\\
@@ -183,7 +183,7 @@ Matice $ m $ se označuje jako [*Hermitian*](https://en.wikipedia.org/wiki/Hermi
 Nakonec [*produkt tensor*](https://en.wikipedia.org/wiki/Tensor_product) (nebo Kronecker produkt) o dvou matricích $ m $ o velikosti $ m \times n $ a $ n $ velikosti $ p \times q $ je větší matice $ p = M \otimes n $ s velikostí $ MP \times NQ $ a získá se z $ M $ a $ n $ následujícím způsobem:
 
 \begin{align}
-    M \otimes N&=
+    M \otimes N &=
     \begin{bmatrix}
         M_ { 11 } ~~ \cdots ~~ M_ { 1N }\\\\
         \ddots\\\\
@@ -211,7 +211,7 @@ $$
     \begin{bmatrix}
         a \\\\ b \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}=
     \begin{bmatrix}
-        a \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
+        a \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}
         \\\\[1,5 EM] b \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
     \end{bmatrix}
     =\begin{bmatrix}c a \\\\ d \\\\ a e \\\\ b c \\\\ b d \\\\\end{bmatrix}
@@ -221,26 +221,26 @@ a
 
 $$
     \begin{bmatrix}
-        a \ b \\\\ c \ d\end{bmatrix}
+        a \ b \\\\ c \ d \end{bmatrix}
     \otimes 
     \begin{bmatrix}
-        e \ f \\\\ g \ h\end{bmatrix}
+        e \ f \\\\ g \ h \end{bmatrix}
      =
     \begin{bmatrix}
     určitého\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     b\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \\\\[1em] c\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     trojrozměrné\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \end{bmatrix}
     =
     \begin{bmatrix}
-    AE \ AF \ je \ Bf\\\\
-    AG \ Ah \ BG \ BH\\\\
-    CE \ CF \ de \ DF\\\\
+    AE \ AF \ je \ Bf \\\\
+    AG \ Ah \ BG \ BH \\\\
+    CE \ CF \ de \ DF \\\\
     \ ch \ DG \ DH \end{bmatrix} .
 $$
 

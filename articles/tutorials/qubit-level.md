@@ -2,19 +2,19 @@
 title: Zápis a simulace programů na úrovni qubit v nástroji Q#
 description: Podrobný návod k psaní a simulaci programu pro období, který funguje na úrovni jednotlivých qubit
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39b2d762c0efbfa4bb3a60a1dcee6bcbe2bd91a9
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 0dbeee8e092c830576ba8f79733035cdeeac11de
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863338"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834954"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Kurz: zápis a simulace programů qubit na úrovni Q\#
 
@@ -32,7 +32,7 @@ V našem případě definujeme Q# operaci, která provede úplnou qubitou transf
 <br/>
 <img src="../media/qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
 
-## <a name="prerequisites"></a>Předpoklady
+## <a name="prerequisites"></a>Požadavky
 
 * [Nainstalujte](xref:microsoft.quantum.install) sadu pro vývoj pro práci s více jazyky pomocí vašeho preferovaného jazykového a vývojového prostředí.
 * Pokud už máte sadu QDK nainstalovanou, zkontrolujte, že je [aktualizovaná na nejnovější verzi](xref:microsoft.quantum.update)
@@ -116,7 +116,7 @@ V `using` případě se qubits automaticky přiřazují ve stavu $ \ket {0} $. M
 V dalším kroku použijeme brány, které tvoří samotnou operaci.
 Q# již obsahuje mnoho základních bran jako operací v [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) oboru názvů a nejsou to žádné výjimky. 
 
-V rámci Q# operace se příkazy, které volají volání, spustí v sekvenčním pořadí.
+V rámci Q# operace budou příkazy, které vyvolává volání, samozřejmě spouštěny v sekvenčním pořadí.
 Proto první brána, která se má použít, je [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) na první qubit:
 
 <br/>
@@ -132,9 +132,9 @@ Proto použití pro na [`H`](xref:microsoft.quantum.intrinsic.h) první qubit na
 Kromě použití `H` brány (Hadamard) pro jednotlivé qubits se okruh QFT skládá hlavně z řízených [`R1`](xref:microsoft.quantum.intrinsic.r1) otočení.
 `R1(θ, <qubit>)`Operace obecně ponechá součást $ \ket {0} $ qubit beze změny a při použití rotace $e ^ {i\theta} $ na součást $ \ket {1} $.
 
-#### <a name="controlled-operations"></a>Kontrolované operace
+#### <a name="controlled-operations"></a>Řízené operace
 
-Q# je velmi snadné podmínkou provedení operace na jednom nebo několika qubits ovládacích prvků.
+Q# způsobuje velmi snadné spuštění operace na jednom nebo několika qubits ovládacích prvků.
 Obecně jsme zavedli pouze volání s `Controlled` a argumenty operace se mění jako:
 
  `Op(<normal args>)` $ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
@@ -244,7 +244,7 @@ namespace NamespaceQFT {
 
 Po Q# dokončení souboru a operace je náš program pro práci s více operačními systémem připravený k volání a simulaci.
 
-## <a name="execute-the-program"></a>Spuštění programu
+## <a name="run-the-program"></a>Spuštění programu
 
 Po definování naší Q# operace v `.qs` souboru teď musíme tuto operaci zavolat a sledovat všechna vrácená klasická data.
 V současné době se nevrátí nic (odvolání této operace definované výše `Unit` ), ale když později tuto operaci upravíte, Q# aby vracela pole výsledků měření ( `Result[]` ), budeme na to řešit.
@@ -269,7 +269,7 @@ Chcete-li spustit program, otevřete terminál ve složce projektu a zadejte
 dotnet run
 ```
 
-Po spuštění byste měli vidět `Message` `DumpMachine` výstupy a níže vytisknuté ve vaší konzole.
+Po dokončení byste měli vidět `Message` `DumpMachine` výstupy a níže vytisknuté ve vaší konzole.
 
 
 #### <a name="python"></a>[Python](#tab/tabid-python)
@@ -314,9 +314,9 @@ Hostitel C# má čtyři části:
     V tomto příkladu nejsou žádné.
 3. Spusťte kvantový algoritmus. 
     Každá Q# operace vygeneruje třídu jazyka C# se stejným názvem. 
-    Tato třída má metodu `Run`, která operaci **asynchronně** provede.
-    Spuštění je asynchronní, protože asynchronní bude i spuštění na skutečném hardwaru. 
-    Vzhledem k tomu `Run` , že metoda je asynchronní, zavoláme `Wait()` metodu; tyto bloky se spustí, dokud se úloha nedokončí a výsledek vrátí synchronně. 
+    Tato třída má `Run` metodu, která spouští operaci **asynchronně**.
+    Spuštění je asynchronní, protože jeho spuštění na skutečném hardwaru bude asynchronní. 
+    Vzhledem k tomu `Run` , že metoda je asynchronní, zavoláme `Wait()` metodu. Tato operace zablokuje spuštění, dokud se úloha nedokončí a výsledek vrátí synchronně. 
 4. Zpracování vráceného výsledku operace.
     V současné době operace nevrátí žádnou hodnotu.
 
@@ -499,7 +499,7 @@ Kód poslední operace by měl vypadat takto:
 }
 ```
 
-Pokud pracujete z příkazového řádku, vrácené pole bude jednoduše vytištěno přímo do konzoly na konci provádění.
+Pokud pracujete z příkazového řádku, vrácené pole bude na konci běhu jednoduše zobrazeno přímo na konzoli.
 V opačném případě aktualizujte hostitelský program pro zpracování vráceného pole.
 
 #### <a name="command-prompt"></a>[Příkazový řádek](#tab/tabid-cmdline)

@@ -9,12 +9,12 @@ uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 24318380e0e63957a51961762a33446fe0121b21
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 96a1d0d75f3ff7de11407fd76479cbae86ce7571
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863677"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759268"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Vývoj s využitím Q# a .NET
 
@@ -88,7 +88,7 @@ Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše post
 Jakmile budete mít projekty nastavené podle výše uvedených pokynů, můžete z konzolové aplikace zavolat program v Q#.
 Kompilátor Q# vytvoří třídy .NET pro každou operaci a funkci Q#, které umožní spouštění kvantových programů v simulátoru.
 
-Například [ukázka interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) obsahuje následující příklad operace Q#:
+Například [ukázka interoperability .NET](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet) obsahuje následující příklad operace Q#:
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 

@@ -1,5 +1,5 @@
 ---
-title: Tok řízení vQ#
+title: Tok řízení v Q#
 description: Smyčky, podmíněnéy atd.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,23 +9,23 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867943"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759658"
 ---
-# <a name="control-flow-in-no-locq"></a>Tok řízení vQ#
+# <a name="control-flow-in-no-locq"></a>Tok řízení v Q#
 
 V rámci operace nebo funkce každý příkaz běží v uvedeném pořadí, podobně jako ostatní běžně imperativní klasické jazyky.
 Tok řízení lze však upravit třemi různými způsoby:
 
-* `if`učiněn
-* `for`smyčky
-* `repeat-until-success`smyčky
+* `if` učiněn
+* `for` smyčky
+* `repeat-until-success` smyčky
 
-`if` `for` Konstrukce toku ovládacích prvků a postupují ve známém smyslu pro většinu klasických programovacích jazyků. [`Repeat-until-success`](#repeat-until-success-loop)smyčky jsou popsány dále v tomto článku.
+`if` `for` Konstrukce toku ovládacích prvků a postupují ve známém smyslu pro většinu klasických programovacích jazyků. [`Repeat-until-success`](#repeat-until-success-loop) smyčky jsou popsány dále v tomto článku.
 
 Důležité je, `for` smyčky a `if` příkazy lze použít v operacích, pro které jsou automaticky generovány [specializace](xref:microsoft.quantum.guide.operationsfunctions) . V tomto scénáři sousední `for` smyčka smyčky obrátí směr a převezme souseda pro každou iteraci.
 Tato akce následuje po principu "obuv-a-SOCKS": Pokud chcete vrátit zpět do aplikace SOCKS a potom provést operaci, musíte zrušit uvedení na obuv a pak zrušit vložení na SOCKS. 
@@ -55,7 +55,7 @@ if (result == One) {
 } 
 // n is not bound
 ```
-– nebo –
+nebo
 ```qsharp
 if (i == 1) {
     X(target);
@@ -173,7 +173,7 @@ Příklad:
 ```qsharp
 return 1;
 ```
-– nebo –
+nebo
 ```qsharp
 return (results, qubits);
 ```
@@ -248,7 +248,7 @@ fixup {
 }
 ```
 
-### <a name="rus-without-fixup"></a>RU bez`fixup`
+### <a name="rus-without-fixup"></a>RU bez `fixup`
 
 Tento příklad ukazuje smyčku ru bez kroku opravy. Kód je okruh pravděpodobnostní, který implementuje důležitou rotující bránu $V _3 = (\boldone + 2 i Z)/\sqrt {5} $ pomocí `H` bran a `T` .
 Smyčka končí v průměru v $ \frac {8} {5} $ opakování.
@@ -330,7 +330,7 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 }
 ```
 
-Další informace najdete v tématu [Ukázka testování částí, která je k dispozici ve standardní knihovně](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
+Další informace najdete v tématu [Ukázka testování částí, která je k dispozici ve standardní knihovně](https://github.com/microsoft/Quantum/blob/main/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
 
 ## <a name="next-steps"></a>Další kroky
 

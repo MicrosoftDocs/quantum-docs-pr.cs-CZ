@@ -4,18 +4,18 @@ description: Microsoft Quantum Development Kit oznámení a informace o softwaru
 services: service-name-with-dashes-AZURE-ONLY
 keywords: Nepřidávejte ani neupravujte klíčová slova, aniž byste se poradili se svým odborníkem na SEO.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1d76e9c8532dd7818941d182773a8f85a86becee
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 939dc681d6b9a89f02fd1f392b7fd84067d98e8f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869745"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834121"
 ---
 # <a name="third-party-software-notices-and-information"></a>OZNÁMENÍ A INFORMACE O SOFTWARU TŘETÍ STRANY
 
@@ -268,7 +268,7 @@ SOFTWARE JE POSKYTOVÁN TAK, JAK JE, BEZ ZÁRUKY JAKÉHOKOLI DRUHU, VÝSLOVNÉHO
 
 S výjimkou případů, kdy je uvedeno jinak, je knihovna FParsec ve zdrojovém a binárním formuláři distribuována v rámci zjednodušené licence BSD. Zjednodušená licence BSD (označovaná také jako "2 k klauzule BSD License") je jednoduchá opravňující licence, která je kompatibilní s modelem OSI k. 
 
-FParsec zahrnuje data odvozená z databáze znaků Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., který je distribuován za následující výrazy:http://www.unicode.org/terms_of_use.html#Exhibit1 
+FParsec zahrnuje data odvozená z databáze znaků Unicode v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., který je distribuován za následující výrazy: http://www.unicode.org/terms_of_use.html#Exhibit1 
 
 Dokumentace ve složce doc je licencovaná v rámci nekomerční 3,0 nepřipojené licence k Creative \ nekomerčního přidělení. Tato licence Creative-licence vám neumožňuje používat dokumentaci pro komerční účely bez oprávnění. To znamená, že nemůžete prodávat dokumentaci ve formě knihy za účelem zisku nebo ji umístit do farmy webového obsahu, abyste mohli získat peníze pomocí reklam. Můžete ale samozřejmě použít dokumentaci v komerčním kontextu (například je umístit na intranet komerčního podniku), pokud se nepokoušíte přímo získat peníze z textu dokumentace. 
 
@@ -284,6 +284,6 @@ Tento software poskytuje držitelé autorského práva "tak, jak je" a jakékoli
 
 2,2 Creative k navýšení nekomerčních 3,0 nelicencovaných licencí
 
-Shrnuthttps://creativecommons.org/licenses/by-nc/3.0/
+Shrnut https://creativecommons.org/licenses/by-nc/3.0/
 
-Úplný text licence:https://creativecommons.org/licenses/by-nc/3.0/legalcode 
+Úplný text licence: https://creativecommons.org/licenses/by-nc/3.0/legalcode 

@@ -1,6 +1,6 @@
 ---
-title: Q#Principy návrhu rozhraní API
-description: Q#Principy návrhu rozhraní API
+title: Q# Principy návrhu rozhraní API
+description: Q# Principy návrhu rozhraní API
 author: cgranade
 ms.author: chgranad
 ms.date: 3/9/2020
@@ -9,14 +9,14 @@ uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 580fcaea575ff544ed2c5f31eba7e963bea4534b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 8714d3290e4099f901dab20a9ee9334699c4ad81
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866889"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834903"
 ---
-# <a name="no-locq-api-design-principles"></a>Q#Principy návrhu rozhraní API
+# <a name="no-locq-api-design-principles"></a>Q# Principy návrhu rozhraní API
 
 ## <a name="introduction"></a>Úvod
 
@@ -44,7 +44,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
     Nepoužívejte jiné, nezaveďte veřejná rozhraní API pro případ, že jsou užitečná, ale ujistěte se, že každá část rozhraní API má *konkrétní* příklad, ve kterém bude užitečná.
 
   *Příklady:*
-  - @"microsoft.quantum.canon.applytoeachca"dá se použít jako `ApplyToEachCA(H, _)` pro přípravu registrů v jednotném stavu, což je běžný úkol v mnoha algoritmech pro každé z nich. Stejnou operaci lze také použít pro mnoho dalších úloh v rámci přípravy, čísel a algoritmů založených na Oracle.
+  - @"microsoft.quantum.canon.applytoeachca" dá se použít jako `ApplyToEachCA(H, _)` pro přípravu registrů v jednotném stavu, což je běžný úkol v mnoha algoritmech pro každé z nich. Stejnou operaci lze také použít pro mnoho dalších úloh v rámci přípravy, čísel a algoritmů založených na Oracle.
 
 - ✅Nové návrhy rozhraní API pro **pracovní debatu** a workshop vám umožní dvakrát ověřit, jestli jsou intuitivní a splňují navržené případy použití.
 
@@ -65,11 +65,11 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ✅**Poskytněte operace** "Shim" a funkce, které umožňují správné fungování stávajícího uživatelského kódu během vyřazení.
 
   *Příklady:*
-  - Při přejmenování operace, která je volána `EstimateExpectation` na `EstimateAverage` , zaveďte novou operaci `EstimateExpectation` s názvem, která volá původní operaci na svém novém názvu, aby existující kód mohl nadále fungovat správně.
+  - Při přejmenování operace, která je volána `EstimateExpectation` na   `EstimateAverage` , zaveďte novou operaci   `EstimateExpectation` s názvem, která volá původní operaci na svém novém názvu, aby existující kód mohl nadále fungovat správně.
 
 - ✅**Použijte** @"microsoft.quantum.core.deprecated" atribut pro komunikaci nepoužívaných uživatelů.
 
-- ✅Při přejmenování operace nebo **funkce zadejte nový** název jako vstup řetězce do `@Deprecated` .
+- ✅ Při přejmenování operace nebo **funkce zadejte nový** název jako vstup řetězce do `@Deprecated` .
 
 - pro podporované verze **se ⛔️ neodstraňují** stávající funkce ani operace, aniž by byla doba zastaralosti aspoň šest měsíců pro verze Preview nebo aspoň dva roky.
 
@@ -91,13 +91,13 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
   *Příklady:*
   - Podprogram, který má čtverce vstupu s plovoucí desetinnou čárkou, se dá napsat deterministickému, takže by měl být uživateli vystaven jako `Squared : Double -> Double` místo operace `Square : Double => Double` . To umožňuje, aby podrutina byla volána na více místech (například uvnitř jiných funkcí) a poskytovala užitečné informace o optimalizaci kompilátoru, který může ovlivnit výkon a optimalizace.
-  - `ForEach<'TInput, 'TOutput>('TInput => 'TOutput, 'TInput[]) => 'TOutput[]`a `Mapped<'TInput, 'TOutput>('TInput -> 'TOutput, 'TInput[]) -> 'TOutput[]` liší se zárukami provedenými v souvislosti s determinismem; obě jsou užitečné v různých případech.
-  - Rutiny rozhraní API, které transformují použití operací s více poli, je často možné provádět deterministickým způsobem, takže je možné je zpřístupnit jako funkce, jako je `CControlled<'T>(op : 'T => Unit) => ((Bool, 'T) => Unit)` .
+  - `ForEach<'TInput, 'TOutput>('TInput => 'TOutput, 'TInput[]) => 'TOutput[]` a `Mapped<'TInput, 'TOutput>('TInput -> 'TOutput, 'TInput[]) -> 'TOutput[]` liší se zárukami provedenými v souvislosti s determinismem; obě jsou užitečné v různých případech.
+  - Rutiny rozhraní API, které transformují použití operací s více poli, je často možné provádět deterministickým způsobem, takže je možné je zpřístupnit jako funkce, jako je   `CControlled<'T>(op : 'T => Unit) => ((Bool, 'T) => Unit)` .
 
 - ✅**Proveďte** generalizaci vstupního typu tak, jak je to pro každou funkci a operaci přijatelné, podle potřeby pomocí parametrů typu.
 
   *Příklady:*
-  - `ApplyToEach`má typ `<'T>(('T => Unit), 'T[]) => Unit` místo konkrétního typu nejběžnější aplikace, `((Qubit => Unit), Qubit[]) => Unit` .
+  - `ApplyToEach` má typ `<'T>(('T => Unit), 'T[]) => Unit` místo konkrétního typu nejběžnější aplikace, `((Qubit => Unit), Qubit[]) => Unit` .
 
 > [!TIP]
 > Je důležité, abyste předpokládali budoucí potřeby, ale je také důležité řešit konkrétní problémy pro uživatele.
@@ -121,7 +121,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ✅**Seřazení položek** ve vstupních řazených kolekcích členů tak, aby nejčastěji používané vstupy probíhaly jako první (tj.: tak, aby částečné aplikace fungují podobně jako procesu curryfikace).
 
   *Příklady:*
-  - Operace `ApplyRotation` , která přebírá číslo s plovoucí desetinnou čárkou a qubit, může být často částečně aplikována se vstupem s plovoucí desetinnou čárkou pro použití s operacemi, které očekávají zadání typu `Qubit => Unit` . Proto signatura`operation ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl`
+  - Operace `ApplyRotation` , která přebírá číslo s plovoucí desetinnou čárkou a qubit, může být často částečně aplikována se vstupem s plovoucí desetinnou čárkou pro použití s operacemi, které očekávají zadání typu `Qubit => Unit` . Proto signatura `operation ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl`
       bude fungovat konzistentně s částečnou aplikací.
   - Obvykle tento návod znamená umístění všech klasických dat před všemi qubits ve vstupních řazených kolekcích členů, ale má dobré rozhodnutí a kontroluje, jak se rozhraní API volá v praxi.
 
@@ -132,7 +132,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ✅**Zaveďte nové** uživatelsky definované typy a poskytněte tak užitečné zkratky pro dlouhé a/nebo komplikované typy.
 
   *Příklady:*
-  - V případech, kdy typ operace se třemi vstupy qubit pole se obvykle považuje za vstup nebo vrácený jako výstup, který poskytuje UDT jako`newtype TimeDependentBlockEncoding = ((Qubit[], Qubit[], Qubit[]) => Unit is Adj + Ctl)`
+  - V případech, kdy typ operace se třemi vstupy qubit pole se obvykle považuje za vstup nebo vrácený jako výstup, který poskytuje UDT jako `newtype TimeDependentBlockEncoding = ((Qubit[], Qubit[], Qubit[]) => Unit is Adj + Ctl)`
       vám může pomoct zajistit užitečnou zkrácený tvar.
 
 - ✅Zaveďte nové uživatelsky definované typy k **označení toho,** že daný základní typ by měl být použit pouze v velmi konkrétním smyslu.
@@ -143,12 +143,12 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ✅**Zaveďte nové** uživatelsky definované typy pomocí pojmenovaných položek, které umožňují budoucí rozšíření (např.: strukturu výsledků, která může v budoucnu obsahovat další pojmenované položky).
 
   *Příklady:*
-  - Když operace `TrainModel` zveřejňuje velký počet možností konfigurace, vystavení těchto možností jako nového `TrainingOptions` UDT a zadání nové funkce `DefaultTrainingOptions : Unit -> TrainingOptions` umožní uživatelům přepsat konkrétní pojmenované položky v TRAININGOPTIONS hodnotách UDT a zároveň umožnit vývojářům knihovny PŘIDÁVAT nové položky UDT podle potřeby.
+  - Když operace `TrainModel` zveřejňuje velký počet možností konfigurace, vystavení těchto možností jako nového   `TrainingOptions` UDT a zadání nové funkce   `DefaultTrainingOptions : Unit -> TrainingOptions` umožní uživatelům přepsat konkrétní pojmenované položky v TRAININGOPTIONS hodnotách UDT a zároveň umožnit vývojářům knihovny PŘIDÁVAT nové položky UDT podle potřeby.
 
 - ✅**Deklarujte** pojmenované položky pro nové uživatelsky definované typy v předvolbách, aby vyžadovaly, aby uživatelé znali správné rozstavbu řazené kolekce členů.
 
   *Příklady:*
-  - Když představuje komplexní číslo v jeho polárním rozkladu, dávají přednost `newtype ComplexPolar = (Magnitude: Double, Argument: Double)` `newtype ComplexPolar = (Double, Double)` .
+  - Když představuje komplexní číslo v jeho polárním rozkladu, dávají přednost   `newtype ComplexPolar = (Magnitude: Double, Argument: Double)`   `newtype ComplexPolar = (Double, Double)` .
 
 **Klíčový princip:** použití uživatelsky definovaných typů způsobem, jak omezit zátěžové zatížení a které nevyžadují, aby se uživatel dozvěděl o dalších konceptech a nomenklatuře.
 
@@ -167,7 +167,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ⛔️ nezavádět funkce přistupujícího objektu, **Pokud není potřeba** striktně;   v tomto případě silně preferovat pojmenované položky.
 
   *Příklady:*
-  - Při seznámení s `newtype Complex = (Double, Double)` rozhraním UDT preferovat změnu definice na `newtype Complex = (Real : Double, Imag : Double)` k představení funkcí `GetReal : Complex -> Double` a `GetImag : Complex -> Double` .
+  - Při seznámení s `newtype Complex = (Double, Double)` rozhraním UDT preferovat změnu definice na   `newtype Complex = (Real : Double, Imag : Double)` k představení funkcí `GetReal : Complex -> Double` a   `GetImag : Complex -> Double` .
 
 ## <a name="namespaces-and-organization"></a>Obory názvů a organizace
 
@@ -176,29 +176,29 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 - ✅**Jmenujte obory názvů jako** `Publisher.Product.DomainArea` .
 
   *Příklady:*
-  - Funkce, operace a UDT publikované Microsoftem jako součást funkce simulace doby provozu v rámci prostředí pro vývoj provozu po částech se nacházejí v `Microsoft.Quantum.Simulation` oboru názvů.
-  - `Microsoft.Quantum.Math`představuje obor názvů publikovaný společností Microsoft jako součást prostředí pro vývoj všech stavů, které se týká matematické oblasti domény.
+  - Funkce, operace a UDT publikované Microsoftem jako součást funkce simulace doby provozu v rámci prostředí pro vývoj provozu po částech se nacházejí v   `Microsoft.Quantum.Simulation` oboru názvů.
+  - `Microsoft.Quantum.Math` představuje obor názvů publikovaný společností Microsoft jako součást prostředí pro vývoj všech stavů, které se týká matematické oblasti domény.
 
 - ✅**Založte operace** , funkce a uživatelsky definované typy, které se používají pro konkrétní funkce, do oboru názvů, který popisuje tyto funkce, a to i v případě, že se tato funkce používá v různých doménách problému.
 
   *Příklady:*
-  - Rozhraní API pro přípravu stavu publikovaná Microsoftem jako součást vývojové sady pro všechna ta budou umístěna do `Microsoft.Quantum.Preparation` .
-  - Rozhraní API pro simulaci nedostatku doby publikovaná společností Microsoft jako součást vývojové sady pro plnění do více částí budou umístěna do `Microsoft.Quantum.Simulation` .
+  - Rozhraní API pro přípravu stavu publikovaná Microsoftem jako součást vývojové sady pro všechna ta budou umístěna do   `Microsoft.Quantum.Preparation` .
+  - Rozhraní API pro simulaci nedostatku doby publikovaná společností Microsoft jako součást vývojové sady pro plnění do více částí budou umístěna do   `Microsoft.Quantum.Simulation` .
 
 - ✅**Založte operace** , funkce a uživatelsky definované typy používané pouze v rámci konkrétních domén do oborů názvů, které označují jejich doménu nástroje. V případě potřeby použijte podobory názvů k označení úkolů s fokusem v rámci každého oboru názvů specifického pro doménu.
 
   *Příklady:*
-  - Služba Machine Learning, která je publikovaná společností Microsoft, je v podstatě umístěna do @"microsoft.quantum.machinelearning" oboru názvů, ale ukázkové datové sady jsou poskytovány @"microsoft.quantum.machinelearning.datasets" oborem názvů.
+  - Služba Machine Learning, která je publikovaná společností Microsoft, je v podstatě umístěna do @"microsoft.quantum.machinelearning" oboru názvů, ale ukázkové datové sady jsou poskytovány @"microsoft.quantum.machinelearning.datasets"   oborem názvů.
   - Množství pro každé z nich stanoví rozhraní API, která jsou publikovaná Microsoftem jako součást vývojové sady pro všechna využívání `Microsoft.Quantum.Chemistry` . Funkce specifické pro implementaci Wigneru na úrovni Jordánska se můžou umístit do `Microsoft.Quantum.Chemistry.JordanWigner` , takže primární rozhraní pro chemii stavové oblasti v doméně se netýká implementací.
 
 **Princip klíče:** K úmyslnému využití plochy rozhraní API uživatelům a ke skrytí vnitřních podrobností souvisejících s implementací a testováním vašich rozhraní API používejte modifikátory oborů názvů a přístupu.
 
-- ✅Kdykoli **je to vhodné, umístěte všechny** funkce a operace potřebné k implementaci rozhraní API do stejného oboru názvů, jako je implementované rozhraní API, ale označená "soukromá" nebo "interní" klíčová slova, která označují, že nejsou součástí veřejného prostoru rozhraní API pro knihovnu. Použijte název začínající podtržítkem ( `_` ) k vizuálnímu odlišení privátních a interních operací a funkcí od veřejných volat.
+- ✅ Kdykoli **je to vhodné, umístěte všechny** funkce a operace potřebné k implementaci rozhraní API do stejného oboru názvů, jako je implementované rozhraní API, ale označená "soukromá" nebo "interní" klíčová slova, která označují, že nejsou součástí veřejného prostoru rozhraní API pro knihovnu. Použijte název začínající podtržítkem ( `_` ) k vizuálnímu odlišení privátních a interních operací a funkcí od veřejných volat.
 
   *Příklady:*
   - Název operace `_Features` označuje funkci, která je soukromá pro daný obor názvů a sestavení a měla by být doprovázena `internal` klíčovým slovem.
 
-- ✅V případě, že je k implementaci rozhraní API pro daný obor názvů potřeba použít rozsáhlou sadu privátních funkcí nebo operací, **umístěte je** do nového oboru názvů, který odpovídá implementovanému oboru názvů a končí `.Private` .
+- ✅ V případě, že je k implementaci rozhraní API pro daný obor názvů potřeba použít rozsáhlou sadu privátních funkcí nebo operací, **umístěte je** do nového oboru názvů, který odpovídá implementovanému oboru názvů a končí `.Private` .
 
 - ✅Všechny testy **jednotek umístěte do** oborů názvů, které odpovídají oboru názvů pod testem a končí `.Tests` .
 
@@ -224,7 +224,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
   - **Příkazy**
 
-    - **Assert**: Ověřte, jestli předpoklad týkající se stavu cílového počítače a jeho qubits obsahuje, možná pomocí nefyzických prostředků. Operace používající tuto operaci by měly být vždy bezpečně vyměnitelná bez vlivu na funkce knihoven a spustitelných programů. Všimněte si, že na rozdíl od skutečností můžou kontrolní výrazy obecně záviset na externím stavu, jako je například stav registru qubit, spouštěcí prostředí nebo tak dále. Protože závislost na externím stavu je druh vedlejšího účinku, kontrolní výrazy musí být vystavené jako operace, nikoli funkce.
+    - **Assert**: Ověřte, jestli předpoklad týkající se stavu cílového počítače a jeho qubits obsahuje, možná pomocí nefyzických prostředků. Operace používající tuto operaci by měly být vždy bezpečně vyměnitelná bez vlivu na funkce knihoven a spustitelných programů. Všimněte si, že na rozdíl od faktů mohou být kontrolní výrazy obecně závislé na externím stavu, jako je například stav registru qubit, prostředí pro spuštění nebo tak dále. Protože závislost na externím stavu je druh vedlejšího účinku, kontrolní výrazy musí být vystavené jako operace, nikoli funkce.
 
     - **Odhad**: použití jednoho nebo více možných opakovaných měření, odhadem klasického množství z výsledků měření.
 
@@ -268,8 +268,8 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
     - **Jako:** Představuje, že vstup a výstup funkce funkce představují stejné informace, ale výstup představuje tyto informace **jako** *X* namísto původní reprezentace. To je zvláště běžné pro funkce pro převod typů.
 
       *Příklady:*
-      - `IntAsDouble(2)`označuje, že vstup ( `2` ) i výstup ( `2.0` ) reprezentují stejné informace, ale používají k tomu různé \# typy dat Q.
+      - `IntAsDouble(2)` označuje, že vstup ( `2` ) i výstup ( `2.0` ) reprezentují stejné informace, ale používají k tomu různé \# typy dat Q.
 
-    - **Od:** Aby se zajistila konzistence, tato předpozice **by se neměla** používat k označení funkcí pro převod typu nebo jakéhokoli jiného případu **, pokud je to vhodné** .
+    - **Od:** Aby se zajistila konzistence, tato předpozice   **by se neměla** používat k označení funkcí pro převod typu nebo jakéhokoli jiného případu **, pokud je to vhodné** .
 
     - ⛔️ **na:** tato Předpozice **by se neměla** používat, protože se vyhnete nejasnostem při použití jako operace v mnoha programovacích jazycích.

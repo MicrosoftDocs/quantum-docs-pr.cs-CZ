@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.code
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 956b0957a5261b8a77bf18d776fbcc2853bfbfe7
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: b27d084bbe2cda878efa6250c52c0ae628637850
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866905"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834886"
 ---
 # <a name="contributing-code"></a>Přispívání do kódu
 
@@ -34,7 +34,7 @@ Proto je užitečné, pokud je funkce přidaná v příspěvku dobře testována
 Q#Funkce, operace a uživatelsky definované typy, které vytvářejí knihovny, jako je například Canon, se automaticky testují jako součást vývoje v úložišti [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) .
 Když se otevře nová žádost o přijetí změn, například naše konfigurace [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/) ověří, že změny v žádosti o přijetí změn neruší žádné stávající funkce, na kterých je komunita programování.
 
-S nejnovější Q# verzí je test jednotky definován pomocí `@Test("QuantumSimulator")` atributu. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému vyžádání může být připojeno několik atributů definujících různé cíle provádění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zpřístupňuje všechny Q# funkce a operace končící rozhraním `Test` [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
+S nejnovější Q# verzí jsou testy jednotek definovány pomocí `@Test("QuantumSimulator")` atributu. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému možnému použití může být připojeno několik atributů definujících různé cíle spuštění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zpřístupňuje všechny Q# funkce a operace končící rozhraním `Test` [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
 
 Následující funkce se používá k zajištění, že <xref:microsoft.quantum.canon.fst> funkce a <xref:microsoft.quantum.canon.snd> vrátí v reprezentativním příkladu správné výstupy.
 Pokud výstup `Fst` nebo `Snd` není správný, `fail` příkaz slouží k selhání testu.

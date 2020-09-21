@@ -1,20 +1,20 @@
 ---
 title: Simulace Hamiltonian Dynamics
 description: Naučte se používat vzorce Trotter-Suzuki a qubitization pro práci s simulacemi Hamiltonian.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 40f79a66ae95e20a8b1c19af735eedca5e3c15ef
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 299eb1484a697ad9d1577aabb44ccb61e908bae3
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869524"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834002"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulace Hamiltonian Dynamics
 
@@ -46,9 +46,9 @@ Nejjednodušší rodina Hamiltonians a pravděpodobně je nejužitečnější, k
 Operátory Pauli je možné snadno simulovat, protože je možné je diagonální pomocí operací Clifford (což jsou standardní brány ve výpočetním prostředí).
 Po jejich objasnění můžete jejich eigenvalues najít vynásobením parity qubits, na které jednají.
 
-Například $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otimes H), $ $ WHERE $ $ e ^ {-i Z \otimes Z t} = \begin{bmatrix} e ^ {-IT} & 0 & 0 & 0\\\
-        0 & e ^ {i t} & 0 & 0\\\
-        0 & 0 & e ^ {IT} & 0\\\
+Například $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otimes H), $ $ WHERE $ $ e ^ {-i Z \otimes Z t} = \begin{bmatrix} e ^ {-IT} & 0 & 0 & 0 \\\
+        0 & e ^ {i t} & 0 & 0 \\\
+        0 & 0 & e ^ {IT} & 0 \\\
         0 & 0 & 0 & e ^ {-IT} \end{bmatrix}.
 $ $ Sem $e ^ {-iHt} \ket {00} = e ^ {IT} \ket {00} $ a $e ^ {-iHt} \ket {01} = e ^ {-The} \ket {01} $, který se dá vidět přímo jako důsledek faktu, že parita $0 $ je $0 $, zatímco parita bitového řetězce $1 $ je $1 $.
 
@@ -65,7 +65,7 @@ Exponenciální operátory operátorů Pauli lze implementovat přímo Q# pomoc�
 
 Pro Fermionic Hamiltonians, [Wigner (Jordánsko – rekompozici](xref:microsoft.quantum.chemistry.concepts.jordanwigner) ), vhodně namapuje Hamiltonian na součet Paulich operátorů.
 To znamená, že výše uvedený přístup lze snadno přizpůsobit simulaci chemie.
-Místo ručního přeskočíní všech Pauli podmínek ve formě Jordánska-Wigner představuje jednoduchý příklad, jak může tato simulace v rámci chemického zpracování vypadat.
+Místo ručního přeskočíní všech Pauli podmínek v reprezentaci Wigner na je v tomto příkladu jednoduchý příklad spuštění takové simulace v rámci chemie.
 Náš výchozí bod je [Jordánsko – Wigner kódování](xref:microsoft.quantum.chemistry.concepts.jordanwigner) Fermionic Hamiltonian, vyjádřené v kódu jako instance `JordanWignerEncoding` třídy.
 
 ```csharp
@@ -145,7 +145,7 @@ To může být patrné ze skutečnosti, že $ \operatorname{Select} ^ 2 \ KET {j
 
 Druhá podrutina se nazývá $ \operatorname{Prepare} $.
 Zatímco operace Select poskytuje prostředky pro soudržný přístup ke každému Hamiltonian podmínkám $H _j $ přípravná subrutina poskytuje metodu pro přístup k koeficientům $h _j $, \begin{Equation} \operatorname{Prepare}\ket {0} = \ sum_j \sqrt{\frac{h_j} {| H | _1}} \ket{j}.
-\end{Equation} se pak pomocí brány řízených fází vynásobení zobrazuje $ $ \Lambda\ket {0} ^ {\otimes n} = \begin{Cases} \- \ket{x} & \Text{if} x = 0\\\
+\end{Equation} se pak pomocí brány řízených fází vynásobení zobrazuje $ $ \Lambda\ket {0} ^ {\otimes n} = \begin{Cases} \- \ket{x} & \Text{if} x = 0 \\\
         \ket{x} & \Text{Otherwise} \end{Cases}.
 $$
 
@@ -157,7 +157,7 @@ Operátor průchodu $W $, může být vyjádřený v souvislosti s $ \operatorna
 Tyto podrutiny se dají snadno nastavit v Q# .
 Zvažte například jednoduché qubit příčné Ising Hamiltonian, kde $H = X_1 + X_2 + Z_1 Z_2 $.
 V tomto případě Q# je kód, který implementuje operaci $ \operatorname{SELECT} $, vyvolán pomocí <xref:microsoft.quantum.canon.multiplexoperations> , zatímco operace $ \operatorname{Prepare} $ může být implementována pomocí <xref:microsoft.quantum.preparation.preparearbitrarystate> .
-Příklad, který zahrnuje simulaci modelu Hubbard, najdete jako [ Q# vzorek](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+Příklad, který zahrnuje simulaci modelu Hubbard, najdete jako [ Q# vzorek](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 Ruční určení těchto kroků pro jakékoli problémy chemického složení by vyžadovalo mnohem úsilí, které se vyhne použití knihovny složení.
 Podobně jako u algoritmu simulace Trotter-Suzuki výše `JordanWignerEncodingData` je předána funkci pohodlí `QubitizationOracle` , která vrací operátor Pass-spolu s dalšími parametry požadovanými pro jeho spuštění.

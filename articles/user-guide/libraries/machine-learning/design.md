@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 60e694e9f7c2f01a6679ef960f5a7774c8bd6a62
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c87a84654cda04f81115a83684f0e125d23a77bc
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868932"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759217"
 ---
 # <a name="design-your-own-classifier"></a>Návrh vlastního klasifikátoru
 
@@ -30,7 +30,7 @@ Stejně jako v klasickém podrobném učení neexistuje žádné obecné pravidl
 
 K vytvoření klasifikátoru budeme v modelu okruhu zřetězit zařízená otočení podle typu. K tomu můžeme použít typ [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definovaný v Machine Learning knihovně. Tento typ přijímá čtyři argumenty, které určují index cílové qubit, pole indexů ovládacího prvku qubits, osu rotace a index přidruženého parametru v poli parametrů, které definují model.
 
-Pojďme se podívat na příklad klasifikátoru. V [Moons ukázce](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)můžeme najít následující klasifikátor definovaný v souboru `Training.qs` .
+Pojďme se podívat na příklad klasifikátoru. V [Moons ukázce](https://github.com/microsoft/Quantum/tree/main/samples/machine-learning/half-moons)můžeme najít následující klasifikátor definovaný v souboru `Training.qs` .
 
 ```qsharp
     function ClassifierStructure() : ControlledRotation[] {

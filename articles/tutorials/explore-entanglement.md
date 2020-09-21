@@ -2,19 +2,19 @@
 title: Prozkoumejte entanglement s Q#
 description: Přečtěte si, jak napsat program pro vypisování do Q# . Vývoj aplikace demonstrující Bellovy stavy pomocí nástroje Quantum Development Kit (QDK)
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3e95f142572e104fe1e133b109d197ed5bb01d9a
-ms.sourcegitcommit: af2e9691c1900ced7e09d6320255617c9939ed55
+ms.openlocfilehash: 6fd7494d341a83a1354d23a283d21a7ae535e49f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90063236"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834019"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -104,7 +104,7 @@ Nahraďte obsah `Program.qs` následujícím kódem:
 Teď můžeme zavolat tuto operaci, aby nastavila qubit do klasického stavu a vrátila buď hodnotu `Zero` ve 100 % případů, nebo hodnotu `One` ve 100 % případů.
 `Zero` a `One` jsou konstanty, které představují pouze dva možné výsledky měření stavu qubitu.
 
-Operace `SetQubitState` měří qubit. Pokud je qubit ve stavu, který chceme, `SetQubitState` ho nechá být, v opačném případě provedením operace `X` změní stav qubitu na požadovaný stav.
+Operace `SetQubitState` měří qubit. Pokud je qubit ve stavu, který chceme, `SetQubitState` ponechá ho samostatně. v opačném případě se `X` stav qubit změní na požadovaný stav.
 
 #### <a name="about-no-locq-operations"></a>O Q# operacích
 
@@ -300,7 +300,7 @@ To se označuje jako **superpozice** a je to naše první seznámení s kvantov�
 ## <a name="prepare-entanglement"></a>Příprava provázání
 
 Teď se podíváme na Q# to, jak vyjádřit možnosti entangle qubits.
-Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před měřením prvního qubit používáme novou operaci ( `CNOT` ), která se zaznamená pro kontrolu ne.  Výsledkem provedení této operace na dvou qubitech je překlopení druhého qubitu, pokud je první ve stavu `One`.  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
+Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před měřením prvního qubit používáme novou operaci ( `CNOT` ), která se zaznamená pro kontrolu *ne*.  Výsledkem spuštění této operace na dvou qubits je překlopení druhé qubit, pokud je první qubit `One` .  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
 
 První věc, kterou je potřeba udělat, je přidělit dvě qubits místo jedné v `TestBellState` :
 

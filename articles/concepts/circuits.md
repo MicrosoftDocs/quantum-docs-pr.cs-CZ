@@ -1,6 +1,6 @@
 ---
 title: Popis okruhu provozu: Přečtěte si, jak vizuálně znázornit jednoduché a komplexní operace s využitím diagramů okruhu.
-Autor: QuantumWriter UID: Microsoft.. koncepty. okruhy MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. okruhy MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -156,7 +156,7 @@ Pro zvláštní případy, kdy $ G = X $ a $ g = Z $ uvádíme následující z�
 <!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:-->
 ![Diagram okruhu pro speciální případy řízených bran](~/media/6.svg)
 
-Q#poskytuje metody pro automatické generování řízené verze operace, která bude ukládat programátora z nutnosti kódování těchto operací. Příklad najdete tady:
+Q# poskytuje metody pro automatické generování řízené verze operace, která bude ukládat programátora z nutnosti kódování těchto operací. Příklad najdete tady:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -175,7 +175,7 @@ Konkrétně takový okruh vypadá takto:
 <!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:-->
 ![Symbol reprezentující operaci měření](~/media/7.svg)
 
-Q#implementuje [operátor míry](xref:microsoft.quantum.intrinsic.measure) pro tento účel.
+Q# implementuje [operátor míry](xref:microsoft.quantum.intrinsic.measure) pro tento účel.
 Další informace najdete v [části o měřeních](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 Podobně, předaný okruh

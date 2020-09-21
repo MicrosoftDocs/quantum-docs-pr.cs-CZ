@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1110f32a6486de1a346b115fa928a098749b6690
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 20e9f8126a290f52701b6b0e525d7669a605d4c9
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866872"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759675"
 ---
 # <a name="improving-documentation"></a>Vylepšování dokumentace
 
@@ -52,7 +52,7 @@ Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
 ```
 
-Tento příkaz naimportuje řádky 4 do 8 [ `Game.qs` souboru z `chsh-game` ukázky](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)a označí je jako Q# kód pro účely zvýrazňování syntaxe.
+Tento příkaz naimportuje řádky 4 do 8 [ `Game.qs` souboru z `chsh-game` ukázky](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs)a označí je jako Q# kód pro účely zvýrazňování syntaxe.
 Pomocí tohoto příkazu se můžete vyhnout duplikování kódu mezi koncepčními články a úložištěm ukázek, aby byl vzorový kód v dokumentaci vždy aktuální.
 
 ## <a name="contributing-to-the-api-references"></a>Přispívání do referencí rozhraní API

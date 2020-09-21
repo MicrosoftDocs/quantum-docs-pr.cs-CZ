@@ -1,5 +1,5 @@
 ---
-title: Operace a funkce vQ#
+title: Operace a funkce v Q#
 description: Definování a volání operací a funkcí, jakož i specializace řízených a sousedících operací.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,14 +9,14 @@ uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 76437c83df894fa86409e680f961d97e267c6869
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c2ce999ea2a0fe7204f402fedb4cd3a3c15bd44b
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867875"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759420"
 ---
-# <a name="operations-and-functions-in-no-locq"></a>Operace a funkce vQ#
+# <a name="operations-and-functions-in-no-locq"></a>Operace a funkce v Q#
 
 ## <a name="defining-new-operations"></a>Definování nových operací
 
@@ -43,12 +43,12 @@ operation BitFlip(target : Qubit) : Unit {
 Klíčové slovo `operation` zahájí definici operace následovaný názvem; zde, `BitFlip` .
 Dále je typ vstupu definován ( `Qubit` ), spolu s názvem, `target` pro odkazování na vstup v rámci nové operace.
 Nakonec `Unit` definuje, že výstup operace je prázdný.
-`Unit`se používá podobně `void` v jazyce C# a dalších imperativních jazycích a je ekvivalentní s jazykem `unit` F # a dalšími funkčními jazyky.
+`Unit` se používá podobně `void` v jazyce C# a dalších imperativních jazycích a je ekvivalentní s jazykem `unit` F # a dalšími funkčními jazyky.
 
 Operace mohou také vracet zajímavější typy než `Unit` .
 Například <xref:microsoft.quantum.intrinsic.m> operace vrátí výstup typu `Result` , který představuje vykonání měření.  Můžete ji předat z operace do jiné operace nebo ji použít s `let` klíčovým slovem k definování nové proměnné.
 
-Tento přístup umožňuje, aby představoval klasický výpočet, který komunikuje s provozními operacemi na nízké úrovni, jako je například v [hustém kódování](https://github.com/microsoft/QuantumKatas/tree/master/SuperdenseCoding):
+Tento přístup umožňuje, aby představoval klasický výpočet, který komunikuje s provozními operacemi na nízké úrovni, jako je například v [hustém kódování](https://github.com/microsoft/QuantumKatas/tree/main/SuperdenseCoding):
 
 ```qsharp
 operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
@@ -100,14 +100,14 @@ Použijte funktor, protože ho použijete k operaci, která vrací novou operaci
 Například použití `Adjoint` funktor pro `Y` operaci vrátí novou operaci `Adjoint Y` . Novou operaci můžete vyvolat jako jakoukoli jinou operaci.
 Aby operace podporovala aplikaci `Adjoint` nebo `Controlled` funktory, její návratový typ nutně musí být `Unit` . 
 
-#### <a name="adjoint-functor"></a>`Adjoint`funktor
+#### <a name="adjoint-functor"></a>`Adjoint` funktor
 
 Proto `Adjoint Y(q1)` použije `Adjoint` funktor k `Y` operaci pro vygenerování nové operace a použije tuto novou operaci na `q1` .
 Nová operace má stejný podpis a typ jako základní operace `Y` .
 Konkrétně Nová operace také podporuje `Adjoint` a podporuje `Controlled` pouze v případě, že došlo k základní operaci.
 `Adjoint`Funktor je vlastní Inverted; to znamená, že je `Adjoint Adjoint Op` vždy stejný jako `Op` .
 
-#### <a name="controlled-functor"></a>`Controlled`funktor
+#### <a name="controlled-functor"></a>`Controlled` funktor
 
 Obdobně `Controlled X(controls, target)` aplikuje `Controlled` funktor na `X` operaci pro vygenerování nové operace a použije tuto novou operaci na `controls` a `target` .
 
@@ -123,11 +123,11 @@ Nová operace podporuje `Controlled` a bude podporovat `Adjoint` pouze v přípa
 
 V případě, že původní operace trvala pouze jeden argument, přichází v úvahu [rovnocennost řazené kolekce členů](xref:microsoft.quantum.guide.types) do hry.
 Například `Controlled X` je řízená verze `X` operace. 
-`X`má typ `(Qubit => Unit is Adj + Ctl)` , takže je `Controlled X` typu `((Qubit[], (Qubit)) => Unit is Adj + Ctl)` ; vzhledem k rovnosti v řazené kolekci členů, je to stejné jako `((Qubit[], Qubit) => Unit is Adj + Ctl)` .
+`X` má typ `(Qubit => Unit is Adj + Ctl)` , takže je `Controlled X` typu `((Qubit[], (Qubit)) => Unit is Adj + Ctl)` ; vzhledem k rovnosti v řazené kolekci členů, je to stejné jako `((Qubit[], Qubit) => Unit is Adj + Ctl)` .
 
 Pokud základní operace trvala několik argumentů, nezapomeňte do závorek uzavřít odpovídající argumenty kontrolované verze operace v závorkách, aby je bylo možné převést na řazenou kolekci členů.
 Například `Controlled Rz` je řízená verze `Rz` operace. 
-`Rz`má typ `((Double, Qubit) => Unit is Adj + Ctl)` , takže `Controlled Rz` je typu `((Qubit[], (Double, Qubit)) => Unit is Adj + Ctl)` .
+`Rz` má typ `((Double, Qubit) => Unit is Adj + Ctl)` , takže `Controlled Rz` je typu `((Qubit[], (Double, Qubit)) => Unit is Adj + Ctl)` .
 Proto `Controlled Rz(controls, (0.1, target))` by bylo platné vyvolání `Controlled Rz` (Poznamenejte si závorky kolem `0.1, target` ).
 
 Jako další příklad `CNOT(control, target)` lze implementovat jako `Controlled X([control], target)` . Pokud má cíl být řízen dvěma ovládacími qubits (CCNOT), použijte `Controlled X([control1, control2], target)` příkaz.
@@ -151,7 +151,7 @@ Vlastní implementace každé specializace může být *implicitně* nebo *expli
 
 ### <a name="implicitly-specifying-implementations"></a>Implicitní určení implementací
 
-V tomto případě se tělo deklarace operace skládá výhradně z výchozí implementace. Příklad:
+V tomto případě se tělo deklarace operace skládá výhradně z výchozí implementace. Například:
 
 ```qsharp
 operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit 
@@ -192,7 +192,7 @@ Následující seznam uvádí celou řadu možností s některými příklady ex
 
 #### <a name="explicit-specialization-declarations"></a>Explicitní deklarace specializace
 
-Q#operace mohou obsahovat následující explicitní deklarace specializace:
+Q# operace mohou obsahovat následující explicitní deklarace specializace:
 
 - `body`Specializace určuje implementaci operace bez použití funktory.
 - `adjoint`Specializace určuje implementaci operace s `Adjoint` použitým funktor.
@@ -329,9 +329,9 @@ Pro operaci, jejíž tělo obsahuje volání na jiné operace, které nemají ř
 
 Použijte operaci s dalšími funktory podporovanými kdekoli, kde použijete operaci s méně funktory, ale stejnou signaturou. Například použijte operaci typu kdekoli, kde používáte `(Qubit => Unit is Adj)` operaci typu `(Qubit => Unit)` .
 
-Q#je *kovariantní* s ohledem na možné návratové typy: volat, které vrací typ, `'A` je kompatibilní s typem volat se stejným vstupním typem a typem výsledku, který je kompatibilní s `'A` .
+Q# je *kovariantní* s ohledem na možné návratové typy: volat, které vrací typ, `'A` je kompatibilní s typem volat se stejným vstupním typem a typem výsledku, který je kompatibilní s `'A` .
 
-Q#je *kontravariantní* s ohledem na typy vstupu: dá se volat, který přebírá typ `'A` jako vstup, je kompatibilní s volat se stejným typem výsledku a vstupním typem, který je kompatibilní s `'A` .
+Q# je *kontravariantní* s ohledem na typy vstupu: dá se volat, který přebírá typ `'A` jako vstup, je kompatibilní s volat se stejným typem výsledku a vstupním typem, který je kompatibilní s `'A` .
 
 To znamená, že s ohledem na následující definice
 
@@ -360,7 +360,7 @@ Můžeš
 - Vrátí hodnotu typu `(Qubit[] => Unit is Adj + Ctl)` z `ConjugateInvertWith` .
 
 > [!IMPORTANT]
-> Q#0,3 představil v chování uživatelsky definovaných typů značný rozdíl.
+> Q# 0,3 představil v chování uživatelsky definovaných typů značný rozdíl.
 
 Uživatelsky definované typy jsou považovány za zabalenou verzi základního typu, nikoli jako podtyp.
 To znamená, že hodnota uživatelsky definovaného typu není použitelná, pokud očekáváte hodnotu základního typu.
@@ -425,7 +425,7 @@ function Square(x : Double) : (Double) {
 }
 ```
 
-– nebo – 
+nebo 
 
 ```qsharp
 function DotProduct(a : Double[], b : Double[]) : Double {
@@ -509,7 +509,7 @@ I když je to pro malý počet takových funkcí rušivý, když shromáždíte 
 Mnohé z těchto potíží však jsou výsledkem faktu, že jste kompilátor neudělili informace, které potřebuje k tomu, abyste rozpoznali, jak různé verze nástroje `Map` souvisejí.
 Efektivně budete chtít, aby kompilátor považoval `Map` jako nějaký druh matematické funkce od Q# *typů* do Q# funkce.
 
-Q#formalizes tento pojem tím, že povolíte funkcím a operacím *parametry typu*a také jejich běžné parametry řazené kolekce členů.
+Q# formalizes tento pojem tím, že povolíte funkcím a operacím *parametry typu*a také jejich běžné parametry řazené kolekce členů.
 V předchozích příkladech si přejete si představit `Map` jako parametry typu `Int, Pauli` v prvním a `Double, String` druhém případě.
 Ve většině případů použijte tyto parametry typu, jako by se jednalo o běžné typy. Použijte hodnoty parametrů typu pro vytvoření polí a řazených kolekcí členů, volání funkcí a operací a přiřazení k běžným nebo proměnlivým proměnným.
 
@@ -657,7 +657,7 @@ V zásadě byla klasická logika v rámci `SquareOperation` může být mnohem v
 
 ## <a name="recursion"></a>Rekurze
 
-Q#je možné, že lze volat přímo nebo nepřímo rekurzivní.
+Q# je možné, že lze volat přímo nebo nepřímo rekurzivní.
 To znamená, že operace nebo funkce může volat sám sebe nebo může zavolat jinou metodu, kterou přímo nebo nepřímo volá operaci, kterou lze volat.
 
 Existují dva důležité komentáře k použití rekurze, ale:

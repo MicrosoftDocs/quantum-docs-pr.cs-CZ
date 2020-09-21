@@ -2,19 +2,19 @@
 title: Načítání klasických dat
 description: Naučte se, jak načíst vlastní datovou sadu pro výuku modelu klasifikátoru pomocí Microsoft Quantum Development Kit (QDK).
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.load
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 26ba7411c9ade1d6c4b606e8c12c10ade18fc584
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: cd6fdb6bb33a65ee02ac8c43f40df9abeff9c841
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868827"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833698"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Načtení a klasifikace vlastních datových sad
 

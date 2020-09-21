@@ -1,6 +1,6 @@
 ---
 title: počet, ve kterém se nacházejí Oracle s popisem: Naučte se pracovat s Oracle, operacemi s černým polem, které se používají jako vstup pro jiný algoritmus.
-Autor: cgranade UID: Microsoft.. koncepty. Oracle MS. Author: Christopher.Granade@microsoft.com MS. Date: 07/11/2018 MS. téma: No-Loc:
+Autor: cgranade UID: Microsoft.. koncepty. Oracle MS. Author: chgranad MS. Date: 07/11/2018 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -148,9 +148,9 @@ $$
 Pokud fáze Oracle působí na začátku v rámci výpočetního stavu $ \ket { x } $ , pak je tato fáze globální fází, takže nebudeme pozorně sledovat.
 Takové Oracle ale může být velmi výkonný prostředek, pokud se aplikuje na nadpozici nebo jako kontrolované operace.
 Představte si třeba fázi Oracle $ O_f $ pro qubit funkci $ f $ .
-Stisknutím$$
+Stisknutím $$
 \begin{align}
-    O_f\ket{+}
+    O_f \ket{+}
         &=O_f ( \ket { 0 }  +  \ket { 1 } )/ \sqrt { 2 }\\\\
         &=((-1) ^ { f (0) } \ket { 0 } + (-1) ^ { f (1) } \ket { 1 } )/ \sqrt { 2 }\\\\
         &=(-1) ^ { f (0) } ( \ket { 0 } + (-1) ^ { f (1)-f (0) } \ket { 1 } )/ \sqrt { 2 }\\\\

@@ -1,6 +1,6 @@
 ---
 title (název): qubit ve výpočetním prostředí Description: Přečtěte si o qubits, základní informace o výpočetním prostředí.
-Autor: QuantumWriter UID: Microsoft.. koncepty. qubit MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. qubit MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -120,7 +120,7 @@ Qubits může také obsahovat $ 3 $ D pomocí reprezentace [*koule Bloch*](https
 ![Koule Bloch](~/media/concepts_bloch.png)
 
 Šipky v tomto diagramu ukazují směr, ve kterém je vektor stavu, který ukazuje, a každou transformaci šipky lze představit jako rotaci kolem jedné z OS mohutnosti.
-Při zvažování výpočetních hodnot za běhu jako sekvence rotací je to náročné Intuition, ale tento Intuition je obtížné použít k návrhu a popisu algoritmů. Q#Tento problém řeší tím, že poskytuje jazyk popisující taková otočení.
+Při zvažování výpočetních hodnot za běhu jako sekvence rotací je to náročné Intuition, ale tento Intuition je obtížné použít k návrhu a popisu algoritmů. Q# Tento problém řeší tím, že poskytuje jazyk popisující taková otočení.
 
 ## <a name="single-qubit-operations"></a>Operace s jedním qubit
 
@@ -128,7 +128,7 @@ Nastavování počítačů zpracovává data pomocí univerzální sady bran pro
 Tato pojem obecnosti se podobají na pojem univerzální pro tradiční (tj. klasický) výpočet, kde je sada brány považována za univerzální, pokud je možné provést každou transformaci vstupních bitů pomocí omezeného okruhu délky.
 Ve výpočetním prostředí jsou platné transformace, které můžeme provádět na qubit, jednotnou transformaci a měření.
 *Operace souseda* nebo složitá sdružená transformace má zásadní význam pro náročné na výpočetní výkon, protože je potřeba pro invertování transformací za sebou.
-Q#Toto reflektuje tím, že poskytuje metody pro automatické kompilování sekvencí brány do jejich sousedních procesů, které v mnoha případech ukládají programátorovi, aby adjoints kód. Příklad najdete tady:
+Q# Toto reflektuje tím, že poskytuje metody pro automatické kompilování sekvencí brány do jejich sousedních procesů, které v mnoha případech ukládají programátorovi, aby adjoints kód. Příklad najdete tady:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -145,7 +145,7 @@ V případě obecnosti vyžadujeme, aby počítač s více podsítěmi v rámci 
 Jinými slovy, sada bran je univerzální branou, pokud může být jakákoli Jednotková transformace přibližně zapsaná jako produkt z brány z této sady. Vyžadujeme, aby pro všechny předepsané chyby byly brány $ G_ { 1 } G_ { 2 } , \ldots, G_N $ z této sady brány.
 
 $$
-G_N G_ { N-1 } \cdots G_2 G_1 \approx U.$$
+G_N G_ { N-1 } \cdots G_2 G_1 \approx U. $$
 
 Vzhledem k tomu, že konvence násobení matice je vynásobit zprava doleva první operace brány v této sekvenci, $ G_N $ je vlastně poslední, který se používá pro vektor stavu. Řekněme, že taková sada brány je univerzální, pokud u každé tolerance chyb $ \epsilon > 0 $ existuje $ G_1, \ldots, G_N $ tak, že vzdálenost mezi $ G_N \ldots G_1 $ a $ U $ je nejvíce $ \epsilon $ . V ideálním případě hodnota $ N $ potřebná k dosažení této vzdálenosti $ \epsilon $ by měla Poly-logarithmically škálovat na $ 1/\ Epsilon $ .
 

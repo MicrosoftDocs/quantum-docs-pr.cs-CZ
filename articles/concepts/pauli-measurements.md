@@ -1,6 +1,6 @@
 ---
 title: Pauli měření Popis: Naučte se pracovat s operacemi měření jednoduchých a qubit Pauli.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Pauli MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: bradben UID: Microsoft.. koncepty. Pauli MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -143,8 +143,8 @@ Je také ekvivalentní s použitím $ HS ^ \dagger $ na vektor stavu a následn�
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {
-        H(q);
         Adjoint S(q);
+        H(q);
     } apply {
         set result = M(q);
     }
@@ -223,14 +223,14 @@ Jedna další Poznámka: i když se může stát, že měření z z $ \otimes $ 
 Důvodem je, že měření $ z \otimes $ projektů z projektu se stavem do $ + 1 $ nebo $ -1 $ eigenstate těchto operátorů.
 Měření $ z \otimes \mathbb { 1 } $ a poté $ \mathbb { 1 } \otimes z $ projektů v projektech se vektorem stavu nepočátečních stavů nejprve na polovinu prostoru z $ \otimes \mathbb { 1 } $ a pak na polovinu prostoru $ \mathbb { 1 } \otimes z $ . Vzhledem k tomu, že jsou k dispozici čtyři výpočetní vektory, může použití obou měření snížit stav na čtvrtinové místo a tím se sníží na jeden vektor výpočetního základu.
 
-## <a name="correlations-between-qubits"></a>Korelace mezi qubits
+## <a name="correlations-between-qubits"></a>Korelace mezi qubity
 Další možností, jak se podívat na měření tensor produktů Pauli, jako jsou $ x \otimes x $ nebo $ z \otimes z $ , je, že tato měření vám umožní podívat se na informace, které jsou uložené v korelaci mezi těmito dvěma qubits.
 Měření hodnoty $ X \otimes \id $ vám umožní podívat se na informace, které jsou místně uložené v první qubit.
 I když jsou oba typy měření stejně cenné při práci ve výpočetním prostředí, bývalé osvětlení síly při práci.
 To znamená, že ve výpočetním prostředí se často informace, které chcete vědět, neukládají do žádného qubit, ale místo toho, aby se ukládaly do všech qubits najednou, a proto jenom pomocí společného měření (např. $ z \otimes $ ) se tyto informace stanou manifestem.
 
 Například při opravě chyb často chceme zjistit, k jaké chybě došlo při učení o stavu, který se snažíte chránit.
-[Ukázka bitového překlápění kódu](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code) ukazuje příklad toho, jak to lze provést pomocí měření, jako je z $ \otimes \otimes \id $ a $ \id \otimes z \otimes z $ . < ! --TODO: Změňte tuto hodnotu na odkaz na prohlížeč ukázek hned po zprovoznění vzorku bitového překlápění kódu. -->
+[Ukázka bitového překlápění kódu](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code) ukazuje příklad toho, jak to lze provést pomocí měření, jako je z $ \otimes \otimes \id $ a $ \id \otimes z \otimes z $ . < ! --TODO: Změňte tuto hodnotu na odkaz na prohlížeč ukázek hned po zprovoznění vzorku bitového překlápění kódu. -->
 
 Lze také změřit libovolné Pauli operátory, jako je například $ X \otimes Y \otimes Z \otimes \boldone $ .
 Všechny takové produkty tensor operátorů Pauli mají pouze dvě eigenvalues $ \Pm 1 $ a oba eigenspaces představují poloviční prostory celého vektorového prostoru.

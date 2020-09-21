@@ -2,19 +2,19 @@
 title: Vytvoření kvantového generátoru náhodných čísel
 description: Sestavte Q# projekt, který ukazuje základní koncepty, jako je například nadpozice, vytvořením generátor náhodných čísel.
 author: bromeg
-ms.author: megbrow@microsoft.com
+ms.author: megbrow
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d80f1c640ac7ddb0104ccbbb6de6d0e26ba05fd6
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: a0e8933e6a77d017db914e4bb969ea05f760a443
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863631"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834036"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Kurz: Implementace kvantového generátoru náhodných čísel v jazyku Q\#
 
@@ -33,7 +33,7 @@ Jednoduchý příklad algoritmu, který je v systému napsaný, Q# je generátor
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
 
-Jak je uvedeno v článku [Principy kvantových výpočtů](xref:microsoft.quantum.overview.understanding), qubit je jednotka kvantových informací, která může být v superpozici různých stavů. Při změření může mít qubit jenom hodnotu 0 nebo 1. Během zpracování však stav qubitu představuje pravděpodobnost přečtení hodnoty 0 anebo 1 při měření. Tento pravděpodobnostní stav se nazývá superpozice. Na základě této pravděpodobnosti můžeme generovat náhodná čísla.
+Jak je uvedeno v článku [Principy kvantových výpočtů](xref:microsoft.quantum.overview.understanding), qubit je jednotka kvantových informací, která může být v superpozici různých stavů. Při změření může mít qubit jenom hodnotu 0 nebo 1. Nicméně pokud je operace spuštěna, stav qubit představuje pravděpodobnost čtení 0 nebo 1 s měřením. Tento pravděpodobnostní stav se nazývá superpozice. Na základě této pravděpodobnosti můžeme generovat náhodná čísla.
 
 V naší Q# operaci zavádíme `Qubit` datový typ, který je nativní pro Q# . Typ `Qubit` je možné přidělit jen pomocí příkazu `using`. Qubit je po přidělení vždycky ve stavu `Zero`. 
 
@@ -74,11 +74,11 @@ Chcete-li vytvořit úplnou Q# aplikaci, přidejte do programu následující vs
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
-Spustitelný soubor spustí operaci nebo funkci označenou atributem `@EntryPoint()` na simulátoru nebo v estimátoru prostředků, a to v závislosti na konfiguraci projektu a možnostech příkazového řádku.
+Program spustí operaci nebo funkci označenou `@EntryPoint()` atributem simulátoru nebo Estimator prostředku v závislosti na konfiguraci projektu a možnostech příkazového řádku.
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-34":::
 
-V sadě Visual Studio se skript jednoduše spustí stisknutím Ctrl + F5.
+V aplikaci Visual Studio stačí stisknout kombinaci kláves CTRL + F5 ke spuštění skriptu.
 
 V editoru VS Code při prvním použití sestavte Program.qs zadáním následujícího příkazu na terminálu:
 

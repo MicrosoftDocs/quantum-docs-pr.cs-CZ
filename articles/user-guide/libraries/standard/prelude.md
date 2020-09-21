@@ -2,19 +2,19 @@
 title: Vnitřní operace a funkce v QDK
 description: Seznamte se s vnitřními operacemi a funkcemi v QDK, včetně klasických funkcí a operací s jednotkou, rotací a měřením.
 author: QuantumWriter
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4eb10e82a64381c503703be440be90e60f3a8622
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: dd507d0c644ae711a5e5a1dff9156f571cb0fa92
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863729"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833543"
 ---
 # <a name="the-prelude"></a>Předehru #
 
@@ -240,7 +240,7 @@ V takovém případě může jednotlivý cílový počítač zmírnit tento dopa
 
 ### <a name="math"></a>Matematické ###
 
-<xref:microsoft.quantum.math>Obor názvů poskytuje mnoho užitečných funkcí z [ `System.Math` třídy](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1)knihovny základní třídy .NET.
+<xref:microsoft.quantum.math>Obor názvů poskytuje mnoho užitečných funkcí z [ `System.Math` třídy](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1&preserve-view=true)knihovny základní třídy .NET.
 Tyto funkce lze použít stejným způsobem jako všechny další Q# funkce:
 
 ```qsharp

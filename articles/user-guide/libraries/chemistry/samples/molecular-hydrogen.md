@@ -9,15 +9,15 @@ uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a2df4b829a3f4946c6de6e6b80ad72a5bc192b2c
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 05506f4099de754cd02d81fbd9200f2de091e37e
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869201"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759728"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Získání odhadů energetické úrovně
-Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tento článek popisuje, jak to můžete udělat pro Kanonický příklad molekulové vodíkové podsystému. Ukázka, na kterou se odkazuje v této části, je [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) ukázkou.
+Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tento článek popisuje, jak to můžete udělat pro Kanonický příklad molekulové vodíkové podsystému. Ukázka, na kterou se odkazuje v této části, je [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) ukázkou.
 
 ## <a name="estimating-the-energy-values-of-molecular-hydrogen"></a>Odhad hodnot energie molekulové vodíky
 
@@ -65,7 +65,7 @@ Simulace Hamiltonian vyžaduje převod operátorů fermion na qubit operátory. 
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Next, Pass `qSharpData` , který představuje Hamiltonian, do `TrotterStepOracle` funkce. `TrotterStepOracle`Vrátí operaci s dobou platnosti, která se blíží vývoji Hamiltonian v reálném čase. Další informace najdete v tématu [simulace Hamiltonian Dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
+Next, Pass `qSharpData` , který představuje Hamiltonian, do `TrotterStepOracle` funkce. `TrotterStepOracle` Vrátí operaci s dobou platnosti, která se blíží vývoji Hamiltonian v reálném čase. Další informace najdete v tématu [simulace Hamiltonian Dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
 
 ```qsharp
 // qSharpData passed from driver
@@ -156,5 +156,5 @@ using (var qsim = new QuantumSimulator())
 
 Operace vrátí dva parametry: 
 
-- `energyEst`je odhad elektrické energie a měl by být `-1.137` v průměru. 
-- `phaseEst`je nezpracovaným fází vráceným algoritmem odhadu fáze. To je užitečné pro diagnostiku aliasů, když k nim dojde z důvodu `trotterStep` příliš velké hodnoty.
+- `energyEst` je odhad elektrické energie a měl by být `-1.137` v průměru. 
+- `phaseEst` je nezpracovaným fází vráceným algoritmem odhadu fáze. To je užitečné pro diagnostiku aliasů, když k nim dojde z důvodu `trotterStep` příliš velké hodnoty.

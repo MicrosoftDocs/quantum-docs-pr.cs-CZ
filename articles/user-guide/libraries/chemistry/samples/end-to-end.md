@@ -8,12 +8,12 @@ uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 78d6488ed5e3972f85f1e6cf1ba2d197596c4cc3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869303"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759711"
 ---
 # <a name="end-to-end-with-nwchem"></a>Kompletní použití NWChem #
 
@@ -22,7 +22,7 @@ Než budete pokračovat v tomto příkladu, ujistěte se, že jste nainstalovali
 
 Další informace najdete tady:
 - [Struktura vstupních balíčku NWChem](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
-    - [Příkazy vstupního balíčku pro použití s vývojovou sadou pro všechna ta](https://github.com/nwchemgit/nwchem/tree/master/contrib/quasar)
+    - [Příkazy vstupního balíčku pro použití s vývojovou sadou pro všechna ta](https://github.com/nwchemgit/nwchem/tree/main/contrib/quasar)
 - [Instalace knihovny a závislostí chemického složení](xref:microsoft.quantum.chemistry.concepts.installation)
 - [Počítání prostředků](xref:microsoft.quantum.chemistry.examples.resourcecounts)
 
@@ -65,7 +65,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Dále naimportujeme příkaz, který `Get-GateCount` je součástí ukázky **GetGateCount** .
-Úplné podrobnosti najdete v [pokynech uvedených v ukázce](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
+Úplné podrobnosti najdete v [pokynech uvedených v ukázce](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/GetGateCount).
 Dále spusťte následující příkaz, v `<runtime>` `win10-x64` `osx-x64` `linux-x64` závislosti na operačním systému nahraďte hodnotu, nebo.
 
 ```powershell
@@ -95,7 +95,7 @@ Nejdřív naklonujte [úložiště nwchemgit/nwchem](https://github.com/nwchemgi
 git clone https://github.com/nwchemgit/nwchem --depth 1
 ```
 
-`nwchemgit/nwchem`Úložiště se dodává s řadou vstupních sad, které jsou určené pro použití s vývojovou sadou pro všechna vozidla, uvedená v části [ `QA/chem_library_tests` Složka](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests).
+`nwchemgit/nwchem`Úložiště se dodává s řadou vstupních sad, které jsou určené pro použití s vývojovou sadou pro všechna vozidla, uvedená v části [ `QA/chem_library_tests` Složka](https://github.com/nwchemgit/nwchem/tree/main/QA/chem_library_tests).
 V tomto příkladu použijeme `H4` vstupní balíček:
 
 ```powershell
@@ -167,7 +167,7 @@ Existuje spousta věcí, které můžete dělat tady:
 - Vyzkoušejte si jiné předdefinované vstupní balíčky, např. změnou parametru `alpha` v `h4_sto6g_alpha.nw` , 
 - Zkuste upravit balíčky, a to tak, že přímo upravíte balíčky NWChem, třeba zkoumání `STO-nG` modelů různých možností n, 
 - Vyzkoušejte jiné předdefinované vstupní balíčky NWChem, které jsou k dispozici `nwchem/qa/chem_library_tests` na adrese.
-- Vyzkoušejte sadu předdefinovaných srovnávacích testů Broombridge YAML, které byly vygenerovány z NWChem a jsou k dispozici jako součást [úložiště Microsoft/](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Tyto srovnávací testy zahrnují: 
+- Vyzkoušejte sadu předdefinovaných srovnávacích testů Broombridge YAML, které byly vygenerovány z NWChem a jsou k dispozici jako součást [úložiště Microsoft/](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML). Tyto srovnávací testy zahrnují: 
     - malé molekuly, jako je molekulový vodík (H2), beryllium (), lithium Hydride (LiH),
     - větší molekuly, jako je ozon (O3), beta-karoten, cytosine a spousta dalších. 
 - Vyzkoušejte grafické šipky front-endu [EMSL](https://arrows.emsl.pnnl.gov/api/qsharp_chem) , které vycházejí z rozhraní Microsoft Quantum Development Kit. 
@@ -180,7 +180,7 @@ Pokud chcete začít používat EMSL šipky na front-endu, přejděte [tady](htt
 > [!NOTE]
 > Spouštění šipek EMSL ve webovém prohlížeči vyžaduje, aby byl povolený JavaScript. Informace o tom, jak povolit JavaScript v prohlížeči, najdete v těchto [pokynech](https://www.enable-javascript.com/) . 
 
-Nejprve zadejte molekulu do pole dotazu, které říká``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
+Nejprve zadejte molekulu do pole dotazu, které říká ``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
 
 Můžete zadat mnoho molekul podle jejich Colloquial názvu, jako je "Kofein" místo "1, 3, 7-trimethylxanthine". 
 

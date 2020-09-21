@@ -2,19 +2,19 @@
 title: Poznámky k verzi sady Quantum Development Kit
 description: Přečtěte si o nejnovějších aktualizacích sady Microsoft Quantum Development Kit ve verzi Preview.
 author: bradben
-ms.author: bradben
-ms.date: 5/30/2020
+ms.author: v-benbra
+ms.date: 8/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 70d0c9b61e49d4ee6142edbe2767310403885f01
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: 5036b4d401bb775a7fee2252ca26e7725bc19004
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992254"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834138"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -48,7 +48,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Otevřené obory názvů v Q# poznámkových blocích jsou nyní k dispozici pro všechna budoucí spuštění buněk. To umožňuje například, aby se obory názvů otevíraly jednou v buňce v horní části poznámkového bloku místo nutnosti otevírat relevantní obory názvů v každé buňce kódu. Nový `%lsopen` příkaz Magic zobrazí seznam aktuálně otevřených oborů názvů.
+- Otevřené obory názvů v Q# poznámkových blocích jsou nyní k dispozici pro všechny budoucí výpočty buněk. To umožňuje například, aby se obory názvů otevíraly jednou v buňce v horní části poznámkového bloku místo nutnosti otevírat relevantní obory názvů v každé buňce kódu. Nový `%lsopen` příkaz Magic zobrazí seznam aktuálně otevřených oborů názvů.
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -132,7 +132,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nová knihovna pro kvantové strojové učení. Další informace najdete na naší [dokumentační stránce QML](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview).
+- Nová knihovna pro kvantové strojové učení. Další informace najdete na naší [dokumentační stránce QML](xref:microsoft.quantum.machine-learning.concepts.intro).
 - I Q# opravy chyb, což při načítání balíčků NuGet přináší až 10 20krát zvýšení výkonu
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -144,7 +144,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 Tato verze obsahuje následující:
 
 - Nový balíček NuGet Microsoft.Quantum.SDK, který nahradí balíček NuGet Microsoft.Quantum.Development.Kit při vytváření nových projektů. Balíček NuGet Microsoft.Quantum.Development.Kit se bude dál podporovat pro už existující projekty. 
-- Podpora pro Q# rozšíření kompilátoru, která jsou povolená novým Microsoftem. balíček NuGet NuGet, další informace najdete v [dokumentaci k GitHubu](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), [ukázce rozšíření kompilátoru](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) a blogu pro [ Q# vývoj](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/) .
+- Podpora pro Q# rozšíření kompilátoru, která jsou povolená novým Microsoftem. balíček NuGet NuGet, další informace najdete v [dokumentaci k GitHubu](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), [ukázce rozšíření kompilátoru](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) a blogu pro [ Q# vývoj](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/) .
 - Přidání podpory pro .NET Core 3.1 – důrazně doporučujeme mít nainstalovanou verzi 3.1.100, protože sestavování se staršími verzemi .NET Core SDK může způsobovat problémy
 - Nové transformace kompilátoru dostupné v oboru názvů Microsoft.Quantum.QsCompiler.Experimental
 - Nová funkce pro vystavení vektorů výstupního stavu jako HTML vQ#
@@ -160,7 +160,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 Tato verze obsahuje následující:
 
 - Nový atribut testu pro Q# testování částí, viz aktualizovaná dokumentace k rozhraní API [tady](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizované testování & Průvodce laděním [tady](xref:microsoft.quantum.guide.testingdebugging)
-- Přidání trasování zásobníku v případě Q# chyby spuštění programu
+- Přidání trasování zásobníku v případě Q# chyby běhu programu
 - Podpora zarážek v editoru Visual Studio Code vzhledem k aktualizaci [rozšíření OmniSharp C# Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -182,7 +182,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Aktualizace rozšíření editoru Visual Studio Code a sady Visual Studio pro nasazení jazykového serveru jako samostatného spustitelného souboru. Eliminuje se tak závislost na verzi sady .NET Core SDK.  
+- Aktualizace Visual Studio Code & rozšíření sady Visual Studio pro nasazení jazykového serveru jako samostatného spustitelného souboru, který eliminuje závislost verze .NET Core SDK  
 - Migrace na .NET Core 3.0
 - Změna způsobující chybu pro Microsoft.Quantum.Simulation.Core.IOperationFactory se zavedením nové metody `Fail`. Má vliv jenom na vlastní simulátory, které nerozšiřují SimulatorBase. Další informace [najdete v žádosti o přijetí změn na GitHubu](https://github.com/microsoft/qsharp-runtime/pull/59).
 - Nová podpora pro zastaralé atributy
@@ -224,7 +224,7 @@ Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících
 Tato verze obsahuje následující:
 
 - Nová umístění indexů pro řezy polí, další informace najdete v [referenční příručce jazyka](xref:microsoft.quantum.guide.expressions#array-slices).
-- Přidání souboru Dockerfile hostovaného na [Container Registry Microsoftu](https://github.com/microsoft/ContainerRegistry), další informace najdete v [ Q# úložišti](https://github.com/microsoft/iqsharp/blob/master/README.md) .
+- Přidání souboru Dockerfile hostovaného na [Container Registry Microsoftu](https://github.com/microsoft/ContainerRegistry), další informace najdete v [ Q# úložišti](https://github.com/microsoft/iqsharp/blob/main/README.md) .
 - Zásadní změna [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro), aktualizace nastavení konfigurace, změny názvů; aktualizované názvy najdete v [prohlížeči rozhraní .NET API](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
@@ -252,14 +252,14 @@ Tato verze přidává novou Q# jazykovou syntaxi:
 
 ### <a name="library"></a>Knihovna 
 
-Tato verze přidává numerickou knihovnu: Přečtěte si další informace o tom, jak [používat novou numerickou knihovnu](xref:microsoft.quantum.numerics.usage) a vyzkoušejte [nové ukázky](https://github.com/microsoft/quantum/tree/master/Numerics).  [PR č. 102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
+Tato verze přidává numerickou knihovnu: Přečtěte si další informace o tom, jak [používat novou numerickou knihovnu](xref:microsoft.quantum.numerics.usage) a vyzkoušejte [nové ukázky](https://github.com/microsoft/quantum/tree/main/Numerics).  [PR č. 102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 
 Tato verze reorganizuje rozšíření a aktualizuje chemickou knihovnu:
 * Vylepšuje modularitu komponent, rozšiřitelnost a obecné vyčištění kódu.  [PR č. 58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Přidává podporu pro [multireferenční vlnové funkce](xref:microsoft.quantum.chemistry.concepts.multireference), jak řídké multireferenční vlnové funkce, tak i UCC (unitárně spřažený klastr).  [PR č. 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Děkujeme.) Přispěvatel [1QBit](https://1qbit.com) ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Hodnocení energie pomocí variačního přístupu. [PR č. 120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Aktualizace schématu [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) na novou [verzi 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2) přidáním specifikace unitárně spřaženého klastru. [Problém č. 65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Přidání interoperability Pythonu do funkcí chemické knihovny. Vyzkoušejte si tuto [ukázku](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problém č. 53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR č. 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Přidání interoperability Pythonu do funkcí chemické knihovny. Vyzkoušejte si tuto [ukázku](https://github.com/microsoft/Quantum/tree/main/Chemistry/PythonIntegration). [Problém č. 53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR č. 110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## <a name="version-061905"></a>Verze 0.6.1905
 
@@ -349,7 +349,7 @@ Tato verze obsahuje následující:
 
 - Přidává podporu pro Jupyter Notebook, která nabízí skvělý způsob, jak se dozvědět víc Q# .  [Podívejte se na nové ukázky Jupyter Notebook a naučte se psát vlastní poznámkové bloky](xref:microsoft.quantum.install). 
 
-- Přidává do knihovny Quantum Canon aritmetiku celočíselné sčítačky.  Projděte si také Jupyter Notebook, který [popisuje způsob použití nových celočíselných sčítaček](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
+- Přidává do knihovny Quantum Canon aritmetiku celočíselné sčítačky.  Projděte si také Jupyter Notebook, který [popisuje způsob použití nových celočíselných sčítaček](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/AdderExample.ipynb).
 
 - Oprava chyby pro problém DumpRegister hlášených komunitou ([č. 148](https://github.com/Microsoft/Quantum/issues/148)).
 
@@ -635,7 +635,7 @@ Tato verze opravuje některé problémy hlášené komunitou. Konkrétně:
 
 #### <a name="testing"></a>Testování
 
-- Testy musí být spuštěny v 64bitovém režimu. Pokud testy selžou s výjimkou BadImageFormatException, přejděte do nabídky Test a vyberte Nastavení testu > Výchozí architektura procesoru > x64.
+- Testy musí být spuštěny v režimu 64. Pokud testy selžou s výjimkou BadImageFormatException, přejděte do nabídky Test a vyberte Nastavení testu > Výchozí architektura procesoru > x64.
 - Některým testům trvá spuštění dlouhou dobu (až 5 minut v závislosti na vašem počítači). To je normální, protože některé využívají víc než dvacet qubitů. Náš největší test aktuálně běží na 23 qubitech.
 
 #### <a name="samples"></a>ukázky

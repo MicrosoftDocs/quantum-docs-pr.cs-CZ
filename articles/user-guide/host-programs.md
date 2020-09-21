@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f1eca44dabd72cd107d72d3b9e3ad1081c19c27d
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: f24c608ffc6522cb50f512de1a02b3db4b290e83
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992186"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759812"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Způsoby spuštění Q# programu
 
@@ -250,7 +250,7 @@ Základem interoperability je Q# vytvoření obsahu Q# souboru přístupného pr
 Jednou z hlavních výhod používání hostitelského programu je to, že klasická data vrácená Q# programem se pak dají dál zpracovat v jazyce hostitele.
 Může se jednat o některé pokročilé zpracování dat (například něco, co se v nástroji nedá interně provést Q# ) a pak na Q# základě těchto výsledků volat další akce nebo něco jednoduchého jako vykreslení Q# výsledků.
 
-Tady se zobrazí obecné schéma a v následující části se podíváme na konkrétní implementace pro Python a C#. Ukázku použití hostitelského programu F # najdete v [ukázkách interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
+Tady se zobrazí obecné schéma a v následující části se podíváme na konkrétní implementace pro Python a C#. Ukázku použití hostitelského programu F # najdete v [ukázkách interoperability .NET](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 <br/>
 <img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
@@ -409,7 +409,7 @@ using NamespaceName;                              // make the Q# namespace avail
 ```
 
 Dále deklarujeme náš obor názvů C#, několik dalších bitů a částí (viz úplný blok kódu níže) a pak jakékoli klasické programování, které bychom chtěli (například výpočetní argumenty pro Q# volatelné).
-Ta není v našem případě nutná, ale příklad takového použití najdete v  [ukázce interoperability .NET](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
+Ta není v našem případě nutná, ale příklad takového použití najdete v  [ukázce interoperability .NET](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Cílové počítače
 
@@ -580,7 +580,7 @@ BorrowedWidth   0
 Q# Jupyter poznámkové bloky využívají jádro I Q# , které umožňuje definovat, kompilovat a spouštět Q# volat v jednom poznámkovém bloku---všech společně s pokyny, poznámkami a dalšími obsahy.
 To znamená, že přestože je možné importovat a používat obsah `*.qs` Q# souborů, nejsou nezbytné v modelu spuštění.
 
-Zde podrobně pomůžeme, jak spustit Q# výše uvedené operace, ale obecnější Úvod k používání Q# notebooků Jupyter je k dispozici na stránce [Úvod do Q# a Jupyter poznámkových blocích](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
+Zde podrobně pomůžeme, jak spustit Q# výše uvedené operace, ale obecnější Úvod k používání Q# notebooků Jupyter je k dispozici na stránce [Úvod do Q# a Jupyter poznámkových blocích](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
 
 ### <a name="defining-operations"></a>Definování operací
 
@@ -591,7 +591,7 @@ Po spuštění buňky s takovým příkazem jsou definice z těchto oborů názv
 
 > [!NOTE]
 > K operacím [Microsoft.Quantum.Intrinsic](xref:microsoft.quantum.intrinsic) definovaným v rámci buněk [Microsoft.Quantum.Canon](xref:microsoft.quantum.canon) [`H`](xref:microsoft.quantum.intrinsic.h) [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) v poznámkových blocích Jupyter jsou automaticky dostupné operace od Microsoftu. probíhají. vnitřní a Microsoft.. Canon (např. a) Q# .
-> Nicméně to není pravdivé pro kód převedený z externích Q# zdrojových souborů (proces zobrazený v [úvodu do Q# a Jupyter poznámkových bloků](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
+> Nicméně to není pravdivé pro kód převedený z externích Q# zdrojových souborů (proces zobrazený v [úvodu do Q# a Jupyter poznámkových bloků](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
 > 
 
 Podobně definování operací vyžaduje pouze zápis Q# kódu a spuštění buňky.

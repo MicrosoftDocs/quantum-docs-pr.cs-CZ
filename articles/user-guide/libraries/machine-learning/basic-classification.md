@@ -1,24 +1,24 @@
 ---
 title: Základní klasifikace s Machine Learningovou knihovnou
-description: Naučte se spouštět sekvenční třídění na základě počtu počátečních a napsaných v Q# Machine Learning knihovně Microsoft QDK.
+description: Naučte se spouštět sekvenční třídění na základě počtu počátečních a napsaných v Q# Machine Learning knihovně QDK Microsoft.
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f9c3e7ab85c0f0d1a6063e593607d35c5cb76936
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 5dc4614b9992e2c6b9f8ff4b839c0929ec8cab7c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868963"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833724"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Základní klasifikace: klasifikace dat pomocí QDK
 
-V tomto rychlém startu se dozvíte, jak spustit sekvenční třídění na základě počtu počátečních a popsaných informací Q# pomocí Machine Learning knihovny QDK. 
+V tomto rychlém startu se dozvíte, jak spustit sekvenční třídění, které bylo napsáno Q# pomocí Machine Learning knihovny QDK. 
 
 V této příručce použijeme datovou sadu s poloviční měsíc pomocí struktury klasifikátoru definované v Q# .
 
@@ -70,7 +70,7 @@ Hostitelský program se skládá ze tří částí:
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
-    Pak stiskněte klávesu F5, program se spustí a automaticky se zobrazí nové okno s následujícími výsledky: 
+    Stiskněte klávesu F5 a program se spustí. V novém okně se zobrazí následující výsledky: 
 
     ```bash
     $ dotnet run
@@ -88,9 +88,9 @@ Následující kód ukládáme do souboru s názvem `Training.qs` .
 
 Nejdůležitější funkce a operace definované v kódu výše jsou:
 
-- `ClassifierStructure() : ControlledRotation[]`: v této funkci nastavíme strukturu modelu našeho okruhu přidáním vrstev řízených bran, které považujeme za. Tento krok je podobný deklaraci vrstev neurons v sekvenčním modelu hloubkového učení.
-- `TrainHalfMoonModel() : (Double[], Double)`: Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady zahrnuté do knihovny, nastavíme parametry Hyper a počáteční parametry pro školení a my zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
-- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: Tato operace definuje proces ověření pro vyhodnocení modelu. Tady načteme ukázky pro ověřování, počet měření na vzorek a toleranci. Vyprodukuje počet chybných klasifikací na zvolené dávce vzorků pro ověření.
+- `ClassifierStructure() : ControlledRotation[]` : v této funkci nastavíme strukturu modelu našeho okruhu přidáním vrstev řízených bran, které považujeme za. Tento krok je podobný deklaraci vrstev neurons v sekvenčním modelu hloubkového učení.
+- `TrainHalfMoonModel() : (Double[], Double)` : Tato operace je základní částí kódu a definuje školení. Tady načteme ukázky z datové sady zahrnuté do knihovny, nastavíme parametry Hyper a počáteční parametry pro školení a my zahájíme školení voláním operace `TrainSequentialClassifier` zahrnuté do knihovny. Vytvoří výstup parametrů a posunu, který určuje klasifikátor.
+- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int` : Tato operace definuje proces ověření pro vyhodnocení modelu. Tady načteme ukázky pro ověřování, počet měření na vzorek a toleranci. Vyprodukuje počet chybných klasifikací na zvolené dávce vzorků pro ověření.
 
 ## <a name="next-steps"></a>Další kroky
 

@@ -1,6 +1,6 @@
 ---
 title: více qubits Popis: Naučte se provádět operace na dvou nebo více qubits.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Multiple-qubits MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: bradben UID: Microsoft.. koncepty. Multiple-qubits MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: article No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -97,7 +97,7 @@ Tyto nástroje jsou nezbytně nezbytné pro pochopení sady bran, které jsou b�
 
 ## <a name="representing-two-qubits"></a>Reprezentace dvou Qubits
 Hlavním rozdílem mezi jedním a dvěma qubit stavy je, že qubit stavy jsou dvojrozměrné místo dvojrozměrného rozměru.
-Důvodem je to, že výpočetního základu pro qubit stavy je tvořen tensor produkty jednoho qubit států.  Například máme\begin{align}
+Důvodem je to, že výpočetního základu pro qubit stavy je tvořen tensor produkty jednoho qubit států.  Například máme \begin{align}
 00 1 0,1 1 0 0 0 \equiv \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} \\\\ \end{bmatrix} & = \begin{bmatrix} \\\\ \\\\ \\\\ \end{bmatrix} , \qquad 01 1 0 \equiv \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} \\\\ \\\\ \\\\ \end{bmatrix} 0 0,\\\\
 10 0 1 – 0 0 0 \equiv \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} \\\\ \end{bmatrix} & = \begin{bmatrix} \\\\ \\\\ \\\\ \end{bmatrix} , \qquad 11 \equiv \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} = \begin{bmatrix} \\\\ \\\\ \\\\ \end{bmatrix} 0 0 0 1.
 \end{align}
@@ -122,7 +122,7 @@ Například neexistují žádné stavy $ \psi = \begin{bmatrix} \alpha \\\\ \bet
 
 $$\psi\otimes\phi = \begin{bmatrix} 1/ \sqrt { 2 } \\\\ 0 \\\\ 0 \\\\ 1/ \sqrt { 2 } \end{bmatrix} .$$ 
 
-Takový qubit stav, který není možné zapsat jako tensor produkt pro jeden qubit stav, se nazývá "entangled"; Tyto dvě qubits se označují jako [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Je volně řečeno, protože stav se nedokáže představit jako tensor produkt pro jeden qubit stavů, informace, že stav je uložený, není omezen na jednu z qubits jednotlivě.  Místo toho jsou informace v korelaci mezi dvěma stavy uloženy místně.  Tato nevýznamová informace je jedním z hlavních rozlišujících funkcí, které výpočetní výkon využívá v klasickém výpočetním prostředí, a je zásadní pro celou řadu protokolů [, včetně počtu](https://github.com/microsoft/Quantum/tree/master/samples/getting-started/teleportation) procesorů a [oprav chyb](xref:microsoft.quantum.libraries.error-correction).
+Takový qubit stav, který není možné zapsat jako tensor produkt pro jeden qubit stav, se nazývá "entangled"; Tyto dvě qubits se označují jako [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Je volně řečeno, protože stav se nedokáže představit jako tensor produkt pro jeden qubit stavů, informace, že stav je uložený, není omezen na jednu z qubits jednotlivě.  Místo toho jsou informace v korelaci mezi dvěma stavy uloženy místně.  Tato nevýznamová informace je jedním z hlavních rozlišujících funkcí, které výpočetní výkon využívá v klasickém výpočetním prostředí, a je zásadní pro celou řadu protokolů [, včetně počtu](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) procesorů a [oprav chyb](xref:microsoft.quantum.libraries.error-correction).
 
 ## <a name="measuring-two-qubit-states"></a>Měření qubit stavů ##
 Měření dvou qubit stavů je velmi podobné měření s jedním qubit. Měření stavu
@@ -137,29 +137,29 @@ $$
 Výsledkem je $ 00 $ s pravděpodobností $ | \alpha _ { 00 } | ^ 2 $ , $ 01 $ s pravděpodobností $ | \alpha _ { 01 } | ^ 2 $ , $ 10 $ s pravděpodobností $ | \alpha _ { 10 } | ^ 2 $ a $ 11 $ s pravděpodobností $ | 11 \alpha _ { } | ^ 2 $ . Proměnné $ \alpha _ { 00 } , \alpha _ { 01 } , \alpha _ { 10 } $ a $ 11 \alpha _ { } $ byly záměrně pojmenovány, aby toto připojení bylo jasné. Pokud je výsledkem měření hodnota 00, znamená to, že $ $ stav 2 – 2 qubit systému se sbalí a teď je
 
 $$
-    16.12.00\equiv
+    16.12.00 \equiv
     \begin{bmatrix}
-        první\\\\ 
-        0,8\\\\ 
-        0,8\\\\ 
+        první \\\\ 
+        0,8 \\\\ 
+        0,8 \\\\ 
         0 \end{bmatrix} .
 $$
 
 Je také možné změřit pouze jeden qubit stát qubit. V případech, kdy měříte pouze jeden z qubits, dopad měření se mírně liší, protože celý stav není sbalen do výpočetního stavu, ale je sbalený pouze do jednoho dílčího systému.  Jinými slovy, v takovém případě měření pouze jednoho qubit sbalí pouze jeden z podsystémů, ale ne všechny.  
 
-Pokud to chcete vidět, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí Hadamard transformace $ H $ na dvou qubits zpočátku nastavené na stav 0:$$
+Pokud to chcete vidět, zvažte měření prvního qubitu následujícího stavu, který se vytvoří pomocí Hadamard transformace $ H $ na dvou qubits zpočátku nastavené na stav 0: $$
 H ^ { \otimes 2 } \left ( \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \right ) = \frac { 1 } { 2 } \begin{bmatrix} 1 & 1 & 1 1 1 & -1 1- \\\\ & & & 1 \\\\ 1 & 1 & -1 & -1 \\\\ 1 & -1 & -1 1 1 0 0 0 & \end{bmatrix} \begin{bmatrix} \\\\ \\\\ \\\\ \end{bmatrix} = \frac { 1 } { 2 1 1 1 } \begin{bmatrix} \\\\ \\\\ \\\\ 1 \end{bmatrix} \mapsto \begin{cases} \text { výsledek } = 0 & \frac { 1 } { \sqrt { 2 } } \begin{bmatrix} 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{bmatrix} \\\\ \text { výsledek } = 1 & \frac { 1 } { \sqrt { 2 } } \begin{bmatrix} 0 \\\\ 0 \\\\ \\\\ \end{bmatrix} \\\\ \end{cases} 1  
 $$
 U obou výsledků je k dispozici 50% pravděpodobnost výskytu.  Výsledek, který je 50% pravděpodobnosti pro obojí, může být od faktu, že počáteční vektor stavu neplatí jako invariantující se zahozením $ 0 $ $ $ a 1 na prvním qubit.
 
-Matematické pravidlo pro měření prvního nebo druhého qubit je jednoduché.  Pokud $ $ přidáváme e_k být $ k ^ { \rm, } $ vektor výpočetního základu a umožníme jim $ $ sadu všech $ e_k $ tak, že qubit v dané hodnotě převezme hodnotu $ 1 $ pro tuto hodnotu $ k $ .  Pokud vás například zajímá měření prvního qubitu, bude se $ $ skládat z $ e_1 \equiv 10 $ a $ e_3 \equiv 11 $ .  Podobně platí, že pokud vás zajímá druhá qubita, budou se $ $ skládat z $ e_2 \equiv 01 $ a $ e_3 \equiv 11 $ .  Pak pravděpodobnost měření zvoleného qubitu na $ $ hodnotu 1 je pro vektor stavu$\psi$
+Matematické pravidlo pro měření prvního nebo druhého qubit je jednoduché.  Pokud $ $ přidáváme e_k být $ k ^ { \rm, } $ vektor výpočetního základu a umožníme jim $ $ sadu všech $ e_k $ tak, že qubit v dané hodnotě převezme hodnotu $ 1 $ pro tuto hodnotu $ k $ .  Pokud vás například zajímá měření prvního qubitu, bude se $ $ skládat z $ e_1 \equiv 10 $ a $ e_3 \equiv 11 $ .  Podobně platí, že pokud vás zajímá druhá qubita, budou se $ $ skládat z $ e_2 \equiv 01 $ a $ e_3 \equiv 11 $ .  Pak pravděpodobnost měření zvoleného qubitu na $ $ hodnotu 1 je pro vektor stavu $\psi$
 
 $$
 P ( \text { výsledek } = 1) = \sum _ { e_k \text { v sadě } S } \psi ^ \dagger e_k e_k ^ \dagger \psi .
 $$
 
 > [!NOTE]
->V tomto dokumentu používáme formát Little-endian k označení výpočetního základu. Ve formátu Little endian se nejdříve najdou nejméně významné bity. Například číslo čtyři ve formátu Little endian je reprezentované řetězcem bitů 001.
+> V tomto dokumentu používáme formát Little-endian k označení výpočetního základu. Ve formátu Little endian se nejdříve najdou nejméně významné bity. Například číslo čtyři ve formátu Little endian je reprezentované řetězcem bitů 001.
 
 Vzhledem k tomu, že každé měření qubit může vracet pouze $ 0 $ nebo $ 1 $ , pravděpodobnost měření $ 0 $ je pouze $ 1 – P ( \text { výsledek } = 1) $ .  To je důvod, proč explicitně dáváme vzorec pro pravděpodobnost měření $ 1 $ .
 
@@ -198,37 +198,37 @@ Stejně jako v případě qubit jsou jakékoli jednotkové transformace platnou 
 Například brána CNOT (řízená-NOT) je běžně používaná qubit brána a je reprezentována následující jednotkovou maticí:
 
 $$
-\operatorname{CNOT } = \begin{bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \ 1 \\\\ 0 \ 0 \ 1 \ 0\end{bmatrix}
+\operatorname{CNOT } = \begin{bmatrix} 1 \ 0 \ 0 \ 0  \\\\  0 \ 1 \ 0 \ 0 \\\\  0 \ 0 \ 0 \ 1 \\\\  0 \ 0 \ 1 \ 0 \end{bmatrix}
 $$
 
 Pomocí qubitch bran na obou qubits můžeme také vytvořit dvě brány – qubit. Pokud například použijeme brány 
 
 $$
 \begin{bmatrix}
-a \ b \\\\ c \ d\end{bmatrix}
+a \ b \\\\ c \ d \end{bmatrix}
 $$
 
 a
 
 $$\begin{bmatrix}
-e \ f \\\\ g \ h\end{bmatrix}
+e \ f \\\\ g \ h \end{bmatrix}
 $$
 
-na první a druhý qubits, v uvedeném pořadí, je ekvivalentem použití dvou qubit, které jsou uvedené v tensor produktu:$$\begin{bmatrix}
-a \ b \\\\ c \ d\end{bmatrix}
+na první a druhý qubits, v uvedeném pořadí, je ekvivalentem použití dvou qubit, které jsou uvedené v tensor produktu: $$\begin{bmatrix}
+a \ b \\\\ c \ d \end{bmatrix}
 \otimes 
 \begin{bmatrix}
-e \ f \\\\ g \ h\end{bmatrix}=
+e \ f \\\\ g \ h \end{bmatrix}=
     \begin{bmatrix}
-    AE \ AF \ je \ Bf\\\\
-    AG \ Ah \ BG \ BH\\\\
-    CE \ CF \ de \ DF\\\\
+    AE \ AF \ je \ Bf \\\\
+    AG \ Ah \ BG \ BH \\\\
+    CE \ CF \ de \ DF \\\\
     \ ch \ DG \ DH \end{bmatrix} .$$
 Proto můžeme pořizovat qubité brány tím, že tensor produkt s některými známými branami s jedním qubit. Mezi příklady qubitch bran patří $ h \otimes h $ , $ X \otimes \boldone $ a $ x \otimes Z $ .
 
 Všimněte si, že i když kterákoli ze dvou bran s jedním qubitm definuje qubit bránu tím, že převezme jejich tensor produkt, nebude tato konverzace pravdivá. Ne všechny qubit brány se dají zapsat jako tensor produkt pro brány s jedním qubit.  Taková brána se nazývá *Entangling* brána. Jedním z příkladů brány Entangling je brána CNOT.
 
-Intuition za řízenou bránou se dá zobecnit na libovolné brány.  Řízená brána obecně je bránou, která funguje jako identita (IE nemá žádnou akci), pokud konkrétní qubit není $ 1 $ .  U qubit s označením $ x $ $ \Lambda \_ (U) $ jsme si poznamenali řízená jednotnou a řízenou v tomto případě.  Jako příklad $ \Lambda _0 (u) e \_ { 1 } \otimes { \psi } = e \_ { 1 } \otimes U { \psi } $ a $ \Lambda \_ 0 (u) e \_ { 0 } \otimes { \psi } = e \_ { 0 } \otimes { \psi } $ , kde $ e \_ 0 $ a $ e \_ 1 $ jsou výpočetní základní vektory pro jednu qubit, která odpovídá hodnotám $ 0 $ a $ 1 $ .  Zvažte například následující $ bránu řízená-Z, $ kterou můžeme vyjádřit jako$$
+Intuition za řízenou bránou se dá zobecnit na libovolné brány.  Řízená brána obecně je bránou, která funguje jako identita (IE nemá žádnou akci), pokud konkrétní qubit není $ 1 $ .  U qubit s označením $ x $ $ \Lambda \_ (U) $ jsme si poznamenali řízená jednotnou a řízenou v tomto případě.  Jako příklad $ \Lambda _0 (u) e \_ { 1 } \otimes { \psi } = e \_ { 1 } \otimes U { \psi } $ a $ \Lambda \_ 0 (u) e \_ { 0 } \otimes { \psi } = e \_ { 0 } \otimes { \psi } $ , kde $ e \_ 0 $ a $ e \_ 1 $ jsou výpočetní základní vektory pro jednu qubit, která odpovídá hodnotám $ 0 $ a $ 1 $ .  Zvažte například následující $ bránu řízená-Z, $ kterou můžeme vyjádřit jako $$
 \Lambda\_0 (Z) 1 0 0 0 0 0 0 0 0 0 0 0 0 = \begin{bmatrix} & & & \\\\ & & & \\\\ & & & \\\\ & & & -1 \end{bmatrix} = ( \boldone \otimes h) \operatorname { CNOT } ( \boldone \otimes h).
 $$
 
@@ -251,7 +251,7 @@ Nefunkční doby fungují přesně stejným způsobem.  Například pokud chceme
 
 \begin{align}
 &(X \otimes \operatorname { CNOT } _ { 12 } \otimes \boldone \otimes \boldone \otimes \boldone \otimes \boldone ) \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} \\\\ 0 0 \end{bmatrix} \otimes \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} \otimes \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} \\\\ \end{bmatrix} \otimes \begin{bmatrix} \\\\ 0 1 0 0 1\end{bmatrix}\\\\
-&\qquad\qquad\equiv0011001.\end{align}
+&\qquad\qquad\equiv 0011001. \end{align}
 
 V mnoha systémech qubit je často potřeba přidělit a uvolnit qubits, která slouží jako dočasná paměť pro počítač s více operačními systémy.  Takový qubit se nazývá ancilla.  Ve výchozím nastavení předpokládáme, že se stav qubit inicializuje na $ e_0 $ při přidělování.  Dále předpokládáme, že se znovu vrátí do $ e_0 $ před zrušením přidělení.  Tento předpoklad je důležitý, protože pokud se ancilla qubit přestane entangled s jiným registrem qubit, když se bude narušit, pak proces navracení dolů škodí ancilla.  Z tohoto důvodu vždycky předpokládáme, že taková qubits se před vydáním vrátí do původního stavu.
 
