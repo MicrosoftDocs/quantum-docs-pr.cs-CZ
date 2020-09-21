@@ -3,21 +3,21 @@ title: Převody typů ve Q# standardních knihovnách
 description: Přečtěte si o běžných a uživatelsky definovaných funkcích pro převod typu ve Q# standardních knihovnách.
 author: cgranade
 uid: microsoft.quantum.libraries.convert
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2319bf453f5fbf6bd068859ea65562423d3ff4d0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: aa8a1ad624067906998d2735c7a95174a163ce97
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868505"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835600"
 ---
 # <a name="type-conversions"></a>Převody typu #
 
-Q#je jazyk **silného typu** .
+Q# je jazyk **silného typu** .
 Konkrétně neumožňuje Q# implicitně přetypování mezi různými typy. Například `1 + 2.0` není platný Q# výraz.
 Místo toho Q# poskytuje celou řadu funkcí pro převod typů pro vytváření nových hodnot daného typu.
 

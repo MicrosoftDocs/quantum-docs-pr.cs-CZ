@@ -2,19 +2,19 @@
 title: Tok řízení v Q#
 description: Smyčky, podmíněnéy atd.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759658"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833517"
 ---
 # <a name="control-flow-in-no-locq"></a>Tok řízení v Q#
 
@@ -24,15 +24,16 @@ Tok řízení lze však upravit třemi různými způsoby:
 * `if` učiněn
 * `for` smyčky
 * `repeat-until-success` smyčky
+* conjugations ( `apply-within` příkazy)
 
-`if` `for` Konstrukce toku ovládacích prvků a postupují ve známém smyslu pro většinu klasických programovacích jazyků. [`Repeat-until-success`](#repeat-until-success-loop) smyčky jsou popsány dále v tomto článku.
+`if` `for` Konstrukce toku ovládacích prvků a postupují ve známém smyslu pro většinu klasických programovacích jazyků. [`Repeat-until-success`](#repeat-until-success-loop) smyčky a [conjugations](#conjugations) jsou popsány dále v tomto článku.
 
 Důležité je, `for` smyčky a `if` příkazy lze použít v operacích, pro které jsou automaticky generovány [specializace](xref:microsoft.quantum.guide.operationsfunctions) . V tomto scénáři sousední `for` smyčka smyčky obrátí směr a převezme souseda pro každou iteraci.
 Tato akce následuje po principu "obuv-a-SOCKS": Pokud chcete vrátit zpět do aplikace SOCKS a potom provést operaci, musíte zrušit uvedení na obuv a pak zrušit vložení na SOCKS. 
 
 ## <a name="if-else-if-else"></a>If, else-if, else
 
-`if`Příkaz podporuje podmíněné spuštění.
+`if`Příkaz podporuje podmíněné zpracování.
 Skládá se z klíčového slova `if` , logického výrazu v závorkách a bloku příkazu (blok _then_ ).
 Volitelně může následovat libovolný počet klauzulí else-if, z nichž každá se skládá z klíčového slova `elif` , logického výrazu v závorkách a bloku příkazu (blok _else-if_ ).
 Nakonec příkaz může volitelně končit klauzulí else, která se skládá z klíčového slova `else` následovaného jiným blokem příkazu (blok _Else_ ).
@@ -75,7 +76,7 @@ Příkaz se skládá z klíčového slova `for` následovaných řazenou kolekc�
 
 Blok příkazu (tělo smyčky) se opakovaně spouští s definovaným symbolem (proměnná smyčky) svázaná s každou hodnotou v rozsahu nebo poli.
 Všimněte si, že pokud je výraz Range vyhodnocen jako prázdný rozsah nebo pole, tělo se nespustí vůbec.
-Výraz je plně vyhodnocen před vstupem do smyčky a při provádění smyčky se nemění.
+Výraz je plně vyhodnocen před vstupem do smyčky a při spuštění smyčky se nemění.
 
 Proměnná smyčky je svázána s každým vchodem do těla smyčky a není vázána na konci těla.
 Proměnná smyčky není svázána po dokončení smyčky for.
@@ -129,7 +130,7 @@ Tělo smyčky se spustí a podmínka se vyhodnotí.
 Pokud je podmínka pravdivá, je příkaz dokončen; v opačném případě se oprava spustí a příkaz se spustí znovu, počínaje textem smyčky.
 
 Všechny tři části smyčky ru (tělo, test a oprava) se považují za jeden obor *pro každé opakování*, takže symboly, které jsou svázané s textem, jsou k dispozici v testu i v opravě.
-Nicméně dokončení provádění opravy ukončí rozsah příkazu, takže vazby symbolů provedené během těla nebo opravy nejsou k dispozici v následných opakováních.
+Nicméně dokončení spuštění opravy ukončí rozsah příkazu, takže vazby symbolů provedené během těla nebo opravy nejsou k dispozici v následných opakováních.
 
 Kromě toho `fixup` je příkaz často užitečný, ale není vždy nezbytný.
 V případě, že není potřeba, konstrukce
@@ -150,9 +151,10 @@ Další příklady a podrobnosti najdete v [příkladech Zopakování kroků](#r
 
 ## <a name="while-loop"></a>Smyčka while
 
-Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu. Jsou široce používány v určitých třídách algoritmů pro plnění, což je tedy konstrukce vyhrazeného jazyka Q# . Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka spuštění je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime. Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru. 
+Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu. Jsou široce používány v určitých třídách algoritmů pro plnění, což je tedy konstrukce vyhrazeného jazyka Q# . Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka běhu je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime. Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru. 
 
-Q#Proto podporuje použití smyčky while pouze v rámci funkcí. `while`Příkaz se skládá z klíčového slova `while` , logického výrazu v závorkách a bloku příkazu.
+Q#Proto podporuje použití smyčky while pouze v rámci funkcí.
+`while`Příkaz se skládá z klíčového slova `while` , logického výrazu v závorkách a bloku příkazu.
 Blok příkazu (tělo smyčky) běží, pokud je podmínka vyhodnocena jako `true` .
 
 ```qsharp
@@ -163,6 +165,45 @@ while (index < Length(arr) && item < 0) {
     set index += 1;
 }
 ```
+
+## <a name="conjugations"></a>Conjugations
+
+Na rozdíl od klasických bitů, uvolňování paměti je trochu více zapojeno, protože nevidomé resetující qubits může mít nežádoucí důsledky zbývajícího výpočtu, pokud qubits stále entangled. Tyto účinky je možné vyhnout tím, že před uvolněním paměti vykonává správné "rušení" prováděných výpočtů. Běžným vzorem pro výpočetní výkon je následující: 
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    outerOperation(target);
+    innerOperation(target);
+    Adjoint outerOperation(target);
+}
+```
+
+Q# podporuje příkaz conjugation, který implementuje předchozí transformaci. Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    within{ 
+        outerOperation(target);
+    }
+    apply {
+        innerOperation(target);
+    }
+}
+```
+Takový příkaz conjugation se stává užitečnou, pokud vnější a vnitřní transformace nejsou snadno dostupné jako operace, ale místo toho jsou vhodnější pro popis pomocí bloku skládajícího se z několika příkazů. 
+
+Inverzní transformace pro příkazy definované v rámci bloku je automaticky generována kompilátorem a spuštěna po dokončení bloku Apply.
+Vzhledem k tomu, že jakékoli proměnlivé proměnné použité jako součást bloku nelze znovu svázat v bloku Apply, je vygenerovaná transformace zaručena jako sousední v výpočtu v bloku. 
 
 ## <a name="return-statement"></a>Return – příkaz
 

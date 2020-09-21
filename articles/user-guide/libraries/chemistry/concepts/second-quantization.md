@@ -1,20 +1,20 @@
 ---
 title: Druhý kvantizační
 description: Přečtěte si o druhém kvantizační přístupu k modelování elektronických struktur při programování.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.secondquantization
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ba77c499d6830b1f78bba39e20b15c4ebe9433fc
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6becd348f7b3957cb60b16bbd5a28228527e1d4c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869456"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835804"
 ---
 # <a name="second-quantization"></a>Druhý kvantizační
 
@@ -77,7 +77,7 @@ Knihovna složení doby provozu může tyto konvence použít a na orbitals v ta
 ```
 
 V případě systémů fermionic se Pauli princip vyloučení zabrání tomu, aby se v jakémkoli Orbital ve stejnou dobu zobrazoval více než jeden elektron.
-To znamená, že můžeme napsat dva právní stavy pro $ \ psi_1 $ jako \begin{Equation} \ psi_1 \rightarrow \begin{Cases} \ket {0} _1 & \Text{if $ \ psi_1 $ není obsazené.}\\\
+To znamená, že můžeme napsat dva právní stavy pro $ \ psi_1 $ jako \begin{Equation} \ psi_1 \rightarrow \begin{Cases} \ket {0} _1 & \Text{if $ \ psi_1 $ není obsazené.} \\\
 \ket {1} _1 & \Text{if $ \ psi_1 $ je obsazeno.} \end{Cases} \end{Equation} toto kódování je skvělé pro počítače, protože to znamená, že je možné uložit elektronické povolání jako jeden bit.
 
 Stavy povolání pro orbitals $2N $ se můžou podobně ukládat v $2N $ qubits.

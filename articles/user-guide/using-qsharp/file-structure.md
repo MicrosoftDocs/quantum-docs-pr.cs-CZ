@@ -1,22 +1,22 @@
 ---
-title: Q#Struktura souborů
+title: Q# Struktura souborů
 description: Popisuje strukturu a syntaxi Q# souboru.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac73962b1a718cd04aa87ee3476c66781fe3ac2b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 98b3a2e35186989b8191cc566a5d5310bc26eafc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867926"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833302"
 ---
-# <a name="no-locq-file-structure"></a>Q#Struktura souborů
+# <a name="no-locq-file-structure"></a>Q# Struktura souborů
 
 Q#Soubor se skládá z sekvence *deklarací oboru názvů*.
 Každá deklarace oboru názvů obsahuje deklarace pro uživatelsky definované typy, operace a funkce a může obsahovat libovolný počet každého typu deklarace a v libovolném pořadí.
@@ -76,7 +76,7 @@ Například s ohledem na operaci s názvem `Op` z `X.Y` oboru názvů:
 Je obvykle lepší zahrnout obor názvů pomocí `open` direktivy.
 Použití plně kvalifikovaného názvu je vyžadováno, pokud dva obory názvů definují konstrukce se stejným názvem a aktuální zdroj používá konstrukce z obou.
 
-Q#řídí se stejnými pravidly pro pojmenování jako jiné jazyky .NET.
+Q# řídí se stejnými pravidly pro pojmenování jako jiné jazyky .NET.
 Nicméně nepodporuje Q# relativní odkazy na obory názvů.
 Například pokud je obor názvů `a.b` otevřený, odkaz na operaci s názvem se `c.d` nevyřeší na *not* operaci s úplným názvem `a.b.c.d` .
 
@@ -91,7 +91,7 @@ Vyhněte se vložení více příkazů na jeden řádek.
 
 ## <a name="statement-blocks"></a>Bloky příkazů
 
-Q#příkazy jsou seskupeny do bloků příkazů, které jsou obsaženy ve složených závorkách `{ }` . Blok příkazu začíná levou `{` a ukončenou uzávěrkou `}` .
+Q# příkazy jsou seskupeny do bloků příkazů, které jsou obsaženy ve složených závorkách `{ }` . Blok příkazu začíná levou `{` a ukončenou uzávěrkou `}` .
 
 Blok příkazu, který je vložený v jiném bloku, se považuje za dílčí blok obsahujícího bloku. obsahující a dílčí bloky se označují také jako vnější a vnitřní bloky.
 

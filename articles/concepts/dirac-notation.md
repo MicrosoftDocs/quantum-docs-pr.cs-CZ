@@ -1,6 +1,6 @@
 ---
 title: Dirac Notation Description: Naučte se používat zápis Dirac pro reprezentaci stavových a simulací operací.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Dirac MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Dirac MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -230,5 +230,5 @@ Tento koncept představující stav jako matici, spíše než vektor, je často 
 Obecné operátory státních stavů, nikoli vektory, se všudypřítomný v některých oblastech výpočetního prostředí, ale není nutné porozumět základům tohoto pole.
 Pro zúčastněný čtenář doporučujeme přečíst si jednu z referenčních knih, které jsou k dispozici v tématu, [kde najdete další informace](xref:microsoft.quantum.more-information).
 
-## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q#sekvence brány rovnající se státům
+## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# sekvence brány rovnající se státům
 Konečný bod pro vyzvednutí zápisu do teček a Q# programovací jazyk: na začátku tohoto dokumentu jsme uvedli, že stav nekonečných stavů je základní objekt informací ve výpočetním prostředí.  Pak může nastat jako neočekávaně, že v Q# žádném případě neexistují žádné fiktivní stavy.  Místo toho jsou všechny stavy popsány pouze pomocí operací, které slouží k jejich přípravě.  Předchozí příklad představuje vynikající ilustraci.  Místo toho, abychom v registru vyjádřili jednotnou pozici pro všechny bitové řetězce, můžeme výsledek vyjádřit jako $ H ^ { \otimes n } \ket { 0 } $ .  Tento exponenciálně kratší popis stavu má nejen výhodu, že se na něj dá klasický důvod, ale také stručně definuje operace, které je potřeba rozšířit prostřednictvím softwarového zásobníku, aby se tento algoritmus implementoval.  Z tohoto důvodu Q# je navržena tak, aby vygenerovala sekvence brány místo nestavových stavů. na teoretické úrovni jsou však dva perspektivy stejné.

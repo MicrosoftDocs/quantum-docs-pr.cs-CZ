@@ -2,18 +2,18 @@
 title: Q#Příkazy Magic
 description: Rychlá referenční stránka pro Q# příkazy Magic s Q# Jupyter poznámkovým blokem
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1d2d092588e1a5c69d12e5d50377e3e26412c094
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 75a1e1820e5ca16268c9b11322eb5653094b1a3c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863695"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833557"
 ---
 # <a name="ino-locq-magic-commands"></a>Q#Příkazy Magic
 
@@ -51,6 +51,6 @@ ms.locfileid: "88863695"
 
 ### <a name="katas-from-microsoftquantumkatas-package"></a>Katas (z balíčku Microsoft.. katas)
 
-- [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata): Provede jeden test a oznámí, zda byl test úspěšně úspěšný.
+- [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata): Spustí jeden test a oznámí, zda byl test úspěšně úspěšný.
 - [`%check_kata`](xref:microsoft.quantum.iqsharp.magic-ref.check_kata): Kontroluje referenční implementaci pro jeden test Kata.
     Konkrétně nahrazuje referenční implementaci pro jeden úkol na buňku a oznamuje, zda byl test úspěšně úspěšný.

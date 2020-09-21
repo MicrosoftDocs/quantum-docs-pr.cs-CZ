@@ -2,23 +2,23 @@
 title: Prostředky pro procesory Estimator – pro vývojová prostředí
 description: Přečtěte si o QDK prostředcích Microsoft Estimator, které vyodhadují prostředky potřebné ke spuštění dané instance Q# operace na počítači s více operačními systémy.
 author: anpaz-msft
-ms.author: anpaz@microsoft.com
+ms.author: anpaz
 ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1892431c3e332385a5bcefa357eb64a9fac3f381
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: 6138c098a4efe2797c7d7360573ddcb9cb70a6c1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992237"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835923"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
-Jak název implikuje, `ResourcesEstimator` Třída odhadne prostředky potřebné ke spuštění dané instance Q# operace v počítači s více operačními systémy. To dosahuje provedením operace s neskutečným simulací stavu počítače s více operačními počítači. z tohoto důvodu odhaduje prostředky pro Q# operace, které používají tisíce qubits, za předpokladu, že klasická část kódu běží v rozumnou dobu.
+Jak název implikuje, `ResourcesEstimator` Třída odhadne prostředky potřebné ke spuštění dané instance Q# operace v počítači s více operačními systémy. To dosahuje tím, že spustí operaci bez skutečného simulace stavu počítače s více operačními systémy. z tohoto důvodu odhaduje prostředky pro Q# operace, které používají tisíce qubits, za předpokladu, že klasická část kódu běží v rozumnou dobu.
 
 Prostředky Estimator jsou postavené na [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)pro stav, který poskytuje bohatší sadu metrik a nástrojů pro ladění Q# programů.
 
@@ -127,11 +127,11 @@ Prostředky Estimator sledují následující metriky:
 |----|----|
 |__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
 |__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
-|__Measure__    |Počet spuštění všech měření.  |
+|__Míra__    |Počet spuštění všech měření.  |
 |__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
 |__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
 |__Úrovní__|Dolní mez pro hloubku okruhu provozu, kterou Q# operace spouští. Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Width (Šířka)__    |Dolní mez pro maximální počet qubits přidělených během běhu Q# operace. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.  |
+|__Délk__    |Dolní mez pro maximální počet qubits přidělených během běhu Q# operace. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.  |
 |__BorrowedWidth__    |Maximální počet qubits, které byly v rámci operace vypůjčeny Q# .  |
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření

@@ -1,20 +1,20 @@
 ---
-title: Algoritmy doby veQ#
+title: Algoritmy doby ve Q#
 description: Seznamte se se základními výpočetními algoritmy, včetně zesílení amplitud, Fourierova transformace, Draper a Beauregard přidávání a odhadu fází.
 author: QuantumWriter
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 7ce13c5df3795656156cccf28640c0a4b0dcba2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868810"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835668"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
@@ -30,7 +30,7 @@ Logika za zesílením amplitudy následuje přímo z Eigen-dekompozice $Q $.  Ko
 
 Další užitečnou vlastností, která se z nich nachází, je, že eigenvalue $ \theta $ přímo souvisí s pravděpodobností, že počáteční stav bude označený (v případě, že $P _0 $ je projektor pouze do počátečního stavu).  Vzhledem k tomu, že eigenphases $Q $ jsou $2 \ théta = 2 \ Sin ^ {-1} (\sqrt{\Pr (úspěch)}) $, pak se vám postupuje podle toho, že pokud použijete odhad fáze pro $Q $, můžeme se dozvědět pravděpodobnost úspěchu při použití v rámci jednotkového řízení.  To je užitečné, protože pro zjištění pravděpodobnosti úspěšnosti, která by jinak vyžadovala, je nutné, aby bylo v případě, že vyžaduje kvadratickou, méně aplikací tohoto postupu
 
-Q#zavádí zesílení amplitud jako specializace zesílení amplitudy oblivious.  Zesílení amplitud oblivious umožňuje získat tento moniker, protože projektor na počáteční eigenspace nemusí být projektor do počátečního stavu.  V tomto smyslu je protokol oblivious do počátečního stavu.  Klíčová aplikace zesílení amplitud oblivious je v některých *lineárních kombinacích* Hamiltonian metod simulace, přičemž je v tom, že počáteční stav není znám, ale je entangled s registrem ancilla v protokolu simulace.  Pokud by byl tento registr ancilla měřen jako pevná hodnota, řekněme $0 $, pak tyto metody simulace aplikují požadovanou jednotnou transformaci na zbývající qubits (označované jako systémový registr).  U všech ostatních výsledků měření se ale povede k selhání.  Zesílení amplitud oblivious umožňuje zvýšit pravděpodobnost úspěchu tohoto měření na $100 \\ % $ pomocí výše uvedeného důvodu.  Navíc běžné zesílení amplitudy odpovídá případu, kde je systémový registr prázdný.  Proto Q# používá zesílení amplitud oblivious jako základní podprogram amplitudy zesílení.
+Q# zavádí zesílení amplitud jako specializace zesílení amplitudy oblivious.  Zesílení amplitud oblivious umožňuje získat tento moniker, protože projektor na počáteční eigenspace nemusí být projektor do počátečního stavu.  V tomto smyslu je protokol oblivious do počátečního stavu.  Klíčová aplikace zesílení amplitud oblivious je v některých *lineárních kombinacích* Hamiltonian metod simulace, přičemž je v tom, že počáteční stav není znám, ale je entangled s registrem ancilla v protokolu simulace.  Pokud by byl tento registr ancilla měřen jako pevná hodnota, řekněme $0 $, pak tyto metody simulace aplikují požadovanou jednotnou transformaci na zbývající qubits (označované jako systémový registr).  U všech ostatních výsledků měření se ale povede k selhání.  Zesílení amplitud oblivious umožňuje zvýšit pravděpodobnost úspěchu tohoto měření na $100 \\ % $ pomocí výše uvedeného důvodu.  Navíc běžné zesílení amplitudy odpovídá případu, kde je systémový registr prázdný.  Proto Q# používá zesílení amplitud oblivious jako základní podprogram amplitudy zesílení.
 
 Obecná rutina ( `AmpAmpObliviousByReflectionPhases` ) má dva Registry, které voláme `ancillaRegister` a `systemRegister` . Přijímá také dva Oracle pro nezbytné odrazy. `ReflectionOracle`Funguje pouze v době, `ancillaRegister` kdy v `ObliviousOracle` obou registrech funguje dohromady. Vstup do `ancillaRegister` musí být inicializován na hodnotu-1 eigenstate prvního operátoru reflexe $ \boldone-2P_1 $.
 
@@ -58,7 +58,7 @@ V tomto případě všechny $Z $-rotace $2 \ pi/2 ^ k $, kde $k > a $, se odeber
 Je známo, že pro $k \ge \ log_2 (n) + \ log_2 (1/\epsilon) + $3. jedna může být vázaná \\ na $ | \operatorname{QFT}-\operatorname{AQFT} \\ | < \epsilon $.
 Tady $ \\ | \cdot \\ | $ je norma operátoru, která v tomto případě je druhá odmocnina největší [eigenvalue](xref:microsoft.quantum.concepts.matrix-advanced) z $ (\operatorname{QFT}-\operatorname{AQFT}) (\operatorname{QFT}-\operatorname{AQFT}) ^ \dagger $.
 
-## <a name="arithmetic"></a>Průměr ##
+## <a name="arithmetic"></a>Aritmetické ##
 
 Stejně jako aritmetická role hraje centrální roli v klasickém výpočetním prostředí, je také nepostradatelná pro výpočetní výkon.  Algoritmy jako algoritmus pro simulaci Shor, metody simulace a také mnoho algoritmů oracular spoléhají na souvislé aritmetické operace.  Nejvíc přístupů k aritmetickému sestavování po okruhech přidávání  Nejjednodušší přizpůsobování přebírá klasický vstup $b $ a přidává hodnotu do stavového pole s celým číslem $ \ket{a} $.  Matematicky, přidávání (což znamená, že Poznámka $ \operatorname{Add} (b) $ pro klasický vstup $b $) má vlastnost, která
 

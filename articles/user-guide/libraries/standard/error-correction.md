@@ -3,18 +3,18 @@ title: Oprava chyb ve Q# standardních knihovnách
 description: Naučte se, jak používat chyby při opravování kódů v Q# programech při ochraně stavu qubits.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8b1f008793281121bc547d1a6ac3b960feb082ab
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868487"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835549"
 ---
 # <a name="error-correction"></a>Oprava chyb #
 
@@ -78,7 +78,7 @@ V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduch�
 > Úplný Úvod k formalitám na stabilizaci je nad rámec této části.
 > Čtenářům, kteří mají zájem o další informace, se dozvíte o [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## <a name="representing-error-correcting-codes-in-no-locq"></a>Reprezentace chybových oprav kódů vQ# ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a>Reprezentace chybových oprav kódů v Q# ##
 
 Aby bylo možné zadat chyby oprav kódů, Q# Canon poskytuje několik různých uživatelsky definovaných typů:
 
@@ -120,6 +120,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Podrobněji o tom prozkoumáme v [ukázce bitové překlopení kódu](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
+Podrobněji o tom prozkoumáme v [ukázce bitové překlopení kódu](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).
 
 Kromě kódu překlápění, Q# je technologie Canon k dispozici s implementacemi [qubit dokonalého kódu](https://arxiv.org/abs/quant-ph/9602019)a [sedmi qubit kódem](https://arxiv.org/abs/quant-ph/9705052), který může opravit libovolnou chybu s jedním qubit.

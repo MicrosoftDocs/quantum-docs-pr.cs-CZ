@@ -3,18 +3,18 @@ title: Řízení toku ve Q# standardním libararies
 description: Přečtěte si o operacích a funkcích řízení toku v Q# knihovně Microsoft Standard.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a440f1ef2b901b18593816ca27aeadf7ab827104
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1cfef50cf2bbecd2043972a662edd8120c5570ec
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868572"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835617"
 ---
 # <a name="higher-order-control-flow"></a>Tok řízení vyššího řádu #
 
@@ -86,7 +86,7 @@ Konkrétně to znamená, že volání se `ApplyToEachCA` mohou objevit v operac�
 Podobně <xref:microsoft.quantum.canon.applytoeachindex> je vhodný pro reprezentaci vzorů formuláře `U(0, targets[0]); U(1, targets[1]); ...` a nabízí verze pro každou kombinaci funktory, která je podporována jeho vstupem.
 
 > [!TIP]
-> `ApplyToEach`je typ – parametr, aby jej bylo možné použít s operacemi, které přijímají jiné vstupy než `Qubit` .
+> `ApplyToEach` je typ – parametr, aby jej bylo možné použít s operacemi, které přijímají jiné vstupy než `Qubit` .
 > Předpokládejme například, že `codeBlocks` je pole <xref:microsoft.quantum.errorcorrection.logicalregister> hodnot, které je třeba obnovit.
 > Pak `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` použije chybovou opravu kódu `code` a funkci obnovení `recoveryFn` na každý blok nezávisle.
 > To i pro klasické vstupy: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` použije rotaci $ \pi/$2 o $X $ následovaný otočením $PI/$3 o $Y $.
@@ -120,7 +120,7 @@ Vzhledem k tomu, že řízení operací může být všeobecně náročné, pomo
 
 > [!NOTE]
 > Jednou z dalších podsekvencí $U $ je, že nemusíme ani znát, jak `Controlled` funktor použít `U` .
-> `ApplyWithCA`Proto má slabší podpis, než může být očekáván:
+> `ApplyWithCA` Proto má slabší podpis, než může být očekáván:
 > ```qsharp
 > ApplyWithCA<'T> : (('T => Unit is Adj),
 >     ('T => Unit is Adj + Ctl), 'T) => Unit

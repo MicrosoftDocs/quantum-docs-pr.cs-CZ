@@ -1,6 +1,6 @@
 ---
 title: Popis pokročilých konceptů matrice: Přečtěte si o exponenciálních eigenvectors, eigenvalues a matricích, základních nástrojích, které se používají k popisu a simulaci algoritmů.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Matrix-rozšířené MS. Author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. téma: article No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Matrix-rozšířené MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: article No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ Teď rozšíříme své manipulace s matricemi na [*eigenvalues, eigenvectors*](
 
 Nechť $ M je $ čtvercová matice a $ v $ je vektor, který není vektorem všechny nuly (tj. vektor se všemi položkami rovnými $ 0 $ ).
 
-Řekněme, $ $ že v je [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) M, pokud je v $ $ $ = $ nějakém čísle $ jazyka c MV CV $ . Řekněme, $ $ že c je [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) odpovídající eigenvector $ v $ . Obecně $ může matice M $ transformovat vektor na jakýkoliv jiný vektor, ale eigenvector je zvláštní, protože je ponechán beze změny s výjimkou vynásobený číslem. Všimněte si, že pokud $ $ je v eigenvector s eigenvalue $ c $ , $ AV $ je také eigenvector (pro jakoukoliv nenulovou $ a $ ) se stejným eigenvalue.
+Řekněme, $ $ že v je [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) M, pokud je v  $ $ $ = $ nějakém čísle $ jazyka c MV CV $ . Řekněme, $ $ že c je [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) odpovídající eigenvector $ v $ . Obecně $ může matice M $ transformovat vektor na jakýkoliv jiný vektor, ale eigenvector je zvláštní, protože je ponechán beze změny s výjimkou vynásobený číslem. Všimněte si, že pokud $ $ je v eigenvector s eigenvalue $ c $ , $ AV $ je také eigenvector (pro jakoukoliv nenulovou $ a $ ) se stejným eigenvalue.
 
 Například pro matici identity je každý vektor $ v $ eigenvector s eigenvalue $ 1 $ .
 
@@ -108,7 +108,7 @@ Vektory
 
 $$\begin{bmatrix}1 \\\\ 0 \\\\ \end{bmatrix} , \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} a \begin{bmatrix} 0 \\\\ 0 \\\\ 1\end{bmatrix}$$
 
-eigenvectors z této matrice s eigenvalues $ D_1 $ , $ d_2 $ a $ D_3 $ , v uvedeném pořadí. Pokud $ D_1 $ , $ d_2 $ a $ D_3 $ mají odlišná čísla, pak jsou tyto vektory (a jejich násobky) jediným eigenvectors matice $ d $ . Obecně platí, že pro diagonální matrici je snadné číst z eigenvalues a eigenvectors. Eigenvalues jsou všechna čísla, která se zobrazují na diagonále a jejich příslušné eigenvectors jsou vektory jednotek s jednou položkou rovnající se $ 1 $ a zbývající položky rovnající se $ 0 $ .
+eigenvectors z této matrice s eigenvalues  $ D_1 $ , $ d_2 $ a $ D_3 $ , v uvedeném pořadí. Pokud $ D_1 $ , $ d_2 $ a $ D_3 $ mají odlišná čísla, pak jsou tyto vektory (a jejich násobky) jediným eigenvectors matice $ d $ . Obecně platí, že pro diagonální matrici je snadné číst z eigenvalues a eigenvectors. Eigenvalues jsou všechna čísla, která se zobrazují na diagonále a jejich příslušné eigenvectors jsou vektory jednotek s jednou položkou rovnající se $ 1 $ a zbývající položky rovnající se $ 0 $ .
 
 Všimněte si výše uvedeného příkladu, že eigenvectors $ D $ tvoří základ pro trojrozměrné $ $ vektory. Základem je sada vektorů, což znamená, že každý vektor lze zapsat jako lineární kombinaci. Explicitní, $ v_1 $ , $ v_2 $ a $ v_3 $ tvoří základ, pokud je libovolný vektor $ v $ zápisu jako $ v = A_1 v_1 + a_2 v_2 + a_3 v_3 $ pro některá čísla $ A_1 $ , $ A_2 $ a $ a_3 $ .
 

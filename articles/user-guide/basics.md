@@ -1,22 +1,22 @@
 ---
-title: Q#Práce
-description: Základní konceptyQ#
+title: Q# Práce
+description: Základní koncepty Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4f4a75cdaaa070fd763d7f75429b7c39357d25a5
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 86f6538cf383f4e7c14255b38cfb1c141c8f991b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869643"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835515"
 ---
-# <a name="no-locq-basics"></a>Q#Práce
+# <a name="no-locq-basics"></a>Q# Práce
 
 Tento článek představuje stručný úvod do základních stavebních bloků Q# .
 
@@ -39,7 +39,7 @@ using (qubit = Qubit()) {
 ```
 Další informace o inicializaci nebo *přidělování*qubits naleznete v tématu [Working with qubits](xref:microsoft.quantum.guide.qubits).
 
-## <a name="quantum-states-in-no-locq"></a>Stavy vQ#
+## <a name="quantum-states-in-no-locq"></a>Stavy v Q#
 
 Důležité: předchozí program výslovně neodkazuje na stav v rámci, Q# ale popisuje, jak náš program *transformoval* stav.
 Díky tomuto přístupu můžete být zcela nezávislá o tom, co *je* stav bez limitu, i na každém cílovém počítači, což může mít různé interpretace v závislosti na počítači. 
@@ -53,7 +53,7 @@ Ale prohlížíte se do budoucna, když je cílový počítač skutečným poč�
 Q#Program znovu sloučí tyto operace, jak jsou definovány cílovým počítačem, a vytvoří tak nové operace vyšší úrovně pro expresní výpočty.
 Tímto způsobem Q# usnadňuje vyjádření logiky podkladových a hybridních neřízených – klasických a běžných algoritmů, a to i v souvislosti s strukturou cílového počítače nebo simulátoru.
 
-## <a name="no-locq-operations-and-functions"></a>Q#operace a funkce
+## <a name="no-locq-operations-and-functions"></a>Q# operace a funkce
 
 Konkrétní Q# program zahrnuje *operace*, *funkce*a libovolné uživatelsky definované typy. 
 
@@ -65,13 +65,13 @@ V tomto případě `Measure` je to *operace* , která instruuje cílový počít
 Operace a funkce se společně označují jako *volatelné*. Jejich podkladová struktura a chování jsou zavedeny a podrobně popsány v [operacích a funkcích v Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 
-## <a name="no-locq-syntax-overview"></a>Q#Přehled syntaxe
+## <a name="no-locq-syntax-overview"></a>Q# Přehled syntaxe
 
 Syntaxe jazyka popisuje různé kombinace symbolů, které tvoří syntakticky správný program.
 V nástroji Q# prvky syntaxe jsou klasifikovány do tří různých skupin: typy, výrazy a příkazy.
 
 ### <a name="types"></a>Typy
-Q#je jazyk silného typu, aby mohl kompilátor poskytovat silné záruky týkající se Q# programů v době kompilace, může to přispět k pečlivému použití typů.
+Q# je jazyk silného typu, aby mohl kompilátor poskytovat silné záruky týkající se Q# programů v době kompilace, může to přispět k pečlivému použití typů.
 Kromě standardních a vestavěných primitivních typů, například,, a `Int` `Bool` `Qubit` `Result` , Q# poskytuje podporu pro uživatelsky definované typy.
 
 Popisy všech primitivních typů, podrobnosti o typech pole a řazené kolekce členů a kroky pro definování nových typů v rámci Q# souboru naleznete [v tématu typy Q# v ](xref:microsoft.quantum.guide.types).
@@ -87,7 +87,7 @@ Například jiný `Int` výraz, který je vyhodnocen jako `5` `2+3` .
 Další informace o výrazech a kompatibilních operátorech v naleznete v Q# tématu [výrazy typu Q# v ](xref:microsoft.quantum.guide.expressions). 
 
 ### <a name="statements"></a>Příkazy 
-Příkaz je syntaktickou jednotkou imperativního programovacího jazyka, která vyjadřuje určitou akci pro provedení. Příkazy na rozdíl od výrazů v těchto příkazech nevracejí výsledky a jsou spouštěny výhradně pro své vedlejší účinky. Výrazy ale vždycky vracejí výsledek a často nemají vedlejší účinky. V krátké Q# době jsou příkazy provedeny, zatímco jsou výrazy vyhodnocovány.
+Příkaz je syntaktickou jednotkou imperativního programovacího jazyka, která vyjadřuje určitou akci pro provedení. Příkazy na rozdíl od výrazů v těchto příkazech nevracejí výsledky a jsou spouštěny výhradně pro své vedlejší účinky. Výrazy ale vždycky vracejí výsledek a často nemají žádné vedlejší účinky. V krátké Q# době jsou příkazy spouštěny, zatímco jsou výrazy vyhodnocovány.
 
 Jednoduchý příklad příkazu v nástroji Q# přiřazuje symbol ke výrazu:
 ```qsharp

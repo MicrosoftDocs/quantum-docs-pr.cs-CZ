@@ -1,20 +1,20 @@
 ---
 title: Modely u elektronických systémů
 description: Přečtěte si, jak se v molekulových elektronických systémech simulují pomocí modelování.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.quantummodels
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f6b652ef3e315ded5b4e39fd65a2f6be7070d7fa
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 4ff3d11bfd4dae5489fc4b7efe4da4ccda00882f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869473"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833917"
 ---
 # <a name="quantum-models-for-electronic-systems"></a>Modely u elektronických systémů
 

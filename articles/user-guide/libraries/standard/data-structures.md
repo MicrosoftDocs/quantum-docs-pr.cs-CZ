@@ -3,18 +3,18 @@ title: Datové struktury ve Q# standardních knihovnách
 description: Přečtěte si o datových strukturách, Oracle a dynamických generátorech ve Q# standardních knihovnách společnosti Microsoft.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 222fa7d0d33d4ac6c15e9ee9e6e97f380867a145
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 51eb52d0b8ace972f6a425edba400ca9a8916d2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868511"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835583"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
@@ -160,8 +160,8 @@ Tato jednotná část je obvykle popsána jedním ze dvou typů Oracle.
 
 > [!TIP]
 > Oba typy Oracle popsané níže jsou uvedené v ukázkách.
-> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation).
-> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
+> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 První typ Oracle, který volá diskrétní dotaz Oracle a představuje uživatelsky definovaný typ <xref:microsoft.quantum.oracles.discreteoracle> , jednoduše zahrnuje jednotnou matici.
 Pokud je $U $ jednotkou, jejíž eigenvalues chceme odhadnout, je Oracle pro $U $ jednoduše samostatným předpokladem pro podprogram, který implementuje $U $.
@@ -211,8 +211,8 @@ kde celé číslo $r > $0 řídí chybu aproximace.
 Knihovna modelování dynamického generátoru poskytuje rozhraní pro systematické kódování složitých generátorů z pohledu jednodušších generátorů. Tento popis může být předán do, řekněme, že knihovna simulace implementuje časový vývoj pomocí algoritmu simulace výběru, přičemž mnoho podrobností automaticky postará o.
 
 > [!TIP]
-> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/generators).
-> Příklad založený na molekulovém vodíku najdete v ukázkách [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) a [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/gui) .
+> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
+> Příklad založený na molekulovém vodíku najdete v ukázkách [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) a [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Úplný popis generátoru ###
 

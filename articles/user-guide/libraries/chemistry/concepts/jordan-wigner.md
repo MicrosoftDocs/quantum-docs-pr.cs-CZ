@@ -1,20 +1,20 @@
 ---
 title: Jordánsko – reWigner reprezentace
 description: Přečtěte si o reprezentaci Wigner, která mapuje operátory Hamiltonian na jednotnou matrici, která se dá snadněji implementovat na počítač s procesorem.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9f1455ebbecf6a3500ec11a5196e7662455c9a78
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 29abb4d2ef11239a58af45bc4eee3bd60d20a6c7
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869507"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833859"
 ---
 # <a name="jordan-wigner-representation"></a>Jordánsko – reWigner reprezentace
 

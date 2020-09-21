@@ -2,19 +2,19 @@
 title: Testování a ladění
 description: Naučte se používat testy jednotek, fakta a kontrolní výrazy a funkce výpisu paměti pro testování a ladění programů v počtu procesorů.
 author: tcNickolas
-ms.author: mamykhai@microsoft.com
+ms.author: mamykhai
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 2f2181d388a59c1c6c5a0f13c9aa49d5fa1e51ae
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867909"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833166"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -26,7 +26,7 @@ V této části se zabýváme nástroji, které nabízíme Q# pro testování a 
 Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek*, které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
 Můžete například zajistit, že se `Square(2)` vrátí, `4` protože víte *předem* , že $2 ^ 2 = $4.
 
-Q#podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
+Q# podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
 
 ### <a name="creating-a-test-project"></a>Vytvoření testovacího projektu
 
@@ -69,7 +69,7 @@ Jakákoli Q# operace nebo funkce, která přebírá argument typu `Unit` a vrác
 ```
 Uložte soubor a spusťte všechny testy. Nyní by měly být dvě testy jednotek, jedna, kde se spouští v a `AllocateQubit` `QuantumSimulator` druhá, kde se spouští v `ResourcesEstimator` . 
 
-Q#Kompilátor rozpoznává předdefinované cíle `"QuantumSimulator"` , `"ToffoliSimulator"` a `"ResourcesEstimator"` jako platné cíle provádění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle provádění. 
+Q#Kompilátor rozpoznává předdefinované cíle `"QuantumSimulator"` , `"ToffoliSimulator"` a `"ResourcesEstimator"` jako platné cíle spuštění pro testování částí. Je také možné zadat libovolný plně kvalifikovaný název pro definování vlastního cíle spuštění. 
 
 ### <a name="running-no-locq-unit-tests"></a>Spouštění Q# testů jednotek
 
@@ -113,7 +113,7 @@ Test Run Successful.
 Test execution time: 1.9607 Seconds
 ```
 
-Testy jednotek lze filtrovat podle jejich názvu nebo cíle provádění:
+Testy jednotek lze filtrovat podle jejich názvu nebo cíle spuštění:
 
 ```bash 
 $ dotnet test --filter "Target=QuantumSimulator"
@@ -127,7 +127,7 @@ Vnitřní funkce <xref:microsoft.quantum.intrinsic.message> má typ `(String -> 
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o spuštění testu: stav předání/selhání, uplynulý čas a odkaz na výstup. Kliknutím na **výstup** otevřete výstup testu v novém okně.
+Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o testovacím běhu: stav předání/selhání, uplynulý čas a odkaz na výstup. Kliknutím na **výstup** otevřete výstup testu v novém okně.
 
 ![Výstup testu](~/media/unit-test-output.png)
 
@@ -177,7 +177,7 @@ operation AssertQubitsAreAvailable() : Unit
 ```
 
 V tomto příkladu používáme operaci <xref:microsoft.quantum.environment.getqubitsavailabletouse> k vrácení počtu qubits dostupných k použití.
-Vzhledem k tomu, že to závisí na globálním stavu programu a jeho prováděcím prostředí, `AssertQubitsAreAvailable` musí být naše definice také operace.
+Vzhledem k tomu, že to závisí na globálním stavu programu a jeho prostředí pro spuštění, `AssertQubitsAreAvailable` musí být naše definice také operace.
 Tento globální stav však můžeme použít k získání jednoduché `Bool` hodnoty jako vstupu do `Fact` funkce.
 
 [Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:microsoft.quantum.diagnostics.assertmeasurement> a <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
@@ -314,7 +314,7 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
 
 ***
 
-Vzhledem k <xref:microsoft.quantum.diagnostics.dumpmachine> tomu, že je součástí <xref:microsoft.quantum.diagnostics> oboru názvů, je nutné přidat `open` příkaz pro přístup k němu:
+Vzhledem k <xref:microsoft.quantum.diagnostics.dumpmachine> tomu, že je součástí  <xref:microsoft.quantum.diagnostics> oboru názvů, je nutné přidat `open` příkaz pro přístup k němu:
 
 ```qsharp
 namespace Samples {
@@ -333,7 +333,7 @@ namespace Samples {
 
 ### <a name="dumpregister"></a>DumpRegister
 
-<xref:microsoft.quantum.diagnostics.dumpregister>funguje jako <xref:microsoft.quantum.diagnostics.dumpmachine> , s tím rozdílem, že také přebírá pole qubits k omezení množství informací, které je relevantní pro odpovídající qubits.
+<xref:microsoft.quantum.diagnostics.dumpregister> funguje jako <xref:microsoft.quantum.diagnostics.dumpmachine> , s tím rozdílem, že také přebírá pole qubits k omezení množství informací, které je relevantní pro odpovídající qubits.
 
 Stejně jako u <xref:microsoft.quantum.diagnostics.dumpmachine> jsou informace vygenerované nástrojem <xref:microsoft.quantum.diagnostics.dumpregister> závislé na cílovém počítači. Pro plný stav simulátoru, který zapisuje do souboru, zapíše funkce Wave do globální fáze podsystému, který vygenerovala poskytnutá qubits ve stejném formátu jako <xref:microsoft.quantum.diagnostics.dumpmachine> .  Například znovu se přihlaste k počítači jenom se dvěma qubits přidělenými a ve stavu neobsazenosti $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} \ket {2} {1} ) \otimes) {2} {0} , \end{align} $ $ volá se, <xref:microsoft.quantum.diagnostics.dumpregister> aby se `qubit[0]` vygeneroval tento výstup:
 
@@ -384,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Ladění
 
-Nad `Assert` a `Dump` funkcemi a operace Q# podporuje podmnožinu standardních možností ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je všechno možné během provádění kódu v simulátoru.
+Nad `Assert` a `Dump` funkcemi a operace Q# podporuje podmnožinu standardních funkcí ladění sady Visual Studio: [nastavení zarážek řádků](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [krokování kódu pomocí nástroje F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)a [Kontrola hodnot klasických proměnných](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) je dostupná při spuštění kódu na simulátoru.
 
 Ladění v Visual Studio Code využívá možnosti ladění poskytované v jazyce C# pro Visual Studio Code rozšíření využívající OmniSharp a vyžaduje instalaci [nejnovější verze](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

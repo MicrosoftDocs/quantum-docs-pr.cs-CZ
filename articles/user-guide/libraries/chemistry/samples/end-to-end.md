@@ -2,18 +2,18 @@
 title: Ukázkový program pro NWChem
 description: Pomocí NWChem Input balíčku si můžete projít příkladem získání počtu bran pro simulaci pro práci s více instancemi.
 author: cgranade
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 986ff2c2ff144c57bd01ddeea0467d0168fd9334
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759711"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835753"
 ---
 # <a name="end-to-end-with-nwchem"></a>Kompletní použití NWChem #
 
@@ -46,14 +46,14 @@ Import-Module InvokeNWChem.psm1
 ```
 
 > [!NOTE]
-> Ve výchozím nastavení systém Windows zabraňuje spuštění jakýchkoli skriptů nebo modulů v rámci bezpečnostního opatření.
-> Aby bylo možné moduly, jako je například `Invoke-NWChem.psm1` spouštění v systému Windows, změnit zásady spouštění.
+> Ve výchozím nastavení systém Windows zabraňuje spuštění všech skriptů nebo modulů v rámci bezpečnostního opatření.
+> Aby bylo možné moduly, jako je například `Invoke-NWChem.psm1` spouštění v systému Windows, je třeba zásady změnit.
 > Uděláte to tak, že spustíte `Set-ExecutionPolicy` příkaz:
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope Process
 > ```
-> Zásady spouštění se pak po ukončení PowerShellu vrátí.
-> Pokud chcete uložit zásady spouštění, použijte jinou hodnotu pro `-Scope` :
+> Zásada se vrátí po ukončení PowerShellu.
+> Pokud chcete zásady uložit, použijte jinou hodnotu pro `-Scope` :
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```

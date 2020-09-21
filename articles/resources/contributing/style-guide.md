@@ -9,14 +9,14 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 27a2ae5ae9d00329fc369268edae24228a9a9d0d
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: fef3cea1c11e4fef49ddbf63adb34e07675049d2
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867585"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834189"
 ---
-# <a name="no-locq-style-guide"></a>Q#Průvodce stylem #
+# <a name="no-locq-style-guide"></a>Q# Průvodce stylem #
 ## <a name="general-conventions"></a>Obecné konvence ##
 
 Konvence navržené v této příručce jsou určené k tomu, aby Q# usnadnily čtení a pochopení programů a knihoven.
@@ -79,7 +79,7 @@ V případě funkcí doporučujeme vyhnout se použití sloves ve prospěch bě�
 - `LookupFunction`
 
 Konkrétně v téměř všech případech doporučujeme použít dřívější participles, kde je to vhodné k označení toho, že název funkce je důrazně připojen k akci nebo vedlejšímu účinku jinde v programu pro práci s více událostmi.
-Například `ControlledOnInt` používá část participle formuláře příkazu "Control" k označení toho, že funkce funguje jako přídavné jméno pro úpravu jeho argumentu.
+Například  `ControlledOnInt` používá část participle formuláře příkazu "Control" k označení toho, že funkce funguje jako přídavné jméno pro úpravu jeho argumentu.
 Tento název má další výhodu při porovnání sémantiky integrovaného `Controlled` funktor, jak je popsáno dále níže.
 Podobně lze použít _podstatná jména agenta_ k sestavení funkcí a názvů UDT z názvů operací, jako v případě názvu `Encoder` pro UDT, který je silně spojen s `Encode` .
 
@@ -96,7 +96,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Název | Popis |
+| &nbsp;  | Název | Popis |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Zrušením použití příkazu ("reflektování") označíte účinek operace. |
 | ☒ | <s>`operation XRotation`</s> | Místo operace použijte funkci navrhuje fráze substantivum. |
@@ -115,7 +115,7 @@ Navrhujeme:
 
 Při definování vstupního bodu do Q# programu Q# rozpozná kompilátor [ `@EntryPoint()` atribut](xref:microsoft.quantum.core.entrypoint) , spíše než vyžaduje, aby vstupní body měly konkrétní název (např.: `main` , `Main` nebo `__main__` ).
 To znamená, že z perspektivy Q# vývojáře jsou vstupními body běžné operace s poznámkami `@EntryPoint()` .
-Q#Vstupní body také mohou být vstupními body pro celou aplikaci (tj. v Q# samostatných spustitelných souborech) nebo mohou být rozhraní mezi Q# programem a hostitelským programem pro aplikaci (tj.: při použití Q# s Pythonem nebo .NET), což znamená, že název Main může být zavádějící při použití na Q# vstupním bodu.
+Q#Vstupní body také mohou být vstupními body pro celou aplikaci (například ve Q# samostatných spustitelných programech) nebo mohou představovat rozhraní mezi Q# programem a hostitelským programem aplikace (tj.: při použití Q# s Pythonem nebo .NET), což znamená, že název Main může být zavádějící při použití u Q# vstupního bodu.
 
 Doporučujeme používat vstupní body pro pojmenování k vyjádření použití `@EntryPoint()` atributu pomocí obecných rad pro pojmenování výše uvedených operací.
 
@@ -129,7 +129,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Název | Popis |
+| &nbsp;  | Název | Popis |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Jasně komunikuje účel vstupního bodu prostřednictvím názvu operace. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Použití nástroje `Main` nejednoznačně oznamuje účel vstupního bodu a je redundantní s `@EntryPoint()` atributem. |
@@ -171,7 +171,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Název | Popis |
+| &nbsp;   | Název | Popis |
 |---|------|-------------|
 | ☑ | `X` | Dobře srozumitelná zkrácený příkaz pro použití transformace $X $ |
 | ☑ | `CNOT` | Dobře srozumitelná zkrácená zkratka pro "řízená – ne" |
@@ -228,7 +228,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Název | Popis |
+| &nbsp;   | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Výsledkem předpozice "do" je příkazová fráze, která značí operaci a nikoli funkci. |
 | ☒ | <s>`AsDouble`</s> | Typ vstupu není jasný od názvu funkce. |
@@ -251,7 +251,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Název | Popis |
+| &nbsp;  | Název | Popis |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Nepoužívejte podtržítko `_` k označení toho, že tato operace je určena pouze pro interní použití. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Klíčové slovo na začátku jasně označuje, že tato operace je určena pouze pro interní použití. |
@@ -264,12 +264,12 @@ Tyto skupiny lze odlišit pomocí stejného kořenového názvu, následovaný j
 
 | Auditování | Význam |
 |--------|---------|
-| `A` | Byl očekáván vstup, který podporuje`Adjoint` |
-| `C` | Byl očekáván vstup, který podporuje`Controlled` |
-| `CA` | Byl očekáván vstup, který podporuje `Controlled` a`Adjoint` |
-| `I` | Vstup nebo vstupy jsou typu.`Int` |
-| `D` | Vstup nebo vstupy jsou typu.`Double` |
-| `L` | Vstup nebo vstupy jsou typu.`BigInt` |
+| `A` | Byl očekáván vstup, který podporuje `Adjoint` |
+| `C` | Byl očekáván vstup, který podporuje `Controlled` |
+| `CA` | Byl očekáván vstup, který podporuje `Controlled` a `Adjoint` |
+| `I` | Vstup nebo vstupy jsou typu. `Int` |
+| `D` | Vstup nebo vstupy jsou typu. `Double` |
+| `L` | Vstup nebo vstupy jsou typu. `BigInt` |
 
 # <a name="guidance"></a>[Pokyny](#tab/guidance)
 
@@ -323,7 +323,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Popis |
+| &nbsp;  | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Název `Apply` je příkazová `CamelCase` fráze formátovaná jako, což naznačuje, že pojmenovaná položka je operace. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Pojmenované položky by měly začínat počátečním velkým písmenem. |
@@ -400,7 +400,7 @@ Navrhujeme:
 
 - Každá veřejná funkce, operace a uživatelsky definované typy by měly hned předcházet dokumentační komentář.
 - Každý dokumentační komentář by měl mít minimálně následující oddíly:
-    - Souhrn
+    - Shrnutí
     - Vstup
     - Výstup (Pokud je k dispozici)
 - Ujistěte se, že všechny souhrny jsou dvě nebo méně vět. Pokud je potřeba více místa, poskytněte `# Description` hned následující část `# Summary` s úplnými podrobnostmi.
@@ -479,7 +479,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-|   | Fragment kódu | Popis |
+| &nbsp; | Fragment kódu | Popis |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Používejte mezery kolem binárních operátorů. |
 | ☒ | <s>`target:Qubit`</s> | Používejte mezery kolem dvojtečky typu anotace. |

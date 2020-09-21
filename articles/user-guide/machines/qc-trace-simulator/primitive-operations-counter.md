@@ -1,24 +1,24 @@
 ---
 title: Čítač primitivních operací – sada pro vývoj všech procesorů
-description: Přečtěte si o čítači operací primitivního provozu Microsoft QDK, který používá simulátor trasování doby provozu ke sledování základních spuštění používaných operacemi v Q# programu.
+description: Přečtěte si o čítači operací primitivního provozu Microsoft QDK, který používá simulátor trasování doby provozu ke sledování základních procesů používaných operacemi v Q# programu.
 author: vadym-kl
-ms.author: vadym@microsoft.com
+ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ceb70cef6dc0a4530b992b5a529248a8b283c17f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 8ee9ce25e680112e2f3c68d82ae9267c1b0fb355
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868232"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835974"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Simulátor trasování doby provozu: čítač primitivních operací
 
-Čítač primitivních operací je součástí nástroje pro vývoj provozu po částech [.](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Počítá počet primitivních spuštění používaných každou operací vyvolanou v programu pro řízení. 
+Čítač primitivních operací je součástí nástroje pro vývoj provozu po částech [.](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Počítá počet primitivních procesů používaných všemi operacemi vyvolanými v programu pro práci s více procesory. 
 
 Všechny <xref:microsoft.quantum.intrinsic> operace se vyjadřují v souvislosti s qubit otočeními, T operacemi, qubitmi Clifford operacemi, operacemi CNOT a měřeními multi-qubit Pauli observables. Čítač primitivních operací agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
 

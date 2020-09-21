@@ -2,19 +2,19 @@
 title: Kontrola použití neověřených qubits – sada pro vývoj všech procesorů
 description: Přečtěte si o nástroji Microsoft QDK invalidateed qubits pro kontrolu použití, který používá simulátor trasování doby provozu ke kontrole Q# kódu pro potenciálně neplatnou qubits.
 author: vadym-kl
-ms.author: vadym@microsoft.com
+ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c451747badba03801bd4ecd419420f131ac502d6
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 18371b3798d0eaa12d4e7107f58f44379594619f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868283"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835991"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Simulátor trasování provozu: neověřená Kontrola použití qubits
 

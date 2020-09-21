@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4caacaad127f8a4d3b6f77efe35ebe7d3b97cacf
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a3380627aa196a749dd9487ad603aad29f34ae29
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868759"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759924"
 ---
 # <a name="applications"></a>Aplikace #
 
@@ -52,9 +52,9 @@ Ve speciálním případě, kdy Hamiltonian založí do součtu Hermitian část
 
 > [!TIP]
 > V ukázkách jsou pokryté aplikace algoritmu simulace Trotter-Suzuki.
-> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing** ](https://github.com/microsoft/Quantum/blob/master/samples/simulation/ising/simple).
-> Pro model Ising pomocí struktury ovládacích prvků knihovny Trotter-Suzuki se podívejte na [ukázku **IsingTrotter** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/trotter-evolution).
-> Pro molekulovou vodík pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **simulace H2** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line).
+> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing** ](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
+> Pro model Ising pomocí struktury ovládacích prvků knihovny Trotter-Suzuki se podívejte na [ukázku **IsingTrotter** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
+> Pro molekulovou vodík pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **simulace H2** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
 V mnoha případech bychom chtěli implementovat algoritmus simulace, ale neuvažujete o jeho implementaci. Například integrátor druhého řádu se blíží $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/2R} e ^ {-IH \_ 1 t/2R} \cdots e ^ {-IH \_ {d-1} t/2R} e ^ {-IH \_ {d-1} t/2R} \cdots e ^ {-IH \_ 1 t/2R} e ^ {-IH \_ 0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j \\ | H \_ j \\ | ^ 3 t ^ 3/r ^ 2), \end{align} $ $ za použití produktu $2RD $ terms. Větší objednávky budou zahrnovat ještě víc podmínek a optimalizované varianty můžou pro exponenciální hodnoty vyžadovat vysoce triviální řazení. Další pokročilé algoritmy můžou také zahrnovat použití ancilla qubits v rámci mezipostupných kroků. Proto se jako uživatelsky definovaný typ zabalí algoritmy simulace ve Canon.
 
@@ -87,8 +87,8 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Aplikace knihovny simulace jsou pokryté v ukázkách. Odhad fáze v modelu Ising pomocí najdete v `SimulationAlgorithm` [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
-> Přípravu stavu adiabatic v modelu Ising pomocí najdete v `TimeDependentSimulationAlgorithm` [ukázce **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
+> Aplikace knihovny simulace jsou pokryté v ukázkách. Odhad fáze v modelu Ising pomocí najdete v `SimulationAlgorithm` [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Přípravu stavu adiabatic v modelu Ising pomocí najdete v `TimeDependentSimulationAlgorithm` [ukázce **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Odhad stavu Adiabatic & fáze ###
@@ -129,14 +129,14 @@ operation EstimateAdiabaticStateEnergy(
 }
 ```
 
-`nQubits`je počet qubits, který se používá ke kódování počátečního stavu. `statePrepUnitary`připraví stav spuštění z výpočetního základu $ \ket{0\cdots 0} $. `adiabaticUnitary`je jednotková operace, která implementuje přípravu stavu adiabatic, jako je vyprodukována `InterpolatedEvolution` funkcí. `qpeUnitary`je jednotková operace, která se používá k provádění odhadu fáze ve výsledném stavu. `phaseEstAlgorithm`je naše volba algoritmu odhadu fází.
+`nQubits` je počet qubits, který se používá ke kódování počátečního stavu. `statePrepUnitary` připraví stav spuštění z výpočetního základu $ \ket{0\cdots 0} $. `adiabaticUnitary` je jednotková operace, která implementuje přípravu stavu adiabatic, jako je vyprodukována  `InterpolatedEvolution` funkcí. `qpeUnitary` je jednotková operace, která se používá k provádění odhadu fáze ve výsledném stavu. `phaseEstAlgorithm` je naše volba algoritmu odhadu fází.
 
 > [!TIP]
-> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising s využitím ruční implementace přípravných stavů adiabatic `AdiabaticEvolution` a pomocí funkce se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
-> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising s využitím ruční implementace přípravných stavů adiabatic `AdiabaticEvolution` a pomocí funkce se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simulace molekulové vodíku](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má formu $ \hat H = g \_ {0} I \_ 0I \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {Y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Pauls převede na unitaries a pak se postupně vyvinuly v krátkém časovém úseku pomocí dekompozice Trotter-Suzuki. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
+> [Simulace molekulové vodíku](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má formu $ \hat H = g \_ {0} I \_ 0I \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {Y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Pauls převede na unitaries a pak se postupně vyvinuly v krátkém časovém úseku pomocí dekompozice Trotter-Suzuki. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
 
 ## <a name="shors-algorithm"></a>Shorův algoritmus ##
 Shor algoritmus zůstává jedním z nejvýznamnějších vývojů ve výpočetním prostředí, protože ukázalo, že by se počítače mohly použít k řešení důležitých, aktuálně nerušivých problémů.

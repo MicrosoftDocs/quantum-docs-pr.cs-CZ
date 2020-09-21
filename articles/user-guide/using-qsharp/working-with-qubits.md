@@ -1,20 +1,20 @@
 ---
 title: Práce s qubity
-description: Popis výplně
+description: Další informace o práci s qubits v Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6808a852ee0de7d3a38ea44e9637eeaa6bea382a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: aa942a61280553ae4e51cd5ddcc85c0df935dab1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867858"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835855"
 ---
 # <a name="working-with-qubits"></a>Práce s qubity
 
@@ -150,7 +150,7 @@ Měření jednotlivých qubits se dají provádět v různých základech, z nic
 ### <a name="measure-a-single-qubit-in-the-pauliz-basis"></a>Měření jediného qubitu v `PauliZ` základu
 
 Použijte [`M`](xref:microsoft.quantum.intrinsic.m) operaci, která je vestavěnou vnitřní nejednotkovou operací, k měření jediného qubitu v `PauliZ` základu a k tomu ke výsledku přiřadíte klasický údaj.
-`M`má rezervovaný návratový typ, `Result` který může převzít pouze hodnoty `Zero` nebo `One` odpovídající měřené stavy $ \ket {0} $ nebo $ \ket {1} $ – označuje, že výsledek již není ve stavu bez hodnoty.
+`M` má rezervovaný návratový typ, `Result` který může převzít pouze hodnoty `Zero` nebo `One` odpovídající měřené stavy $ \ket {0} $ nebo $ \ket {1} $ – označuje, že výsledek již není ve stavu bez hodnoty.
 
 Jednoduchým příkladem je následující operace, která přiděluje jednu qubit ve stavu $ \ket {0} $, pak na ni aplikuje operaci Hadamard `H` a měří výsledek na `PauliZ` základě.
 

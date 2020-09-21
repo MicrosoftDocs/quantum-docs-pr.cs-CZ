@@ -2,19 +2,19 @@
 title: Operace a funkce v Q#
 description: Definování a volání operací a funkcí, jakož i specializace řízených a sousedících operací.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c2ce999ea2a0fe7204f402fedb4cd3a3c15bd44b
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: e9a84de2753bc3293f441e66ee53e78559263e5c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759420"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833484"
 ---
 # <a name="operations-and-functions-in-no-locq"></a>Operace a funkce v Q#
 
@@ -73,9 +73,7 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 
 Pokud operace implementuje jednotnou transformaci, jako je případ mnoha operací v nástroji Q# , je možné definovat způsob, jakým operace funguje při *adjointed* nebo *řízení*. *Sousedící* specializace operace určuje způsob, jakým operace "INVERT" operace funguje, zatímco *řízená* specializace určuje, jak operace funguje, když je její aplikace podmíněně ve stavu konkrétního registru.
 
-Adjoints operací je zásadní pro mnoho aspektů výpočetních operací. Příklad jedné takové situace popsané společně s užitečnou Q# programovací technikou najdete v tématu [conjugations](#conjugations) v tomto článku. 
-
-Řízená verze operace je nová operace, která efektivně aplikuje základní operaci pouze v případě, že všechny qubits ovládacího prvku jsou v zadaném stavu.
+Adjoints operací je zásadní pro mnoho aspektů výpočetních operací. Příklad jedné takové situace popsané společně s užitečnou Q# programovací technikou naleznete v tématu [Flow Control: conjugations](xref:microsoft.quantum.guide.controlflow#conjugations). Řízená verze operace je nová operace, která efektivně aplikuje základní operaci pouze v případě, že všechny qubits ovládacího prvku jsou v zadaném stavu.
 Pokud je qubits ovládacího prvku na pozici, pak je základní operace použita v souvislém umístění na příslušné straně.
 Proto se pro generování entanglement často používají kontrolované operace.
 
@@ -151,7 +149,7 @@ Vlastní implementace každé specializace může být *implicitně* nebo *expli
 
 ### <a name="implicitly-specifying-implementations"></a>Implicitní určení implementací
 
-V tomto případě se tělo deklarace operace skládá výhradně z výchozí implementace. Například:
+V tomto případě se tělo deklarace operace skládá výhradně z výchozí implementace. Příklad:
 
 ```qsharp
 operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit 
@@ -364,46 +362,6 @@ Můžeš
 
 Uživatelsky definované typy jsou považovány za zabalenou verzi základního typu, nikoli jako podtyp.
 To znamená, že hodnota uživatelsky definovaného typu není použitelná, pokud očekáváte hodnotu základního typu.
-
-
-### <a name="conjugations"></a>Conjugations
-
-Na rozdíl od klasických bitů, uvolňování paměti je trochu více zapojeno, protože nevidomé resetující qubits může mít nežádoucí důsledky zbývajícího výpočtu, pokud qubits stále entangled. Tyto účinky je možné vyhnout tím, že před uvolněním paměti vykonává správné "rušení" prováděných výpočtů. Běžným vzorem pro výpočetní výkon je následující: 
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    outerOperation(target);
-    innerOperation(target);
-    Adjoint outerOperation(target);
-}
-```
-
-Počínaje verzí 0,9 Q# podporuje příkaz conjugation, který implementuje předchozí transformaci. Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    within{ 
-        outerOperation(target);
-    }
-    apply {
-        innerOperation(target);
-    }
-}
-```
-Takový příkaz conjugation je mnohem užitečnější, pokud vnější a vnitřní transformace nejsou okamžitě k dispozici jako operace, ale místo toho jsou vhodnější pro popis pomocí bloku skládajícího se z několika příkazů. 
-
-Inverzní transformace pro příkazy definované v rámci bloku je automaticky generována kompilátorem a spuštěna po dokončení bloku Apply.
-Vzhledem k tomu, že jakékoli proměnlivé proměnné použité jako součást bloku nelze znovu svázat v bloku Apply, je vygenerovaná transformace zaručena jako sousední v výpočtu v bloku. 
 
 
 ## <a name="defining-new-functions"></a>Definování nových funkcí
@@ -663,7 +621,7 @@ To znamená, že operace nebo funkce může volat sám sebe nebo může zavolat 
 Existují dva důležité komentáře k použití rekurze, ale:
 
 - Použití rekurze v operacích může být v konfliktu s některými optimalizacemi.
-  Toto rušení může mít zásadní vliv na dobu provádění algoritmu.
+  Toto rušení může mít podstatný vliv na dobu běhu tohoto algoritmu.
 - Při spuštění na skutečném zařízení ve formátu paměti může být velikost zásobníku omezená, takže hluboká rekurze může vést k chybě za běhu.
   Konkrétně Q# kompilátor a modul runtime neidentifikují a optimalizují koncovou rekurzi.
 

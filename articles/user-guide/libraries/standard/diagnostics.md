@@ -3,17 +3,17 @@ title: Diagnostika ve Q# standardních knihovnách
 description: Přečtěte si o diagnostických funkcích a operacích v rámci Q# standardních knihoven používaných k zachycení chyb nebo chyb v programech pro práci s poli.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 11ce1bc86db0c5aa0f81ba7d0f2d6ec3463b178c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868538"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835566"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
@@ -33,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`má signaturu `(String -> Unit)` , která reprezentuje, že generování zprávy protokolu ladění není možné pozorovat v rámci Q# .
+> `Message` má signaturu `(String -> Unit)` , která reprezentuje, že generování zprávy protokolu ladění není možné pozorovat v rámci Q# .
 
 <xref:microsoft.quantum.diagnostics.dumpmachine>A <xref:microsoft.quantum.diagnostics.dumpregister> volat cílové počítače instruují, aby poskytovaly diagnostické informace o všech aktuálně přidělených qubits nebo o konkrétním registru qubits, v uvedeném pořadí.
 Každý cílový počítač se liší v tom, jaké diagnostické informace jsou k dispozici v reakci na instrukci výpisu paměti.
@@ -67,16 +67,16 @@ Proto můžeme před nasazením na hardware otestovat jednotlivé operace na kla
 V cílových počítačích, které neumožňují vyhodnocování kontrolních výrazů, volání <xref:microsoft.quantum.diagnostics.assertmeasurement> lze bezpečně ignorovat.
 
 Obecně platí, že operace vyhodnotí <xref:microsoft.quantum.diagnostics.assertmeasurement> , že měření daného qubits v dané Pauli základu bude mít vždy daný výsledek.
-Pokud se kontrolní výraz nezdařil, spuštění skončí voláním `fail` dané zprávy.
+Pokud se kontrolní výraz nepovede, spuštění skončí voláním `fail` dané zprávy.
 Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.
-`AssertMeasurement`má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .
+`AssertMeasurement` má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .
 Vzhledem k tomu `AssertMeasurement` , že se jedná o funkci s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v rámci programu pozorovatelé žádné účinky volání Q# .
 
 <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funkce Operation vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.
-Tolerance je aditivní (např. `abs(expected-actual) < tol` ).
-Pokud se kontrolní výraz nezdařil, spuštění skončí voláním `fail` dané zprávy.
+Tolerance je aditivní (například `abs(expected-actual) < tol` ).
+Pokud se kontrolní výraz nepovede, spuštění skončí voláním `fail` dané zprávy.
 Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.
-`AssertMeasurementProbability`má signaturu `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . První z `Double` parametrů poskytuje požadovanou pravděpodobnost výsledku a druhou pro toleranci.
+`AssertMeasurementProbability` má signaturu `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . První z `Double` parametrů poskytuje požadovanou pravděpodobnost výsledku a druhou pro toleranci.
 
 Můžeme provést více než vyhodnotit jedno měření, a to pomocí klasických informací používaných simulátorem, které reprezentují vnitřní stav qubit, snadněji ke kopírování. to znamená, že pro otestování tohoto kontrolního výrazu není nutné skutečně provádět měření.
 Konkrétně to nám umožní důvod na *nekompatibilní* měření, která by nebyla možná na skutečném hardwaru.

@@ -1,6 +1,6 @@
 ---
 title: terming Description Glosář Description: Glosář běžných podmínek, akcí a objektů používaných při práci.
-Autor: QuantumWriter MS. Author: Alan.Geller@microsoft.com MS. Date: 12/11/2017 MS. téma: UID článku: Microsoft. prohlašování. Glosář No-Loc:
+Autor: bradben MS. Author: v-benbra MS. Date: 9/1/2020 MS. téma: UID článku: Microsoft.. Glosář No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -99,7 +99,7 @@ Jedno ze čtyř specifických [entangledch](xref:microsoft.quantum.glossary#enta
 
 ## <a name="bloch-sphere"></a>Koule Bloch
 
-Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavových](xref:microsoft.quantum.glossary#quantum-state) procesorů jako bodu v trojrozměrné oblasti jednotek. Další informace naleznete v tématu [vizualizace Qubits a transformace pomocí koule Bloch](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavových](xref:microsoft.quantum.glossary#quantum-state) procesorů jako bodu v trojrozměrné oblasti jednotek. Další informace naleznete v tématu  [vizualizace Qubits a transformace pomocí koule Bloch](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 ## <a name="callable"></a>Kompatibilní
 
@@ -170,7 +170,7 @@ Popisek pro kolekci souvisejících názvů (například [operace](xref:microsof
 
 ## <a name="operation"></a>Operace
 
-Základní jednotka provádění ve službě Q# . Je zhruba ekvivalentní funkci v jazyce C, C++ nebo Python nebo statickou metodou v jazyce C# nebo Java. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
+Základní jednotka výpočtu počtu procesorů Q# . Je zhruba ekvivalentní funkci v jazyce C, C++ nebo Python nebo statickou metodou v jazyce C# nebo Java. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="operator-application"></a>Aplikace operátora
 

@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: b226f355771f2b65399ebe00cc3de9429a3cebb0
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868623"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759905"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -74,7 +74,7 @@ Odhad fáze z tohoto důvodu se zobrazí v rámci řady algoritmů doby, které 
 ### <a name="bayesian-phase-estimation"></a>Odhad fáze bayesovského rozhodování ###
 
 > [!TIP]
-> Další podrobnosti o odhadu fáze bayesovského rozhodování v praxi najdete v ukázce [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) .
+> Další podrobnosti o odhadu fáze bayesovského rozhodování v praxi najdete v ukázce [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation) .
 
 Odhad fáze bayesovského rozhodování je jednoduchý.
 Shromáždíte statistiku měření z protokolu odhadu fáze a potom výsledky zpracujete pomocí odvození bayesovského rozhodování a zadáním odhadu parametru.
@@ -112,7 +112,7 @@ Nejdůležitější funkcí odhadu robustní fáze, která je sdílena s větši
 K dalším důležitým podrobnostem patří například malý počet režijních nákladů jenom $1 $ ancilla qubit, nebo že postup není adaptivní, což znamená, že požadovaná posloupnost experimentů na základě doby nezávisí na výsledcích mezilehlého měření. V tomto a nadcházejících příkladech, kde je důležité zvolit algoritmus odhadu fáze, by měl jedna z nich odkazovat na dokumentaci, například @"microsoft.quantum.characterization.robustphaseestimation" a na odkazované publikace, kde najdete další informace a jejich implementaci.
 
 > [!TIP]
-> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), [vzorek **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)a [ukázkový **model Hubbard** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [vzorek **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)a [ukázkový **model Hubbard** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Kontinuální Oracle ###
@@ -130,7 +130,7 @@ Proto použití fáze odhadu se souvislými dotazy nám umožní zjistit simulov
 
 ### <a name="random-walk-phase-estimation"></a>Odhad fáze náhodného procházení ###
 
-Q#poskytuje užitečnou aproximaci odhadu fáze bayesovského rozhodování, která je navržena pro použití blízko u zařízení, která fungují s podmínkou náhodného procházení datových záznamů získaných z iterativní fáze odhadu.
+Q# poskytuje užitečnou aproximaci odhadu fáze bayesovského rozhodování, která je navržena pro použití blízko u zařízení, která fungují s podmínkou náhodného procházení datových záznamů získaných z iterativní fáze odhadu.
 Tato metoda je adaptivní i zcela deterministický a umožňuje téměř optimální škálování chyb v odhadovaných fázích $ \hat{\phi} $ s velmi nízkými náklady na paměť.
 
 Protokol používá přibližnou bayesovského rozhodování odvozenou metodu, která předpokládá, že předchozí distribuce je Gaussovské.
