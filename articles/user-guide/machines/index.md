@@ -2,19 +2,19 @@
 title: Kvantové simulátory a programy v Q#
 description: Popisuje kvantové simulátory dostupné jako cílové počítače pro programy v Q#.
 author: QuantumWriter
-ms.author: Alan.Geller@microsoft.com
+ms.author: v-benbra
 ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 77401ca3642b89d708f338f852dc60bf7346b87b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a2a4bb829301f9db9bd14f3240556a403b9a54f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868300"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833421"
 ---
 # <a name="quantum-simulators"></a>Kvantové simulátory
 
@@ -24,14 +24,14 @@ Kvantové simulátory jsou softwarové programy spouštěné na klasických poč
 
 ## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a>Kvantové simulátory sady Quantum Development Kit (QDK)
 
-Kvantový simulátor zodpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus. Mezi ně patří primitivní operace, jako je `H`, `CNOT` a `Measure`, a také nástroje pro správu a sledování qubitů. Sady QDK obsahuje různé třídy kvantových simulátorů reprezentujících různé modely spouštění pro stejný kvantový algoritmus. 
+Kvantový simulátor zodpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus. Mezi ně patří primitivní operace, jako je `H`, `CNOT` a `Measure`, a také nástroje pro správu a sledování qubitů. Sada QDK obsahuje různé třídy kvantových simulátorů reprezentujících různé modely spouštění pro stejný kvantový algoritmus. 
 
 
 Každý typ kvantového simulátoru může zajišťovat odlišnou implementaci těchto primitiv. Například [simulátor celkového stavu](xref:microsoft.quantum.machines.full-state-simulator) spouští kvantový algoritmus kompletní simulací [kvantového stavového vektoru](xref:microsoft.quantum.glossary#quantum-state), zatímco [simulátor trasování kvantového počítače](xref:microsoft.quantum.machines.qc-trace-simulator.intro) vůbec nebere aktuální kvantový stav v úvahu. Místo toho sleduje hradla, qubity a další prostředky použité v algoritmu.
 
 ### <a name="quantum-machine-classes"></a>Třídy kvantových počítačů
 
-V budoucnu bude sady QDK definovat další třídy kvantových počítačů s podporou jiných typů simulace a s podporou spouštění algoritmů na kvantovém hardwaru. Díky tomu, že umožňujeme neměnnost algoritmů při změnách implementace samotného počítače, usnadňujeme testování a ladění algoritmů v simulaci a následné spouštění na reálném hardwaru s jistotou, že se algoritmus nezměnil.
+V budoucnu bude sady QDK definovat další třídy kvantových počítačů s podporou dalších typů simulace a s podporou spouštění algoritmů na kvantovém hardwaru. Díky tomu, že umožňujeme neměnnost algoritmů při změnách implementace samotného počítače, usnadňujeme testování a ladění algoritmů v simulaci a následné spouštění na reálném hardwaru s jistotou, že se algoritmus nezměnil.
 
 Sada QDK zahrnuje několik tříd kvantových počítačů, které jsou definované v oboru názvů `Microsoft.Quantum.Simulation.Simulators`.
 

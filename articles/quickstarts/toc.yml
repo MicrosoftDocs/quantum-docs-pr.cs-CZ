@@ -2,19 +2,19 @@ expanded: true
 items:
   - name: Začínáme s QDK
     href: get-started.md
-  - name: Instalace sady QDK
+  - name: Nastavení sady SDK
+    href: index.md
+  - name: Úvodní příklady
     items:
-      - name: Přehled instalace
-        href: index.md
       - name: Aplikace v Q#
         href: install-command-line.md
-      - name: Aplikace Jupyter Notebook v Q#
+      - name: Q# s aplikacemi Jupyter Notebook
         href: install-jupyter.md
-      - name: Q# s dalšími jazyky
-        items:
-          - name: Q# s Pythonem
-            href: install-python.md
-          - name: Q# s .NET
-            href: install-cs.md
+      - name: Q# s Binderem
+        href: install-binder.md
+      - name: Q# s Pythonem
+        href: install-python.md
+      - name: Q# s .NET
+        href: install-cs.md
   - name: Aktualizace sady QDK
     href: update.md

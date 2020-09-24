@@ -2,19 +2,19 @@
 title: Uživatelská příručka jazyka Q#
 description: Přehled účelu a obsahu uživatelské příručky
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4fae2949bdcab0c3735b40ef029d70bf7ea3fb9f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f0680e773c8233d6c4f1acb742b3cc38dbc069d5
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869626"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834750"
 ---
 # <a name="the-no-locq-user-guide"></a>Uživatelská příručka jazyka Q#
 
@@ -46,7 +46,7 @@ V různých tématech této příručky najdete podrobný popis základních kon
 
 - [Práce s qubity:](xref:microsoft.quantum.guide.qubits) Popisuje funkce jazyka Q# sloužící k adresování jednotlivých qubitů a systémů qubitů, konkrétně jejich přidělování a měření a provádění operací s nimi. 
 
-- [Tok řízení:](xref:microsoft.quantum.guide.controlflow) Podrobně popisuje programovací vzory toku řízení, které jsou k dispozici v jazyce Q# a mezi které patří řada standardních technik (podmíněné spouštění, smyčky for a while atd.) a také vzor Repeat-Until-Success specifický pro kvantové výpočty.
+- [Tok řízení:](xref:microsoft.quantum.guide.controlflow) Podrobně popisuje programovací vzory toku řízení, které jsou k dispozici v jazyce Q# a mezi které patří řada standardních technik (podmíněné zpracování, smyčky *for* a *while* atd.) a také vzor *Repeat-Until-Success* specifický pro kvantové výpočty.
 
 - [Testování a ladění:](xref:microsoft.quantum.guide.testingdebugging) Podrobně popisuje některé techniky k zajištění, že váš kód dělá to, co by měl. 
     Z důvodu obecné neprůhlednosti kvantových informací může ladění kvantového programu vyžadovat specializované techniky. 
