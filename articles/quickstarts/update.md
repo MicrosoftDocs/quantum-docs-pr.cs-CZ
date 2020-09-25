@@ -2,7 +2,7 @@
 title: Aktualizace sady Quantum Development Kit (QDK)
 description: Tento článek popisuje aktualizaci projektů v Q# a sady Microsoft Quantum Development Kit na aktuální verzi.
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
@@ -10,12 +10,12 @@ uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 84782d1628dd100c0939b2b12aa0a9aa8ab2b80e
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: d9678a61f5fe4ca466b6a84e9e4b68321c5baee3
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863645"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834916"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace sady Microsoft Quantum Development Kit (QDK)
 
@@ -41,7 +41,7 @@ Své projekty v Q# aktualizujte podle těchto pokynů bez ohledu na to, jestli k
 
 ### <a name="update-no-locq-projects-in-visual-studio"></a>Aktualizace projektů v Q# v sadě Visual Studio
  
-1. Aktualizujte na nejnovější verzi sady Visual Studio 2019, pokyny najdete [zde](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019).
+1. Aktualizujte na nejnovější verzi sady Visual Studio 2019, pokyny najdete [zde](https://docs.microsoft.com/visualstudio/install/update-visual-studio).
 2. Otevřete své řešení v prostředí Visual Studio.
 3. V nabídce vyberte **Kompilovat** -> **Vyčistit řešení**.
 4. V každém z vašich souborů .csproj aktualizujte cílovou architekturu na `netcoreapp3.1` (nebo `netstandard2.1`, pokud se jedná o projekt knihovny).
