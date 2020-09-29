@@ -1,22 +1,25 @@
 ---
 title: Vývoj s aplikacemi v Q#
-author: KittyYeungQ
-ms.author: kitty
-ms.date: 4/24/2020
+description: Naučte se vytvářet aplikace Q#, které se spouští z příkazového řádku.
+author: bradben
+ms.author: v-benbra
+ms.date: 8/20/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a630b2307f5d95321fb26f480d7a441ddba846fc
-ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+ms.openlocfilehash: 68f530d80e5c5f40dc2bcbb185879c3cb6f93f91
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358254"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834410"
 ---
 # <a name="develop-with-no-locq-applications"></a>Vývoj s aplikacemi v Q#
+
+Postupujte podle pokynů na kartě odpovídající vašemu prostředí.
 
 Programy v Q# se dají spouštět samostatně, bez ovladače v hostitelském jazyce jako C#, F# nebo Python.
 
@@ -45,7 +48,7 @@ Konfigurace Visual Studio Codespaces:
 3. Teď můžete nové prostředí spustit a začít vyvíjet v prohlížeči prostřednictvím [cloudového integrovaného vývojového prostředí VS Codespaces](https://online.visualstudio.com/environments). Další možností je využít místní instalaci editoru VS Code a použít Codespaces jako [vzdálené prostředí](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
 
 
-Pokud chcete nainstalovat QDK pro jiné prostředí, zadejte na příkazovém řádku:
+Pokud chcete nainstalovat QDK pro jiné prostředí, zadejte na příkazovém řádku následující:
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
@@ -63,14 +66,14 @@ Vytvoření nového projektu:
 2. Klikněte na **Samostatná konzolová aplikace**.
 3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **Vytvořit projekt**.
 4. Po úspěšném vytvoření projektu klikněte na **Otevřít nový projekt...** v pravém dolním rohu.
-        
+
 Prozkoumejte projekt. Měl by se zobrazit zdrojový soubor s názvem `Program.qs`, což je program v Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu.
 
 Spusťte aplikaci:
+
 1. Klikněte na **Terminál** -> **Nový Terminál**.
 2. Na příkazovém řádku terminálu zadejte `dotnet run`.
 3. V okně s výstupem by se měl zobrazit tento text: `Hello quantum world!`
-
 
 > [!NOTE]
 > Rozšíření Q# pro VS Code aktuálně nepodporuje pracovní prostory s více kořenovými složkami. Pokud máte víc projektů v rámci jednoho pracovního prostoru VS Code, musí se všechny projekty nacházet ve stejné kořenové složce.
@@ -80,6 +83,7 @@ Spusťte aplikaci:
 Ověřte instalaci sady Visual Studio vytvořením aplikace Q# `Hello World`.
 
 Vytvoření nové aplikace v Q#:
+
 1. Otevřete Visual Studio a klikněte na **Soubor** -> **Nový** -> **Projekt**.
 2. Do vyhledávacího pole zadejte `Q#`, vyberte **Aplikace vQ#** a klikněte na **Další**.
 3. Zadejte název a umístění vaší aplikace a klikněte na **Vytvořit**.
@@ -88,6 +92,7 @@ Vytvoření nové aplikace v Q#:
 Prozkoumejte projekt. Měl by se zobrazit zdrojový soubor s názvem `Program.qs`, což je program v Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu.
 
 Spusťte aplikaci:
+
 1. Vyberte **Ladit** -> **Spustit bez ladění**.
 2. V okně konzoly by se měl zobrazit text `Hello quantum world!`.
 
@@ -105,11 +110,13 @@ Ověřte instalaci vytvořením aplikace Q# `Hello World`
     ```
 
 1. Vytvoření nové aplikace:
+
     ```dotnetcli
     dotnet new console -lang Q# -o runSayHello
     ```
 
 1. Přejděte do adresáře aplikace:
+
     ```dotnetcli
     cd runSayHello
     ```
@@ -117,6 +124,7 @@ Ověřte instalaci vytvořením aplikace Q# `Hello World`
     Tento adresář by měl nyní obsahovat soubor s názvem `Program.qs`, což je program v Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu. Tuto šablonu můžete upravit pomocí textového editoru a přepsat ji vlastními kvantovými aplikacemi. 
 
 1. Spusťte program:
+
     ```dotnetcli
     dotnet run
     ```

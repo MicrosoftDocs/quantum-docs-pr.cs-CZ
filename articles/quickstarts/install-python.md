@@ -1,20 +1,21 @@
 ---
 title: Vývoj s využitím Q# a Pythonu
+description: Naučte se vytvářet aplikace v Q# pomocí Pythonu.
 author: bradben
-ms.author: bradben
-ms.date: 5/30/2020
+ms.author: v-benbra
+ms.date: 8/20/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 01a5c31a7a920a69f4f90701d370f3a772d2c4d2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f6a2a7d1888cfe458fa3989a27d71fcdeed0f01f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866736"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834155"
 ---
 # <a name="develop-with-no-locq-and-python"></a>Vývoj s využitím Q# a Pythonu
 
@@ -116,4 +117,4 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď máte sadu Quantum Development Kit nainstalovanou v upřednostňovaném prostředí a můžete podle tohoto kurzu napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.quickstarts.qrng).
+Teď máte sadu Quantum Development Kit otestovanou v upřednostňovaném prostředí a můžete podle tohoto kurzu napsat a spustit [svůj první kvantový program](xref:microsoft.quantum.quickstarts.qrng).

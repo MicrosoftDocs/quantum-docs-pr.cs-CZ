@@ -2,23 +2,23 @@
 title: Co je programovací jazyk Q# a sada QDK?
 description: Přečtěte si víc o sadě Microsoft Quantum Development Kit, programovacím jazyku Q# a vytváření kvantových programů.
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.q-sharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5db574b0380ffa1616cb3959d84925854df4e321
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 21adfcc1c5321d87665adb39a3c838bbda0b8861
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863779"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834563"
 ---
 # <a name="what-are-the-no-locq-programming-language-and-qdk"></a>Co je programovací jazyk Q# a sada QDK?
 
-Q# je opensourcový programovací jazyk Microsoftu pro vývoj a spouštění kvantových algoritmů. Je součástí sady Quantum Development Kit (QDK), která zahrnuje [knihovny Q#](xref:microsoft.quantum.libraries), [kvantové simulátory](xref:microsoft.quantum.machines), [rozšíření pro další programovací prostředí](xref:microsoft.quantum.install) a [dokumentaci k rozhraní API](xref:microsoft.quantum.standardlibsintro). Kromě standardní knihovny Q# zahrnuje QDK i knihovny pro chemii, strojové učení a numerické výpočty.
+Q# je opensourcový programovací jazyk Microsoftu pro vývoj a spouštění kvantových algoritmů. Je součástí sady Quantum Development Kit (QDK), která zahrnuje [knihovny Q#](xref:microsoft.quantum.libraries), [kvantové simulátory](xref:microsoft.quantum.machines), [rozšíření pro další programovací prostředí](xref:microsoft.quantum.install) a [dokumentaci k rozhraní API](xref:microsoft.quantum.apiref-intro). Kromě standardní knihovny Q# zahrnuje QDK i knihovny pro chemii, strojové učení a numerické výpočty.
 
 Jako programovací jazyk přebírá Q# známé prvky z Pythonu, C# a F# a podporuje základní procedurální model psaní programů se smyčkami, podmínkami a běžnými datovými typy. Zavádí také nové datové struktury a operace specifické pro kvantové výpočty.
 
@@ -54,7 +54,7 @@ Když zkompilujete a spustíte program, vytvoří instanci kvantového simuláto
 
 Izolování kódu Q# v simulátoru zajišťuje, že algoritmy budou odpovídat zákonům kvantové fyziky a budou správně fungovat i na kvantových počítačích.
 
-![qsharp-code-flow](~/media/qsharp-code-flow.png)
+![Tok kódu Qsharp](~/media/qsharp-code-flow.png)
 
 ## <a name="how-do-i-use-the-qdk"></a>Jak se sada QDK používá?
 

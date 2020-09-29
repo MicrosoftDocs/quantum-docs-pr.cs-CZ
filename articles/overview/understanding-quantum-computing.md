@@ -2,23 +2,23 @@
 title: Principy kvantových výpočtů
 description: Co jsou kvantové počítače a jak využívají principy kvantové mechaniky?
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 214fe809aaeba759005fa76ba3615f376d402bc9
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866957"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834988"
 ---
 # <a name="understanding-quantum-computing"></a>Principy kvantových výpočtů
 
-Kvantové počítače využívají při zpracovávání informací principy kvantové mechaniky. Kvůli tomu kvantové výpočty vyžadují jiný přístup než ty klasické.  Jedním z příkladů těchto rozdílů je procesor používaný v kvantových počítačích.  Zatímco klasické počítače používají elektřinu a dobře známé čipy na bázi křemíku, kvantové počítače pracují s kvantovými stavy objektů jako atomy, ionty, fotony nebo elektrony.  
+Kvantové počítače využívají při zpracovávání informací principy kvantové mechaniky. Kvůli tomu kvantové výpočty vyžadují jiný přístup než ty klasické. Jedním z příkladů těchto rozdílů je procesor používaný v kvantových počítačích. Zatímco klasické počítače používají elektřinu a dobře známé čipy na bázi křemíku, kvantové počítače pracují s kvantovými stavy objektů jako atomy, ionty, fotony nebo elektrony. Používají jejich kvantové vlastnosti k reprezentaci bitů, které je možné připravit v různých kvantových superpozicích nul a jedniček.  
 
 Kvantové objekty se chovají v souladu se zákony kvantové mechaniky, která využívá koncepty jako pravděpodobnostní výpočty, superpozice a provázání. Tyto koncepty poskytují základ pro kvantové algoritmy, které zapojují sílu kvantových výpočtů do řešení složitých problémů. Tento článek popisuje některé ze základních konceptů kvantové mechaniky, na kterých jsou kvantové výpočty založeny.
 
