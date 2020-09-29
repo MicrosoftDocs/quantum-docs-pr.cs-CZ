@@ -10,9 +10,9 @@ summary: >-
   Prvky v sadě jsou indexovány  <xref:microsoft.quantum.simulation.generatorindex> a a každá sada je popsána funkcí z `GeneratorIndex` na  <xref:microsoft.quantum.simulation.evolutionunitary> , což jsou operace parametrizované reálné číslo představující čas
 syntax: newtype EvolutionSet = (Microsoft.Quantum.Simulation.GeneratorIndex -> Microsoft.Quantum.Simulation.EvolutionUnitary);
 metadata:
-  ms.openlocfilehash: 747986d1374a343827373ef85ac66720ca3c74b6
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 1e6072404b51a745b1c884f40cbd99bcbea0b212
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89343192"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91485155"
