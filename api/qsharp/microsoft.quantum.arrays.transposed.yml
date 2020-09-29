@@ -1,0 +1,51 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.transposed
+name: Transposed
+type: function
+namespace: microsoft.quantum.arrays
+summary: >-
+  Vrátí transpozice matice reprezentované jako pole polí.
+
+
+  Vstup jako $r \times c $ Matrix s $r $ Rows a $c $ Columns.  Matice je založena na řádcích, tj. `matrix[i][j]` přistupuje k elementu na řádku $i $ a sloupci $j $.
+
+
+  Tato funkce vrací matici $c \times r $, která je transpozice vstupní matice.
+examples: >-
+  ```Q#
+
+  // same as [[1, 4], [2, 5], [3, 6]]
+
+  let transposed = Transposed([[1, 2, 3], [4, 5, 6]]);
+
+  ```
+syntax: "function Transposed (matrix : 'T[][]) : 'T[][]"
+input:
+  content: "(matrix : 'T[][])"
+  types:
+  - name: matrix
+    summary: Matice $r \times založené na řádku jazyka c $
+    isArray: true
+    types:
+    - isArray: true
+      uid: "'T"
+      isLocal: true
+output:
+  content: "'T[][]"
+  types:
+  - summary: $C \times r $ Matrix pro přeměňování
+    isArray: true
+    types:
+    - isArray: true
+      uid: "'T"
+      isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ každého prvku `matrix` .
+metadata:
+  ms.openlocfilehash: 3d9b199a15cf412f99e10d9fffc628306c4ea9d9
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493712"

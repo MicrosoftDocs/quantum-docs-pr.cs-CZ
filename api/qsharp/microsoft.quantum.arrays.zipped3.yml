@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.zipped3
+name: Zipped3
+type: function
+namespace: microsoft.quantum.arrays
+summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+syntax: "function Zipped3 (first : 'T1[], second : 'T2[], third : 'T3[]) : ('T1, 'T2, 'T3)[]"
+input:
+  content: "(first : 'T1[], second : 'T2[], third : 'T3[])"
+  types:
+  - name: first
+    summary: Pole obsahující hodnoty pro první prvek řazené kolekce členů.
+    isArray: true
+    uid: "'T1"
+    isLocal: true
+  - name: second
+    summary: Pole obsahující hodnoty pro druhý prvek každé řazené kolekce členů.
+    isArray: true
+    uid: "'T2"
+    isLocal: true
+  - name: third
+    summary: Pole obsahující hodnoty třetího prvku každé řazené kolekce členů.
+    isArray: true
+    uid: "'T3"
+    isLocal: true
+output:
+  content: ('T1, 'T2, 'T3)[]
+  types:
+  - summary: Pole obsahující 3 – řazené kolekce členů formuláře `(first[idx], second[idx], third[idx])` pro každý `idx` . Pokud se tři pole neshodují, bude výstup, který je kratší než tento počet vstupů.
+    isArray: true
+    types:
+    - uid: "'T1"
+      isLocal: true
+    - uid: "'T2"
+      isLocal: true
+    - uid: "'T3"
+      isLocal: true
+typeParameters:
+- uid: "'T1"
+  summary: Typ prvních prvků pole.
+- uid: "'T2"
+  summary: Typ druhých prvků pole.
+- uid: "'T3"
+  summary: Typ elementů třetího pole.
+seeAlso:
+- microsoft.quantum.arrays.zipped
+- microsoft.quantum.arrays.zipped4
+metadata:
+  ms.openlocfilehash: 78740413a02025f6ee87040076e3f88ed3e2de42
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493688"

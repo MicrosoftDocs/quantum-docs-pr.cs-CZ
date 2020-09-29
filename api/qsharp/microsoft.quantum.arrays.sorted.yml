@@ -1,0 +1,81 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.sorted
+name: Sorted
+type: function
+namespace: microsoft.quantum.arrays
+summary: Předanému poli vrátí prvky tohoto pole seřazené podle dané funkce porovnání.
+remarks: >-
+  Tato funkce `comparison` je považována za přenositelný, takže pokud `comparison(a, b)` a `comparison(b, c)` , pak `comparison(a, c)` se předpokládá. Pokud tato vlastnost není uložena, bude výstup této funkce pravděpodobně nesprávný.
+
+
+  Vzhledem k tomu, že je to funkce, jsou výsledky zcela deterministickáy i v případě, že se dva prvky považují za stejné jako v rámci `comparison` `comparison(a, b)` a `comparison(b, a)` `true` .
+
+  Konkrétně je zaručeno, že řazení prováděné touto funkcí je stabilní, aby v případě, že dva prvky `a` a `b` výskyty v tomto pořadí v `array` a jsou považovány za stejné `comparison` , pak se `a` zobrazí také před `b` ve výstupu.
+
+
+  Příklad:
+
+
+  ```Q#
+
+  function LastDigitLessThanOrEqual(left : Int, right : Int) : Bool {
+      return LessThanOrEqualI(
+          left % 10, right % 10
+      );
+  }
+
+
+  function SortedByLastDigit() : Int[] {
+      return Sorted(LastDigitLessThanOrEqual, [3, 37, 11, 17]);
+  }
+
+  // returns [11, 3, 37, 17].
+
+  ```
+examples: >-
+  Následující fragment kódu seřadí pole celých čísel, která se mají objevit ve vzestupném pořadí:
+
+
+  ```Q#
+
+  let sortedArray = Sorted(LessThanOrEqualI, [3, 17, 11, -201, -11]);
+
+  ```
+syntax: "function Sorted (comparison : (('T, 'T) -> Bool), array : 'T[]) : 'T[]"
+input:
+  content: "(comparison : (('T, 'T) -> Bool), array : 'T[])"
+  types:
+  - name: comparison
+    summary: Funkce, která porovná dva prvky, například, že jsou `a` považovány za menší nebo rovny, `b` Pokud `comparison(a, b)` je `true` .
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+  - name: array
+    summary: Pole, které má být seřazeno.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ každého prvku `array` .
+metadata:
+  ms.openlocfilehash: d20fad7286845f21dbb7e609d2bec37ee14adb90
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493730"

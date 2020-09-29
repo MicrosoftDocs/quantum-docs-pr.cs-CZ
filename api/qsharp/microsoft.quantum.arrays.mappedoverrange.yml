@@ -1,0 +1,56 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.mappedoverrange
+name: MappedOverRange
+type: function
+namespace: microsoft.quantum.arrays
+summary: Pro rozsah a funkci, která přijímá jako vstup celé číslo, vrátí nové pole, které se skládá z obrázků hodnot rozsahu pod funkcí.
+remarks: "Funkce je definována pro obecné typy, tj. kdykoli máme funkci, `mapper: Int -> 'T` můžeme namapovat hodnoty rozsahu a vytvořit pole typu `'T[]` ."
+examples: >-
+  Tento příklad přidá 1 do rozsahu sudých čísel:
+
+
+  ```Q#
+
+  let numbers = MappedOverRange(PlusI(1, _), 0..2..10);
+
+  // numbers = [1, 3, 5, 7, 9, 11]
+
+  ```
+syntax: "function MappedOverRange (mapper : (Int -> 'T), range : Range) : 'T[]"
+input:
+  content: "(mapper : (Int -> 'T), range : Range)"
+  types:
+  - name: mapper
+    summary: Funkce z `Int` `'T` , která se používá k mapování hodnot rozsahu.
+    isFunction: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Int
+    output:
+      types:
+      - uid: "'T"
+        isLocal: true
+  - name: range
+    summary: Rozsah celých čísel.
+    isPrimitive: true
+    uid: Range
+output:
+  content: "'T[]"
+  types:
+  - summary: Pole `'T[]` prvků, které jsou mapovány `mapper` funkcí.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ výsledku `mapper` funkce
+seeAlso:
+- microsoft.quantum.arrays.mapped
+metadata:
+  ms.openlocfilehash: fe918a8f7e74d49834f992442344e99dbcd33422
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493749"
