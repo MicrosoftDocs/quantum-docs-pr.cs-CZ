@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6fd7494d341a83a1354d23a283d21a7ae535e49f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834019"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91492332"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -83,7 +83,7 @@ Naším cílem je připravit dva qubitsy v určitém stavu, který ukazuje, jak 
 
 ### <a name="initialize-qubit-using-measurement"></a>Inicializovat qubit pomocí měření
 
-V prvním kódu níže vám ukážeme, jak pracovat s qubits v Q# .  Zavádíme dvě operace [`M`](xref:microsoft.quantum.intrinsic.m) a [`X`](xref:microsoft.quantum.intrinsic.x) transformují stav qubit. V tomto fragmentu kódu je použita operace `SetQubitState`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `SetQubitState` provádí měření qubitu pomocí operace `M`.  V Q# je měření qubit vždy vrací buď `Zero` nebo `One` .  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, "převrátí `SetQubitState` " qubit; to znamená, že spustí `X` operaci, která změní stav qubit na nový stav, ve kterém pravděpodobnost vracení měření vrací `Zero` a `One` jsou obráceny. Tímto způsobem `SetQubitState` vždy umístí cílový qubit do požadovaného stavu.
+V prvním fragmentu kódu níže ukazujeme, jak pracovat s qubits v Q# .  Zavádíme dvě operace [`M`](xref:microsoft.quantum.intrinsic.m) a [`X`](xref:microsoft.quantum.intrinsic.x) transformují stav qubit. V tomto fragmentu kódu je použita operace `SetQubitState`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `SetQubitState` provádí měření qubitu pomocí operace `M`.  V Q# je měření qubit vždy vrací buď `Zero` nebo `One` .  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, "převrátí `SetQubitState` " qubit; to znamená, že spustí `X` operaci, která změní stav qubit na nový stav, ve kterém pravděpodobnost vracení měření vrací `Zero` a `One` jsou obráceny. Tímto způsobem `SetQubitState` vždy umístí cílový qubit do požadovaného stavu.
 
 Nahraďte obsah `Program.qs` následujícím kódem:
 
@@ -112,7 +112,7 @@ Q#Operace je podprogram nečinnosti. To znamená, že se jedná o volanou rutinu
 
 Argumenty operace jsou zadány jako řazené kolekce členů v závorkách.
 
-Návratový typ operace je určen za dvojtečkou. V našem případě operace `SetQubitState` nic nevrací, takže je označena jako vracející `Unit`. Toto je Q# ekvivalent `unit` v F #, který je zhruba podobný `void` v jazyce C# a prázdná řazená kolekce členů v Pythonu ( `()` reprezentovaná parametrem typu `Tuple[()]` ).
+Návratový typ operace je určen za dvojtečkou. V takovém případě `SetQubitState` operace nemá žádný návratový typ, takže je označena jako návratová `Unit` . Toto je Q# ekvivalent `unit` v F #, který je zhruba podobný `void` v jazyce C# a prázdná řazená kolekce členů v Pythonu ( `()` reprezentovaná parametrem typu `Tuple[()]` ).
 
 V první operaci jste použili dvě provozní operace Q# :
 
@@ -159,7 +159,7 @@ Tato operace (`TestBellState`) se zopakuje v `count` iteracích, v každé nasta
 
 Ve výchozím nastavení proměnné v Q# jsou neměnné; jejich hodnota nesmí být po svázání změněna. Klíčové slovo `let` slouží k označení vazby neměnné proměnné. Argumenty operace jsou vždycky neměnné.
 
-Pokud potřebujete proměnnou, jejíž hodnotu je možné změnit, například `numOnes` v našem příkladu, můžete proměnnou deklarovat pomocí klíčového slova `mutable`. Hodnotu proměnlivé proměnné lze změnit pomocí příkazu `setQubitState`.
+Pokud potřebujete proměnnou, jejíž hodnotu je možné změnit, například `numOnes` v našem příkladu, můžete proměnnou deklarovat pomocí klíčového slova `mutable`. Hodnotu proměnlivé proměnné lze změnit pomocí příkazu `set`.
 
 V obou případech je typ proměnné odvozen kompilátorem. Q# pro proměnné nevyžadují žádné anotace typu.
 
@@ -169,7 +169,7 @@ V obou případech je typ proměnné odvozen kompilátorem. Q# pro proměnné ne
 
 ## <a name="run-the-code-from-the-command-prompt"></a>Spuštění kódu z příkazového řádku
 
-Aby bylo možné spustit kód, musíme zadat kompilátor, *který* se spustí při zadání `dotnet run` příkazu. To se provádí v případě jednoduché změny v Q# souboru přidáním řádku s `@EntryPoint()` přímo předcházejícím voláním: `TestBellState` operace v tomto případě. Úplný kód by měl být:
+Aby bylo možné spustit kód, musíme instruovat kompilátor, *který* se při zadání příkazu spustí, aby běžel `dotnet run` . To se provádí v případě jednoduché změny v Q# souboru přidáním řádku s `@EntryPoint()` přímo předcházejícím voláním: `TestBellState` operace v tomto případě. Úplný kód by měl být:
 
 ```qsharp
 namespace Bell {
@@ -237,7 +237,7 @@ Teď se podíváme na to, jak vyjadřuje způsob, jak Q# umístit qubits na pozi
 
 ### <a name="x-flips-qubit-state"></a>`X` Překlopí stav qubit.
 
-Nejdřív zkusíme qubit překlopit (pokud je qubit ve stavu `Zero`, překlopíme ho na `One` a naopak). Toho se dosáhne použitím operace `X` před změřením v operaci `TestBellState`:
+Nejdřív se podíváme na překlopení qubit (Pokud je qubit ve `Zero` stavu, Překlopí se na `One` a naopak). Toho se dosáhne použitím operace `X` před změřením v operaci `TestBellState`:
 
 ```qsharp
 X(qubit);

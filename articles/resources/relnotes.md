@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5036b4d401bb775a7fee2252ca26e7725bc19004
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 28e880445bf61150d7940730009a5482298adae2
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834138"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91492349"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -23,6 +23,24 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01220092803"></a>0.12.20092803 verze
+
+*Datum vydání: září vysílání 29., 2020*
+
+Tato verze obsahuje následující:
+
+- Specifikace oznámení a konceptu [mezilehlá reprezentace (QIR)](https://github.com/microsoft/qsharp-language/tree/main/Specifications/QIR#quantum-intermediate-representation-qir) určená jako společný formát v různých front-and back-endy. Viz také náš [Blogový příspěvek](https://devblogs.microsoft.com/qsharp/introducing-quantum-intermediate-representation-qir) v QIR.
+- Spuštění našeho nového [ Q# jazykového úložiště](https://github.com/microsoft/qsharp-language) obsahujícího také celou [ Q# dokumentaci](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language#q-language).
+- Vylepšení výkonu pro QuantumSimulator pro programy zahrnující velký počet qubits: lepší využití rozhodnutí o fúze Branch; vylepšení paralelismu v systému Linux; bylo přidáno inteligentní plánování spuštění brány; opravy chyb.
+- Funkce technologie IntelliSense jsou nyní podporovány pro Q# soubory v aplikaci Visual Studio a Visual Studio Code i bez souboru projektu.
+- Různá Q# vylepšení interoperability/Python a opravy chyb, včetně lepší podpory datových typů numpy.
+- Vylepšení oboru názvů Microsoft. QuantumLibraries. Arrays (viz [Microsoft/# 313](https://github.com/microsoft/QuantumLibraries/issues/313)).
+- Byl přidán nový [vzorek opakování až do úspěchu](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/repeat-until-success) , který používá pouze dvě qubits.
+
+Od poslední vydané verze se výchozí větev v každém z našich úložišť Open Source přejmenovala na `main` .
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-08-24..2020-09-24).
 
 ## <a name="version-01220082513"></a>0.12.20082513 verze
 
