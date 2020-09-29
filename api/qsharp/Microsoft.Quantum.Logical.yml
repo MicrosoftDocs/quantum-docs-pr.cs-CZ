@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.logical
 name: Microsoft.Quantum.Logical
-summary: " # <a name=\"summary\"></a>Shrnutí\n Obsahuje funkce pro práci s logickými výrazy a logickou logikou."
+summary: " # <a name=\"summary\"></a>Souhrn\n Obsahuje funkce pro práci s logickými výrazy a logickou logikou."
 functions:
 - uid: microsoft.quantum.logical.and
   summary: Vrátí logickou kombinaci dvou hodnot.
@@ -45,6 +45,8 @@ functions:
   summary: Vrátí hodnotu true pouze v případě, že je číslo menší nebo rovno jinému číslu.
 - uid: microsoft.quantum.logical.lessthanorequall
   summary: Vrátí hodnotu true pouze v případě, že je číslo menší nebo rovno jinému číslu.
+- uid: microsoft.quantum.logical.lexographiccomparison
+  summary: S ohledem na funkci porovnání vrátí novou funkci, která lexographically porovnává dvě pole.
 - uid: microsoft.quantum.logical.nearlyequald
   summary: Vrátí hodnotu true pouze v případě, že dva vstupy jsou téměř stejné (tj. v rámci tolerance 1E-12).
 - uid: microsoft.quantum.logical.not
@@ -70,9 +72,9 @@ functions:
 - uid: microsoft.quantum.logical.xor
   summary: Vrátí logickou nevýlučnou disjunkci dvou hodnot.
 metadata:
-  ms.openlocfilehash: 0ab7077bc2cdf9bc76f3da701a88869f8bb9bf85
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 006100b659daedbcca30fe443756a185a965ee1e
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89340098"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464330"

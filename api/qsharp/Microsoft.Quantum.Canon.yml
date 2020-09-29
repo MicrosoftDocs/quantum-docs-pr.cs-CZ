@@ -387,6 +387,22 @@ operations:
     Použije operaci na první dvě qubits v registru.
 
     Modifikátor `CA` označuje, že operace je ovladatelné a s sousedními poli.
+- uid: microsoft.quantum.canon.applytohead
+  summary: Použije operaci na první prvek pole.
+- uid: microsoft.quantum.canon.applytoheada
+  summary: Použije operaci na první prvek pole.
+- uid: microsoft.quantum.canon.applytoheadc
+  summary: Použije operaci na první prvek pole.
+- uid: microsoft.quantum.canon.applytoheadca
+  summary: Použije operaci na první prvek pole.
+- uid: microsoft.quantum.canon.applytomost
+  summary: Aplikuje operaci na všechny, ale na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytomosta
+  summary: Aplikuje operaci na všechny, ale na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytomostc
+  summary: Aplikuje operaci na všechny, ale na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytomostca
+  summary: Aplikuje operaci na všechny, ale na poslední prvek pole.
 - uid: microsoft.quantum.canon.applytopartition
   summary: Aplikuje dvojici operací na daný oddíl registru do dvou částí.
 - uid: microsoft.quantum.canon.applytopartitiona
@@ -404,6 +420,14 @@ operations:
     Aplikuje dvojici operací na daný oddíl registru do dvou částí.
 
     Modifikátor `CA` označuje, že operace je ovladatelné a s sousedními poli.
+- uid: microsoft.quantum.canon.applytorest
+  summary: Aplikuje operaci na všechny, ale na první prvek pole.
+- uid: microsoft.quantum.canon.applytoresta
+  summary: Aplikuje operaci na všechny, ale na první prvek pole.
+- uid: microsoft.quantum.canon.applytorestc
+  summary: Aplikuje operaci na všechny, ale na první prvek pole.
+- uid: microsoft.quantum.canon.applytorestca
+  summary: Aplikuje operaci na všechny, ale na první prvek pole.
 - uid: microsoft.quantum.canon.applytosubregister
   summary: Aplikuje operaci na subregistry registru, kde qubits určil pole jeho indexů.
 - uid: microsoft.quantum.canon.applytosubregistera
@@ -421,6 +445,14 @@ operations:
     Aplikuje operaci na subregistry registru, kde qubits určil pole jeho indexů.
 
     Modifikátor `CA` označuje, že operace je ovladatelné a s sousedními poli.
+- uid: microsoft.quantum.canon.applytotail
+  summary: Použije operaci na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytotaila
+  summary: Použije operaci na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytotailc
+  summary: Použije operaci na poslední prvek pole.
+- uid: microsoft.quantum.canon.applytotailca
+  summary: Použije operaci na poslední prvek pole.
 - uid: microsoft.quantum.canon.applywith
   summary: Dané dvě operace platí pro sebe jako sdružené s druhou.
 - uid: microsoft.quantum.canon.applywitha
@@ -581,9 +613,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Zastaralé\n\nResultStack se už nepoužívá."
 metadata:
-  ms.openlocfilehash: 969eec6767f3323e0470b0e968051bafb92d29ae
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 7346d86d3ff9db2146f37a3f402b60faebe442b7
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89341560"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464432"

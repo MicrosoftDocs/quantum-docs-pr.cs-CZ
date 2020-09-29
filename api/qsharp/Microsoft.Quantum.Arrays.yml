@@ -8,40 +8,74 @@ functions:
   summary: V případě pole a predikátu, který je definován pro prvky pole, zkontroluje, zda alespoň jeden prvek pole splňuje predikát.
 - uid: microsoft.quantum.arrays.chunks
   summary: Rozdělí pole na více částí stejné délky.
+- uid: microsoft.quantum.arrays.columnat
+  summary: Extrahuje sloupec z matice.
 - uid: microsoft.quantum.arrays.constantarray
   summary: Vytvoří pole s danou délkou se všemi elementy, které se rovnají dané hodnotě.
+- uid: microsoft.quantum.arrays.count
+  summary: Předané pole a predikát, který je definován pro prvky pole, vrátí počet prvků pole, které se skládá z prvků, které odpovídají predikátu.
+- uid: microsoft.quantum.arrays.cumulativefolded
+  summary: Kombinuje namapovaná a přeložení na jednu funkci
+- uid: microsoft.quantum.arrays.diagonal
+  summary: Vrátí pole diagonálních elementů dvojrozměrného pole.
+- uid: microsoft.quantum.arrays.elementat
+  summary: Vrátí hodnotu v daném indexu pole.
+- uid: microsoft.quantum.arrays.elementsat
+  summary: Vrátí prvky pole v zadaném rozsahu indexů.
+- uid: microsoft.quantum.arrays.emptyarray
+  summary: Vrátí prázdné pole daného typu.
 - uid: microsoft.quantum.arrays.enumerated
   summary: V případě pole, vrátí nové pole obsahující prvky původního pole spolu s indexy každého prvku.
 - uid: microsoft.quantum.arrays.equala
   summary: Zadaná dvě pole stejného typu a predikát, který je definován pro páry prvků pole, kontroluje, zda jsou pole shodná.
 - uid: microsoft.quantum.arrays.exclude
   summary: Vrátí pole obsahující prvky jiného pole, kromě prvků v daném seznamu indexů.
+- uid: microsoft.quantum.arrays.excluding
+  summary: Vrátí pole obsahující prvky jiného pole, kromě prvků v daném seznamu indexů.
 - uid: microsoft.quantum.arrays.filtered
   summary: Předané pole a predikát, který je definován pro prvky pole, vrátí pole, které se skládá z prvků, které odpovídají predikátu.
+- uid: microsoft.quantum.arrays.flatmapped
+  summary: Pro pole a funkci, která mapuje prvek pole na některé výstupní pole, vrátí zřetězená výstupní pole pro každý prvek pole.
+- uid: microsoft.quantum.arrays.flattened
+  summary: V případě pole polí vrací zřetězení všech polí.
 - uid: microsoft.quantum.arrays.fold
   summary: Opakuje funkci `f` prostřednictvím pole `array` a vrátí `f(f(f(initialState, array[0]), array[1]), ...)` .
 - uid: microsoft.quantum.arrays.head
   summary: Vrátí první prvek pole.
+- uid: microsoft.quantum.arrays.headandrest
+  summary: Vrátí řazenou kolekci členů prvního a všech zbývajících prvků pole.
 - uid: microsoft.quantum.arrays.indexof
   summary: Vrátí první index prvního prvku v poli, který splňuje daný predikát. Pokud žádný takový prvek neexistuje, vrátí hodnotu-1.
 - uid: microsoft.quantum.arrays.indexrange
   summary: V poli, vrátí rozsah v rámci indexů tohoto pole, který je vhodný pro použití ve smyčce for.
+- uid: microsoft.quantum.arrays.interleaved
+  summary: Ponechá dvě pole (téměř) stejné velikosti.
 - uid: microsoft.quantum.arrays.isempty
   summary: Vrátí hodnotu true pouze v případě, že je pole prázdné.
 - uid: microsoft.quantum.arrays.ispermutation
   summary: Vrátí výstupy true, pokud dané pole představuje permutaci.
+- uid: microsoft.quantum.arrays.issorted
+  summary: V případě pole, vrátí, zda je toto pole řazeno tak, jak je definováno danou funkcí porovnání.
 - uid: microsoft.quantum.arrays.lookupfunction
   summary: Předanému poli vrátí funkci, která vrátí prvky daného pole.
 - uid: microsoft.quantum.arrays.mapped
   summary: Předané pole a funkce, které jsou definovány pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole pod funkcí.
 - uid: microsoft.quantum.arrays.mappedbyindex
   summary: Pro pole a funkci, která je definována pro indexované prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci funkce.
+- uid: microsoft.quantum.arrays.mappedoverrange
+  summary: Pro rozsah a funkci, která přijímá jako vstup celé číslo, vrátí nové pole, které se skládá z obrázků hodnot rozsahu pod funkcí.
 - uid: microsoft.quantum.arrays.most
   summary: Vytvoří pole, které se rovná vstupnímu poli s tím rozdílem, že poslední prvek pole je vyřazen.
+- uid: microsoft.quantum.arrays.mostandtail
+  summary: Vrátí řazenou kolekci členů všech kromě jednoho a posledního elementu pole.
 - uid: microsoft.quantum.arrays.padded
   summary: Vrátí pole doplněné o zadané hodnoty až po zadanou délku.
 - uid: microsoft.quantum.arrays.partitioned
   summary: Rozdělí pole na více částí.
+- uid: microsoft.quantum.arrays.prefixes
+  summary: Předanému poli vrátí všechny jeho předpony.
+- uid: microsoft.quantum.arrays.rectangulararrayfact
+  summary: Představuje podmínku, že dvourozměrné pole má obdélníkový tvar.
 - uid: microsoft.quantum.arrays.rest
   summary: Vytvoří pole, které je rovno vstupnímu poli s výjimkou toho, že první prvek pole je vyřazen.
 - uid: microsoft.quantum.arrays.reversed
@@ -50,32 +84,74 @@ functions:
   summary: Získá pole celých čísel v daném intervalu.
 - uid: microsoft.quantum.arrays.sequencel
   summary: Získá pole celých čísel v daném intervalu.
+- uid: microsoft.quantum.arrays.sorted
+  summary: Předanému poli vrátí prvky tohoto pole seřazené podle dané funkce porovnání.
+- uid: microsoft.quantum.arrays.squarearrayfact
+  summary: Představuje podmínku, že dvojrozměrné pole má čtvercový tvar.
 - uid: microsoft.quantum.arrays.subarray
   summary: Převezme pole a seznam umístění a vytvoří nové pole vytvořené z prvků původního pole, které odpovídá zadaným umístěním.
 - uid: microsoft.quantum.arrays.swapped
   summary: Použije záměnu dvou prvků v poli.
 - uid: microsoft.quantum.arrays.tail
   summary: Vrátí poslední prvek pole.
+- uid: microsoft.quantum.arrays.transposed
+  summary: Vrátí transpozice matice reprezentované jako pole polí.
 - uid: microsoft.quantum.arrays.tuplearrayasnestedarray
   summary: Zapíná seznam dvou řazených kolekcí členů do vnořeného pole.
+- uid: microsoft.quantum.arrays.unique
+  summary: Vrátí nové pole, které nemá stejné sousedící prvky.
+- uid: microsoft.quantum.arrays.unzipped
+  summary: V případě pole se dvěma řazenými kolekcemi členů vrátí řazenou kolekci členů dvou polí, z nichž každý obsahuje prvky pro vstupní pole.
 - uid: microsoft.quantum.arrays.where
   summary: V případě predikátu a pole vrátí indexy tohoto pole, kde má predikát hodnotu true.
+- uid: microsoft.quantum.arrays.windows
+  summary: Vrátí všechna po sobě následující podpole délky `size` .
 - uid: microsoft.quantum.arrays.zip
-  summary: Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
+  summary: >-
+    Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
+
+    > [!WARNING]
+
+    > Zastaralé
+
+
+    Zip je zastaralý. @"microsoft.quantum.arrays.zipped"Místo toho ho použijte.
 - uid: microsoft.quantum.arrays.zip3
-  summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+  summary: >-
+    Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+
+    > [!WARNING]
+
+    > Zastaralé
+
+
+    Zip3 – se už nepoužívá. @"microsoft.quantum.arrays.zipped3"Místo toho ho použijte.
 - uid: microsoft.quantum.arrays.zip4
+  summary: >-
+    U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
+
+    > [!WARNING]
+
+    > Zastaralé
+
+
+    Zip4 se už nepoužívá. @"microsoft.quantum.arrays.zipped4"Místo toho ho použijte.
+- uid: microsoft.quantum.arrays.zipped
+  summary: Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
+- uid: microsoft.quantum.arrays.zipped3
+  summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+- uid: microsoft.quantum.arrays.zipped4
   summary: U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
-summary: " # <a name=\"summary\"></a>Shrnutí\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
+summary: " # <a name=\"summary\"></a>Souhrn\n Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat."
 operations:
 - uid: microsoft.quantum.arrays.drawmany
   summary: Opakuje operaci pro daný počet vzorků a shromažďuje jejich výstupy v poli.
 - uid: microsoft.quantum.arrays.foreach
   summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
 metadata:
-  ms.openlocfilehash: f84118178b46d8c65fbffa00562bbb1b21099353
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: af1527356d0b4962f6aba2aad79395a383fa3fab
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89341271"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464449"
