@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.windows
+name: Windows
+type: function
+namespace: microsoft.quantum.arrays
+summary: >-
+  Vrátí všechna po sobě následující podpole délky `size` .
+
+
+  Tato funkce vrací všechna `n - size + 1` podpole délky `size` v pořadí, kde `n` je délka `arr` .
+
+  První podpole jsou až do `arr[0..size - 1], arr[1..size], arr[2..size + 1]` posledního podpole `arr[n - size..n - 1]` .
+
+
+  Pokud `size <= 0` `size > n` je nebo, vrátí se prázdné pole.
+examples: >-
+  ```Q#
+
+  // same as [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+
+  let windows = Windows(3, [1, 2, 3, 4, 5]);
+
+  ```
+syntax: "function Windows (size : Int, array : 'T[]) : 'T[][]"
+input:
+  content: "(size : Int, array : 'T[])"
+  types:
+  - name: size
+    summary: Délka podpole.
+    isPrimitive: true
+    uid: Int
+  - name: array
+    summary: Pole prvků.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[][]"
+  types:
+  - isArray: true
+    types:
+    - isArray: true
+      uid: "'T"
+      isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ `array` prvků.
+metadata:
+  ms.openlocfilehash: 5b16c24f608e8df853f8bdf141b45ab8cd4b3469
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493700"

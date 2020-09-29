@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.mostandtail
+name: MostAndTail
+type: function
+namespace: microsoft.quantum.arrays
+summary: Vrátí řazenou kolekci členů všech kromě jednoho a posledního elementu pole.
+syntax: "function MostAndTail (array : 'A[]) : ('A[], 'A)"
+input:
+  content: "(array : 'A[])"
+  types:
+  - name: array
+    summary: Pole s alespoň jedním prvkem.
+    isArray: true
+    uid: "'A"
+    isLocal: true
+output:
+  content: ('A[], 'A)
+  types:
+  - summary: Řazená kolekce členů všech s výjimkou jednoho a posledního elementu pole.
+    types:
+    - isArray: true
+      uid: "'A"
+      isLocal: true
+    - uid: "'A"
+      isLocal: true
+typeParameters:
+- uid: "'A"
+  summary: Typ prvků pole.
+metadata:
+  ms.openlocfilehash: e8a8f21bef51af60339c4178873b52439516bf37
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493748"
