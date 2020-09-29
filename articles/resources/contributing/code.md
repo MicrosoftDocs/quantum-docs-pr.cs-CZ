@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.code
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b27d084bbe2cda878efa6250c52c0ae628637850
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7a258a915a807b8e1ee7c2c9c062017d90f6a454
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834886"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91489761"
 ---
 # <a name="contributing-code"></a>Přispívání do kódu
 
@@ -82,6 +82,10 @@ Místně můžete testy jednotek spustit pomocí Průzkumníka testů sady Visua
 
 ### Citations and References ### -->
 
+## <a name="pull-requests"></a>Žádosti o přijetí změn
+
+Až budete připraveni přispívat do práce, odešlete žádost o přijetí změn prostřednictvím GitHubu do odpovídajícího úložiště.
+Tým bude kontrolovat a poskytovat zpětnou vazbu. Všechny komentáře musí být zodpovězeny a vyřešeny a všechny kontroly musí být před sloučením kódu do větve úspěšné `main` .
 
 ## <a name="when-well-reject-a-pull-request"></a>Po odmítnutí žádosti o získání dat odmítneme
 
