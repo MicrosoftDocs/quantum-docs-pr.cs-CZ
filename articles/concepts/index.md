@@ -9,18 +9,18 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1b767313b7f421ddaba62ab2be99fe10b8d0430e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 1523bfdfec08fd093f1c7ea999e23e85fc3cfc14
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834546"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91478932"
 ---
 # <a name="quantum-computing-history-and-background"></a>Pozadí a historie kvantových výpočtů
 
 V posledních letech se objevilo mnoho nových počítačových technologií. Kvantové výpočty jsou pravděpodobně tou, která od vývojářů vyžaduje nejzásadnější změnu přístupu.  Kvantové počítače navrhli v 80. letech minulého století [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) a [Jurij Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  Intuice stojící za kvantovými výpočty vychází z toho, co se často považovalo za téměř největší ostudu fyziky: pozoruhodný vědecký pokrok narážející na neschopnost modelovat byť jen jednoduché systémy. Kvantová mechanika se rozvíjela v letech 1900 až 1925 a dodnes zůstává úhelným kamenem, na kterém pevně spočívá chemie, fyzika kondenzovaného stavu a technologie od počítačových čipů až po osvětlení diodami LED.  Přes tyto úspěchy se však dokonce i některé z nejjednodušších systémů zdají být mimo lidské možnosti modelování s využitím kvantové mechaniky.  Důvodem je skutečnost, že i simulace systémů o pouhých několika desítkách částic, které spolu interagují, vyžaduje větší výpočetní výkon, než by jakýkoli běžný počítač mohl poskytnout za tisíce let!
 
-Obtížnost simulace kvantové mechaniky je možné chápat mnoha způsoby.  Nejjednodušším z pohledů je interpretace kvantové teorie jako výroku, že hmota na kvantové úrovni je současně v mnoha různých možných konfiguracích (označovaných jako *stavy*).  Na rozdíl od klasické teorie pravděpodobnosti se množství těchto konfigurací kvantového stavu, které lze potenciálně pozorovat, může vzájemně ovlivňovat podobně jako vlny v přílivovém jezírku.  Toto ovlivňování brání použití statistického vzorkování ke zjištění konfigurací kvantového stavu.  Pokud chceme porozumět kvantové evoluci, musíme spíš sledovat *každou možnou* konfiguraci, ve které by se kvantový systém mohl nacházet.  
+Obtížnost simulace kvantové mechaniky je možné chápat mnoha způsoby.  Pravděpodobně nejjednodušším z pohledů je interpretace kvantové teorie jako výroku, že hmota na kvantové úrovni je současně v mnoha různých možných konfiguracích (označovaných jako *stavy*).  Na rozdíl od klasické teorie pravděpodobnosti se množství těchto konfigurací kvantového stavu, které lze potenciálně pozorovat, může vzájemně ovlivňovat podobně jako vlny v přílivovém jezírku.  Toto ovlivňování brání použití statistického vzorkování ke zjištění konfigurací kvantového stavu.  Pokud chceme porozumět kvantové evoluci, musíme spíš sledovat *každou možnou* konfiguraci, ve které by se kvantový systém mohl nacházet.  
 
 Podívejme se například na soustavu elektronů, ve které můžou být elektrony ve kterékoli ze zhruba $40$ pozic.  Elektrony se proto můžou nacházet ve kterékoli z $2^{40}$ konfigurací (protože každá pozice může, ale nemusí obsahovat elektron). K uložení kvantového stavu elektronů v běžné počítačové paměti bychom jí potřebovali víc než $130$ GB!  Je to hodně, ale některé počítače by to zvládly.  Kdybychom částicím povolili kteroukoli z $41$ pozic, bylo by konfigurací dvakrát víc ($2^{41}$), což by vyžadovalo více než $260$ GB paměti pro uložení kvantového stavu. Tuto hru se zvyšováním počtu pozic nejde hrát donekonečna, pokud chceme stav ukládat běžným způsobem, protože bychom brzy překročili kapacitu paměti i těch nejvýkonnějších počítačů na světě.  Při několika stovkách elektronů by paměť potřebná k uložení systému překročila počet částic ve vesmíru; není proto žádná naděje, že by běžné počítače dokázaly kvantovou dynamiku alespoň simulovat. Přesto se ale v přírodě takové systémy neustále bez problémů vyvíjejí podle zákonů kvantové mechaniky v blažené neznalosti naší neschopnosti realizovat a simulovat jejich vývoj běžným výpočetním výkonem.
 
