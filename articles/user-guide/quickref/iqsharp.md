@@ -8,12 +8,12 @@ uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 75a1e1820e5ca16268c9b11322eb5653094b1a3c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 4549afb84bf0084160079e3cef3a7f94dffcda3e
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833557"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771348"
 ---
 # <a name="ino-locq-magic-commands"></a>Q#Příkazy Magic
 
@@ -34,7 +34,7 @@ ms.locfileid: "90833557"
 ### <a name="azure-quantum-integration"></a>Integrace Azure pro všechna úložiště
 
 - [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect): Připojuje se k pracovnímu prostoru Azure ve službě Azure nebo zobrazuje stav aktuálního připojení.
-- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Spustí úlohu v pracovním prostoru Azure ve službě Azure.
+- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Odešle úlohu do pracovního prostoru Azure pro stav a čeká na dokončení.
 - [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs): Zobrazí seznam úloh v aktuálním pracovním prostoru Azure.
 - [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output): Zobrazí výsledky úlohy v aktuálním pracovním prostoru Azure ve službě Azure.
 - [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status): Zobrazí stav úlohy v aktuálním pracovním prostoru Azure.
