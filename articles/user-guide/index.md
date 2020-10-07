@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f0680e773c8233d6c4f1acb742b3cc38dbc069d5
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 81f31a531a1b50ead332bb578ccf392ddced9e8d
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834750"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771373"
 ---
 # <a name="the-no-locq-user-guide"></a>Uživatelská příručka jazyka Q#
 
@@ -55,7 +55,7 @@ V různých tématech této příručky najdete podrobný popis základních kon
 
 ### <a name="quantum-simulators-and-resource-estimators"></a>Kvantové simulátory a estimátory prostředků
 
-- [Kvantové simulátory a hostitelské aplikace:](xref:microsoft.quantum.machines) Přehled různých dostupných simulátorů a také obecného modelu spouštění mezi hostitelským programem a cílovými počítači.
+- [Kvantové simulátory a hostitelské aplikace:](xref:microsoft.quantum.machines) Přehled různých dostupných simulátorů a také způsobu, jakým hostitelské programy a cílové počítače spolupracují při spouštění programů v Q#.
 
 - [Simulátor celkového stavu:](xref:microsoft.quantum.machines.full-state-simulator) Cílový počítač, který simuluje celkový kvantový stav. Tento simulátor je užitečný při úplném spouštění nebo ladění menších programů (méně než pár desítek qubitů).
 

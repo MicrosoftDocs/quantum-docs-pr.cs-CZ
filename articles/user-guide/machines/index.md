@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6a2a4bb829301f9db9bd14f3240556a403b9a54f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: f40c63eed60379aa46a0cd9cfdd7d8de8c22c079
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833421"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771314"
 ---
 # <a name="quantum-simulators"></a>Kvantové simulátory
 
@@ -24,7 +24,7 @@ Kvantové simulátory jsou softwarové programy spouštěné na klasických poč
 
 ## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a>Kvantové simulátory sady Quantum Development Kit (QDK)
 
-Kvantový simulátor zodpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus. Mezi ně patří primitivní operace, jako je `H`, `CNOT` a `Measure`, a také nástroje pro správu a sledování qubitů. Sada QDK obsahuje různé třídy kvantových simulátorů reprezentujících různé modely spouštění pro stejný kvantový algoritmus. 
+Kvantový simulátor zodpovídá za poskytnutí implementací kvantových primitiv pro daný algoritmus. Mezi ně patří primitivní operace, jako je `H`, `CNOT` a `Measure`, a také nástroje pro správu a sledování qubitů. Sada QDK obsahuje různé třídy kvantových simulátorů reprezentujících různé způsoby simulace stejného kvantového algoritmu. 
 
 
 Každý typ kvantového simulátoru může zajišťovat odlišnou implementaci těchto primitiv. Například [simulátor celkového stavu](xref:microsoft.quantum.machines.full-state-simulator) spouští kvantový algoritmus kompletní simulací [kvantového stavového vektoru](xref:microsoft.quantum.glossary#quantum-state), zatímco [simulátor trasování kvantového počítače](xref:microsoft.quantum.machines.qc-trace-simulator.intro) vůbec nebere aktuální kvantový stav v úvahu. Místo toho sleduje hradla, qubity a další prostředky použité v algoritmu.
