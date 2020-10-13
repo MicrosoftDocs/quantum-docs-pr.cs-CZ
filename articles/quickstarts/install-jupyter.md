@@ -10,18 +10,18 @@ uid: microsoft.quantum.install.jupyter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51de510907ea087d1f23d3ff65d268d6d455a493
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: b34d89ab33a4644c1dd4342949685f9bf84babd8
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834308"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771394"
 ---
 # <a name="develop-with-no-locq-jupyter-notebooks"></a>Vývoj s využitím aplikací Jupyter Notebook s podporou Q#
 
 Nainstalujte QDK pro vývoj operací Q# v aplikacích Jupyter Notebook s podporou Q#.
 
-Jupyter Notebook umožňuje místní spouštění kódu přímo z poznámkového bloku a jeho doplnění o instrukce, poznámky a další obsah. Toto prostředí je ideální pro psaní kódu Q# s vloženými vysvětleními nebo pro interaktivní kurzy kvantových výpočtů. Podívejte se, co všechno k vytváření vlastních poznámkových bloků v Q# potřebujete.
+Jupyter Notebooks umožňuje místní spouštění kódu přímo z poznámkového bloku a jeho doplnění o instrukce, poznámky a další obsah. Toto prostředí je ideální pro psaní kódu Q# s vloženými vysvětleními nebo pro interaktivní kurzy kvantových výpočtů. Podívejte se, co všechno k vytváření vlastních poznámkových bloků v Q# potřebujete.
 
 ## <a name="install-the-ino-locq-jupyter-kernel"></a>Instalace jádra IQ# Jupyter
 

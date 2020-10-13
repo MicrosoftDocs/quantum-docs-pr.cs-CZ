@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.simulators
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8691838b2d6c54baa40042245eee8c901a7ca965
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 714d8163a66feea2766a71886c6d07275098ac2f
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835005"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771355"
 ---
 # <a name="quantum-computers-and-quantum-simulators"></a>Kvantové počítače a kvantové simulátory
 
@@ -33,7 +33,7 @@ Je třeba vyřešit ještě spoustu problémů, než budou moci kvantové počí
 
 ## <a name="quantum-simulators"></a>Kvantové simulátory
 
-Kvantové simulátory spouštěné na klasických počítačích umožňují simulovat výpočet kvantového algoritmu na kvantovém systému.  Sada Quantum Development Kit (QDK) od společnosti Microsoft zahrnuje plnostavovou vektorovou simulaci i další specializované kvantové simulátory.
+Kvantové simulátory spouštěné na klasických počítačích umožňují simulovat běh kvantového algoritmu na kvantovém systému.  Sada Quantum Development Kit (QDK) od společnosti Microsoft zahrnuje plnostavovou vektorovou simulaci i další specializované kvantové simulátory.
 
 ## <a name="topological-qubit"></a>Topologické qubity
 
