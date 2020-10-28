@@ -1,0 +1,54 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Vrátí samostatnou distribuci kategorií, ve které je explicitně určena pravděpodobnost pro každý konečný seznam daných výsledků.
+  uid: Microsoft.Quantum.Random.CategoricalDistribution
+- summary: Vrátí jednotnou distribuci v rámci daného intervalu zahrnujícího interval.
+  uid: Microsoft.Quantum.Random.ContinuousUniformDistribution
+- summary: Vrátí jednotnou distribuci v rámci daného celkového rozsahu.
+  uid: Microsoft.Quantum.Random.DiscreteUniformDistribution
+- summary: Vrací normální rozdělení s daným významem a odchylkou.
+  uid: Microsoft.Quantum.Random.NormalDistribution
+- summary: Vrací normální rozdělení s průměrem 0 a odchylku 1.
+  uid: Microsoft.Quantum.Random.StandardNormalDistribution
+- summary: ''
+  uid: Microsoft.Quantum.Random.StandardTransformation
+- summary: S ohledem na průběžnou distribuci vrátí novou distribuci, která transformuje originál pomocí dané funkce.
+  uid: Microsoft.Quantum.Random.TransformedContinuousDistribution
+name: Microsoft.Quantum.Random
+newtypes:
+- summary: Představuje rozdělení pravděpodobnosti univariate v celých číslech libovolné velikosti.
+  uid: Microsoft.Quantum.Random.BigDiscreteDistribution
+- summary: Představuje univariate rozdělení pravděpodobnosti v rámci složitých čísel.
+  uid: Microsoft.Quantum.Random.ComplexDistribution
+- summary: Představuje univariateou distribuci pravděpodobnosti v reálných číslech.
+  uid: Microsoft.Quantum.Random.ContinuousDistribution
+- summary: Představuje univariate rozdělení pravděpodobnosti v celých číslech.
+  uid: Microsoft.Quantum.Random.DiscreteDistribution
+operations:
+- summary: ''
+  uid: Microsoft.Quantum.Random.Delay
+- summary: Nakreslí náhodný vzorek z kategorií distribuce určené seznamem probablities.
+  uid: Microsoft.Quantum.Random.DrawCategorical
+- summary: S ohledem na pravděpodobnost úspěchu vrátí jednu Bernoulliho zkušební verzi, která je pravdivá s danou pravděpodobností.
+  uid: Microsoft.Quantum.Random.DrawRandomBool
+- summary: Vykreslí náhodné reálné číslo v daném intervalu.
+  uid: Microsoft.Quantum.Random.DrawRandomDouble
+- summary: Vykreslí náhodné celé číslo v daném rozsahu.
+  uid: Microsoft.Quantum.Random.DrawRandomInt
+- summary: Nakreslí náhodnou hodnotu Pauli.
+  uid: Microsoft.Quantum.Random.DrawRandomPauli
+- summary: ''
+  uid: Microsoft.Quantum.Random.DrawStandardNormalVariate
+- summary: V případě pole dat a distribuce v rámci indexů se pokusí zvolit element náhodně.
+  uid: Microsoft.Quantum.Random.MaybeChooseElement
+- summary: Operace pouze interní pro vzorkování z transformovaných distribucí. By měla být použita pouze prostřednictvím částečné aplikace.
+  uid: Microsoft.Quantum.Random.SampleTransformedContinuousDistribution
+summary: ''
+uid: Microsoft.Quantum.Random
+metadata:
+  ms.openlocfilehash: 1504b9ae9ffc21a7684a45b58f56f138068beb67
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92697729"

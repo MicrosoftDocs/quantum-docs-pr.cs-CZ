@@ -1,0 +1,114 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: >+
+    > [!WARNING]
+
+    > BigIntToBools se už nepoužívá. <xref:Microsoft.Quantum.Convert.BigIntAsBoolArray>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.bigintasboolarray".
+
+  uid: Microsoft.Quantum.Extensions.Convert.BigIntToBools
+- summary: >+
+    > [!WARNING]
+
+    > BoolsToBigInt se už nepoužívá. <xref:Microsoft.Quantum.Convert.BoolArrayAsBigInt>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.boolarrayasbigint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.BoolsToBigInt
+- summary: >+
+    > [!WARNING]
+
+    > PauliArrayToInt se už nepoužívá. <xref:Microsoft.Quantum.Convert.PauliArrayAsInt>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.pauliarrayasint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.PauliArrayToInt
+- summary: >+
+    > [!WARNING]
+
+    > ToBigInt se už nepoužívá. <xref:Microsoft.Quantum.Convert.IntAsBigInt>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.intasbigint".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToBigInt
+- summary: >+
+    > [!WARNING]
+
+    > ToDouble – se už nepoužívá. <xref:Microsoft.Quantum.Convert.IntAsDouble>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.intasdouble".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToDouble
+- summary: >+
+    > [!WARNING]
+
+    > ToStringB se už nepoužívá. <xref:Microsoft.Quantum.Convert.BoolAsString>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.boolasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringB
+- summary: >+
+    > [!WARNING]
+
+    > ToString se už nepoužívá. <xref:Microsoft.Quantum.Convert.DoubleAsString>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.doubleasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringD
+- summary: >+
+    > [!WARNING]
+
+    > ToStringDFormat se už nepoužívá. <xref:Microsoft.Quantum.Convert.DoubleAsStringWithFormat>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.doubleasstringwithformat".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringDFormat
+- summary: >+
+    > [!WARNING]
+
+    > ToString a se už nepoužívá. <xref:Microsoft.Quantum.Convert.IntAsString>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.intasstring".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringI
+- summary: >+
+    > [!WARNING]
+
+    > ToStringIFormat se už nepoužívá. <xref:Microsoft.Quantum.Convert.IntAsStringWithFormat>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.convert.intasstringwithformat".
+
+  uid: Microsoft.Quantum.Extensions.Convert.ToStringIFormat
+name: Microsoft.Quantum.Extensions.Convert
+newtypes: []
+operations: []
+summary: 'Jedná se o některé funkce z oboru názvů System. Convert rozhraní .NET CLR, které jsou relevantní v rámci systému Q # Type.'
+uid: Microsoft.Quantum.Extensions.Convert
+metadata:
+  ms.openlocfilehash: 1d03a685b323a4424055da4c10137af78268bb5f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92697601"
