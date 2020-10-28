@@ -1,0 +1,24 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Rozbalí kompaktní reprezentace Jordan-Wignerných koeficientů, aby bylo možné získat mapování 1:1 mezi těmito a Pauli podmínkami.
+  uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE.ExpandedCoefficients
+- summary: Vypočítá všechny operátory měření potřebné k výpočtu očekávaného Jordan-Wignerho termínu.
+  uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE.MeasurementOperators
+name: Microsoft.Quantum.Chemistry.JordanWigner.VQE
+newtypes: []
+operations:
+- summary: Vyhodnotí energii v molekule sečtením energie, kterou přispěly jednotlivé Jordan-Wigner podmínek.
+  uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE.EstimateEnergy
+- summary: Vypočítá spotřebu energie spojenou s daným Jordan-Wigner Hamiltonian období
+  uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE.EstimateTermExpectation
+- summary: Soukromá Obálka kolem PrepareTrialState tak, aby byla kompatibilní s EstimateFrequencyA, definováním sousedícího. EstimateFrequencyA má vestavěnou funkci emulace, když cílí na QuantumSimulator, což zrychluje jeho spuštění.
+  uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE._prepareTrialStateWrapper
+summary: ''
+uid: Microsoft.Quantum.Chemistry.JordanWigner.VQE
+metadata:
+  ms.openlocfilehash: 6c99da452067d5e8902e05e53cabd70ca910cd60
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92698477"

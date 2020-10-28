@@ -1,0 +1,374 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: >+
+    > [!WARNING]
+
+    > AbsB se už nepoužívá. <xref:Microsoft.Quantum.Math.AbsL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.absl".
+
+  uid: Microsoft.Quantum.Extensions.Math.AbsB
+- summary: >+
+    > [!WARNING]
+
+    > AbsD se už nepoužívá. <xref:Microsoft.Quantum.Math.AbsD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.absd".
+
+  uid: Microsoft.Quantum.Extensions.Math.AbsD
+- summary: >+
+    > [!WARNING]
+
+    > AbsI se už nepoužívá. <xref:Microsoft.Quantum.Math.AbsI>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.absi".
+
+  uid: Microsoft.Quantum.Extensions.Math.AbsI
+- summary: >+
+    > [!WARNING]
+
+    > ArcCos se už nepoužívá. <xref:Microsoft.Quantum.Math.ArcCos>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.arccos".
+
+  uid: Microsoft.Quantum.Extensions.Math.ArcCos
+- summary: >+
+    > [!WARNING]
+
+    > ArcSin se už nepoužívá. <xref:Microsoft.Quantum.Math.ArcSin>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.arcsin".
+
+  uid: Microsoft.Quantum.Extensions.Math.ArcSin
+- summary: >+
+    > [!WARNING]
+
+    > ArcTan se už nepoužívá. <xref:Microsoft.Quantum.Math.ArcTan>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.arctan".
+
+  uid: Microsoft.Quantum.Extensions.Math.ArcTan
+- summary: >+
+    > [!WARNING]
+
+    > ArcTan2 se už nepoužívá. <xref:Microsoft.Quantum.Math.ArcTan2>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.arctan2".
+
+  uid: Microsoft.Quantum.Extensions.Math.ArcTan2
+- summary: >+
+    > [!WARNING]
+
+    > Strop se už nepoužívá. <xref:Microsoft.Quantum.Math.Ceiling>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.ceiling".
+
+  uid: Microsoft.Quantum.Extensions.Math.Ceiling
+- summary: >+
+    > [!WARNING]
+
+    > Cos se už nepoužívá. <xref:Microsoft.Quantum.Math.Cos>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.cos".
+
+  uid: Microsoft.Quantum.Extensions.Math.Cos
+- summary: >+
+    > [!WARNING]
+
+    > Cosh – se už nepoužívá. <xref:Microsoft.Quantum.Math.Cosh>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.cosh".
+
+  uid: Microsoft.Quantum.Extensions.Math.Cosh
+- summary: >+
+    > [!WARNING]
+
+    > DivRemB se už nepoužívá. <xref:Microsoft.Quantum.Math.DivRemL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.divreml".
+
+  uid: Microsoft.Quantum.Extensions.Math.DivRemB
+- summary: >+
+    > [!WARNING]
+
+    > E-mail se už nepoužívá. <xref:Microsoft.Quantum.Math.E>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.e".
+
+  uid: Microsoft.Quantum.Extensions.Math.E
+- summary: >+
+    > [!WARNING]
+
+    > ExpD se už nepoužívá. <xref:Microsoft.Quantum.Math.ExpD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.expd".
+
+  uid: Microsoft.Quantum.Extensions.Math.ExpD
+- summary: >+
+    > [!WARNING]
+
+    > Podlaha je zastaralá. <xref:Microsoft.Quantum.Math.Floor>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.floor".
+
+  uid: Microsoft.Quantum.Extensions.Math.Floor
+- summary: >+
+    > [!WARNING]
+
+    > IEEERemainder se už nepoužívá. <xref:Microsoft.Quantum.Math.IEEERemainder>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.ieeeremainder".
+
+  uid: Microsoft.Quantum.Extensions.Math.IEEERemainder
+- summary: >+
+    > [!WARNING]
+
+    > Protokol je zastaralý. <xref:Microsoft.Quantum.Math.Log>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.log".
+
+  uid: Microsoft.Quantum.Extensions.Math.Log
+- summary: >+
+    > [!WARNING]
+
+    > Log10 – se už nepoužívá. <xref:Microsoft.Quantum.Math.Log10>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.log10".
+
+  uid: Microsoft.Quantum.Extensions.Math.Log10
+- summary: >+
+    > [!WARNING]
+
+    > MaxB se už nepoužívá. <xref:Microsoft.Quantum.Math.MaxL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.maxl".
+
+  uid: Microsoft.Quantum.Extensions.Math.MaxB
+- summary: >+
+    > [!WARNING]
+
+    > MaxD se už nepoužívá. <xref:Microsoft.Quantum.Math.MaxD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.maxd".
+
+  uid: Microsoft.Quantum.Extensions.Math.MaxD
+- summary: >+
+    > [!WARNING]
+
+    > MaxI se už nepoužívá. <xref:Microsoft.Quantum.Math.MaxI>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.maxi".
+
+  uid: Microsoft.Quantum.Extensions.Math.MaxI
+- summary: >+
+    > [!WARNING]
+
+    > MinB se už nepoužívá. <xref:Microsoft.Quantum.Math.MinL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.minl".
+
+  uid: Microsoft.Quantum.Extensions.Math.MinB
+- summary: >+
+    > [!WARNING]
+
+    > Připomínáme, že je zastaralá. <xref:Microsoft.Quantum.Math.MinD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.mind".
+
+  uid: Microsoft.Quantum.Extensions.Math.MinD
+- summary: >+
+    > [!WARNING]
+
+    > MinI se už nepoužívá. <xref:Microsoft.Quantum.Math.MinI>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.mini".
+
+  uid: Microsoft.Quantum.Extensions.Math.MinI
+- summary: >+
+    > [!WARNING]
+
+    > ModPowB se už nepoužívá. <xref:Microsoft.Quantum.Math.ModPowL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.modpowl".
+
+  uid: Microsoft.Quantum.Extensions.Math.ModPowB
+- summary: >+
+    > [!WARNING]
+
+    > PI je zastaralá. <xref:Microsoft.Quantum.Math.PI>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.pi".
+
+  uid: Microsoft.Quantum.Extensions.Math.PI
+- summary: >+
+    > [!WARNING]
+
+    > PowD se už nepoužívá. <xref:Microsoft.Quantum.Math.PowD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.powd".
+
+  uid: Microsoft.Quantum.Extensions.Math.PowD
+- summary: >+
+    > [!WARNING]
+
+    > Zaokrouhlení je zastaralé. <xref:Microsoft.Quantum.Math.Round>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.round".
+
+  uid: Microsoft.Quantum.Extensions.Math.Round
+- summary: >+
+    > [!WARNING]
+
+    > SignB se už nepoužívá. <xref:Microsoft.Quantum.Math.SignL>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.signl".
+
+  uid: Microsoft.Quantum.Extensions.Math.SignB
+- summary: >+
+    > [!WARNING]
+
+    > Podpis je zastaralý. <xref:Microsoft.Quantum.Math.SignD>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.signd".
+
+  uid: Microsoft.Quantum.Extensions.Math.SignD
+- summary: >+
+    > [!WARNING]
+
+    > Podpis je zastaralý. <xref:Microsoft.Quantum.Math.SignI>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.signi".
+
+  uid: Microsoft.Quantum.Extensions.Math.SignI
+- summary: >+
+    > [!WARNING]
+
+    > Sin je zastaralá. <xref:Microsoft.Quantum.Math.Sin>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.sin".
+
+  uid: Microsoft.Quantum.Extensions.Math.Sin
+- summary: >+
+    > [!WARNING]
+
+    > Sinh – se už nepoužívá. <xref:Microsoft.Quantum.Math.Sinh>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.sinh".
+
+  uid: Microsoft.Quantum.Extensions.Math.Sinh
+- summary: >+
+    > [!WARNING]
+
+    > Odmocnina je zastaralá. <xref:Microsoft.Quantum.Math.Sqrt>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.sqrt".
+
+  uid: Microsoft.Quantum.Extensions.Math.Sqrt
+- summary: >+
+    > [!WARNING]
+
+    > Šedobéžová je zastaralá. <xref:Microsoft.Quantum.Math.Tan>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.tan".
+
+  uid: Microsoft.Quantum.Extensions.Math.Tan
+- summary: >+
+    > [!WARNING]
+
+    > Tanh – se už nepoužívá. <xref:Microsoft.Quantum.Math.Tanh>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.tanh".
+
+  uid: Microsoft.Quantum.Extensions.Math.Tanh
+- summary: >+
+    > [!WARNING]
+
+    > Zkrácení se už nepoužívá. <xref:Microsoft.Quantum.Math.Truncate>Místo toho ho použijte.
+
+    >
+
+    > Používejte @"microsoft.quantum.math.truncate".
+
+  uid: Microsoft.Quantum.Extensions.Math.Truncate
+name: Microsoft.Quantum.Extensions.Math
+newtypes: []
+operations: []
+summary: ''
+uid: Microsoft.Quantum.Extensions.Math
+metadata:
+  ms.openlocfilehash: c07f137eaca95237d581691008c614025dd35a1d
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92697900"
