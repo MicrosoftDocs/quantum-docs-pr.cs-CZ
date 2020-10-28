@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 27038a86dc4854c397458d95529aca463d493fd6
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
+ms.openlocfilehash: fae603a81f8edc23ab8dc14277c5e3c4699f2cee
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771326"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691678"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -23,6 +23,16 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01320102604"></a>0.13.20102604 verze
+
+*Datum vydání: Říjen 27, 2020*
+
+Tato verze obsahuje následující:
+
+- Odhad prostředků teď kromě počtu qubit vygeneruje současně dosažitelnou hloubku a odhad šířky. Podrobnosti najdete [tady](xref:microsoft.quantum.machines.resources-estimator#metrics-reported) .
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-09-25..2020-10-22).
 
 ## <a name="version-01220100504"></a>0.12.20100504 verze
 
@@ -54,8 +64,8 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nový [obor názvů Microsoft... Random](xref:microsoft.quantum.random)nabízí pohodlnější způsob, jak v rámci programů vzorkovat náhodné hodnoty Q# . ([QuantumLibraries # 311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime # 328](https://github.com/microsoft/qsharp-runtime/pull/328))
-- Byl vylepšen [obor názvů Microsoft. NázevOperace. Diagnostics](xref:microsoft.quantum.diagnostics) s novou [ `DumpOperation` operací](xref:microsoft.quantum.diagnostics.dumpoperation)a nové operace pro omezení přidělení qubit a volání Oracle. ([QuantumLibraries # 302](https://github.com/microsoft/QuantumLibraries/pull/302))
+- Nový [obor názvů Microsoft... Random](xref:Microsoft.Quantum.Random)nabízí pohodlnější způsob, jak v rámci programů vzorkovat náhodné hodnoty Q# . ([QuantumLibraries # 311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime # 328](https://github.com/microsoft/qsharp-runtime/pull/328))
+- Byl vylepšen [obor názvů Microsoft. NázevOperace. Diagnostics](xref:Microsoft.Quantum.Diagnostics) s novou [ `DumpOperation` operací](xref:Microsoft.Quantum.Diagnostics.DumpOperation)a nové operace pro omezení přidělení qubit a volání Oracle. ([QuantumLibraries # 302](https://github.com/microsoft/QuantumLibraries/pull/302))
 - Nový [ `%project` příkaz Magic](xref:microsoft.quantum.iqsharp.magic-ref.project) v jazyce Q# Python a [ `qsharp.projects` rozhraní API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects) v Pythonu pro podporu odkazů na Q# projekty mimo aktuální složku pracovního prostoru. Aktuální omezení této funkce naleznete v tématu [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) . 
 - Podpora pro automatické načítání `.csproj` souborů pro I Q# hostitele/Python, které umožňují načtení externích projektů nebo odkazů na balíčky v době inicializace. Další podrobnosti najdete v příručce pro použití [ Q# s poznámkovým blokům Python a Jupyter](xref:microsoft.quantum.guide.host-programs) .
 - Byl přidán vzorek ErrorCorrection. Syndrome.
@@ -83,7 +93,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 Tato verze obsahuje následující:
 
 - Nový `qdk-chem` Nástroj pro převod formátů serializace ve starších verzích elektronické struktury (např.: FCIDUMP) do [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
-- Nové funkce a operace v [`Microsoft.Quantum.Synthesis`](xref:microsoft.quantum.synthesis) oboru názvů pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
+- Nové funkce a operace v [`Microsoft.Quantum.Synthesis`](xref:Microsoft.Quantum.Synthesis) oboru názvů pro soudržné používání klasických Oracle pomocí transformačních a dekompozicí založených algoritmů syntézy.
 - Q#Nyní povolujem argumenty pro `%simulate` příkazy, `%estimate` a další Magic. Další podrobnosti najdete v referenčních informacích k [ `%simulate` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
 - Nové možnosti zobrazení fáze Q# v I Další podrobnosti najdete v referenčních informacích k [ `%config` příkazu Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
 - I Q# a `qsharp` balíček Pythonu jsou teď k dispozici prostřednictvím balíčků conda ([qsharp](https://anaconda.org/quantum-engineering/qsharp) a [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)), aby se zjednodušila místní instalace Q# funkcí Jupyter a Pythonu do conda prostředí. Další podrobnosti najdete v [ Q# poznámkových blocích Jupyter](xref:microsoft.quantum.install.jupyter) a v Průvodci instalací [ Q# Pythonu](xref:microsoft.quantum.install.python) .
@@ -130,7 +140,7 @@ Tato verze obsahuje následující:
 - Vylepšení výkonu Q# Docker images
 
 > [!NOTE]
-> Q# aplikace používající nový [`@EntryPoint()`](xref:microsoft.quantum.core.entrypoint) atribut se aktuálně nedají volat z hostitelských programů Pythonu nebo .NET.
+> Q# aplikace používající nový [`@EntryPoint()`](xref:Microsoft.Quantum.Core.EntryPoint) atribut se aktuálně nedají volat z hostitelských programů Pythonu nebo .NET.
 > Další informace najdete v tématech týkajících se [Pythonu](xref:microsoft.quantum.install.python) a [interoperability rozhraní .NET](xref:microsoft.quantum.install.cs).
 
 ## <a name="version-01120033107"></a>Verze 0.11.2003.3107
@@ -183,7 +193,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Tato verze obsahuje následující:
 
-- Nový atribut testu pro Q# testování částí, viz aktualizovaná dokumentace k rozhraní API [tady](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) a aktualizované testování & Průvodce laděním [tady](xref:microsoft.quantum.guide.testingdebugging)
+- Nový atribut testu pro Q# testování částí, viz aktualizovaná dokumentace k rozhraní API [tady](xref:Microsoft.Quantum.Diagnostics.Test) a aktualizované testování & Průvodce laděním [tady](xref:microsoft.quantum.guide.testingdebugging)
 - Přidání trasování zásobníku v případě Q# chyby běhu programu
 - Podpora zarážek v editoru Visual Studio Code vzhledem k aktualizaci [rozšíření OmniSharp C# Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
@@ -224,7 +234,7 @@ Tato verze obsahuje následující:
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-09-packagereference-0919082902"></a>Verze 0.9 (*PackageReference 0.9.1908.2902*)
+## <a name="version-09-packagereference-0919082902"></a>Verze 0.9 ( *PackageReference 0.9.1908.2902* )
 
 *Datum vydání: 29. srpna 2019*
 
@@ -233,7 +243,7 @@ Tato verze obsahuje následující:
 - Nová podpora pro [příkazy conjugation](xref:microsoft.quantum.guide.operationsfunctions#conjugations) v Q#
 - Nové akce kódu v kompilátoru, například náhrada, přidání dokumentace a aktualizace položky jednoduchého pole
 - Přidané instalační šablony a nové příkazy projektu do rozšíření editoru Visual Studio Code
-- Přidané nové varianty kombinátoru ApplyIf, například [Microsoft.Quantum.Canon.ApplyIfOne](xref:microsoft.quantum.canon.applyifone)
+- Přidané nové varianty kombinátoru ApplyIf, například [Microsoft.Quantum.Canon.ApplyIfOne](xref:Microsoft.Quantum.Canon.ApplyIfOne)
 - Další [kvantové katy](https://github.com/Microsoft/QuantumKatas) převedené do poznámkových bloků Jupyter
 - Rozšíření sady Visual Studio Extension nyní vyžaduje Visual Studio 2019
 
@@ -241,7 +251,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Přečtěte si další informace o těchto změnách na [ Q# blogu pro vývoj](https://devblogs.microsoft.com/qsharp).
 
-## <a name="version-08-packagereference-0819071701"></a>Verze 0.8 (*PackageReference 0.8.1907.1701*)
+## <a name="version-08-packagereference-0819071701"></a>Verze 0.8 ( *PackageReference 0.8.1907.1701* )
 
 *Datum vydání: 12. července 2019*
 
@@ -253,7 +263,7 @@ Tato verze obsahuje následující:
 
 Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-07-packagereference-0719053109"></a>Verze 0.7 (*PackageReference 0.7.1905.3109*)
+## <a name="version-07-packagereference-0719053109"></a>Verze 0.7 ( *PackageReference 0.7.1905.3109* )
 
 *Datum vydání: 31. května 2019*
 
@@ -320,7 +330,7 @@ V důsledku této změny můžou u programů, které obsahují jediný příkaz 
 
 * Několik oborů názvů je zastaralých, protože obsažené operace byly přeorganizovány do jiných oborů názvů. Programy, které používají tyto obory názvů, budou dál fungovat a varování v době kompilace upozorní na obor názvů, kde je operace definována.  
 
-* Obor názvů Microsoft.Quantum.Arithmetic byl normalizován, aby používal uživatelsky definovaný typ <xref:microsoft.quantum.arithmetic.littleendian>. V případě potřeby převodu na formát Little Endian použijte funkci [BigEndianAsLittleEndian](xref:microsoft.quantum.arithmetic.bigendianaslittleendian).  
+* Obor názvů Microsoft.Quantum.Arithmetic byl normalizován, aby používal uživatelsky definovaný typ <xref:Microsoft.Quantum.Arithmetic.LittleEndian>. V případě potřeby převodu na formát Little Endian použijte funkci [BigEndianAsLittleEndian](xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian).  
 
 * Názvy několika volat (funkce a operace) byly změněny tak, aby odpovídaly [ Q# vodítku stylu](xref:microsoft.quantum.contributing.style).  Staré názvy volatelných položek jsou zastaralé.  Programy, které používají staré volatelné položky, budou i nadále fungovat s upozorněním v době kompilace. 
 
@@ -516,7 +526,7 @@ Tato aktualizace zahrnuje významná vylepšení výkonu pro simulaci velkých a
 Tato aktualizace přidává nové funkce ladění:
 * Byly přidány dvě nové operace, @"microsoft.quantum.extensions.diagnostics.dumpmachine" a @"microsoft.quantum.extensions.diagnostics.dumpregister", jejichž výstupem jsou informace vlnové funkce o cílovém kvantovém počítači v časovém bodě.  
 * V sadě Visual Studio se teď pravděpodobnost měření $\ket{1}$ na jednotlivém qubitu automaticky zobrazí v okně ladění pro cílový počítač QuantumSimulator.
-* V sadě Visual Studio se zlepšilo zobrazení vlastností proměnných v oknech ladění **Autos** a **Locals**. 
+* V sadě Visual Studio se zlepšilo zobrazení vlastností proměnných v oknech ladění **Autos** a **Locals** . 
 
 Přečtěte si další informace o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
 
@@ -541,7 +551,7 @@ Navíc **velké poděkování** od přispěvatelů týmu Commercial Engineering 
 
 ### <a name="update-existing-projects"></a>Aktualizace stávajících projektů
 
-Tato verze je plně zpětně kompatibilní. Stačí aktualizovat balíčky NuGet v projektech na verzi `0.2.1806.1503-preview` a provést **úplné opětovné sestavení**, aby se zajistilo nové vygenerování všech přechodných soubory.
+Tato verze je plně zpětně kompatibilní. Stačí aktualizovat balíčky NuGet v projektech na verzi `0.2.1806.1503-preview` a provést **úplné opětovné sestavení** , aby se zajistilo nové vygenerování všech přechodných soubory.
 
 V aplikaci Visual Studio postupujte podle obvyklých pokynů jak [aktualizovat balíček](https://docs.microsoft.com/nuget/tools/package-manager-ui#updating-a-package).
 

@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: aa942a61280553ae4e51cd5ddcc85c0df935dab1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 9a3d7e03016332a04ac9d1610428b6fcd546d1f6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835855"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691575"
 ---
 # <a name="working-with-qubits"></a>Práce s qubity
 
@@ -29,14 +29,14 @@ Tento článek popisuje, jak používat qubits v programu a pracovat s nimi Q# .
 
 Vzhledem k tomu, že fyzický qubits jsou cenným prostředkem v počítači, který je součástí úlohy, je nutné se ujistit, že jsou používány co nejúčinnějším způsobem.
 V takovém případě je třeba říct, že Q# chcete *přidělit* qubits pro použití v rámci konkrétního bloku příkazu.
-Můžete přidělit qubits jako jeden qubit nebo jako pole qubits, které se označuje jako *registr*. 
+Můžete přidělit qubits jako jeden qubit nebo jako pole qubits, které se označuje jako *registr* . 
 
 ### <a name="clean-qubits"></a>Vyčistit qubits
 
 Použijte `using` příkaz k přidělení nového qubits pro použití během bloku příkazu.
 
 Příkaz se skládá z klíčového slova `using` , za nímž následuje vazba uzavřená v závorkách `( )` a blok příkazů, ve kterém je qubits k dispozici.
-Vazba se řídí stejným vzorem jako `let` příkazy: buď jeden symbol, nebo záznamovou sadu symbolů následovaný symbolem rovná `=` se, a buď jedinou hodnotou, nebo porovnáním řazené kolekce členů *inicializátorů*.
+Vazba se řídí stejným vzorem jako `let` příkazy: buď jeden symbol, nebo záznamovou sadu symbolů následovaný symbolem rovná `=` se, a buď jedinou hodnotou, nebo porovnáním řazené kolekce členů *inicializátorů* .
 
 Inicializátory jsou k dispozici buď pro jeden qubit, který `Qubit()` je označen jako nebo jako pole qubits, `Qubit[n]` , kde `n` je `Int` výraz.
 Příklad:
@@ -95,7 +95,7 @@ V některých případech to znamená, že Q# program může s qubit provádět,
 Tento článek popisuje několik užitečných Q# operací, které můžete použít k interakci s qubits.
 Další podrobnosti o těchto a dalších funkcích najdete v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude). 
 
-Za prvé, qubit Pauli Operators $X $, $Y $ a $Z $ jsou reprezentovány v rámci Q# vnitřních operací [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) a [`Z`](xref:microsoft.quantum.intrinsic.z) , z nichž každý má typ `(Qubit => Unit is Adj + Ctl)` .
+Za prvé, qubit Pauli Operators $X $, $Y $ a $Z $ jsou reprezentovány v rámci Q# vnitřních operací [`X`](xref:Microsoft.Quantum.Intrinsic.X) , [`Y`](xref:Microsoft.Quantum.Intrinsic.Y) a [`Z`](xref:Microsoft.Quantum.Intrinsic.Z) , z nichž každý má typ `(Qubit => Unit is Adj + Ctl)` .
 
 Jak je popsáno v tématu [vnitřní operace a funkce](xref:microsoft.quantum.libraries.standard.prelude), uvažujte o $X $, a to proto, že se jedná o `X` operaci PŘEklápění nebo ne o hradlo.
 Operaci můžete použít `X` k přípravě stavů ve formátu $ \ket{s_0 S_1 \dots S_N} $ pro některý z klasických bitových řetězců $s $:
@@ -127,7 +127,7 @@ operation RunExample() : Unit {
 > [!TIP]
 > Později se zobrazí více kompaktních způsobů psaní této operace, která nevyžaduje ruční tok řízení.
 
-Můžete také připravit stavy, jako je $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ a $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $, pomocí Hadamard Transforming $H $, který je reprezentován Q# vnitřní operací [`H`](xref:microsoft.quantum.intrinsic.h) (také typ (qubit => jednotka je ADJ + CTL)):
+Můžete také připravit stavy, jako je $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ a $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $, pomocí Hadamard Transforming $H $, který je reprezentován Q# vnitřní operací [`H`](xref:Microsoft.Quantum.Intrinsic.H) (také typ (qubit => jednotka je ADJ + CTL)):
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -149,7 +149,7 @@ Měření jednotlivých qubits se dají provádět v různých základech, z nic
 
 ### <a name="measure-a-single-qubit-in-the-pauliz-basis"></a>Měření jediného qubitu v `PauliZ` základu
 
-Použijte [`M`](xref:microsoft.quantum.intrinsic.m) operaci, která je vestavěnou vnitřní nejednotkovou operací, k měření jediného qubitu v `PauliZ` základu a k tomu ke výsledku přiřadíte klasický údaj.
+Použijte [`M`](xref:Microsoft.Quantum.Intrinsic.M) operaci, která je vestavěnou vnitřní nejednotkovou operací, k měření jediného qubitu v `PauliZ` základu a k tomu ke výsledku přiřadíte klasický údaj.
 `M` má rezervovaný návratový typ, `Result` který může převzít pouze hodnoty `Zero` nebo `One` odpovídající měřené stavy $ \ket {0} $ nebo $ \ket {1} $ – označuje, že výsledek již není ve stavu bez hodnoty.
 
 Jednoduchým příkladem je následující operace, která přiděluje jednu qubit ve stavu $ \ket {0} $, pak na ni aplikuje operaci Hadamard `H` a měří výsledek na `PauliZ` základě.
@@ -175,7 +175,7 @@ operation MeasureOneQubit() : Result {
 
 ### <a name="measure-one-or-more-qubits-in-specific-bases"></a>Měření jednoho nebo více qubits v konkrétních základech
 
-Chcete-li změřit pole jednoho nebo více qubits v konkrétních základech, můžete použít [`Measure`](xref:microsoft.quantum.intrinsic.measure) operaci.
+Chcete-li změřit pole jednoho nebo více qubits v konkrétních základech, můžete použít [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) operaci.
 
 Vstupy pro `Measure` jsou pole `Pauli` typů (například `[PauliX, PauliZ, PauliZ]` ) a pole qubits.
 

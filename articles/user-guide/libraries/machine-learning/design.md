@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3515279dd4d03b2a512035af0b13e084dd91f9dc
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 221479e616ff7a03c4ac20e0062125660314e95b
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835702"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691151"
 ---
 # <a name="design-your-own-classifier"></a>Návrh vlastního klasifikátoru
 
@@ -28,7 +28,7 @@ Stejně jako v klasickém podrobném učení neexistuje žádné obecné pravidl
 
 ## <a name="how-to-build-a-classifier-with-q"></a>Postup vytvoření klasifikátoru pomocí Q\#
 
-K vytvoření klasifikátoru budeme v modelu okruhu zřetězit zařízená otočení podle typu. K tomu můžeme použít typ [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definovaný v Machine Learning knihovně. Tento typ přijímá čtyři argumenty, které určují index cílové qubit, pole indexů ovládacího prvku qubits, osu rotace a index přidruženého parametru v poli parametrů, které definují model.
+K vytvoření klasifikátoru budeme v modelu okruhu zřetězit zařízená otočení podle typu. K tomu můžeme použít typ [`ControlledRotation`](xref:Microsoft.Quantum.MachineLearning.ControlledRotation) definovaný v Machine Learning knihovně. Tento typ přijímá čtyři argumenty, které určují index cílové qubit, pole indexů ovládacího prvku qubits, osu rotace a index přidruženého parametru v poli parametrů, které definují model.
 
 Pojďme se podívat na příklad klasifikátoru. V [Moons ukázce](https://github.com/microsoft/Quantum/tree/main/samples/machine-learning/half-moons)můžeme najít následující klasifikátor definovaný v souboru `Training.qs` .
 
@@ -47,7 +47,7 @@ Pojďme se podívat na příklad klasifikátoru. V [Moons ukázce](https://githu
     }
  ```
 
-To, co definujeme tady, je funkce, která vrací pole `ControlledRotation` prvků, které spolu s polem parametrů a posunem definují [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Tento typ je zásadní v Machine Learning knihovně a definuje třídění. Okruh definovaný v funkci výše je součástí třídění, ve kterém každý vzorek datové sady obsahuje dvě funkce. Proto potřebujeme jenom dvě qubits. Grafické znázornění okruhu je:
+To, co definujeme tady, je funkce, která vrací pole `ControlledRotation` prvků, které spolu s polem parametrů a posunem definují [`SequentialModel`](xref:Microsoft.Quantum.MachineLearning.SequentialModel) . Tento typ je zásadní v Machine Learning knihovně a definuje třídění. Okruh definovaný v funkci výše je součástí třídění, ve kterém každý vzorek datové sady obsahuje dvě funkce. Proto potřebujeme jenom dvě qubits. Grafické znázornění okruhu je:
 
  ![Příklad modelu okruhu](~/media/circuit_model_1.PNG)
 
@@ -55,11 +55,11 @@ Všimněte si, že ve výchozím nastavení operace Machine Learning v rámci kn
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Použití funkcí knihovny k psaní vrstev bran
 
-Předpokládejme, že máme datovou sadu s 784 funkcemi na jednu instanci, například obrázky o 28 × 28 pixelů, jako je MNIST ručně zapsaných datová sada. V takovém případě se šířka okruhu zvětší dostatečně velká, takže se každá z jednotlivých bran může stát možnou, ale nepraktickou úlohou. To je důvod, proč Machine Learning Library poskytuje sadu nástrojů pro automatické generování vrstev přeotočení. Například funkce [`LocalRotationsLayer`](xref:microsoft.quantum.machinelearning.localrotationslayer) vrátí pole neřízených jednoduchých qubit otočení podél dané osy, s jedním otočením pro každý qubit v registru, přičemž každý parametr odkazuje na jiný model. Například `LocalRotationsLayer(4, X)` vrátí následující sadu bran:
+Předpokládejme, že máme datovou sadu s 784 funkcemi na jednu instanci, například obrázky o 28 × 28 pixelů, jako je MNIST ručně zapsaných datová sada. V takovém případě se šířka okruhu zvětší dostatečně velká, takže se každá z jednotlivých bran může stát možnou, ale nepraktickou úlohou. To je důvod, proč Machine Learning Library poskytuje sadu nástrojů pro automatické generování vrstev přeotočení. Například funkce [`LocalRotationsLayer`](xref:Microsoft.Quantum.MachineLearning.LocalRotationsLayer) vrátí pole neřízených jednoduchých qubit otočení podél dané osy, s jedním otočením pro každý qubit v registru, přičemž každý parametr odkazuje na jiný model. Například `LocalRotationsLayer(4, X)` vrátí následující sadu bran:
 
  ![Místní vrstva rotací](~/media/local_rotations_layer.PNG)
 
-Doporučujeme, abyste si prozkoumali [referenční materiály k rozhraní API Machine Learning knihovně](xref:microsoft.quantum.machinelearning) za účelem zjištění všech dostupných nástrojů pro zjednodušení návrhu okruhu.
+Doporučujeme, abyste si prozkoumali [referenční materiály k rozhraní API Machine Learning knihovně](xref:Microsoft.Quantum.MachineLearning) za účelem zjištění všech dostupných nástrojů pro zjednodušení návrhu okruhu.
 
 ## <a name="next-steps"></a>Další kroky
 

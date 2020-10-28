@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.testingdebugging
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2f2181d388a59c1c6c5a0f13c9aa49d5fa1e51ae
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 5505086c5efac89f6940cde1ecae2ce629cfeda5
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833166"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690973"
 ---
 # <a name="testing-and-debugging"></a>Testování a ladění
 
@@ -23,7 +23,7 @@ V této části se zabýváme nástroji, které nabízíme Q# pro testování a 
 
 ## <a name="unit-tests"></a>Testování částí
 
-Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek*, které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
+Jedním z běžných způsobů testování klasických programů je psaní malých programů s názvem *testy jednotek* , které spouštějí kód v knihovně, a porovnání jeho výstupu s očekávaným výstupem.
 Můžete například zajistit, že se `Square(2)` vrátí, `4` protože víte *předem* , že $2 ^ 2 = $4.
 
 Q# podporuje vytváření testů jednotek pro programy na více procesorech a to, které mohou běžet jako testy v rámci testovacího rozhraní [xUnit](https://xunit.github.io/) jednotek.
@@ -32,7 +32,7 @@ Q# podporuje vytváření testů jednotek pro programy na více procesorech a to
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Otevřete Visual Studio 2019. Přejděte do nabídky **soubor** a vyberte **Nový > projekt...**. V pravém horním rohu vyhledejte `Q#` a vyberte šablonu ** Q# testovacího projektu** .
+Otevřete Visual Studio 2019. Přejděte do nabídky **soubor** a vyberte **Nový > projekt...** . V pravém horním rohu vyhledejte `Q#` a vyberte šablonu **Q# testovacího projektu** .
 
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
@@ -75,13 +75,13 @@ Q#Kompilátor rozpoznává předdefinované cíle `"QuantumSimulator"` , `"Toffo
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Jako jednorázové nastavení pro každé řešení přejděte do nabídky **test** a vyberte **nastavení testu > výchozí architektura procesoru > x64**.
+Jako jednorázové nastavení pro každé řešení přejděte do nabídky **test** a vyberte **nastavení testu > výchozí architektura procesoru > x64** .
 
 > [!TIP]
 > Výchozí nastavení architektury procesoru pro Visual Studio je uloženo v souboru možností řešení ( `.suo` ) pro každé řešení.
 > Pokud tento soubor odstraníte, budete muset jako architekturu procesoru vybrat **x64** .
 
-Sestavte projekt, otevřete nabídku **test** a vyberte možnost **Windows > Průzkumník testů**. **AllocateQubit** se zobrazí v seznamu testů ve skupině **Nespuštěné testy** . Vyberte **Spustit vše** nebo spustit tento jednotlivý test.
+Sestavte projekt, otevřete nabídku **test** a vyberte možnost **Windows > Průzkumník testů** . **AllocateQubit** se zobrazí v seznamu testů ve skupině **Nespuštěné testy** . Vyberte **Spustit vše** nebo spustit tento jednotlivý test.
 
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
@@ -121,13 +121,13 @@ $ dotnet test --filter "Name=AllocateQubit"
 ```
 
 
-***
+**_
 
-Vnitřní funkce <xref:microsoft.quantum.intrinsic.message> má typ `(String -> Unit)` a umožňuje vytváření diagnostických zpráv.
+Vnitřní funkce <xref:Microsoft.Quantum.Intrinsic.Message> má typ `(String -> Unit)` a umožňuje vytváření diagnostických zpráv.
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o testovacím běhu: stav předání/selhání, uplynulý čas a odkaz na výstup. Kliknutím na **výstup** otevřete výstup testu v novém okně.
+Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí panel s informacemi o testovacím běhu: stav předání/selhání, uplynulý čas a odkaz na výstup. Kliknutím na tlačítko _ *výstup* * otevřete výstup testu v novém okně.
 
 ![Výstup testu](~/media/unit-test-output.png)
 
@@ -136,7 +136,7 @@ Po spuštění testu v Průzkumníku testů a kliknutí na test se zobrazí pane
 Stav předání/selhání každého testu je vytištěn do konzoly nástrojem `dotnet test` .
 V případě neúspěšných testů jsou výstupy také vytištěny do konzoly nástroje, což vám umožní diagnostikovat selhání.
 
-***
+**_
 
 ## <a name="facts-and-assertions"></a>Fakta a kontrolní výrazy
 
@@ -160,13 +160,13 @@ Zde je klíčové slovo `fail` indikuje, že výpočet by neměl pokračovat a v
 V rámci definice nemůže být tento druh zjištěn v rámci Q# , protože cílový počítač již Q# po dosažení příkazu nespustí kód `fail` .
 Takže pokud budeme pokračovat po volání `PositivityFact` , můžeme si být jisti, že jeho vstup byl kladný.
 
-Všimněte si, že můžeme implementovat stejné chování jako při `PositivityFact` použití [`Fact`](xref:microsoft.quantum.diagnostics.fact) funkce z <xref:microsoft.quantum.diagnostics> oboru názvů:
+Všimněte si, že můžeme implementovat stejné chování jako při `PositivityFact` použití [`Fact`](xref:Microsoft.Quantum.Diagnostics.fact) funkce z <xref:Microsoft.Quantum.Diagnostics> oboru názvů:
 
 ```qsharp
     Fact(value > 0, "Expected a positive number.");
 ```
 
-*Kontrolní výrazy*na druhé straně se používají podobně jako fakta, ale můžou záviset na stavu cílového počítače. Odpovídajícím způsobem jsou definovány jako operace, zatímco fakta jsou definována jako funkce (jako v předchozím příkladu).
+_Assertions * na druhé straně se používají podobně jako fakta, ale můžou záviset na stavu cílového počítače. Odpovídajícím způsobem jsou definovány jako operace, zatímco fakta jsou definována jako funkce (jako v předchozím příkladu).
 Pro pochopení rozlišení zvažte následující použití faktu v rámci kontrolního výrazu:
 
 ```qsharp
@@ -176,11 +176,11 @@ operation AssertQubitsAreAvailable() : Unit
 }
 ```
 
-V tomto příkladu používáme operaci <xref:microsoft.quantum.environment.getqubitsavailabletouse> k vrácení počtu qubits dostupných k použití.
+V tomto příkladu používáme operaci <xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse> k vrácení počtu qubits dostupných k použití.
 Vzhledem k tomu, že to závisí na globálním stavu programu a jeho prostředí pro spuštění, `AssertQubitsAreAvailable` musí být naše definice také operace.
 Tento globální stav však můžeme použít k získání jednoduché `Bool` hodnoty jako vstupu do `Fact` funkce.
 
-[Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:microsoft.quantum.diagnostics.assertmeasurement> a <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
+[Předehru](xref:microsoft.quantum.libraries.standard.prelude), sestavování těchto nápadů, nabízí dva obzvláště užitečné kontrolní výrazy <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement> a <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> model jako operace na `()` . Tyto kontrolní výrazy přebírají operátor Pauli, který popisuje konkrétní měření zájmu, registrující hodnoty, na kterých je měření prováděno, a hypotetický výsledek.
 Cílové počítače, které pracují podle simulace, nejsou vázány [větaem bez klonování](https://en.wikipedia.org/wiki/No-cloning_theorem)a mohou provádět taková měření bez narušení registru, který předává takové kontrolní výrazy.
 Simulátor může následně vypadat podobně jako `PositivityFact` předchozí funkce, zastavit výpočty, pokud se hypotetický výsledek nepozoruje v praxi:
 
@@ -197,15 +197,15 @@ using (register = Qubit())
 
 U fyzických stavových procesorů, kde věta bez klonování brání prověřování stavu `AssertMeasurement` `AssertMeasurementProbability` nečinnosti, operace a se jednoduše vrátí `()` bez dalšího účinku.
 
-<xref:microsoft.quantum.diagnostics>Obor názvů poskytuje několik funkcí `Assert` řady, se kterými můžete kontrolovat pokročilejší podmínky. 
+<xref:Microsoft.Quantum.Diagnostics>Obor názvů poskytuje několik funkcí `Assert` řady, se kterými můžete kontrolovat pokročilejší podmínky. 
 
 ## <a name="dump-functions"></a>Funkce výpisu paměti
 
-Pro pomoc při řešení potíží s programy, <xref:microsoft.quantum.diagnostics> obor názvů nabízí dvě funkce, které mohou vypsat do souboru aktuální stav cílového počítače: <xref:microsoft.quantum.diagnostics.dumpmachine> a <xref:microsoft.quantum.diagnostics.dumpregister> . Vygenerovaný výstup každého z nich závisí na cílovém počítači.
+Pro pomoc při řešení potíží s programy, <xref:Microsoft.Quantum.Diagnostics> obor názvů nabízí dvě funkce, které mohou vypsat do souboru aktuální stav cílového počítače: <xref:Microsoft.Quantum.Diagnostics.DumpMachine> a <xref:Microsoft.Quantum.Diagnostics.DumpRegister> . Vygenerovaný výstup každého z nich závisí na cílovém počítači.
 
 ### <a name="dumpmachine"></a>DumpMachine
 
-Plný stav simulátoru, který je distribuován jako součást vývojářské sady pro plnění, zapisuje do souboru [funkci Wave](https://en.wikipedia.org/wiki/Wave_function) celého systému pro základní hodnoty, jako jednorozměrné pole komplexních čísel, kde každý prvek představuje amplitudu pravděpodobnosti měření rozdílového stavu výpočtu $ \ket{n} $, kde $ \ket{n} = \ket{B_ {n-1}... b_1b_0} $ pro BITS $ \{ b_i \} $. Například na počítači, který má přiděleno pouze dvě qubits a ve stavu nestavení, je $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} , \end{align} $ $ Call <xref:microsoft.quantum.diagnostics.dumpmachine> generuje tento výstup:
+Plný stav simulátoru, který je distribuován jako součást vývojářské sady pro plnění, zapisuje do souboru [funkci Wave](https://en.wikipedia.org/wiki/Wave_function) celého systému pro základní hodnoty, jako jednorozměrné pole komplexních čísel, kde každý prvek představuje amplitudu pravděpodobnosti měření rozdílového stavu výpočtu $ \ket{n} $, kde $ \ket{n} = \ket{B_ {n-1}... b_1b_0} $ pro BITS $ \{ b_i \} $. Například na počítači, který má přiděleno pouze dvě qubits a ve stavu nestavení, je $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} , \end{align} $ $ Call <xref:Microsoft.Quantum.Diagnostics.DumpMachine> generuje tento výstup:
 
 ```
 # wave function for qubits with ids (least to most significant): 0;1
@@ -219,12 +219,12 @@ První řádek poskytuje komentář s ID odpovídající qubits v jejich význam
 Ostatní řádky popisují amplitudu pravděpodobnosti měření vektoru stavu $ \ket{n} $ v kartézském a polárních formátech. Podrobně pro první řádek:
 
 * **`∣0❭:`** Tento řádek odpovídá `0` průběžnému stavu výpočtu.
-* **`0.707107 +  0.000000 i`**: amplituda pravděpodobnosti ve formátu kartézském.
-* **` == `**: `equal` znaménko odděluje rovnocenné reprezentace.
-* **`**********  `**: Grafická reprezentace velikosti, počet `*` je úměrný pravděpodobnosti měření tohoto vektoru stavu.
-* **`[ 0.500000 ]`**: číselná hodnota velikosti
-* **`    ---`**: Grafická reprezentace fáze amplitudy (viz následující výstup).
-* **`[ 0.0000 rad ]`**: číselná hodnota fáze (v radiánech).
+* **`0.707107 +  0.000000 i`** : amplituda pravděpodobnosti ve formátu kartézském.
+* **` == `** : `equal` znaménko odděluje rovnocenné reprezentace.
+* **`**********  `** : Grafická reprezentace velikosti, počet `*` je úměrný pravděpodobnosti měření tohoto vektoru stavu.
+* **`[ 0.500000 ]`** : číselná hodnota velikosti
+* **`    ---`** : Grafická reprezentace fáze amplitudy (viz následující výstup).
+* **`[ 0.0000 rad ]`** : číselná hodnota fáze (v radiánech).
 
 Velikost i fáze se zobrazí s grafickým znázorněním. Reprezentace velikosti je přímá – předána: zobrazuje pruh, což je `*` větší pravděpodobnost, po který se ovládací panel zvětšuje. Pro tuto fázi zobrazíme následující symboly, které reprezentují úhel na základě rozsahů:
 
@@ -299,7 +299,7 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
 #### <a name="command-line--visual-studio-code"></a>[Příkazový řádek / Visual Studio Code](#tab/tabid-vscode)
 
   > [!TIP]
-  > ID qubit můžete vyhledat pomocí <xref:microsoft.quantum.intrinsic.message> funkce a předáním proměnné qubit ve zprávě, například:
+  > ID qubit můžete vyhledat pomocí <xref:Microsoft.Quantum.Intrinsic.Message> funkce a předáním proměnné qubit ve zprávě, například:
   >
   > ```qsharp
   > Message($"0={register2[0]}; 1={register2[1]}");
@@ -312,9 +312,9 @@ Následující příklady znázorňují `DumpMachine` některé běžné stavy:
   > To znamená, že qubit s indexem `0` na `register2` má ID = `3` , qubit s indexem `1` má ID = `2` .
 
 
-***
+**_
 
-Vzhledem k <xref:microsoft.quantum.diagnostics.dumpmachine> tomu, že je součástí  <xref:microsoft.quantum.diagnostics> oboru názvů, je nutné přidat `open` příkaz pro přístup k němu:
+Vzhledem k <xref:Microsoft.Quantum.Diagnostics.DumpMachine> tomu, že je součástí  <xref:Microsoft.Quantum.Diagnostics> oboru názvů, je nutné přidat `open` příkaz pro přístup k němu:
 
 ```qsharp
 namespace Samples {
@@ -333,17 +333,17 @@ namespace Samples {
 
 ### <a name="dumpregister"></a>DumpRegister
 
-<xref:microsoft.quantum.diagnostics.dumpregister> funguje jako <xref:microsoft.quantum.diagnostics.dumpmachine> , s tím rozdílem, že také přebírá pole qubits k omezení množství informací, které je relevantní pro odpovídající qubits.
+<xref:Microsoft.Quantum.Diagnostics.DumpRegister> funguje jako <xref:Microsoft.Quantum.Diagnostics.DumpMachine> , s tím rozdílem, že také přebírá pole qubits k omezení množství informací, které je relevantní pro odpovídající qubits.
 
-Stejně jako u <xref:microsoft.quantum.diagnostics.dumpmachine> jsou informace vygenerované nástrojem <xref:microsoft.quantum.diagnostics.dumpregister> závislé na cílovém počítači. Pro plný stav simulátoru, který zapisuje do souboru, zapíše funkce Wave do globální fáze podsystému, který vygenerovala poskytnutá qubits ve stejném formátu jako <xref:microsoft.quantum.diagnostics.dumpmachine> .  Například znovu se přihlaste k počítači jenom se dvěma qubits přidělenými a ve stavu neobsazenosti $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} \ket {2} {1} ) \otimes) {2} {0} , \end{align} $ $ volá se, <xref:microsoft.quantum.diagnostics.dumpregister> aby se `qubit[0]` vygeneroval tento výstup:
+Stejně jako u <xref:Microsoft.Quantum.Diagnostics.DumpMachine> jsou informace vygenerované nástrojem <xref:Microsoft.Quantum.Diagnostics.DumpRegister> závislé na cílovém počítači. Pro plný stav simulátoru, který zapisuje do souboru, zapíše funkce Wave do globální fáze podsystému, který vygenerovala poskytnutá qubits ve stejném formátu jako <xref:Microsoft.Quantum.Diagnostics.DumpMachine> .  Například znovu se přihlaste k počítači jenom se dvěma qubits přidělenými a ve stavu neobsazenosti $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} \ket {2} {1} ) \otimes) {2} {0} , \end{align} $ $ volá se, <xref:Microsoft.Quantum.Diagnostics.DumpRegister> aby se `qubit[0]` vygeneroval tento výstup:
 
 ```
 # wave function for qubits with ids (least to most significant): 0
-∣0❭:    -0.707107 + -0.707107 i  ==     ******************** [ 1.000000 ]  /      [ -2.35619 rad ]
+∣0❭:    -0.707107 + -0.707107 i  ==     _******************* [ 1.000000 ]  /      [ -2.35619 rad ]
 ∣1❭:     0.000000 +  0.000000 i  ==                          [ 0.000000 ]                   
 ```
 
-a voláním metody <xref:microsoft.quantum.diagnostics.dumpregister> `qubit[1]` generuje tento výstup:
+a voláním metody <xref:Microsoft.Quantum.Diagnostics.DumpRegister> `qubit[1]` generuje tento výstup:
 
 ```
 # wave function for qubits with ids (least to most significant): 1
@@ -351,13 +351,13 @@ a voláním metody <xref:microsoft.quantum.diagnostics.dumpregister> `qubit[1]` 
 ∣1❭:    -0.500000 + -0.500000 i  ==     ***********          [ 0.500000 ]  /      [ -2.35619 rad ]
 ```
 
-Obecně platí, že stav registru, který je entangled s jiným registrem, je smíšeným stavem, nikoli čistým stavem. V tomto případě <xref:microsoft.quantum.diagnostics.dumpregister> výstup zobrazí následující zprávu:
+Obecně platí, že stav registru, který je entangled s jiným registrem, je smíšeným stavem, nikoli čistým stavem. V tomto případě <xref:Microsoft.Quantum.Diagnostics.DumpRegister> výstup zobrazí následující zprávu:
 
 ```
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
-Následující příklad ukazuje, jak lze použít jak <xref:microsoft.quantum.diagnostics.dumpregister> a <xref:microsoft.quantum.diagnostics.dumpmachine> v Q# kódu:
+Následující příklad ukazuje, jak lze použít jak <xref:Microsoft.Quantum.Diagnostics.DumpRegister> a <xref:Microsoft.Quantum.Diagnostics.DumpMachine> v Q# kódu:
 
 ```qsharp
 namespace app

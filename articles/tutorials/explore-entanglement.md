@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 7a1a49e18ac9330ca6e3cc89b3e58c96eccb91db
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91492332"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691673"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Kurz: Zkoumání provázání s využitím Q\#
 
@@ -56,9 +56,9 @@ První věc, kterou je potřeba udělat, je vytvoření nového Q# projektu. V t
 
 Chcete-li vytvořit nový projekt, v VS Code: 
 
-1. Klikněte na **Zobrazení** -> **Paleta příkazů** a vyberte **Q#: Vytvořit nový projekt**.
-2. Klikněte na **Samostatná konzolová aplikace**.
-3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **Vytvořit projekt**.
+1. Klikněte na **Zobrazení** -> **Paleta příkazů** a vyberte **Q#: Vytvořit nový projekt** .
+2. Klikněte na **Samostatná konzolová aplikace** .
+3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **Vytvořit projekt** .
 4. Po úspěšném vytvoření projektu klikněte na **Otevřít nový projekt...** v pravém dolním rohu.
 
 V tomto případě jsme volali projekt `Bell` . Tím se vytvoří dva soubory: `Bell.csproj` , soubor projektu a `Program.qs` Šablona aplikace, kterou použijeme Q# k zápisu naší aplikace. Obsah `Program.qs` by měl být:
@@ -83,7 +83,7 @@ Naším cílem je připravit dva qubitsy v určitém stavu, který ukazuje, jak 
 
 ### <a name="initialize-qubit-using-measurement"></a>Inicializovat qubit pomocí měření
 
-V prvním fragmentu kódu níže ukazujeme, jak pracovat s qubits v Q# .  Zavádíme dvě operace [`M`](xref:microsoft.quantum.intrinsic.m) a [`X`](xref:microsoft.quantum.intrinsic.x) transformují stav qubit. V tomto fragmentu kódu je použita operace `SetQubitState`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `SetQubitState` provádí měření qubitu pomocí operace `M`.  V Q# je měření qubit vždy vrací buď `Zero` nebo `One` .  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, "převrátí `SetQubitState` " qubit; to znamená, že spustí `X` operaci, která změní stav qubit na nový stav, ve kterém pravděpodobnost vracení měření vrací `Zero` a `One` jsou obráceny. Tímto způsobem `SetQubitState` vždy umístí cílový qubit do požadovaného stavu.
+V prvním fragmentu kódu níže ukazujeme, jak pracovat s qubits v Q# .  Zavádíme dvě operace [`M`](xref:Microsoft.Quantum.Intrinsic.m) a [`X`](xref:Microsoft.Quantum.Intrinsic.X) transformují stav qubit. V tomto fragmentu kódu je použita operace `SetQubitState`, která přijímá jako parametr qubit a další parametr `desired` označující stav, do kterého chceme qubit převést.  Operace `SetQubitState` provádí měření qubitu pomocí operace `M`.  V Q# je měření qubit vždy vrací buď `Zero` nebo `One` .  Pokud měření vrátí hodnotu, která není rovna požadované hodnotě, "převrátí `SetQubitState` " qubit; to znamená, že spustí `X` operaci, která změní stav qubit na nový stav, ve kterém pravděpodobnost vracení měření vrací `Zero` a `One` jsou obráceny. Tímto způsobem `SetQubitState` vždy umístí cílový qubit do požadovaného stavu.
 
 Nahraďte obsah `Program.qs` následujícím kódem:
 
@@ -116,8 +116,8 @@ Návratový typ operace je určen za dvojtečkou. V takovém případě `SetQubi
 
 V první operaci jste použili dvě provozní operace Q# :
 
-* [`M`](xref:microsoft.quantum.intrinsic.m)Operace, která měří stav qubit
-* [`X`](xref:microsoft.quantum.intrinsic.x)Operace, která Překlopí stav qubit
+* [`M`](xref:Microsoft.Quantum.Intrinsic.m)Operace, která měří stav qubit
+* [`X`](xref:Microsoft.Quantum.Intrinsic.X)Operace, která Překlopí stav qubit
 
 Kvantová operace mění stav qubitu. Někdy se mluví o kvantových hradlech místo kvantových operacích, je totiž možná i analogie s klasickými logickými hradly. Tento koncept pochází z raných dob kvantových výpočtů, kdy byly algoritmy jen teoretické konstrukce a vizualizovaly se ve formě schémat odpovídacích obvodovým schématům klasických počítačů.
 
@@ -300,7 +300,7 @@ To se označuje jako **superpozice** a je to naše první seznámení s kvantov�
 ## <a name="prepare-entanglement"></a>Příprava provázání
 
 Teď se podíváme na Q# to, jak vyjádřit možnosti entangle qubits.
-Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před měřením prvního qubit používáme novou operaci ( `CNOT` ), která se zaznamená pro kontrolu *ne*.  Výsledkem spuštění této operace na dvou qubits je překlopení druhé qubit, pokud je první qubit `One` .  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
+Nejdřív uvedeme první qubit do počátečního stavu a pak ho pomocí operace `H` převedeme do superpozice.  Pak před měřením prvního qubit používáme novou operaci ( `CNOT` ), která se zaznamená pro kontrolu *ne* .  Výsledkem spuštění této operace na dvou qubits je překlopení druhé qubit, pokud je první qubit `One` .  Nyní máme dva provázané qubity.  Statistika prvního qubitu se nezměnila (stále šance 50-50, že měřením získáme `Zero` nebo `One`), ale když teď změříme stav druhého qubitu, bude __vždy__ stejný jako stav naměřený u toho prvního. Operace `CNOT` provázala oba qubity, takže cokoli se stane jednomu, stane se i druhému. Když pořadí měření otočíme (změříme nejprve druhý a pak první qubit), dostaneme úplně stejný výsledek. První měření bude náhodné, ale druhé bude přesně kopírovat výsledek toho prvního.
 
 První věc, kterou je potřeba udělat, je přidělit dvě qubits místo jedné v `TestBellState` :
 

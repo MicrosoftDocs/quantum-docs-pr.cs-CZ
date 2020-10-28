@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.katas
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 097d7f70088b6ee84a1e91ee99be59149dd9e15b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 6b2eff2a457b809bd168b9b59ab013b7fc7541e6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834818"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691646"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Učte se provádět kvantové výpočty s kvantovými katami
 
@@ -48,14 +48,14 @@ Seznamte se se základními a základními informacemi o výpočetním prostřed
 |[Vícequbitové systémy](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/MultiQubitSystems)|Tento kurz zavádí qubit systémy, jejich reprezentace v matematickém zápisu a v Q# kódu a koncept entanglement.|
 |[Qubitch procesorů pro více procesorů](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/MultiQubitGates)|Tento kurz se řídí kurzem qubit pro každý [procesor](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/SingleQubitGates) a zaměřuje se na použití bran na více procesorech k qubit systémům.|
 
-### <a name="quantum-computing-fundamentals"></a>Základní kvantových výpočtů
+### <a name="quantum-computing-fundamentals"></a>Základy kvantových výpočtů
 
 | Kata | Popis |
 |:-----|-------------|
 |[Rozlišování kvantových hradel](https://github.com/microsoft/QuantumKatas/tree/main/BasicGates)|Série cvičení navržených tak, aby se seznámili se základními branami pro plnění Q# . Zahrnuje cvičení pro základní qubit a multi-qubit brány, sousední a řízené brány a použití bran pro úpravu stavu qubit.|
 |[Vytváření kvantové superpozice](https://github.com/microsoft/QuantumKatas/tree/main/Superposition)|Pomocí těchto cvičení seznámení s konceptem základní pozice a programování v nástroji Q# . Zahrnuje cvičení pro základní qubit a multi-qubit brány, nadpozice a řízení toku a rekurze v Q# .|
 |[Rozlišování kvantových stavů pomocí měření](https://github.com/microsoft/QuantumKatas/tree/main/Measurements)|Tyto cvičení vyřešte při učení o měřeních a kolmých a nekolmých státech. |
-|[Spojená měření](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Přečtěte si o společných měřeních parity a o tom, jak použít operaci [měření](xref:microsoft.quantum.intrinsic.measure) k odlišení stavových stavů.|
+|[Spojená měření](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Přečtěte si o společných měřeních parity a o tom, jak použít operaci [měření](xref:Microsoft.Quantum.Intrinsic.Measure) k odlišení stavových stavů.|
 
 ### <a name="algorithms"></a>Algoritmy
 

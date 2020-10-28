@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: eca37202e5fe9b48dcfdec4eeb4ba6cafaac8723
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833517"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691086"
 ---
 # <a name="control-flow-in-no-locq"></a>Tok řízení v Q#
 
@@ -38,10 +38,10 @@ Skládá se z klíčového slova `if` , logického výrazu v závorkách a bloku
 Volitelně může následovat libovolný počet klauzulí else-if, z nichž každá se skládá z klíčového slova `elif` , logického výrazu v závorkách a bloku příkazu (blok _else-if_ ).
 Nakonec příkaz může volitelně končit klauzulí else, která se skládá z klíčového slova `else` následovaného jiným blokem příkazu (blok _Else_ ).
 
-`if`Podmínka je vyhodnocena a je-li nastavena na *hodnotu true*, je spuštěn blok *a* .
-Pokud je podmínka *NEPRAVDA*, vyhodnotí se první podmínka else if; Pokud je to pravda, pak je spuštěn blok *else-if* .
+`if`Podmínka je vyhodnocena a je-li nastavena na *hodnotu true* , je spuštěn blok *a* .
+Pokud je podmínka *NEPRAVDA* , vyhodnotí se první podmínka else if; Pokud je to pravda, pak je spuštěn blok *else-if* .
 V opačném případě se druhý blok else-if vyhodnocuje a pak třetí a tak dále, dokud není nalezena klauzule s podmínkou true nebo pokud nejsou k dispozici další klauzule else-if.
-Pokud je původní podmínka *if* a všechny klauzule else-if vyhodnoceny jako *false*, je spuštěn blok *Else* , pokud je k dispozici.
+Pokud je původní podmínka *if* a všechny klauzule else-if vyhodnoceny jako *false* , je spuštěn blok *Else* , pokud je k dispozici.
 
 Všimněte si, že všechny spuštěné bloky se spustí v rámci svého vlastního oboru.
 Vazby provedené v `if` `elif` bloku, nebo nejsou `else` po ukončení bloku viditelné.
@@ -129,7 +129,7 @@ kde `expression` je libovolný platný výraz, který je vyhodnocen jako hodnota
 Tělo smyčky se spustí a podmínka se vyhodnotí.
 Pokud je podmínka pravdivá, je příkaz dokončen; v opačném případě se oprava spustí a příkaz se spustí znovu, počínaje textem smyčky.
 
-Všechny tři části smyčky ru (tělo, test a oprava) se považují za jeden obor *pro každé opakování*, takže symboly, které jsou svázané s textem, jsou k dispozici v testu i v opravě.
+Všechny tři části smyčky ru (tělo, test a oprava) se považují za jeden obor *pro každé opakování* , takže symboly, které jsou svázané s textem, jsou k dispozici v testu i v opravě.
 Nicméně dokončení spuštění opravy ukončí rozsah příkazu, takže vazby symbolů provedené během těla nebo opravy nejsou k dispozici v následných opakováních.
 
 Kromě toho `fixup` je příkaz často užitečný, ale není vždy nezbytný.
@@ -324,7 +324,7 @@ Mezi významné programové funkce uvedené v této operaci patří:
 * Složitější `fixup` součást smyčky, která zahrnuje operace po částech. 
 * Použití `AssertMeasurementProbability` příkazů k zjištění pravděpodobnosti měření stavu v určitém počtu bodů v programu.
 
-Další informace o [`AssertMeasurement`](xref:microsoft.quantum.diagnostics.assertmeasurement) [`AssertMeasurementProbability`](xref:microsoft.quantum.diagnostics.assertmeasurementprobability) operacích a naleznete v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
+Další informace o [`AssertMeasurement`](xref:Microsoft.Quantum.Diagnostics.assertmeasurement) [`AssertMeasurementProbability`](xref:Microsoft.Quantum.Diagnostics.assertmeasurementprobability) operacích a naleznete v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
 
 ```qsharp
 operation PrepareStateUsingRUS(target : Qubit) : Unit {

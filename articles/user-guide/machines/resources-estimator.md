@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6138c098a4efe2797c7d7360573ddcb9cb70a6c1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e1ec01d85a141b9c8a7a5ba5589663a0773520e7
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835923"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691866"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
@@ -127,16 +127,43 @@ Prostředky Estimator sledují následující metriky:
 |----|----|
 |__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
 |__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
-|__Míra__    |Počet spuštění všech měření.  |
+|__Measure__    |Počet spuštění všech měření.  |
 |__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
 |__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
-|__Úrovní__|Dolní mez pro hloubku okruhu provozu, kterou Q# operace spouští. Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Délk__    |Dolní mez pro maximální počet qubits přidělených během běhu Q# operace. Možná nebude možné dosáhnout současně __hloubkové__ a __šířky__ dolní meze.  |
+|__Úrovní__|Hloubka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Délk__|Šířka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__QubitCount__    |Dolní mez pro maximální počet qubits přidělených během běhu Q# operace. Tato metrika nemusí být kompatibilní s __hloubkou__ (viz níže).  |
 |__BorrowedWidth__    |Maximální počet qubits, které byly v rámci operace vypůjčeny Q# .  |
+
+
+## <a name="depth-width-and-qubitcount"></a>Hloubka, Šířka a QubitCount
+
+Vykázaný odhad hloubky a šířky jsou vzájemně kompatibilní.
+(Dřív bylo možné dosáhnout obou čísel, ale pro hloubku a šířku se vyžadovaly různé okruhy.) V současné době je možné obě metriky v této dvojici dosáhnout stejným okruhem.
+
+Nahlásí se následující metriky:
+
+__Hloubka:__ Pro kořenovou operaci – čas potřebný ke spuštění předpokládá konkrétní dobu brány.
+Pro operace nazvané nebo následné operace – rozdíl mezi nejnovější qubitou dostupnosti na začátku a koncem operace.
+
+__Šířka:__ Pro kořenovou operaci – počet qubits, které se skutečně používají ke spuštění (a operace, kterou volá).
+Pro operace nazvané nebo následné operace – kolik dalších qubits bylo použito pro qubits, které již bylo na začátku operace použito.
+
+Upozorňujeme, že znovu použitý qubits nepřispívá k tomuto číslu.
+To znamená, že pokud před zahájením operace A zadáte několik qubits, a všechny qubit vyžádané touto operací a (a operace volané z A) byly splněné znovu pomocí dříve vydaných verzí qubits, Šířka operace A je hlášena jako 0. Úspěšně se vypůjčila qubits, která nepřispívá k šířce.
+
+__QubitCount:__ Pro kořenovou operaci – minimální počet qubits, který by byl dostatečný pro provedení této operace (a operací, které se z něho volaly).
+Pro operace, které volaly nebo následné operace – minimální počet qubits, který by byl dostatečný pro provedení této operace samostatně. Toto číslo nezahrnuje vstupní qubits. Zahrnuje vypůjčené qubits.
+
+Podporují se dva režimy provozu. Režim je vybrán nastavením QCTraceSimulatorConfiguration. OptimizeDepth.
+
+__OptimizeDepth = true:__ QubitManager se nedoporučuje používat k opakovanému použití qubit a přiděluje nové qubit pokaždé, když se výzva k qubit. __Hloubka__ kořenové operace se změní na minimální hloubku (s nižší mezí). Pro tuto hloubku je uvedena kompatibilní __Šířka__ (je možné dosáhnout současně). Všimněte si, že tato šířka pravděpodobně nebude optimální vzhledem k této hloubce. __QubitCount__ může být pro kořenovou operaci nižší než šířka, protože předpokládá opakované použití.
+
+__OptimizeDepth = false:__ QubitManager se doporučuje znovu použít qubits a pak znovu použít vydaný qubits před přidělením nových. __Šířka__ kořenové operace se změní na minimální šířku (s nižší mezí). Je hlášena kompatibilní __Hloubka__ , na které je možné dosáhnout. __QubitCount__ bude stejná jako __Šířka__ pro kořenovou operaci, při které se nepředpokládá žádné výpůjčky.
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
 
-Můžete použít <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> z <xref:microsoft.quantum.diagnostics> oboru názvů k poskytnutí informací o očekávané pravděpodobnosti operace měření. Další informace najdete v části [simulátor trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+Můžete použít <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> z <xref:Microsoft.Quantum.Diagnostics> oboru názvů k poskytnutí informací o očekávané pravděpodobnosti operace měření. Další informace najdete v části [simulátor trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
 ## <a name="see-also"></a>Viz také
 

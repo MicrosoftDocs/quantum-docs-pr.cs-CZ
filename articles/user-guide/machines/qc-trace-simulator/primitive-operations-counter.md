@@ -9,22 +9,22 @@ uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8ee9ce25e680112e2f3c68d82ae9267c1b0fb355
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: bf75eb94696a489a587316928bc3f33baa4a1785
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835974"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690949"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Simulátor trasování doby provozu: čítač primitivních operací
 
 Čítač primitivních operací je součástí nástroje pro vývoj provozu po částech [.](xref:microsoft.quantum.machines.qc-trace-simulator.intro) Počítá počet primitivních procesů používaných všemi operacemi vyvolanými v programu pro práci s více procesory. 
 
-Všechny <xref:microsoft.quantum.intrinsic> operace se vyjadřují v souvislosti s qubit otočeními, T operacemi, qubitmi Clifford operacemi, operacemi CNOT a měřeními multi-qubit Pauli observables. Čítač primitivních operací agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
+Všechny <xref:Microsoft.Quantum.Intrinsic> operace se vyjadřují v souvislosti s qubit otočeními, T operacemi, qubitmi Clifford operacemi, operacemi CNOT a měřeními multi-qubit Pauli observables. Čítač primitivních operací agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
 
 ## <a name="invoking-the-primitive-operation-counter"></a>Vyvolání čítače primitivní operace
 
-Chcete-li spustit simulátor trasování doby provozu pomocí čítače primitivních operací, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UsePrimitiveOperationsCounter` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem jako.
+Chcete-li spustit simulátor trasování doby provozu pomocí čítače primitivních operací, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UsePrimitiveOperationsCounter` vlastnost na **hodnotu true** a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem jako.
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -34,7 +34,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-primitive-operation-counter-in-a-c-host-program"></a>Použití čítače primitivních operací v hostitelském programu C#
 
-Příklad jazyka C#, který následuje v této části, počítá <xref:microsoft.quantum.intrinsic.t> , kolik operací je potřeba k implementaci <xref:microsoft.quantum.intrinsic.ccnot> operace, na základě následujícího Q# ukázkového kódu:
+Příklad jazyka C#, který následuje v této části, počítá <xref:Microsoft.Quantum.Intrinsic.T> , kolik operací je potřeba k implementaci <xref:Microsoft.Quantum.Intrinsic.ccnot> operace, na základě následujícího Q# ukázkového kódu:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

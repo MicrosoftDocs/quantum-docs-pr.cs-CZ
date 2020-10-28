@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 05506f4099de754cd02d81fbd9200f2de091e37e
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 81fba0c52c854d61f9143659795fb4d3c3cee8b9
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759728"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691532"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Získání odhadů energetické úrovně
 Odhad hodnot úrovně energie je jednou z hlavních aplikací chemického pole. Tento článek popisuje, jak to můžete udělat pro Kanonický příklad molekulové vodíkové podsystému. Ukázka, na kterou se odkazuje v této části, je [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) v úložišti vzorků chemie. Ukázková ukázka, který vykresluje výstup, je [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) ukázkou.
@@ -44,7 +44,7 @@ Prvním krokem je vytvoření Hamiltonian představující molekulovou vodíkovo
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-Simulace Hamiltonian vyžaduje převod operátorů fermion na qubit operátory. Tento převod se provádí pomocí kódování Jordánska-Wigner následujícím způsobem:
+Simulace Hamiltonian vyžaduje převod operátorů fermion na qubit operátory. Tento převod se provádí pomocí kódování Jordan-Wigner následujícím způsobem:
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -83,7 +83,7 @@ let integratorOrder = 4;
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-V tuto chvíli můžete použít [algoritmy odhadu fáze](xref:microsoft.quantum.libraries.characterization) standardní knihovny k získání informací o energii stavu pomocí předchozí simulace. K tomu je potřeba připravit dobrý odhad stavu stavového provozu. Návrhy těchto sblížení jsou uvedeny ve [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schématu. Ale tyto návrhy neexistují, ale výchozí přístup přičítá `hamiltonian.NElectrons` Electrons k greedily minimalizaci diagonálního krátkodobého termínu Energies. Funkce odhadu fáze a operace jsou k dispozici v zápisu DocFX v oboru názvů [Microsoft.](xref:microsoft.quantum.characterization) probíhají.
+V tuto chvíli můžete použít [algoritmy odhadu fáze](xref:microsoft.quantum.libraries.characterization) standardní knihovny k získání informací o energii stavu pomocí předchozí simulace. K tomu je potřeba připravit dobrý odhad stavu stavového provozu. Návrhy těchto sblížení jsou uvedeny ve [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schématu. Ale tyto návrhy neexistují, ale výchozí přístup přičítá `hamiltonian.NElectrons` Electrons k greedily minimalizaci diagonálního krátkodobého termínu Energies. Funkce odhadu fáze a operace jsou k dispozici v zápisu DocFX v oboru názvů [Microsoft.](xref:Microsoft.Quantum.Characterization) probíhají.
 
 Následující fragment kódu ukazuje, jak se výstup vývoje v reálném čase integrací knihovny pro simulaci chemického zpracování do fází odhaduje.
 

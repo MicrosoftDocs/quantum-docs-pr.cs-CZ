@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.types
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c4a3e6563b8cabee87d1db6b9cb1c1f1c1a7131b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 349138984387cc564cca18ea09c7bf161524b0b6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835821"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691608"
 ---
 # <a name="types-in-no-locq"></a>Typy v Q#
 
@@ -22,7 +22,7 @@ Tento článek popisuje Q# typ modelu a syntaxi pro zadání a práci s typy. Po
 
 Upozorňujeme, že Q# se jedná o jazyk se *silnými* typy, který pečlivým použitím těchto typů může přispět k tomu, aby kompilátor poskytoval silné záruky na Q# programy v době kompilace.
 Aby bylo možné zajistit nejpřísnější záruky, převody mezi typy v Q# nástroji musí být explicitní pomocí volání funkcí, které tento převod vyjadřují. 
-Q# poskytuje celou řadu takových funkcí jako součást <xref:microsoft.quantum.convert> oboru názvů.
+Q# poskytuje celou řadu takových funkcí jako součást <xref:Microsoft.Quantum.Convert> oboru názvů.
 Přetypování na kompatibilní typy se na druhé straně provede implicitně. 
 
 Q# poskytuje oba primitivní typy, které se používají přímo, a různé způsoby, jak vytvořit nové typy z jiných typů.
@@ -30,7 +30,7 @@ Každý ve zbývající části tohoto článku popisujeme.
 
 ## <a name="primitive-types"></a>Primitivní typy
 
-Q#Jazyk poskytuje následující *primitivní typy*, které lze použít přímo v Q# programu. Tyto primitivní typy lze také použít k vytvoření nových typů.
+Q#Jazyk poskytuje následující *primitivní typy* , které lze použít přímo v Q# programu. Tyto primitivní typy lze také použít k vytvoření nových typů.
 
 - `Int`Typ představuje 64 celé číslo se znaménkem, například `2` ,, `107` `-5` .
 - `BigInt`Typ představuje celé číslo se znaménkem libovolné velikosti, například,, `2L` `107L` `-5L` .
@@ -126,10 +126,10 @@ Například `(7)` je výraz typu `Int` , `([1,2,3])` je výraz typu `Int[]` a `(
 
 Konkrétně to znamená, že můžete zobrazit operaci nebo funkci, jejíž typ řazené kolekce členů nebo výstupní řazené kolekce členů má jedno pole jako přebírání jednoho argumentu nebo vrácení jedné hodnoty.
 
-Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singleton_.
+Tato vlastnost odkazuje jako na _rovnost v řazené kolekci členů typu Singleton_ .
 
 
-## <a name="user-defined-types"></a>Uživatelsky definované typy
+## <a name="user-defined-types"></a>Typy User-Defined
 
 Uživatelsky definovaná deklarace typu se skládá z klíčového slova `newtype` , následované názvem uživatelsky definovaného typu, a `=` platnou specifikací typu a ukončující středník.
 
@@ -259,8 +259,8 @@ Obecně platí, že uživatelsky definované typy nemůžou mít cyklicky závis
 
 Zadané typy `'Tinput` a `'Tresult` :
 
-* `('Tinput => 'Tresult)` je základní typ pro každou *operaci*, například `((Qubit, Pauli) => Result)` .
-* `('Tinput -> 'Tresult)` je základní typ pro libovolnou *funkci*, například `(Int -> Int)` . 
+* `('Tinput => 'Tresult)` je základní typ pro každou *operaci* , například `((Qubit, Pauli) => Result)` .
+* `('Tinput -> 'Tresult)` je základní typ pro libovolnou *funkci* , například `(Int -> Int)` . 
 
 Nazývají se *signatury* , které lze volat.
 
@@ -282,13 +282,13 @@ Například pokud spuštění operace spoléhá na stav jiného qubits, pak by m
 Chcete-li `Controlled` v typu operace vyžadovat podporu pro a/nebo `Adjoint` funktor, je nutné přidat poznámku indikující odpovídající vlastnosti.
 Poznámka `is Ctl` (například `(Qubit => Unit is Ctl)` ) indikuje, že operace je ovladatelné. To znamená, že jeho spuštění spoléhá na stav jiného qubit nebo qubits. Podobně Poznámka `is Adj` znamená, že operace má sousední, to znamená, že se může jednat o "Inverted", který po sobě provede operaci, a pak její sousední vztah do stavu opustí stav beze změny. 
 
-Pokud chcete vyžadovat, aby operace tohoto typu podporovala i `Adjoint` `Controlled` funktor, můžete to vyjádřit jako `(Qubit => Unit is Adj + Ctl)` . Například integrovaná <xref:microsoft.quantum.intrinsic.x> operace Pauli je typu `(Qubit => Unit is Adj + Ctl)` . 
+Pokud chcete vyžadovat, aby operace tohoto typu podporovala i `Adjoint` `Controlled` funktor, můžete to vyjádřit jako `(Qubit => Unit is Adj + Ctl)` . Například integrovaná <xref:Microsoft.Quantum.Intrinsic.X> operace Pauli je typu `(Qubit => Unit is Adj + Ctl)` . 
 
 Typ operace, který nepodporuje žádné funktory, je určen samotným typem vstupu a výstupu bez další poznámky.
 
-### <a name="type-parameterized-functions-and-operations"></a>Typ – parametrizované funkce a operace
+### <a name="type-parameterized-functions-and-operations"></a>Type-Parameterized funkce a operace
 
-Typy, které lze volat, mohou obsahovat *parametry typu*.
+Typy, které lze volat, mohou obsahovat *parametry typu* .
 Použijte symbol, který je předponou jednoduché uvozovky k označení parametru typu; Například je platným `'A` parametrem typu.
 Další informace a podrobnosti o tom, jak definovat typ-parametrizované volat, naleznete [v tématu Operations and Q# Functions in ](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables).
 

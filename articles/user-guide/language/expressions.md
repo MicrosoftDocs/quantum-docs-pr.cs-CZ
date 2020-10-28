@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.expressions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9bf28e3854eae1892692d7ca840e1860de2e2934
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e95a7cb9b74136ef9a6f51b4bbc32d1d93c43a0d
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835838"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691600"
 ---
 # <a name="expressions-in-no-locq"></a>Výrazy v Q#
 
@@ -40,7 +40,7 @@ let bigOne = bigZero + 1L;
 Je možné je zapsat s desetinnou čárkou nebo bez nich, `.` nebo exponenciální částí označenou písmenem "e" nebo "e" (po které jsou platné pouze možné záporné znaménko a desítkové číslice).
 Níže jsou uvedené platné `Double` literály: `0.0` , `1.2e5` , `1e-5` .
 
-Vzhledem k výrazu pole libovolného typu elementu můžete vytvořit `Int` výraz pomocí [`Length`](xref:microsoft.quantum.core.length) předdefinované funkce a výraz pole uzavřený v závorkách.
+Vzhledem k výrazu pole libovolného typu elementu můžete vytvořit `Int` výraz pomocí [`Length`](xref:Microsoft.Quantum.Core.Length) předdefinované funkce a výraz pole uzavřený v závorkách.
 Například pokud `a` je svázána s polem, pak `Length(a)` je celočíselný výraz.
 Pokud `b` je pole polí celých čísel, `Int[][]` , pak `Length(b)` je počet dílčích polí v a `b` `Length(b[1])` je počet celých čísel ve druhém dílčím poli v `b` .
 
@@ -111,7 +111,7 @@ S ohledem na logický výraz `not` může být unární operátor použit k vytv
 
 ## <a name="string-expressions"></a>Řetězcové výrazy
 
-Q# povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:microsoft.quantum.intrinsic.message) funkci Standard. Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během Q# programu.
+Q# povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkci Standard. Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během Q# programu.
 
 Řetězce v Q# jsou buď literály, nebo interpolované řetězce.
 
@@ -128,7 +128,7 @@ Q#Syntaxe pro řetězcové interpolace je podmnožinou syntaxe jazyka C#. Níže
 
 * Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho `$` symbolem. Mezi znakem `$` a `"` , který začíná řetězcovým literálem, nesmí být mezera.
 
-* Následuje základní příklad použití [`Message`](xref:microsoft.quantum.intrinsic.message) funkce pro zápis výsledku měření do konzoly spolu s ostatními Q# výrazy.
+* Následuje základní příklad použití [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkce pro zápis výsledku měření do konzoly spolu s ostatními Q# výrazy.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -189,7 +189,7 @@ Například `(1, One)` je `(Int, Result)` výraz.
 
 Kromě literálů jsou jedinými výrazy řazené kolekce členů symboly, které jsou vázány na hodnoty řazené kolekce členů, prvky pole řazené kolekce členů a volání, která vrací řazené kolekce členů.
 
-## <a name="user-defined-type-expressions"></a>Výrazy uživatelsky definovaného typu
+## <a name="user-defined-type-expressions"></a>Výrazy typu User-Defined
 
 Literál uživatelsky definovaného typu se skládá z názvu typu následovaného literálem řazené kolekce členů základního typu řazené kolekce členů typu.
 Například pokud `IntPair` je uživatelem definovaný typ založený na `(Int, Int)` , pak `IntPair(2, 3)` je platný literál tohoto typu.
@@ -237,7 +237,7 @@ Ve většině případů se jedná o určitou variaci nula.
 
 Pro qubits a volat, které jsou odkazy na entity, neexistuje přiměřená výchozí hodnota.
 Proto pro tyto typy je výchozí hodnota neplatný odkaz, který nelze použít, aniž by došlo k chybě za běhu, podobně jako odkaz s hodnotou null v jazycích, jako je C# nebo Java.
-Pole obsahující qubits nebo volat musí být inicializována s jinými než výchozími hodnotami, aby bylo možné jejich prvky bezpečně použít. Vhodné inicializační rutiny naleznete v tématu <xref:microsoft.quantum.arrays> .
+Pole obsahující qubits nebo volat musí být inicializována s jinými než výchozími hodnotami, aby bylo možné jejich prvky bezpečně použít. Vhodné inicializační rutiny naleznete v tématu <xref:Microsoft.Quantum.Arrays> .
 
 Výchozí hodnoty pro každý typ jsou:
 

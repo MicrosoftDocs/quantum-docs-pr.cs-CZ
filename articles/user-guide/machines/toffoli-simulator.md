@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.toffoli-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 82882f01d1b5c036faee71f18a18b2595107ddb7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 036896a33fa02db671a5fd07421160df164bd41d
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835906"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690783"
 ---
 # <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Simulátor QDK (Toffoliing Development Kit)
 
@@ -67,7 +67,7 @@ Q#Spusťte operaci pomocí příkazu I Magic [% Toffoli](xref:microsoft.quantum.
 Simulátor Toffoli podporuje:
 
 * Rotace a exponentiated Pauls, například `R` a `Exp` , když se výsledná operace rovná `X` nebo matice identity.
-* Operace měření a [vyhodnocení](xref:microsoft.quantum.diagnostics.assertmeasurement) , ale pouze v Pauli `Z` . Všimněte si, že pravděpodobnost operace měření je vždy **rovna 0** nebo **1**. simulátor Toffoli neobsahuje náhodnost.
+* Operace měření a [vyhodnocení](xref:Microsoft.Quantum.Diagnostics.AssertMeasurement) , ale pouze v Pauli `Z` . Všimněte si, že pravděpodobnost operace měření je vždy **rovna 0** nebo **1** . simulátor Toffoli neobsahuje náhodnost.
 * `DumpMachine` a `DumpRegister` funkce.
 Obě funkce výstupují aktuální `Z` stav jednotlivých qubit, jeden qubit na řádek.
 

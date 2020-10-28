@@ -107,7 +107,7 @@ Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavov�
 
 ## <a name="clifford-group"></a>Skupina Clifford
 
-Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek, se projeví u [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Mezi ně patří operace [ $ X $ ](xref:microsoft.quantum.intrinsic.x), [ $ Y $ ](xref:microsoft.quantum.intrinsic.y), [ $ Z $ ](xref:microsoft.quantum.intrinsic.z), [ $ H $ ](xref:microsoft.quantum.intrinsic.h) a [ $ S $ ](xref:microsoft.quantum.intrinsic.s).
+Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.glossary#bloch-sphere) a účinek, se projeví u [operátorů Pauli](xref:microsoft.quantum.glossary#pauli-operators). Mezi ně patří operace [ $ X $ ](xref:Microsoft.Quantum.Intrinsic.X), [ $ Y $ ](xref:Microsoft.Quantum.Intrinsic.Y), [ $ Z $ ](xref:Microsoft.Quantum.Intrinsic.Z), [ $ H $ ](xref:Microsoft.Quantum.Intrinsic.H) a [ $ S $ ](xref:Microsoft.Quantum.Intrinsic.S).
 
 ## <a name="controlled"></a>Kontrol
 
@@ -137,7 +137,7 @@ Jedno ze čtyř specifických entangledch [stavových stavů](xref:microsoft.qua
 
 Jak se v průběhu času mění [stav](xref:microsoft.quantum.glossary#quantum-state) u. Další informace najdete v tématu [exponenciální matice](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
-## <a name="function"></a>Funkce
+## <a name="function"></a>Function
 Typ subrutiny v Q# jazyce, který je čistě klasický (nestránkovaného). I když jsou funkce používány v rámci algoritmů doby provozu, nemohou působit na [operace](xref:microsoft.quantum.glossary#operation) [qubits](xref:microsoft.quantum.glossary#qubit) nebo volání. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="gate"></a>OTP
@@ -150,7 +150,7 @@ Pokud jsou dva [stavy](xref:microsoft.quantum.glossary#quantum-state) identické
 
 ## <a name="hadamard"></a>Hadamard
 
-Operace Hadamard (také označovaná jako Hadamard nebo transformační) funguje na jednom [qubit](xref:microsoft.quantum.glossary#qubit) a umístí ji do sudé [pozice](xref:microsoft.quantum.glossary#superposition) $ \ket { 0 } $ nebo $ \ket { 1, } $ Pokud je qubit zpočátku ve $ \ket { } $ stavu 0. V nástroji Q# Tato operace používá předdefinovanou [`H`](xref:microsoft.quantum.intrinsic.h) operaci.
+Operace Hadamard (také označovaná jako Hadamard nebo transformační) funguje na jednom [qubit](xref:microsoft.quantum.glossary#qubit) a umístí ji do sudé [pozice](xref:microsoft.quantum.glossary#superposition) $ \ket { 0 } $ nebo $ \ket { 1, } $ Pokud je qubit zpočátku ve $ \ket { } $ stavu 0. V nástroji Q# Tato operace používá předdefinovanou [`H`](xref:Microsoft.Quantum.Intrinsic.H) operaci.
 
 ## <a name="immutable"></a>Neměnné
 
@@ -182,11 +182,11 @@ Podprogram, který poskytuje informace závislé na datech pro algoritmus v dob�
 
 ## <a name="partial-application"></a>Částečná aplikace
 
-Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. Tím se vrátí nový, který lze [volat](xref:microsoft.quantum.glossary#callable) , který potřebuje k zadání chybějících parametrů (označených podtržítkem), aby byl dodán v budoucí aplikaci. Například vzhledem k tomu, že se funkce `MyFunc(x : int, y : int) : int {return x + y;}` dá částečně použít pro novou funkci `let NewFunc = MyFunc(_, 3)` . Novou funkci můžete zavolat později s chybějícím parametrem, `NewFunc(2)` který vrátí hodnotu *5*.  Další informace naleznete v [části částečná aplikace](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
+Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. Tím se vrátí nový, který lze [volat](xref:microsoft.quantum.glossary#callable) , který potřebuje k zadání chybějících parametrů (označených podtržítkem), aby byl dodán v budoucí aplikaci. Například vzhledem k tomu, že se funkce `MyFunc(x : int, y : int) : int {return x + y;}` dá částečně použít pro novou funkci `let NewFunc = MyFunc(_, 3)` . Novou funkci můžete zavolat později s chybějícím parametrem, `NewFunc(2)` který vrátí hodnotu *5* .  Další informace naleznete v [části částečná aplikace](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
 
 ## <a name="pauli-operators"></a>Pauli operátory
 
-Množina tří matic 2 × 2 matice, které se označují `X` jako `Y` a `Z` operace. $ $ V sadě je často obsažena i matice identity.  $= \begin{bmatrix} 1 & 0 0 \\\\ & \end{bmatrix} $ , $ X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} $ , $ Y = \begin{bmatrix} 0 & -i \\\\ i & 0 \end{bmatrix} $ , $ Z = \begin{bmatrix} 1 & 0 \\\\ 0 & -1 \end{bmatrix} $ .   Další informace najdete v tématu [operace s jedním qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
+Sada 3 2 × 2 maticových matricí, které se označují jako `X` `Y` a `Z` operace. $ $ V sadě je často obsažena i matice identity.  $= \begin{bmatrix} 1 & 0 0 \\\\ & \end{bmatrix} $ , $ X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} $ , $ Y = \begin{bmatrix} 0 & -i \\\\ i & 0 \end{bmatrix} $ , $ Z = \begin{bmatrix} 1 & 0 \\\\ 0 & -1 \end{bmatrix} $ .   Další informace najdete v tématu [operace s jedním qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
 ## <a name="quantum-circuit-diagram"></a>Diagram okruhu doby
 

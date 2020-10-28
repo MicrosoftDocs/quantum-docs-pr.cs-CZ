@@ -9,14 +9,14 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1cfef50cf2bbecd2043972a662edd8120c5570ec
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: ad107f5c65a4bf368d12d30e4a72786f2076205c
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835617"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690867"
 ---
-# <a name="higher-order-control-flow"></a>Tok řízení vyššího řádu #
+# <a name="higher-order-control-flow"></a>Tok řízení Higher-Order #
 
 Jednou z primárních rolí standardní knihovny je usnadnit rychlé vyjádření vysoce kvalitních nápadů, jako jsou [programy](https://en.wikipedia.org/wiki/Quantum_programming)v počtu procesorů.
 Proto Q# Canon poskytuje celou řadu různých konstrukcí řízení toku, z nichž každý je implementován pomocí částečného použití funkcí a operací.
@@ -38,7 +38,7 @@ for (idxQubit in 0..nQubits - 2) {
 }
 ```
 
-Tato funkce je vyjádřená v souvislosti s <xref:microsoft.quantum.canon.applytoeachca> funkcemi manipulace a polem, jako je <xref:microsoft.quantum.arrays.zip> to však mnohem kratší a snazší je přečíst:
+Tato funkce je vyjádřená v souvislosti s <xref:Microsoft.Quantum.Canon.ApplyToEachCA> funkcemi manipulace a polem, jako je <xref:Microsoft.Quantum.Arrays.Zipped> to však mnohem kratší a snazší je přečíst:
 
 ```qsharp
 ApplyToEachCA(CNOT, Zip(register[0..nQubits - 2], register[1..nQubits - 1]));
@@ -50,7 +50,7 @@ Ve zbývající části tohoto oddílu nabídneme několik příkladů, jak pou�
 
 Jednou z primárních abstrakcí, které poskytuje Canon, je iterace.
 Předpokládejme například, že ve formuláři $U \otimes U \otimes \cdots \otimes U $ pro každou qubit jednotkovou $U $.
-V nástroji Q# můžeme použít <xref:microsoft.quantum.arrays.indexrange> k reprezentaci jako smyčky v rámci `for` registru:
+V nástroji Q# můžeme použít <xref:Microsoft.Quantum.Arrays.IndexRange> k reprezentaci jako smyčky v rámci `for` registru:
 
 ```qsharp
 /// # Summary
@@ -83,16 +83,16 @@ ApplyToEachCA(Adjoint U, register);
 ```
 
 Konkrétně to znamená, že volání se `ApplyToEachCA` mohou objevit v operacích, pro které je automaticky generována sousední specializace.
-Podobně <xref:microsoft.quantum.canon.applytoeachindex> je vhodný pro reprezentaci vzorů formuláře `U(0, targets[0]); U(1, targets[1]); ...` a nabízí verze pro každou kombinaci funktory, která je podporována jeho vstupem.
+Podobně <xref:Microsoft.Quantum.Canon.ApplyToEachIndex> je vhodný pro reprezentaci vzorů formuláře `U(0, targets[0]); U(1, targets[1]); ...` a nabízí verze pro každou kombinaci funktory, která je podporována jeho vstupem.
 
 > [!TIP]
 > `ApplyToEach` je typ – parametr, aby jej bylo možné použít s operacemi, které přijímají jiné vstupy než `Qubit` .
-> Předpokládejme například, že `codeBlocks` je pole <xref:microsoft.quantum.errorcorrection.logicalregister> hodnot, které je třeba obnovit.
+> Předpokládejme například, že `codeBlocks` je pole <xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister> hodnot, které je třeba obnovit.
 > Pak `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` použije chybovou opravu kódu `code` a funkci obnovení `recoveryFn` na každý blok nezávisle.
 > To i pro klasické vstupy: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` použije rotaci $ \pi/$2 o $X $ následovaný otočením $PI/$3 o $Y $.
 
 Q#Canon také poskytuje podporu pro klasické vzory výčtů, které jsou známé pro funkční programování.
-Například <xref:microsoft.quantum.arrays.fold> implementuje vzor $f (f (s \_ {\Text{Initial}}, x \_ 0), x \_ 1), \dots) $ pro snížení funkce na seznam.
+Například <xref:Microsoft.Quantum.Arrays.Fold> implementuje vzor $f (f (s \_ {\Text{Initial}}, x \_ 0), x \_ 1), \dots) $ pro snížení funkce na seznam.
 Tento model se dá použít k implementaci součtů, produktů, minima, Maxim a dalších takových funkcí:
 
 ```qsharp
@@ -103,12 +103,12 @@ function Sum(xs : Int[]) {
 }
 ```
 
-Podobně funkce jako <xref:microsoft.quantum.arrays.mapped> a <xref:microsoft.quantum.arrays.mappedbyindex> lze použít pro vyjádření konceptů funkčního programování v Q# .
+Podobně funkce jako <xref:Microsoft.Quantum.Arrays.Mapped> a <xref:Microsoft.Quantum.Arrays.MappedByIndex> lze použít pro vyjádření konceptů funkčního programování v Q# .
 
 ## <a name="composing-operations-and-functions"></a>Vytváření operací a funkcí ##
 
 Konstrukce toku řízení nabízené službou Canon využívají operace a funguje jako jejich vstupy, takže je užitečné, aby bylo možné vytvořit několik operací nebo funkcí do jediného možného volání.
-Například vzor $UVU ^ {\dagger} $ je velmi běžný při programování v provozu, aby Canon poskytoval operaci <xref:microsoft.quantum.canon.applywith> jako abstrakci pro tento model.
+Například vzor $UVU ^ {\dagger} $ je velmi běžný při programování v provozu, aby Canon poskytoval operaci <xref:Microsoft.Quantum.Canon.ApplyWith> jako abstrakci pro tento model.
 Tato abstrakce také umožňuje efektivnější compliation do okruhů, protože `Controlled` v sekvenci `U(qubit); V(qubit); Adjoint U(qubit);` není nutné pracovat na každém z nich `U` .
 Pokud to chcete vidět, nechejte $c (U) $ představovat jednotnou reprezentaci `Controlled U([control], target)` a nechte $c (v) $ definovat stejným způsobem.
 Pak pro libovolný stav $ \ket{\psi} $, \begin{align} c (U) c (V) c (U) ^ \dagger \ket {1} \otimes \ket{\psi} & = \ket {1} \OTIMES (uvu ^ {\dagger} \ket{\psi}) \\ \\ & = (\boldone \otimes u) (c (V)) (\boldone \otimes U ^ \dagger) \ket {1} \otimes \ket{\psi}.
@@ -126,7 +126,7 @@ Vzhledem k tomu, že řízení operací může být všeobecně náročné, pomo
 >     ('T => Unit is Adj + Ctl), 'T) => Unit
 > ```
 
-Podobně <xref:microsoft.quantum.canon.bound> vytváří operace, které používají sekvenci dalších operací.
+Podobně <xref:Microsoft.Quantum.Canon.Bound> vytváří operace, které používají sekvenci dalších operací.
 Například následující jsou ekvivalentní:
 
 ```qsharp
@@ -141,7 +141,7 @@ Kombinování se vzorci iterace může udělat tento význam hlavně:
 ApplyWith(ApplyToEach(Bound([H, X]), _), QFT, _);
 ```
 
-### <a name="time-ordered-composition"></a>Kompozice časově uspořádaných ###
+### <a name="time-ordered-composition"></a>Time-Ordered složení ###
 
 Dál se můžeme dál domyslet z řízení toku v souvislosti s částečnými aplikacemi a klasickými funkcemi a můžete modelovat dokonce poměrně sofistikované koncepty řízení toku v podobě klasického řízení toku.
 Tato analogie je přesnější rozpoznáváním, že stejné operátory odpovídají přesně na vedlejší účinky volání operací, což znamená, že jakékoliv dekompozice smluvních operátorů v souvislosti s jinými stejnými operátory odpovídá vytváření konkrétní volací sekvence pro klasické podrutiny, které generují pokyny pro fungování jako konkrétní operátory.
@@ -162,9 +162,9 @@ U(1, time / Float(nSteps), target);
 // ...
 ```
 
-V tuto chvíli teď můžeme mít k dispozici informace o rozšíření Trotter – Suzuki *bez odkazů na veškerou část*.
+V tuto chvíli teď můžeme mít k dispozici informace o rozšíření Trotter – Suzuki *bez odkazů na veškerou část* .
 Rozšíření je efektivně velmi konkrétní vzor iterace, který motivuje $ \eqref{EQ: Trotter-Suzuki-0} $.
-Tento vzor iterace implementuje <xref:microsoft.quantum.canon.decomposeintotimestepsca> :
+Tento vzor iterace implementuje <xref:Microsoft.Quantum.Canon.DecomposedIntoTimestepsCA> :
 
 ```qsharp
 // The 2 indicates how many terms we need to decompose,
@@ -180,7 +180,7 @@ Signatura `DecomposeIntoTimeStepsCA` následuje společný vzor v Q# , kde kolek
 Nakonec Canon staví na `Controlled` funktor tím, že poskytuje další způsoby pro podmínění operací s více než jednou.
 Je běžné, zejména v případě aritmetických operací, pro podmínky operace výpočtu na základě jiných stavů, než je $ \ket{0\cdots 0} $.
 Pomocí operací a funkcí ovládacího prvku, které jsou představené výše, můžeme v jednom příkazu využít obecnější podmínky.
-Pojďme se pustit do toho, jak <xref:microsoft.quantum.canon.controlledonbitstring> to dělá (parametry typu sítě SAN), pak rozdělíme jednotlivé díly o jeden.
+Pojďme se pustit do toho, jak <xref:Microsoft.Quantum.Canon.ControlledOnBitString> to dělá (parametry typu sítě SAN), pak rozdělíme jednotlivé díly o jeden.
 První věc, kterou je potřeba udělat, je definování operace, která ve skutečnosti dělá velkou zvedací implementaci ovládacího prvku na libovolný výpočetní stav.
 Tuto operaci nebudeme volat přímo, ale přidáme `_` na začátek názvu, abychom zjistili, že se jedná o implementaci jiného konstruktoru jinde.
 
@@ -212,8 +212,8 @@ Tato konstrukce je přesně ta `ApplyWith` , proto zapište text naší nové op
 }
 ```
 
-Tady jsme použili <xref:microsoft.quantum.canon.applypaulifrombitstring> pro použití s nástrojem $P $, částečně aplikované na jeho cíl `ApplyWith` .
-Všimněte si ale, že potřebujeme transformovat registraci *ovládacího prvku* do našeho formuláře, takže částečně použijeme interní operaci `(Controlled oracle)` na *cíli*.
+Tady jsme použili <xref:Microsoft.Quantum.Canon.ApplyPauliFromBitString> pro použití s nástrojem $P $, částečně aplikované na jeho cíl `ApplyWith` .
+Všimněte si ale, že potřebujeme transformovat registraci *ovládacího prvku* do našeho formuláře, takže částečně použijeme interní operaci `(Controlled oracle)` na *cíli* .
 Tato činnost ponechá `ApplyWith` v závorce řídicího registru pomocí $P $, přesně podle potřeby.
 
 V tuto chvíli jsme se mohli udělat, ale nevyhovuje tomu, že se naše nová operace neshoduje s tím, jako když použijete `Controlled` funktor.

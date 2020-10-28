@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 86f6538cf383f4e7c14255b38cfb1c141c8f991b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: b3bc0841eabeac5d3968776f9dab3a02b1a1eef9
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835515"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691632"
 ---
 # <a name="no-locq-basics"></a>Q# Práce
 
@@ -28,7 +28,7 @@ Z technického hlediska je program pro práci s více operačními systémy konk
 Důležitým rozdílem v tomto zobrazení je, že Q# program přímo nemodeluje qubits sám sebe, ale místo toho popisuje, jak klasický kontrolovaný počítač komunikuje s těmito qubits.
 Podle návrhu Q# nedefinuje stavy plnění nebo jiné vlastnosti přístavení přímo.
 Zvažte například stav $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ popsané v tématu Průvodce přístupnými [výpočetními pojmy](xref:microsoft.quantum.concepts.intro) .
-Chcete-li tento stav připravit v Q# , začněte s fakty, že qubits jsou inicializovány ve {0} stavu $ \ket $ a že $ \ket{+} = H\ket {0} $, kde $H $ je [Převod Hadamard](xref:microsoft.quantum.glossary#hadamard), implementovaný [ `H` operací](xref:microsoft.quantum.intrinsic.h). Základní Q# kód pro inicializaci a transformaci qubit a pak vypadá takto:
+Chcete-li tento stav připravit v Q# , začněte s fakty, že qubits jsou inicializovány ve {0} stavu $ \ket $ a že $ \ket{+} = H\ket {0} $, kde $H $ je [Převod Hadamard](xref:microsoft.quantum.glossary#hadamard), implementovaný [ `H` operací](xref:Microsoft.Quantum.Intrinsic.H). Základní Q# kód pro inicializaci a transformaci qubit a pak vypadá takto:
 
 ```qsharp
 using (qubit = Qubit()) {
@@ -37,7 +37,7 @@ using (qubit = Qubit()) {
     // H is now applied, such that the qubit is in H|0⟩ = |+⟩, as desired.
 }
 ```
-Další informace o inicializaci nebo *přidělování*qubits naleznete v tématu [Working with qubits](xref:microsoft.quantum.guide.qubits).
+Další informace o inicializaci nebo *přidělování* qubits naleznete v tématu [Working with qubits](xref:microsoft.quantum.guide.qubits).
 
 ## <a name="quantum-states-in-no-locq"></a>Stavy v Q#
 
@@ -45,7 +45,7 @@ Důležité: předchozí program výslovně neodkazuje na stav v rámci, Q# ale 
 Díky tomuto přístupu můžete být zcela nezávislá o tom, co *je* stav bez limitu, i na každém cílovém počítači, což může mít různé interpretace v závislosti na počítači. 
 
 Q#Program se nemůže introspect do stavu qubit.
-Místo toho může program volat operace, jako je například, [`Measure`](xref:microsoft.quantum.intrinsic.measure) k získání informací z qubit a volání operací, jako je [`X`](xref:microsoft.quantum.intrinsic.x) a [`H`](xref:microsoft.quantum.intrinsic.h) k jednání ve stavu qubit.
+Místo toho může program volat operace, jako je například, [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) k získání informací z qubit a volání operací, jako je [`X`](xref:Microsoft.Quantum.Intrinsic.X) a [`H`](xref:Microsoft.Quantum.Intrinsic.H) k jednání ve stavu qubit.
 K *tomu* , aby tyto operace skutečně fungovaly, se dá použít jenom konkrétní cílový počítač, který se používá ke spuštění konkrétního Q# programu.
 Pokud například spustíte program na našem simulátoru, simulátor provede odpovídající matematické operace do simulovaného systému pro [nastavování](xref:microsoft.quantum.machines.full-state-simulator).
 Ale prohlížíte se do budoucna, když je cílový počítač skutečným počítačem s více operačními systémy, volání těchto operací v Q# systému směruje počítač s operačním systémem do provozu, aby provedl odpovídající *reálné* operace v *reálném čase* , například přesné časované laserové impulsy.
@@ -55,14 +55,14 @@ Tímto způsobem Q# usnadňuje vyjádření logiky podkladových a hybridních n
 
 ## <a name="no-locq-operations-and-functions"></a>Q# operace a funkce
 
-Konkrétní Q# program zahrnuje *operace*, *funkce*a libovolné uživatelsky definované typy. 
+Konkrétní Q# program zahrnuje *operace* , *funkce* a libovolné uživatelsky definované typy. 
 
 Operace slouží k popisu transformací systémů pro plnění a jsou nejdůležitějším stavebním blokem Q# programů. Každá operace definovaná v nástroji Q# může zavolat libovolný počet dalších operací.
 
 Na rozdíl od operací se funkce používají k popisu čistě *deterministického* klasického chování a neexistují žádné vlivy na výpočetní funkce Classic. Předpokládejme například, že chcete změřit qubits na konci programu a přidat výsledky měření do pole.
 V tomto případě `Measure` je to *operace* , která instruuje cílový počítač, aby provedl měření na (reálné nebo simulované) qubits. Ve stejnou dobu *funkce* zpracovávají klasický proces přidávání vrácených výsledků do pole.
 
-Operace a funkce se společně označují jako *volatelné*. Jejich podkladová struktura a chování jsou zavedeny a podrobně popsány v [operacích a funkcích v Q# ](xref:microsoft.quantum.guide.operationsfunctions).
+Operace a funkce se společně označují jako *volatelné* . Jejich podkladová struktura a chování jsou zavedeny a podrobně popsány v [operacích a funkcích v Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 
 ## <a name="no-locq-syntax-overview"></a>Q# Přehled syntaxe
@@ -94,7 +94,7 @@ Jednoduchý příklad příkazu v nástroji Q# přiřazuje symbol ke výrazu:
 let count = 5;
 ```
 
-Zajímavějším příkladem je `for` příkaz, který podporuje iteraci a obsahuje *blok příkazu*.
+Zajímavějším příkladem je `for` příkaz, který podporuje iteraci a obsahuje *blok příkazu* .
 Předpokládejme `qubits` je symbol vázaný k registru qubits (technicky typu `Qubit[]` nebo pole `Qubit` typů). Pak...
 ```qsharp
 for (qubit in qubits) {

@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.training
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39974af0121a5167f1965e508cd595535178548b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 476e93e3737dee6ad8f3a97e8ffbcfb9b0012ee1
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833900"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691506"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Machine Learning Glosář
 
@@ -30,7 +30,7 @@ Vzhledem ke vektoru parametru kandidáta a posunu klasifikátoru se jejich *skó
 
 ## <a name="hyperparameters"></a>Hyperparameters
 
-Proces školení modelů se řídí některými předem nastavenými hodnotami nazvanými *parametry*:
+Proces školení modelů se řídí některými předem nastavenými hodnotami nazvanými *parametry* :
 
 ### <a name="learning-rate"></a>Rychlost učení
 
@@ -56,9 +56,10 @@ Pravděpodobnost, která je přístupným nástrojem pro třídění, je velmi z
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Postup úpravy parametrů
 
-V knihovně QML je nejlepší způsob, jak upravit parametry, přepsáním výchozích hodnot parametru UDT [`TrainingOptions`](xref:microsoft.quantum.machinelearning.trainingoptions) . Chcete-li to provést, zavolejte ho pomocí funkce [`DefaultTrainingOptions`](xref:microsoft.quantum.machinelearning.defaulttrainingoptions) a použijte operátor `w/` pro přepsání výchozích hodnot. Pokud například chcete použít měření 100 000 a rychlost učení 0,01:
- ```qsharp
+V knihovně QML je nejlepší způsob, jak upravit parametry, přepsáním výchozích hodnot parametru UDT [`TrainingOptions`](xref:Microsoft.Quantum.MachineLearning.TrainingOptions) . Chcete-li to provést, zavolejte ho pomocí funkce [`DefaultTrainingOptions`](xref:Microsoft.Quantum.MachineLearning.DefaultTrainingOptions) a použijte operátor `w/` pro přepsání výchozích hodnot. Pokud například chcete použít měření 100 000 a rychlost učení 0,01:
+
+```qsharp
 let options = DefaultTrainingOptions()
 w/ LearningRate <- 0.01
 w/ NMeasurements <- 100000;
- ```
+```

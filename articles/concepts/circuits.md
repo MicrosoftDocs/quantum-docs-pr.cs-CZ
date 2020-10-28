@@ -89,7 +89,7 @@ Tato sekvence brány má zásadní význam pro výpočetní výkon, protože vyt
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu*.
+Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu* .
 Diagram okruhu pro přípravu tohoto maximálního entangledého stavu je:
 
 <!--- ![](.\media\1.svg) --->
@@ -109,7 +109,7 @@ Například symbol
 <!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:-->
 ![Symbol pro Hadamard operace fungující v registru s jedním qubit](~/media/2.svg)
 
-je [Hadamard](xref:microsoft.quantum.intrinsic.h) operace fungující v registru s jedním qubit.
+je [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operace fungující v registru s jedním qubit.
 
 Vyřazení z více procesorů je seřazené v chronologickém pořadí s bránou, která je nejvíce vlevo, jako brána se jako první používá pro qubits.
 Jinými slovy, pokud se dráty naformátují jako držící stav, vodiče přinášejí stav u všech bran v diagramu zleva doprava.
@@ -150,7 +150,7 @@ Obecně popisujeme tyto řízené operace v diagramech okruhů jako
 ![Diagram okruhu samostatně kontrolované brány](~/media/5.svg)
 
 Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když ovládací prvek qubit převezme hodnotu $ 1 $ .
-Pro zvláštní případy, kdy $ G = X $ a $ g = Z $ uvádíme následující zápis, který popíše řízená verze bran (Všimněte si, že brána řízená-X je [ $ $ bránou CNOT](xref:microsoft.quantum.intrinsic.cnot)):
+Pro zvláštní případy, kdy $ G = X $ a $ g = Z $ uvádíme následující zápis, který popíše řízená verze bran (Všimněte si, že brána řízená-X je [ $ $ bránou CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT)):
 
 <!--- ![](.\media\6.svg) --->
 <!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:-->
@@ -175,7 +175,7 @@ Konkrétně takový okruh vypadá takto:
 <!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:-->
 ![Symbol reprezentující operaci měření](~/media/7.svg)
 
-Q# implementuje [operátor míry](xref:microsoft.quantum.intrinsic.measure) pro tento účel.
+Q# implementuje [operátor míry](xref:Microsoft.Quantum.Intrinsic.Measure) pro tento účel.
 Další informace najdete v [části o měřeních](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 Podobně, předaný okruh

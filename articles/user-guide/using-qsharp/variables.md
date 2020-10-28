@@ -9,16 +9,16 @@ uid: microsoft.quantum.guide.variables
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bb87f36d3c9b7df195f64e85151e833d494ea945
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 67c71c09e004d77360902360fefc7a7752e4a829
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835872"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690944"
 ---
 # <a name="variables-in-no-locq"></a>Proměnné v Q#
 
-Q# rozlišuje mezi proměnlivými a neproměnlivými symboly nebo *proměnnými*, které jsou vázány nebo přiřazeny k výrazům.
+Q# rozlišuje mezi proměnlivými a neproměnlivými symboly nebo *proměnnými* , které jsou vázány nebo přiřazeny k výrazům.
 Obecně platí, že použití neměnných symbolů je doporučováno, protože umožňuje kompilátoru provádět větší optimalizace.
 
 Levá strana vazby se skládá ze symbolů typu tuple a na pravé straně výrazu.
@@ -40,7 +40,7 @@ To přiřadí konkrétní pole operátorů Pauli k názvu proměnné (neboli sym
 > [!NOTE]
 > V předchozím příkladu není nutné explicitně zadat typ nové proměnné, protože výraz na pravé straně `let` příkazu je nejednoznačný a kompilátor odvodí správný typ. 
 
-Proměnné definované pomocí `let` jsou *neměnné*, což znamená, že po jejím definování už je nebudete moct změnit jakýmkoli způsobem.
+Proměnné definované pomocí `let` jsou *neměnné* , což znamená, že po jejím definování už je nebudete moct změnit jakýmkoli způsobem.
 To umožňuje několik užitečných optimalizací, včetně optimalizace klasické logiky, která funguje u proměnných, aby se mohla použít `Adjoint` varianta operace.
 
 ## <a name="mutable-variables"></a>Proměnlivé proměnné
@@ -92,7 +92,7 @@ for (q in qubits) {
 #### <a name="update-and-reassign-statements"></a>Příkazy Update a Reassign
 
 Pro [výrazy kopírování a aktualizace](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) na pravé straně existuje podobný zřetězení.
-Odpovídající příkazy *Update-a-Reassign* existují pro *pojmenované položky* v uživatelsky definovaných typech a také pro *položky pole*.  
+Odpovídající příkazy *Update-a-Reassign* existují pro *pojmenované položky* v uživatelsky definovaných typech a také pro *položky pole* .  
 
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
@@ -110,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-V případě polí je [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) ve Q# standardní knihovně k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě. 
+V případě polí je [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) ve Q# standardní knihovně k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě. 
 
 Příkazy Update a Reassign poskytují v případě potřeby alternativu:
 
@@ -135,7 +135,7 @@ operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
 
 ```
 
-Pomocí nástrojů knihovny pro pole, která jsou k dispozici v [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , můžete například snadno definovat funkci, která vrací pole typů, `Pauli` kde element v indexu `i` přebírá danou `Pauli` hodnotu a všechny ostatní položky jsou identity ( `PauliI` ).
+Pomocí nástrojů knihovny pro pole, která jsou k dispozici v [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) , můžete například snadno definovat funkci, která vrací pole typů, `Pauli` kde element v indexu `i` přebírá danou `Pauli` hodnotu a všechny ostatní položky jsou identity ( `PauliI` ).
 
 Tady jsou dvě definice této funkce s druhým využitím výhod těchto nástrojů.
 
@@ -150,7 +150,7 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
 }
 ```
 
-Místo toho, aby se při každém indexu v poli převzala iterace, a podmíněně ho nastaví na `PauliI` nebo daný `pauli` typ, můžete místo toho použít `ConstantArray` z [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) k vytvoření pole `PauliI` typů a pak jednoduše vrátit výraz kopírování a aktualizace, ve kterém jste změnili konkrétní hodnotu na indexu `location` :
+Místo toho, aby se při každém indexu v poli převzala iterace, a podmíněně ho nastaví na `PauliI` nebo daný `pauli` typ, můžete místo toho použít `ConstantArray` z [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) k vytvoření pole `PauliI` typů a pak jednoduše vrátit výraz kopírování a aktualizace, ve kterém jste změnili konkrétní hodnotu na indexu `location` :
 
 ```qsharp
 function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {

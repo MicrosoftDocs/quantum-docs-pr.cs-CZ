@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fef3cea1c11e4fef49ddbf63adb34e07675049d2
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7666974e255d537c8d611d0077b7f9b37a61f918
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834189"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691738"
 ---
 # <a name="no-locq-style-guide"></a>Q# Průvodce stylem #
 ## <a name="general-conventions"></a>Obecné konvence ##
@@ -113,7 +113,7 @@ Navrhujeme:
 
 ### <a name="entry-points"></a>Vstupní body
 
-Při definování vstupního bodu do Q# programu Q# rozpozná kompilátor [ `@EntryPoint()` atribut](xref:microsoft.quantum.core.entrypoint) , spíše než vyžaduje, aby vstupní body měly konkrétní název (např.: `main` , `Main` nebo `__main__` ).
+Při definování vstupního bodu do Q# programu Q# rozpozná kompilátor [ `@EntryPoint()` atribut](xref:Microsoft.Quantum.Core.EntryPoint) , spíše než vyžaduje, aby vstupní body měly konkrétní název (např.: `main` , `Main` nebo `__main__` ).
 To znamená, že z perspektivy Q# vývojáře jsou vstupními body běžné operace s poznámkami `@EntryPoint()` .
 Q#Vstupní body také mohou být vstupními body pro celou aplikaci (například ve Q# samostatných spustitelných programech) nebo mohou představovat rozhraní mezi Q# programem a hostitelským programem aplikace (tj.: při použití Q# s Pythonem nebo .NET), což znamená, že název Main může být zavádějící při použití u Q# vstupního bodu.
 
@@ -134,7 +134,7 @@ Navrhujeme:
 | ☑ | `@EntryPoint() operation RunSimulation` | Jasně komunikuje účel vstupního bodu prostřednictvím názvu operace. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Použití nástroje `Main` nejednoznačně oznamuje účel vstupního bodu a je redundantní s `@EntryPoint()` atributem. |
 
-***
+**_
 
 ### <a name="shorthand-and-abbreviations"></a>Zkratky a zkratky ###
 
@@ -181,7 +181,7 @@ Navrhujeme:
 
 
 
-***
+_*_
 
 
 ### <a name="proper-nouns-in-names"></a>Správná jména v názvech ###
@@ -208,14 +208,14 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-***
+_*_
 
 ### <a name="type-conversions"></a>Převody typu ###
 
 Vzhledem k Q# tomu, že se jedná o silný a staticky typový jazyk, lze hodnotu jednoho typu použít pouze jako hodnotu jiného typu pomocí explicitního volání funkce pro převod typu.
 To je v kontrastu s jazyky, které umožňují hodnotám měnit typy implicitně (např.: povýšení typu) nebo prostřednictvím přetypování.
 Výsledkem je, že funkce pro převod typu hrají důležitou roli při Q# vývoji knihovny a sestávají z nich jedno z častých rozhodnutí o pojmenování.
-Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_, můžou být zapsány jako funkce a tak do výše uvedených rad.
+Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_ , můžou být zapsány jako funkce a tak do výše uvedených rad.
 Konkrétně doporučujeme, aby funkce pro převod typu neměly být nikdy pojmenovány jako slovesa (např.:) nebo typu příznaku příznaku `ConvertToX` ( `ToX` ), ale měly by být pojmenovány jako textová fráze s předumístěním, které označují zdrojové a cílové typy ( `XAsY` ).
 Při výpisu typů polí v názvech funkcí pro převod typu doporučujeme zkrácený `Arr` .
 Blokování výjimečných okolností, doporučujeme, aby všechny funkce pro převod typů byly pojmenovány pomocí, `As` aby je bylo možné rychle identifikovat.
@@ -235,7 +235,7 @@ Navrhujeme:
 | ☒ | <s>`PauliArrFromBoolArr`</s> | Vstupní a výstupní typy se zobrazí v nesprávném pořadí. |
 | ☑ | `ResultArrAsBoolArr` | Vstupní typy i výstupní typy jsou jasné. |
 
-***
+_*_
 
 ### <a name="private-or-internal-names"></a>Privátní nebo interní názvy ###
 
@@ -256,7 +256,7 @@ Navrhujeme:
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Nepoužívejte podtržítko `_` k označení toho, že tato operace je určena pouze pro interní použití. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Klíčové slovo na začátku jasně označuje, že tato operace je určena pouze pro interní použití. |
 
-***
+_*_
 ### <a name="variants"></a>Varianty ###
 
 I když toto omezení v budoucích verzích nástroje nemusí Q# být trvalé, je v současné době často skupiny souvisejících operací nebo funkcí, které jsou odlišené funktory jejich vstupy, nebo konkrétními typy jejich argumentů.
@@ -280,7 +280,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-***
+_*_
 
 ### <a name="arguments-and-variables"></a>Argumenty a proměnné ###
 
@@ -305,9 +305,9 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-***
+_*_
 
-### <a name="user-defined-type-named-items"></a>Uživatelem definované typy pojmenované položky ###
+### <a name="user-defined-type-named-items"></a>Typ User-Defined pojmenované položky ###
 
 Pojmenované položky v uživatelsky definovaných typech by měly být pojmenovány jako `CamelCase` , a to i ve vstupu na konstruktory UDT.
 To pomáhá při použití notace přístupového objektu (např.: `callable::Apply` ) nebo zápisu () pro jasně oddělit pojmenované položky od odkazů na místně vymezené proměnné `set arr w/= Data <- newData` .
@@ -329,7 +329,7 @@ Navrhujeme:
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Pojmenované položky by měly začínat počátečním velkým písmenem. |
 | ☒ | <s>`newtype Collection = (Length : Int, Get : Int -> (Qubit => Unit)) `</s> | Pojmenované položky, které se mají vyhodnotit na Functions, by měly být pojmenovány jako podstatné fráze, nikoli jako slovesová |
 
-***
+_*_
 
 ## <a name="input-conventions"></a>Vstupní konvence ##
 
@@ -379,7 +379,7 @@ Navrhujeme:
 
 # <a name="examples"></a>[Příklady](#tab/examples)
 
-***
+_*_
 
 ## <a name="documentation-conventions"></a>Konvence dokumentace ##
 
@@ -400,7 +400,7 @@ Navrhujeme:
 
 - Každá veřejná funkce, operace a uživatelsky definované typy by měly hned předcházet dokumentační komentář.
 - Každý dokumentační komentář by měl mít minimálně následující oddíly:
-    - Shrnutí
+    - Souhrn
     - Vstup
     - Výstup (Pokud je k dispozici)
 - Ujistěte se, že všechny souhrny jsou dvě nebo méně vět. Pokud je potřeba více místa, poskytněte `# Description` hned následující část `# Summary` s úplnými podrobnostmi.
@@ -451,7 +451,7 @@ is Adj + Ctl {
 }
 ```
 
-***
+_*_
 
 ## <a name="formatting-conventions"></a>Konvence formátování ##
 
@@ -486,4 +486,4 @@ Navrhujeme:
 | ☑ | `Example(a, b, c)` | Položky ve vstupní řazené kolekci členů jsou pro čitelnosti správně rozmístěny. |
 | ☒ | <s>`Example (a, b, c)`</s> | Mezery by měly být potlačeny za názvy funkcí, operací nebo UDT. |
 
-***
+_**

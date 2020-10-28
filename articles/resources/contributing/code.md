@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.code
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7a258a915a807b8e1ee7c2c9c062017d90f6a454
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 47845c4f3520e8c50cf8aefd9bf9e8f086c42842
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91489761"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691799"
 ---
 # <a name="contributing-code"></a>Přispívání do kódu
 
@@ -36,7 +36,7 @@ Když se otevře nová žádost o přijetí změn, například naše konfigurace
 
 S nejnovější Q# verzí jsou testy jednotek definovány pomocí `@Test("QuantumSimulator")` atributu. Argument může být buď "QuantumSimulator", "ToffoliSimulator", "TraceSimulator", nebo jakýkoli plně kvalifikovaný název určující cíl spuštění. Ke stejnému možnému použití může být připojeno několik atributů definujících různé cíle spuštění. Některé z našich testů stále používají zastaralý balíček [Microsoft. xUnit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) , který zpřístupňuje všechny Q# funkce a operace končící rozhraním `Test` [xUnit](https://xunit.github.io/) . Tento balíček již není potřeba pro definování testů jednotek. 
 
-Následující funkce se používá k zajištění, že <xref:microsoft.quantum.canon.fst> funkce a <xref:microsoft.quantum.canon.snd> vrátí v reprezentativním příkladu správné výstupy.
+Následující funkce se používá k zajištění, že <xref:Microsoft.Quantum.Canon.Fst> funkce a <xref:Microsoft.Quantum.Canon.Snd> vrátí v reprezentativním příkladu správné výstupy.
 Pokud výstup `Fst` nebo `Snd` není správný, `fail` příkaz slouží k selhání testu.
 
 ```qsharp
@@ -57,7 +57,7 @@ function PairTest () : Unit {
 ```
 
 Složitější podmínky lze kontrolovat pomocí postupů v [části testování](xref:microsoft.quantum.libraries.diagnostics) Průvodce standardními knihovnami.
-Například následující testy, které `H(q); X(q); H(q);` jsou volány, mají za <xref:microsoft.quantum.canon.applywith> úkol stejné jako `Z(q)` .
+Například následující testy, které `H(q); X(q); H(q);` jsou volány, mají za <xref:Microsoft.Quantum.Canon.ApplyWith> úkol stejné jako `Z(q)` .
 
 ```Q#
 @Test("QuantumSimulator")

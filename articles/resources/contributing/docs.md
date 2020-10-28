@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 20e9f8126a290f52701b6b0e525d7669a605d4c9
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 2debef858c38b9a8f11264858130ed7cb41543ae
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759675"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691783"
 ---
 # <a name="improving-documentation"></a>Vylepšování dokumentace
 
@@ -46,7 +46,7 @@ Další informace o žádostech o přijetí změn najdete níže, ale v současn
 
 ### <a name="referencing-sample-code-from-conceptual-articles"></a>Odkazování na vzorový kód z koncepčních článků
 
-Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft/Quantum), můžete tak učinit pomocí speciálního příkazu Markdownu DocFX:
+Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft/Quantum), můžete to udělat pomocí zvláštního DocFX-Flavored příkazu Markdownu:
 
 ```markdown
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
@@ -138,7 +138,7 @@ Pro příklad `ControlledOnBitString` můžete napsat něco podobného jako nás
  }
 ```
 
-Vykreslenou verzi kódu uvedenou výše můžete zobrazit v [dokumentaci k rozhraní API pro danou `ControlledOnBitString` funkci](xref:microsoft.quantum.canon.controlledonbitstring).
+Vykreslenou verzi kódu uvedenou výše můžete zobrazit v [dokumentaci k rozhraní API pro danou `ControlledOnBitString` funkci](xref:Microsoft.Quantum.Canon.ControlledOnBitString).
 
 Kromě obecné praxe psaní dokumentace k rozhraní API, které vám pomůžou při psaní komentářů k rozhraní API, je potřeba mít na paměti pár věcí:
 
