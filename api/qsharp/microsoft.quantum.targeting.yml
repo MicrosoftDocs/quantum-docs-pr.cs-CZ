@@ -1,0 +1,16 @@
+### YamlMime:QSharpNamespace
+functions: []
+name: Microsoft.Quantum.Targeting
+newtypes:
+- summary: Atribut rozpoznaný kompilátorem, který slouží k označení možného možného spuštění s běhovými funkcemi, které vyžaduje.
+  uid: Microsoft.Quantum.Targeting.RequiresCapability
+operations: []
+summary: Tento obor názvů poskytuje funkce pro cílení na konkrétní procesory.
+uid: Microsoft.Quantum.Targeting
+metadata:
+  ms.openlocfilehash: 470a923d88c23857ef8b64cf2eb3de13c3c2cb4f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92709141"
