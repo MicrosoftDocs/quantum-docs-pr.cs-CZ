@@ -1,0 +1,166 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Předané pole a predikát, který je definován pro prvky pole a kontroluje, zda všechny prvky pole odpovídají predikátu.
+  uid: Microsoft.Quantum.Arrays.All
+- summary: V případě pole a predikátu, který je definován pro prvky pole, zkontroluje, zda alespoň jeden prvek pole splňuje predikát.
+  uid: Microsoft.Quantum.Arrays.Any
+- summary: Rozdělí pole na více částí stejné délky.
+  uid: Microsoft.Quantum.Arrays.Chunks
+- summary: Extrahuje sloupec z matice.
+  uid: Microsoft.Quantum.Arrays.ColumnAt
+- summary: Tato funkce nekontroluje tvar matice.
+  uid: Microsoft.Quantum.Arrays.ColumnAtUnchecked
+- summary: Vytvoří pole s danou délkou se všemi elementy, které se rovnají dané hodnotě.
+  uid: Microsoft.Quantum.Arrays.ConstantArray
+- summary: Předané pole a predikát, který je definován pro prvky pole, vrátí počet prvků pole, které se skládá z prvků, které odpovídají predikátu.
+  uid: Microsoft.Quantum.Arrays.Count
+- summary: Kombinuje namapovaná a přeložení na jednu funkci
+  uid: Microsoft.Quantum.Arrays.CumulativeFolded
+- summary: Vrátí pole diagonálních elementů dvojrozměrného pole.
+  uid: Microsoft.Quantum.Arrays.Diagonal
+- summary: Vrátí hodnotu v daném indexu pole.
+  uid: Microsoft.Quantum.Arrays.ElementAt
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.ElementAtDiagonal
+- summary: Vrátí prvky pole v zadaném rozsahu indexů.
+  uid: Microsoft.Quantum.Arrays.ElementsAt
+- summary: Vrátí prázdné pole daného typu.
+  uid: Microsoft.Quantum.Arrays.EmptyArray
+- summary: V případě pole, vrátí nové pole obsahující prvky původního pole spolu s indexy každého prvku.
+  uid: Microsoft.Quantum.Arrays.Enumerated
+- summary: Zadaná dvě pole stejného typu a predikát, který je definován pro páry prvků pole, kontroluje, zda jsou pole shodná.
+  uid: Microsoft.Quantum.Arrays.EqualA
+- summary: Vrátí pole obsahující prvky jiného pole, kromě prvků v daném seznamu indexů.
+  uid: Microsoft.Quantum.Arrays.Exclude
+- summary: Vrátí pole obsahující prvky jiného pole, kromě prvků v daném seznamu indexů.
+  uid: Microsoft.Quantum.Arrays.Excluding
+- summary: Předané pole a predikát, který je definován pro prvky pole, vrátí pole, které se skládá z prvků, které odpovídají predikátu.
+  uid: Microsoft.Quantum.Arrays.Filtered
+- summary: Pro pole a funkci, která mapuje prvek pole na některé výstupní pole, vrátí zřetězená výstupní pole pro každý prvek pole.
+  uid: Microsoft.Quantum.Arrays.FlatMapped
+- summary: V případě pole polí vrací zřetězení všech polí.
+  uid: Microsoft.Quantum.Arrays.Flattened
+- summary: Opakuje funkci `f` prostřednictvím pole `array` a vrátí `f(f(f(initialState, array[0]), array[1]), ...)` .
+  uid: Microsoft.Quantum.Arrays.Fold
+- summary: Vrátí první prvek pole.
+  uid: Microsoft.Quantum.Arrays.Head
+- summary: Vrátí řazenou kolekci členů prvního a všech zbývajících prvků pole.
+  uid: Microsoft.Quantum.Arrays.HeadAndRest
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.Identity
+- summary: Vrátí první index prvního prvku v poli, který splňuje daný predikát. Pokud žádný takový prvek neexistuje, vrátí hodnotu-1.
+  uid: Microsoft.Quantum.Arrays.IndexOf
+- summary: V poli, vrátí rozsah v rámci indexů tohoto pole, který je vhodný pro použití ve smyčce for.
+  uid: Microsoft.Quantum.Arrays.IndexRange
+- summary: Ponechá dvě pole (téměř) stejné velikosti.
+  uid: Microsoft.Quantum.Arrays.Interleaved
+- summary: Vrátí hodnotu true pouze v případě, že je pole prázdné.
+  uid: Microsoft.Quantum.Arrays.IsEmpty
+- summary: Vrátí výstupy true, pokud dané pole představuje permutaci.
+  uid: Microsoft.Quantum.Arrays.IsPermutation
+- summary: V případě pole, vrátí, zda je toto pole řazeno tak, jak je definováno danou funkcí porovnání.
+  uid: Microsoft.Quantum.Arrays.IsSorted
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.IsValuePresent
+- summary: Předanému poli vrátí funkci, která vrátí prvky daného pole.
+  uid: Microsoft.Quantum.Arrays.LookupFunction
+- summary: Předané pole a funkce, které jsou definovány pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole pod funkcí.
+  uid: Microsoft.Quantum.Arrays.Mapped
+- summary: Pro pole a funkci, která je definována pro indexované prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci funkce.
+  uid: Microsoft.Quantum.Arrays.MappedByIndex
+- summary: Pro rozsah a funkci, která přijímá jako vstup celé číslo, vrátí nové pole, které se skládá z obrázků hodnot rozsahu pod funkcí.
+  uid: Microsoft.Quantum.Arrays.MappedOverRange
+- summary: U dvou seřazených polí vrátí jedno pole obsahující prvky obou v setříděném pořadí. Používá se interně slučovacím řazením.
+  uid: Microsoft.Quantum.Arrays.Merged
+- summary: Vytvoří pole, které se rovná vstupnímu poli s tím rozdílem, že poslední prvek pole je vyřazen.
+  uid: Microsoft.Quantum.Arrays.Most
+- summary: Vrátí řazenou kolekci členů všech kromě jednoho a posledního elementu pole.
+  uid: Microsoft.Quantum.Arrays.MostAndTail
+- summary: Vrátí pole doplněné o zadané hodnoty až po zadanou délku.
+  uid: Microsoft.Quantum.Arrays.Padded
+- summary: Rozdělí pole na více částí.
+  uid: Microsoft.Quantum.Arrays.Partitioned
+- summary: ''
+  uid: Microsoft.Quantum.Arrays.Prefix
+- summary: Předanému poli vrátí všechny jeho předpony.
+  uid: Microsoft.Quantum.Arrays.Prefixes
+- summary: Představuje podmínku, že dvourozměrné pole má obdélníkový tvar.
+  uid: Microsoft.Quantum.Arrays.RectangularArrayFact
+- summary: Vytvoří pole, které je rovno vstupnímu poli s výjimkou toho, že první prvek pole je vyřazen.
+  uid: Microsoft.Quantum.Arrays.Rest
+- summary: Vytvoří pole, které obsahuje stejné prvky jako vstupní pole, ale v obráceném pořadí.
+  uid: Microsoft.Quantum.Arrays.Reversed
+- summary: Získá pole celých čísel v daném intervalu.
+  uid: Microsoft.Quantum.Arrays.SequenceI
+- summary: Získá pole celých čísel v daném intervalu.
+  uid: Microsoft.Quantum.Arrays.SequenceL
+- summary: Předanému poli vrátí prvky tohoto pole seřazené podle dané funkce porovnání.
+  uid: Microsoft.Quantum.Arrays.Sorted
+- summary: Představuje podmínku, že dvojrozměrné pole má čtvercový tvar.
+  uid: Microsoft.Quantum.Arrays.SquareArrayFact
+- summary: Převezme pole a seznam umístění a vytvoří nové pole vytvořené z prvků původního pole, které odpovídá zadaným umístěním.
+  uid: Microsoft.Quantum.Arrays.Subarray
+- summary: Použije záměnu dvou prvků v poli.
+  uid: Microsoft.Quantum.Arrays.Swapped
+- summary: Vrátí poslední prvek pole.
+  uid: Microsoft.Quantum.Arrays.Tail
+- summary: Vrátí transpozice matice reprezentované jako pole polí.
+  uid: Microsoft.Quantum.Arrays.Transposed
+- summary: Zapíná seznam dvou řazených kolekcí členů do vnořeného pole.
+  uid: Microsoft.Quantum.Arrays.TupleArrayAsNestedArray
+- summary: Vrátí nové pole, které nemá stejné sousedící prvky.
+  uid: Microsoft.Quantum.Arrays.Unique
+- summary: V případě pole se dvěma řazenými kolekcemi členů vrátí řazenou kolekci členů dvou polí, z nichž každý obsahuje prvky pro vstupní pole.
+  uid: Microsoft.Quantum.Arrays.Unzipped
+- summary: V případě predikátu a pole vrátí indexy tohoto pole, kde má predikát hodnotu true.
+  uid: Microsoft.Quantum.Arrays.Where
+- summary: Vrátí všechna po sobě následující podpole délky `size` .
+  uid: Microsoft.Quantum.Arrays.Windows
+- summary: >-
+    > [!WARNING]
+
+    > Zip je zastaralý. <xref:Microsoft.Quantum.Arrays.Zipped>Místo toho ho použijte.
+
+
+    Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zip
+- summary: >-
+    > [!WARNING]
+
+    > Zip3 – se už nepoužívá. <xref:Microsoft.Quantum.Arrays.Zipped3>Místo toho ho použijte.
+
+
+    Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zip3
+- summary: >-
+    > [!WARNING]
+
+    > Zip4 se už nepoužívá. <xref:Microsoft.Quantum.Arrays.Zipped4>Místo toho ho použijte.
+
+
+    U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zip4
+- summary: Zadaná dvě pole, vrátí nové pole párů tak, aby každá dvojice obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zipped
+- summary: Zadaná tři pole vrací nové pole tří řazených kolekcí členů, aby každá 3-řazená kolekce členů obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zipped3
+- summary: U čtyř polí vrátí nové pole se 4 řazenými kolekcemi členů tak, aby každá 4 řazená kolekce členů obsahovala element z každého původního pole.
+  uid: Microsoft.Quantum.Arrays.Zipped4
+- summary: Vrátí prvky Order v poli musí být zaměněny, aby vytvořilo seřazené pole. Předpokládá, že probíhají zahození.
+  uid: Microsoft.Quantum.Arrays._SwapOrderToPermuteArray
+name: Microsoft.Quantum.Arrays
+newtypes: []
+operations:
+- summary: Opakuje operaci pro daný počet vzorků a shromažďuje jejich výstupy v poli.
+  uid: Microsoft.Quantum.Arrays.DrawMany
+- summary: Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.
+  uid: Microsoft.Quantum.Arrays.ForEach
+summary: Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat.
+uid: Microsoft.Quantum.Arrays
+metadata:
+  ms.openlocfilehash: aa551a5e9372bd63335a3a9ae3d817628722c09d
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92706113"

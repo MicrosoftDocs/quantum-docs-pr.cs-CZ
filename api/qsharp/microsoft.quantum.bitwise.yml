@@ -1,0 +1,36 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Vrátí bitové a dvě celá čísla. Provede se stejný výpočet jako vestavěný `&&&` operátor.
+  uid: Microsoft.Quantum.Bitwise.And
+- summary: Posune bitovou reprezentaci čísla vlevo o daný počet bitů.
+  uid: Microsoft.Quantum.Bitwise.LeftShiftedI
+- summary: Posune bitovou reprezentaci čísla vlevo o daný počet bitů.
+  uid: Microsoft.Quantum.Bitwise.LeftShiftedL
+- summary: Vrátí bitový operátor NOT typu Integer. Provede se stejný výpočet jako vestavěný `~~~` operátor.
+  uid: Microsoft.Quantum.Bitwise.Not
+- summary: Vrátí bitové nebo dvě celá čísla. Provede se stejný výpočet jako vestavěný `|||` operátor.
+  uid: Microsoft.Quantum.Bitwise.Or
+- summary: Vrátí bitovou PARITu celého čísla (1, pokud jeho binární reprezentace obsahuje lichý počet a 0 jinak).
+  uid: Microsoft.Quantum.Bitwise.Parity
+- summary: Posune bitovou reprezentaci čísla přímo podle zadaného počtu bitů.
+  uid: Microsoft.Quantum.Bitwise.RightShiftedI
+- summary: Posune bitovou reprezentaci čísla přímo podle zadaného počtu bitů.
+  uid: Microsoft.Quantum.Bitwise.RightShiftedL
+- summary: Vrací celé číslo představující X bitů pole operátorů Pauli.
+  uid: Microsoft.Quantum.Bitwise.XBits
+- summary: Vrátí bitový exkluzivní operátor OR (XOR) dvou celých čísel. Provede se stejný výpočet jako vestavěný `^^^` operátor.
+  uid: Microsoft.Quantum.Bitwise.Xor
+- summary: Vrací celé číslo představující bity Z pole operátorů Pauli.
+  uid: Microsoft.Quantum.Bitwise.ZBits
+name: Microsoft.Quantum.Bitwise
+newtypes: []
+operations: []
+summary: Tento obor názvů obsahuje funkce pro práci s bitovým znázorněním klasických datových typů.
+uid: Microsoft.Quantum.Bitwise
+metadata:
+  ms.openlocfilehash: 6730a0350f56c2356b9c0851b37de1cd277da90f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92706008"
