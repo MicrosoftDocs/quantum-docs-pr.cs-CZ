@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 115cd65621afd8272887b36163b066a4e6a554d7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835651"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692173"
 ---
 # <a name="applications"></a>Aplikace #
 
@@ -48,13 +48,13 @@ U většiny praktických aplikací, které se mají implementovat na počítač 
 
 Algoritmus pro simulaci doby provozu Převede daný popis Hamiltonian na sekvenci primitivních procesorových vratů, které jsou v rámci celého přibližného vývoje času pomocí zmíněného Hamiltonian.
 
-Ve speciálním případě, kdy Hamiltonian založí do součtu Hermitian částí, je dekompozice Trotter-Suzuki obzvláště jednoduchý a intuitivní algoritmus pro simulaci Hamiltonians, která se rozloží na součet Hermitian komponent. Například první vydaný integrátor této rodiny je přibližně $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ za použití produktu $r d $ terms. 
+Ve speciálním případě, kdy se Hamiltonian rozloží do součtu Hermitian částí, je dekompozice Trotter-Suzuki obzvláště jednoduchý a intuitivní algoritmus pro simulaci Hamiltonians, která se rozloží na součet komponent Hermitian. Například první vydaný integrátor této rodiny je přibližně $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ za použití produktu $r d $ terms. 
 
 > [!TIP]
-> V ukázkách jsou pokryté aplikace algoritmu simulace Trotter-Suzuki.
-> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing** ](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
-> Pro model Ising pomocí struktury ovládacích prvků knihovny Trotter-Suzuki se podívejte na [ukázku **IsingTrotter** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
-> Pro molekulovou vodík pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **simulace H2** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
+> V ukázkách jsou pokryté aplikace Trotter-Suzukiho algoritmu simulace.
+> Pro model Ising s využitím pouze vnitřních operací, které jsou k dispozici v každém cílovém počítači, se podívejte na [ukázku **SimpleIsing**](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
+> Pro model Ising pomocí struktury ovládacího prvku knihovna Trotter-Suzuki se podívejte na [ukázku **IsingTrotter**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
+> Pro molekulovou vodík pomocí Trotter-Suzuki struktury ovládacích prvků knihovny, přečtěte si [ukázku **simulace H2**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
 V mnoha případech bychom chtěli implementovat algoritmus simulace, ale neuvažujete o jeho implementaci. Například integrátor druhého řádu se blíží $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/2R} e ^ {-IH \_ 1 t/2R} \cdots e ^ {-IH \_ {d-1} t/2R} e ^ {-IH \_ {d-1} t/2R} \cdots e ^ {-IH \_ 1 t/2R} e ^ {-IH \_ 0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j \\ | H \_ j \\ | ^ 3 t ^ 3/r ^ 2), \end{align} $ $ za použití produktu $2RD $ terms. Větší objednávky budou zahrnovat ještě víc podmínek a optimalizované varianty můžou pro exponenciální hodnoty vyžadovat vysoce triviální řazení. Další pokročilé algoritmy můžou také zahrnovat použití ancilla qubits v rámci mezipostupných kroků. Proto se jako uživatelsky definovaný typ zabalí algoritmy simulace ve Canon.
 
@@ -87,8 +87,8 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Aplikace knihovny simulace jsou pokryté v ukázkách. Odhad fáze v modelu Ising pomocí najdete v `SimulationAlgorithm` [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
-> Přípravu stavu adiabatic v modelu Ising pomocí najdete v `TimeDependentSimulationAlgorithm` [ukázce **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> Aplikace knihovny simulace jsou pokryté v ukázkách. Odhad fáze v modelu Ising pomocí najdete v `SimulationAlgorithm` [ukázce **IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Přípravu stavu adiabatic v modelu Ising pomocí najdete v `TimeDependentSimulationAlgorithm` [ukázce **AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Odhad stavu Adiabatic & fáze ###
@@ -132,15 +132,15 @@ operation EstimateAdiabaticStateEnergy(
 `nQubits` je počet qubits, který se používá ke kódování počátečního stavu. `statePrepUnitary` připraví stav spuštění z výpočetního základu $ \ket{0\cdots 0} $. `adiabaticUnitary` je jednotková operace, která implementuje přípravu stavu adiabatic, jako je vyprodukována  `InterpolatedEvolution` funkcí. `qpeUnitary` je jednotková operace, která se používá k provádění odhadu fáze ve výsledném stavu. `phaseEstAlgorithm` je naše volba algoritmu odhadu fází.
 
 > [!TIP]
-> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising s využitím ruční implementace přípravných stavů adiabatic `AdiabaticEvolution` a pomocí funkce se podívejte na [ukázku **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
-> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> V ukázkách jsou pokryté aplikace adiabatic State Preparation. Pro model Ising s využitím ruční implementace přípravných stavů adiabatic `AdiabaticEvolution` a pomocí funkce se podívejte na [ukázku **AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> V případě odhadu fáze a přípravy stavu adiabatic v modelu Ising se podívejte na [ukázku **IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simulace molekulové vodíku](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má formu $ \hat H = g \_ {0} I \_ 0I \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {Y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Pauls převede na unitaries a pak se postupně vyvinuly v krátkém časovém úseku pomocí dekompozice Trotter-Suzuki. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
+> [Simulace molekulové vodíku](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) je zajímavá a krátká ukázka. Model a experimentální výsledky hlášené v [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) vyžaduje jenom Pauli matice a má formu $ \hat H = g \_ {0} I \_ 0I \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {Y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Jedná se o efektivní Hamiltonian, který vyžaduje jenom 2 qubits, kde se konstanty $g $ vypočítávají z vzdálenosti $R $ mezi dvěma atomy vodíku. Pomocí funkcí Canon se Paulal převede na unitaries a pak se postupně vyvinuly za krátkou dobu pomocí Trotter-Suzuki rozkladu. Dobrý odhad stavu $H _2 $ uzemnění se dá vytvořit bez použití přípravy stavu adiabatic, takže se stavová energie může najít přímo pomocí odhadu fáze z Canon.
 
 ## <a name="shors-algorithm"></a>Shorův algoritmus ##
 Shor algoritmus zůstává jedním z nejvýznamnějších vývojů ve výpočetním prostředí, protože ukázalo, že by se počítače mohly použít k řešení důležitých, aktuálně nerušivých problémů.
-Algoritmus Shor poskytuje rychlý způsob, jak rychle vyhodnotit Velká čísla pomocí počítače s velkým množstvím, což je problém s názvem *faktoringu*.
+Algoritmus Shor poskytuje rychlý způsob, jak rychle vyhodnotit Velká čísla pomocí počítače s velkým množstvím, což je problém s názvem *faktoringu* .
 Zabezpečení mnoha současných cryptosystemsch dnů vychází z předpokladu, že pro účely faktoringu neexistuje žádný rychlý algoritmus.
 Proto má Shorový algoritmus v podstatě vliv na zabezpečení v rámci po celém světě.
 
@@ -151,7 +151,7 @@ Tyto dva kroky prozkoumáme níže.
 
 ### <a name="period-finding"></a>Hledání období ###
 
-Zjistili jsme, jak funkce Fourierova transformace a odhad fáze funguje (viz [algoritmy](xref:microsoft.quantum.libraries.standard.algorithms)doby provozu), můžeme pomocí těchto nástrojů vyřešit klasický pevný výpočetní problém nazývaný *hledání období*.  V další části se dozvíte, jak použít hledání období pro faktoring.
+Zjistili jsme, jak funkce Fourierova transformace a odhad fáze funguje (viz [algoritmy](xref:microsoft.quantum.libraries.standard.algorithms)doby provozu), můžeme pomocí těchto nástrojů vyřešit klasický pevný výpočetní problém nazývaný *hledání období* .  V další části se dozvíte, jak použít hledání období pro faktoring.
 
 Zadaná dvě celá čísla $a $ a $N $, kde $a<N $, cílem hledání období, označovaného také jako hledání objednávek, je najít _objednávku_ $r $ z $a $ modulo $N $, kde $r $ je definováno jako nejmenší kladné celé číslo tak, aby $a ^ r \equiv 1 \Text{mod} N $.  
 
@@ -178,8 +178,8 @@ Brána QFT byla popsána [dříve](xref:microsoft.quantum.libraries.standard.alg
 Pokud chcete dosáhnout $ (a ^ NX) \Text{mod} N $, můžeme jednoduše použít řízené $U _ {a ^ N} $, kde vypočítáme $a ^ n \Text{mod} N $ Classic, aby se mohl připojit k okruhu.  
 Okruhy, které mají dosáhnout těchto modulárních aritmetických výpočtů, jsou popsané v [aritmetické dokumentaci](./algorithms.md#arithmetic)pro procesory, konkrétně pro implementaci operací řízených $U \_ {a ^ i} $ je potřeba modulární okruh umocnění.
 
-Zatímco okruh výše odpovídá [odhadu fáze](xref:microsoft.quantum.characterization.quantumphaseestimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání objednávek, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft.. Například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation) také používá jednu další qubit.
- 
+Zatímco okruh výše odpovídá [odhadu fáze](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání objednávek, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft.. Například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation) také používá jednu další qubit.
+
 ### <a name="factoring"></a>Které budou zohledňovat ###
 Cílem faktoringu je určit dva základní faktory typu Integer $N $, kde $N $ je $n číslo bitu.  
 Sefaktoringování se skládá z kroků popsaných níže. Kroky jsou rozděleny do tří částí: rutina klasického předzpracování (1-4); výpočetní rutina pro vyhledá pořadí $a \Text{mod} N $ (5); a klasická rutina postprocessing, která odvozuje základní faktory od pořadí (6-9).

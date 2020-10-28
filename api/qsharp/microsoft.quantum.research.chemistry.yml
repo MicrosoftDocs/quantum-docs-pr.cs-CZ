@@ -1,0 +1,57 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v JWOptimized.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedFermionEvolutionFunction
+- summary: Převede Hamiltonian, který popisuje, `JWOptimizedHTerms` na `GeneratorSystem` vyjádřené v `GeneratorIndex` konvenci definované v tomto souboru.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedGeneratorSystem
+- summary: Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v Pauli.
+  uid: Microsoft.Quantum.Research.Chemistry.JordanWignerOptimizedFermionEvolutionSet
+- summary: Vrátí optimalizovanou operaci kroku Trotter a parametry nezbytné ke spuštění.
+  uid: Microsoft.Quantum.Research.Chemistry.OptimizedTrotterStepOracle
+- summary: Krok klasického zpracování `ApplyDeltaParity` . Tato operace vypočítá seznam qubits ovládacího prvku pro vyhodnocení rozdílu parity mezi dvěma PQRS... stejné délky.
+  uid: Microsoft.Quantum.Research.Chemistry._DeltaParityCNOTbitstring
+name: Microsoft.Quantum.Research.Chemistry
+newtypes: []
+operations:
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyBasisChange
+- summary: Počítá rozdíl v paritě mezi předchozím PQRS... výrazy a další PQRS... doby. Tento rozdíl je vypočítán na základě pomocného qubitu.
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyDeltaParity
+- summary: Jednoduchá příprava stavu zkušební verze pomocí číselníku orbitals
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedStatePreparation
+- summary: Slouží ke změně základu operátoru Z na operátor Y. conjugation.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToX
+- summary: Slouží ke změně základu operátoru Z na operátor Y pomocí conjugation.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToY
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry._ApplyOptimizedTrotterStep
+- summary: Aplikuje čas na vývoj na základě výrazu PQRS, který je popsaný v `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123Term
+- summary: Krok implementace `JWOptimized0123Term_` ;
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123TermImpl
+- summary: >-
+    Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v JWOptimized.
+
+    Další podrobnosti najdete v tématu [dynamické modelování generátoru](../libraries/data-structures#dynamical-generator-modeling) .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedFermionEvolution
+- summary: Aplikuje čas na vývoj na základě výrazu PQ, který je popsaný v `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTerm
+- summary: Krok implementace `JWOptimizedHpqTerm_` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTermImpl
+- summary: Použije čas – vývoj na základě výrazu PQ nebo PQQR, který je popsán v `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedPQandPQQRTerm
+- summary: Aplikuje RZ rotaci s C-neštychem do dvojité fáze odhadu fáze.
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZ
+- summary: Aplikuje čas na vývoj na základě termínu Z popsanýho v `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZTerm
+- summary: Aplikuje čas na vývoj na základě výrazu ZZ, který je popsaný v `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZZTerm
+summary: Tento obor názvů poskytuje pokročilé metody výzkumu pro simulaci kodoby.
+uid: Microsoft.Quantum.Research.Chemistry
+metadata:
+  ms.openlocfilehash: 22850f044e31507f72d5ac505ece67112fbdccb9
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92697680"

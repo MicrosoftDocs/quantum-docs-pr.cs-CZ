@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7ce13c5df3795656156cccf28640c0a4b0dcba2e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 982103876b00718aa3b42c6bc3a07d242cde7594
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835668"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692214"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
@@ -49,8 +49,8 @@ V případě pozadí můžete začít ze [standardního zesílení amplitud](htt
 Fourierova transformace je základní nástroj pro klasický rozbor a je stejně důležitá pro výpočetní prostředky.
 Kromě toho efektivita aplikace *Fourierova transformace* (QFT) daleko přebírá, co je možné na klasickém počítači, takže při navrhování algoritmu pro plnění hodnot.
 
-Jako přibližné generalizace QFT zajišťujeme <xref:microsoft.quantum.canon.approximateqft> operaci, která umožňuje další optimalizace vyřazením rotací, které nejsou bezpodmínečně nutné pro požadovanou přesnost algoritmu.
-Přibližná QFT vyžaduje operaci otočení dyadic $Z $- <xref:microsoft.quantum.intrinsic.rfrac> a <xref:microsoft.quantum.intrinsic.h> operaci.
+Jako přibližné generalizace QFT zajišťujeme <xref:Microsoft.Quantum.Canon.ApproximateQft> operaci, která umožňuje další optimalizace vyřazením rotací, které nejsou bezpodmínečně nutné pro požadovanou přesnost algoritmu.
+Přibližná QFT vyžaduje operaci otočení dyadic $Z $- <xref:Microsoft.Quantum.Intrinsic.RFrac> a <xref:Microsoft.Quantum.Intrinsic.H> operaci.
 Předpokládá se, že vstup a výstup se zakódují do kódování ve formátu big endian---to znamená, že qubit s indexem `0` je kódovaný v binárním (největším) bitu binárního typu celého čísla.
 Tím se zarovnává s [KET Notation](xref:microsoft.quantum.concepts.dirac)jako registr tří qubits ve stavu $ \ket {100} $ odpovídá $q _0 $ ve stavu $ \ket {1} $, zatímco $q _1 $ a $q _2 $ jsou ve stavu $ \ket {0} $.
 Parametr aproximace $a $ určuje úroveň vyřazení $Z $-rotace, tj. $a \in [0.. n] $.
@@ -103,15 +103,15 @@ Další podrobnosti najdete v tématu [M. Roetteler, Th. Beth](http://doi.org/10
 
 ### <a name="quantum-phase-estimation"></a>Odhad kvantové fáze ###
 
-Jednou obzvláště důležitou aplikací pro Fourierova transformaci je naučit se eigenvaluesí jednotlivých operátorů, problém známý jako *odhad fáze*.
+Jednou obzvláště důležitou aplikací pro Fourierova transformaci je naučit se eigenvaluesí jednotlivých operátorů, problém známý jako *odhad fáze* .
 Vezměte v úvahu jednotkové $U $ a State $ \ket{\phi} $, což znamená, že $ \ket{\phi} $ je eigenstate $U $ s neznámým eigenvalue $ \phi $, \begin{Equation} U\ket {\ fí} = \phi\ket{\phi}.
 \end{Equation} Pokud máme přístup pouze k $U $ jako Oracle, můžeme se naučit fázi $ \phi $ pomocí toho, že $Z $ rotace aplikovaná na cíl kontrolované operace se rozšíří zpátky na ovládací prvek.
 
 Předpokládejme, že $V $ je řízená aplikace $U $, jako je \begin{align} V (\ket {0} \otimes \ket{\phi}) & = \ket {0} \otimes \ket{\phi} \textrm{ \\ \\ a} V (\ket {1} \otimes \ket{\phi}) & = e ^ {i \phi} {1} \ket \otimes \ket{\phi}.
 \end{Align} a potom lineární, \begin{align} V (\ket{+} \otimes \ket{\phi}) & = \frac{(\ket {0} \otimes \ket{\phi}) + e ^ {i \phi} (\ket {1} \otimes \ket{\phi})} {\sqrt {2} }.
-\end{align} můžeme shromažďovat výrazy, abychom zjistili, že \begin{align} V (\ket{+} \otimes \ket{\phi}) & = \frac{\ket {0} + e ^ {i \phi} \ket {1} } {\sqrt {2} } \otimes \ket{\phi} \\ \\ & = (R_1 (\phi) \ket{+}) \otimes \ket{\phi}, \end{align}, kde $R _1 $ je jednotně uplatňovaná <xref:microsoft.quantum.intrinsic.r1> operace.
+\end{align} můžeme shromažďovat výrazy, abychom zjistili, že \begin{align} V (\ket{+} \otimes \ket{\phi}) & = \frac{\ket {0} + e ^ {i \phi} \ket {1} } {\sqrt {2} } \otimes \ket{\phi} \\ \\ & = (R_1 (\phi) \ket{+}) \otimes \ket{\phi}, \end{align}, kde $R _1 $ je jednotně uplatňovaná <xref:Microsoft.Quantum.Intrinsic.R1> operace.
 Nefunguje jinak, účinek použití $V $ je přesně stejný jako při použití $R _1 $ s neznámým úhlem, i když máme přístup pouze k $V $ jako Oracle.
-Proto se pro zbytek této diskuze podíváme na fázi odhadu v souvislosti s $R _1 (\phi) $, kterou implementujeme pomocí *Kickback fáze*s názvem.
+Proto se pro zbytek této diskuze podíváme na fázi odhadu v souvislosti s $R _1 (\phi) $, kterou implementujeme pomocí *Kickback fáze* s názvem.
 
 Vzhledem k tomu, že registr řízení a cíle zůstane untangled po tomto procesu, můžeme použít $ \ket{\phi} $ jako cíl kontrolované aplikace $U ^ $2 a připravit druhý qubit ovládacího prvku ve stavu $R _1 (2 \phi) \ket{+} $.
 V tomto případě můžeme získat registraci formuláře \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \phi) \ket{+} \\ \\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket {0} + \exp (i 2 ^ {j} \phi) \ket {1} \right) \\ \\ & \propto \ sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align}, kde $n $ je počet bitů s přesností, které vyžadujeme. a tam, kde jsme použili $ {} \propto {} $ k označení toho, že jsme potlačili faktor normalizace $1/\sqrt{2 ^ n} $.
@@ -119,4 +119,4 @@ V tomto případě můžeme získat registraci formuláře \begin{align} \ket{\p
 Pokud předpokládáme, že $ \phi = 2 \pi p/2 ^ k $ pro celé číslo $p $, rozpoznáme to jako $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, kde $p _J $ je $j ^ {\textrm{th}} $ bit of $2 \pi \phi $.
 Když použijete sousedící transformaci Fourierova transformace, získáme proto binární reprezentace fáze kódované jako stav pro stav.
 
-V systému Q# je tato operace implementována <xref:microsoft.quantum.characterization.quantumphaseestimation> operací, která přebírá <xref:microsoft.quantum.oracles.discreteoracle> implementaci aplikace $U ^ m $ jako funkci kladových celých čísel $m $.
+V systému Q# je tato operace implementována <xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation> operací, která přebírá <xref:Microsoft.Quantum.Oracles.DiscreteOracle> implementaci aplikace $U ^ m $ jako funkci kladových celých čísel $m $.
