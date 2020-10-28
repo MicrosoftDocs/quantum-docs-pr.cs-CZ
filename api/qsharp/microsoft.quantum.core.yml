@@ -1,0 +1,32 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Vrátí výchozí instanci zadaného typu.
+  uid: Microsoft.Quantum.Core.Default
+- summary: Vrátí počet prvků v poli.
+  uid: Microsoft.Quantum.Core.Length
+- summary: Vrátí definovanou koncovou hodnotu daného rozsahu, což není nutně poslední prvek v sekvenci.
+  uid: Microsoft.Quantum.Core.RangeEnd
+- summary: Vrátí nový rozsah, který je zpětným rozsahem vstupu.
+  uid: Microsoft.Quantum.Core.RangeReverse
+- summary: Vrátí definovanou počáteční hodnotu daného rozsahu.
+  uid: Microsoft.Quantum.Core.RangeStart
+- summary: Vrátí celé číslo, které určuje, jak se počítá další hodnota rozsahu.
+  uid: Microsoft.Quantum.Core.RangeStep
+name: Microsoft.Quantum.Core
+newtypes:
+- summary: Atribut rozpoznaný kompilátorem, který slouží k označení uživatelsky definovaných typů jako atributů.
+  uid: Microsoft.Quantum.Core.Attribute
+- summary: Atribut rozpoznaný kompilátorem, který slouží k označení typu nebo k jeho vyžádání jako zastaralé.
+  uid: Microsoft.Quantum.Core.Deprecated
+- summary: Atribut rozpoznaný kompilátorem, který slouží k označení vstupního bodu spustitelného souboru.
+  uid: Microsoft.Quantum.Core.EntryPoint
+operations: []
+summary: 'Tento obor názvů zahrnuje Q # Core functions a Operations.'
+uid: Microsoft.Quantum.Core
+metadata:
+  ms.openlocfilehash: 12de9824c55c72651f5b29cc806058be14343ec5
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92698361"

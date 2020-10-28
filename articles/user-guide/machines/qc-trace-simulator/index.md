@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7f5e25aa7b58277642783e03d03854cd75ff4ca3
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
+ms.openlocfilehash: 2e2d9f8494d8709fba34123793cecce4011b609a
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771296"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690828"
 ---
 # <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Simulátor kvantového trasování sady Quantum Development Kit (QDK)
 
@@ -55,7 +55,7 @@ namespace Quantum.MyProgram
 
 Vzhledem k tomu, že simulátor kvantového trasování nesimuluje skutečný kvantový stav, není možné vypočítat pravděpodobnost výsledků měření v rámci operace. 
 
-Proto pokud operace obsahuje měření, je nutné explicitně poskytnout tyto pravděpodobnosti pomocí operace <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> z oboru názvů <xref:microsoft.quantum.diagnostics>. Ilustruje to následující příklad:
+Proto pokud operace obsahuje měření, je nutné explicitně poskytnout tyto pravděpodobnosti pomocí operace <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> z oboru názvů <xref:Microsoft.Quantum.Diagnostics>. Ilustruje to následující příklad:
 
 ```qsharp
 operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
@@ -74,7 +74,7 @@ operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
 }
 ```
 
-Když simulátor kvantového trasování narazí na operaci `AssertMeasurementProbability`, zaznamená, že pro měření `PauliZ` v umístění `source` a `q` by měl být uveden výstup `Zero` s pravděpodobností **0,5**. Když později spustí operaci `M`, najde zaznamenané hodnoty pravděpodobnosti výsledků a `M` vrátí `Zero` nebo `One`, a to s pravděpodobností **0,5**. Pokud stejný kód běží v simulátoru, který sleduje kvantový stav, tento simulátor ověří správnost pravděpodobností v rámci operace `AssertMeasurementProbability`.
+Když simulátor kvantového trasování narazí na operaci `AssertMeasurementProbability`, zaznamená, že pro měření `PauliZ` v umístění `source` a `q` by měl být uveden výstup `Zero` s pravděpodobností **0,5** . Když později spustí operaci `M`, najde zaznamenané hodnoty pravděpodobnosti výsledků a `M` vrátí `Zero` nebo `One`, a to s pravděpodobností **0,5** . Pokud stejný kód běží v simulátoru, který sleduje kvantový stav, tento simulátor ověří správnost pravděpodobností v rámci operace `AssertMeasurementProbability`.
 
 Mějte na paměti, že pokud alespoň jedna operace měření nemá anotaci vytvořenou pomocí `AssertMeasurementProbability`, simulátor vygeneruje [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.unconstrainedmeasurementexception).
 

@@ -1,0 +1,92 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Vrátí hodnotu QECC představující ⟦ 3, 1, 1 ⟧ bit převráceného kodéru a dekodéru pomocí místního měření Syndrome.
+  uid: Microsoft.Quantum.ErrorCorrection.BitFlipCode
+- summary: Funkce pro obnovení Pauli operací pro dané měření Syndrome podle vyhledávání tabulek pro ⟦ 3, 1, 1 ⟧ bit překlápění kódu.
+  uid: Microsoft.Quantum.ErrorCorrection.BitFlipRecoveryFn
+- summary: Vrací hodnotu QECC představující ⟦ 5, 1, 3 ⟧ Code Encoder a dekodér s místním měřením Syndrome.
+  uid: Microsoft.Quantum.ErrorCorrection.FiveQubitCode
+- summary: Vrátí funkci, která mapuje Syndrome o chybách na odpovídající chybu – správné správnosti Paulich operátorů podle vyhledávání v tabulce pro kód ⟦ 5, 1, 3 ⟧.
+  uid: Microsoft.Quantum.ErrorCorrection.FiveQubitCodeRecoveryFn
+- summary: Vrátí hodnotu CSS reprezentující ⟦ 7, 1, 3 ⟧ Steane Code Encoder a dekodér s místním měřením Syndrome.
+  uid: Microsoft.Quantum.ErrorCorrection.SteaneCode
+- summary: Dekodér pro kombinované X-a Z-části skupiny stabilizace kódu ⟦ 7, 1, 3 ⟧ Steane.
+  uid: Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryFns
+- summary: Dekodér pro X-část skupiny stabilizace kódu ⟦ 7, 1, 3 ⟧ Steane.
+  uid: Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryX
+- summary: Dekodér pro Z části skupiny stabilizace kódu ⟦ 7, 1, 3 ⟧ Steane.
+  uid: Microsoft.Quantum.ErrorCorrection.SteaneCodeRecoveryZ
+- summary: Pro danou tabulku Pauli operací v daném registru qubits vrátí tato funkce objekt typu `RecoveryFn` , který obsahuje všechny informace potřebné k provedení dekódování vyhledávání tabulky v souvislosti s daným polem Pauli operací.
+  uid: Microsoft.Quantum.ErrorCorrection.TableLookupRecovery
+- summary: ''
+  uid: Microsoft.Quantum.ErrorCorrection.TableLookupRecoveryImpl
+name: Microsoft.Quantum.ErrorCorrection
+newtypes:
+- summary: Představuje kód Calderbank – Shor – Steane (CSS) podle definice kodéru, dekodéru a jeho postupů Syndrome měření pro `X` chyby a v `Z` uvedeném pořadí.
+  uid: Microsoft.Quantum.ErrorCorrection.CSS
+- summary: >-
+    Představuje operaci, která dekóduje kódovaný registr do fyzického registru a pomocné qubitsy použité k zaznamenání Syndrome.
+
+    Argument pro DecodeOp je stejný jako návrat z EncodeOp a naopak.
+  uid: Microsoft.Quantum.ErrorCorrection.DecodeOp
+- summary: >-
+    Představuje operaci, která kóduje fyzický registr do logického registru pomocí poskytnutých pomocných qubits.
+
+    První argument se považuje za fyzický registr, který se zakóduje, zatímco druhý argument je pomocným registračním registrem, který se bude používat.
+  uid: Microsoft.Quantum.ErrorCorrection.EncodeOp
+- summary: Typ pro registraci fyzického qubitsu `Qubit[]` , který kóduje logický qubits.
+  uid: Microsoft.Quantum.ErrorCorrection.LogicalRegister
+- summary: Představuje chybu s opravou kódu podle definice jeho kodéru, dekodéru a Syndrome měřicí procedury.
+  uid: Microsoft.Quantum.ErrorCorrection.QECC
+- summary: Zadejte funkci, která mapuje chybu Syndrome na posloupnost `Pauli[]` operací, které opraví zjištěnou chybu.
+  uid: Microsoft.Quantum.ErrorCorrection.RecoveryFn
+- summary: Typ pro měření výsledků `Result[]` , které určují chybu Syndrome kódu.
+  uid: Microsoft.Quantum.ErrorCorrection.Syndrome
+- summary: Představuje operaci, která slouží k měření Syndrome bloku kódu chyby.
+  uid: Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp
+operations:
+- summary: >-
+    Soukromá operace používaná k implementaci kodéru překlápění i dekodéru.
+
+    Uvědomte si, že tento kodér může využít místní soudržné obnovení. v takovém případě bude "příčinou" Chyba, která je popsána v počátečním stavu `auxQubits` . Zejména pokud `auxQubits` jsou ve stavu "$ \ket $" na začátku {10} , $X způsobí to, že se na kódovaném qubit zobrazí chyba _1 $.
+  uid: Microsoft.Quantum.ErrorCorrection.ApplyBitFlipEncoder
+- summary: Dekóduje z [3, 1, 3]/⟦ 3, 1, 1 ⟧ kódu překlopení.
+  uid: Microsoft.Quantum.ErrorCorrection.DecodeFromBitFlipCode
+- summary: Dekóduje kód ⟦ 5, 1, 3 ⟧.
+  uid: Microsoft.Quantum.ErrorCorrection.DecodeFromFiveQubitCode
+- summary: Operace inverzního kódování, která mapuje nekódovaný registr do kódovaného kódu, se zakódovaným registrem na základě ⟦ 7, 1, 3 ⟧ Steane kód.
+  uid: Microsoft.Quantum.ErrorCorrection.DecodeFromSteaneCode
+- summary: Zakóduje do [3, 1, 3]/⟦ 3, 1, 1 ⟧ kódu překlopení.
+  uid: Microsoft.Quantum.ErrorCorrection.EncodeIntoBitFlipCode
+- summary: Se zakóduje do kódu ⟦ 5, 1, 3 ⟧.
+  uid: Microsoft.Quantum.ErrorCorrection.EncodeIntoFiveQubitCode
+- summary: Operace kódování, která mapuje nekódovaný registr v registru do kódovaného registru, se zakódovaným registrem na základě kódu ⟦ 7, 1, 3 ⟧ Steane.
+  uid: Microsoft.Quantum.ErrorCorrection.EncodeIntoSteaneCode
+- summary: Soukromá operace používaná k implementaci kodéru 5 qubit a dekodéru.
+  uid: Microsoft.Quantum.ErrorCorrection.FiveQubitCodeEncoderImpl
+- summary: Otočí jeden qubit o π/4 o ose Y.
+  uid: Microsoft.Quantum.ErrorCorrection.InjectPi4YRotation
+- summary: Implementuje algoritmus Knill Magic State.
+  uid: Microsoft.Quantum.ErrorCorrection.KnillDistill
+- summary: Měří danou sadu generátorů skupiny stabilizace.
+  uid: Microsoft.Quantum.ErrorCorrection.MeasureStabilizerGenerators
+- summary: Provede jeden znak opravy chyb pomocí kódu, který je popsán v `QECC` typu.
+  uid: Microsoft.Quantum.ErrorCorrection.Recover
+- summary: Provede jeden znak opravy chyb pomocí kódu, který je popsán v `CSS` typu.
+  uid: Microsoft.Quantum.ErrorCorrection.RecoverCSS
+- summary: Soukromá operace používaná k implementaci kodéru Steane kódu i dekodéru.
+  uid: Microsoft.Quantum.ErrorCorrection.SteaneCodeEncoderImpl
+- summary: >-
+    Syndrome měření a inverzní funkce pro vkládání.
+
+    $X $-a $Z $-stabilizátory se nepovažují za stejné, což je kvůli konkrétní volbě okruhu kódování. Tato asymetrie vede k jiné rutině extrakce Syndrome. Jedním z nich může změřit Syndrome pomocí měření qubit Pauli operátora přímo ve stavu kódu, ale pro účely destilace se logické qubit vrátí do jednoho qubit, v případě, že se Syndrome měření dá provést bez dalšího ancillas.
+  uid: Microsoft.Quantum.ErrorCorrection._ExtractLogicalQubitFromSteaneCode
+summary: Tento obor názvů obsahuje funkce, operace a uživatelsky definované typy pro opravu chyb.
+uid: Microsoft.Quantum.ErrorCorrection
+metadata:
+  ms.openlocfilehash: ba16a793fc9389c7102047a6664c0338ea11314d
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92698029"

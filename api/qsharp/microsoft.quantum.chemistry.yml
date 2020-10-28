@@ -1,0 +1,24 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Převede výraz Hamiltonian ve `HTerm` formátu dat na GeneratorIndex.
+  uid: Microsoft.Quantum.Chemistry.HTermToGenIdx
+- summary: Převede index na Hamiltonian termín ve `HTerm[]` formátu dat na GeneratorIndex.
+  uid: Microsoft.Quantum.Chemistry.HTermsToGenIdx
+- summary: Převede Hamiltonian ve `HTerm[]` formátu dat na GeneratorSystem.
+  uid: Microsoft.Quantum.Chemistry.HTermsToGenSys
+- summary: Ověří, zda `Double` je číslo nepřibližně nula.
+  uid: Microsoft.Quantum.Chemistry.IsNotZero
+name: Microsoft.Quantum.Chemistry
+newtypes:
+- summary: 'Formát dat předaných z C# na Q #, který představuje období Hamiltonian. Význam reprezentovaných dat je určen algoritmem, který ho přijímá.'
+  uid: Microsoft.Quantum.Chemistry.HTerm
+operations: []
+summary: ''
+uid: Microsoft.Quantum.Chemistry
+metadata:
+  ms.openlocfilehash: d5473c1264e7eae53b18c3fc0b2686e947772a88
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92698473"
