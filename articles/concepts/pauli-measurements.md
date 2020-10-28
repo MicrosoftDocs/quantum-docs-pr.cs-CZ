@@ -87,7 +87,7 @@ Autor: bradben UID: Microsoft.. koncepty. Pauli MS. Author: v-benbra MS. Date: 1
 
 V předchozích diskusích jsme se zaměřili na výpočetní základní měření.
 Ve skutečnosti existují další běžná měření, ke kterým dochází v množství náročném na výpočetní výkon, který je ze zapsaných perspektiv pohodlný, aby se vyjádřily na základě výpočetních měření.
-Když pracujete s Q# , nejběžnější druh měření, na který budete pracovat, bude pravděpodobně *Pauli měřením*, které generalizace výpočetních měření budou zahrnovat měření v jiných základech, a parity mezi různými qubits.
+Když pracujete s Q# , nejběžnější druh měření, na který budete pracovat, bude pravděpodobně *Pauli měřením* , které generalizace výpočetních měření budou zahrnovat měření v jiných základech, a parity mezi různými qubits.
 V takových případech je běžné projednávat měření operátoru Pauli, a to obecně operátor, jako je $ x, Y, Z $ nebo $ z \otimes , x \otimes x, x \otimes Y $ a tak dále.
 
 > [!TIP]
@@ -128,7 +128,7 @@ Tato měření jsou uvedena níže pro usnadnění práce.
 |$ $ X | $H               $                    |
 |$ $ A | $HS – ^               {\dagger}$         |
 
-To znamená, že při použití tohoto jazyka je "Measure $ Y $ " ekvivalentem použití $ HS ^ \dagger $ a pak se měří v výpočetním základu, kde [`S`](xref:microsoft.quantum.intrinsic.s) se jedná o vnitřní operaci na základě fáze, která se někdy označuje jako "brána", a může být simulována jednotnou maticí.
+To znamená, že při použití tohoto jazyka je "Measure $ Y $ " ekvivalentem použití $ HS ^ \dagger $ a pak se měří v výpočetním základu, kde [`S`](xref:Microsoft.Quantum.Intrinsic.S) se jedná o vnitřní operaci na základě fáze, která se někdy označuje jako "brána", a může být simulována jednotnou maticí.
 
 $$
 \begin{align}
@@ -194,7 +194,7 @@ Podobně jako u qubitového případu je možné všechny qubit Pauli-měření 
 >0 & 1 & 0 &\\\\
 >0 & & & > \end { } \right matice > 0 0 1     \end{align}
 > $$
-> slouží k simulaci vnitřní operace [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> slouží k simulaci vnitřní operace [`SWAP`](xref:Microsoft.Quantum.Intrinsic) .
 
 ||Jednotná transformace měření Pauli|
 |----------------------|------------------------|
@@ -214,7 +214,7 @@ Podobně jako u qubitového případu je možné všechny qubit Pauli-měření 
 |$X \otimes Y $ | $ \operatorname { CNOT } \_ { 10 } (H \otimes HS ^ \dagger ) $|
 |$A \otimes A $ | $ \operatorname { CNOT } \_ { 10 } (HS ^ \dagger \otimes HS ^ \dagger ) $|
 
-Tato [`CNOT`](xref:microsoft.quantum.intrinsic.cnot) operace se zobrazí z následujícího důvodu.
+Tato [`CNOT`](xref:Microsoft.Quantum.Intrinsic.CNOT) operace se zobrazí z následujícího důvodu.
 Jednotlivá měření Pauli, která neobsahují $ \boldone $ matici, jsou ekvivalentní až $ z z \otimes $ výše uvedeného důvodu.
 Eigenvalues z z $ \otimes pouze je $ závislá na paritě qubits, která zahrnuje každý výpočetní vektor a kontrolované – nečinnosti slouží k výpočtu této parity a jejich uložení v prvním bitu.
 Po měření prvního bitu můžeme obnovit identitu výsledného prostoru, který je ekvivalentní k měření Pauli operátoru.
@@ -240,16 +240,16 @@ V Q# , taková měření vrátí hodnotu $ j, $ Pokud měření vede k výsledku
 Pauli měření jako integrovaná funkce v nástroji Q# je užitečné, protože měření takových operátorů vyžaduje dlouhé řetězy řízených a nevratných operací a základní transformace, které popisují $ bránu diagonalizing U, která $ se potřebuje k tomu, aby se operace mohla vyjádřit jako tensor produkt z $ $ a $ \id $ .
 Díky možnosti určit, že chcete provést jedno z těchto předdefinovaných měření, nemusíte si dělat starosti s tím, jak transformovat svůj základ, aby výpočetní základní měření poskytovalo potřebné informace.
 Q# zpracuje všechny potřebné základní transformace automaticky.
-Další informace najdete v tématu [`Measure`](xref:microsoft.quantum.intrinsic.measure) operace a [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) .
+Další informace najdete v tématu [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) operace a [`MeasurePaulis`](xref:Microsoft.Quantum.Measurement.MeasurePaulis) .
 
-## <a name="the-no-cloning-theorem"></a>Věta bez klonování
+## <a name="the-no-cloning-theorem"></a>No-Cloning věta
 
 Informace o nemocném případě jsou výkonné.
 Umožňuje nám dělat úžasné věci, jako jsou čísla faktorů exponenciálně rychleji než nejlepší známé klasické algoritmy, nebo efektivně simulovat korelační elektronické systémy, které Classic potřebují k přesnému simulaci exponenciálních nákladů.
 Existují však určitá omezení výkonu s využitím nároku na výpočetní výkon.
-Jedno takové omezení je dáno *větaem bez klonování*.
+Jedno takové omezení je dáno *větaem bez klonování* .
 
-Věta pro No-klonování není aptly pojmenováno.
+No-Cloning věta je aptly s názvem.
 Neumožňuje klonování obecných stavových stavů počítačem s více než jednou.
 Důkaz věta je výjimečně přímočarý.
 Úplný důkaz věta bez klonování je pro naši diskuzi příliš technický, proto se v rámci našeho oboru nejedná o důkaz, že v případě žádného dalšího pomocného qubitsu není v našem rozsahu (pomocné qubits se qubits používá pro pomocné místo během výpočtu a snadno se používá a spravuje v najdete v Q# tématu [výpůjčkované qubits](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
@@ -273,15 +273,15 @@ $$
 \end{align}
 $$
 
-To poskytuje základní Intuition za věta bez klonování: každé zařízení, které kopíruje neznámý stav, musí způsobit chyby alespoň u některých stavů, které kopíruje.
+To poskytuje základní Intuition za No-Cloning věta: každé zařízení, které kopíruje neznámý stav, musí způsobit chyby alespoň u některých stavů, které kopíruje.
 I když klíč předpokládá, že Cloner funguje lineárně na vstupním stavu, může být porušená přidáním a měřením pomocných qubits, takže tyto interakce také nevrací informace o systému prostřednictvím statistik měření a zabrání v takových případech přesné klonování.
-Další [informace](xref:microsoft.quantum.more-information)o tom, jak se věta bez klonování, najdete v tématu.
+Podrobnější kontrolu No-Cloning věta najdete v tématu další [informace](xref:microsoft.quantum.more-information).
 
-Věta bez klonování je důležité pro kvalitativní porozumění výpočetním procesorům, protože pokud byste mohli naklonovat stavy nenákladných stavových procesorů, pak by vám byla udělena téměř Magical možnost učit se ze států.
+No-Cloning věta je důležité pro kvalitativní porozumění výpočetním procesorům, protože pokud byste mohli naklonovat stavy nenákladných stavových procesorů, pak by vám byla udělena téměř Magical možnost učit se ze států.
 Ve skutečnosti byste mohli narušit zásadu nejistoty Heisenberg vaunted.
 Alternativně můžete použít optimální Cloner k získání jedné ukázky ze složitosti distribuce nečinnosti a zjistit všechno, co byste se mohli dozvědět o této distribuci jenom z jedné ukázky.
 To by vypadalo jako převrácení mince a pozorování hlav a následného oznámení o tom, že na výsledek má odpovědět "Ah. rozdělení této mince musí být Bernoulliho pomocí $ p = 0.512643 \ ldots $ !"  Takový příkaz by nebyl sensical, protože jeden z bitových informací (výsledek hlav) jednoduše nemůže poskytnout mnoho informací potřebných ke kódování distribuce bez podstatných předchozích informací.
 Podobně bez předchozích informací nemůžeme zcela klonovat stav, protože nemůžeme připravit komplet těchto mincí bez vědomí $ p $ .
 
 Informace nejsou v výpočetním prostředí bezplatné.
-Každá qubit měřená má jedinou bitovou informaci a věta bez klonování ukazuje, že není k dispozici žádné zadní vrátka, které by bylo možné zneužít k získání základních kompromisů mezi informacemi získanými v systému a vyvolaným poruchou.
+Každá qubit měřená má jeden bit informací a No-Cloning věta ukazuje, že není k dispozici zadní vrátka, které by bylo možné zneužít k získání základních kompromisů mezi informacemi získanými v systému a jeho vyvoláním.
