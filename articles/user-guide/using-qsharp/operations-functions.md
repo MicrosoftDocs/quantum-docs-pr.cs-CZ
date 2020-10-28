@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e9a84de2753bc3293f441e66ee53e78559263e5c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 55e6d3e1a242386c46213083692377520df83a80
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833484"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692137"
 ---
 # <a name="operations-and-functions-in-no-locq"></a>Operace a funkce v Q#
 
@@ -32,7 +32,7 @@ Deklarace operace se skládá z klíčového slova `operation` následovaný sym
 
 Každá operace provede vstup, vytvoří výstup a určí implementaci pro jednu nebo více specializací operace.
 Možné specializace a jejich definování a volání jsou podrobně popsány v různých částech tohoto článku.
-Prozatím zvažte následující operaci, která definuje jenom výchozí specializaci těla a jako svůj vstup přebírá jeden qubit, a pak na tomto vstupu zavolá vestavěnou <xref:microsoft.quantum.intrinsic.x> operaci:
+Prozatím zvažte následující operaci, která definuje jenom výchozí specializaci těla a jako svůj vstup přebírá jeden qubit, a pak na tomto vstupu zavolá vestavěnou <xref:Microsoft.Quantum.Intrinsic.X> operaci:
 
 ```qsharp
 operation BitFlip(target : Qubit) : Unit {
@@ -46,7 +46,7 @@ Nakonec `Unit` definuje, že výstup operace je prázdný.
 `Unit` se používá podobně `void` v jazyce C# a dalších imperativních jazycích a je ekvivalentní s jazykem `unit` F # a dalšími funkčními jazyky.
 
 Operace mohou také vracet zajímavější typy než `Unit` .
-Například <xref:microsoft.quantum.intrinsic.m> operace vrátí výstup typu `Result` , který představuje vykonání měření.  Můžete ji předat z operace do jiné operace nebo ji použít s `let` klíčovým slovem k definování nové proměnné.
+Například <xref:Microsoft.Quantum.Intrinsic.m> operace vrátí výstup typu `Result` , který představuje vykonání měření.  Můžete ji předat z operace do jiné operace nebo ji použít s `let` klíčovým slovem k definování nové proměnné.
 
 Tento přístup umožňuje, aby představoval klasický výpočet, který komunikuje s provozními operacemi na nízké úrovni, jako je například v [hustém kódování](https://github.com/microsoft/QuantumKatas/tree/main/SuperdenseCoding):
 
@@ -65,13 +65,13 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 
 > [!NOTE]
 > Každá operace v Q# používá přesně jeden vstup a vrací přesně jeden výstup.
-> Více vstupů a výstupů je znázorněno pomocí *řazených kolekcí členů*, které shromažďují více hodnot dohromady do jedné hodnoty.
+> Více vstupů a výstupů je znázorněno pomocí *řazených kolekcí členů* , které shromažďují více hodnot dohromady do jedné hodnoty.
 > V tomto ohledu je jazyk řazené kolekce členů (Tuple Q# ).
 > Po tomto konceptu by měla být sada prázdných závorek `()` načtena jako "prázdná" řazená kolekce členů, která má typ `Unit` .
 
 ## <a name="controlled-and-adjoint-operations"></a>Řízené a sousedící operace
 
-Pokud operace implementuje jednotnou transformaci, jako je případ mnoha operací v nástroji Q# , je možné definovat způsob, jakým operace funguje při *adjointed* nebo *řízení*. *Sousedící* specializace operace určuje způsob, jakým operace "INVERT" operace funguje, zatímco *řízená* specializace určuje, jak operace funguje, když je její aplikace podmíněně ve stavu konkrétního registru.
+Pokud operace implementuje jednotnou transformaci, jako je případ mnoha operací v nástroji Q# , je možné definovat způsob, jakým operace funguje při *adjointed* nebo *řízení* . *Sousedící* specializace operace určuje způsob, jakým operace "INVERT" operace funguje, zatímco *řízená* specializace určuje, jak operace funguje, když je její aplikace podmíněně ve stavu konkrétního registru.
 
 Adjoints operací je zásadní pro mnoho aspektů výpočetních operací. Příklad jedné takové situace popsané společně s užitečnou Q# programovací technikou naleznete v tématu [Flow Control: conjugations](xref:microsoft.quantum.guide.controlflow#conjugations). Řízená verze operace je nová operace, která efektivně aplikuje základní operaci pouze v případě, že všechny qubits ovládacího prvku jsou v zadaném stavu.
 Pokud je qubits ovládacího prvku na pozici, pak je základní operace použita v souvislém umístění na příslušné straně.
@@ -139,7 +139,7 @@ Jako další příklad `CNOT(control, target)` lze implementovat jako `Controlle
 
 V deklaraci první operace v předchozích příkladech operace `BitFlip` a `DecodeSuperdense` byly definovány s podpisy a v `(Qubit => Unit)` `((Qubit, Qubit) => (Result, Result))` uvedeném pořadí.
 Jak `DecodeSuperdense` zahrnuje měření, nejedná se o jednotkovou operaci, a proto by nemohly nastavovat žádné specializace nesousedících a (vrátit související požadavek, který taková operace vrátí `Unit` ).
-Jak ale `BitFlip` jednoduše provede jednotnou <xref:microsoft.quantum.intrinsic.x> operaci, můžete ji definovat s oběma specializacemi.
+Jak ale `BitFlip` jednoduše provede jednotnou <xref:Microsoft.Quantum.Intrinsic.X> operaci, můžete ji definovat s oběma specializacemi.
 
 Tato část podrobně popisuje, jak zahrnout existenci specializace v Q# deklaracích operací, takže jim umožní volat ve spojení s `Adjoint` nebo `Controlled` funktory.
 Další informace o některých situacích, ve kterých je buď platný, nebo není platný pro deklaraci určitých specializací, naleznete v tématu [okolnosti pro platné definování specializací](#circumstances-for-validly-defining-specializations) v tomto článku.
@@ -368,7 +368,7 @@ To znamená, že hodnota uživatelsky definovaného typu není použitelná, pok
 
 Funkce jsou čistě deterministické, klasické rutiny v Q# , které se liší od operací v tom, že nemají dovoleno mít žádné účinky přesahující výpočet výstupní hodnoty.
 Konkrétně funkce nemohou volat operace; působit na, přidělit nebo vypůjčit qubits; Ukázka náhodných čísel; nebo jinak závisí na stavu nad rámec vstupní hodnoty s funkcí.
-V důsledku toho Q# jsou funkce *čisté*, v tom, že vždycky mapují stejné vstupní hodnoty na stejné výstupní hodnoty.
+V důsledku toho Q# jsou funkce *čisté* , v tom, že vždycky mapují stejné vstupní hodnoty na stejné výstupní hodnoty.
 Toto chování umožňuje Q# kompilátoru bezpečně změnit pořadí, jak a kdy volat funkce při generování specializací operace.
 
 Každý Q# zdrojový soubor může definovat libovolný počet funkcí.
@@ -401,7 +401,7 @@ function DotProduct(a : Double[], b : Double[]) : Double {
 
 ### <a name="classical-logic-in-functions--good"></a>Klasická logika v Functions = = dobrá
 
-Kdykoli je to možné, je vhodné napsat klasický Logic z pojmu Functions namísto operací, aby je mohl snadněji použít. Například pokud jste napsali předchozí `Square` deklaraci jako *operaci*, kompilátor by nedokázal zaručit, že volání stejného vstupu by konzistentně vytvořilo stejné výstupy.
+Kdykoli je to možné, je vhodné napsat klasický Logic z pojmu Functions namísto operací, aby je mohl snadněji použít. Například pokud jste napsali předchozí `Square` deklaraci jako *operaci* , kompilátor by nedokázal zaručit, že volání stejného vstupu by konzistentně vytvořilo stejné výstupy.
 
 Pro podtržení rozdílu mezi funkcemi a operacemi zvažte problém klasického vzorkování náhodného čísla v rámci Q# operace:
 
@@ -415,7 +415,7 @@ operation U(target : Qubit) : Unit {
 
 Pokaždé, když `U` se zavolá, má jinou akci `target` .
 Konkrétně kompilátor nemůže zaručit, že pokud přidáte `adjoint auto` deklaraci specializace do `U` , `U(target); Adjoint U(target);` funguje jako identita (tj. jako No-OP).
-To je v rozporu s definicí sousedícího prvku definovaného v [vektorech a maticích](xref:microsoft.quantum.concepts.vectors), což umožňuje kompilátoru automaticky generovat sousední specializaci objektu v operaci, při které volání operace <xref:microsoft.quantum.math.randomreal> způsobí přerušení záruk poskytnutých kompilátorem <xref:microsoft.quantum.math.randomreal> . Jedná se o operaci, pro kterou neexistuje žádná sousední nebo řízená verze.
+To je v rozporu s definicí sousedícího prvku definovaného v [vektorech a maticích](xref:microsoft.quantum.concepts.vectors), což umožňuje kompilátoru automaticky generovat sousední specializaci objektu v operaci, při které volání operace <xref:Microsoft.Quantum.Math.RandomReal> způsobí přerušení záruk poskytnutých kompilátorem <xref:Microsoft.Quantum.Math.RandomReal> . Jedná se o operaci, pro kterou neexistuje žádná sousední nebo řízená verze.
 
 Na druhé straně, povolení volání funkcí, jako `Square` je bezpečná, a zaručuje kompilátor, že musí pouze zachovávat vstup pro `Square` zajištění stabilního výstupu.
 Proto izolování co nejvíc klasických logických funkcí do funkcí umožňuje snadno znovu použít tuto logiku v jiných funkcích a operacích.
@@ -467,7 +467,7 @@ I když je to pro malý počet takových funkcí rušivý, když shromáždíte 
 Mnohé z těchto potíží však jsou výsledkem faktu, že jste kompilátor neudělili informace, které potřebuje k tomu, abyste rozpoznali, jak různé verze nástroje `Map` souvisejí.
 Efektivně budete chtít, aby kompilátor považoval `Map` jako nějaký druh matematické funkce od Q# *typů* do Q# funkce.
 
-Q# formalizes tento pojem tím, že povolíte funkcím a operacím *parametry typu*a také jejich běžné parametry řazené kolekce členů.
+Q# formalizes tento pojem tím, že povolíte funkcím a operacím *parametry typu* a také jejich běžné parametry řazené kolekce členů.
 V předchozích příkladech si přejete si představit `Map` jako parametry typu `Int, Pauli` v prvním a `Double, String` druhém případě.
 Ve většině případů použijte tyto parametry typu, jako by se jednalo o běžné typy. Použijte hodnoty parametrů typu pro vytvoření polí a řazených kolekcí členů, volání funkcí a operací a přiřazení k běžným nebo proměnlivým proměnným.
 
@@ -536,9 +536,9 @@ Q#Standardní knihovny poskytují rozsah těchto operací s parametrizovanými t
 Tyto postupy jsou podrobněji popsány v [ Q# příručce ke standardní knihovně](xref:microsoft.quantum.libraries.standard.intro).
 
 
-## <a name="callables-as-first-class-values"></a>Se bude volat jako hodnoty první třídy.
+## <a name="callables-as-first-class-values"></a>Se bude volat jako hodnoty First-Class.
 
-Jedním z kritických postupů pro rozhodnutí o toku řízení a klasické logice pomocí funkcí místo operací je použití těchto operací v nástroji jako Q# *první třídy*.
+Jedním z kritických postupů pro rozhodnutí o toku řízení a klasické logice pomocí funkcí místo operací je použití těchto operací v nástroji jako Q# *první třídy* .
 To znamená, že jsou všechny hodnoty v jazyce v pravém.
 Například následující příklad je naprosto platný Q# kód, pokud je málo nepřímý:
 
@@ -549,7 +549,7 @@ operation FirstClassExample(target : Qubit) : Unit {
 }
 ```
 
-Hodnota proměnné `ourH` v předchozím fragmentu kódu je pak operace <xref:microsoft.quantum.intrinsic.h> , například, kterou můžete zavolat jako jakoukoli jinou operaci.
+Hodnota proměnné `ourH` v předchozím fragmentu kódu je pak operace <xref:Microsoft.Quantum.Intrinsic.H> , například, kterou můžete zavolat jako jakoukoli jinou operaci.
 Díky této funkci můžete zapisovat operace, které jako součást svého vstupu přijímají operace, a vytvořit tak vyšší koncepty toku řízení.
 Například můžete si představit, že se má "čtvercová" operace aplikovat dvakrát na stejný cílový qubit.
 
@@ -589,7 +589,7 @@ To znamená, že klasická logika uvnitř funkce je izolovaná a zaručuje kompi
 
 ## <a name="partial-application"></a>Částečná aplikace
 
-Díky funkcím, které vracejí operace, můžete s využitím *částečné aplikace*, ve které zadáváte jednu nebo více částí vstupu do funkce nebo operace, provést mnohem více, aniž byste je skutečně volali. V předchozím `ApplyTwice` příkladu můžete určit, že nechcete zadat hned, na které qubit by měla vstupní operace platit:
+Díky funkcím, které vracejí operace, můžete s využitím *částečné aplikace* , ve které zadáváte jednu nebo více částí vstupu do funkce nebo operace, provést mnohem více, aniž byste je skutečně volali. V předchozím `ApplyTwice` příkladu můžete určit, že nechcete zadat hned, na které qubit by měla vstupní operace platit:
 
 ```qsharp
 operation PartialApplicationExample(op : (Qubit => Unit), target : Qubit) : Unit {

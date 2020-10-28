@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 299eb1484a697ad9d1577aabb44ccb61e908bae3
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a303d54476e42b98a14c6b452227b0e1346567c8
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834002"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691888"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulace Hamiltonian Dynamics
 
@@ -28,13 +28,13 @@ Vzorec na pozadí Trotter – vzorce Suzuki jsou jednoduché: vyjádřete Hamilt
 Konkrétně dejte $H = \ sum_ {j = 1} ^ m H_j $ být Hamiltonian.
 Pak $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $ to znamená, že pokud $t \ll $1, bude chyba v této aproximaci zanedbatelná.
 Všimněte si, že pokud $e ^ {-i H} $ byly normální exponenciální, chyba v této aproximaci nebude $O (m ^ 2 t ^ 2) $: by to bylo nula.
-K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění (*tj.*$H _J H_k \Ne H_k H_j $ všeobecně).
+K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění ( *tj.* $H _J H_k \Ne H_k H_j $ všeobecně).
 
 Pokud je $t $ velké, Trotter vzorce Suzuki se dají použít k tomu, aby se tento dynamika přesně simulovaly tím, že se rozbalí do sekvence krátkého časového intervalu.
 Nechte $r $ počet kroků provedených v čase vývoje, takže pokaždé, když se krok spustí pro čas $t/r $. Potom máme $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon>$0.
 
 Přesnější sblížení lze sestavit pomocí sekvence exponenciálních exponenciálních operátorů, aby se chybové výrazy zrušily.
-Nejjednodušší vzorec, druhý objednávka vzorec Trotter-Suzuki, má formu $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $ chyba, kterou je možné udělat méně než $ \epsilon $ pro jakékoli $ \epsilon>$0, a to tak, že vyberete $r $ pro škálování jako $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+Nejjednodušší vzorec, druhý pořadí Trotter-Suzuki vzorec, má formu $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $ chyba, kterou je možné udělat méně než $ \epsilon $ pro jakékoli $ \epsilon>$0, a to tak, že vyberete $r $ pro škálování jako $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
 Vzorce s vyšším pořadím, konkrétně ($ 2k $ $0>$k), je možné sestavit rekurzivně: $ $ U_ {2k} (t) = [U_ {2k-2} (s_k \~ t)] ^ 2 U_ {2k-2} ([1-4s_k] t) [U_ {2k-2} (s_k \~ t)] ^ 2 = e ^ {-iHt} + O ((m t) ^ {2k + 1}/r ^ {2k}), $ $ where $s _k = (4-4 ^ {1/(2k-1)}) ^ {-1} $.
 
@@ -52,7 +52,7 @@ Například $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otim
         0 & 0 & 0 & e ^ {-IT} \end{bmatrix}.
 $ $ Sem $e ^ {-iHt} \ket {00} = e ^ {IT} \ket {00} $ a $e ^ {-iHt} \ket {01} = e ^ {-The} \ket {01} $, který se dá vidět přímo jako důsledek faktu, že parita $0 $ je $0 $, zatímco parita bitového řetězce $1 $ je $1 $.
 
-Exponenciální operátory operátorů Pauli lze implementovat přímo Q# pomocí <xref:microsoft.quantum.intrinsic.exp> operace:
+Exponenciální operátory operátorů Pauli lze implementovat přímo Q# pomocí <xref:Microsoft.Quantum.Intrinsic.Exp> operace:
 ```qsharp
     using(qubits = Qubit[2]){
         let pauliString = [PauliX, PauliX];
@@ -65,7 +65,7 @@ Exponenciální operátory operátorů Pauli lze implementovat přímo Q# pomoc�
 
 Pro Fermionic Hamiltonians, [Wigner (Jordánsko – rekompozici](xref:microsoft.quantum.chemistry.concepts.jordanwigner) ), vhodně namapuje Hamiltonian na součet Paulich operátorů.
 To znamená, že výše uvedený přístup lze snadno přizpůsobit simulaci chemie.
-Místo ručního přeskočíní všech Pauli podmínek v reprezentaci Wigner na je v tomto příkladu jednoduchý příklad spuštění takové simulace v rámci chemie.
+Místo ručního přeskočíní všech Pauli podmínek v Jordan-Wigner reprezentaci je níže uveden jednoduchý příklad toho, jak by mohla tato simulace v rámci chemie vypadat.
 Náš výchozí bod je [Jordánsko – Wigner kódování](xref:microsoft.quantum.chemistry.concepts.jordanwigner) Fermionic Hamiltonian, vyjádřené v kódu jako instance `JordanWignerEncoding` třídy.
 
 ```csharp
@@ -156,7 +156,7 @@ Operátor průchodu $W $, může být vyjádřený v souvislosti s $ \operatorna
 
 Tyto podrutiny se dají snadno nastavit v Q# .
 Zvažte například jednoduché qubit příčné Ising Hamiltonian, kde $H = X_1 + X_2 + Z_1 Z_2 $.
-V tomto případě Q# je kód, který implementuje operaci $ \operatorname{SELECT} $, vyvolán pomocí <xref:microsoft.quantum.canon.multiplexoperations> , zatímco operace $ \operatorname{Prepare} $ může být implementována pomocí <xref:microsoft.quantum.preparation.preparearbitrarystate> .
+V tomto případě Q# je kód, který implementuje operaci $ \operatorname{SELECT} $, vyvolán pomocí <xref:Microsoft.Quantum.Canon.MultiplexOperations> , zatímco operace $ \operatorname{Prepare} $ může být implementována pomocí <xref:Microsoft.Quantum.Preparation.PrepareArbitraryState> .
 Příklad, který zahrnuje simulaci modelu Hubbard, najdete jako [ Q# vzorek](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 Ruční určení těchto kroků pro jakékoli problémy chemického složení by vyžadovalo mnohem úsilí, které se vyhne použití knihovny složení.
@@ -182,6 +182,6 @@ using(qubits = Qubit[nQubits]){
 }
 ```
 
-V důležitém případě <xref:microsoft.quantum.chemistry.jordanwigner.qubitizationoracle> je implementace platná pro libovolný Hamiltonians zadaný jako lineární kombinaci řetězců Pauli.
-Verze optimalizovaná pro kochemii simulace je vyvolána pomocí <xref:microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle> .
+V důležitém případě <xref:Microsoft.Quantum.Chemistry.JordanWigner.QubitizationOracle> je implementace platná pro libovolný Hamiltonians zadaný jako lineární kombinaci řetězců Pauli.
+Verze optimalizovaná pro kochemii simulace je vyvolána pomocí <xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedQubitizationOracle> .
 Tato verze je optimalizovaná tak, aby minimalizovala počet bran T, které využívají techniky popsané v tématu [kódování elektronických spektra v okruhech s lineárním T](https://arxiv.org/abs/1805.03662).

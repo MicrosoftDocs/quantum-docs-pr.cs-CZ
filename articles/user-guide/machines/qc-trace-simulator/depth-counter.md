@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8280783adfcc2867c3a598a6f57d827125aadcfd
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 89d8a2c9f2ecd5c5332215cd4307bcf4a6422036
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833446"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692109"
 ---
 # <a name="quantum-trace-simulator-depth-counter"></a>Simulátor trasování doby využití: čítač hloubky
 
@@ -23,13 +23,13 @@ Můžete ji použít ke shromáždění počtů, které reprezentují spodní me
 
 ## <a name="depth-values"></a>Hodnoty hloubky
 
-Ve výchozím nastavení mají všechny operace hloubku **0** s výjimkou `T` operace, která má hloubku **1**. To znamená, že ve výchozím nastavení `T` je vypočítána pouze hloubka operací (což je často žádoucí). Čítač hloubky agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
+Ve výchozím nastavení mají všechny operace hloubku **0** s výjimkou `T` operace, která má hloubku **1** . To znamená, že ve výchozím nastavení `T` je vypočítána pouze hloubka operací (což je často žádoucí). Čítač hloubky agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
 
-Všechny <xref:microsoft.quantum.intrinsic> operace se vyjadřují v souvislosti s qubit rotacemi, <xref:microsoft.quantum.intrinsic.t> operacemi, qubitmi Clifford operacemi, <xref:microsoft.quantum.intrinsic.cnot> operacemi a měřeními Pauli observables s více qubity. Uživatelé mohou nastavit hloubku pro jednotlivé primitivní operace prostřednictvím `gateTimes` pole <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
+Všechny <xref:Microsoft.Quantum.Intrinsic> operace se vyjadřují v souvislosti s qubit rotacemi, <xref:Microsoft.Quantum.Intrinsic.T> operacemi, qubitmi Clifford operacemi, <xref:Microsoft.Quantum.Intrinsic.CNOT> operacemi a měřeními Pauli observables s více qubity. Uživatelé mohou nastavit hloubku pro jednotlivé primitivní operace prostřednictvím `gateTimes` pole <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
 
 ## <a name="invoking-the-depth-counter"></a>Vyvolání čítače hloubky
 
-Chcete-li spustit simulátor trasování doby provozu s čítačem hloubky, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit její `UseDepthCounter` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem. 
+Chcete-li spustit simulátor trasování doby provozu s čítačem hloubky, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit její `UseDepthCounter` vlastnost na **hodnotu true** a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem. 
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -52,7 +52,7 @@ operation ApplySampleWithCCNOT() : Unit {
 }
 ```
 
-Chcete-li ověřit, zda `CCNOT` má `T` Hloubka **5** a `ApplySampleWithCCNOT` má `T` hloubku **6**, použijte následující kód jazyka C#:
+Chcete-li ověřit, zda `CCNOT` má `T` Hloubka **5** a `ApplySampleWithCCNOT` má `T` hloubku **6** , použijte následující kód jazyka C#:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;

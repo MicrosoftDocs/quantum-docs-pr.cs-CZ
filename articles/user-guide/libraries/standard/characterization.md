@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8dddc15354c32808e7ad1310bce233ee3dc93fe8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835634"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692158"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -39,7 +39,7 @@ To má výhodu, že pro provedení fáze kickbacku, která je popsaná v přípa
 Každá z metod navrhovaných níže používá jinou strategii pro navrhování experimentů a různé metody zpracování dat pro učení fáze.  Každá z nich má jedinečné výhody od dodržování přísných chybových vazeb, k schopnostem začlenit předchozí informace, tolerovat chyby nebo spouštět na paměťově limitted klasických počítačích.
 
 V diskuzi za iterativní fázi odhad budeme uvažovat o $U $, který je zadaný jako operace s černým polem.
-Jak je popsáno v části v tématu Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q# tyto operace modely Canon jsou <xref:microsoft.quantum.oracles.discreteoracle> určené uživatelem definovaným typem, který je definovaný typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Jak je popsáno v části v tématu Oracle v [datových strukturách](xref:microsoft.quantum.libraries.data-structures), Q# tyto operace modely Canon jsou <xref:Microsoft.Quantum.Oracles.DiscreteOracle> určené uživatelem definovaným typem, který je definovaný typem řazené kolekce členů `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 V konkrétním případě `U : DiscreteOracle` `U(m)` implementuje $U ^ m $ pro `m : Int` .
 
 V rámci této definice každý krok iterativní fáze odhadování pokračuje tím, že se připraví pomocná qubit ve stavu $ \ket{+} $ spolu s počátečním stavem $ \ket{\phi} $, který předpokládáme, je [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) $U (m) $, tj. $U (m) \ket{\phi} = e ^ {im\phi} \ KET {\ fí} $.  
@@ -99,7 +99,7 @@ Přesné odvození bayesovského rozhodování je v praxi nevolatelné.
 Pokud se chcete podívat na tento příklad, chtěli bychom se naučit $n $-bitovou proměnnou $x $.
 Předchozí distribuce $ \Pr (x) $ podporuje více než $2 ^ n $ hypotetické hodnoty $x $.
 To znamená, že pokud potřebujeme vysoce přesný odhad $xí, odhad fáze bayesovského rozhodování může vyžadovat nepotřebnou paměť a dobu zpracování.
-I když některé aplikace, jako je například simulace provozu, limitted vyžaduje, že tyto metody nevylučuje jiné aplikace, jako je například algoritmus Shor, nemůže v rámci kroku odhadu fáze použít přesný odvozování bayesovského rozhodování.  Z tohoto důvodu poskytujeme implementace přibližných bayesovského rozhodování metod, jako je například [odhad fáze postupného procházení (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) , a také nebayesovského rozhodováníelné přístupy, jako je například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation).
+I když některé aplikace, jako je například simulace provozu, limitted vyžaduje, že tyto metody nevylučuje jiné aplikace, jako je například algoritmus Shor, nemůže v rámci kroku odhadu fáze použít přesný odvozování bayesovského rozhodování.  Z tohoto důvodu poskytujeme implementace přibližných bayesovského rozhodování metod, jako je například [odhad fáze postupného procházení (RWPE)](xref:Microsoft.Quantum.Research.Characterization.RandomWalkPhaseEstimation) , a také nebayesovského rozhodováníelné přístupy, jako je například [robustní odhad fáze](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation).
 
 ### <a name="robust-phase-estimation"></a>Robustní odhad fáze ###
 
@@ -112,14 +112,14 @@ Nejdůležitější funkcí odhadu robustní fáze, která je sdílena s větši
 K dalším důležitým podrobnostem patří například malý počet režijních nákladů jenom $1 $ ancilla qubit, nebo že postup není adaptivní, což znamená, že požadovaná posloupnost experimentů na základě doby nezávisí na výsledcích mezilehlého měření. V tomto a nadcházejících příkladech, kde je důležité zvolit algoritmus odhadu fáze, by měl jedna z nich odkazovat na dokumentaci, například @"microsoft.quantum.characterization.robustphaseestimation" a na odkazované publikace, kde najdete další informace a jejich implementaci.
 
 > [!TIP]
-> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [vzorek **SimpleIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)a [ukázkový **model Hubbard** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
+> Existuje mnoho vzorků, ve kterých se používá robustní odhad fáze. V případě odhadu fáze při extrakci energie země s různými fyzickými systémy se podívejte na ukázku [ **simulace**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [vzorek **SimpleIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)a [ukázkový **model Hubbard**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Kontinuální Oracle ###
 
-Můžeme také zobecnit z výše uvedeného modelu Oracle, aby bylo možné používat v nepřetržitém případě Oracle modelované podle typu Canon <xref:microsoft.quantum.oracles.continuousoracle> .
+Můžeme také zobecnit z výše uvedeného modelu Oracle, aby bylo možné používat v nepřetržitém případě Oracle modelované podle typu Canon <xref:Microsoft.Quantum.Oracles.ContinuousOracle> .
 Vezměte v úvahu, že místo jednoho jednotkového operátoru $U $ máme řadu $U operátorů \mathbb{R} (t) $ pro $t \in $, což $U (t) U (t) $ = $U (t + s) $.
-Jedná se o slabší příkaz, než v samostatném případě, protože můžeme vytvořit <xref:microsoft.quantum.oracles.discreteoracle> omezení $t = m \, \delta t $ pro některé pevné $ \delta t $.
+Jedná se o slabší příkaz, než v samostatném případě, protože můžeme vytvořit <xref:Microsoft.Quantum.Oracles.DiscreteOracle> omezení $t = m \, \delta t $ pro některé pevné $ \delta t $.
 [Věta na kámen](https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups)– $U (t) = \exp (i H t) $ pro nějaký operátor $H $, kde $ \exp $ je exponenciální exponenciální, jak je popsáno v tématu [Pokročilé matrice](xref:microsoft.quantum.concepts.matrix-advanced).
 Eigenstate $ \ket{\phi} $ of $H $, jako je $H \ket{\phi} = \phi \ket{\phi} $, pak také eigenstate $U (t) $ pro všechny $t $, \begin{Equation} U (t) \ket{\phi} = e ^ {i \phi t} \ket{\phi}.
 \end{equation}
@@ -146,14 +146,14 @@ Možnost krokovat zpět také umožňuje, aby se algoritmus zjistil i v případ
 
 Každá operace odhadu fáze dodaná s Q# Canon používá jinou sadu vstupů Parametrizace kvality, kterou vydáváme z konečného odhadu $ \hat{\phi} $.
 U těchto různých vstupů se ale sdílí několik běžných vstupů, takže částečná aplikace přes parametry kvality má za následek společný podpis.
-Například <xref:microsoft.quantum.characterization.robustphaseestimation> operace popsaná v následující části má následující signaturu:
+Například <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation> operace popsaná v následující části má následující signaturu:
 
 ```qsharp
 operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, eigenstate : Qubit[])  : Double
 ```
 
 `bitsPrecision`Vstup je jedinečný pro `RobustPhaseEstimation` , zatímco `oracle` a `eigenstate` jsou společné.
-Proto, jak je vidět v **H2Sample**, může operace přijmout algoritmus odhadu iterativní fáze se vstupem formuláře `(DiscreteOracle, Qubit[]) => Unit` , aby uživatel mohl určit algoritmy pro odhad libovolné fáze:
+Proto, jak je vidět v **H2Sample** , může operace přijmout algoritmus odhadu iterativní fáze se vstupem formuláře `(DiscreteOracle, Qubit[]) => Unit` , aby uživatel mohl určit algoritmy pro odhad libovolné fáze:
 
 ```qsharp
 operation H2EstimateEnergy(

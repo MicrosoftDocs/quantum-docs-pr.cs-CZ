@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835549"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692044"
 ---
 # <a name="error-correction"></a>Oprava chyb #
 
@@ -61,7 +61,7 @@ Poznamenejte si výsledky každého měření pomocí znaménka eigenvalue, kter
 | $X _2 $ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 Proto výsledky dvou měření jednoznačně určují, jakou chybu překlopení došlo k chybě, ale bez odhalení informací o tom, jaký stav je zakódovaný.
-Tyto výsledky říkáme *Syndrome*a přečtěte si proces mapování Syndrome zpátky na chybu, která způsobila *obnovení*.
+Tyto výsledky říkáme *Syndrome* a přečtěte si proces mapování Syndrome zpátky na chybu, která způsobila *obnovení* .
 Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který jako svůj vstup přebírá Syndrome, ke kterému došlo, a vrátí předpis pro opravu chyb, ke kterým mohlo dojít.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který
 > Podobně při použití operace překlápění fáze `Z` se namapuje $ \ket{\overline {1} } $ na $-\ket{\overline {1} } $, a proto se namapuje $ \ket{\overline{+}} $ na $ \ket{\overline {-} } $.
 > Obecněji je možné vytvářet kódy pro zpracování většího počtu chyb a zpracovávat chyby $Z $ a také chyby $X $.
 
-Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci*.
+Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci* .
 Q#Canon poskytuje rozhraní pro popis kódování a dekódování z kódů stabilizovaných a pro popis toho, jak se jedno obnovuje z chyb.
 V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduchých chybných procesorů.
 
@@ -82,14 +82,14 @@ V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduch�
 
 Aby bylo možné zadat chyby oprav kódů, Q# Canon poskytuje několik různých uživatelsky definovaných typů:
 
-- <xref:microsoft.quantum.errorcorrection.logicalregister>`= Qubit[]`: Označuje, že registr qubits by měl být interpretován jako blok kódu pro chybu s opravou kódu.
-- <xref:microsoft.quantum.errorcorrection.syndrome>`= Result[]`: Označuje, že pole výsledků měření by mělo být interpretováno jako Syndrome měřené na bloku kódu.
-- <xref:microsoft.quantum.errorcorrection.recoveryfn>`= (Syndrome -> Pauli[])`: Označuje, že by se měla použít *Klasická* funkce k interpretaci Syndrome a vrácení opravy, která by se měla použít.
-- <xref:microsoft.quantum.errorcorrection.encodeop>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Označuje, že operace přebírá qubits, která představuje data společně s čerstvou ancilla qubits, aby vytvořila blok kódu pro chybu s opravou kódu.
-- <xref:microsoft.quantum.errorcorrection.decodeop>`= (LogicalRegister => (Qubit[], Qubit[]))`: Všimněte si, že operace označuje blok kódu chyby správného opravy kódu do qubits dat a ancilla qubits, který slouží k reprezentaci informací Syndrome.
-- <xref:microsoft.quantum.errorcorrection.syndromemeasop>`= (LogicalRegister => Syndrome)`: Označuje operaci, která by měla být použita k extrakci informací Syndrome z bloku kódu, aniž by narušila stav chráněný kódem.
+- <xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister>`= Qubit[]`: Označuje, že registr qubits by měl být interpretován jako blok kódu pro chybu s opravou kódu.
+- <xref:Microsoft.Quantum.ErrorCorrection.Syndrome>`= Result[]`: Označuje, že pole výsledků měření by mělo být interpretováno jako Syndrome měřené na bloku kódu.
+- <xref:Microsoft.Quantum.ErrorCorrection.RecoveryFn>`= (Syndrome -> Pauli[])`: Označuje, že by se měla použít *Klasická* funkce k interpretaci Syndrome a vrácení opravy, která by se měla použít.
+- <xref:Microsoft.Quantum.ErrorCorrection.EncodeOp>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Označuje, že operace přebírá qubits, která představuje data společně s čerstvou ancilla qubits, aby vytvořila blok kódu pro chybu s opravou kódu.
+- <xref:Microsoft.Quantum.ErrorCorrection.DecodeOp>`= (LogicalRegister => (Qubit[], Qubit[]))`: Všimněte si, že operace označuje blok kódu chyby správného opravy kódu do qubits dat a ancilla qubits, který slouží k reprezentaci informací Syndrome.
+- <xref:Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp>`= (LogicalRegister => Syndrome)`: Označuje operaci, která by měla být použita k extrakci informací Syndrome z bloku kódu, aniž by narušila stav chráněný kódem.
 
-Nakonec Canon poskytne <xref:microsoft.quantum.errorcorrection.qecc> typ pro shromáždění dalších typů potřebných k definování chybných hodnot při opravách kódu. V souvislosti s každým kódem doby stabilizace je délka kódu $n $, číslo $k $ logického qubits a minimální vzdálenost $d $, která je často vhodná pro seskupení do Notation ⟦ $n $, $k $, $d $ ⟧. Například <xref:microsoft.quantum.errorcorrection.bitflipcode> funkce definuje ⟦ 3, 1, 1 ⟧ bit překlopení kódu:
+Nakonec Canon poskytne <xref:Microsoft.Quantum.ErrorCorrection.QECC> typ pro shromáždění dalších typů potřebných k definování chybných hodnot při opravách kódu. V souvislosti s každým kódem doby stabilizace je délka kódu $n $, číslo $k $ logického qubits a minimální vzdálenost $d $, která je často vhodná pro seskupení do Notation ⟦ $n $, $k $, $d $ ⟧. Například <xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode> funkce definuje ⟦ 3, 1, 1 ⟧ bit překlopení kódu:
 
 ```qsharp
 let encodeOp = EncodeOp(BitFlipEncoder);
@@ -104,7 +104,7 @@ let code = QECC(encodeOp, decodeOp, syndMeasOp);
 Všimněte si, že `QECC` typ *not* nezahrnuje funkci obnovení.
 Díky tomu můžeme změnit funkci obnovení, která se používá při opravách chyb beze změny definice samotného kódu; Tato možnost je užitečná zejména při začlenění zpětné vazby z měření popisu do modelu, který předpokládá obnovení.
 
-Po definování kódu tímto způsobem můžeme použít <xref:microsoft.quantum.errorcorrection.recover> operaci k zotavení z chyb:
+Po definování kódu tímto způsobem můžeme použít <xref:Microsoft.Quantum.ErrorCorrection.Recover> operaci k zotavení z chyb:
 
 ```qsharp
 let code = BitFlipCode();

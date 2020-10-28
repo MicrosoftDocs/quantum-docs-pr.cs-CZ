@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dd507d0c644ae711a5e5a1dff9156f571cb0fa92
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 4d15226fe46be79b7d3e6f414f33f1debd691f40
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833543"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692124"
 ---
 # <a name="the-prelude"></a>Předehru #
 
@@ -24,7 +24,7 @@ Q#Kompilátor a cílové počítače, které jsou součástí vývojové sady pr
 
 Vnitřní operace definované ve standardní knihovně zhruba spadají do jedné z několika kategorií:
 
-- Základní klasické funkce shromážděné v <xref:microsoft.quantum.core> oboru názvů.
+- Základní klasické funkce shromážděné v <xref:Microsoft.Quantum.Core> oboru názvů.
 - Operace, které představují unitaries tvořené [Clifford a $T $ branami](xref:microsoft.quantum.concepts.qubit).
 - Operace představující rotace různých operátorů.
 - Operace implementující měření.
@@ -35,16 +35,16 @@ Díky poskytování rotací Q# umožňuje programátorům pracovat v rámci jedn
 Pokud je to možné, operace definované v předehru, které fungují na qubits, umožňují použití `Controlled` varianty, takže cílový počítač provede příslušné rozklady.
 
 Mnohé z funkcí a operací, které jsou definovány v této části předehru, jsou v @"microsoft.quantum.intrinsic" oboru názvů, takže většina Q# zdrojových souborů bude obsahovat `open Microsoft.Quantum.Intrinsic;` direktivu hned po počáteční deklaraci oboru názvů.
-<xref:microsoft.quantum.core>Obor názvů se automaticky otevře, takže funkce, jako například, <xref:microsoft.quantum.core.length> lze použít bez `open` příkazu.
+<xref:Microsoft.Quantum.Core>Obor názvů se automaticky otevře, takže funkce, jako například, <xref:Microsoft.Quantum.Core.Length> lze použít bez `open` příkazu.
 
-### <a name="common-single-qubit-unitary-operations"></a>Běžné operace s jedním qubit jednotkou ###
+### <a name="common-single-qubit-unitary-operations"></a>Běžné Single-Qubit jednotkové operace ###
 
 Předehru také definuje mnoho běžných [qubit operací](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 Všechny tyto operace umožňují `Controlled` `Adjoint` funktory i.
 
 #### <a name="pauli-operators"></a>Pauli operátory ####
 
-<xref:microsoft.quantum.intrinsic.x>Operace implementuje operátor Pauli $X $.
+<xref:Microsoft.Quantum.Intrinsic.X>Operace implementuje operátor Pauli $X $.
 Tato situace se někdy označuje také jako `NOT` Brána.
 Má signaturu `(Qubit => Unit is Adj + Ctl)` .
 Odpovídá qubit jednotkám:
@@ -52,14 +52,14 @@ Odpovídá qubit jednotkám:
 \begin{Equation} \begin{bmatrix} 0 & 1 \\ \\ % fixme: aktuálně používá napadení quadwhack.
 1 & 0 \end{bmatrix} \end{Equation}
 
-<xref:microsoft.quantum.intrinsic.y>Operace implementuje operátor Pauli $Y $.
+<xref:Microsoft.Quantum.Intrinsic.Y>Operace implementuje operátor Pauli $Y $.
 Má signaturu `(Qubit => Unit is Adj + Ctl)` .
 Odpovídá qubit jednotkám:
 
 \begin{Equation} \begin{bmatrix} 0 &-i \\ \\ % fixme: aktuálně používá napadení quadwhack.
 i & 0 \end{bmatrix} \end{Equation}
 
-<xref:microsoft.quantum.intrinsic.z>Operace implementuje operátor Pauli $Z $.
+<xref:Microsoft.Quantum.Intrinsic.Z>Operace implementuje operátor Pauli $Z $.
 Má signaturu `(Qubit => Unit is Adj + Ctl)` .
 Odpovídá qubit jednotkám:
 
@@ -78,9 +78,9 @@ To může být visualised v oblasti Bloch:
 
 ![XX = I](~/media/prelude_blochIdentity.png)
 
-#### <a name="other-single-qubit-cliffords"></a>Další Cliffords s jedním qubit ####
+#### <a name="other-single-qubit-cliffords"></a>Jiné Single-Qubit Cliffords ####
 
-Tato <xref:microsoft.quantum.intrinsic.h> operace implementuje bránu Hadamard.
+Tato <xref:Microsoft.Quantum.Intrinsic.H> operace implementuje bránu Hadamard.
 Tím se změní Pauli $X $ a $Z $ na osy cílového qubit, například $H \ket {0} = \ket{+} \mathrel{: =} (\ket {0} + \ket {1} )/\sqrt {2} $ a $H \ket{+} = \ket {0} $.
 Má signaturu `(Qubit => Unit is Adj + Ctl)` a odpovídá qubit jednotkám v jednom:
 
@@ -91,7 +91,7 @@ Brána Hadamard je zvláště důležitá, protože se dá použít k vytvořen�
 
 ![Hadamard operace mapovaná na sféru Bloch](~/media/prelude_hadamardBloch.png)
 
-Tato <xref:microsoft.quantum.intrinsic.s> operace implementuje bránu fáze $S $.
+Tato <xref:Microsoft.Quantum.Intrinsic.S> operace implementuje bránu fáze $S $.
 Toto je maticová odmocnina operace Pauli $Z $.
 To znamená, $S ^ 2 = Z $.
 Má signaturu `(Qubit => Unit is Adj + Ctl)` a odpovídá qubit jednotkám v jednom:
@@ -105,17 +105,17 @@ Kromě výše uvedených Pauli a Clifford operací Q# poskytuje předehru řadu 
 Jak je popsáno v [qubit operacích](xref:microsoft.quantum.concepts.qubit#single-qubit-operations), možnost otáčení je zásadní pro algoritmy.
 
 Začneme vrácením se změnami, kterou můžeme vyjádřit pomocí $H $ a $T $, kde $H $ je operace Hadamard a kde \begin{Equation} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ % fixme: to v současné době používá napadení ze čtyř back-qubit.
-0 & e ^ {i \pi/4} \end{bmatrix} \end{Equation} Toto je druhá odmocnina <xref:microsoft.quantum.intrinsic.s> operace, například $T ^ 2 = S $.
-Brána $T $ je zase implementovaná <xref:microsoft.quantum.intrinsic.t> operací a má signaturu `(Qubit => Unit is Adj + Ctl)` , která značí, že se jedná o jednotnou operaci na jednom qubit.
+0 & e ^ {i \pi/4} \end{bmatrix} \end{Equation} Toto je druhá odmocnina <xref:Microsoft.Quantum.Intrinsic.S> operace, například $T ^ 2 = S $.
+Brána $T $ je zase implementovaná <xref:Microsoft.Quantum.Intrinsic.T> operací a má signaturu `(Qubit => Unit is Adj + Ctl)` , která značí, že se jedná o jednotnou operaci na jednom qubit.
 
 I když je to v zásadě dostačující pro popsání jakékoli jakékoli operace s jedním qubit, mohou mít různé cílové počítače efektivnější reprezentace o Paulich operátorech, takže předehru obsahuje nejrůznější způsoby, jak convienently vyjádřit v takových rotacích.
-Nejběžnější je <xref:microsoft.quantum.intrinsic.r> operace, která implementuje otočení kolem zadané osy Pauli, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je operátor Pauli, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální hodnotu matice.
+Nejběžnější je <xref:Microsoft.Quantum.Intrinsic.r> operace, která implementuje otočení kolem zadané osy Pauli, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je operátor Pauli, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální hodnotu matice.
 Má signaturu `((Pauli, Double, Qubit) => Unit is Adj + Ctl)` , kde první dvě části vstupu reprezentují klasické argumenty $ \sigma $ a $ \phi $ potřebné k určení jednotkového operátoru $R (\sigma, \phi) $.
 Částečně se dá použít $ \sigma $ a $ \phi $, aby se získala operace, jejíž typ je jedna qubit jednotně.
 Například `R(PauliZ, PI() / 4, _)` je typu `(Qubit => Unit is Adj + Ctl)` .
 
 > [!NOTE]
-> <xref:microsoft.quantum.intrinsic.r>Operace rozdělí vstupní úhel o 2 a násobí ho hodnotou-1.
+> <xref:Microsoft.Quantum.Intrinsic.r>Operace rozdělí vstupní úhel o 2 a násobí ho hodnotou-1.
 > Pro $Z $ rotace to znamená, že $ \ket {0} $ eigenstate je otočeno pomocí $-\phi/$2 a $ \ket {1} $ eigenstate je otočeno $ \phi/$2, takže $ \ket {1} $ eigenstate je otočen $ \phi $ vzhledem k $ \ket {0} $ eigenstate.
 >
 > Konkrétně to znamená, že `T` a `R(PauliZ, PI() / 8, _)` liší se pouze nepodstatnými [globálními fázemi](xref:microsoft.quantum.glossary#global-phase).
@@ -124,29 +124,29 @@ Například `R(PauliZ, PI() / 4, _)` je typu `(Qubit => Unit is Adj + Ctl)` .
 > Všimněte si také, že `PauliI` v jednoduchém otočení se aplikuje globální fáze $ \phi/$2. I když tyto fáze nejsou důležité, jak je uvedeno v [koncepčních dokumentech](xref:microsoft.quantum.concepts.qubit), jsou relevantní pro řízená `PauliI` otočení.
 
 V rámci algoritmů doby použitelnosti je často užitečné vyjádřit rotace jako dyadic zlomky, jako je $ \phi = \pi k/2 ^ n $ pro některá $k \in \mathbb{Z} $ a $n \in \mathbb{N} $.
-<xref:microsoft.quantum.intrinsic.rfrac>Operace implementuje otočení kolem zadané osy Pauli pomocí této konvence.
-Liší se od <xref:microsoft.quantum.intrinsic.r> v tom, že úhel otočení je zadán jako dva vstupy typu `Int` , interpretovány jako dyadic zlomek.
+<xref:Microsoft.Quantum.Intrinsic.RFrac>Operace implementuje otočení kolem zadané osy Pauli pomocí této konvence.
+Liší se od <xref:Microsoft.Quantum.Intrinsic.R> v tom, že úhel otočení je zadán jako dva vstupy typu `Int` , interpretovány jako dyadic zlomek.
 Proto `RFrac` má signaturu `((Pauli, Int, Int, Qubit) => Unit is Adj + Ctl)` .
 Implementuje jedinou qubit jednotk $ \exp (i \pi k \sigma/2 ^ n) $, kde $ \sigma $ je Pauli matice odpovídající prvnímu argumentu, $k $ je druhý argument a $n $ je třetí argument.
 `RFrac(_,k,n,_)` je stejná jako `R(_,-πk/2^n,_)` ; Všimněte si, že úhel je *záporný* pro zlomek.
 
-<xref:microsoft.quantum.intrinsic.rx>Operace implementuje otočení kolem osy Pauli $X $.
+<xref:Microsoft.Quantum.Intrinsic.Rx>Operace implementuje otočení kolem osy Pauli $X $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
 `Rx(_, _)` je stejná jako `R(PauliX, _, _)` .
 
-<xref:microsoft.quantum.intrinsic.ry>Operace implementuje otočení kolem osy Pauli $Y $.
+<xref:Microsoft.Quantum.Intrinsic.Ry>Operace implementuje otočení kolem osy Pauli $Y $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
 `Ry(_, _)` je stejná jako `R(PauliY,_ , _)` .
 
-<xref:microsoft.quantum.intrinsic.rz>Operace implementuje otočení kolem osy Pauli $Z $.
+<xref:Microsoft.Quantum.Intrinsic.Rz>Operace implementuje otočení kolem osy Pauli $Z $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
 `Rz(_, _)` je stejná jako `R(PauliZ, _, _)` .
 
-<xref:microsoft.quantum.intrinsic.r1>Operace implementuje rotaci o danou velikost kolem $ \ket {1} $, $-$1 eigenstate z $Z $.
+<xref:Microsoft.Quantum.Intrinsic.R1>Operace implementuje rotaci o danou velikost kolem $ \ket {1} $, $-$1 eigenstate z $Z $.
 Má signaturu `((Double, Qubit) => Unit is Adj + Ctl)` .
 `R1(phi,_)` je stejný jako `R(PauliZ,phi,_)` následováno `R(PauliI,-phi,_)` .
 
-<xref:microsoft.quantum.intrinsic.r1frac>Operace implementuje zlomkové otočení o zadanou hodnotu kolem hodnoty z = 1 eigenstate.
+<xref:Microsoft.Quantum.Intrinsic.R1Frac>Operace implementuje zlomkové otočení o zadanou hodnotu kolem hodnoty z = 1 eigenstate.
 Má signaturu `((Int,Int, Qubit) => Unit is Adj + Ctl)` .
 `R1Frac(k,n,_)` je stejný jako `RFrac(PauliZ,-k.n+1,_)` následováno `RFrac(PauliI,k,n+1,_)` .
 
@@ -158,16 +158,16 @@ Příklad operace otočení (kolem osy Pauli $Z $, v této instanci) mapované n
 
 Kromě qubit operací uvedených výše definuje předehru také několik operací s více qubit.
 
-Nejprve <xref:microsoft.quantum.intrinsic.cnot> operace provede standardní řízenou `NOT` bránu, \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 0 & \\ \\ 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}.
+Nejprve <xref:Microsoft.Quantum.Intrinsic.CNOT> operace provede standardní řízenou `NOT` bránu, \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 0 & \\ \\ 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}.
 \end{Equation} má signaturu `((Qubit, Qubit) => Unit is Adj + Ctl)` , která představuje $ \operatorname{CNOT} $ chová unitarily na dvou individuálních qubits.
 `CNOT(q1, q2)` je stejná jako `(Controlled X)([q1], q2)` .
 Vzhledem k `Controlled` tomu, že funktor umožňuje řízení v registru, používáme literál pole `[q1]` k označení toho, že chceme mít pouze jeden ovládací prvek.
 
-Tato <xref:microsoft.quantum.intrinsic.ccnot> operace provádí nebránu s neřízenými dvěma procesory, někdy také známou jako Toffoli brána.
+Tato <xref:Microsoft.Quantum.Intrinsic.CCNOT> operace provádí nebránu s neřízenými dvěma procesory, někdy také známou jako Toffoli brána.
 Má signaturu `((Qubit, Qubit, Qubit) => Unit is Adj + Ctl)` .
 `CCNOT(q1, q2, q3)` je stejná jako `(Controlled X)([q1, q2], q3)` .
 
-<xref:microsoft.quantum.intrinsic.swap>Operace prohodí stavy se dvěma qubitsy.
+<xref:Microsoft.Quantum.Intrinsic.SWAP>Operace prohodí stavy se dvěma qubitsy.
 To znamená, že implementuje jednotnou matrici \begin{Equation} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \end{bmatrix}.
 \end{Equation} má signaturu `((Qubit, Qubit) => Unit is Adj + Ctl)` .
 `SWAP(q1,q2)` je ekvivalentem pro `CNOT(q1, q2)` následovaný `CNOT(q2, q1)` a pak `CNOT(q1, q2)` .
@@ -179,10 +179,10 @@ To znamená, že implementuje jednotnou matrici \begin{Equation} \operatorname{S
 > Brána kontrolovaného zahození, označovaná také jako brána Fredkin, je dostatečně výkonná pro zahrnutí všech klasických výpočtů.
 
 Nakonec předehru poskytuje dvě operace pro reprezentaci exponenciálních hodnot operátorů Pauli s více qubit.
-<xref:microsoft.quantum.intrinsic.exp>Operace provádí rotaci na základě tensor produktu Paulich matric, jak je reprezentované qubit jednotkou \begin{Equation} (\vec{\sigma}, \phi) \mathrel{: =} \exp\left (i \phi \ sigma_0 \otimes \ sigma_1 \otimes \cdots \otimes \ sigma_n \right), \end{Equation} kde $ \vec{\sigma} = (\ sigma_0, \ sigma_1, \dots, \ sigma_n) $ je sekvence operátorů s jedním qubitm Pauli a kde $ \phi $ je úhel.
+<xref:Microsoft.Quantum.Intrinsic.Exp>Operace provádí rotaci na základě tensor produktu Paulich matric, jak je reprezentované qubit jednotkou \begin{Equation} (\vec{\sigma}, \phi) \mathrel{: =} \exp\left (i \phi \ sigma_0 \otimes \ sigma_1 \otimes \cdots \otimes \ sigma_n \right), \end{Equation} kde $ \vec{\sigma} = (\ sigma_0, \ sigma_1, \dots, \ sigma_n) $ je sekvence operátorů s jedním qubitm Pauli a kde $ \phi $ je úhel.
 `Exp`Rotace představuje $ \vec{\sigma} $ jako pole `Pauli` prvků, takže má signaturu `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)` .
 
-<xref:microsoft.quantum.intrinsic.expfrac>Operace provede stejnou rotaci pomocí dyadic zlomkového zápisu popsaného výše.
+<xref:Microsoft.Quantum.Intrinsic.ExpFrac>Operace provede stejnou rotaci pomocí dyadic zlomkového zápisu popsaného výše.
 Má signaturu `((Pauli[], Int, Int, Qubit[]) => Unit is Adj + Ctl)` .
 
 > [!WARNING]
@@ -200,7 +200,7 @@ Při měření odpovídá eigenvalue + 1 operátoru, který je změřen jako `Ze
 
 Měření operací nepodporuje ani `Adjoint` `Controlled` funktor.
 
-Tato <xref:microsoft.quantum.intrinsic.measure> operace provede společné měření jednoho nebo více qubits v zadaném produktu Pauli Operators.
+Tato <xref:Microsoft.Quantum.Intrinsic.Measure> operace provede společné měření jednoho nebo více qubits v zadaném produktu Pauli Operators.
 Pokud se pole Pauli a qubit liší od různých délek, operace se nezdařila.
 `Measure` má signaturu `((Pauli[], Qubit[]) => Result)` .
 
@@ -214,10 +214,10 @@ Tato vlastnost bude v podstatě pozdější, protože se zabývá opravami chyb.
 
 Pro usnadnění práce předehru poskytuje také dvě další operace pro měření qubits.
 Vzhledem k tomu, že provádění qubit měření je poměrně běžné, definuje předehru pro tento případ Zkrácený Zkrácený tvar.
-Tato <xref:microsoft.quantum.intrinsic.m> operace měří operátor Pauli $Z $ v jednom qubit a má signaturu `(Qubit => Result)` .
-`M(q)` je ekvivalentem k `Measure([PauliZ], [q])` .
+Tato <xref:Microsoft.Quantum.Intrinsic.M> operace měří operátor Pauli $Z $ v jednom qubit a má signaturu `(Qubit => Result)` .
+`M(q)` je ekvivalentem k `Measure([PauliZ], [q])`.
 
-<xref:microsoft.quantum.measurement.multim>Měří operátor Pauli $Z $ *samostatně* pro každé pole qubits a vrací *pole* `Result` hodnot získaných pro každé qubit.
+<xref:microsoft.quantum.measurement.MultiM>Měří operátor Pauli $Z $ *samostatně* pro každé pole qubits a vrací *pole* `Result` hodnot získaných pro každé qubit.
 V některých případech je to možné optimalizovat. Má signaturu ( `Qubit[] => Result[])` .
 `MultiM(qs)` je ekvivalentem:
 
@@ -233,14 +233,14 @@ return rs;
 ## <a name="extension-functions-and-operations"></a>Funkce rozšíření a operace ##
 
 Kromě toho předehru definuje bohatou sadu matematických a typových funkcí pro převod na úrovni .NET pro použití v rámci Q# kódu.
-Například <xref:microsoft.quantum.math> obor názvů definuje užitečné operace, jako například <xref:microsoft.quantum.math.sin> a <xref:microsoft.quantum.math.log> .
+Například <xref:Microsoft.Quantum.Math> obor názvů definuje užitečné operace, jako například <xref:Microsoft.Quantum.Math.Sin> a <xref:Microsoft.Quantum.Math.Log> .
 Implementace poskytovaná vývojovou sadou pro plnění z více systémů používá knihovnu klasických tříd .NET Base, a proto může zahrnovat další komunikaci s výměnou mezi programy a jejich klasickými ovladači.
 I když to nepředstavuje problém pro místní simulátor, může to být problém s výkonem při použití vzdáleného simulátoru nebo skutečného hardwaru jako cílového počítače.
 V takovém případě může jednotlivý cílový počítač zmírnit tento dopad na výkon tím, že tyto operace přepíše verze, které jsou pro konkrétní systém efektivnější.
 
 ### <a name="math"></a>Matematické ###
 
-<xref:microsoft.quantum.math>Obor názvů poskytuje mnoho užitečných funkcí z [ `System.Math` třídy](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1&preserve-view=true)knihovny základní třídy .NET.
+<xref:Microsoft.Quantum.Math>Obor názvů poskytuje mnoho užitečných funkcí z [ `System.Math` třídy](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1&preserve-view=true)knihovny základní třídy .NET.
 Tyto funkce lze použít stejným způsobem jako všechny další Q# funkce:
 
 ```qsharp
@@ -259,5 +259,5 @@ let y = AbsD(-PI()); // y : Double = 3.1415...
 
 ### <a name="bitwise-operations"></a>Bitové operace ###
 
-Nakonec <xref:microsoft.quantum.bitwise> obor názvů poskytuje několik užitečných funkcí pro manipulaci s celými čísly prostřednictvím bitových operátorů.
-Například <xref:microsoft.quantum.bitwise.parity> vrátí bitovou paritu celého čísla jako jiné celé číslo.
+Nakonec <xref:Microsoft.Quantum.Bitwise> obor názvů poskytuje několik užitečných funkcí pro manipulaci s celými čísly prostřednictvím bitových operátorů.
+Například <xref:Microsoft.Quantum.Bitwise.Parity> vrátí bitovou paritu celého čísla jako jiné celé číslo.
