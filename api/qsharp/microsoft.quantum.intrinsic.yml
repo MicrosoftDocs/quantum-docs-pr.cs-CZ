@@ -1,0 +1,135 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Zaznamená zprávu.
+  uid: Microsoft.Quantum.Intrinsic.Message
+name: Microsoft.Quantum.Intrinsic
+newtypes: []
+operations:
+- summary: >+
+    > [!WARNING]
+
+    > Kontrolní výraz je zastaralý. <xref:Microsoft.Quantum.Diagnostics.AssertMeasurement>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Intrinsic.Assert
+- summary: >+
+    > [!WARNING]
+
+    > AssertProb se už nepoužívá. <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Intrinsic.AssertProb
+- summary: Aplikuje bránu dvakrát ovládané – ne (CCNOT) na tři qubits.
+  uid: Microsoft.Quantum.Intrinsic.CCNOT
+- summary: >-
+    Aplikuje bránu řízeného NOT (CNOT) na pár qubits.
+
+    \begin{align} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}, \end{align}, kde jsou řádky a sloupce řazeny jako v průvodci koncepty.
+  uid: Microsoft.Quantum.Intrinsic.CNOT
+- summary: >-
+    Aplikuje exponenciální hodnotu qubit operátoru Pauli.
+
+    \begin{align} e ^ {i \theta [P_0 \otimes P_1 \cdots P_ {N-1}]}, \end{align}, kde $P _i $ je prvek $i $ th `paulis` a kde $N = $ `Length(paulis)` .
+  uid: Microsoft.Quantum.Intrinsic.Exp
+- summary: >-
+    Aplikuje exponenciální operátor qubit Pauli s argumentem daným zlomkem dyadic.
+
+    \begin{align} e ^ {i \pi k [P_0 \otimes P_1 \cdots P_ {N-1}]/2 ^ N}, \end{align} kde $P _i $ je prvek $i $ th `paulis` a kde $N = $ `Length(paulis)` .
+  uid: Microsoft.Quantum.Intrinsic.ExpFrac
+- summary: >-
+    Aplikuje transformaci Hadamard na jeden qubit.
+
+    \begin{align} H \mathrel{: =} \frac {1} {\sqrt {2} } \begin{bmatrix} 1 & 1 \\ \\ 1 &-1 \end{bmatrix}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.H
+- summary: Provede v jednom qubit operaci identity (No-OP).
+  uid: Microsoft.Quantum.Intrinsic.I
+- summary: >-
+    Provede měření jediného qubitu v Pauli $Z $.
+
+    Výsledek výstupu je dán distribucí \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \braket{\psi | 0} \braket{0 | \psi}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.M
+- summary: >-
+    Provede společné měření jednoho nebo více qubits v zadaných základech Pauli.
+
+    Výsledek výstupu je dán distribucí: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} kde $P _i $ je $i $ th prvek `bases` a kde $N = \texttt{Length} (\texttt{Bases}) $. To znamená, že měření vrátí `Result` $d $ tak, že eigenvalue účinek pozorovaného měření je $ (-1) ^ d $.
+  uid: Microsoft.Quantum.Intrinsic.Measure
+- summary: >-
+    Použije rotaci o dané ose Pauli.
+
+    \begin{align} R_ {\mu} (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_ {\mu}/2}, \end{align} WHERE $ \mu \in \{ i, X, Y, Z \} $.
+  uid: Microsoft.Quantum.Intrinsic.R
+- summary: >-
+    Použije rotaci o stavu $ \ket {1} $ podle daného úhlu.
+
+    \begin{align} R_1 (\theta) \mathrel{: =} \operatorname{diag} (1, e ^ {i\theta}). \end{align}
+  uid: Microsoft.Quantum.Intrinsic.R1
+- summary: >-
+    Použije rotaci o stavu $ \ket {1} $ podle úhlu zadaného jako zlomek dyadic.
+
+    \begin{align} R_1 (n, k) \mathrel{: =} \operatorname{diag} (1, e ^ {i \pi k/2 ^ n}). \end{align}
+
+    > [!WARNING] > Tato operace používá **opačnou** konvenci znaménka z > @"microsoft.quantum.intrinsic.r" a neobsahuje > faktor $1/2 $, který je zahrnutý v @"microsoft.quantum.intrinsic.r1" .
+  uid: Microsoft.Quantum.Intrinsic.R1Frac
+- summary: >-
+    Aplikuje otočení o dané ose Pauli o úhel zadaný jako dyadic zlomek.
+
+    \begin{align} R_ {\mu} (n, k) \mathrel{: =} e ^ {i \pi n \ sigma_ {\mu}/2 ^ k}, \end{align} WHERE $ \mu \in \{ i, X, Y, Z \} $.
+
+    > [!WARNING] > Tato operace používá **opačnou** konvenci znaménka z > @"microsoft.quantum.intrinsic.r" .
+  uid: Microsoft.Quantum.Intrinsic.RFrac
+- summary: >+
+    > [!WARNING]
+
+    > Náhodné je zastaralé. <xref:Microsoft.Quantum.Random.DrawCategorical>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Intrinsic.Random
+- summary: V případě jednoho qubitu je měří a zajišťuje, že je ve stavu | 0 ⟩, takže je možné ho bezpečně uvolnit.
+  uid: Microsoft.Quantum.Intrinsic.Reset
+- summary: Přihlaste se k poli qubits, změřte je a ujistěte se, že jsou ve stavu | 0 ⟩ tak, aby je bylo možné bezpečně uvolnit.
+  uid: Microsoft.Quantum.Intrinsic.ResetAll
+- summary: >-
+    Aplikuje otočení o $x ose $ na daném úhlu.
+
+    \begin{align} R_x (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_x/2} = \begin{bmatrix} \cos \frac{\theta} {2} &-i\sin \frac{\theta} {2} \\ \\ -i\sin \frac{\theta} {2} & \cos \frac{\theta} {2} \end{bmatrix}.   \end{align}
+  uid: Microsoft.Quantum.Intrinsic.Rx
+- summary: >-
+    Aplikuje otočení o $y ose $ na daném úhlu.
+
+    \begin{align} R_y (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_y/2} = \begin{bmatrix} \cos \frac{\theta} {2} &-\sin \frac{\theta} {2} \\ \\ \sin \frac{\theta} {2} & \cos \frac{\theta} {2} \end{bmatrix}.   \end{align}
+  uid: Microsoft.Quantum.Intrinsic.Ry
+- summary: >-
+    Aplikuje otočení o $z ose $ na daném úhlu.
+
+    \begin{align} R_z (\theta) \mathrel{: =} e ^ {-i \theta \ sigma_z/2} = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\ \\ 0 & e ^ {i \theta/2} \end{bmatrix}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.Rz
+- summary: Aplikuje bránu S na jeden qubit.
+  uid: Microsoft.Quantum.Intrinsic.S
+- summary: >-
+    Aplikuje bránu SWAP na pár qubits.
+
+    \begin{align} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 & 1 \end{bmatrix}, \end{align}, kde jsou řádky a sloupce řazeny jako v průvodci koncepty.
+  uid: Microsoft.Quantum.Intrinsic.SWAP
+- summary: Aplikuje bránu T na jeden qubit.
+  uid: Microsoft.Quantum.Intrinsic.T
+- summary: >-
+    Použije bránu Pauli $X $.
+
+    \begin{align} \ sigma_x \mathrel{: =} \begin{bmatrix} 0 & 1 \\ \\ 1 & 0 \end{bmatrix}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.X
+- summary: >-
+    Použije bránu Pauli $Y $.
+
+    \begin{align} \ sigma_y \mathrel{: =} \begin{bmatrix} 0 &-i \\ \\ & 0 \end{bmatrix}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.Y
+- summary: >-
+    Použije bránu Pauli $Z $.
+
+    \begin{align} \ sigma_z \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ 0 &-1 \end{bmatrix}. \end{align}
+  uid: Microsoft.Quantum.Intrinsic.Z
+summary: ''
+uid: Microsoft.Quantum.Intrinsic
+metadata:
+  ms.openlocfilehash: b88a931baa553d2e075bec01ce112b58b4fc913c
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92707464"

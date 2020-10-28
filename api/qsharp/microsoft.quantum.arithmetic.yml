@@ -1,0 +1,187 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Převede `BigEndian` qubit registraci na `LittleEndian` qubit registr vrácením řazení qubit.
+  uid: Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian
+- summary: Při hodnotě true umožňuje dodatečné kontrolní výrazy, které jsou nákladné, ale užitečné pro ladění použití aritmetických funkcí.
+  uid: Microsoft.Quantum.Arithmetic.ExtraArithmeticAssertionsEnabled
+- summary: Vyhodnotit, že všechna čísla s pevnou desetinnou čárkou v zadaném poli mají stejné pozice bodů a qubit čísla.
+  uid: Microsoft.Quantum.Arithmetic.IdenticalFormatFactFxP
+- summary: Vyhodnotit, že všechna čísla s pevnou desetinnou čárkou v zadaném poli mají stejné pozice bodů při počítání z nejméně významného bitu. To znamená, že počet bitů minus pozice bodu musí být konstantní pro všechna čísla s pevnou desetinnou čárkou v poli.
+  uid: Microsoft.Quantum.Arithmetic.IdenticalPointPosFactFxP
+- summary: Převede `LittleEndian` qubit registraci na `BigEndian` qubit registr vrácením řazení qubit.
+  uid: Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian
+- summary: Vzhledem k operaci, která trvá vstupu big-endian, vrátí novou operaci, která bude mít vstup ze Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBE
+- summary: Vzhledem k operaci, která trvá vstupu big-endian, vrátí novou operaci, která bude mít vstup ze Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBEA
+- summary: Vzhledem k operaci, která trvá vstupu big-endian, vrátí novou operaci, která bude mít vstup ze Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBEC
+- summary: Vzhledem k operaci, která trvá vstupu big-endian, vrátí novou operaci, která bude mít vstup ze Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpBECA
+- summary: Vzhledem k operaci, která trvá vstupu Little-endian, vrátí novou operaci, která bude mít vstup big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLE
+- summary: Vzhledem k operaci, která trvá vstupu Little-endian, vrátí novou operaci, která bude mít vstup big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLEA
+- summary: Vzhledem k operaci, která trvá vstupu Little-endian, vrátí novou operaci, která bude mít vstup big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLEC
+- summary: Vzhledem k operaci, která trvá vstupu Little-endian, vrátí novou operaci, která bude mít vstup big-endian.
+  uid: Microsoft.Quantum.Arithmetic.ReversedOpLECA
+name: Microsoft.Quantum.Arithmetic
+newtypes:
+- summary: Zaregistrujte, aby se v pořadí big-endian zakódují unsigned integer. Qubit s indexem `0` kóduje nejvyšší bit unsigned integer.
+  uid: Microsoft.Quantum.Arithmetic.BigEndian
+- summary: Představuje registr qubits čísla s pevnou desetinnou čárkou. Se skládá z celého čísla, které se rovná počtu qubits vlevo od binárního bodu, tj. qubits váhy větší než nebo rovno 1 a registr.
+  uid: Microsoft.Quantum.Arithmetic.FixedPoint
+- summary: Zaregistruje se unsigned integer v pořadí od Little endian. Qubit s indexem `0` kóduje nejnižší bit unsigned integer.
+  uid: Microsoft.Quantum.Arithmetic.LittleEndian
+- summary: >-
+    Celá čísla bez znaménka ve formátu Little endian v QFT bázi.
+
+    Pokud má například $ \ket{x} $ kódování Integer $x $ v rámci výpočtu na úrovni Little endian, pak $ \operatorname{QFTLE} \ket{x} $ je kódování $x $ v QFT.
+  uid: Microsoft.Quantum.Arithmetic.PhaseLittleEndian
+- summary: Typ celého čísla se znaménkem uložený ve Little endian (viz LittleEndian).
+  uid: Microsoft.Quantum.Arithmetic.SignedLittleEndian
+operations:
+- summary: Přidá klasický konstantu na číslo s pevnou desetinnou čárkou.
+  uid: Microsoft.Quantum.Arithmetic.AddConstantFxP
+- summary: Přidá dvě čísla s pevnou desetinnou čárkou uložená v registrech.
+  uid: Microsoft.Quantum.Arithmetic.AddFxP
+- summary: Automaticky zvolí mezi doplněním a bez, v závislosti na velikosti registru `ys` .
+  uid: Microsoft.Quantum.Arithmetic.AddI
+- summary: Implementuje funkci Inner sčítání pro operaci RippleCarryAdderTTK. Toto je vnitřní operace, která je sdružená s vnější operací pro vytvoření úplného přidávání.
+  uid: Microsoft.Quantum.Arithmetic.ApplyInnerTTKAdder
+- summary: Implementuje funkci Inner sčítání pro operaci RippleCarryAdderNoCarryTTK. Toto je vnitřní operace, která je sdružená s vnější operací pro vytvoření úplného přidávání.
+  uid: Microsoft.Quantum.Arithmetic.ApplyInnerTTKAdderWithoutCarry
+- summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLE
+- summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLEA
+- summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLEC
+- summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.phaselittleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.littleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLECA
+- summary: Aplikuje operaci se třemi qubity na místě v registru qubits.
+  uid: Microsoft.Quantum.Arithmetic.ApplyMajorityInPlace
+- summary: Vratný, místní Ripple – operace, která se používá v operaci sčítání celého čísla RippleCarryAdderCDKM níže. Vzhledem k dvěma registrům qubit `xs` a `ys` stejné délce operace použije Ripple sekvenci pro CNOT a CCNOT brány s qubits v `xs` a `ys` jako ovládací prvky a qubits v `xs` jako cíle.
+  uid: Microsoft.Quantum.Arithmetic.ApplyOuterCDKMAdder
+- summary: Implementuje vnější operaci pro RippleCarryAdderTTK k vytvoření úplného přidaných vnitřních operací.
+  uid: Microsoft.Quantum.Arithmetic.ApplyOuterTTKAdder
+- summary: Použije operaci, která <xref:microsoft.quantum.arithmetic.littleendian> jako vstup převezme registraci v cílovém registru typu <xref:microsoft.quantum.arithmetic.phaselittleendian> .
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLE
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLEA
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLEC
+- summary: ''
+  uid: Microsoft.Quantum.Arithmetic.ApplyPhaseLEOperationOnLECA
+- summary: Aplikuje operaci, která přebírá vstup big-endian do registru kódování unsigned integer ve formátu Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBE
+- summary: Aplikuje operaci, která přebírá vstup big-endian do registru kódování unsigned integer ve formátu Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA
+- summary: Aplikuje operaci, která přebírá vstup big-endian do registru kódování unsigned integer ve formátu Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBEC
+- summary: Aplikuje operaci, která přebírá vstup big-endian do registru kódování unsigned integer ve formátu Little endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpBECA
+- summary: Aplikuje operaci, která se zařadí do registru pomocí formátu Little endian, a kódování unsigned integer ve formátu big endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLE
+- summary: Aplikuje operaci, která se zařadí do registru pomocí formátu Little endian, a kódování unsigned integer ve formátu big endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLEA
+- summary: Aplikuje operaci, která se zařadí do registru pomocí formátu Little endian, a kódování unsigned integer ve formátu big endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC
+- summary: Aplikuje operaci, která se zařadí do registru pomocí formátu Little endian, a kódování unsigned integer ve formátu big endian.
+  uid: Microsoft.Quantum.Arithmetic.ApplyReversedOpLECA
+- summary: Aplikuje operaci bitové operace-XOR mezi klasickým celým číslem a celým číslem reprezentovaným registrem qubits.
+  uid: Microsoft.Quantum.Arithmetic.ApplyXorInPlace
+- summary: Pomocná funkce pro vyhodnocení, že číslo s pevnou desetinnou čárkou je inicializováno na nulu, tj. všechny qubits jsou ve stavu $ \ket {0} $.
+  uid: Microsoft.Quantum.Arithmetic.AssertAllZeroFxP
+- summary: Vyhodnotí, že nejvýznamnější qubit registru qubit, který představuje unsigned integer, je v určitém stavu.
+  uid: Microsoft.Quantum.Arithmetic.AssertMostSignificantBit
+- summary: Vyhodnotí, že `number` kódovaný v PhaseLittleEndian je menší než `value` .
+  uid: Microsoft.Quantum.Arithmetic.AssertPhaseLessThan
+- summary: Vyhodnotí, že pravděpodobnost konkrétního stavu registru pro nepodmíněných hodnot má očekávanou hodnotu.
+  uid: Microsoft.Quantum.Arithmetic.AssertProbInt
+- summary: Implementuje bránu vratného přenosu. S ohledem na zakódovaný bit v qubit `carryIn` a dvou summand bitů kódovaný v `summand1` a `summand2` , vypočítá logickou XOR `carryIn` , `summand1` a `summand2` v qubit `summand2` a přenese XORed na qubit `carryOut` .
+  uid: Microsoft.Quantum.Arithmetic.Carry
+- summary: Základní operace v RippleCarryAdderCDKM, která se používá s výše uvedenou operací ApplyOuterCDKMAdder, tj. sdružená s touto operací k získání vnitřní operace RippleCarryAdderCDKM. Tato operace vypočítá qubit a v rámci vstupu aplikuje sekvenci Nebran `ys` .
+  uid: Microsoft.Quantum.Arithmetic.CarryOutCoreCDKM
+- summary: 'Obálka pro porovnání celého čísla: `result = x > y` .'
+  uid: Microsoft.Quantum.Arithmetic.CompareGTI
+- summary: 'Obálka pro porovnání se znaménkem pro celé číslo: `result = xs > ys` .'
+  uid: Microsoft.Quantum.Arithmetic.CompareGTSI
+- summary: Porovná dvě číslo s pevnou desetinnou čárkou, která jsou uložená v registrech, a řídí převrácení výsledku.
+  uid: Microsoft.Quantum.Arithmetic.CompareGreaterThanFxP
+- summary: Tato operace testuje, zda celé číslo reprezentované registrem qubits je větší než jiné celé číslo, a použití funkce XOR výsledku na výstupní qubit.
+  uid: Microsoft.Quantum.Arithmetic.CompareUsingRippleCarry
+- summary: Vypočítá $1/x $ pro číslo s pevnou desetinnou čárkou $x $.
+  uid: Microsoft.Quantum.Arithmetic.ComputeReciprocalFxP
+- summary: Vypočítá protější hodnotu 1/x pro unsigned integer x pomocí dělení celého čísla. Výsledek, který je interpretován jako celé číslo, bude `floor(2^(2*n-1) / x)` .
+  uid: Microsoft.Quantum.Arithmetic.ComputeReciprocalI
+- summary: Zkopíruje nejvýznamnější bit qubit registru `from` reprezentujícího unsigned integer do qubit `target` .
+  uid: Microsoft.Quantum.Arithmetic.CopyMostSignificantBit
+- summary: Vydělí dvě celá čísla.
+  uid: Microsoft.Quantum.Arithmetic.DivideI
+- summary: Vyhodnotí ještě polynomu v reprezentaci s pevnou desetinnou čárkou.
+  uid: Microsoft.Quantum.Arithmetic.EvaluateEvenPolynomialFxP
+- summary: Vyhodnotí lichý polynom v reprezentaci s pevnou desetinnou čárkou.
+  uid: Microsoft.Quantum.Arithmetic.EvaluateOddPolynomialFxP
+- summary: Vyhodnotí polynomickou reprezentaci s pevnou desetinnou čárkou.
+  uid: Microsoft.Quantum.Arithmetic.EvaluatePolynomialFxP
+- summary: Aplikuje větší porovnání dvou celých čísel zakódovaných do registrů qubit a Překlopí cílovou qubit na základě výsledku porovnání.
+  uid: Microsoft.Quantum.Arithmetic.GreaterThan
+- summary: Zvýší nepodepsaná bezplatných hodnot do registru pomocí klasického celého čísla pomocí otočení fáze.
+  uid: Microsoft.Quantum.Arithmetic.IncrementByInteger
+- summary: Provede modulární přírůstek qubit registru pomocí celočíselné konstanty.
+  uid: Microsoft.Quantum.Arithmetic.IncrementByModularInteger
+- summary: Zvýší nepodepsaná bezplatných hodnot do registru pomocí klasického celého čísla pomocí otočení fáze.
+  uid: Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger
+- summary: Provede modulární přírůstek qubit registru pomocí celočíselné konstanty.
+  uid: Microsoft.Quantum.Arithmetic.IncrementPhaseByModularInteger
+- summary: Obrátí daný celočíselný doplněk modulo 2.
+  uid: Microsoft.Quantum.Arithmetic.Invert2sSI
+- summary: To aplikuje operaci na místní většinu na 3 qubits.
+  uid: Microsoft.Quantum.Arithmetic.MAJ
+- summary: Změřte číslo s pevnou desetinnou čárkou, vrátí jeho hodnotu Double a obnoví všechny Registry na nulu.
+  uid: Microsoft.Quantum.Arithmetic.MeasureFxP
+- summary: Měří obsah v registru a převede ho na celé číslo. Měření se provádí s ohledem na standardní výpočetní základ, tj. eigenbasis `PauliZ` .
+  uid: Microsoft.Quantum.Arithmetic.MeasureInteger
+- summary: Provede modulární násobení a přidání celočíselnými konstantami v qubit registru.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger
+- summary: Stejné jako MultiplyAndAddByModularInteger, ale předpokládá, že summand kóduje celá čísla v QFT základ.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyAndAddPhaseByModularInteger
+- summary: Provede modulární násobení pomocí celočíselné konstanty v qubit registru.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyByModularInteger
+- summary: Vynásobí dvě čísla s pevnou desetinnou čárkou v registrech.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyFxP
+- summary: Vynásobit celé číslo `xs` `ys` a uložit výsledek do `result` , který musí být zpočátku nula.
+  uid: Microsoft.Quantum.Arithmetic.MultiplyI
+- summary: Vynásobit celé číslo se znaménkem `xs` (signed integer) `ys` a uložit výsledek do `result` , který musí být zpočátku nula.
+  uid: Microsoft.Quantum.Arithmetic.MultiplySI
+- summary: Inicializovat číslo s pevnou desetinnou čárkou pro klasický konstantu.
+  uid: Microsoft.Quantum.Arithmetic.PrepareFxP
+- summary: Odráží pokladnu v registru o daném klasickém čísle.
+  uid: Microsoft.Quantum.Arithmetic.ReflectAboutInteger
+- summary: Vratný, místní Ripple – přidání dvou celých čísel.
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderCDKM
+- summary: Vratný, místní Ripple – přidání dvou celých čísel. Pomocí dvou $n $ bitových celých čísel zakódovaných v registrech LittleEndian `xs` a `ys` qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit `carry` .
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderD
+- summary: Vratný, místní Ripple – přidání dvou celých čísel bez nutnosti provádět.
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderNoCarryTTK
+- summary: Vratný, místní Ripple – přidání dvou celých čísel. Pomocí dvou $n $ bitových celých čísel zakódovaných v registrech LittleEndian `xs` a `ys` qubit, operace vypočítá součet dvou celých čísel, kde $n $ nejméně významné bity výsledku jsou uchovávány v `ys` a bit, který je XORed na qubit `carry` .
+  uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderTTK
+- summary: Čtverce číslo s pevnou desetinnou čárkou.
+  uid: Microsoft.Quantum.Arithmetic.SquareFxP
+- summary: Vypočítá čtverci celého čísla `xs` do `result` , které musí být zpočátku nula.
+  uid: Microsoft.Quantum.Arithmetic.SquareI
+- summary: Čtvercové celé číslo se znaménkem `xs` a uložení výsledku v `result` , které musí být zpočátku nula.
+  uid: Microsoft.Quantum.Arithmetic.SquareSI
+- summary: Implementuje bránu vratného součtu. Má-li bit zakódovaný v qubit `carryIn` a dvě summand bity zakódované v `summand1` a `summand2` , vypočítá logickou XOR `carryIn` `summand1` a `summand2` v qubit `summand2` .
+  uid: Microsoft.Quantum.Arithmetic.Sum
+summary: ''
+uid: Microsoft.Quantum.Arithmetic
+metadata:
+  ms.openlocfilehash: 73e3ac964e19ce4613c9426bfc09a39aff4228cf
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92706521"
