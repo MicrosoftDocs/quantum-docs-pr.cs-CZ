@@ -9,21 +9,21 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51eb52d0b8ace972f6a425edba400ca9a8916d2e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835583"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692229"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
 ## <a name="classical-data-structures"></a>Klasické datové struktury ##
 
 Společně s uživatelsky definovanými typy pro reprezentaci konceptů, Canon také poskytuje operace, funkce a typy pro práci s klasickými daty používanými v řízení systémů.
-Například <xref:microsoft.quantum.arrays.reversed> funkce přebírá pole jako vstup a vrací stejné pole v opačném pořadí.
+Například <xref:Microsoft.Quantum.Arrays.Reversed> funkce přebírá pole jako vstup a vrací stejné pole v opačném pořadí.
 To lze potom použít pro pole typu `Qubit[]` , abyste se vyhnuli nutnosti použít nepotřebné brány $ \operatorname{swap} $ při konverzi mezi reprezentací typu Integer.
-Podobně jsme viděli v předchozí části, že typy formuláře `(Int, Int -> T)` mohou být užitečné, aby představovaly kolekce s náhodným přístupem, takže <xref:microsoft.quantum.arrays.lookupfunction> funkce poskytuje pohodlný způsob, jak vytvořit takové typy z typů polí.
+Podobně jsme viděli v předchozí části, že typy formuláře `(Int, Int -> T)` mohou být užitečné, aby představovaly kolekce s náhodným přístupem, takže <xref:Microsoft.Quantum.Arrays.LookupFunction> funkce poskytuje pohodlný způsob, jak vytvořit takové typy z typů polí.
 
 ### <a name="pairs"></a>Spár ###
 
@@ -38,7 +38,7 @@ ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 
 Canon nabízí několik funkcí pro manipulaci s poli.
 Tyto funkce jsou typu parametrizované, a proto je lze použít s poli libovolného Q# typu.
-Například <xref:microsoft.quantum.arrays.reversed> funkce vrátí nové pole, jehož prvky jsou v opačném pořadí, od vstupu.
+Například <xref:Microsoft.Quantum.Arrays.Reversed> funkce vrátí nové pole, jehož prvky jsou v opačném pořadí, od vstupu.
 Dá se použít ke změně způsobu, jakým se při volání operací reprezentuje registr s hodnotou:
 
 ```qsharp
@@ -49,14 +49,14 @@ QFT(BigEndian(Reversed(leRegister!)));
 QFT(LittleEndianAsBigEndian(leRegister));
 ```
 
-Podobně <xref:microsoft.quantum.arrays.subarray> lze funkci použít k přeuspořádání nebo přeřazení podmnožiny prvků pole:
+Podobně <xref:Microsoft.Quantum.Arrays.Subarray> lze funkci použít k přeuspořádání nebo přeřazení podmnožiny prvků pole:
 
 ```qsharp
 // Applies H to qubits 2 and 5.
 ApplyToEach(H, Subarray([2, 5], register));
 ```
 
-V kombinaci s řízením toku může funkce manipulace s polem, jako je například, <xref:microsoft.quantum.arrays.zip> poskytovat účinný způsob, jak vyjádřit programy na více než jednou.
+V kombinaci s řízením toku může funkce manipulace s polem, jako je například, <xref:Microsoft.Quantum.Arrays.Zipped> poskytovat účinný způsob, jak vyjádřit programy na více než jednou.
 
 ```qsharp
 // Applies X₃ Y₁ Z₇ to a register of any size.
@@ -64,7 +64,7 @@ ApplyToEach(
     ApplyPauli(_, register),
     Map(
         EmbedPauli(_, _, Length(register)),
-        Zip([PauliX, PauliY, PauliZ], [3, 1, 7])
+        Zipped([PauliX, PauliY, PauliZ], [3, 1, 7])
     )
 );
 ```
@@ -127,8 +127,8 @@ is Adj + Ctl {
 }
 ```
 
-Tento Oracle je pak zvláštním případem <xref:microsoft.quantum.canon.rall1> operace, který umožňuje otočení pomocí libovolné fáze namísto případu odrazu $ \phi = \pi $.
-V tomto případě `RAll1` se podobá <xref:microsoft.quantum.intrinsic.r1> operaci předehru, a to v tom, že se místo \ket{11\cdots1}ého stavu qubit $ \ket $ otáčí o $ $ {1} .
+Tento Oracle je pak zvláštním případem <xref:Microsoft.Quantum.Canon.RAll1> operace, který umožňuje otočení pomocí libovolné fáze namísto případu odrazu $ \phi = \pi $.
+V tomto případě `RAll1` se podobá <xref:Microsoft.Quantum.Intrinsic.R1> operaci předehru, a to v tom, že se místo \ket{11\cdots1}ého stavu qubit $ \ket $ otáčí o $ $ {1} .
 
 Oracle, který označuje počáteční mezeru, může být vytvořen podobně.
 V pseudokódu:
@@ -139,7 +139,7 @@ V pseudokódu:
 4. U každého qubit použijte $X $ bran.
 5. U každého qubit použijte $H $ bran.
 
-V tuto chvíli jsme také předvedli použití <xref:microsoft.quantum.canon.applywith> společně s <xref:microsoft.quantum.canon.rall1> výše popsanou operací:
+V tuto chvíli jsme také předvedli použití <xref:Microsoft.Quantum.Canon.ApplyWith> společně s <xref:Microsoft.Quantum.Canon.RAll1> výše popsanou operací:
 
 ```qsharp
 operation ReflectAboutInitial(register : Qubit[]) : Unit
@@ -160,10 +160,10 @@ Tato jednotná část je obvykle popsána jedním ze dvou typů Oracle.
 
 > [!TIP]
 > Oba typy Oracle popsané níže jsou uvedené v ukázkách.
-> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
-> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Další informace o průběžných dotazech Oracle najdete v [ukázce **PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
+> Další informace o samostatných dotazech Oracle najdete v [ukázce **IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
-První typ Oracle, který volá diskrétní dotaz Oracle a představuje uživatelsky definovaný typ <xref:microsoft.quantum.oracles.discreteoracle> , jednoduše zahrnuje jednotnou matici.
+První typ Oracle, který volá diskrétní dotaz Oracle a představuje uživatelsky definovaný typ <xref:Microsoft.Quantum.Oracles.DiscreteOracle> , jednoduše zahrnuje jednotnou matici.
 Pokud je $U $ jednotkou, jejíž eigenvalues chceme odhadnout, je Oracle pro $U $ jednoduše samostatným předpokladem pro podprogram, který implementuje $U $.
 Například jedna může trvat $U $ to je, že pro odhad amplitud se výše definovala $Q Oracle.
 Eigenvalues této matice se dá použít k odhadu překrytí mezi počátečními a cílovými stavy, $ \sin ^ 2 (\theta) $, a to za použití kvadratickě méně vzorků, než je třeba v případě, že by to vyžadovalo jinak.
@@ -173,7 +173,7 @@ Jinými slovy chceme odhadnout $ \theta $ pro neznámou rotující bránu formul
 V takových případech by měla podrutina, s níž komunikujeme, s cílem zjistit tuto pevnou hodnotu $ \theta $ pro bránu je $ $ \begin{align} U & = R_z (\theta) \\ \\ & = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\ \\ 0 & e ^ {i \ théta/2} \end{bmatrix}.
 \end{align} $ $
 
-Druhým typem Oracle použitým ve fázi odhad je průběžný dotaz Oracle, reprezentovaný <xref:microsoft.quantum.oracles.continuousoracle> typem.
+Druhým typem Oracle použitým ve fázi odhad je průběžný dotaz Oracle, reprezentovaný <xref:Microsoft.Quantum.Oracles.ContinuousOracle> typem.
 Průběžný dotaz Oracle pro odhad fáze má formu $U (t) $, kde $t $ je klasický známý reálné číslo.
 Pokud máme $U $ být fixní jednotkou, pak má průběžný dotaz Oracle formu $U (t) = U ^ t $.
 To nám umožňuje dotazovat se na matice, jako je $ \sqrt{U} $, které se nedaly implementovat přímo v samostatném modelu dotazu.
@@ -211,7 +211,7 @@ kde celé číslo $r > $0 řídí chybu aproximace.
 Knihovna modelování dynamického generátoru poskytuje rozhraní pro systematické kódování složitých generátorů z pohledu jednodušších generátorů. Tento popis může být předán do, řekněme, že knihovna simulace implementuje časový vývoj pomocí algoritmu simulace výběru, přičemž mnoho podrobností automaticky postará o.
 
 > [!TIP]
-> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
+> Knihovna dynamického generátoru popsaná níže je uvedena v ukázkách. Příklad založený na modelu Ising naleznete v [ukázce **IsingGenerators**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
 > Příklad založený na molekulovém vodíku najdete v ukázkách [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) a [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Úplný popis generátoru ###
@@ -261,7 +261,7 @@ newtype EvolutionUnitary = ((Double, Qubit[]) => Unit is Adj + Ctl);
 
 První parametr představuje časový interval, který bude vynásoben koeficientem v rámci `GeneratorIndex` jednotkového vývoje. Druhým parametrem je qubit, na kterém se registruje jednotná činnost. 
 
-### <a name="time-dependent-generators"></a>Generátory závislé na čase ###
+### <a name="time-dependent-generators"></a>Generátory Time-Dependent ###
 
 V mnoha případech jsme se také zajímat o generátory závislé na čase modelování, ke kterým může dojít v Schrödinger rovnici $ $ \begin{align} i\frac {d \ket{\psi (t)}} {d t} & = \hat H (t) \ket{\psi (t)}, \end{align} $ $, kde generátor $ \hat H (t) $ je teď závislý na čase. Rozšíření od zdrojů nezávislých na čase výše tohoto případu je jednoduché. Místo toho, abyste měli pevně `GeneratorSystem` popisující Hamiltonian pro všechny časy $t $, máme k tomu `GeneratorSystemTimeDependent` uživatelsky definovaný typ.
 
