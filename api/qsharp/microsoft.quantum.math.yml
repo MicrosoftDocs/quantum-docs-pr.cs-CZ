@@ -1,0 +1,281 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Vrátí absolutní hodnotu komplexního čísla typu `Complex` .
+  uid: Microsoft.Quantum.Math.AbsComplex
+- summary: Vrátí absolutní hodnotu komplexního čísla typu `ComplexPolar` .
+  uid: Microsoft.Quantum.Math.AbsComplexPolar
+- summary: Vrátí absolutní hodnotu čísla s plovoucí desetinnou čárkou s dvojitou přesností.
+  uid: Microsoft.Quantum.Math.AbsD
+- summary: Vrátí absolutní hodnotu celého čísla.
+  uid: Microsoft.Quantum.Math.AbsI
+- summary: Vrátí absolutní hodnotu velkých celých čísel.
+  uid: Microsoft.Quantum.Math.AbsL
+- summary: Vrátí kolmou absolutní hodnotu komplexního čísla typu `Complex` .
+  uid: Microsoft.Quantum.Math.AbsSquaredComplex
+- summary: Vrátí kolmou absolutní hodnotu komplexního čísla typu `ComplexPolar` .
+  uid: Microsoft.Quantum.Math.AbsSquaredComplexPolar
+- summary: Pomocná funkce použitá k rekurzivnímu výpočtu bitsize hodnoty.
+  uid: Microsoft.Quantum.Math.AccumulatedBitsizeI
+- summary: Pomocná funkce použitá k rekurzivnímu výpočtu bitsize hodnoty.
+  uid: Microsoft.Quantum.Math.AccumulatedBitsizeL
+- summary: Vrací úhel, jehož kosinus je zadané číslo.
+  uid: Microsoft.Quantum.Math.ArcCos
+- summary: Vypočítá inverzní hyperbolický kosinus čísla.
+  uid: Microsoft.Quantum.Math.ArcCosh
+- summary: Vrací úhel, jehož sinus je zadané číslo.
+  uid: Microsoft.Quantum.Math.ArcSin
+- summary: Vypočítá inverzní hyperbolický sinus čísla.
+  uid: Microsoft.Quantum.Math.ArcSinh
+- summary: Vrací úhel, jehož tangens odpovídá určenému číslu.
+  uid: Microsoft.Quantum.Math.ArcTan
+- summary: Vrátí úhel, jehož tangens odpovídá podílu dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.ArcTan2
+- summary: Vypočítá inverzní hyperbolický tangens čísla.
+  uid: Microsoft.Quantum.Math.ArcTanh
+- summary: Vrátí fázi komplexního čísla typu `Complex` .
+  uid: Microsoft.Quantum.Math.ArgComplex
+- summary: Vrátí fázi komplexního čísla typu `ComplexPolar` .
+  uid: Microsoft.Quantum.Math.ArgComplexPolar
+- summary: >-
+    Pro nezáporné celé číslo `a` vrátí počet bitů, které musí představovat `a` .
+
+    To znamená, že vrátí nejmenší $n $, který $a < 2 ^ n $.
+  uid: Microsoft.Quantum.Math.BitSizeI
+- summary: >-
+    Pro nezáporné celé číslo `a` vrátí počet bitů, které musí představovat `a` .
+
+    To znamená, že vrátí nejmenší $n $, který $a < 2 ^ n $.
+  uid: Microsoft.Quantum.Math.BitSizeL
+- summary: Vrátí nejmenší celé číslo větší nebo rovno zadanému číslu.
+  uid: Microsoft.Quantum.Math.Ceiling
+- summary: Převede komplexní číslo typu `Complex` na komplexní číslo typu `ComplexPolar` .
+  uid: Microsoft.Quantum.Math.ComplexAsComplexPolar
+- summary: Převede komplexní číslo typu `ComplexPolar` na komplexní číslo typu `Complex` .
+  uid: Microsoft.Quantum.Math.ComplexPolarAsComplex
+- summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno `denominatorBound`
+  uid: Microsoft.Quantum.Math.ContinuedFractionConvergentI
+- summary: Vyhledá pokračující zlomek Convergent nejbližší k `fraction` jmenovateli menší nebo rovno `denominatorBound`
+  uid: Microsoft.Quantum.Math.ContinuedFractionConvergentL
+- summary: Vrací kosinus určeného úhlu.
+  uid: Microsoft.Quantum.Math.Cos
+- summary: Vrací hyperbolický kosinus určeného úhlu.
+  uid: Microsoft.Quantum.Math.Cosh
+- summary: Vydělí jednu hodnotu BigInteger o jinou hodnotou, vrátí výsledek a zbytek jako řazenou kolekci členů.
+  uid: Microsoft.Quantum.Math.DivRemL
+- summary: Vrátí podíl dvou vstupů.
+  uid: Microsoft.Quantum.Math.DividedByC
+- summary: Vrátí podíl dvou vstupů.
+  uid: Microsoft.Quantum.Math.DividedByCP
+- summary: Vrátí podíl dvou vstupů.
+  uid: Microsoft.Quantum.Math.DividedByD
+- summary: Vrátí podíl dvou vstupů.
+  uid: Microsoft.Quantum.Math.DividedByI
+- summary: Vrátí podíl dvou vstupů.
+  uid: Microsoft.Quantum.Math.DividedByL
+- summary: Vrátí základ přirozeného logaritmu $e $.
+  uid: Microsoft.Quantum.Math.E
+- summary: Vrátí $e $ umocněné na zadanou mocninu.
+  uid: Microsoft.Quantum.Math.ExpD
+- summary: Vrátí celé číslo umocněné na daný příkon s ohledem na dané zbytky.
+  uid: Microsoft.Quantum.Math.ExpModI
+- summary: Vrátí celé číslo umocněné na daný příkon s ohledem na dané zbytky.
+  uid: Microsoft.Quantum.Math.ExpModL
+- summary: Vypočítá řazenou kolekci členů $ (u, v) $, což $u \cdot a + v \cdot b = \operatorname{GCD} (a, b) $, kde $ \operatorname{GCD} $ je $a $ největší společný dělitel $a $ a $b $. GCD je vždy pozitivní.
+  uid: Microsoft.Quantum.Math.ExtendedGreatestCommonDivisorI
+- summary: Vypočítá řazenou kolekci členů $ (u, v) $, což $u \cdot a + v \cdot b = \operatorname{GCD} (a, b) $, kde $ \operatorname{GCD} $ je $a $ největší společný dělitel $a $ a $b $. GCD je vždy pozitivní.
+  uid: Microsoft.Quantum.Math.ExtendedGreatestCommonDivisorL
+- summary: Vrací největší celé číslo menší nebo rovné zadanému číslu.
+  uid: Microsoft.Quantum.Math.Floor
+- summary: Vypočítá největšího společného dělitele $a $ a $b $. GCD je vždy pozitivní.
+  uid: Microsoft.Quantum.Math.GreatestCommonDivisorI
+- summary: Vypočítá největšího společného dělitele $a $ a $b $. GCD je vždy pozitivní.
+  uid: Microsoft.Quantum.Math.GreatestCommonDivisorL
+- summary: Vrátí zbývající výsledek z dělení zadaného čísla jiným zadaným číslem.
+  uid: Microsoft.Quantum.Math.IEEERemainder
+- summary: Vrátí $b $ tak, že $a \cdot b = 1 (\operatorname{mod} \texttt{Modulus}) $.
+  uid: Microsoft.Quantum.Math.InverseModI
+- summary: Vrátí $b $ tak, že $a \cdot b = 1 (\operatorname{mod} \texttt{Modulus}) $.
+  uid: Microsoft.Quantum.Math.InverseModL
+- summary: Vrátí hodnotu true, pokud $a $ a $b $ jsou souběžné a false v opačném případě.
+  uid: Microsoft.Quantum.Math.IsCoprimeI
+- summary: Vrátí hodnotu true, pokud $a $ a $b $ jsou souběžné a false v opačném případě.
+  uid: Microsoft.Quantum.Math.IsCoprimeL
+- summary: Vypočítá logaritmus o základu 2 čísla.
+  uid: Microsoft.Quantum.Math.Lg
+- summary: Vrátí přirozený (základní $e $) logaritmus zadaného čísla.
+  uid: Microsoft.Quantum.Math.Log
+- summary: Vrátí logaritmus o základu 10 zadaného čísla.
+  uid: Microsoft.Quantum.Math.Log10
+- summary: Vrátí přirozený logaritmus hodnoty 2.
+  uid: Microsoft.Quantum.Math.LogOf2
+- summary: Pro pole celých čísel vrátí největší prvek.
+  uid: Microsoft.Quantum.Math.Max
+- summary: Vrátí větší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MaxD
+- summary: Vrátí větší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MaxI
+- summary: Vrátí větší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MaxL
+- summary: Předanému poli celých čísel vrátí nejmenší prvek.
+  uid: Microsoft.Quantum.Math.Min
+- summary: Vrátí menší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MinD
+- summary: Vrátí menší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MinI
+- summary: Vrátí menší ze dvou zadaných čísel.
+  uid: Microsoft.Quantum.Math.MinL
+- summary: Vrátí rozdíl mezi dvěma vstupy.
+  uid: Microsoft.Quantum.Math.MinusC
+- summary: Vrátí rozdíl mezi dvěma vstupy.
+  uid: Microsoft.Quantum.Math.MinusCP
+- summary: Vrátí rozdíl mezi dvěma vstupy.
+  uid: Microsoft.Quantum.Math.MinusD
+- summary: Vrátí rozdíl mezi dvěma vstupy.
+  uid: Microsoft.Quantum.Math.MinusI
+- summary: Vrátí rozdíl mezi dvěma vstupy.
+  uid: Microsoft.Quantum.Math.MinusL
+- summary: Vrátí zbytek čísla s ohledem na jiné číslo.
+  uid: Microsoft.Quantum.Math.ModI
+- summary: Vrátí zbytek čísla s ohledem na jiné číslo.
+  uid: Microsoft.Quantum.Math.ModL
+- summary: Provede modulární dělení na číslo umocněné na mocninu jiného čísla.
+  uid: Microsoft.Quantum.Math.ModPowL
+- summary: Vypočítá kanonický zbytek `value` modulo `modulus` .
+  uid: Microsoft.Quantum.Math.ModulusI
+- summary: Vypočítá kanonický zbytek `value` modulo `modulus` .
+  uid: Microsoft.Quantum.Math.ModulusL
+- summary: Vrací unární negaci vstupu.
+  uid: Microsoft.Quantum.Math.NegationC
+- summary: Vrací unární negaci vstupu.
+  uid: Microsoft.Quantum.Math.NegationCP
+- summary: Vrací unární negaci vstupu.
+  uid: Microsoft.Quantum.Math.NegationD
+- summary: Vrací unární negaci vstupu.
+  uid: Microsoft.Quantum.Math.NegationI
+- summary: Vrací unární negaci vstupu.
+  uid: Microsoft.Quantum.Math.NegationL
+- summary: Představuje poměr obvodu kružnice s jeho průměrem, určený konstantou, π.
+  uid: Microsoft.Quantum.Math.PI
+- summary: >-
+    Vrací `L(p)` normu vektoru `Double` s.
+
+    To znamená, že předané pole $x $ typu `Double[]` vrátí $p $-norm $ \| x \| \_ p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
+  uid: Microsoft.Quantum.Math.PNorm
+- summary: >-
+    Normalizuje vektor `Double` s v `L(p)` normě.
+
+    To znamená, že předané pole $x $ typu `Double[]` vrátí pole, kde jsou všechny prvky děleny $p $-norm $ \| x \| _p $.
+  uid: Microsoft.Quantum.Math.PNormalized
+- summary: Vrátí součet (zřetězení) dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusA
+- summary: Vrátí součet dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusC
+- summary: Vrátí součet dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusCP
+- summary: Vrátí součet dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusD
+- summary: Vrátí součet dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusI
+- summary: Vrátí součet dvou vstupů.
+  uid: Microsoft.Quantum.Math.PlusL
+- summary: Vrátí číslo umocněné na daný příkon.
+  uid: Microsoft.Quantum.Math.PowC
+- summary: Vnitřních. Vzhledem k tomu, že je nejjednodušší definovat mocninu dvou komplexních čísel ve formě kartézském jako vracené ve formě polárního formuláře, definujeme tu a pak podle potřeby převedeme.
+  uid: Microsoft.Quantum.Math.PowCAsCP
+- summary: Vrátí číslo umocněné na daný příkon.
+  uid: Microsoft.Quantum.Math.PowCP
+- summary: Vrátí číslo x umocněné na hodnotu y.
+  uid: Microsoft.Quantum.Math.PowD
+- summary: Vrátí číslo umocněné na daný příkon.
+  uid: Microsoft.Quantum.Math.PowI
+- summary: Vrátí číslo umocněné na daný příkon.
+  uid: Microsoft.Quantum.Math.PowL
+- summary: Vypočítá zbytky mezi dvěma reálnými čísly.
+  uid: Microsoft.Quantum.Math.RealMod
+- summary: Zaokrouhlí hodnotu na nejbližší celé číslo.
+  uid: Microsoft.Quantum.Math.Round
+- summary: Vrátí celé číslo, které označuje znaménko čísla.
+  uid: Microsoft.Quantum.Math.SignD
+- summary: Vrátí celé číslo, které označuje znaménko čísla.
+  uid: Microsoft.Quantum.Math.SignI
+- summary: Vrátí celé číslo, které označuje znaménko čísla.
+  uid: Microsoft.Quantum.Math.SignL
+- summary: Vrací sinus určeného úhlu.
+  uid: Microsoft.Quantum.Math.Sin
+- summary: Vrací hyperbolický sinus určeného úhlu.
+  uid: Microsoft.Quantum.Math.Sinh
+- summary: Vrátí druhou odmocninu určeného čísla.
+  uid: Microsoft.Quantum.Math.Sqrt
+- summary: Vrátí čtvercovou 2-normu vektoru.
+  uid: Microsoft.Quantum.Math.SquaredNorm
+- summary: Vrací tangens určeného úhlu.
+  uid: Microsoft.Quantum.Math.Tan
+- summary: Vrací hyperbolický tangens určeného úhlu.
+  uid: Microsoft.Quantum.Math.Tanh
+- summary: Vrátí součin dvou vstupů.
+  uid: Microsoft.Quantum.Math.TimesC
+- summary: Vrátí součin dvou vstupů.
+  uid: Microsoft.Quantum.Math.TimesCP
+- summary: Vrátí součin dvou vstupů.
+  uid: Microsoft.Quantum.Math.TimesD
+- summary: Vrátí součin dvou vstupů.
+  uid: Microsoft.Quantum.Math.TimesI
+- summary: Vrátí součin dvou vstupů.
+  uid: Microsoft.Quantum.Math.TimesL
+- summary: Vypočítá integrální část čísla.
+  uid: Microsoft.Quantum.Math.Truncate
+- summary: Vnitřní rekurzivní volání pro výpočet GCDu s vazbou
+  uid: Microsoft.Quantum.Math._ContinuedFractionConvergentI
+- summary: Vnitřní rekurzivní volání pro výpočet GCDu s vazbou
+  uid: Microsoft.Quantum.Math._ContinuedFractionConvergentL
+- summary: Vnitřní rekurzivní volání pro výpočet GCDu.
+  uid: Microsoft.Quantum.Math._ExtendedGreatestCommonDivisorI
+- summary: Vnitřní rekurzivní volání pro výpočet GCDu.
+  uid: Microsoft.Quantum.Math._ExtendedGreatestCommonDivisorL
+name: Microsoft.Quantum.Math
+newtypes:
+- summary: Představuje racionální číslo formuláře `p/q` . Celé číslo `p` je první prvek řazené kolekce členů a `q` je druhým prvkem řazené kolekce členů.
+  uid: Microsoft.Quantum.Math.BigFraction
+- summary: Představuje komplexní číslo podle jeho reálné a imaginární části. První prvek řazené kolekce členů je skutečná komponenta, druhá z nich – imaginární součást.
+  uid: Microsoft.Quantum.Math.Complex
+- summary: >-
+    Představuje komplexní číslo v polárním tvaru.
+
+    Polární reprezentace komplexního čísla je $c = r e ^ {i t} $.
+  uid: Microsoft.Quantum.Math.ComplexPolar
+- summary: Představuje racionální číslo formuláře `p/q` . Celé číslo `p` je první prvek řazené kolekce členů a `q` je druhým prvkem řazené kolekce členů.
+  uid: Microsoft.Quantum.Math.Fraction
+operations:
+- summary: >+
+    > [!WARNING]
+
+    > RandomInt se už nepoužívá. <xref:Microsoft.Quantum.Random.DrawRandomInt>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Math.RandomInt
+- summary: >+
+    > [!WARNING]
+
+    > RandomIntPow2 se už nepoužívá. <xref:Microsoft.Quantum.Random.DrawRandomInt>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Math.RandomIntPow2
+- summary: >+
+    > [!WARNING]
+
+    > RandomReal se už nepoužívá. <xref:Microsoft.Quantum.Random.DrawRandomDouble>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Math.RandomReal
+- summary: >+
+    > [!WARNING]
+
+    > RandomSingleQubitPauli se už nepoužívá. <xref:Microsoft.Quantum.Random.DrawRandomPauli>Místo toho ho použijte.
+
+  uid: Microsoft.Quantum.Math.RandomSingleQubitPauli
+summary: Tento obor názvů obsahuje klasické matematické funkce a datové typy.
+uid: Microsoft.Quantum.Math
+metadata:
+  ms.openlocfilehash: 13ccb80ce78e7d9d6341d7b228e39b65026ab090
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92708392"
