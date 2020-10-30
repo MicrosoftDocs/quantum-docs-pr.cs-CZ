@@ -26,6 +26,8 @@
   name: Příkaz magic %chemistry.inputstate.load
 - href: config.md
   name: Příkaz magic %config
+- href: debug.md
+  name: Příkaz magic %debug
 - href: estimate.md
   name: Příkaz magic %estimate
 - href: kata.md
