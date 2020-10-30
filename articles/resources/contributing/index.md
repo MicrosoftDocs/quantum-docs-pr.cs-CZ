@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0fbbe127b9f4c6b98bdc2cf0e46098bf40a816e3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a8a527df59bd7ee038de71e04003cf456b094afb
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866855"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691763"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Přispívání pro sadu Quantum Development Kit
 
@@ -53,20 +53,21 @@ V zbývající části průvodce vám poradíme s postupem u jednotlivých druh�
 Sada Quantum Development Kit obsahuje mnoho různých částí, které společně tvoří platformu pro psaní kvantových programů.
 Každý z těchto různých kousků je umístěn v jiném úložišti, takže jednou z prvních věcí k řešení je najít pro každý příspěvek to nejlepší místo.
 
-- [**microsoft/Quantum:** ](https://github.com/Microsoft/Quantum) Ukázky a nástroje, které vám pomůžou začít používat sadu Quantum Development Kit.
-- [**microsoft/QuantumLibraries:** ](https://github.com/Microsoft/QuantumLibraries) Standardní knihovny a knihovny specifické pro konkrétní doménu pro sadu Quantum Development Kit.
-- [**microsoft/QuantumKatas:** ](https://github.com/Microsoft/QuantumKatas) Programovací cvičení umožňující při studiu kvantových výpočtů a programovacího jazyka Q# postupovat vlastním tempem.
-- [**microsoft/qsharp-compiler:** ](https://github.com/microsoft/qsharp-compiler) Kompilátor jazyka Q#, rozšíření sady Visual Studio a rozšíření editoru Visual Studio Code.
-- [**microsoft/qsharp-runtime:** ](https://github.com/microsoft/qsharp-runtime) Architektura pro simulace, generování kódu a cílové počítače simulací pro sadu Quantum Development Kit.
-- [**microsoft/iqsharp:** ](https://github.com/microsoft/iqsharp) Funkce jádra Jupyter a hostitele Pythonu pro jazyk Q# a také image Dockeru pro používání IQ# v cloudových prostředích.
-- [**MicrosoftDocs/quantum-docs-pr:** ](https://github.com/MicrosoftDocs/quantum-docs-pr) Zdrojový kód pro dokumentaci publikovanou na webu https://docs.microsoft.com/quantum.
+- [**microsoft/Quantum:**](https://github.com/Microsoft/Quantum) Ukázky a nástroje, které vám pomůžou začít používat sadu Quantum Development Kit.
+- [**microsoft/QuantumLibraries:**](https://github.com/Microsoft/QuantumLibraries) Standardní knihovny a knihovny specifické pro konkrétní doménu pro sadu Quantum Development Kit.
+- [**microsoft/QuantumKatas:**](https://github.com/Microsoft/QuantumKatas) Programovací cvičení umožňující při studiu kvantových výpočtů a programovacího jazyka Q# postupovat vlastním tempem.
+- [**microsoft/qsharp-compiler:**](https://github.com/microsoft/qsharp-compiler) Kompilátor jazyka Q#, rozšíření sady Visual Studio a rozšíření editoru Visual Studio Code.
+- [**microsoft/qsharp-runtime:**](https://github.com/microsoft/qsharp-runtime) Architektura pro simulace, generování kódu a cílové počítače simulací pro sadu Quantum Development Kit.
+- [**microsoft/iqsharp:**](https://github.com/microsoft/iqsharp) Funkce jádra Jupyter a hostitele Pythonu pro jazyk Q# a také image Dockeru pro používání IQ# v cloudových prostředích.
+- [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): Zde se vyvíjí a specifikují nové funkce Q# a můžete zde sdílet nápady a návrhy týkající se budoucího vývoje jazyka Q# a základních knihoven.
+- [**MicrosoftDocs/quantum-docs-pr:**](https://github.com/MicrosoftDocs/quantum-docs-pr) Zdrojový kód pro dokumentaci publikovanou na webu https://docs.microsoft.com/quantum.
 
 > [!NOTE]
 > V současné době bohužel nemůžeme přijímat příspěvky pro kód a dokumentaci v úložišti [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC), budeme však velmi vděční za zprávy o chybách.
 
 Existuje ještě několik dalších, specializovanějších úložišť, která se zaměřují na doplňkové funkce související se sadou Quantum Development Kit.
 
-- [**msr-quarc/qsharp.sty:** ](https://github.com/msr-quarc/qsharp.sty) Podpora formátování LaTeX pro syntaxi jazyka Q#.
+- [**msr-quarc/qsharp.sty:**](https://github.com/msr-quarc/qsharp.sty) Podpora formátování LaTeX pro syntaxi jazyka Q#.
 
 ## <a name="next-steps"></a>Další kroky
 

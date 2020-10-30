@@ -1,22 +1,23 @@
 ---
 title: Příkazy magic IQ#
+description: Zobrazí seznam příkazů magic dostupných v jádru IQ# Jupyter.
 author: rmshaffer
 uid: microsoft.quantum.iqsharp.magic-ref.index
-ms.author: rmshaffer
-ms.date: 09/29/2020
+ms.author: ryansha
+ms.date: 10/26/2020
 ms.topic: article
-ms.openlocfilehash: 934ab18b667797d09d2c8188f727e64b0017e1d5
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: a615c6dac6cdb80ff84cec2b0a3c99fc700efb8e
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91464670"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691135"
 ---
 # <a name="iq-magic-commands"></a>Příkazy magic IQ#
 | Příkaz magic | Souhrn |
 |---------------|---------|
 | [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) | Umožňuje připojení k pracovnímu prostoru Azure Quantum nebo zobrazení stavu aktuálního připojení. |
-| [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute) | Spustí úlohu v pracovním prostoru Azure Quantum. |
+| [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute) | Odešle úlohu do pracovního prostoru Azure Quantum a počká na dokončení. |
 | [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs) | Zobrazí seznam úloh v aktuálním pracovním prostoru Azure Quantum. |
 | [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output) | Zobrazí výsledky úlohy v aktuálním pracovním prostoru Azure Quantum. |
 | [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status) | Zobrazí stav úlohy v aktuálním pracovním prostoru Azure Quantum. |
@@ -29,6 +30,7 @@ ms.locfileid: "91464670"
 | [`%chemistry.fh.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.fh.load) | Načte fermionový hamiltonián pro problém elektronové struktury. Problém se načte ze souboru nebo předá jako argument. |
 | [`%chemistry.inputstate.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.inputstate.load) | Načte problém elektronové struktury Broombridge a vrátí vybraný vstupní stav. |
 | [`%config`](xref:microsoft.quantum.iqsharp.magic-ref.config) | Umožňuje nastavení konfiguračních možností nebo dotazy na ně. |
+| [`%debug`](xref:microsoft.quantum.iqsharp.magic-ref.debug) | Projde po krocích provedení dané operace nebo funkce Q#. |
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Spustí danou funkci nebo operaci na cílovém počítači ResourcesEstimator. |
 | [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Provede jeden test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Vrátí seznam všech aktuálně dostupných příkazů magic. |
