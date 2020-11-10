@@ -1,5 +1,5 @@
 ---
-title: Vývoj s aplikacemi v Q#
+title: Vývoj s aplikacemi v Q# v integrovaném vývojovém prostředí
 description: Naučte se vytvářet aplikace Q#, které se spouští z příkazového řádku.
 author: bradben
 ms.author: v-benbra
@@ -10,53 +10,52 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 68f530d80e5c5f40dc2bcbb185879c3cb6f93f91
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a6823888dcbe8cf79f0045d2615fe8b889dcc7c3
+ms.sourcegitcommit: a13c7c86fd52a05cbf129b8dd713d6586ca1cc2c
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834410"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93376418"
 ---
-# <a name="develop-with-no-locq-applications"></a>Vývoj s aplikacemi v Q#
+# <a name="develop-with-no-locq-applications-in-an-ide"></a>Vývoj s aplikacemi v Q# v integrovaném vývojovém prostředí
 
-Postupujte podle pokynů na kartě odpovídající vašemu prostředí.
+Programy v Q# se dají spouštět samostatně, bez ovladače v hostitelském jazyce jako C#, F# nebo Python. K vývoji aplikací v Q# můžete použít Visual Studio Code (VS Code), Visual Studio, Visual Studio Codespaces nebo libovolný jiný editor/IDE a spouštět aplikace z konzoly .NET. 
 
-Programy v Q# se dají spouštět samostatně, bez ovladače v hostitelském jazyce jako C#, F# nebo Python.
-
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites-for-all-environments"></a>Požadavky pro všechna prostředí
 
 - [.NET Core SDK 3.1 nebo novější](https://www.microsoft.com/net/download)
 
 ## <a name="installation"></a>Instalace
 
-I když můžete aplikaci v Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE nebo vyvíjet aplikace v Q# místně. Pro vývoj v cloudu prostřednictvím webového prohlížeče doporučujeme Visual Studio Codespaces. Vývoj v těchto prostředích poskytuje bohaté funkce rozšíření QDK, mezi které patří upozornění, zvýrazňování syntaxe, šablony projektů a další. 
+I když můžete aplikaci v Q# sestavit v jakémkoli integrovaném vývojovém prostředí, doporučujeme použít Visual Studio Code (VS Code) nebo Visual Studio IDE nebo vyvíjet aplikace v Q# místně. Pro vývoj v cloudu prostřednictvím webového prohlížeče doporučujeme Visual Studio Codespaces. Vývoj v těchto prostředích využívá bohaté funkce rozšíření QDK, mezi které patří upozornění, zvýrazňování syntaxe, šablony projektů a další. 
 
-Konfigurace VS Code:
+### <a name="to-configure-for-vs-code"></a>Konfigurace pro VS Code:
 
 1. Stáhněte si a nainstalujte [VS Code](https://code.visualstudio.com/download) (Windows, Linux a Mac).
 2. Nainstalujte [Microsoft QDK pro VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).
 
-Konfigurace sady Visual Studio:
+### <a name="to-configure-for-visual-studio"></a>Konfigurace pro Visual Studio:
 
 1. Stáhněte si a nainstalujte [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 nebo novější s podporou multiplatformního vývoje .NET Core.
 2. Stáhněte si a nainstalujte [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
-Konfigurace Visual Studio Codespaces:
+### <a name="to-configure-for-another-environment"></a>Konfigurace pro jiné prostředí: 
 
-1. Vytvořte [účet Azure](https://azure.microsoft.com/free/).
-2. Vytvořte prostředí Codespaces. Postupujte podle [průvodce rychlým zprovozněním](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). Při vytváření Codespace doporučujeme do pole úložiště Git zadat `microsoft/Quantum` a načíst nastavení specifická pro QDK.
-3. Teď můžete nové prostředí spustit a začít vyvíjet v prohlížeči prostřednictvím [cloudového integrovaného vývojového prostředí VS Codespaces](https://online.visualstudio.com/environments). Další možností je využít místní instalaci editoru VS Code a použít Codespaces jako [vzdálené prostředí](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
-
-
-Pokud chcete nainstalovat QDK pro jiné prostředí, zadejte na příkazovém řádku následující:
+1. Na příkazovém řádku zadejte následující:
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
+### <a name="to-configure-for-visual-studio-codespaces"></a>Konfigurace pro Visual Studio Codespaces:
+
+1. Vytvořte [účet Azure](https://azure.microsoft.com/free/).
+2. Vytvořte prostředí Codespaces. Postupujte podle [průvodce rychlým zprovozněním](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). Při vytváření Codespace doporučujeme do pole úložiště Git zadat `microsoft/Quantum` a načíst nastavení specifická pro QDK.
+3. Teď můžete nové prostředí spustit a začít vyvíjet v prohlížeči prostřednictvím [cloudového integrovaného vývojového prostředí VS Codespaces](https://online.visualstudio.com/environments). Další možností je využít místní instalaci editoru VS Code a použít Codespaces jako [vzdálené prostředí](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
+
 ## <a name="develop-with-no-locq"></a>Vývoj s využitím Q#
 
-Postupujte podle pokynů na kartě odpovídající vašemu prostředí.
+Postupujte podle pokynů na kartě odpovídající vašemu vývojovému prostředí.
 
 ### <a name="vs-code"></a>[VS Code](#tab/tabid-vscode)
 
@@ -102,12 +101,6 @@ Spusťte aplikaci:
 ### <a name="other-editors-with-the-command-prompt"></a>[Další editory s příkazovým řádkem](#tab/tabid-cmdline)
 
 Ověřte instalaci vytvořením aplikace Q# `Hello World`
-
-1. Nainstalujte šablony projektů.
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
 
 1. Vytvoření nové aplikace:
 
