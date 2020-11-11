@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fae603a81f8edc23ab8dc14277c5e3c4699f2cee
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
+ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691678"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448340"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -23,6 +23,12 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-01320111004"></a>0.13.20111004 verze
+
+*Datum vydání: 10. listopadu 2020*
+
+Tato verze zakáže funkce IntelliSense pro Q# soubory v aplikaci Visual Studio a Visual Studio Code v případě, že soubor projektu není k dispozici. Tím dojde k vyřešení problému, kdy funkce technologie IntelliSense mohou přestat fungovat po přidání nového Q# souboru do projektu (viz [qsharp-Compiler # 720](https://github.com/microsoft/qsharp-compiler/issues/720)).
 
 ## <a name="version-01320102604"></a>0.13.20102604 verze
 
@@ -526,7 +532,7 @@ Tato aktualizace zahrnuje významná vylepšení výkonu pro simulaci velkých a
 Tato aktualizace přidává nové funkce ladění:
 * Byly přidány dvě nové operace, @"microsoft.quantum.extensions.diagnostics.dumpmachine" a @"microsoft.quantum.extensions.diagnostics.dumpregister", jejichž výstupem jsou informace vlnové funkce o cílovém kvantovém počítači v časovém bodě.  
 * V sadě Visual Studio se teď pravděpodobnost měření $\ket{1}$ na jednotlivém qubitu automaticky zobrazí v okně ladění pro cílový počítač QuantumSimulator.
-* V sadě Visual Studio se zlepšilo zobrazení vlastností proměnných v oknech ladění **Autos** a **Locals** . 
+* V sadě Visual Studio se zlepšilo zobrazení vlastností proměnných v oknech ladění **Autos** a **Locals**. 
 
 Přečtěte si další informace o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging).
 
