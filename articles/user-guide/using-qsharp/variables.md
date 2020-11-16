@@ -1,14 +1,14 @@
 ---
-title: 'Proměnné v :::no-loc(Q#):::'
-description: 'Naučte se pracovat s různými proměnnými v :::no-loc(Q#):::'
+title: 'Proměnné v Q#'
+description: 'Naučte se pracovat s různými proměnnými v Q#'
 author: gillenhaalb
 ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 67c71c09e004d77360902360fefc7a7752e4a829
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -16,16 +16,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92690944"
 ---
-# <a name="variables-in-no-locq"></a><span data-ttu-id="d9c13-103">Proměnné v :::no-loc(Q#):::</span><span class="sxs-lookup"><span data-stu-id="d9c13-103">Variables in :::no-loc(Q#):::</span></span>
+# <a name="variables-in-no-locq"></a><span data-ttu-id="d9c13-103">Proměnné v Q#</span><span class="sxs-lookup"><span data-stu-id="d9c13-103">Variables in Q#</span></span>
 
-<span data-ttu-id="d9c13-104">:::no-loc(Q#)::: rozlišuje mezi proměnlivými a neproměnlivými symboly nebo *proměnnými* , které jsou vázány nebo přiřazeny k výrazům.</span><span class="sxs-lookup"><span data-stu-id="d9c13-104">:::no-loc(Q#)::: distinguishes between mutable and immutable symbols, or *variables* , which are bound/assigned to expressions.</span></span>
+<span data-ttu-id="d9c13-104">Q# rozlišuje mezi proměnlivými a neproměnlivými symboly nebo *proměnnými* , které jsou vázány nebo přiřazeny k výrazům.</span><span class="sxs-lookup"><span data-stu-id="d9c13-104">Q# distinguishes between mutable and immutable symbols, or *variables* , which are bound/assigned to expressions.</span></span>
 <span data-ttu-id="d9c13-105">Obecně platí, že použití neměnných symbolů je doporučováno, protože umožňuje kompilátoru provádět větší optimalizace.</span><span class="sxs-lookup"><span data-stu-id="d9c13-105">In general, the use of immutable symbols is encouraged because it allows the compiler to perform more optimizations.</span></span>
 
 <span data-ttu-id="d9c13-106">Levá strana vazby se skládá ze symbolů typu tuple a na pravé straně výrazu.</span><span class="sxs-lookup"><span data-stu-id="d9c13-106">The left-hand-side of a binding consists of a symbol tuple and the right-hand side of an expression.</span></span>
 
 ## <a name="immutable-variables"></a><span data-ttu-id="d9c13-107">Neměnné proměnné</span><span class="sxs-lookup"><span data-stu-id="d9c13-107">Immutable Variables</span></span>
 
-<span data-ttu-id="d9c13-108">Můžete přiřadit hodnotu libovolného typu v :::no-loc(Q#)::: proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova.</span><span class="sxs-lookup"><span data-stu-id="d9c13-108">You can assign a value of any type in :::no-loc(Q#)::: to a variable for reuse within an operation or function by using the `let` keyword.</span></span> 
+<span data-ttu-id="d9c13-108">Můžete přiřadit hodnotu libovolného typu v Q# proměnné pro opětovné použití v rámci operace nebo funkce pomocí `let` klíčového slova.</span><span class="sxs-lookup"><span data-stu-id="d9c13-108">You can assign a value of any type in Q# to a variable for reuse within an operation or function by using the `let` keyword.</span></span> 
 
 <span data-ttu-id="d9c13-109">Neproměnlivá vazba se skládá z klíčového slova `let` následovaný symbolem nebo řazenou kolekcí členů symbolu, znaménko rovná `=` se, výraz pro vazbu symbolů na a ukončující středník.</span><span class="sxs-lookup"><span data-stu-id="d9c13-109">An immutable binding consists of the keyword `let`, followed by a symbol or symbol tuple, an equals sign `=`, an expression to bind the symbol(s) to, and a terminating semicolon.</span></span>
 
@@ -110,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-<span data-ttu-id="d9c13-134">V případě polí je [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) ve :::no-loc(Q#)::: standardní knihovně k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě.</span><span class="sxs-lookup"><span data-stu-id="d9c13-134">In the case of arrays, [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) in the :::no-loc(Q#)::: standard library provides the necessary tools for many common array initialization and manipulation needs, and thus helps avoid having to update array items in the first place.</span></span> 
+<span data-ttu-id="d9c13-134">V případě polí je [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) ve Q# standardní knihovně k dispozici nezbytné nástroje pro řadu běžných požadavků na inicializaci a manipulaci s poli, a proto pomáhá vyhnout se nutnosti aktualizovat položky pole na prvním místě.</span><span class="sxs-lookup"><span data-stu-id="d9c13-134">In the case of arrays, [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) in the Q# standard library provides the necessary tools for many common array initialization and manipulation needs, and thus helps avoid having to update array items in the first place.</span></span> 
 
 <span data-ttu-id="d9c13-135">Příkazy Update a Reassign poskytují v případě potřeby alternativu:</span><span class="sxs-lookup"><span data-stu-id="d9c13-135">Update-and-reassign statements provide an alternative if needed:</span></span>
 
@@ -239,4 +239,4 @@ if (a == b) {
 
 ## <a name="next-steps"></a><span data-ttu-id="d9c13-158">Další kroky</span><span class="sxs-lookup"><span data-stu-id="d9c13-158">Next steps</span></span>
 
-<span data-ttu-id="d9c13-159">Přečtěte si o [práci s Qubits](xref:microsoft.quantum.guide.qubits) v :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="d9c13-159">Learn about [Working With Qubits](xref:microsoft.quantum.guide.qubits) in :::no-loc(Q#):::.</span></span>
+<span data-ttu-id="d9c13-159">Přečtěte si o [práci s Qubits](xref:microsoft.quantum.guide.qubits) v Q# .</span><span class="sxs-lookup"><span data-stu-id="d9c13-159">Learn about [Working With Qubits](xref:microsoft.quantum.guide.qubits) in Q#.</span></span>

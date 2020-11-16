@@ -1,14 +1,14 @@
 ---
 title: Čítač hloubek – sada pro vývoj pro všechna procesory
-description: 'Přečtěte si o čítači hloubky Microsoft QDK, který používá simulátor trasování doby provozu ke shromáždění počtů hloubky každé operace vyvolané v :::no-loc(Q#)::: programu.'
+description: 'Přečtěte si o čítači hloubky Microsoft QDK, který používá simulátor trasování doby provozu ke shromáždění počtů hloubky každé operace vyvolané v Q# programu.'
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 89d8a2c9f2ecd5c5332215cd4307bcf4a6422036
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -39,7 +39,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-depth-counter-in-a-c-host-program"></a><span data-ttu-id="009d9-114">Použití čítače hloubky v hostitelském programu C#</span><span class="sxs-lookup"><span data-stu-id="009d9-114">Using the depth counter in a C# host program</span></span>
 
-<span data-ttu-id="009d9-115">Příklad v jazyce C#, který následuje v tomto oddílu `T` , počítá hloubku `CCNOT` operace na základě následujícího :::no-loc(Q#)::: ukázkového kódu:</span><span class="sxs-lookup"><span data-stu-id="009d9-115">The C# example that follows in this section computes the `T` depth of the `CCNOT` operation, based on the following :::no-loc(Q#)::: sample code:</span></span>
+<span data-ttu-id="009d9-115">Příklad v jazyce C#, který následuje v tomto oddílu `T` , počítá hloubku `CCNOT` operace na základě následujícího Q# ukázkového kódu:</span><span class="sxs-lookup"><span data-stu-id="009d9-115">The C# example that follows in this section computes the `T` depth of the `CCNOT` operation, based on the following Q# sample code:</span></span>
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

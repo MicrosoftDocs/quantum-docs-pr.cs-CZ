@@ -1,13 +1,13 @@
 ---
-title: 'Matematické :::no-loc(Q#)::: standardní knihovny'
-description: 'Přečtěte si o klasických matematických funkcích ve :::no-loc(Q#)::: standardních knihovnách, které se používají s vestavěnými datovými typy.'
+title: 'Matematické Q# standardní knihovny'
+description: 'Přečtěte si o klasických matematických funkcích ve Q# standardních knihovnách, které se používají s vestavěnými datovými typy.'
 author: cgranade
 uid: microsoft.quantum.libraries.math
 ms.author: chgranad
 ms.topic: article
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 6de1574341d67c569cd2f040ec533e263fdd386e
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -17,7 +17,7 @@ ms.locfileid: "92692060"
 ---
 # <a name="classical-mathematical-functions"></a><span data-ttu-id="0f67a-103">Klasické matematické funkce</span><span class="sxs-lookup"><span data-stu-id="0f67a-103">Classical Mathematical Functions</span></span> #
 
-<span data-ttu-id="0f67a-104">Tyto funkce jsou primárně používány pro práci s :::no-loc(Q#)::: vestavěnými datovými typy `Int` , `Double` a `Range` .</span><span class="sxs-lookup"><span data-stu-id="0f67a-104">These functions are primarily used to work with the :::no-loc(Q#)::: built-in data types `Int`, `Double`, and `Range`.</span></span>
+<span data-ttu-id="0f67a-104">Tyto funkce jsou primárně používány pro práci s Q# vestavěnými datovými typy `Int` , `Double` a `Range` .</span><span class="sxs-lookup"><span data-stu-id="0f67a-104">These functions are primarily used to work with the Q# built-in data types `Int`, `Double`, and `Range`.</span></span>
 
 <span data-ttu-id="0f67a-105"><xref:Microsoft.Quantum.Intrinsic.Random>Operace má signaturu `(Double[] => Int)` .</span><span class="sxs-lookup"><span data-stu-id="0f67a-105">The <xref:Microsoft.Quantum.Intrinsic.Random> operation has signature `(Double[] => Int)`.</span></span>
 <span data-ttu-id="0f67a-106">Přebírá pole dvojitých hodnot jako vstup a vrátí náhodně vybraný index do pole jako `Int` .</span><span class="sxs-lookup"><span data-stu-id="0f67a-106">It takes an array of doubles as input, and returns a randomly-selected index into the array as an `Int`.</span></span>

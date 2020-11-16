@@ -1,5 +1,5 @@
 ---
-title: 'Tok řízení v :::no-loc(Q#):::'
+title: 'Tok řízení v Q#'
 description: Smyčky, podmíněnéy atd.
 author: gillenhaalb
 ms.author: a-gibec
@@ -7,8 +7,8 @@ ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: eca37202e5fe9b48dcfdec4eeb4ba6cafaac8723
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -16,7 +16,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92691086"
 ---
-# <a name="control-flow-in-no-locq"></a><span data-ttu-id="96486-103">Tok řízení v :::no-loc(Q#):::</span><span class="sxs-lookup"><span data-stu-id="96486-103">Control flow in :::no-loc(Q#):::</span></span>
+# <a name="control-flow-in-no-locq"></a><span data-ttu-id="96486-103">Tok řízení v Q#</span><span class="sxs-lookup"><span data-stu-id="96486-103">Control flow in Q#</span></span>
 
 <span data-ttu-id="96486-104">V rámci operace nebo funkce každý příkaz běží v uvedeném pořadí, podobně jako ostatní běžně imperativní klasické jazyky.</span><span class="sxs-lookup"><span data-stu-id="96486-104">Within an operation or function, each statement runs in order, similar to other common imperative classical languages.</span></span>
 <span data-ttu-id="96486-105">Tok řízení lze však upravit třemi různými způsoby:</span><span class="sxs-lookup"><span data-stu-id="96486-105">However, you can modify the flow of control in three distinct ways:</span></span>
@@ -108,12 +108,12 @@ for ((index, measured) in results) { // iterates over the tuple values in result
 
 ## <a name="repeat-until-success-loop"></a><span data-ttu-id="96486-140">Opakování do smyčky po úspěšném dokončení</span><span class="sxs-lookup"><span data-stu-id="96486-140">Repeat-until-success loop</span></span>
 
-<span data-ttu-id="96486-141">:::no-loc(Q#):::Jazyk umožňuje, aby tok klasického řízení byl závislý na výsledcích měření qubits.</span><span class="sxs-lookup"><span data-stu-id="96486-141">The :::no-loc(Q#)::: language allows classical control flow to depend on the results of measuring qubits.</span></span>
+<span data-ttu-id="96486-141">Q#Jazyk umožňuje, aby tok klasického řízení byl závislý na výsledcích měření qubits.</span><span class="sxs-lookup"><span data-stu-id="96486-141">The Q# language allows classical control flow to depend on the results of measuring qubits.</span></span>
 <span data-ttu-id="96486-142">Tato funkce zase umožňuje implementovat výkonné pravděpodobnostní miniaplikace, které mohou snížit výpočetní náklady na implementaci unitaries.</span><span class="sxs-lookup"><span data-stu-id="96486-142">This capability, in turn, enables implementing powerful probabilistic gadgets that can reduce the computational cost for implementing unitaries.</span></span>
-<span data-ttu-id="96486-143">Příklady tohoto příkladu jsou vzory *opakování až po úspěch* (ru) v :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="96486-143">Examples of this are the *repeat-until-success* (RUS) patterns in :::no-loc(Q#):::.</span></span>
+<span data-ttu-id="96486-143">Příklady tohoto příkladu jsou vzory *opakování až po úspěch* (ru) v Q# .</span><span class="sxs-lookup"><span data-stu-id="96486-143">Examples of this are the *repeat-until-success* (RUS) patterns in Q#.</span></span>
 <span data-ttu-id="96486-144">Tyto ru vzory jsou pravděpodobnostní programy, které mají *očekávané* nízké náklady v souvislosti s základními branami; vzniklé náklady závisí na skutečném běhu a prokládání několika možných větví.</span><span class="sxs-lookup"><span data-stu-id="96486-144">These RUS patterns are probabilistic programs that have an *expected* low cost in terms of elementary gates; the incurred cost depends on the actual run and the interleaving of the multiple possible branchings.</span></span>
 
-<span data-ttu-id="96486-145">Chcete-li zjednodušit vzory opakování až po úspěch (ru), :::no-loc(Q#)::: podporují konstrukce</span><span class="sxs-lookup"><span data-stu-id="96486-145">To facilitate repeat-until-success (RUS) patterns, :::no-loc(Q#)::: supports the constructs</span></span>
+<span data-ttu-id="96486-145">Chcete-li zjednodušit vzory opakování až po úspěch (ru), Q# podporují konstrukce</span><span class="sxs-lookup"><span data-stu-id="96486-145">To facilitate repeat-until-success (RUS) patterns, Q# supports the constructs</span></span>
 
 ```qsharp
 repeat {
@@ -151,9 +151,9 @@ until (expression);
 
 ## <a name="while-loop"></a><span data-ttu-id="96486-157">Smyčka while</span><span class="sxs-lookup"><span data-stu-id="96486-157">While loop</span></span>
 
-<span data-ttu-id="96486-158">Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu.</span><span class="sxs-lookup"><span data-stu-id="96486-158">Repeat-until-success patterns have a very quantum-specific connotation.</span></span> <span data-ttu-id="96486-159">Jsou široce používány v určitých třídách algoritmů pro plnění, což je tedy konstrukce vyhrazeného jazyka :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="96486-159">They are widely used in particular classes of quantum algorithms - hence the dedicated language construct in :::no-loc(Q#):::.</span></span> <span data-ttu-id="96486-160">Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka běhu je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="96486-160">However, loops that break based on a condition and whose run length is thus unknown at compile-time, are handled with particular care in a quantum runtime.</span></span> <span data-ttu-id="96486-161">Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru.</span><span class="sxs-lookup"><span data-stu-id="96486-161">However, their use within functions is unproblematic since these loops only contain code that runs on conventional (non-quantum) hardware.</span></span> 
+<span data-ttu-id="96486-158">Vzory opakování až po úspěchu mají velmi stejný zápis na základě stavu.</span><span class="sxs-lookup"><span data-stu-id="96486-158">Repeat-until-success patterns have a very quantum-specific connotation.</span></span> <span data-ttu-id="96486-159">Jsou široce používány v určitých třídách algoritmů pro plnění, což je tedy konstrukce vyhrazeného jazyka Q# .</span><span class="sxs-lookup"><span data-stu-id="96486-159">They are widely used in particular classes of quantum algorithms - hence the dedicated language construct in Q#.</span></span> <span data-ttu-id="96486-160">Nicméně cykly, které jsou přerušeny na základě podmínky a jejichž délka běhu je tedy neznámá v době kompilace, jsou zpracovávány zvláštní péčí v modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="96486-160">However, loops that break based on a condition and whose run length is thus unknown at compile-time, are handled with particular care in a quantum runtime.</span></span> <span data-ttu-id="96486-161">Jejich použití v rámci funkcí je však neproblematické, protože tyto smyčky obsahují pouze kód, který běží na konvenčním (nestránkovaném) hardwaru.</span><span class="sxs-lookup"><span data-stu-id="96486-161">However, their use within functions is unproblematic since these loops only contain code that runs on conventional (non-quantum) hardware.</span></span> 
 
-<span data-ttu-id="96486-162">:::no-loc(Q#):::Proto podporuje použití smyčky while pouze v rámci funkcí.</span><span class="sxs-lookup"><span data-stu-id="96486-162">:::no-loc(Q#):::, therefore, supports to use of while loops within functions only.</span></span>
+<span data-ttu-id="96486-162">Q#Proto podporuje použití smyčky while pouze v rámci funkcí.</span><span class="sxs-lookup"><span data-stu-id="96486-162">Q#, therefore, supports to use of while loops within functions only.</span></span>
 <span data-ttu-id="96486-163">`while`Příkaz se skládá z klíčového slova `while` , logického výrazu v závorkách a bloku příkazu.</span><span class="sxs-lookup"><span data-stu-id="96486-163">A `while` statement consists of the keyword `while`, a Boolean expression in parentheses, and a statement block.</span></span>
 <span data-ttu-id="96486-164">Blok příkazu (tělo smyčky) běží, pokud je podmínka vyhodnocena jako `true` .</span><span class="sxs-lookup"><span data-stu-id="96486-164">The statement block (the body of the loop) runs as long as the condition evaluates to `true`.</span></span>
 
@@ -183,7 +183,7 @@ operation ApplyWith<'T>(
 }
 ```
 
-<span data-ttu-id="96486-169">:::no-loc(Q#)::: podporuje příkaz conjugation, který implementuje předchozí transformaci.</span><span class="sxs-lookup"><span data-stu-id="96486-169">:::no-loc(Q#)::: supports a conjugation statement that implements the preceding transformation.</span></span> <span data-ttu-id="96486-170">Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="96486-170">Using that statement, the operation `ApplyWith` can be implemented in the following way:</span></span>
+<span data-ttu-id="96486-169">Q# podporuje příkaz conjugation, který implementuje předchozí transformaci.</span><span class="sxs-lookup"><span data-stu-id="96486-169">Q# supports a conjugation statement that implements the preceding transformation.</span></span> <span data-ttu-id="96486-170">Pomocí tohoto příkazu `ApplyWith` může být operace implementována následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="96486-170">Using that statement, the operation `ApplyWith` can be implemented in the following way:</span></span>
 
 ```qsharp
 operation ApplyWith<'T>(
@@ -249,7 +249,7 @@ fail $"Syndrome {syn} is incorrect";
 
 ### <a name="rus-pattern-for-single-qubit-rotation-about-an-irrational-axis"></a><span data-ttu-id="96486-193">RU vzor pro jednoduché qubit otočení o ose Irrational</span><span class="sxs-lookup"><span data-stu-id="96486-193">RUS pattern for single-qubit rotation about an irrational axis</span></span> 
 
-<span data-ttu-id="96486-194">V typickém případu použití následující :::no-loc(Q#)::: operace implementuje otočení kolem osy Irrational $ (I + 2i Z)/\sqrt {5} $ v koule Bloch.</span><span class="sxs-lookup"><span data-stu-id="96486-194">In a typical use case, the following :::no-loc(Q#)::: operation implements a rotation around an irrational axis of $(I + 2i Z)/\sqrt{5}$ on the Bloch sphere.</span></span> <span data-ttu-id="96486-195">Implementace používá známý vzor ru:</span><span class="sxs-lookup"><span data-stu-id="96486-195">The implementation uses a known RUS pattern:</span></span>
+<span data-ttu-id="96486-194">V typickém případu použití následující Q# operace implementuje otočení kolem osy Irrational $ (I + 2i Z)/\sqrt {5} $ v koule Bloch.</span><span class="sxs-lookup"><span data-stu-id="96486-194">In a typical use case, the following Q# operation implements a rotation around an irrational axis of $(I + 2i Z)/\sqrt{5}$ on the Bloch sphere.</span></span> <span data-ttu-id="96486-195">Implementace používá známý vzor ru:</span><span class="sxs-lookup"><span data-stu-id="96486-195">The implementation uses a known RUS pattern:</span></span>
 
 ```qsharp
 operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
@@ -375,4 +375,4 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 
 ## <a name="next-steps"></a><span data-ttu-id="96486-210">Další kroky</span><span class="sxs-lookup"><span data-stu-id="96486-210">Next steps</span></span>
 
-<span data-ttu-id="96486-211">Přečtěte si o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) v :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="96486-211">Learn about [Testing and Debugging](xref:microsoft.quantum.guide.testingdebugging) in :::no-loc(Q#):::.</span></span>
+<span data-ttu-id="96486-211">Přečtěte si o [testování a ladění](xref:microsoft.quantum.guide.testingdebugging) v Q# .</span><span class="sxs-lookup"><span data-stu-id="96486-211">Learn about [Testing and Debugging](xref:microsoft.quantum.guide.testingdebugging) in Q#.</span></span>

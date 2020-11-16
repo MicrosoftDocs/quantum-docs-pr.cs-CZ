@@ -1,14 +1,14 @@
 ---
-title: 'Výrazy v :::no-loc(Q#):::'
-description: 'Pochopte, jak zadat, odkazovat a kombinovat konstanty, proměnné, operátory, operace a funkce jako výrazy v :::no-loc(Q#)::: .'
+title: 'Výrazy v Q#'
+description: 'Pochopte, jak zadat, odkazovat a kombinovat konstanty, proměnné, operátory, operace a funkce jako výrazy v Q# .'
 author: gillenhaalb
 ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: e95a7cb9b74136ef9a6f51b4bbc32d1d93c43a0d
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -16,17 +16,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/27/2020
 ms.locfileid: "92691600"
 ---
-# <a name="expressions-in-no-locq"></a><span data-ttu-id="45a04-103">Výrazy v :::no-loc(Q#):::</span><span class="sxs-lookup"><span data-stu-id="45a04-103">Expressions in :::no-loc(Q#):::</span></span>
+# <a name="expressions-in-no-locq"></a><span data-ttu-id="45a04-103">Výrazy v Q#</span><span class="sxs-lookup"><span data-stu-id="45a04-103">Expressions in Q#</span></span>
 
 ## <a name="numeric-expressions"></a><span data-ttu-id="45a04-104">Číselné výrazy</span><span class="sxs-lookup"><span data-stu-id="45a04-104">Numeric Expressions</span></span>
 
 <span data-ttu-id="45a04-105">Číselné výrazy jsou výrazy typu `Int` , `BigInt` nebo `Double` .</span><span class="sxs-lookup"><span data-stu-id="45a04-105">Numeric expressions are expressions of type `Int`, `BigInt`, or `Double`.</span></span>
 <span data-ttu-id="45a04-106">To znamená, že jsou buď celá čísla, nebo čísla s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="45a04-106">That is, they are either integer or floating-point numbers.</span></span>
 
-<span data-ttu-id="45a04-107">`Int` literály v :::no-loc(Q#)::: jsou zapsány jako sekvence číslic.</span><span class="sxs-lookup"><span data-stu-id="45a04-107">`Int` literals in :::no-loc(Q#)::: are written as a sequence of digits.</span></span>
+<span data-ttu-id="45a04-107">`Int` literály v Q# jsou zapsány jako sekvence číslic.</span><span class="sxs-lookup"><span data-stu-id="45a04-107">`Int` literals in Q# are written as a sequence of digits.</span></span>
 <span data-ttu-id="45a04-108">Šestnáctková a binární celá čísla jsou podporována a zapsána `0x` `0b` předponou a v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="45a04-108">Hexadecimal and binary integers are supported and written with a `0x` and `0b` prefix, respectively.</span></span>
 
-<span data-ttu-id="45a04-109">`BigInt` literály v :::no-loc(Q#)::: mají koncovou `l` nebo `L` příponu.</span><span class="sxs-lookup"><span data-stu-id="45a04-109">`BigInt` literals in :::no-loc(Q#)::: have a trailing `l` or `L` suffix.</span></span>
+<span data-ttu-id="45a04-109">`BigInt` literály v Q# mají koncovou `l` nebo `L` příponu.</span><span class="sxs-lookup"><span data-stu-id="45a04-109">`BigInt` literals in Q# have a trailing `l` or `L` suffix.</span></span>
 <span data-ttu-id="45a04-110">Hexadecimální Velká celá čísla jsou podporována a napsána předponou "0x".</span><span class="sxs-lookup"><span data-stu-id="45a04-110">Hexadecimal big integers are supported and written with a "0x" prefix.</span></span>
 <span data-ttu-id="45a04-111">Následující jsou tedy všechna platná použití `BigInt` literálů:</span><span class="sxs-lookup"><span data-stu-id="45a04-111">Thus, the following are all valid uses of `BigInt` literals:</span></span>
 
@@ -36,7 +36,7 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-<span data-ttu-id="45a04-112">`Double` literály v jsou čísla s plovoucí desetinnou čárkou :::no-loc(Q#)::: napsaná pomocí desítkových číslic.</span><span class="sxs-lookup"><span data-stu-id="45a04-112">`Double` literals in :::no-loc(Q#)::: are floating-point numbers written using decimal digits.</span></span>
+<span data-ttu-id="45a04-112">`Double` literály v jsou čísla s plovoucí desetinnou čárkou Q# napsaná pomocí desítkových číslic.</span><span class="sxs-lookup"><span data-stu-id="45a04-112">`Double` literals in Q# are floating-point numbers written using decimal digits.</span></span>
 <span data-ttu-id="45a04-113">Je možné je zapsat s desetinnou čárkou nebo bez nich, `.` nebo exponenciální částí označenou písmenem "e" nebo "e" (po které jsou platné pouze možné záporné znaménko a desítkové číslice).</span><span class="sxs-lookup"><span data-stu-id="45a04-113">They can be written with or without a decimal point, `.`, or an exponential part indicated with 'e' or 'E' (after which only a possible negative sign and decimal digits are valid).</span></span>
 <span data-ttu-id="45a04-114">Níže jsou uvedené platné `Double` literály: `0.0` , `1.2e5` , `1e-5` .</span><span class="sxs-lookup"><span data-stu-id="45a04-114">The following are valid `Double` literals: `0.0`, `1.2e5`, `1e-5`.</span></span>
 
@@ -87,7 +87,7 @@ let bigOne = bigZero + 1L;
 <span data-ttu-id="45a04-157">Vzhledem k jakýmkoliv dvěma výrazům stejného primitivního typu lze `==` `!=` použít binární operátory a k vytvoření `Bool` výrazu.</span><span class="sxs-lookup"><span data-stu-id="45a04-157">Given any two expressions of the same primitive type, the `==` and `!=` binary operators may be used to construct a `Bool` expression.</span></span>
 <span data-ttu-id="45a04-158">Výraz má hodnotu true, pokud jsou dva výrazy stejné a false, pokud ne.</span><span class="sxs-lookup"><span data-stu-id="45a04-158">The expression is true if the two expressions are equal and false if not.</span></span>
 
-<span data-ttu-id="45a04-159">Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="45a04-159">Values of user-defined types may not be compared, only their unwrapped values can be compared.</span></span> <span data-ttu-id="45a04-160">Například pomocí operátoru "Unwrap" `!` (popsaný v podrobnostech [v :::no-loc(Q#)::: typech ](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),</span><span class="sxs-lookup"><span data-stu-id="45a04-160">For example, using the "unwrap" operator `!` (explained in detail at [Types in :::no-loc(Q#):::](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),</span></span>
+<span data-ttu-id="45a04-159">Hodnoty uživatelsky definovaných typů nelze porovnat, lze porovnat pouze jejich nezabalené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="45a04-159">Values of user-defined types may not be compared, only their unwrapped values can be compared.</span></span> <span data-ttu-id="45a04-160">Například pomocí operátoru "Unwrap" `!` (popsaný v podrobnostech [v Q# typech ](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),</span><span class="sxs-lookup"><span data-stu-id="45a04-160">For example, using the "unwrap" operator `!` (explained in detail at [Types in Q#](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)),</span></span>
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -111,9 +111,9 @@ let t = x == y;               // This will cause a compiler error.
 
 ## <a name="string-expressions"></a><span data-ttu-id="45a04-169">Řetězcové výrazy</span><span class="sxs-lookup"><span data-stu-id="45a04-169">String expressions</span></span>
 
-<span data-ttu-id="45a04-170">:::no-loc(Q#)::: povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkci Standard.</span><span class="sxs-lookup"><span data-stu-id="45a04-170">:::no-loc(Q#)::: allows strings to be used in the `fail` statement (explained in [Control Flow](xref:microsoft.quantum.guide.controlflow#fail-statement)) and in the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) standard function.</span></span> <span data-ttu-id="45a04-171">Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během :::no-loc(Q#)::: programu.</span><span class="sxs-lookup"><span data-stu-id="45a04-171">The specific behavior of the latter depends on the simulator used but typically writes a message to the host console when called during a :::no-loc(Q#)::: program.</span></span>
+<span data-ttu-id="45a04-170">Q# povoluje použití řetězců v `fail` příkazu (vysvětleno v [toku řízení](xref:microsoft.quantum.guide.controlflow#fail-statement)) a ve [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkci Standard.</span><span class="sxs-lookup"><span data-stu-id="45a04-170">Q# allows strings to be used in the `fail` statement (explained in [Control Flow](xref:microsoft.quantum.guide.controlflow#fail-statement)) and in the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) standard function.</span></span> <span data-ttu-id="45a04-171">Konkrétní chování druhé závisí na simulátoru, který se používá, ale obvykle zapisuje zprávu do hostitelské konzole při volání během Q# programu.</span><span class="sxs-lookup"><span data-stu-id="45a04-171">The specific behavior of the latter depends on the simulator used but typically writes a message to the host console when called during a Q# program.</span></span>
 
-<span data-ttu-id="45a04-172">Řetězce v :::no-loc(Q#)::: jsou buď literály, nebo interpolované řetězce.</span><span class="sxs-lookup"><span data-stu-id="45a04-172">Strings in :::no-loc(Q#)::: are either literals or interpolated strings.</span></span>
+<span data-ttu-id="45a04-172">Řetězce v Q# jsou buď literály, nebo interpolované řetězce.</span><span class="sxs-lookup"><span data-stu-id="45a04-172">Strings in Q# are either literals or interpolated strings.</span></span>
 
 <span data-ttu-id="45a04-173">Řetězcové literály jsou podobně jako jednoduché řetězcové literály ve většině jazyků: sekvence znaků Unicode uzavřených v uvozovkách `" "` .</span><span class="sxs-lookup"><span data-stu-id="45a04-173">String literals are similar to simple string literals in most languages: a sequence of Unicode characters enclosed in double-quotes `" "`.</span></span>
 <span data-ttu-id="45a04-174">V řetězci použijte znak zpětného lomítka `\` k úniku znaku dvojité uvozovky ( `\"` ) nebo k vložení nového řádku (), návratu na začátek řádku `\n` ( `\r` ) nebo tabulátoru ( `\t` ).</span><span class="sxs-lookup"><span data-stu-id="45a04-174">Inside of a string, use the backslash character `\` to escape a double-quote character (`\"`), or to insert a new-line ( `\n` ), a carriage return (`\r`), or a tab (`\t`).</span></span>
@@ -124,21 +124,21 @@ let t = x == y;               // This will cause a compiler error.
 ```
 ### <a name="interpolated-strings"></a><span data-ttu-id="45a04-176">Interpolované řetězce</span><span class="sxs-lookup"><span data-stu-id="45a04-176">Interpolated strings</span></span>
 
-<span data-ttu-id="45a04-177">:::no-loc(Q#):::Syntaxe pro řetězcové interpolace je podmnožinou syntaxe jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="45a04-177">The :::no-loc(Q#)::: syntax for string interpolations is a subset of the C# syntax.</span></span> <span data-ttu-id="45a04-178">Níže jsou uvedené klíčové body, které se týkají :::no-loc(Q#)::: :</span><span class="sxs-lookup"><span data-stu-id="45a04-178">Following are the key points as they pertain to :::no-loc(Q#)::::</span></span>
+<span data-ttu-id="45a04-177">Q#Syntaxe pro řetězcové interpolace je podmnožinou syntaxe jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="45a04-177">The Q# syntax for string interpolations is a subset of the C# syntax.</span></span> <span data-ttu-id="45a04-178">Níže jsou uvedené klíčové body, které se týkají Q# :</span><span class="sxs-lookup"><span data-stu-id="45a04-178">Following are the key points as they pertain to Q#:</span></span>
 
 * <span data-ttu-id="45a04-179">Pro identifikaci řetězcového literálu jako interpolované řetězce, předřaďte ho `$` symbolem.</span><span class="sxs-lookup"><span data-stu-id="45a04-179">To identify a string literal as an interpolated string, prepend it with the `$` symbol.</span></span> <span data-ttu-id="45a04-180">Mezi znakem `$` a `"` , který začíná řetězcovým literálem, nesmí být mezera.</span><span class="sxs-lookup"><span data-stu-id="45a04-180">There can be no white space between the `$` and the `"` that starts a string literal.</span></span>
 
-* <span data-ttu-id="45a04-181">Následuje základní příklad použití [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkce pro zápis výsledku měření do konzoly spolu s ostatními :::no-loc(Q#)::: výrazy.</span><span class="sxs-lookup"><span data-stu-id="45a04-181">The following is a basic example using the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) function to write the result of a measurement to the console, alongside other :::no-loc(Q#)::: expressions.</span></span>
+* <span data-ttu-id="45a04-181">Následuje základní příklad použití [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funkce pro zápis výsledku měření do konzoly spolu s ostatními Q# výrazy.</span><span class="sxs-lookup"><span data-stu-id="45a04-181">The following is a basic example using the [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) function to write the result of a measurement to the console, alongside other Q# expressions.</span></span>
 
 ```qsharp
-    let num = 8;       // some :::no-loc(Q#)::: expression
+    let num = 8;       // some Q# expression
     let res = M(q);
     Message($"Number: {num}, Result: {res}");
 ```
 
-* <span data-ttu-id="45a04-182">Libovolný platný :::no-loc(Q#)::: výraz se může objevit v interpolované řetězci.</span><span class="sxs-lookup"><span data-stu-id="45a04-182">Any valid :::no-loc(Q#)::: expression may appear in an interpolated string.</span></span>
+* <span data-ttu-id="45a04-182">Libovolný platný Q# výraz se může objevit v interpolované řetězci.</span><span class="sxs-lookup"><span data-stu-id="45a04-182">Any valid Q# expression may appear in an interpolated string.</span></span>
 
-* <span data-ttu-id="45a04-183">Výrazy uvnitř interpolované řetězce následují :::no-loc(Q#)::: syntax, nikoli syntaxe jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="45a04-183">Expressions inside of an interpolated string follow :::no-loc(Q#)::: syntax, not C# syntax.</span></span> <span data-ttu-id="45a04-184">Nejvýraznějším rozdílem je, že :::no-loc(Q#)::: nepodporují doslovné (víceřádkové) interpolované řetězce.</span><span class="sxs-lookup"><span data-stu-id="45a04-184">The most notable distinction is that :::no-loc(Q#)::: does not support verbatim (multi-line) interpolated strings.</span></span>
+* <span data-ttu-id="45a04-183">Výrazy uvnitř interpolované řetězce následují Q# syntax, nikoli syntaxe jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="45a04-183">Expressions inside of an interpolated string follow Q# syntax, not C# syntax.</span></span> <span data-ttu-id="45a04-184">Nejvýraznějším rozdílem je, že Q# nepodporují doslovné (víceřádkové) interpolované řetězce.</span><span class="sxs-lookup"><span data-stu-id="45a04-184">The most notable distinction is that Q# does not support verbatim (multi-line) interpolated strings.</span></span>
 
 <span data-ttu-id="45a04-185">Další podrobnosti o syntaxi jazyka C# naleznete v tématu [*interpolované řetězce*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings).</span><span class="sxs-lookup"><span data-stu-id="45a04-185">For more details about the C# syntax, see [*Interpolated Strings*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings).</span></span>
 
@@ -198,7 +198,7 @@ let t = x == y;               // This will cause a compiler error.
 
 ## <a name="unwrap-expressions"></a><span data-ttu-id="45a04-221">Rozbalit výrazy</span><span class="sxs-lookup"><span data-stu-id="45a04-221">Unwrap Expressions</span></span>
 
-<span data-ttu-id="45a04-222">V :::no-loc(Q#)::: , operátor rozbalení je koncovým vykřičníkem `!` .</span><span class="sxs-lookup"><span data-stu-id="45a04-222">In :::no-loc(Q#):::, the unwrap operator is a trailing exclamation mark `!`.</span></span>
+<span data-ttu-id="45a04-222">V Q# , operátor rozbalení je koncovým vykřičníkem `!` .</span><span class="sxs-lookup"><span data-stu-id="45a04-222">In Q#, the unwrap operator is a trailing exclamation mark `!`.</span></span>
 <span data-ttu-id="45a04-223">Například pokud `IntPair` je uživatelem definovaný typ s podkladovým typem `(Int, Int)` a `s` je proměnná s hodnotou `IntPair(2, 3)` , pak `s!` je `(2, 3)` .</span><span class="sxs-lookup"><span data-stu-id="45a04-223">For example, if `IntPair` is a user-defined type with the underlying type `(Int, Int)` and `s` is a variable with value `IntPair(2, 3)`, then `s!` is `(2, 3)`.</span></span>
 
 <span data-ttu-id="45a04-224">Pro uživatelsky definované typy definované v jiných uživatelsky definovaných typech můžete zopakovat operátor rozbalení.</span><span class="sxs-lookup"><span data-stu-id="45a04-224">For user-defined types defined in terms of other user-defined types, you can repeat the unwrap operator.</span></span> <span data-ttu-id="45a04-225">Například `s!!` označuje zdvojnásobení nezabalenou hodnotu `s` .</span><span class="sxs-lookup"><span data-stu-id="45a04-225">For example, `s!!` indicates the doubly-unwrapped value of `s`.</span></span>
@@ -271,7 +271,7 @@ let g = Foo(arg)!;      // Syntax error
 (a + b)[13]
 ```
 
-<span data-ttu-id="45a04-261">Všechna pole v :::no-loc(Q#)::: jsou založená na nule.</span><span class="sxs-lookup"><span data-stu-id="45a04-261">All arrays in :::no-loc(Q#)::: are zero-based.</span></span>
+<span data-ttu-id="45a04-261">Všechna pole v Q# jsou založená na nule.</span><span class="sxs-lookup"><span data-stu-id="45a04-261">All arrays in Q# are zero-based.</span></span>
 <span data-ttu-id="45a04-262">To znamená, že první prvek pole `a` je vždy `a[0]` .</span><span class="sxs-lookup"><span data-stu-id="45a04-262">That is, the first element of an array `a` is always `a[0]`.</span></span>
 
 
@@ -319,7 +319,7 @@ let slice10 = arr[...];       // slice10 is [1,2,3,4,5,6];
 
 ### <a name="copy-and-update-expressions"></a><span data-ttu-id="45a04-281">Výrazy kopírování a aktualizace</span><span class="sxs-lookup"><span data-stu-id="45a04-281">Copy-and-Update Expressions</span></span>
 
-<span data-ttu-id="45a04-282">Vzhledem k tomu, že všechny :::no-loc(Q#)::: typy jsou typy hodnot (s qubits, které pobírají trochu speciální role), tvoří kopii "kopie", když je hodnota svázána se symbolem nebo při převázání symbolu.</span><span class="sxs-lookup"><span data-stu-id="45a04-282">Since all :::no-loc(Q#)::: types are value types (with the qubits taking a somewhat special role), formally a "copy" is created when a value is bound to a symbol or when a symbol is rebound.</span></span> <span data-ttu-id="45a04-283">To znamená, že chování :::no-loc(Q#)::: je stejné jako při vytvoření kopie pomocí operátoru přiřazení.</span><span class="sxs-lookup"><span data-stu-id="45a04-283">That is to say, the behavior of :::no-loc(Q#)::: is the same as if a copy were created using an assignment operator.</span></span> 
+<span data-ttu-id="45a04-282">Vzhledem k tomu, že všechny Q# typy jsou typy hodnot (s qubits, které pobírají trochu speciální role), tvoří kopii "kopie", když je hodnota svázána se symbolem nebo při převázání symbolu.</span><span class="sxs-lookup"><span data-stu-id="45a04-282">Since all Q# types are value types (with the qubits taking a somewhat special role), formally a "copy" is created when a value is bound to a symbol or when a symbol is rebound.</span></span> <span data-ttu-id="45a04-283">To znamená, že chování Q# je stejné jako při vytvoření kopie pomocí operátoru přiřazení.</span><span class="sxs-lookup"><span data-stu-id="45a04-283">That is to say, the behavior of Q# is the same as if a copy were created using an assignment operator.</span></span> 
 
 <span data-ttu-id="45a04-284">Samozřejmě jsou v praxi v případě potřeby znovu vytvořeny pouze příslušné součásti.</span><span class="sxs-lookup"><span data-stu-id="45a04-284">Of course, in practice, only the relevant pieces are recreated as needed.</span></span> <span data-ttu-id="45a04-285">To má vliv na to, jak kopírujete pole, protože není možné aktualizovat položky pole.</span><span class="sxs-lookup"><span data-stu-id="45a04-285">This affects how you copy arrays because it is not possible to update array items.</span></span> <span data-ttu-id="45a04-286">Chcete-li upravit existující pole, je nutné využít mechanismus *kopírování a aktualizace* .</span><span class="sxs-lookup"><span data-stu-id="45a04-286">To modify an existing array requires leveraging a *copy-and-update* mechanism.</span></span>
 
@@ -382,7 +382,7 @@ for (i in 1..N) {
 
 <span data-ttu-id="45a04-317">Například `[[Op1], [Op2]]` by aktuálně vyvolala chybu, protože se pokusí vytvořit pole dvou nekompatibilních typů polí `(Qubit[] => Unit is Adj)[]` a `(Qubit[] => Unit is Ctl)[]` .</span><span class="sxs-lookup"><span data-stu-id="45a04-317">For example, `[[Op1], [Op2]]` would currently raise an error because it attempts to create an array of the two incompatible array types `(Qubit[] => Unit is Adj)[]` and `(Qubit[] => Unit is Ctl)[]`.</span></span>
 
-<span data-ttu-id="45a04-318">Další informace o tom, jak volat, najdete v tématu věnovaném vydaným [výrazům](#callable-expressions) na této stránce nebo [operacích a funkcích v :::no-loc(Q#)::: ](xref:microsoft.quantum.guide.operationsfunctions).</span><span class="sxs-lookup"><span data-stu-id="45a04-318">For more information on callables, see [Callable expressions](#callable-expressions)  on this page or [Operations and Functions in :::no-loc(Q#):::](xref:microsoft.quantum.guide.operationsfunctions).</span></span>
+<span data-ttu-id="45a04-318">Další informace o tom, jak volat, najdete v tématu věnovaném vydaným [výrazům](#callable-expressions) na této stránce nebo [operacích a funkcích v Q# ](xref:microsoft.quantum.guide.operationsfunctions).</span><span class="sxs-lookup"><span data-stu-id="45a04-318">For more information on callables, see [Callable expressions](#callable-expressions)  on this page or [Operations and Functions in Q#](xref:microsoft.quantum.guide.operationsfunctions).</span></span>
 
 ## <a name="conditional-expressions"></a><span data-ttu-id="45a04-319">Podmíněné výrazy</span><span class="sxs-lookup"><span data-stu-id="45a04-319">Conditional Expressions</span></span>
 
@@ -447,7 +447,7 @@ SomeOtherFun(Fun);           // This also causes a compilation error.
 ```
 
 <span data-ttu-id="45a04-353">Při vyvolání [typu](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) , který je možné volat, můžete zadat skutečné parametry typu v rámci lomených závorek `< >` po volání.</span><span class="sxs-lookup"><span data-stu-id="45a04-353">When invoking a [type-parameterized](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) callable, you can specify the actual type parameters within angle brackets `< >` after the callable expression.</span></span>
-<span data-ttu-id="45a04-354">Tato akce je obvykle zbytečná, protože :::no-loc(Q#)::: kompilátor odvodí skutečné typy.</span><span class="sxs-lookup"><span data-stu-id="45a04-354">This action is usually unnecessary as the :::no-loc(Q#)::: compiler infers the actual types.</span></span>
+<span data-ttu-id="45a04-354">Tato akce je obvykle zbytečná, protože Q# kompilátor odvodí skutečné typy.</span><span class="sxs-lookup"><span data-stu-id="45a04-354">This action is usually unnecessary as the Q# compiler infers the actual types.</span></span>
 <span data-ttu-id="45a04-355">Nicméně *je* vyžadován pro [částečnou aplikaci](xref:microsoft.quantum.guide.operationsfunctions#partial-application) , pokud je argument typu bez parametrů ponechán neurčen.</span><span class="sxs-lookup"><span data-stu-id="45a04-355">However, it *is* required for [partial application](xref:microsoft.quantum.guide.operationsfunctions#partial-application) if a type-parameterized argument is left unspecified.</span></span>
 <span data-ttu-id="45a04-356">To je užitečné také při předávání operací s různými funktory, které jsou schopné volat.</span><span class="sxs-lookup"><span data-stu-id="45a04-356">It is also useful when passing operations with different functor supports to a callable.</span></span>
 
@@ -470,7 +470,7 @@ let combinedOp = Func<(Qubit[] => Unit), (Qubit[] => Unit is Adj)>(Op1, Op2, Op3
 
 * <span data-ttu-id="45a04-363">Kulaté závorky pro operace a volání funkce se také vážou před libovolným operátorem, ale po vyřazení a funktory pole.</span><span class="sxs-lookup"><span data-stu-id="45a04-363">Parentheses for operation and function invocation also bind before any operator but after array indexing and functors.</span></span>
 
-<span data-ttu-id="45a04-364">:::no-loc(Q#)::: operátory v pořadí podle priority, od nejvyšších po nejnižší:</span><span class="sxs-lookup"><span data-stu-id="45a04-364">:::no-loc(Q#)::: operators in order of precedence, from highest to lowest:</span></span>
+<span data-ttu-id="45a04-364">Q# operátory v pořadí podle priority, od nejvyšších po nejnižší:</span><span class="sxs-lookup"><span data-stu-id="45a04-364">Q# operators in order of precedence, from highest to lowest:</span></span>
 
 <span data-ttu-id="45a04-365">Operátor</span><span class="sxs-lookup"><span data-stu-id="45a04-365">Operator</span></span> | <span data-ttu-id="45a04-366">Aritou</span><span class="sxs-lookup"><span data-stu-id="45a04-366">Arity</span></span> | <span data-ttu-id="45a04-367">Popis</span><span class="sxs-lookup"><span data-stu-id="45a04-367">Description</span></span> | <span data-ttu-id="45a04-368">Typy operandů</span><span class="sxs-lookup"><span data-stu-id="45a04-368">Operand Types</span></span>
 ---------|----------|---------|---------------
@@ -493,4 +493,4 @@ let combinedOp = Func<(Qubit[] => Unit), (Qubit[] => Unit is Adj)>(Op1, Op2, Op3
 
 ## <a name="next-steps"></a><span data-ttu-id="45a04-423">Další kroky</span><span class="sxs-lookup"><span data-stu-id="45a04-423">Next steps</span></span>
 
-<span data-ttu-id="45a04-424">Teď, když můžete pracovat s výrazy v :::no-loc(Q#)::: , přejděte k [operacím a funkcím :::no-loc(Q#)::: v](xref:microsoft.quantum.guide.operationsfunctions) , abyste se dozvěděli, jak definovat a volat operace a funkce.</span><span class="sxs-lookup"><span data-stu-id="45a04-424">Now that you can work with expressions in :::no-loc(Q#):::, move on to [Operations and Functions in :::no-loc(Q#):::](xref:microsoft.quantum.guide.operationsfunctions) to learn how to define and call operations and functions.</span></span>
+<span data-ttu-id="45a04-424">Teď, když můžete pracovat s výrazy v Q# , přejděte k [operacím a funkcím Q# v](xref:microsoft.quantum.guide.operationsfunctions) , abyste se dozvěděli, jak definovat a volat operace a funkce.</span><span class="sxs-lookup"><span data-stu-id="45a04-424">Now that you can work with expressions in Q#, move on to [Operations and Functions in Q#](xref:microsoft.quantum.guide.operationsfunctions) to learn how to define and call operations and functions.</span></span>

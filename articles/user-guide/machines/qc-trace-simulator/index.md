@@ -1,14 +1,14 @@
 ---
 title: Simulátor kvantového trasování – Quantum Development Kit
-description: Naučte se používat simulátor kvantového trasování od Microsoftu k ladění klasického kódu a odhadu požadavků na prostředky v programu v :::no-loc(Q#):::.
+description: Naučte se používat simulátor kvantového trasování od Microsoftu k ladění klasického kódu a odhadu požadavků na prostředky v programu v Q#.
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 2e2d9f8494d8709fba34123793cecce4011b609a
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
@@ -25,7 +25,7 @@ ms.locfileid: "92690828"
 
 ## <a name="invoking-the-quantum-trace-simulator"></a><span data-ttu-id="64f8a-110">Vyvolání simulátoru kvantového trasování</span><span class="sxs-lookup"><span data-stu-id="64f8a-110">Invoking the quantum trace simulator</span></span>
 
-<span data-ttu-id="64f8a-111">Simulátor kvantového trasování můžete využít ke spuštění libovolné operace :::no-loc(Q#):::.</span><span class="sxs-lookup"><span data-stu-id="64f8a-111">You can use the quantum trace simulator to run any :::no-loc(Q#)::: operation.</span></span>
+<span data-ttu-id="64f8a-111">Simulátor kvantového trasování můžete využít ke spuštění libovolné operace Q#.</span><span class="sxs-lookup"><span data-stu-id="64f8a-111">You can use the quantum trace simulator to run any Q# operation.</span></span>
 
 <span data-ttu-id="64f8a-112">Stejně jako u jiných cílových počítačů nejdřív vytvoříte instanci třídy `QCTraceSimulator` a předáte ji jako první parametr metody `Run` příslušné operace.</span><span class="sxs-lookup"><span data-stu-id="64f8a-112">As with other target machines, you first create an instance of the `QCTraceSimulator` class and then pass it as the first parameter of an operation's `Run` method.</span></span>
 
@@ -94,7 +94,7 @@ operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
 
 ## <a name="qctracesimulator-methods"></a><span data-ttu-id="64f8a-139">Metody QCTraceSimulatoru</span><span class="sxs-lookup"><span data-stu-id="64f8a-139">QCTraceSimulator methods</span></span>
 
-<span data-ttu-id="64f8a-140">`QCTraceSimulator` má několik předdefinovaných metod pro načtení hodnot metrik trasovaných během kvantové operace.</span><span class="sxs-lookup"><span data-stu-id="64f8a-140">`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation.</span></span> <span data-ttu-id="64f8a-141">Příklady metod [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) a [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) najdete ve článcích [Čítač primitivních operací](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Čítač hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) a [Čítač šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).</span><span class="sxs-lookup"><span data-stu-id="64f8a-141">Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter) articles.</span></span> <span data-ttu-id="64f8a-142">Další informace o veškerých dostupných metodách najdete v referenčních informacích k rozhraní API pro :::no-loc(Q#)::: v tématu [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator).</span><span class="sxs-lookup"><span data-stu-id="64f8a-142">For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the :::no-loc(Q#)::: API reference.</span></span>  
+<span data-ttu-id="64f8a-140">`QCTraceSimulator` má několik předdefinovaných metod pro načtení hodnot metrik trasovaných během kvantové operace.</span><span class="sxs-lookup"><span data-stu-id="64f8a-140">`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation.</span></span> <span data-ttu-id="64f8a-141">Příklady metod [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) a [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) najdete ve článcích [Čítač primitivních operací](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Čítač hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) a [Čítač šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).</span><span class="sxs-lookup"><span data-stu-id="64f8a-141">Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter) articles.</span></span> <span data-ttu-id="64f8a-142">Další informace o veškerých dostupných metodách najdete v referenčních informacích k rozhraní API pro Q# v tématu [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator).</span><span class="sxs-lookup"><span data-stu-id="64f8a-142">For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.</span></span>  
 
 ## <a name="see-also"></a><span data-ttu-id="64f8a-143">Viz také</span><span class="sxs-lookup"><span data-stu-id="64f8a-143">See also</span></span>
 

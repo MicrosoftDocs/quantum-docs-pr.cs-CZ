@@ -1,14 +1,14 @@
 ---
 title: Čítač šířky – sada pro vývoj všech procesorů
-description: 'Přečtěte si o čítači šířky Microsoft QDK, který používá simulátor trasování doby provozu k výpočtu počtu qubits přidělených a vypůjčených operacemi v :::no-loc(Q#)::: programu.'
+description: 'Přečtěte si o čítači šířky Microsoft QDK, který používá simulátor trasování doby provozu k výpočtu počtu qubits přidělených a vypůjčených operacemi v Q# programu.'
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: e54e92cc4a76ce9f9c5aead84f2b64320d6b4f1c
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -18,7 +18,7 @@ ms.locfileid: "92691115"
 ---
 # <a name="quantum-trace-simulator-width-counter"></a><span data-ttu-id="1ef9d-103">Simulátor trasování doby využití: čítač šířky</span><span class="sxs-lookup"><span data-stu-id="1ef9d-103">Quantum trace simulator: width counter</span></span>
 
-<span data-ttu-id="1ef9d-104">Čítač šířky je součástí [simulátoru pro sledování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)doby plnění.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-104">The width counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).</span></span> <span data-ttu-id="1ef9d-105">Můžete ji použít k určení počtu qubits přidělených a vypůjčených každou operací v :::no-loc(Q#)::: programu.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-105">You can use it to count the number of qubits allocated and borrowed by each operation in a :::no-loc(Q#)::: program.</span></span> <span data-ttu-id="1ef9d-106">Některé primitivní operace mohou přidělit nadbytečné qubits, například vynásobit kontrolované `X` operace nebo kontrolované `T` operace.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-106">Some primitive operations can allocate extra qubits, for example, multiply controlled `X` operations or controlled `T` operations.</span></span>
+<span data-ttu-id="1ef9d-104">Čítač šířky je součástí [simulátoru pro sledování](xref:microsoft.quantum.machines.qc-trace-simulator.intro)doby plnění.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-104">The width counter is a part of the Quantum Development Kit [Quantum trace simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).</span></span> <span data-ttu-id="1ef9d-105">Můžete ji použít k určení počtu qubits přidělených a vypůjčených každou operací v Q# programu.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-105">You can use it to count the number of qubits allocated and borrowed by each operation in a Q# program.</span></span> <span data-ttu-id="1ef9d-106">Některé primitivní operace mohou přidělit nadbytečné qubits, například vynásobit kontrolované `X` operace nebo kontrolované `T` operace.</span><span class="sxs-lookup"><span data-stu-id="1ef9d-106">Some primitive operations can allocate extra qubits, for example, multiply controlled `X` operations or controlled `T` operations.</span></span>
 
 ## <a name="invoking-the-width-counter"></a><span data-ttu-id="1ef9d-107">Vyvolání čítače šířky</span><span class="sxs-lookup"><span data-stu-id="1ef9d-107">Invoking the width counter</span></span>
 
@@ -32,7 +32,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-width-counter-in-a-c-host-program"></a><span data-ttu-id="1ef9d-109">Použití čítače šířky v hostitelském programu C#</span><span class="sxs-lookup"><span data-stu-id="1ef9d-109">Using the width counter in a C# host program</span></span>
 
-<span data-ttu-id="1ef9d-110">Příklad jazyka C#, který následuje v tomto oddílu, vypočítá počet extra qubits přidělených implementací operace s vynásobeným výsledkem <xref:Microsoft.Quantum.Intrinsic.X> , který je založený na následujícím :::no-loc(Q#)::: ukázkovém kódu:</span><span class="sxs-lookup"><span data-stu-id="1ef9d-110">The C# example that follows in this section computes the number of extra qubits allocated by the implementation of a multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation, based on the following :::no-loc(Q#)::: sample code:</span></span>
+<span data-ttu-id="1ef9d-110">Příklad jazyka C#, který následuje v tomto oddílu, vypočítá počet extra qubits přidělených implementací operace s vynásobeným výsledkem <xref:Microsoft.Quantum.Intrinsic.X> , který je založený na následujícím Q# ukázkovém kódu:</span><span class="sxs-lookup"><span data-stu-id="1ef9d-110">The C# example that follows in this section computes the number of extra qubits allocated by the implementation of a multiply controlled <xref:Microsoft.Quantum.Intrinsic.X> operation, based on the following Q# sample code:</span></span>
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

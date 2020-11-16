@@ -1,13 +1,13 @@
 ---
-title: 'Diagnostika ve :::no-loc(Q#)::: standardních knihovnách'
-description: 'Přečtěte si o diagnostických funkcích a operacích v rámci :::no-loc(Q#)::: standardních knihoven používaných k zachycení chyb nebo chyb v programech pro práci s poli.'
+title: 'Diagnostika ve Q# standardních knihovnách'
+description: 'Přečtěte si o diagnostických funkcích a operacích v rámci Q# standardních knihoven používaných k zachycení chyb nebo chyb v programech pro práci s poli.'
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad
 ms.topic: article
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 1ab9b77c7536a1860064110810371d3a68e95b40
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -18,7 +18,7 @@ ms.locfileid: "92690852"
 # <a name="diagnostics"></a><span data-ttu-id="e4b99-103">Diagnostika</span><span class="sxs-lookup"><span data-stu-id="e4b99-103">Diagnostics</span></span> #
 
 <span data-ttu-id="e4b99-104">Stejně jako u klasického vývoje je důležité, abyste mohli diagnostikovat chyby a chyby v programech za běhu.</span><span class="sxs-lookup"><span data-stu-id="e4b99-104">As with classical development, it is important to be able to diagnose mistakes and errors in quantum programs.</span></span>
-<span data-ttu-id="e4b99-105">:::no-loc(Q#):::Standardní knihovny poskytují celou řadu různých způsobů, jak zajistit správnost programů v řadě, jak je popsáno v <xref:microsoft.quantum.guide.testingdebugging> .</span><span class="sxs-lookup"><span data-stu-id="e4b99-105">The :::no-loc(Q#)::: standard libraries provide a variety of different ways to ensure the correctness of quantum programs, as detailed in <xref:microsoft.quantum.guide.testingdebugging>.</span></span>
+<span data-ttu-id="e4b99-105">Q#Standardní knihovny poskytují celou řadu různých způsobů, jak zajistit správnost programů v řadě, jak je popsáno v <xref:microsoft.quantum.guide.testingdebugging> .</span><span class="sxs-lookup"><span data-stu-id="e4b99-105">The Q# standard libraries provide a variety of different ways to ensure the correctness of quantum programs, as detailed in <xref:microsoft.quantum.guide.testingdebugging>.</span></span>
 <span data-ttu-id="e4b99-106">Z velké části řečeno tato podpora přichází ve formě funkcí a operací, které buď instruují cílový počítač, aby poskytoval další diagnostické informace pro hostitelský program nebo vývojáře, nebo vynutil správnost podmínek a invariant vyjádřených voláním funkce nebo operace.</span><span class="sxs-lookup"><span data-stu-id="e4b99-106">Largely speaking, this support comes in the form of functions and operations that either instruct the target machine to provide additional diagnostic information to the host program or developer, or enforce the correctness of conditions and invariants expressed by the function or operation call.</span></span>
 
 ## <a name="machine-diagnostics"></a><span data-ttu-id="e4b99-107">Diagnostika počítače</span><span class="sxs-lookup"><span data-stu-id="e4b99-107">Machine Diagnostics</span></span> ##
@@ -27,13 +27,13 @@ ms.locfileid: "92690852"
 <span data-ttu-id="e4b99-109">Ve výchozím nastavení zapíše řetězec do konzoly.</span><span class="sxs-lookup"><span data-stu-id="e4b99-109">By default, this writes the string to the console.</span></span>
 <span data-ttu-id="e4b99-110">Používá se společně s interpolované řetězce a usnadňuje <xref:Microsoft.Quantum.Intrinsic.Message> tak sestavy diagnostických informací o klasických hodnotách:</span><span class="sxs-lookup"><span data-stu-id="e4b99-110">Used together with interpolated strings, <xref:Microsoft.Quantum.Intrinsic.Message> makes it easy to report diagnostic information about classical values:</span></span>
 
-```:::no-loc(Q#):::
+```Q#
 let angle = Microsoft.Quantum.Math.PI() * 2.0 / 3.0;
 Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> <span data-ttu-id="e4b99-111">`Message` má signaturu `(String -> Unit)` , která reprezentuje, že generování zprávy protokolu ladění není možné pozorovat v rámci :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="e4b99-111">`Message` has signature `(String -> Unit)`, again representing that emitting a debug log message cannot be observed from within :::no-loc(Q#):::.</span></span>
+> <span data-ttu-id="e4b99-111">`Message` má signaturu `(String -> Unit)` , která reprezentuje, že generování zprávy protokolu ladění není možné pozorovat v rámci Q# .</span><span class="sxs-lookup"><span data-stu-id="e4b99-111">`Message` has signature `(String -> Unit)`, again representing that emitting a debug log message cannot be observed from within Q#.</span></span>
 
 <span data-ttu-id="e4b99-112"><xref:Microsoft.Quantum.Diagnostics.DumpMachine>A <xref:Microsoft.Quantum.Diagnostics.DumpRegister> volat cílové počítače instruují, aby poskytovaly diagnostické informace o všech aktuálně přidělených qubits nebo o konkrétním registru qubits, v uvedeném pořadí.</span><span class="sxs-lookup"><span data-stu-id="e4b99-112">The <xref:Microsoft.Quantum.Diagnostics.DumpMachine> and <xref:Microsoft.Quantum.Diagnostics.DumpRegister> callables instruct target machines to provide diagnostic information about all currently allocated qubits or about a specific register of qubits, respectively.</span></span>
 <span data-ttu-id="e4b99-113">Každý cílový počítač se liší v tom, jaké diagnostické informace jsou k dispozici v reakci na instrukci výpisu paměti.</span><span class="sxs-lookup"><span data-stu-id="e4b99-113">Each target machine varies in what diagnostic information is provided in response to a dump instruction.</span></span>
@@ -52,7 +52,7 @@ Message($"About to rotate by an angle of {angle}...");
 <span data-ttu-id="e4b99-121">Například `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` představuje matematický fakt, který $1 + 1 = $2, zatímco `AssertQubit(One, qubit)` představuje podmínku, kterou měření `qubit` vrátí `One` s jistotou.</span><span class="sxs-lookup"><span data-stu-id="e4b99-121">For example, `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` represents the mathematical fact that $1 + 1 = 2$, while `AssertQubit(One, qubit)` represents the condition that measuring `qubit` will return a `One` with certainty.</span></span>
 <span data-ttu-id="e4b99-122">V bývalém případě můžeme ověřit správnost podmínky, pokud jsou k disqubity jenom jeho hodnoty, ale v druhém případě je potřeba, abyste zjistili něco o stavu, abyste mohli kontrolní výraz vyhodnotit.</span><span class="sxs-lookup"><span data-stu-id="e4b99-122">In the former case, we can check the correctness of the condition given only its values, while in the latter, we must know something about the state of the qubit in order to evaluate the assertion.</span></span>
 
-<span data-ttu-id="e4b99-123">:::no-loc(Q#):::Standardní knihovny poskytují několik různých funkcí pro reprezentaci faktů, včetně:</span><span class="sxs-lookup"><span data-stu-id="e4b99-123">The :::no-loc(Q#)::: standard libraries provide several different functions for representing facts, including:</span></span>
+<span data-ttu-id="e4b99-123">Q#Standardní knihovny poskytují několik různých funkcí pro reprezentaci faktů, včetně:</span><span class="sxs-lookup"><span data-stu-id="e4b99-123">The Q# standard libraries provide several different functions for representing facts, including:</span></span>
 
 - <xref:Microsoft.Quantum.Diagnostics.Fact>
 - <xref:Microsoft.Quantum.Diagnostics.EqualityWithinToleranceFact>
@@ -70,7 +70,7 @@ Message($"About to rotate by an angle of {angle}...");
 <span data-ttu-id="e4b99-129">Pokud se kontrolní výraz nepovede, spuštění skončí voláním `fail` dané zprávy.</span><span class="sxs-lookup"><span data-stu-id="e4b99-129">If the assertion fails, the run ends by calling `fail` with the given message.</span></span>
 <span data-ttu-id="e4b99-130">Ve výchozím nastavení tato operace není implementována. simulátory, které ji mohou podporovat, by měly poskytnout implementaci, která provádí kontrolu za běhu.</span><span class="sxs-lookup"><span data-stu-id="e4b99-130">By default, this operation is not implemented; simulators that can support it should provide an implementation that performs runtime checking.</span></span>
 <span data-ttu-id="e4b99-131">`AssertMeasurement` má signaturu `((Pauli[], Qubit[], Result, String) -> ())` .</span><span class="sxs-lookup"><span data-stu-id="e4b99-131">`AssertMeasurement` has signature `((Pauli[], Qubit[], Result, String) -> ())`.</span></span>
-<span data-ttu-id="e4b99-132">Vzhledem k tomu `AssertMeasurement` , že se jedná o funkci s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v rámci programu pozorovatelé žádné účinky volání :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="e4b99-132">Since `AssertMeasurement` is a function with an empty tuple as its output type, no effects from having called `AssertMeasurement` are observable within a :::no-loc(Q#)::: program.</span></span>
+<span data-ttu-id="e4b99-132">Vzhledem k tomu `AssertMeasurement` , že se jedná o funkci s prázdnou řazenou kolekcí členů jako svůj výstupní typ, `AssertMeasurement` nejsou v rámci programu pozorovatelé žádné účinky volání Q# .</span><span class="sxs-lookup"><span data-stu-id="e4b99-132">Since `AssertMeasurement` is a function with an empty tuple as its output type, no effects from having called `AssertMeasurement` are observable within a Q# program.</span></span>
 
 <span data-ttu-id="e4b99-133"><xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability>Funkce Operation vyhodnotí, že měření daného qubits v daném Pauli základu bude mít daný výsledek s danou pravděpodobností v rámci určité tolerance.</span><span class="sxs-lookup"><span data-stu-id="e4b99-133">The <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability> operation function asserts that measuring the given qubits in the given Pauli basis will have the given result with the given probability, within some tolerance.</span></span>
 <span data-ttu-id="e4b99-134">Tolerance je aditivní (například `abs(expected-actual) < tol` ).</span><span class="sxs-lookup"><span data-stu-id="e4b99-134">Tolerance is additive (for example, `abs(expected-actual) < tol`).</span></span>

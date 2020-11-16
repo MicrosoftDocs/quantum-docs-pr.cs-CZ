@@ -1,14 +1,14 @@
 ---
-title: 'Řízení toku ve :::no-loc(Q#)::: standardním libararies'
-description: 'Přečtěte si o operacích a funkcích řízení toku v :::no-loc(Q#)::: knihovně Microsoft Standard.'
+title: 'Řízení toku ve Q# standardním libararies'
+description: 'Přečtěte si o operacích a funkcích řízení toku v Q# knihovně Microsoft Standard.'
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: ad107f5c65a4bf368d12d30e4a72786f2076205c
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -19,7 +19,7 @@ ms.locfileid: "92690867"
 # <a name="higher-order-control-flow"></a><span data-ttu-id="b82a4-103">Tok řízení Higher-Order</span><span class="sxs-lookup"><span data-stu-id="b82a4-103">Higher-Order Control Flow</span></span> #
 
 <span data-ttu-id="b82a4-104">Jednou z primárních rolí standardní knihovny je usnadnit rychlé vyjádření vysoce kvalitních nápadů, jako jsou [programy](https://en.wikipedia.org/wiki/Quantum_programming)v počtu procesorů.</span><span class="sxs-lookup"><span data-stu-id="b82a4-104">One of the primary roles of the standard library is to make it easier to express high-level algorithmic ideas as [quantum programs](https://en.wikipedia.org/wiki/Quantum_programming).</span></span>
-<span data-ttu-id="b82a4-105">Proto :::no-loc(Q#)::: Canon poskytuje celou řadu různých konstrukcí řízení toku, z nichž každý je implementován pomocí částečného použití funkcí a operací.</span><span class="sxs-lookup"><span data-stu-id="b82a4-105">Thus, the :::no-loc(Q#)::: canon provides a variety of different flow control constructs, each implemented using partial application of functions and operations.</span></span>
+<span data-ttu-id="b82a4-105">Proto Q# Canon poskytuje celou řadu různých konstrukcí řízení toku, z nichž každý je implementován pomocí částečného použití funkcí a operací.</span><span class="sxs-lookup"><span data-stu-id="b82a4-105">Thus, the Q# canon provides a variety of different flow control constructs, each implemented using partial application of functions and operations.</span></span>
 <span data-ttu-id="b82a4-106">Přejít okamžitě na příklad, zvažte případ, ve kterém jeden chce vytvořit "CNOT žebřík" v registru:</span><span class="sxs-lookup"><span data-stu-id="b82a4-106">Jumping immediately into an example, consider the case in which one wants to construct a "CNOT ladder" on a register:</span></span>
 
 ```qsharp
@@ -50,7 +50,7 @@ ApplyToEachCA(CNOT, Zip(register[0..nQubits - 2], register[1..nQubits - 1]));
 
 <span data-ttu-id="b82a4-111">Jednou z primárních abstrakcí, které poskytuje Canon, je iterace.</span><span class="sxs-lookup"><span data-stu-id="b82a4-111">One of the primary abstractions provided by the canon is that of iteration.</span></span>
 <span data-ttu-id="b82a4-112">Předpokládejme například, že ve formuláři $U \otimes U \otimes \cdots \otimes U $ pro každou qubit jednotkovou $U $.</span><span class="sxs-lookup"><span data-stu-id="b82a4-112">For instance, consider a unitary of the form $U \otimes U \otimes \cdots \otimes U$ for a single-qubit unitary $U$.</span></span>
-<span data-ttu-id="b82a4-113">V nástroji :::no-loc(Q#)::: můžeme použít <xref:Microsoft.Quantum.Arrays.IndexRange> k reprezentaci jako smyčky v rámci `for` registru:</span><span class="sxs-lookup"><span data-stu-id="b82a4-113">In :::no-loc(Q#):::, we might use <xref:Microsoft.Quantum.Arrays.IndexRange> to represent this as as a `for` loop over a register:</span></span>
+<span data-ttu-id="b82a4-113">V nástroji Q# můžeme použít <xref:Microsoft.Quantum.Arrays.IndexRange> k reprezentaci jako smyčky v rámci `for` registru:</span><span class="sxs-lookup"><span data-stu-id="b82a4-113">In Q#, we might use <xref:Microsoft.Quantum.Arrays.IndexRange> to represent this as as a `for` loop over a register:</span></span>
 
 ```qsharp
 /// # Summary
@@ -91,7 +91,7 @@ ApplyToEachCA(Adjoint U, register);
 > <span data-ttu-id="b82a4-124">Pak `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` použije chybovou opravu kódu `code` a funkci obnovení `recoveryFn` na každý blok nezávisle.</span><span class="sxs-lookup"><span data-stu-id="b82a4-124">Then `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` will apply the error-correcting code `code` and recovery function `recoveryFn` to each block independently.</span></span>
 > <span data-ttu-id="b82a4-125">To i pro klasické vstupy: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` použije rotaci $ \pi/$2 o $X $ následovaný otočením $PI/$3 o $Y $.</span><span class="sxs-lookup"><span data-stu-id="b82a4-125">This holds even for classical inputs: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` will apply a rotation of $\pi / 2$ about $X$ followed by a rotation of $pi / 3$ about $Y$.</span></span>
 
-<span data-ttu-id="b82a4-126">:::no-loc(Q#):::Canon také poskytuje podporu pro klasické vzory výčtů, které jsou známé pro funkční programování.</span><span class="sxs-lookup"><span data-stu-id="b82a4-126">The :::no-loc(Q#)::: canon also provides support for classical enumeration patterns familiar to functional programming.</span></span>
+<span data-ttu-id="b82a4-126">Q#Canon také poskytuje podporu pro klasické vzory výčtů, které jsou známé pro funkční programování.</span><span class="sxs-lookup"><span data-stu-id="b82a4-126">The Q# canon also provides support for classical enumeration patterns familiar to functional programming.</span></span>
 <span data-ttu-id="b82a4-127">Například <xref:Microsoft.Quantum.Arrays.Fold> implementuje vzor $f (f (s \_ {\Text{Initial}}, x \_ 0), x \_ 1), \dots) $ pro snížení funkce na seznam.</span><span class="sxs-lookup"><span data-stu-id="b82a4-127">For instance, <xref:Microsoft.Quantum.Arrays.Fold> implements the pattern $f(f(f(s\_{\text{initial}}, x\_0), x\_1), \dots)$ for reducing a function over a list.</span></span>
 <span data-ttu-id="b82a4-128">Tento model se dá použít k implementaci součtů, produktů, minima, Maxim a dalších takových funkcí:</span><span class="sxs-lookup"><span data-stu-id="b82a4-128">This pattern can be used to implement sums, products, minima, maxima and other such functions:</span></span>
 
@@ -103,7 +103,7 @@ function Sum(xs : Int[]) {
 }
 ```
 
-<span data-ttu-id="b82a4-129">Podobně funkce jako <xref:Microsoft.Quantum.Arrays.Mapped> a <xref:Microsoft.Quantum.Arrays.MappedByIndex> lze použít pro vyjádření konceptů funkčního programování v :::no-loc(Q#)::: .</span><span class="sxs-lookup"><span data-stu-id="b82a4-129">Similarly, functions like <xref:Microsoft.Quantum.Arrays.Mapped> and <xref:Microsoft.Quantum.Arrays.MappedByIndex> can be used to express functional programming concepts in :::no-loc(Q#):::.</span></span>
+<span data-ttu-id="b82a4-129">Podobně funkce jako <xref:Microsoft.Quantum.Arrays.Mapped> a <xref:Microsoft.Quantum.Arrays.MappedByIndex> lze použít pro vyjádření konceptů funkčního programování v Q# .</span><span class="sxs-lookup"><span data-stu-id="b82a4-129">Similarly, functions like <xref:Microsoft.Quantum.Arrays.Mapped> and <xref:Microsoft.Quantum.Arrays.MappedByIndex> can be used to express functional programming concepts in Q#.</span></span>
 
 ## <a name="composing-operations-and-functions"></a><span data-ttu-id="b82a4-130">Vytváření operací a funkcí</span><span class="sxs-lookup"><span data-stu-id="b82a4-130">Composing Operations and Functions</span></span> ##
 
@@ -173,7 +173,7 @@ U(1, time / Float(nSteps), target);
 DecomposeIntoTimeStepsCA((2, U), 1);
 ```
 
-<span data-ttu-id="b82a4-159">Signatura `DecomposeIntoTimeStepsCA` následuje společný vzor v :::no-loc(Q#)::: , kde kolekce, které mohou být zálohovány buď pomocí polí, nebo něco, které výpočetní prvky v průběhu jsou reprezentovány řazenými kolekcemi členů, jejichž první prvky jsou `Int` hodnoty, které určují jejich délku.</span><span class="sxs-lookup"><span data-stu-id="b82a4-159">The signature of `DecomposeIntoTimeStepsCA` follows a common pattern in :::no-loc(Q#):::, where collections that may be backed either by arrays or by something which compute elements on the fly are represented by tuples whose first elements are `Int` values indicating their lengths.</span></span>
+<span data-ttu-id="b82a4-159">Signatura `DecomposeIntoTimeStepsCA` následuje společný vzor v Q# , kde kolekce, které mohou být zálohovány buď pomocí polí, nebo něco, které výpočetní prvky v průběhu jsou reprezentovány řazenými kolekcemi členů, jejichž první prvky jsou `Int` hodnoty, které určují jejich délku.</span><span class="sxs-lookup"><span data-stu-id="b82a4-159">The signature of `DecomposeIntoTimeStepsCA` follows a common pattern in Q#, where collections that may be backed either by arrays or by something which compute elements on the fly are represented by tuples whose first elements are `Int` values indicating their lengths.</span></span>
 
 ## <a name="putting-it-together-controlling-operations"></a><span data-ttu-id="b82a4-160">Vložení dohromady: řízení operací</span><span class="sxs-lookup"><span data-stu-id="b82a4-160">Putting it Together: Controlling Operations</span></span> ##
 
@@ -218,7 +218,7 @@ operation _ControlledOnBitString(
 
 <span data-ttu-id="b82a4-177">V tuto chvíli jsme se mohli udělat, ale nevyhovuje tomu, že se naše nová operace neshoduje s tím, jako když použijete `Controlled` funktor.</span><span class="sxs-lookup"><span data-stu-id="b82a4-177">At this point, we could be done, but it is somehow unsatisfying that our new operation does not "feel" like applying the `Controlled` functor.</span></span>
 <span data-ttu-id="b82a4-178">Proto jsme dokončili definování našeho nového konceptu toku řízení vytvořením funkce, která bude mít pod kontrolou Oracle a který vrátí novou operaci.</span><span class="sxs-lookup"><span data-stu-id="b82a4-178">Thus, we finish defining our new control flow concept by writing a function that takes the oracle to be controlled and that returns a new operation.</span></span>
-<span data-ttu-id="b82a4-179">Díky tomu naše nová funkce vypadá a je příliš velká `Controlled` , což ilustruje, že můžeme snadno definovat výkonné nové konstrukce toku ovládacích prvků pomocí :::no-loc(Q#)::: a Canon společně:</span><span class="sxs-lookup"><span data-stu-id="b82a4-179">In this way, our new function looks and feels very much like `Controlled`, illustrating that we can easily define powerful new control flow constructs using :::no-loc(Q#)::: and the canon together:</span></span>
+<span data-ttu-id="b82a4-179">Díky tomu naše nová funkce vypadá a je příliš velká `Controlled` , což ilustruje, že můžeme snadno definovat výkonné nové konstrukce toku ovládacích prvků pomocí Q# a Canon společně:</span><span class="sxs-lookup"><span data-stu-id="b82a4-179">In this way, our new function looks and feels very much like `Controlled`, illustrating that we can easily define powerful new control flow constructs using Q# and the canon together:</span></span>
 
 ```qsharp
 function ControlledOnBitString(

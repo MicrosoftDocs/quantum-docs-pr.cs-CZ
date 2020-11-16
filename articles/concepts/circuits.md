@@ -1,113 +1,113 @@
 ---
 <span data-ttu-id="6a8ea-101">title: Popis okruhu provozu: Přečtěte si, jak vizuálně znázornit jednoduché a komplexní operace s využitím diagramů okruhu.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-101">title: Quantum circuits description: Learn how to visually represent simple and complex quantum operations with quantum circuit diagrams.</span></span>
 <span data-ttu-id="6a8ea-102">Autor: QuantumWriter UID: Microsoft.. koncepty. okruhy MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-102">author: QuantumWriter uid: microsoft.quantum.concepts.circuits ms.author: v-benbra ms.date: 12/11/2017 ms.topic: article no-loc:</span></span>
-- <span data-ttu-id="6a8ea-103">":::no-loc(Q#):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-103">":::no-loc(Q#):::"</span></span>
-- <span data-ttu-id="6a8ea-104">":::no-loc($$v):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-104">":::no-loc($$v):::"</span></span>
-- <span data-ttu-id="6a8ea-105">":::no-loc($$):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-105">":::no-loc($$):::"</span></span>
-- <span data-ttu-id="6a8ea-106">":::no-loc($$):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-106">":::no-loc($$):::"</span></span>
-- <span data-ttu-id="6a8ea-107">":::no-loc($):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-107">":::no-loc($):::"</span></span>
-- <span data-ttu-id="6a8ea-108">":::no-loc($):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-108">":::no-loc($):::"</span></span>
-- <span data-ttu-id="6a8ea-109">":::no-loc($):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-109">":::no-loc($):::"</span></span>
-- <span data-ttu-id="6a8ea-110">":::no-loc($$):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-110">":::no-loc($$):::"</span></span>
-- <span data-ttu-id="6a8ea-111">":::no-loc(\cdots):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-111">":::no-loc(\cdots):::"</span></span>
-- <span data-ttu-id="6a8ea-112">":::no-loc(bmatrix):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-112">":::no-loc(bmatrix):::"</span></span>
-- <span data-ttu-id="6a8ea-113">":::no-loc(\ddots):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-113">":::no-loc(\ddots):::"</span></span>
-- <span data-ttu-id="6a8ea-114">":::no-loc(\equiv):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-114">":::no-loc(\equiv):::"</span></span>
-- <span data-ttu-id="6a8ea-115">":::no-loc(\sum):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-115">":::no-loc(\sum):::"</span></span>
-- <span data-ttu-id="6a8ea-116">":::no-loc(\begin):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-116">":::no-loc(\begin):::"</span></span>
-- <span data-ttu-id="6a8ea-117">":::no-loc(\end):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-117">":::no-loc(\end):::"</span></span>
-- <span data-ttu-id="6a8ea-118">":::no-loc(\sqrt):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-118">":::no-loc(\sqrt):::"</span></span>
-- <span data-ttu-id="6a8ea-119">":::no-loc(\otimes):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-119">":::no-loc(\otimes):::"</span></span>
-- <span data-ttu-id="6a8ea-120">":::no-loc({):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-120">":::no-loc({):::"</span></span>
-- <span data-ttu-id="6a8ea-121">":::no-loc(}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-121">":::no-loc(}):::"</span></span>
-- <span data-ttu-id="6a8ea-122">":::no-loc(\text):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-122">":::no-loc(\text):::"</span></span>
-- <span data-ttu-id="6a8ea-123">":::no-loc(\phi):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-123">":::no-loc(\phi):::"</span></span>
-- <span data-ttu-id="6a8ea-124">":::no-loc(\kappa):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-124">":::no-loc(\kappa):::"</span></span>
-- <span data-ttu-id="6a8ea-125">":::no-loc(\psi):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-125">":::no-loc(\psi):::"</span></span>
-- <span data-ttu-id="6a8ea-126">":::no-loc(\alpha):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-126">":::no-loc(\alpha):::"</span></span>
-- <span data-ttu-id="6a8ea-127">":::no-loc(\beta):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-127">":::no-loc(\beta):::"</span></span>
-- <span data-ttu-id="6a8ea-128">":::no-loc(\gamma):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-128">":::no-loc(\gamma):::"</span></span>
-- <span data-ttu-id="6a8ea-129">":::no-loc(\delta):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-129">":::no-loc(\delta):::"</span></span>
-- <span data-ttu-id="6a8ea-130">":::no-loc(\omega):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-130">":::no-loc(\omega):::"</span></span>
-- <span data-ttu-id="6a8ea-131">":::no-loc(\bra):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-131">":::no-loc(\bra):::"</span></span>
-- <span data-ttu-id="6a8ea-132">":::no-loc(\ket):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-132">":::no-loc(\ket):::"</span></span>
-- <span data-ttu-id="6a8ea-133">":::no-loc(\boldone):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-133">":::no-loc(\boldone):::"</span></span>
-- <span data-ttu-id="6a8ea-134">":::no-loc(\\\\):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-134">":::no-loc(\\\\):::"</span></span>
-- <span data-ttu-id="6a8ea-135">":::no-loc(\\):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-135">":::no-loc(\\):::"</span></span>
-- <span data-ttu-id="6a8ea-136">":::no-loc(=):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-136">":::no-loc(=):::"</span></span>
-- <span data-ttu-id="6a8ea-137">":::no-loc(\frac):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-137">":::no-loc(\frac):::"</span></span>
-- <span data-ttu-id="6a8ea-138">":::no-loc(\text):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-138">":::no-loc(\text):::"</span></span>
-- <span data-ttu-id="6a8ea-139">":::no-loc(\mapsto):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-139">":::no-loc(\mapsto):::"</span></span>
-- <span data-ttu-id="6a8ea-140">":::no-loc(\dagger):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-140">":::no-loc(\dagger):::"</span></span>
-- <span data-ttu-id="6a8ea-141">":::no-loc(\to):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-141">":::no-loc(\to):::"</span></span>
-- <span data-ttu-id="6a8ea-142">":::no-loc(\begin{cases}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-142">":::no-loc(\begin{cases}):::"</span></span>
-- <span data-ttu-id="6a8ea-143">":::no-loc(\end{cases}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-143">":::no-loc(\end{cases}):::"</span></span>
-- <span data-ttu-id="6a8ea-144">":::no-loc(\operatorname):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-144">":::no-loc(\operatorname):::"</span></span>
-- <span data-ttu-id="6a8ea-145">":::no-loc(\braket):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-145">":::no-loc(\braket):::"</span></span>
-- <span data-ttu-id="6a8ea-146">":::no-loc(\id):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-146">":::no-loc(\id):::"</span></span>
-- <span data-ttu-id="6a8ea-147">":::no-loc(\expect):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-147">":::no-loc(\expect):::"</span></span>
-- <span data-ttu-id="6a8ea-148">":::no-loc(\defeq):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-148">":::no-loc(\defeq):::"</span></span>
-- <span data-ttu-id="6a8ea-149">":::no-loc(\variance):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-149">":::no-loc(\variance):::"</span></span>
-- <span data-ttu-id="6a8ea-150">":::no-loc(\dd):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-150">":::no-loc(\dd):::"</span></span>
-- <span data-ttu-id="6a8ea-151">":::no-loc(&):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-151">":::no-loc(&):::"</span></span>
-- <span data-ttu-id="6a8ea-152">":::no-loc(\begin{align}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-152">":::no-loc(\begin{align}):::"</span></span>
-- <span data-ttu-id="6a8ea-153">":::no-loc(\end{align}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-153">":::no-loc(\end{align}):::"</span></span>
-- <span data-ttu-id="6a8ea-154">":::no-loc(\Lambda):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-154">":::no-loc(\Lambda):::"</span></span>
-- <span data-ttu-id="6a8ea-155">":::no-loc(\lambda):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-155">":::no-loc(\lambda):::"</span></span>
-- <span data-ttu-id="6a8ea-156">":::no-loc(\Omega):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-156">":::no-loc(\Omega):::"</span></span>
-- <span data-ttu-id="6a8ea-157">":::no-loc(\mathrm):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-157">":::no-loc(\mathrm):::"</span></span>
-- <span data-ttu-id="6a8ea-158">":::no-loc(\left):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-158">":::no-loc(\left):::"</span></span>
-- <span data-ttu-id="6a8ea-159">":::no-loc(\right):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-159">":::no-loc(\right):::"</span></span>
-- <span data-ttu-id="6a8ea-160">":::no-loc(\qquad):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-160">":::no-loc(\qquad):::"</span></span>
-- <span data-ttu-id="6a8ea-161">":::no-loc(\times):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-161">":::no-loc(\times):::"</span></span>
-- <span data-ttu-id="6a8ea-162">":::no-loc(\big):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-162">":::no-loc(\big):::"</span></span>
-- <span data-ttu-id="6a8ea-163">":::no-loc(\langle):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-163">":::no-loc(\langle):::"</span></span>
-- <span data-ttu-id="6a8ea-164">":::no-loc(\rangle):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-164">":::no-loc(\rangle):::"</span></span>
-- <span data-ttu-id="6a8ea-165">":::no-loc(\bigg):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-165">":::no-loc(\bigg):::"</span></span>
-- <span data-ttu-id="6a8ea-166">":::no-loc(\Big):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-166">":::no-loc(\Big):::"</span></span>
-- <span data-ttu-id="6a8ea-167">":::no-loc(|):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-167">":::no-loc(|):::"</span></span>
-- <span data-ttu-id="6a8ea-168">":::no-loc(\mathbb):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-168">":::no-loc(\mathbb):::"</span></span>
-- <span data-ttu-id="6a8ea-169">":::no-loc(\vec):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-169">":::no-loc(\vec):::"</span></span>
-- <span data-ttu-id="6a8ea-170">":::no-loc(\in):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-170">":::no-loc(\in):::"</span></span>
-- <span data-ttu-id="6a8ea-171">":::no-loc(\texttt):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-171">":::no-loc(\texttt):::"</span></span>
-- <span data-ttu-id="6a8ea-172">":::no-loc(\ne):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-172">":::no-loc(\ne):::"</span></span>
-- <span data-ttu-id="6a8ea-173">":::no-loc(<):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-173">":::no-loc(<):::"</span></span>
-- <span data-ttu-id="6a8ea-174">":::no-loc(>):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-174">":::no-loc(>):::"</span></span>
-- <span data-ttu-id="6a8ea-175">":::no-loc(\leq):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-175">":::no-loc(\leq):::"</span></span>
-- <span data-ttu-id="6a8ea-176">":::no-loc(\geq):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-176">":::no-loc(\geq):::"</span></span>
-- <span data-ttu-id="6a8ea-177">":::no-loc(~~):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-177">":::no-loc(~~):::"</span></span>
-- <span data-ttu-id="6a8ea-178">":::no-loc(~):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-178">":::no-loc(~):::"</span></span>
-- <span data-ttu-id="6a8ea-179">":::no-loc(\begin{bmatrix}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-179">":::no-loc(\begin{bmatrix}):::"</span></span>
-- <span data-ttu-id="6a8ea-180">":::no-loc(\end{bmatrix}):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-180">":::no-loc(\end{bmatrix}):::"</span></span>
-- <span data-ttu-id="6a8ea-181">":::no-loc(\_):::"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-181">":::no-loc(\_):::"</span></span>
+- <span data-ttu-id="6a8ea-103">"Q#"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-103">"Q#"</span></span>
+- <span data-ttu-id="6a8ea-104">"$$v"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-104">"$$v"</span></span>
+- <span data-ttu-id="6a8ea-105">"$$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-105">"$$"</span></span>
+- <span data-ttu-id="6a8ea-106">"$$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-106">"$$"</span></span>
+- <span data-ttu-id="6a8ea-107">"$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-107">"$"</span></span>
+- <span data-ttu-id="6a8ea-108">"$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-108">"$"</span></span>
+- <span data-ttu-id="6a8ea-109">"$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-109">"$"</span></span>
+- <span data-ttu-id="6a8ea-110">"$$"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-110">"$$"</span></span>
+- <span data-ttu-id="6a8ea-111">"\cdots"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-111">"\cdots"</span></span>
+- <span data-ttu-id="6a8ea-112">"bmatrix"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-112">"bmatrix"</span></span>
+- <span data-ttu-id="6a8ea-113">"\ddots"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-113">"\ddots"</span></span>
+- <span data-ttu-id="6a8ea-114">"\equiv"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-114">"\equiv"</span></span>
+- <span data-ttu-id="6a8ea-115">"\sum"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-115">"\sum"</span></span>
+- <span data-ttu-id="6a8ea-116">"\begin"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-116">"\begin"</span></span>
+- <span data-ttu-id="6a8ea-117">"\end"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-117">"\end"</span></span>
+- <span data-ttu-id="6a8ea-118">"\sqrt"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-118">"\sqrt"</span></span>
+- <span data-ttu-id="6a8ea-119">"\otimes"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-119">"\otimes"</span></span>
+- <span data-ttu-id="6a8ea-120">"{"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-120">"{"</span></span>
+- <span data-ttu-id="6a8ea-121">"}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-121">"}"</span></span>
+- <span data-ttu-id="6a8ea-122">"\text"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-122">"\text"</span></span>
+- <span data-ttu-id="6a8ea-123">"\phi"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-123">"\phi"</span></span>
+- <span data-ttu-id="6a8ea-124">"\kappa"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-124">"\kappa"</span></span>
+- <span data-ttu-id="6a8ea-125">"\psi"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-125">"\psi"</span></span>
+- <span data-ttu-id="6a8ea-126">"\alpha"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-126">"\alpha"</span></span>
+- <span data-ttu-id="6a8ea-127">"\beta"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-127">"\beta"</span></span>
+- <span data-ttu-id="6a8ea-128">"\gamma"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-128">"\gamma"</span></span>
+- <span data-ttu-id="6a8ea-129">"\delta"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-129">"\delta"</span></span>
+- <span data-ttu-id="6a8ea-130">"\omega"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-130">"\omega"</span></span>
+- <span data-ttu-id="6a8ea-131">"\bra"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-131">"\bra"</span></span>
+- <span data-ttu-id="6a8ea-132">"\ket"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-132">"\ket"</span></span>
+- <span data-ttu-id="6a8ea-133">"\boldone"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-133">"\boldone"</span></span>
+- <span data-ttu-id="6a8ea-134">"\\\\"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-134">"\\\\"</span></span>
+- <span data-ttu-id="6a8ea-135">"\\"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-135">"\\"</span></span>
+- <span data-ttu-id="6a8ea-136">"="</span><span class="sxs-lookup"><span data-stu-id="6a8ea-136">"="</span></span>
+- <span data-ttu-id="6a8ea-137">"\frac"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-137">"\frac"</span></span>
+- <span data-ttu-id="6a8ea-138">"\text"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-138">"\text"</span></span>
+- <span data-ttu-id="6a8ea-139">"\mapsto"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-139">"\mapsto"</span></span>
+- <span data-ttu-id="6a8ea-140">"\dagger"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-140">"\dagger"</span></span>
+- <span data-ttu-id="6a8ea-141">"\to"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-141">"\to"</span></span>
+- <span data-ttu-id="6a8ea-142">"\begin{cases}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-142">"\begin{cases}"</span></span>
+- <span data-ttu-id="6a8ea-143">"\end{cases}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-143">"\end{cases}"</span></span>
+- <span data-ttu-id="6a8ea-144">"\operatorname"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-144">"\operatorname"</span></span>
+- <span data-ttu-id="6a8ea-145">"\braket"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-145">"\braket"</span></span>
+- <span data-ttu-id="6a8ea-146">"\id"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-146">"\id"</span></span>
+- <span data-ttu-id="6a8ea-147">"\expect"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-147">"\expect"</span></span>
+- <span data-ttu-id="6a8ea-148">"\defeq"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-148">"\defeq"</span></span>
+- <span data-ttu-id="6a8ea-149">"\variance"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-149">"\variance"</span></span>
+- <span data-ttu-id="6a8ea-150">"\dd"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-150">"\dd"</span></span>
+- <span data-ttu-id="6a8ea-151">"&"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-151">"&"</span></span>
+- <span data-ttu-id="6a8ea-152">"\begin{align}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-152">"\begin{align}"</span></span>
+- <span data-ttu-id="6a8ea-153">"\end{align}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-153">"\end{align}"</span></span>
+- <span data-ttu-id="6a8ea-154">"\Lambda"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-154">"\Lambda"</span></span>
+- <span data-ttu-id="6a8ea-155">"\lambda"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-155">"\lambda"</span></span>
+- <span data-ttu-id="6a8ea-156">"\Omega"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-156">"\Omega"</span></span>
+- <span data-ttu-id="6a8ea-157">"\mathrm"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-157">"\mathrm"</span></span>
+- <span data-ttu-id="6a8ea-158">"\left"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-158">"\left"</span></span>
+- <span data-ttu-id="6a8ea-159">"\right"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-159">"\right"</span></span>
+- <span data-ttu-id="6a8ea-160">"\qquad"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-160">"\qquad"</span></span>
+- <span data-ttu-id="6a8ea-161">"\times"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-161">"\times"</span></span>
+- <span data-ttu-id="6a8ea-162">"\big"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-162">"\big"</span></span>
+- <span data-ttu-id="6a8ea-163">"\langle"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-163">"\langle"</span></span>
+- <span data-ttu-id="6a8ea-164">"\rangle"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-164">"\rangle"</span></span>
+- <span data-ttu-id="6a8ea-165">"\bigg"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-165">"\bigg"</span></span>
+- <span data-ttu-id="6a8ea-166">"\Big"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-166">"\Big"</span></span>
+- <span data-ttu-id="6a8ea-167">"|"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-167">"|"</span></span>
+- <span data-ttu-id="6a8ea-168">"\mathbb"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-168">"\mathbb"</span></span>
+- <span data-ttu-id="6a8ea-169">"\vec"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-169">"\vec"</span></span>
+- <span data-ttu-id="6a8ea-170">"\in"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-170">"\in"</span></span>
+- <span data-ttu-id="6a8ea-171">"\texttt"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-171">"\texttt"</span></span>
+- <span data-ttu-id="6a8ea-172">"\ne"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-172">"\ne"</span></span>
+- <span data-ttu-id="6a8ea-173">"<"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-173">"<"</span></span>
+- <span data-ttu-id="6a8ea-174">">"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-174">">"</span></span>
+- <span data-ttu-id="6a8ea-175">"\leq"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-175">"\leq"</span></span>
+- <span data-ttu-id="6a8ea-176">"\geq"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-176">"\geq"</span></span>
+- <span data-ttu-id="6a8ea-177">"~~"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-177">"~~"</span></span>
+- <span data-ttu-id="6a8ea-178">"~"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-178">"~"</span></span>
+- <span data-ttu-id="6a8ea-179">"\begin{bmatrix}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-179">"\begin{bmatrix}"</span></span>
+- <span data-ttu-id="6a8ea-180">"\end{bmatrix}"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-180">"\end{bmatrix}"</span></span>
+- <span data-ttu-id="6a8ea-181">"\_"</span><span class="sxs-lookup"><span data-stu-id="6a8ea-181">"\_"</span></span>
 
 ---
 
 # <a name="quantum-circuits"></a><span data-ttu-id="6a8ea-182">Okruhy</span><span class="sxs-lookup"><span data-stu-id="6a8ea-182">Quantum Circuits</span></span>
-<span data-ttu-id="6a8ea-183">Vezměte v úvahu okamžik, kdy bude jednotná transformace :::no-loc($)::: :::no-loc(\text)::: :::no-loc({)::: CNOT :::no-loc(})::: _ :::no-loc({)::: 01 :::no-loc(})::: (H :::no-loc(\otimes)::: 1) :::no-loc($)::: .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-183">Consider for a moment the unitary transformation :::no-loc($)::::::no-loc(\text)::::::no-loc({)::: CNOT:::no-loc(}):::_:::no-loc({):::01:::no-loc(}):::(H:::no-loc(\otimes)::: 1):::no-loc($):::.</span></span>
+<span data-ttu-id="6a8ea-183">Vezměte v úvahu okamžik, kdy bude jednotná transformace $ \text { CNOT } _ { 01 } (H \otimes 1) $ .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-183">Consider for a moment the unitary transformation $\text{ CNOT}_{01}(H\otimes 1)$.</span></span>
 <span data-ttu-id="6a8ea-184">Tato sekvence brány má zásadní význam pro výpočetní výkon, protože vytváří qubit stav s maximální entangled:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-184">This gate sequence is of fundamental significance to quantum computing because it creates a maximally entangled two-qubit state:</span></span>
 
-<span data-ttu-id="6a8ea-185">:::no-loc($$)::::::no-loc(\mathrm)::::::no-loc({):::CNOT :::no-loc(})::: _ :::no-loc({)::: 01 :::no-loc(})::: (H :::no-loc(\otimes)::: 1) :::no-loc(\ket)::: :::no-loc({)::: 00 :::no-loc(})::: :::no-loc(=)::: :::no-loc(\frac)::: :::no-loc({)::: 1 :::no-loc(})::: :::no-loc({)::: :::no-loc(\sqrt)::: :::no-loc({)::: 2 :::no-loc(})::: :::no-loc(})::: :::no-loc(\left)::: ( :::no-loc(\ket)::: :::no-loc({)::: 00 :::no-loc(}):::  +  :::no-loc(\ket)::: :::no-loc({)::: 11 :::no-loc(})::: :::no-loc(\right)::: ),:::no-loc($$):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-185">:::no-loc($$)::::::no-loc(\mathrm)::::::no-loc({):::CNOT:::no-loc(}):::_:::no-loc({):::01:::no-loc(}):::(H:::no-loc(\otimes)::: 1):::no-loc(\ket)::::::no-loc({):::00:::no-loc(})::: :::no-loc(=)::: :::no-loc(\frac)::::::no-loc({):::1:::no-loc(})::::::no-loc({)::::::no-loc(\sqrt)::::::no-loc({):::2:::no-loc(})::::::no-loc(})::: :::no-loc(\left):::(:::no-loc(\ket)::::::no-loc({):::00:::no-loc(})::: + :::no-loc(\ket)::::::no-loc({):::11:::no-loc(})::: :::no-loc(\right):::),:::no-loc($$):::</span></span>
+<span data-ttu-id="6a8ea-185">$$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$</span><span class="sxs-lookup"><span data-stu-id="6a8ea-185">$$\mathrm{CNOT}_{01}(H\otimes 1)\ket{00} = \frac{1}{\sqrt{2}} \left(\ket{00} + \ket{11} \right),$$</span></span>
 
 <span data-ttu-id="6a8ea-186">Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu* .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-186">Operations with this or greater complexity are ubiquitous in quantum algorithms and quantum error correction, so it should come as a great relief that there is a simple method for their visualization called a *quantum circuit diagram* .</span></span>
 <span data-ttu-id="6a8ea-187">Diagram okruhu pro přípravu tohoto maximálního entangledého stavu je:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-187">The circuit diagram for preparing this maximally entangled quantum state is:</span></span>
 
-<span data-ttu-id="6a8ea-188">:::no-loc(<):::!--- ![](.\media\1.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-188">:::no-loc(<):::!--- ![](.\media\1.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-189">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-189">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-190">![Diagram okruhu pro maximální entangled stav qubit](:::no-loc(~):::/media/1.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-190">![Circuit diagram for a maximally entangled two-qubit state](:::no-loc(~):::/media/1.svg)</span></span>
+<span data-ttu-id="6a8ea-188"><!--- ![](.\media\1.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-188"><!--- ![](.\media\1.svg) ---></span></span>
+<span data-ttu-id="6a8ea-189"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-189"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-190">![Diagram okruhu pro maximální entangled stav qubit](~/media/1.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-190">![Circuit diagram for a maximally entangled two-qubit state](~/media/1.svg)</span></span>
 
 ## <a name="quantum-circuit-diagram-conventions"></a><span data-ttu-id="6a8ea-191">Konvence diagramu pro okruhy</span><span class="sxs-lookup"><span data-stu-id="6a8ea-191">Quantum circuit diagram conventions</span></span>
 <span data-ttu-id="6a8ea-192">Tento vizuál pro práci s více operačními operacemi může být mnohem snadno digestible než zapsání jeho ekvivalentní matrice, jakmile pochopíte konvence pro vyjádření okruhu.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-192">This visual language for quantum operations can be more readily digestible than writing down its equivalent matrix once you understand the conventions for expressing a quantum circuit.</span></span>
 <span data-ttu-id="6a8ea-193">Tyto konvence prověříme níže.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-193">We review these conventions below.</span></span>
 
 <span data-ttu-id="6a8ea-194">V diagramu okruhu každá plná čára znázorňuje qubit nebo více všeobecně qubit Registry.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-194">In a circuit diagram, each solid line depicts a qubit or more generally a qubit register.</span></span>
-<span data-ttu-id="6a8ea-195">Podle konvence je horním řádkem qubit registr :::no-loc($)::: 0 :::no-loc($)::: a zbytek je označený sekvenčně.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-195">By convention, the top line is qubit register :::no-loc($):::0:::no-loc($)::: and the remainder are labeled sequentially.</span></span> <span data-ttu-id="6a8ea-196">Výše uvedený příklad okruhu je znázorněný na dvou qubits (nebo ekvivalentních dvou registrech, které se skládají z jednoho qubit).</span><span class="sxs-lookup"><span data-stu-id="6a8ea-196">The above example circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).</span></span>
+<span data-ttu-id="6a8ea-195">Podle konvence je horním řádkem qubit registr $ 0 $ a zbytek je označený sekvenčně.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-195">By convention, the top line is qubit register $0$ and the remainder are labeled sequentially.</span></span> <span data-ttu-id="6a8ea-196">Výše uvedený příklad okruhu je znázorněný na dvou qubits (nebo ekvivalentních dvou registrech, které se skládají z jednoho qubit).</span><span class="sxs-lookup"><span data-stu-id="6a8ea-196">The above example circuit is depicted as acting on two qubits (or equivalently two registers consisting of one qubit).</span></span>
 <span data-ttu-id="6a8ea-197">Brány fungující na jednom nebo více registrech qubit jsou označeny jako pole.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-197">Gates acting on one or more qubit registers are denoted as a box.</span></span>
 <span data-ttu-id="6a8ea-198">Například symbol</span><span class="sxs-lookup"><span data-stu-id="6a8ea-198">For example, the symbol</span></span>
 
-<span data-ttu-id="6a8ea-199">:::no-loc(<):::!--- ![](.\media\2.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-199">:::no-loc(<):::!--- ![](.\media\2.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-200">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-200">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-201">![Symbol pro Hadamard operace fungující v registru s jedním qubit](:::no-loc(~):::/media/2.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-201">![Symbol for a Hadamard operation acting on a single-qubit register](:::no-loc(~):::/media/2.svg)</span></span>
+<span data-ttu-id="6a8ea-199"><!--- ![](.\media\2.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-199"><!--- ![](.\media\2.svg) ---></span></span>
+<span data-ttu-id="6a8ea-200"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-200"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-201">![Symbol pro Hadamard operace fungující v registru s jedním qubit](~/media/2.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-201">![Symbol for a Hadamard operation acting on a single-qubit register](~/media/2.svg)</span></span>
 
 <span data-ttu-id="6a8ea-202">je [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operace fungující v registru s jedním qubit.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-202">is a [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) operation acting on a single-qubit register.</span></span>
 
@@ -115,11 +115,11 @@
 <span data-ttu-id="6a8ea-204">Jinými slovy, pokud se dráty naformátují jako držící stav, vodiče přinášejí stav u všech bran v diagramu zleva doprava.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-204">In other words, if you picture the wires as holding the quantum state, the wires bring the quantum state through each of the gates in the diagram from left to right.</span></span>
 <span data-ttu-id="6a8ea-205">Řekněme, že</span><span class="sxs-lookup"><span data-stu-id="6a8ea-205">That is to say</span></span> 
 
-<span data-ttu-id="6a8ea-206">:::no-loc(<):::!--- ![](.\media\3.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-206">:::no-loc(<):::!--- ![](.\media\3.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-207">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-207">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-208">![Diagram protiprocesorů používaných v zleva doprava](:::no-loc(~):::/media/3.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-208">![Diagram of quantum gates being applied left-to-right](:::no-loc(~):::/media/3.svg)</span></span>
+<span data-ttu-id="6a8ea-206"><!--- ![](.\media\3.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-206"><!--- ![](.\media\3.svg) ---></span></span>
+<span data-ttu-id="6a8ea-207"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-207"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-208">![Diagram protiprocesorů používaných v zleva doprava](~/media/3.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-208">![Diagram of quantum gates being applied left-to-right](~/media/3.svg)</span></span>
 
-<span data-ttu-id="6a8ea-209">je jednotná maticová matice :::no-loc($)::: certifikátů :::no-loc($)::: .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-209">is the unitary matrix :::no-loc($):::CBA:::no-loc($):::.</span></span>
+<span data-ttu-id="6a8ea-209">je jednotná maticová matice $ certifikátů $ .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-209">is the unitary matrix $CBA$.</span></span>
 <span data-ttu-id="6a8ea-210">Násobení matice dodržuje opačnou konvenci: nejprve se použije matice nejvyšší výše.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-210">Matrix multiplication obeys the opposite convention: the right-most matrix is applied first.</span></span> <span data-ttu-id="6a8ea-211">V diagramech okruhu ve službě pro vytváření koncových procesorů se ale jako první používá brána vlevo.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-211">In quantum circuit diagrams, however, the left-most gate is applied first.</span></span>
 <span data-ttu-id="6a8ea-212">Tento rozdíl může v některých případech vést k nejasnostem, takže je důležité si všimnout tohoto významného rozdílu mezi lineárním zápisem algebraických a diagramy okruhu.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-212">This difference can at times lead to confusion, so it is important to note this significant difference between the linear algebraic notation and quantum circuit diagrams.</span></span>
 
@@ -131,38 +131,38 @@
 <span data-ttu-id="6a8ea-218">Z tohoto důvodu musí mít jakékoli pole vykreslené v diagramu okruhu přesně stejný počet vodičů, kteří ho vstupují při jeho ukončení.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-218">For this reason any box drawn in a circuit diagram must have precisely the same number of wires entering it as exiting it.</span></span>
 
 <span data-ttu-id="6a8ea-219">Diagramy okruhu s více qubit se podobají podobným konvencím pro qubit.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-219">Multi-qubit circuit diagrams follow similar conventions to single-qubit ones.</span></span>
-<span data-ttu-id="6a8ea-220">V rámci objasnění příkladu můžeme definovat qubit jednotkovou operaci :::no-loc($)::: B :::no-loc($)::: , která bude :::no-loc($)::: (H S :::no-loc(\otimes)::: ×), :::no-loc($)::: a vyjadřovat ekvivalent okruhu jako</span><span class="sxs-lookup"><span data-stu-id="6a8ea-220">As a clarifying example, we can define a two-qubit unitary operation :::no-loc($):::B:::no-loc($)::: to be :::no-loc($):::(H S:::no-loc(\otimes)::: X):::no-loc($)::: and express the circuit equivalently as</span></span>
+<span data-ttu-id="6a8ea-220">V rámci objasnění příkladu můžeme definovat qubit jednotkovou operaci $ B $ , která bude $ (H S \otimes ×), $ a vyjadřovat ekvivalent okruhu jako</span><span class="sxs-lookup"><span data-stu-id="6a8ea-220">As a clarifying example, we can define a two-qubit unitary operation $B$ to be $(H S\otimes X)$ and express the circuit equivalently as</span></span>
 
-<span data-ttu-id="6a8ea-221">:::no-loc(<):::!--- ![](.\media\4.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-221">:::no-loc(<):::!--- ![](.\media\4.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-222">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-222">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-223">![Diagram okruhu s qubit jednotkovou operací](:::no-loc(~):::/media/4.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-223">![Circuit diagram of a two-qubit unitary operation](:::no-loc(~):::/media/4.svg)</span></span>
+<span data-ttu-id="6a8ea-221"><!--- ![](.\media\4.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-221"><!--- ![](.\media\4.svg) ---></span></span>
+<span data-ttu-id="6a8ea-222"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-222"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-223">![Diagram okruhu s qubit jednotkovou operací](~/media/4.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-223">![Circuit diagram of a two-qubit unitary operation](~/media/4.svg)</span></span>
 
-<span data-ttu-id="6a8ea-224">V :::no-loc($)::: :::no-loc($)::: závislosti na kontextu, ve kterém se okruh používá, můžeme také zobrazit B jako akce v jednom qubit registru, nikoli 2 1-qubit Registry.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-224">We can also view :::no-loc($):::B:::no-loc($)::: as having an action on a single two-qubit register rather than two one-qubit registers depending on the context in which the circuit is used.</span></span> <span data-ttu-id="6a8ea-225">Nejužitečnější vlastností takových diagramů s abstraktním okruhem je pravděpodobně to, že umožňují složitosti složitých algoritmů na vysoké úrovni, aniž by bylo nutné je kompilovat na základní brány.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-225">Perhaps the most useful property of such abstract circuit diagrams is that they allow complicated quantum algorithms to be described at a high level without having to compile them down to fundamental gates.</span></span>
+<span data-ttu-id="6a8ea-224">V $ $ závislosti na kontextu, ve kterém se okruh používá, můžeme také zobrazit B jako akce v jednom qubit registru, nikoli 2 1-qubit Registry.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-224">We can also view $B$ as having an action on a single two-qubit register rather than two one-qubit registers depending on the context in which the circuit is used.</span></span> <span data-ttu-id="6a8ea-225">Nejužitečnější vlastností takových diagramů s abstraktním okruhem je pravděpodobně to, že umožňují složitosti složitých algoritmů na vysoké úrovni, aniž by bylo nutné je kompilovat na základní brány.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-225">Perhaps the most useful property of such abstract circuit diagrams is that they allow complicated quantum algorithms to be described at a high level without having to compile them down to fundamental gates.</span></span>
 <span data-ttu-id="6a8ea-226">To znamená, že můžete získat Intuition o toku dat pro velký algoritmus, aniž byste museli porozumět všem podrobnostem o tom, jak jednotlivé podrutiny v rámci algoritmu fungují.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-226">This means that you can get an intuition about the data flow for a large quantum algorithm without needing to understand all the details of how each of the subroutines within the algorithm work.</span></span>
 
 ## <a name="controlled-gates"></a><span data-ttu-id="6a8ea-227">Řízené brány</span><span class="sxs-lookup"><span data-stu-id="6a8ea-227">Controlled gates</span></span>
 <span data-ttu-id="6a8ea-228">Druhá konstrukce, která je integrovaná do qubitch okruhů, je řídicích diagramů.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-228">The other construct that is built into multi-qubit quantum circuit diagrams is control.</span></span>
-<span data-ttu-id="6a8ea-229">Akce u jednorázového množství, které je jednou kontrolované bránou :::no-loc($)::: :::no-loc(\Lambda)::: (g) :::no-loc($)::: , kde jedna hodnota qubit řídí aplikaci :::no-loc($)::: G, se dá pochopit tak, že se :::no-loc($)::: podíváme na následující příklad vstupu stavu produktu :::no-loc($)::: :::no-loc(\Lambda)::: (G) ( :::no-loc(\alpha)::: :::no-loc(\ket)::: :::no-loc({)::: 0 :::no-loc(}):::  +  :::no-loc(\beta)::: :::no-loc(\ket)::: :::no-loc({)::: 1 :::no-loc(})::: ) :::no-loc(\ket)::: :::no-loc({)::: :::no-loc(\psi)::: :::no-loc(})::: :::no-loc(=)::: :::no-loc(\alpha)::: :::no-loc(\ket)::: :::no-loc({)::: 0 :::no-loc(})::: :::no-loc(\ket)::: :::no-loc({)::: :::no-loc(\psi)::: :::no-loc(}):::  +  :::no-loc(\beta)::: :::no-loc(\ket)::: :::no-loc({)::: 1 :::no-loc(})::: G :::no-loc(\ket)::: :::no-loc({)::: :::no-loc(\psi)::: :::no-loc(})::: :::no-loc($)::: . To znamená, že řízená brána použije :::no-loc($)::: G :::no-loc($)::: na registr, který obsahuje :::no-loc($)::: :::no-loc(\psi)::: :::no-loc($)::: if a jenom v případě, že ovládací prvek qubit přebírá hodnotu :::no-loc($)::: 1 :::no-loc($)::: .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-229">The action of a quantum singly controlled gate, denoted :::no-loc($)::::::no-loc(\Lambda):::(G):::no-loc($):::, where a single qubit's value controls the application of :::no-loc($):::G:::no-loc($):::, can be understood by looking at the following example of a product state input :::no-loc($)::::::no-loc(\Lambda):::(G) (:::no-loc(\alpha)::: :::no-loc(\ket)::::::no-loc({):::0:::no-loc(})::: + :::no-loc(\beta)::: :::no-loc(\ket)::::::no-loc({):::1:::no-loc(}):::) :::no-loc(\ket)::::::no-loc({)::::::no-loc(\psi)::::::no-loc(})::: :::no-loc(=)::: :::no-loc(\alpha)::: :::no-loc(\ket)::::::no-loc({):::0:::no-loc(})::: :::no-loc(\ket)::::::no-loc({)::::::no-loc(\psi)::::::no-loc(})::: + :::no-loc(\beta)::: :::no-loc(\ket)::::::no-loc({):::1:::no-loc(})::: G:::no-loc(\ket)::::::no-loc({)::::::no-loc(\psi)::::::no-loc(})::::::no-loc($):::. That is to say, the controlled gate applies :::no-loc($):::G:::no-loc($)::: to the register containing :::no-loc($)::::::no-loc(\psi)::::::no-loc($)::: if and only if the control qubit takes the value :::no-loc($):::1:::no-loc($):::.</span></span>
+<span data-ttu-id="6a8ea-229">Akce u jednorázového množství, které je jednou kontrolované bránou $ \Lambda (g) $ , kde jedna hodnota qubit řídí aplikaci $ G, se dá pochopit tak, že se $ podíváme na následující příklad vstupu stavu produktu $ \Lambda (G) ( \alpha \ket { 0 }  +  \beta \ket { 1 } ) \ket { \psi } = \alpha \ket { 0 } \ket { \psi }  +  \beta \ket { 1 } G \ket { \psi } $ . To znamená, že řízená brána použije $ G $ na registr, který obsahuje $ \psi $ if a jenom v případě, že ovládací prvek qubit přebírá hodnotu $ 1 $ .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-229">The action of a quantum singly controlled gate, denoted $\Lambda(G)$, where a single qubit's value controls the application of $G$, can be understood by looking at the following example of a product state input $\Lambda(G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket{\psi}$. That is to say, the controlled gate applies $G$ to the register containing $\psi$ if and only if the control qubit takes the value $1$.</span></span>
 <span data-ttu-id="6a8ea-230">Obecně popisujeme tyto řízené operace v diagramech okruhů jako</span><span class="sxs-lookup"><span data-stu-id="6a8ea-230">In general, we describe such controlled operations in circuit diagrams as</span></span>
 
-<span data-ttu-id="6a8ea-231">:::no-loc(<):::!--- ![](.\media\5.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-231">:::no-loc(<):::!--- ![](.\media\5.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-232">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-232">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-233">![Diagram okruhu samostatně kontrolované brány](:::no-loc(~):::/media/5.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-233">![Circuit diagram of a singly controlled gate](:::no-loc(~):::/media/5.svg)</span></span>
+<span data-ttu-id="6a8ea-231"><!--- ![](.\media\5.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-231"><!--- ![](.\media\5.svg) ---></span></span>
+<span data-ttu-id="6a8ea-232"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-232"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-233">![Diagram okruhu samostatně kontrolované brány](~/media/5.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-233">![Circuit diagram of a singly controlled gate](~/media/5.svg)</span></span>
 
-<span data-ttu-id="6a8ea-234">Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když ovládací prvek qubit převezme hodnotu :::no-loc($)::: 1 :::no-loc($)::: .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-234">Here the black circle denotes the quantum bit on which the gate is controlled and a vertical wire denotes the unitary that is applied when the control qubit takes the value :::no-loc($):::1:::no-loc($):::.</span></span>
-<span data-ttu-id="6a8ea-235">Pro zvláštní případy, kdy :::no-loc($)::: G :::no-loc(=)::: X :::no-loc($)::: a :::no-loc($)::: g :::no-loc(=)::: Z :::no-loc($)::: uvádíme následující zápis, který popíše řízená verze bran (Všimněte si, že brána řízená-X je [ :::no-loc($)::: :::no-loc($)::: bránou CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT)):</span><span class="sxs-lookup"><span data-stu-id="6a8ea-235">For the special cases where :::no-loc($):::G:::no-loc(=):::X:::no-loc($)::: and :::no-loc($):::G:::no-loc(=):::Z:::no-loc($)::: we introduce the following notation to describe the controlled version of the gates (note that the controlled-X gate is the [:::no-loc($):::CNOT:::no-loc($)::: gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):</span></span>
+<span data-ttu-id="6a8ea-234">Tady černý kroužek označuje bit, na kterém je brána řízená, a vertikální kabel označuje jednotnou, která se použije, když ovládací prvek qubit převezme hodnotu $ 1 $ .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-234">Here the black circle denotes the quantum bit on which the gate is controlled and a vertical wire denotes the unitary that is applied when the control qubit takes the value $1$.</span></span>
+<span data-ttu-id="6a8ea-235">Pro zvláštní případy, kdy $ G = X $ a $ g = Z $ uvádíme následující zápis, který popíše řízená verze bran (Všimněte si, že brána řízená-X je [ $ $ bránou CNOT](xref:Microsoft.Quantum.Intrinsic.CNOT)):</span><span class="sxs-lookup"><span data-stu-id="6a8ea-235">For the special cases where $G=X$ and $G=Z$ we introduce the following notation to describe the controlled version of the gates (note that the controlled-X gate is the [$CNOT$ gate](xref:Microsoft.Quantum.Intrinsic.CNOT)):</span></span>
 
-<span data-ttu-id="6a8ea-236">:::no-loc(<):::!--- ![](.\media\6.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-236">:::no-loc(<):::!--- ![](.\media\6.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-237">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-237">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-238">![Diagram okruhu pro speciální případy řízených bran](:::no-loc(~):::/media/6.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-238">![Circuit diagram for special cases of controlled gates](:::no-loc(~):::/media/6.svg)</span></span>
+<span data-ttu-id="6a8ea-236"><!--- ![](.\media\6.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-236"><!--- ![](.\media\6.svg) ---></span></span>
+<span data-ttu-id="6a8ea-237"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-237"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-238">![Diagram okruhu pro speciální případy řízených bran](~/media/6.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-238">![Circuit diagram for special cases of controlled gates](~/media/6.svg)</span></span>
 
-<span data-ttu-id="6a8ea-239">:::no-loc(Q#)::: poskytuje metody pro automatické generování řízené verze operace, která bude ukládat programátora z nutnosti kódování těchto operací.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-239">:::no-loc(Q#)::: provides methods to automatically generate the controlled version of an operation, which saves the programmer from having to hand code these operations.</span></span> <span data-ttu-id="6a8ea-240">Příklad najdete tady:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-240">An example of this is shown below:</span></span>
+<span data-ttu-id="6a8ea-239">Q# poskytuje metody pro automatické generování řízené verze operace, která bude ukládat programátora z nutnosti kódování těchto operací.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-239">Q# provides methods to automatically generate the controlled version of an operation, which saves the programmer from having to hand code these operations.</span></span> <span data-ttu-id="6a8ea-240">Příklad najdete tady:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-240">An example of this is shown below:</span></span>
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
-is Ctl :::no-loc({)::: // Auto-generate the controlled specialization of the operation
+is Ctl { // Auto-generate the controlled specialization of the operation
     H(qubit);
-:::no-loc(}):::
+}
 ```
 
 ## <a name="measurement-operator"></a><span data-ttu-id="6a8ea-241">Operátor měření</span><span class="sxs-lookup"><span data-stu-id="6a8ea-241">Measurement operator</span></span>
@@ -171,20 +171,20 @@ is Ctl :::no-loc({)::: // Auto-generate the controlled specialization of the ope
 <span data-ttu-id="6a8ea-244">Operace měření je označená symbolem měřiče a vždycky přebírá jako vstup qubit registr (označený plnou čárou) a výstupem klasických informací (označených dvojitou čárou).</span><span class="sxs-lookup"><span data-stu-id="6a8ea-244">A measurement operation is denoted by a meter symbol and always takes as input a qubit register (denoted by a solid line) and outputs classical information (denoted by a double line).</span></span>
 <span data-ttu-id="6a8ea-245">Konkrétně takový okruh vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="6a8ea-245">Specifically, such a subcircuit looks like:</span></span>
 
-<span data-ttu-id="6a8ea-246">:::no-loc(<):::!--- ![](.\media\7.svg) ----:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-246">:::no-loc(<):::!--- ![](.\media\7.svg) ----:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-247">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-247">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-248">![Symbol reprezentující operaci měření](:::no-loc(~):::/media/7.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-248">![Symbol representing a measurement operation](:::no-loc(~):::/media/7.svg)</span></span>
+<span data-ttu-id="6a8ea-246"><!--- ![](.\media\7.svg) ----></span><span class="sxs-lookup"><span data-stu-id="6a8ea-246"><!--- ![](.\media\7.svg) ----></span></span>
+<span data-ttu-id="6a8ea-247"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-247"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-248">![Symbol reprezentující operaci měření](~/media/7.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-248">![Symbol representing a measurement operation](~/media/7.svg)</span></span>
 
-<span data-ttu-id="6a8ea-249">:::no-loc(Q#)::: implementuje [operátor míry](xref:Microsoft.Quantum.Intrinsic.Measure) pro tento účel.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-249">:::no-loc(Q#)::: implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose.</span></span>
+<span data-ttu-id="6a8ea-249">Q# implementuje [operátor míry](xref:Microsoft.Quantum.Intrinsic.Measure) pro tento účel.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-249">Q# implements a [Measure operator](xref:Microsoft.Quantum.Intrinsic.Measure) for this purpose.</span></span>
 <span data-ttu-id="6a8ea-250">Další informace najdete v [části o měřeních](xref:microsoft.quantum.libraries.standard.prelude#measurements) .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-250">See the [section on measurements](xref:microsoft.quantum.libraries.standard.prelude#measurements) for more information.</span></span>
 
 <span data-ttu-id="6a8ea-251">Podobně, předaný okruh</span><span class="sxs-lookup"><span data-stu-id="6a8ea-251">Similarly, the subcircuit</span></span>
 
-<span data-ttu-id="6a8ea-252">:::no-loc(<):::!--- ![](.\media\8.svg) ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-252">:::no-loc(<):::!--- ![](.\media\8.svg) ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-253">:::no-loc(<):::!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-253">:::no-loc(<):::!-- Can't find a way to easily center this... probably an extension needed:  --:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-254">![Diagram okruhu reprezentující kontrolovanou operaci](:::no-loc(~):::/media/8.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-254">![Circuit diagram representing a controlled operation](:::no-loc(~):::/media/8.svg)</span></span>
+<span data-ttu-id="6a8ea-252"><!--- ![](.\media\8.svg) ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-252"><!--- ![](.\media\8.svg) ---></span></span>
+<span data-ttu-id="6a8ea-253"><!--Nemůžou najít způsob, jak ho snadno zarovnat... pravděpodobně je nutné rozšíření:--></span><span class="sxs-lookup"><span data-stu-id="6a8ea-253"><!-- Can't find a way to easily center this... probably an extension needed:  --></span></span>
+<span data-ttu-id="6a8ea-254">![Diagram okruhu reprezentující kontrolovanou operaci](~/media/8.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-254">![Circuit diagram representing a controlled operation](~/media/8.svg)</span></span>
 
-<span data-ttu-id="6a8ea-255">poskytuje klasickou bránu, kde :::no-loc($)::: G :::no-loc($)::: se aplikuje na bit klasického ovládacího prvku s hodnotou :::no-loc($)::: 1 :::no-loc($)::: .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-255">gives a classically controlled gate, where :::no-loc($):::G:::no-loc($)::: is applied conditioned on the classical control bit being value :::no-loc($):::1:::no-loc($):::.</span></span>
+<span data-ttu-id="6a8ea-255">poskytuje klasickou bránu, kde $ G $ se aplikuje na bit klasického ovládacího prvku s hodnotou $ 1 $ .</span><span class="sxs-lookup"><span data-stu-id="6a8ea-255">gives a classically controlled gate, where $G$ is applied conditioned on the classical control bit being value $1$.</span></span>
 
 ## <a name="teleportation-circuit-diagram"></a><span data-ttu-id="6a8ea-256">Diagram okruhu přenosu</span><span class="sxs-lookup"><span data-stu-id="6a8ea-256">Teleportation circuit diagram</span></span>
 <span data-ttu-id="6a8ea-257">Pro ilustraci těchto komponent je možná nejlepší výkon</span><span class="sxs-lookup"><span data-stu-id="6a8ea-257">Quantum teleportation is perhaps the best quantum algorithm for illustrating these components.</span></span>
@@ -193,5 +193,5 @@ is Ctl :::no-loc({)::: // Auto-generate the controlled specialization of the ope
 <span data-ttu-id="6a8ea-260">To je nezbytné, aby protokol fungoval v souladu s zákony na mechanismy plnění.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-260">This is necessary for the protocol to work according to the laws of quantum mechanics.</span></span>
 <span data-ttu-id="6a8ea-261">Okruh pro stavovou dopravu je uveden níže. Poskytujeme také verzi okruhu s poznámkou, která ukazuje, jak číst okruh.</span><span class="sxs-lookup"><span data-stu-id="6a8ea-261">The quantum teleportation circuit is given below; we also provide an annotated version of the circuit to illustrate how to read the quantum circuit.</span></span>
 
-<span data-ttu-id="6a8ea-262">:::no-loc(<):::!--- ![](.\media\tp2.svg) :::no-loc({)::: Šířka :::no-loc(=)::: 50%:::no-loc(})::: ---:::no-loc(>):::</span><span class="sxs-lookup"><span data-stu-id="6a8ea-262">:::no-loc(<):::!--- ![](.\media\tp2.svg):::no-loc({)::: width:::no-loc(=):::50% :::no-loc(})::: ---:::no-loc(>):::</span></span>
-<span data-ttu-id="6a8ea-263">![Okruh vystavování](:::no-loc(~):::/media/tp2.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-263">![Quantum teleportation circuit](:::no-loc(~):::/media/tp2.svg)</span></span>
+<span data-ttu-id="6a8ea-262"><!--- ![](.\media\tp2.svg) { Šířka = 50%} ---></span><span class="sxs-lookup"><span data-stu-id="6a8ea-262"><!--- ![](.\media\tp2.svg){ width=50% } ---></span></span>
+<span data-ttu-id="6a8ea-263">![Okruh vystavování](~/media/tp2.svg)</span><span class="sxs-lookup"><span data-stu-id="6a8ea-263">![Quantum teleportation circuit](~/media/tp2.svg)</span></span>
