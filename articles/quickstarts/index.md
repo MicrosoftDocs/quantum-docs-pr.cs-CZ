@@ -10,12 +10,12 @@ uid: microsoft.quantum.install
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 74b9b3d8f694072f5b5f4d0eb520263387de8919
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: f0c3df1998f9b64ff6544867b83a7afe52b6f46d
+ms.sourcegitcommit: fd57a845d013ae4578715d04b1ed1edc1c8ff6b4
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834478"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94870778"
 ---
 # <a name="setting-up-the-microsoft-quantum-development-kit-qdk"></a>Nastavení sady Microsoft Quantum Development Kit (QDK)
 
@@ -40,12 +40,48 @@ Sadu QDK můžete využít třemi způsoby:
 
 Kód v Q# můžete vyvíjet ve většině oblíbených integrovaných vývojových prostředí. Q# se dá také integrovat s dalšími jazyky, jako je Python a .NET (C#, F#).
 
-|&nbsp; | **VS Code<br>(2019 nebo novější)**| **Visual Studio<br>(2019 nebo novější)** | **Poznámkové bloky Jupyter** | **Příkazový řádek**|
-|:-----|:-----:|:-----:|:-----:|:-----:|
-|**OS** |Windows, macOS, Linux |Jen ve Windows |Windows, macOS, Linux |Windows, macOS, Linux |
-|<br>**Q# samostatně** |<br>[Instalace](xref:microsoft.quantum.install.standalone) |<br> [Instalace](xref:microsoft.quantum.install.standalone)  |<br> [Instalace](xref:microsoft.quantum.install.jupyter) |<br>[Instalace](xref:microsoft.quantum.install.standalone)|
-|**Q# a Python** |[Instalace](xref:microsoft.quantum.install.python) |[Instalace](xref:microsoft.quantum.install.python) |[Instalace](xref:microsoft.quantum.install.jupyter) |[Instalace](xref:microsoft.quantum.install.python) |
-|**Q# a .NET (C#, F#)**|[Instalace](xref:microsoft.quantum.install.cs) |[Instalace](xref:microsoft.quantum.install.cs)|&#10006; |[Instalace](xref:microsoft.quantum.install.cs) |
+<table>
+    <tr>
+        <th width=10%>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th align="center" width=18%><img src="~/media/vs_code.png" alt="VS Code" width="50"/><br><b>VS Code<br>(2019 nebo novější)</b></th>
+        <th align="center" width=18%><img src="~/media/vs_studio.png" alt="VS Studio" width="50"/><br><b>VS Studio<br>(2019 nebo novější)</b></th>
+        <th align="center" width=18%><img src="~/media/jupyter-wht.png" alt="jupyter install" width="65"/><br><b>Poznámkové bloky Jupyter</b></th>
+        <th align="center" width=18%><img src="~/media/blank.png" alt="blank spacer" width="65"/><br><b>Příkazový řádek</b></th>
+    </tr>
+    <tr>
+        <th>&nbsp;</th>
+        <td align="left"><b>Podpora operačního systému:</b></td>
+        <td align="center">Windows, macOS, Linux</td>
+        <td align="center">Jen ve Windows</td>
+        <td align="center">Windows, macOS, Linux</td>
+        <td align="center">Windows, macOS, Linux</td>
+    </tr>
+    <tr>
+        <td align="right"><img src="~/media/quantum-wht.png" alt="QDK" width="60"/></td>
+        <td align="left"><b>Q# samostatně</b></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.jupyter">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.standalone">Instalace</a></td>
+    </tr>
+    <tr>
+        <td align="right"><img src="~/media/python.png" alt="python install" width="50"/></td>
+        <td align="left"><b>Q# a Python</b></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.python">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.python">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.jupyter">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.python">Instalace</a></td>
+    </tr>
+    <tr>
+        <td align="right"><img src="~/media/dot_net.png" alt="dotnet install" width="50"/></td>
+        <td align="left"><b>Q# a .NET (C#, F#)</b></td> 
+        <td align="center"><a href="xref:microsoft.quantum.install.cs">Instalace</a></td>
+        <td align="center"><a href="xref:microsoft.quantum.install.cs">Instalace</a></td>
+        <td align="center">&#10006;</td>
+        <td align="center"><a href="xref:microsoft.quantum.install.cs">Instalace</a></td>
+   </tr>
+</table>
 
 ## <a name="use-the-qdk-online"></a>Použití sady QDK online
 
