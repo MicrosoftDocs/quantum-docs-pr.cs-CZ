@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToMostC
 title: Operace ApplyToMostC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToMostC
 qsharp.summary: Applies an operation to all but the last element of an array.
-ms.openlocfilehash: a5927f6b296dd50afec8979c8e8ac22979b8a082
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: af55093e44ce023c9e8b7e478730f4c527cf6d32
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704744"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208461"
 ---
 # <a name="applytomostc-operation"></a>Operace ApplyToMostC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje operaci na všechny, ale na poslední prvek pole.
 
 ```qsharp
-operation ApplyToMostC<'T> (op : ('T[] => Unit is Ctl), targets : 'T[]) : Unit
+operation ApplyToMostC<'T> (op : ('T[] => Unit is Ctl), targets : 'T[]) : Unit is Ctl
 ```
 
 
@@ -34,7 +34,7 @@ Daná operace `op` a pole cílů `targets` platí `op(Most(targets))` .
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--t--unit-ctl"></a>op: t [] [=> CTL](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-ctl"></a>op: t [] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL.
 
 Operace, která se má použít.
 

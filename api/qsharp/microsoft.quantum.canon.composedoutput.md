@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.ComposedOutput
 title: ComposedOutput – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ComposedOutput
 qsharp.summary: Returns the output of the composition of `inner` and `outer` for a given input.
-ms.openlocfilehash: 4da66616692055a7d60abbf1fac6e6799806675d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 7e361a62679ab93e9a0ebc04fa52be193805c78d
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704352"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96207458"
 ---
 # <a name="composedoutput-function"></a>ComposedOutput – funkce
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí výstup složení `inner` a `outer` pro daný vstup.
