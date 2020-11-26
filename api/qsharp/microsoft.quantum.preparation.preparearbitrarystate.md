@@ -1,30 +1,39 @@
 ---
 uid: Microsoft.Quantum.Preparation.PrepareArbitraryState
 title: Operace PrepareArbitraryState
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
 qsharp.name: PrepareArbitraryState
-qsharp.summary: Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients.
-ms.openlocfilehash: 18f45da601b02fc5f83936b086323e31a66fc20b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+qsharp.summary: >-
+  > [!WARNING]
+
+  > PrepareArbitraryState has been deprecated. Please use <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP> instead.
+
+
+  Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients.
+ms.openlocfilehash: 18a1e86f8e110a8f48d7dd50961e1f1f471ffc4e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708668"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96190695"
 ---
 # <a name="preparearbitrarystate-operation"></a>Operace PrepareArbitraryState
 
 Obor názvů: [Microsoft. přípravno. Preparation](xref:Microsoft.Quantum.Preparation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
+
+> [!WARNING]
+> PrepareArbitraryState se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP>Místo toho ho použijte.
 
 Vzhledem k sadě koeficientů a registru s kódováním nenaloženého formátu Little endian připraví stav v tomto registru, který je popsán v daných koeficientech.
 
 ```qsharp
-operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Adj + Ctl
 ```
 
 
@@ -57,7 +66,7 @@ Qubit registruje číselné kódování stavů ve formátu Little endian. Oček�
 
 Negativní vstupní koeficienty $r _j < $0 budou považovány za kladné s hodnotou $ | r_j | $. `coefficients` bude doplněna elementy $ (r_j, t_j) = (0,0, 0,0) $, pokud je zadáno méně než $2 ^ n $.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - Shrnutí logických okruhů Vivek V. Shende, Stephen S. Bullock, Igor L. Markov https://arxiv.org/abs/quant-ph/0406176
 

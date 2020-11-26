@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.AddFxP
 title: Operace AddFxP
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: AddFxP
 qsharp.summary: Adds two fixed-point numbers stored in quantum registers.
-ms.openlocfilehash: cf1f1379b7e1c32aefb0fccb55f4d13c95c78d8f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 36a5d585a493f0e6f33f74b1686aaa01cca7ac0b
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707664"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191036"
 ---
 # <a name="addfxp-operation"></a>Operace AddFxP
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. prodoby. NUMERIC](https://nuget.org/packages/Microsoft.Quantum.Numerics)
 
 
 Přidá dvě čísla s pevnou desetinnou čárkou uložená v registrech.
 
 ```qsharp
-operation AddFxP (fp1 : Microsoft.Quantum.Arithmetic.FixedPoint, fp2 : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit
+operation AddFxP (fp1 : Microsoft.Quantum.Arithmetic.FixedPoint, fp2 : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit is Adj + Ctl
 ```
 
 

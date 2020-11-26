@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.AmpAmpPhasesStandard
 title: AmpAmpPhasesStandard – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
@@ -16,18 +16,18 @@ qsharp.summary: >-
   > Please use
 
   > @"microsoft.quantum.amplitudeamplification.standardreflectionphases".
-ms.openlocfilehash: e904783459fbc9e78aa9fbcece506a5862d83068
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 170c82efc4ca93ecb8ff5f994476e246ece1845c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707785"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191699"
 ---
 # <a name="ampampphasesstandard-function"></a>AmpAmpPhasesStandard – funkce
 
 Obor názvů: [Microsoft. AmplitudeAmplification.](xref:Microsoft.Quantum.AmplitudeAmplification)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 > [!WARNING]

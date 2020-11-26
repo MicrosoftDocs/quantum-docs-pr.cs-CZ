@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.AmpAmpPhasesFixedPoint
 title: AmpAmpPhasesFixedPoint – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
@@ -16,18 +16,18 @@ qsharp.summary: >-
   > Please use
 
   > @"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases".
-ms.openlocfilehash: cba7e3ad50bcb3b27bef50ad6dda21e3e766281f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 32724f832fa87631deeaa5a698d9a0d932f5ca47
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707791"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191733"
 ---
 # <a name="ampampphasesfixedpoint-function"></a>AmpAmpPhasesFixedPoint – funkce
 
 Obor názvů: [Microsoft. AmplitudeAmplification.](xref:Microsoft.Quantum.AmplitudeAmplification)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 > [!WARNING]

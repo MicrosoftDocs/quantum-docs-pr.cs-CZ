@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingDecomposition
 title: Operace ApplyPermutationUsingDecomposition
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Synthesis
 qsharp.name: ApplyPermutationUsingDecomposition
 qsharp.summary: Permutes the amplitudes in a quantum state given a permutation using decomposition-based synthesis.
-ms.openlocfilehash: 40b51807da155c57c3fa8d740eff28ceef0a0ffc
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5b25ef3327bbca2dfdbe8fa876f3f797dddf77e8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709214"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192124"
 ---
 # <a name="applypermutationusingdecomposition-operation"></a>Operace ApplyPermutationUsingDecomposition
 
 Obor názvů: [Microsoft. Proshrnutí](xref:Microsoft.Quantum.Synthesis)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Permutes amplitudy ve stavu, který má za následek permutaci s využitím syntézy založené na dekompozici.
 
 ```qsharp
-operation ApplyPermutationUsingDecomposition (perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation ApplyPermutationUsingDecomposition (perm : Int[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Adj + Ctl
 ```
 
 
@@ -57,10 +57,10 @@ Seznam $n $ qubits, na který se aplikuje permutace
 
 
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
-- [*Alexis de Vos* , *Yvan van Rentergem* , ADV. v Math. of comm. 2 (2), 2008, PP. 183--200](http://www.aimsciences.org/article/doi/10.3934/amc.2008.2.183)
-- [*Mathias Soeken* , *Laura Tague* , *Gerhard W. Dueck* , *Rolf Drechsler* , deník symbolického výpočtu 73 (2016), PP. 1--26](https://www.sciencedirect.com/science/article/pii/S0747717115000188?via%3Dihub)
+- [*Alexis de Vos*, *Yvan van Rentergem*, ADV. v Math. of comm. 2 (2), 2008, PP. 183--200](http://www.aimsciences.org/article/doi/10.3934/amc.2008.2.183)
+- [*Mathias Soeken*, *Laura Tague*, *Gerhard W. Dueck*, *Rolf Drechsler*, deník symbolického výpočtu 73 (2016), PP. 1--26](https://www.sciencedirect.com/science/article/pii/S0747717115000188?via%3Dihub)
 
 ## <a name="see-also"></a>Viz také
 

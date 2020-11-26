@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.QuantumWalkByQubitization
 title: QuantumWalkByQubitization – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: QuantumWalkByQubitization
 qsharp.summary: Converts a block-encoding reflection into a quantum walk.
-ms.openlocfilehash: ef9740f1867cee3c79a7ec0bf90f2c2f4b39ad28
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: ccef1bbf400e01800053777d0010acb7addaef53
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709327"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192481"
 ---
 # <a name="quantumwalkbyqubitization-function"></a>QuantumWalkByQubitization – funkce
 
 Obor názvů: [Microsoft.. simulace](xref:Microsoft.Quantum.Simulation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Převede reflexi kódování bloku na Projděte.
@@ -40,11 +40,11 @@ V případě `BlockEncodingReflection` , že se jedná o $U $, který kóduje n�
 
 
 
-## <a name="output--qubitqubit--unit-adj--ctl"></a>Výstup: ([qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+## <a name="output--qubitqubit--unit--is-adj--ctl"></a>Výstup: ([qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 $W $ pracuje společně na registrech `a` a `s` zablokuje $H $ a obsahuje spektrum $ \Pm e ^ {\Pm i\sin ^ {-1} (H)} $.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - Simulace Hamiltonian podle Qubitization Guang vystoupí hao nízká, Petr L. Čuangština https://arxiv.org/abs/1610.06546
 

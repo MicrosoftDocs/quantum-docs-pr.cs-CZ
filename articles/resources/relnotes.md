@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
-ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
+ms.openlocfilehash: 93ece8cbaa2ac8e6e0c9bb417e8f40130cb8a3fa
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94448340"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192090"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -23,6 +23,18 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-0142011120240"></a>0.14.2011120240 verze
+
+*Datum vydání: 25. listopadu 2020*
+
+- Vylepšený výkon kompilátoru z důvodu rychlejšího načítání odkazů.
+- Do specifikace jazyka se přidala [gramatika Q# ANTLR](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar) Q# .
+- Aktualizovali jsme [ `Microsoft.Quantum.Preparation` obor názvů](xref:Microsoft.Quantum.Preparation) tak, aby byl lépe konzistentní s průvodcem stylu a zásadami návrhu rozhraní API a aby podporoval vyčištěné smíšené stavy s dalšími daty (viz [Návrh](https://github.com/microsoft/QuantumLibraries/issues/344), [poznámky k revizi](https://github.com/microsoft/QuantumLibraries/blob/main/Design/meetings/2020/api-design-2020-11-05.md) a pr [#212](https://github.com/microsoft/QuantumLibraries/pull/212), [#322](https://github.com/microsoft/QuantumLibraries/pull/322), [#375](https://github.com/microsoft/QuantumLibraries/pull/375), [#376](https://github.com/microsoft/QuantumLibraries/pull/376)).
+- Závorky kolem opakovaných výrazů volání jsou nyní volitelné: `(Foo(x))(y)` lze je zapsat jako `Foo(x)(y)` .
+- Uživatelům sady Visual Studio nebo rozšíření Visual Studio Code, kteří mají nainstalované rozhraní .NET 5 nebo Visual Studio 16,8, se může zobrazit výzva k instalaci rozhraní .NET Core 3,1, aby bylo možné pokračovat v práci s rozšířeními.
+
+Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [i Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18) a [katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18).
 
 ## <a name="version-01320111004"></a>0.13.20111004 verze
 
@@ -240,7 +252,7 @@ Tato verze obsahuje následující:
 
 Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilátor](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [modul runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) a [katy](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-09-packagereference-0919082902"></a>Verze 0.9 ( *PackageReference 0.9.1908.2902* )
+## <a name="version-09-packagereference-0919082902"></a>Verze 0.9 (*PackageReference 0.9.1908.2902*)
 
 *Datum vydání: 29. srpna 2019*
 
@@ -257,7 +269,7 @@ Podívejte se na úplný seznam uzavřených PR pro [knihovny](https://github.co
 
 Změny jsou tady shrnuty včetně pokynů k upgradování vašich existujících programů.  Přečtěte si další informace o těchto změnách na [ Q# blogu pro vývoj](https://devblogs.microsoft.com/qsharp).
 
-## <a name="version-08-packagereference-0819071701"></a>Verze 0.8 ( *PackageReference 0.8.1907.1701* )
+## <a name="version-08-packagereference-0819071701"></a>Verze 0.8 (*PackageReference 0.8.1907.1701*)
 
 *Datum vydání: 12. července 2019*
 
@@ -269,7 +281,7 @@ Tato verze obsahuje následující:
 
 Podívejte se na úplný seznam uzavřených žádostí o přijetí změn (PR) pro [knihovny](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) a [ukázky](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-07-packagereference-0719053109"></a>Verze 0.7 ( *PackageReference 0.7.1905.3109* )
+## <a name="version-07-packagereference-0719053109"></a>Verze 0.7 (*PackageReference 0.7.1905.3109*)
 
 *Datum vydání: 31. května 2019*
 
@@ -557,7 +569,7 @@ Navíc **velké poděkování** od přispěvatelů týmu Commercial Engineering 
 
 ### <a name="update-existing-projects"></a>Aktualizace stávajících projektů
 
-Tato verze je plně zpětně kompatibilní. Stačí aktualizovat balíčky NuGet v projektech na verzi `0.2.1806.1503-preview` a provést **úplné opětovné sestavení** , aby se zajistilo nové vygenerování všech přechodných soubory.
+Tato verze je plně zpětně kompatibilní. Stačí aktualizovat balíčky NuGet v projektech na verzi `0.2.1806.1503-preview` a provést **úplné opětovné sestavení**, aby se zajistilo nové vygenerování všech přechodných soubory.
 
 V aplikaci Visual Studio postupujte podle obvyklých pokynů jak [aktualizovat balíček](https://docs.microsoft.com/nuget/tools/package-manager-ui#updating-a-package).
 
