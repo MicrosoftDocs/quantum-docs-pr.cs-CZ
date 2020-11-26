@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._JordanWignerSelectQubitManager_
 title: _JordanWignerSelectQubitManager_ – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _JordanWignerSelectQubitManager_
 qsharp.summary: ''
-ms.openlocfilehash: 6f56b2b53785fe89885c82c556aed729f79c16e3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cfae8e687d4e3f29c25afb2f9a2af0b103184596
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698577"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96203633"
 ---
-# <a name="_jordanwignerselectqubitmanager_-function"></a><span data-ttu-id="1141d-102">_JordanWignerSelectQubitManager_ – funkce</span><span class="sxs-lookup"><span data-stu-id="1141d-102">_JordanWignerSelectQubitManager_ function</span></span>
+# <a name="_jordanwignerselectqubitmanager_-function"></a><span data-ttu-id="90c25-102">_JordanWignerSelectQubitManager_ – funkce</span><span class="sxs-lookup"><span data-stu-id="90c25-102">_JordanWignerSelectQubitManager_ function</span></span>
 
-<span data-ttu-id="1141d-103">Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="1141d-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
+<span data-ttu-id="90c25-103">Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="90c25-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
 
-<span data-ttu-id="1141d-104">Balíček [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="1141d-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="90c25-104">Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="90c25-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
 
 
 
@@ -28,33 +28,33 @@ function _JordanWignerSelectQubitManager_ (nZ : Int, nMaj : Int, nIdxRegQubits :
 ```
 
 
-## <a name="input"></a><span data-ttu-id="1141d-105">Vstup</span><span class="sxs-lookup"><span data-stu-id="1141d-105">Input</span></span>
+## <a name="input"></a><span data-ttu-id="90c25-105">Vstup</span><span class="sxs-lookup"><span data-stu-id="90c25-105">Input</span></span>
 
-### <a name="nz--int"></a><span data-ttu-id="1141d-106">nZ: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="1141d-106">nZ : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-
-
-
-### <a name="nmaj--int"></a><span data-ttu-id="1141d-107">nMaj: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="1141d-107">nMaj : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+### <a name="nz--int"></a><span data-ttu-id="90c25-106">nZ: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="90c25-106">nZ : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
 
-### <a name="nidxregqubits--int"></a><span data-ttu-id="1141d-108">nIdxRegQubits: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="1141d-108">nIdxRegQubits : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+### <a name="nmaj--int"></a><span data-ttu-id="90c25-107">nMaj: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="90c25-107">nMaj : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
 
-### <a name="ctrlregister--qubit"></a><span data-ttu-id="1141d-109">ctrlRegister: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="1141d-109">ctrlRegister : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+### <a name="nidxregqubits--int"></a><span data-ttu-id="90c25-108">nIdxRegQubits: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="90c25-108">nIdxRegQubits : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
 
-### <a name="targetregister--qubit"></a><span data-ttu-id="1141d-110">targetRegister: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="1141d-110">targetRegister : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+### <a name="ctrlregister--qubit"></a><span data-ttu-id="90c25-109">ctrlRegister: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="90c25-109">ctrlRegister : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
+
+
+
+
+### <a name="targetregister--qubit"></a><span data-ttu-id="90c25-110">targetRegister: [qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span><span class="sxs-lookup"><span data-stu-id="90c25-110">targetRegister : [Qubit](xref:microsoft.quantum.lang-ref.qubit)[]</span></span>
 
 
 
 
 
-## <a name="output--qubitqubitqubitqubitlittleendianqubitqubit"></a><span data-ttu-id="1141d-111">Výstup: (([qubit](xref:microsoft.quantum.lang-ref.qubit);[qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[],[LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[],[qubit](xref:microsoft.quantum.lang-ref.qubit)[]),[qubit](xref:microsoft.quantum.lang-ref.qubit)[])</span><span class="sxs-lookup"><span data-stu-id="1141d-111">Output : (([Qubit](xref:microsoft.quantum.lang-ref.qubit),[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[]),[Qubit](xref:microsoft.quantum.lang-ref.qubit)[])</span></span>
+## <a name="output--qubitqubitqubitqubitlittleendianqubitqubit"></a><span data-ttu-id="90c25-111">Výstup: (([qubit](xref:microsoft.quantum.lang-ref.qubit);[qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[],[LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[],[qubit](xref:microsoft.quantum.lang-ref.qubit)[]),[qubit](xref:microsoft.quantum.lang-ref.qubit)[])</span><span class="sxs-lookup"><span data-stu-id="90c25-111">Output : (([Qubit](xref:microsoft.quantum.lang-ref.qubit),[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[]),[Qubit](xref:microsoft.quantum.lang-ref.qubit)[])</span></span>
 
