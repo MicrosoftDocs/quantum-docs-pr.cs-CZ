@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.Not
 title: Nefunkční
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: Not
 qsharp.summary: Returns the Boolean negation of a value.
-ms.openlocfilehash: 3a688aac0178a2f4127496c1009fe7d5ee7ae198
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f2db43f4a2ce83d8cad1d60aa8c481a33b0c7d44
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697264"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197445"
 ---
 # <a name="not-function"></a>Nefunkční
 
 Obor názvů: [Microsoft.. Logic](xref:Microsoft.Quantum.Logical)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí logickou negaci hodnoty.

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.NotEqualL
 title: NotEqualL – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: NotEqualL
 qsharp.summary: Returns true if and only if two inputs are not equal.
-ms.openlocfilehash: f1d36c284293519e75e6c30ac64679c7bdf4609c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e138a8def30bc77499662ffa6bc214d0c6a38893
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697248"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197224"
 ---
 # <a name="notequall-function"></a>NotEqualL – funkce
 
 Obor názvů: [Microsoft.. Logic](xref:Microsoft.Quantum.Logical)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí hodnotu true pouze v případě, že se neshodují dva vstupy.

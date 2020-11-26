@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.LessThanOrEqualI
 title: LessThanOrEqualI – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: LessThanOrEqualI
 qsharp.summary: Returns true if and only if a number is less than or equal to another number.
-ms.openlocfilehash: dd934fde3fae9c1a43032b4b08ac03afa72798d1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b2974c9bc84d0b4366767f47682ab542f85063e2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697284"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197562"
 ---
 # <a name="lessthanorequali-function"></a>LessThanOrEqualI – funkce
 
 Obor názvů: [Microsoft.. Logic](xref:Microsoft.Quantum.Logical)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí hodnotu true pouze v případě, že je číslo menší nebo rovno jinému číslu.

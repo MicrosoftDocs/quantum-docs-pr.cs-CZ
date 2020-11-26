@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning._NegativeLocations
 title: _NegativeLocations funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: _NegativeLocations
 qsharp.summary: ''
-ms.openlocfilehash: 53b05a0cd7c5366cbbb93ba9cc818c54e8b9dabf
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: bb00749452ed6b132fc20ea8e17bc86ea3e42c6b
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708031"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96196799"
 ---
 # <a name="_negativelocations-function"></a>_NegativeLocations funkce
 
 Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)
 
 
 

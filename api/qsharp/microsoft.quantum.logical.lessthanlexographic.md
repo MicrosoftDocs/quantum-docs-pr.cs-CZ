@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.LessThanLexographic
 title: LessThanLexographic – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: LessThanLexographic
 qsharp.summary: Used to implement `LexographicComparison`.
-ms.openlocfilehash: 360088e31a47a7bb114bc0527edf600cd78740f3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3b3ac3f9f8b70307099de60899c969abb2acad7c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697292"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96197666"
 ---
 # <a name="lessthanlexographic-function"></a>LessThanLexographic – funkce
 
 Obor názvů: [Microsoft.. Logic](xref:Microsoft.Quantum.Logical)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Používá se k implementaci `LexographicComparison` .

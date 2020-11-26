@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Logical.EqualB
 title: EqualB – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: EqualB
 qsharp.summary: Returns true if and only if two inputs are equal.
-ms.openlocfilehash: 91ab51180018a9b95a2f9010477c0a24f3a54617
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b566f5ba8548eadeecf63a1e91956d936e7e9a20
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707049"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198465"
 ---
 # <a name="equalb-function"></a>EqualB – funkce
 
 Obor názvů: [Microsoft.. Logic](xref:Microsoft.Quantum.Logical)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí hodnotu true pouze v případě, že jsou dva vstupy stejné.
