@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.TrainingOptions
 title: Uživatelem definovaný typ TrainingOptions
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: TrainingOptions
 qsharp.summary: A collection of options to be used in training quantum classifiers.
-ms.openlocfilehash: 5ecc2b5175a4e8db78f72311ac1d5ff964bae811
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 280a3857aa7bc42f636a33f893d4f450e79b6a6a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707954"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96196119"
 ---
 # <a name="trainingoptions-user-defined-type"></a>Uživatelem definovaný typ TrainingOptions
 
 Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)
 
 
 Kolekce možností, které se mají použít při výuce klasifikátorů
@@ -73,6 +73,6 @@ let options = DefaultTrainingOptions()
               w/ MaxEpochs <- 8;
 ```
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [arXiv:1804.00633](https://arxiv.org/abs/1804.00633)

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.PlusI
 title: Funkce plus
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: PlusI
 qsharp.summary: Returns the sum of two inputs.
-ms.openlocfilehash: 2ce5007854efdd010b0fb5202ca29888f2cfe838
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4c3c6698f26e5d06a81245b9bfb9b7842b766fd5
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697628"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96194776"
 ---
 # <a name="plusi-function"></a>Funkce plus
 
 Obor názvů: [Microsoft.. Math](xref:Microsoft.Quantum.Math)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí součet dvou vstupů.

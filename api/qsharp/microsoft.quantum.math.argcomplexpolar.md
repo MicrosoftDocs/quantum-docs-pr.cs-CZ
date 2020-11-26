@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.ArgComplexPolar
 title: ArgComplexPolar – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: ArgComplexPolar
 qsharp.summary: Returns the phase of a complex number of type `ComplexPolar`.
-ms.openlocfilehash: b4f2b9a192770f453302b469c80f03a9e57cf891
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 7088397bd60e2779ef60afc1bb7108d937a62c97
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708314"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96195762"
 ---
 # <a name="argcomplexpolar-function"></a>ArgComplexPolar – funkce
 
 Obor názvů: [Microsoft.. Math](xref:Microsoft.Quantum.Math)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vrátí fázi komplexního čísla typu `ComplexPolar` .

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math._ContinuedFractionConvergentL
 title: _ContinuedFractionConvergentL funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: _ContinuedFractionConvergentL
 qsharp.summary: Internal recursive call to calculate the GCD with a bound
-ms.openlocfilehash: b8a7d17df9c1c7e36bfca0e529694ccf0979c2ee
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 456893b414373728fff2079e7a9bbbe068edac55
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708397"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96196068"
 ---
 # <a name="_continuedfractionconvergentl-function"></a>_ContinuedFractionConvergentL funkce
 
 Obor názvů: [Microsoft.. Math](xref:Microsoft.Quantum.Math)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vnitřní rekurzivní volání pro výpočet GCDu s vazbou
