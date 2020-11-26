@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._QubitizationOracleSeperatedRegisters
 title: _QubitizationOracleSeperatedRegisters funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _QubitizationOracleSeperatedRegisters
 qsharp.summary: ''
-ms.openlocfilehash: f21c5ea201afa5087f00bc25ef97a5ef62c382cb
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 72f5ed2546f4d47a7a6f0f1a9d427747dd455d50
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698532"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96215329"
 ---
-# <a name="_qubitizationoracleseperatedregisters-function"></a><span data-ttu-id="8c377-102">_QubitizationOracleSeperatedRegisters funkce</span><span class="sxs-lookup"><span data-stu-id="8c377-102">_QubitizationOracleSeperatedRegisters function</span></span>
+# <a name="_qubitizationoracleseperatedregisters-function"></a><span data-ttu-id="97acd-102">_QubitizationOracleSeperatedRegisters funkce</span><span class="sxs-lookup"><span data-stu-id="97acd-102">_QubitizationOracleSeperatedRegisters function</span></span>
 
-<span data-ttu-id="8c377-103">Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="8c377-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
+<span data-ttu-id="97acd-103">Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span><span class="sxs-lookup"><span data-stu-id="97acd-103">Namespace: [Microsoft.Quantum.Chemistry.JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)</span></span>
 
-<span data-ttu-id="8c377-104">Balíček [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="8c377-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="97acd-104">Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="97acd-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
 
 
 
@@ -28,13 +28,13 @@ function _QubitizationOracleSeperatedRegisters (qSharpData : Microsoft.Quantum.C
 ```
 
 
-## <a name="input"></a><span data-ttu-id="8c377-105">Vstup</span><span class="sxs-lookup"><span data-stu-id="8c377-105">Input</span></span>
+## <a name="input"></a><span data-ttu-id="97acd-105">Vstup</span><span class="sxs-lookup"><span data-stu-id="97acd-105">Input</span></span>
 
-### <a name="qsharpdata--jordanwignerencodingdata"></a><span data-ttu-id="8c377-106">qSharpData: [JordanWignerEncodingData](xref:Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData)</span><span class="sxs-lookup"><span data-stu-id="8c377-106">qSharpData : [JordanWignerEncodingData](xref:Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData)</span></span>
-
-
+### <a name="qsharpdata--jordanwignerencodingdata"></a><span data-ttu-id="97acd-106">qSharpData: [JordanWignerEncodingData](xref:Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData)</span><span class="sxs-lookup"><span data-stu-id="97acd-106">qSharpData : [JordanWignerEncodingData](xref:Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData)</span></span>
 
 
 
-## <a name="output--intintdoublequbitqubit--unit-adj--ctl"></a><span data-ttu-id="8c377-107">Výstup: (([int](xref:microsoft.quantum.lang-ref.int),[int](xref:microsoft.quantum.lang-ref.int)), ([Double](xref:microsoft.quantum.lang-ref.double), ([qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL))</span><span class="sxs-lookup"><span data-stu-id="8c377-107">Output : (([Int](xref:microsoft.quantum.lang-ref.int),[Int](xref:microsoft.quantum.lang-ref.int)),([Double](xref:microsoft.quantum.lang-ref.double),([Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [Unit](xref:microsoft.quantum.lang-ref.unit) Adj + Ctl))</span></span>
+
+
+## <a name="output--intintdoublequbitqubit--unit--is-adj--ctl"></a><span data-ttu-id="97acd-107">Výstup: (([int](xref:microsoft.quantum.lang-ref.int),[int](xref:microsoft.quantum.lang-ref.int)), ([Double](xref:microsoft.quantum.lang-ref.double), ([qubit](xref:microsoft.quantum.lang-ref.qubit)[];[qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL))</span><span class="sxs-lookup"><span data-stu-id="97acd-107">Output : (([Int](xref:microsoft.quantum.lang-ref.int),[Int](xref:microsoft.quantum.lang-ref.int)),([Double](xref:microsoft.quantum.lang-ref.double),([Qubit](xref:microsoft.quantum.lang-ref.qubit)[],[Qubit](xref:microsoft.quantum.lang-ref.qubit)[]) => [Unit](xref:microsoft.quantum.lang-ref.unit)  is Adj + Ctl))</span></span>
 
