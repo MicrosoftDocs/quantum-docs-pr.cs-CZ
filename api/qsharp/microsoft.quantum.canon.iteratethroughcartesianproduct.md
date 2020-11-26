@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.IterateThroughCartesianProduct
 title: Operace IterateThroughCartesianProduct
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: IterateThroughCartesianProduct
 qsharp.summary: Applies an operation for each index in the Cartesian product of several ranges.
-ms.openlocfilehash: e4fc71f6f707639f6f89eece8546ec2fb434a15a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6340c7a972253e6f583a3856df93a7066ced3139
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704096"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96206438"
 ---
 # <a name="iteratethroughcartesianproduct-operation"></a>Operace IterateThroughCartesianProduct
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje operaci pro každý index v kartézském produktu v několika oblastech.

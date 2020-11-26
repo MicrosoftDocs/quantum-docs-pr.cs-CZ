@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.TransformedOperationA
 title: TransformedOperationA – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: TransformedOperationA
 qsharp.summary: Given a function and an operation, returns a new operation whose input is transformed by the given function.
-ms.openlocfilehash: 349424a102dba7354bbaa65fffdc2b5d506a3b91
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: eceba260e601b73bdfa2de6ea6ab146820b5c59a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698825"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96204874"
 ---
 # <a name="transformedoperationa-function"></a>TransformedOperationA – funkce
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Výsledkem funkce a operace je nová operace, jejíž vstup je transformovaná pomocí dané funkce.
@@ -35,13 +35,13 @@ function TransformedOperationA<'T, 'U> (fn : ('U -> 'T), op : ('T => Unit is Adj
 Funkce, která transformuje daný vstup do formuláře očekávaného operací.
 
 
-### <a name="op--t--unit-adj"></a>op: t => ADJ. [Unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-adj"></a>op: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace, která se má transformovat.
 
 
 
-## <a name="output--u--unit-adj"></a>Výstup: U =>á [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ
+## <a name="output--u--unit--is-adj"></a>Výstup: ' U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Nová operace tbat volání `fn` s jeho vstupem a pak předává výsledný výstup do `op` .
 

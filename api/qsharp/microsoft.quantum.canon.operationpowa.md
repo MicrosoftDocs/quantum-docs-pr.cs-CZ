@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.OperationPowA
 title: OperationPowA – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Raises an operation to a power. The modifier `A` indicates that the operation is adjointable.
 
   That is, given an operation representing a gate $U$, returns a new operation $U^m$ for a power $m$.
-ms.openlocfilehash: 66df354c6de7e48624712276882759043b78466c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 35dc76a06fd4e8c819b785fd4c588f108c918326
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698936"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96205775"
 ---
 # <a name="operationpowa-function"></a>OperationPowA – funkce
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vyvolá operaci s napájením.
@@ -36,7 +36,7 @@ function OperationPowA<'T> (op : ('T => Unit is Adj), power : Int) : ('T => Unit
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--t--unit-adj"></a>op: t => ADJ. [Unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-adj"></a>op: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace $U $ představuje bránu, která se má opakovat.
 
@@ -47,7 +47,7 @@ Počet opakování $U $.
 
 
 
-## <a name="output--t--unit-adj"></a>Výstup: t => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ
+## <a name="output--t--unit--is-adj"></a>Výstup: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Nová operace představující $U ^ m $, kde $m = \texttt{Power} $.
 
