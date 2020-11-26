@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedPQandPQQRTerm
 title: Operace _JWOptimizedPQandPQQRTerm
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Research.Chemistry
 qsharp.name: _JWOptimizedPQandPQQRTerm
 qsharp.summary: Applies time-evolution by a PQ or PQQR term described by a `GeneratorIndex`.
-ms.openlocfilehash: 9d9f0d17c091ae771702e4047d17e1769d6bb294
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 96ea3e4ada66733502af7531c8be99de44596dca
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707857"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96225886"
 ---
 # <a name="_jwoptimizedpqandpqqrterm-operation"></a>Operace _JWOptimizedPQandPQQRTerm
 
 Obor názvů: [Microsoft. Prohledávejte. Research. chemie](xref:Microsoft.Quantum.Research.Chemistry)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. prostudoval. Research. chemie](https://nuget.org/packages/Microsoft.Quantum.Research.Chemistry)
 
 
 Použije čas – vývoj na základě výrazu PQ nebo PQQR, který je popsán v `GeneratorIndex` .
 
 ```qsharp
-operation _JWOptimizedPQandPQQRTerm (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, parityQubit : Qubit, qubits : Qubit[]) : Unit
+operation _JWOptimizedPQandPQQRTerm (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, parityQubit : Qubit, qubits : Qubit[]) : Unit is Adj + Ctl
 ```
 
 
