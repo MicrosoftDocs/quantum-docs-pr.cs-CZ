@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.AbsD
 title: AbsD – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: AbsD
 qsharp.summary: Returns the absolute value of a double-precision floating-point number.
-ms.openlocfilehash: 0280b97a3796ed4fceed25d05241828aef91ac91
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 42d720c644f9a797d7e7ceeaa154b43542e487a8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708596"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96211334"
 ---
 # <a name="absd-function"></a>AbsD – funkce
 
 Obor názvů: [Microsoft.. Math](xref:Microsoft.Quantum.Math)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Vrátí absolutní hodnotu čísla s plovoucí desetinnou čárkou s dvojitou přesností.
