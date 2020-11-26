@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderNoCarryTTK
 title: Operace RippleCarryAdderNoCarryTTK
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: RippleCarryAdderNoCarryTTK
 qsharp.summary: Reversible, in-place ripple-carry addition of two integers without carry out.
-ms.openlocfilehash: 59451b4f5c992f900a27139332059af7427b9b93
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: a539d85a4800c2f4452a1c6fe2c4f88a6296c3e1
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706249"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221993"
 ---
 # <a name="ripplecarryaddernocarryttk-operation"></a>Operace RippleCarryAdderNoCarryTTK
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vratný, místní Ripple – přidání dvou celých čísel bez nutnosti provádět.
 
 ```qsharp
-operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Adj + Ctl
 ```
 
 
@@ -53,7 +53,7 @@ LittleEndian qubit registruje kódování druhého celého čísla summand, je u
 
 Tato operace má stejné funkce jako RippleCarryAdderTTK, ale nevrací bit přenosu.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - Yasuhiro Takahashi, Seiichiro Tani, Noboru Kunihiro: "dopředné a nevázané ventilátory, informace o všech procesorech a výpočet, obj. 10, 2010.
   https://arxiv.org/abs/0910.2530

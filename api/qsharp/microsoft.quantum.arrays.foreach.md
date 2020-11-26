@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.ForEach
 title: Operace ForEach
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: ForEach
 qsharp.summary: Given an array and an operation that is defined for the elements of the array, returns a new array that consists of the images of the original array under the operation.
-ms.openlocfilehash: ab6ac6eb913095f31ba166ac27f034f2e2875acf
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b362d28e77c8dea2b3daeed4a4d605e1dd42e487
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706000"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221143"
 ---
 # <a name="foreach-operation"></a>Operace ForEach
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Předané pole a operace, která je definována pro prvky pole, vrátí nové pole, které se skládá z obrázků původního pole v rámci operace.

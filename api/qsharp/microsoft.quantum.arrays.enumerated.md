@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Enumerated
 title: Funkce výčtu
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Enumerated
 qsharp.summary: Given an array, returns a new array containing elements of the original array along with the indices of each element.
-ms.openlocfilehash: 0a591025a4eef79e08b47527c0bdb556f5645334
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 94e8fdb7288bc43ed84d10a3292819b455a2be31
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706065"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221415"
 ---
 # <a name="enumerated-function"></a>Funkce výčtu
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 V případě pole, vrátí nové pole obsahující prvky původního pole spolu s indexy každého prvku.

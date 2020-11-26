@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Any
 title: Libovolná funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Any
 qsharp.summary: Given an array and a predicate that is defined for the elements of the array, checks if at least one element of the array satisfies the predicate.
-ms.openlocfilehash: dd5639f1b0a76cb356c89aca0c0e02d375f30d12
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 717ab9ebcbb864a6faf1c14cd36125e589849f2e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706177"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221653"
 ---
 # <a name="any-function"></a>Libovolná funkce
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 V případě pole a predikátu, který je definován pro prvky pole, zkontroluje, zda alespoň jeden prvek pole splňuje predikát.

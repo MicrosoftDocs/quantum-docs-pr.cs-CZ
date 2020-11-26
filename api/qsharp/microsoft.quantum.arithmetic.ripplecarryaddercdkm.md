@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.RippleCarryAdderCDKM
 title: Operace RippleCarryAdderCDKM
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: RippleCarryAdderCDKM
 qsharp.summary: Reversible, in-place ripple-carry addition of two integers.
-ms.openlocfilehash: 6dcb5193c5d1d059682a79e63e6562aabff7539d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b08d8823fd539263205aca1ee15ee69adcb163b7
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706272"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222095"
 ---
 # <a name="ripplecarryaddercdkm-operation"></a>Operace RippleCarryAdderCDKM
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vratný, místní Ripple – přidání dvou celých čísel.
 
 ```qsharp
-operation RippleCarryAdderCDKM (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit
+operation RippleCarryAdderCDKM (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit is Adj + Ctl
 ```
 
 
@@ -58,7 +58,7 @@ Přenese qubit, je XORed s nejvýznamnějším bitem součtu.
 
 Tato operace má stejné funkce jako RippleCarryAdderD, ale místo $n $ používá jenom jeden pomocný qubit.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - Steven A. Cuccaro, Tomáš G. Draper, Samuel A. Kutin, David Petrie Moulton: "nové v rámci Ripple – přenést okruh", 2004.
   https://arxiv.org/abs/quant-ph/0410184v1

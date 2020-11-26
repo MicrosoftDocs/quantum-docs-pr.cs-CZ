@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Interleaved
 title: Prokládaný funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Interleaved
 qsharp.summary: Interleaves two arrays of (almost) same size.
-ms.openlocfilehash: 8405cabca17f2dd7c2680833bfab5c3768fcf752
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 1ff5999cc19f47e3dcae601b960446923b613d90
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705960"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220956"
 ---
 # <a name="interleaved-function"></a>Prokládaný funkce
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Ponechá dvě pole (téměř) stejné velikosti.

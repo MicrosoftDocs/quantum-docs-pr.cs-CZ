@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.MappedOverRange
 title: MappedOverRange – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: MappedOverRange
 qsharp.summary: Given a range and a function that takes an integer as input, returns a new array that consists of the images of the range values under the function.
-ms.openlocfilehash: e527a3ca1fd7571836f4f79bb453581f53d1db2b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b1d73c2503e63ed09a3d6a56421760ca29eb0c3f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705889"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220684"
 ---
 # <a name="mappedoverrange-function"></a>MappedOverRange – funkce
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Pro rozsah a funkci, která přijímá jako vstup celé číslo, vrátí nové pole, které se skládá z obrázků hodnot rozsahu pod funkcí.
