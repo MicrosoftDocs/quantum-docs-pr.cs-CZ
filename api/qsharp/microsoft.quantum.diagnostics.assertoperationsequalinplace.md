@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlace
 title: Operace AssertOperationsEqualInPlace
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Diagnostics
@@ -12,18 +12,18 @@ qsharp.summary: >-
   This assertion is implemented by checking the action of the operations on all states of the form $V_0 \otimes ... \otimes V_{n-1}$, where $V_k$ is one of the states $\ket{0}$, $\ket{1}$, $\ket{+}$ and $\ket{i}$ (+1 eigenstate of Pauli Y operator).
 
   This assertion uses $n$ qubits and requires multiple calls of the operations being compared.
-ms.openlocfilehash: 407a139da816281346eb06849f81e91b83202653
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9b17bac9d95baf5a542604892c64130bf35d7f69
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698152"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96202426"
 ---
 # <a name="assertoperationsequalinplace-operation"></a>Operace AssertOperationsEqualInPlace
 
 Obor názvů: [Microsoft. prověří. Diagnostics](xref:Microsoft.Quantum.Diagnostics)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
@@ -49,7 +49,7 @@ Počet qubits $n $, na kterých operace `givenU` fungují a `expectedU` pracují
 Bude zkontrolována operace na $n $ qubits.
 
 
-### <a name="expectedu--qubit--unit-adj"></a>očekávalo se: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ.
+### <a name="expectedu--qubit--unit--is-adj"></a>očekává se: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace reference na $n $ qubits, která se má `givenU` Porovnat s.
 
@@ -59,7 +59,7 @@ Operace reference na $n $ qubits, která se má `givenU` Porovnat s.
 
 
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 Základem stavů $ \ket {0} $, $ \ket {1} $, $ \ket{+} $ a $ \ket{i} $ je Chuang-Nielsen základ, který je popsaný v části [ *i. L. Čuangština, M. A. Nielsen*](https://arxiv.org/abs/quant-ph/9610001).
 

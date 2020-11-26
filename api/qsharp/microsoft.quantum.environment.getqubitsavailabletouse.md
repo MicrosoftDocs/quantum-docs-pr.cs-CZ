@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Environment.GetQubitsAvailableToUse
 title: Operace GetQubitsAvailableToUse
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Environment
 qsharp.name: GetQubitsAvailableToUse
 qsharp.summary: Returns the number of qubits currently available to use.
-ms.openlocfilehash: 25d43d369193fc7453fd5ce9c50769c438a69afb
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: ce461b03a08b4c83b9de142c957ce5c590fe9659
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698040"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201406"
 ---
 # <a name="getqubitsavailabletouse-operation"></a>Operace GetQubitsAvailableToUse
 
 Obor názvů: [Microsoft.. Environment](xref:Microsoft.Quantum.Environment)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Vrátí počet qubits aktuálně dostupných k použití.

@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Diagnostics.AssertOperationsEqualReferenced
 title: Operace AssertOperationsEqualReferenced
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Diagnostics
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Given two operations, asserts that they act identically for all input states.
 
   This assertion is implemented by using the Choi–Jamiołkowski isomorphism to reduce the assertion to one of a qubit state assertion on two entangled registers. Thus, this operation needs only a single call to each operation being tested, but requires twice as many qubits to be allocated. This assertion can be used to ensure, for instance, that an optimized version of an operation acts identically to its naïve implementation, or that an operation which acts on a range of non-quantum inputs agrees with known cases.
-ms.openlocfilehash: a3e8791321b4f2ca1885dffeb92c7b13e5491a32
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 59c0fa72c9ca8f3bc512b6ed674fd73babc57f84
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698148"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96202307"
 ---
 # <a name="assertoperationsequalreferenced-operation"></a>Operace AssertOperationsEqualReferenced
 
 Obor názvů: [Microsoft. prověří. Diagnostics](xref:Microsoft.Quantum.Diagnostics)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Tyto dvě operace vyhodnotí, že jsou identické pro všechny vstupní stavy.
@@ -47,7 +47,7 @@ Počet qubits, které se mají předat každé operaci
 Operace, která se má testovat
 
 
-### <a name="expected--qubit--unit-adj"></a>očekáváno: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="expected--qubit--unit--is-adj"></a>očekáváno: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace definující očekávané chování testované operace.
 

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Diagnostics.DumpRegister
 title: DumpRegister – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Diagnostics
 qsharp.name: DumpRegister
 qsharp.summary: Dumps the current target machine's status associated with the given qubits.
-ms.openlocfilehash: a6d29dbf0525077fd804563f85f189740fdc0429
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9623d6d881f1f0ec048c3a951fe259bdfac84766
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698113"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96202018"
 ---
 # <a name="dumpregister-function"></a>DumpRegister – funkce
 
 Obor názvů: [Microsoft. prověří. Diagnostics](xref:Microsoft.Quantum.Diagnostics)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Vypíše stav aktuálního cílového počítače přidružený k danému qubits.

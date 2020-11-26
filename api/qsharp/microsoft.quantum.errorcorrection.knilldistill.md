@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.KnillDistill
 title: Operace KnillDistill
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: KnillDistill
 qsharp.summary: Implements the Knill magic state distillation algorithm.
-ms.openlocfilehash: 1135db83cf750918347df10c6f1301b636aaee0c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: df00c7572d909a67ec658bc8dccaf0e338afe5c5
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697953"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96200743"
 ---
 # <a name="knilldistill-operation"></a>Operace KnillDistill
 
 Obor názvů: [Microsoft. ErrorCorrection.](xref:Microsoft.Quantum.ErrorCorrection)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Implementuje algoritmus Knill Magic State.
@@ -50,6 +50,6 @@ Sledujeme algoritmus Knill.
 Nicméně Současná implementace je daleko od optimálního, protože používá příliš mnoho qubits.
 V této rutině jsou vloženy stavy Magic. v takovém případě jsou k dispozici lepší protokoly.
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - [Knill](https://arxiv.org/abs/quant-ph/0402171)
