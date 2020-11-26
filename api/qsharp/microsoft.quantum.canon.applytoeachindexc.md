@@ -1,57 +1,57 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToEachIndexC
 title: Operace ApplyToEachIndexC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToEachIndexC
 qsharp.summary: Applies a single-qubit operation to each indexed element in a register. The modifier `C` indicates that the single-qubit operation is controllable.
-ms.openlocfilehash: 387d7ea24b9251386a71b42a1f51ce70933bf6fc
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 38fa23c70965118f1787f156bd617d6e967aba05
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704945"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217658"
 ---
-# <a name="applytoeachindexc-operation"></a><span data-ttu-id="2245c-102">Operace ApplyToEachIndexC</span><span class="sxs-lookup"><span data-stu-id="2245c-102">ApplyToEachIndexC operation</span></span>
+# <a name="applytoeachindexc-operation"></a><span data-ttu-id="0ef3e-102">Operace ApplyToEachIndexC</span><span class="sxs-lookup"><span data-stu-id="0ef3e-102">ApplyToEachIndexC operation</span></span>
 
-<span data-ttu-id="2245c-103">Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="2245c-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="0ef3e-103">Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="0ef3e-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="2245c-104">Balíček [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="2245c-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="0ef3e-104">Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="0ef3e-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="2245c-105">Aplikuje jednu operaci qubit na každý indexovaný element v registru.</span><span class="sxs-lookup"><span data-stu-id="2245c-105">Applies a single-qubit operation to each indexed element in a register.</span></span>
-<span data-ttu-id="2245c-106">Modifikátor `C` označuje, že operace s jedním qubit je ovladatelné.</span><span class="sxs-lookup"><span data-stu-id="2245c-106">The modifier `C` indicates that the single-qubit operation is controllable.</span></span>
+<span data-ttu-id="0ef3e-105">Aplikuje jednu operaci qubit na každý indexovaný element v registru.</span><span class="sxs-lookup"><span data-stu-id="0ef3e-105">Applies a single-qubit operation to each indexed element in a register.</span></span>
+<span data-ttu-id="0ef3e-106">Modifikátor `C` označuje, že operace s jedním qubit je ovladatelné.</span><span class="sxs-lookup"><span data-stu-id="0ef3e-106">The modifier `C` indicates that the single-qubit operation is controllable.</span></span>
 
 ```qsharp
-operation ApplyToEachIndexC<'T> (singleElementOperation : ((Int, 'T) => Unit is Ctl), register : 'T[]) : Unit
+operation ApplyToEachIndexC<'T> (singleElementOperation : ((Int, 'T) => Unit is Ctl), register : 'T[]) : Unit is Ctl
 ```
 
 
-## <a name="input"></a><span data-ttu-id="2245c-107">Vstup</span><span class="sxs-lookup"><span data-stu-id="2245c-107">Input</span></span>
+## <a name="input"></a><span data-ttu-id="0ef3e-107">Vstup</span><span class="sxs-lookup"><span data-stu-id="0ef3e-107">Input</span></span>
 
-### <a name="singleelementoperation--intt--unit-ctl"></a><span data-ttu-id="2245c-108">singleElementOperation: ([int](xref:microsoft.quantum.lang-ref.int), t) = seznam CTL>ch [jednotek](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="2245c-108">singleElementOperation : ([Int](xref:microsoft.quantum.lang-ref.int),'T) => [Unit](xref:microsoft.quantum.lang-ref.unit) Ctl</span></span>
+### <a name="singleelementoperation--intt--unit--is-ctl"></a><span data-ttu-id="0ef3e-108">singleElementOperation: ([int](xref:microsoft.quantum.lang-ref.int), t) => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL</span><span class="sxs-lookup"><span data-stu-id="0ef3e-108">singleElementOperation : ([Int](xref:microsoft.quantum.lang-ref.int),'T) => [Unit](xref:microsoft.quantum.lang-ref.unit)  is Ctl</span></span>
 
-<span data-ttu-id="2245c-109">Operace, která se má použít u každého qubit</span><span class="sxs-lookup"><span data-stu-id="2245c-109">Operation to apply to each qubit.</span></span>
-
-
-### <a name="register--t"></a><span data-ttu-id="2245c-110">registr: t []</span><span class="sxs-lookup"><span data-stu-id="2245c-110">register : 'T[]</span></span>
-
-<span data-ttu-id="2245c-111">Pole qubits, na které se má použít daná operace</span><span class="sxs-lookup"><span data-stu-id="2245c-111">Array of qubits on which to apply the given operation.</span></span>
+<span data-ttu-id="0ef3e-109">Operace, která se má použít u každého qubit</span><span class="sxs-lookup"><span data-stu-id="0ef3e-109">Operation to apply to each qubit.</span></span>
 
 
+### <a name="register--t"></a><span data-ttu-id="0ef3e-110">registr: t []</span><span class="sxs-lookup"><span data-stu-id="0ef3e-110">register : 'T[]</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="2245c-112">Výstup: [jednotka](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="2245c-112">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="0ef3e-111">Pole qubits, na které se má použít daná operace</span><span class="sxs-lookup"><span data-stu-id="0ef3e-111">Array of qubits on which to apply the given operation.</span></span>
 
 
 
-## <a name="type-parameters"></a><span data-ttu-id="2245c-113">Parametry typu</span><span class="sxs-lookup"><span data-stu-id="2245c-113">Type Parameters</span></span>
+## <a name="output--unit"></a><span data-ttu-id="0ef3e-112">Výstup: [jednotka](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="0ef3e-112">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
-### <a name="t"></a><span data-ttu-id="2245c-114">'S</span><span class="sxs-lookup"><span data-stu-id="2245c-114">'T</span></span>
 
-<span data-ttu-id="2245c-115">Cíl, na kterém každá operace funguje.</span><span class="sxs-lookup"><span data-stu-id="2245c-115">The target on which each of the operations acts.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="2245c-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="2245c-116">See Also</span></span>
+## <a name="type-parameters"></a><span data-ttu-id="0ef3e-113">Parametry typu</span><span class="sxs-lookup"><span data-stu-id="0ef3e-113">Type Parameters</span></span>
 
-- [<span data-ttu-id="2245c-117">Microsoft. proApplyToEachIndex. Canon.</span><span class="sxs-lookup"><span data-stu-id="2245c-117">Microsoft.Quantum.Canon.ApplyToEachIndex</span></span>](xref:Microsoft.Quantum.Canon.ApplyToEachIndex)
+### <a name="t"></a><span data-ttu-id="0ef3e-114">'S</span><span class="sxs-lookup"><span data-stu-id="0ef3e-114">'T</span></span>
+
+<span data-ttu-id="0ef3e-115">Cíl, na kterém každá operace funguje.</span><span class="sxs-lookup"><span data-stu-id="0ef3e-115">The target on which each of the operations acts.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="0ef3e-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="0ef3e-116">See Also</span></span>
+
+- [<span data-ttu-id="0ef3e-117">Microsoft. proApplyToEachIndex. Canon.</span><span class="sxs-lookup"><span data-stu-id="0ef3e-117">Microsoft.Quantum.Canon.ApplyToEachIndex</span></span>](xref:Microsoft.Quantum.Canon.ApplyToEachIndex)
