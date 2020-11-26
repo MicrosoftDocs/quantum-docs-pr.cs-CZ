@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian
 title: LittleEndianAsBigEndian – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: LittleEndianAsBigEndian
 qsharp.summary: Converts a `LittleEndian` qubit register to a `BigEndian` qubit register by reversing the qubit ordering.
-ms.openlocfilehash: 8c2e6150a839bb0cd4c311c821b78a080288cd22
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3cdcd18f06bf43d109c9f5e69f319f9d33b96bfc
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707209"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222741"
 ---
 # <a name="littleendianasbigendian-function"></a>LittleEndianAsBigEndian – funkce
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Převede `LittleEndian` qubit registraci na `BigEndian` qubit registr vrácením řazení qubit.

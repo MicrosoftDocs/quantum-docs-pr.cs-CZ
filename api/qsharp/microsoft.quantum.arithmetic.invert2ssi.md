@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.Invert2sSI
 title: Operace Invert2sSI
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: Invert2sSI
 qsharp.summary: Inverts a given integer modulo 2's complement.
-ms.openlocfilehash: 6cb27477d66320ba741eb902e7c8a9e740a9b3f7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 86d90fc5406089549de0036fcaebd9dc9d188c40
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707224"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222843"
 ---
 # <a name="invert2ssi-operation"></a>Operace Invert2sSI
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. prodoby. NUMERIC](https://nuget.org/packages/Microsoft.Quantum.Numerics)
 
 
 Obrátí daný celočíselný doplněk modulo 2.
 
 ```qsharp
-operation Invert2sSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit
+operation Invert2sSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit is Adj + Ctl
 ```
 
 

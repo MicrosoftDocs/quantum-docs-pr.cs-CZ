@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.MAJ
 title: Operace MAJ
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: MAJ
 qsharp.summary: This applies the in-place majority operation to 3 qubits.
-ms.openlocfilehash: c1801d1d7ed04ead11b672f24d44a94989cf8f1d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 356689baa6d47b7b93a393f3672991bb589f6921
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707208"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222758"
 ---
 # <a name="maj-operation"></a>Operace MAJ
 
 Obor názvů: Microsoft. prostředníky [. aritmetické operace](xref:Microsoft.Quantum.Arithmetic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 To aplikuje operaci na místní většinu na 3 qubits.
 
 ```qsharp
-operation MAJ (input0 : Qubit, input1 : Qubit, target : Qubit) : Unit
+operation MAJ (input0 : Qubit, input1 : Qubit, target : Qubit) : Unit is Adj + Ctl
 ```
 
 
