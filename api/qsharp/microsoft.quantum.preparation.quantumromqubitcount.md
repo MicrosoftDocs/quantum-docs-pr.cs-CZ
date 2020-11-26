@@ -1,25 +1,34 @@
 ---
 uid: Microsoft.Quantum.Preparation.QuantumROMQubitCount
 title: QuantumROMQubitCount – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Preparation
 qsharp.name: QuantumROMQubitCount
-qsharp.summary: Returns the total number of qubits that must be allocated to the operation returned by `QuantumROM`.
-ms.openlocfilehash: 988d5efa3e27cf5e9a276ab3ab443c10f88fe1ad
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+qsharp.summary: >-
+  > [!WARNING]
+
+  > QuantumROMQubitCount has been deprecated. Please use <xref:Microsoft.Quantum.Preparation.PurifiedMixedStateRequirements> instead.
+
+
+  Returns the total number of qubits that must be allocated to the operation returned by `QuantumROM`.
+ms.openlocfilehash: 0ec1e042b9f675505f73bfcdcc6706d0bc0367df
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708193"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96210399"
 ---
 # <a name="quantumromqubitcount-function"></a>QuantumROMQubitCount – funkce
 
 Obor názvů: [Microsoft. přípravno. Preparation](xref:Microsoft.Quantum.Preparation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
+
+> [!WARNING]
+> QuantumROMQubitCount se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PurifiedMixedStateRequirements>Místo toho ho použijte.
 
 Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM` .
 

@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfElseRC
 title: Operace ApplyIfElseRC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfElseRC
 qsharp.summary: Applies one of two controllable operations, depending on the value of a classical result.
-ms.openlocfilehash: 45bd0f46fb2e28c5c9aaa21cb7ec065baf279d2a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b2e4ade84b25b0100fe4b69814c760a672833f06
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705281"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96209481"
 ---
 # <a name="applyifelserc-operation"></a>Operace ApplyIfElseRC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje jednu ze dvou přizpůsobených operací v závislosti na hodnotě klasického výsledku.
 
 ```qsharp
-operation ApplyIfElseRC<'T, 'U> (result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U)) : Unit
+operation ApplyIfElseRC<'T, 'U> (result : Result, (zeroOp : ('T => Unit is Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Ctl), oneInput : 'U)) : Unit is Ctl
 ```
 
 
@@ -39,7 +39,7 @@ Výsledkem `result` je, že použije operaci `zeroOp` s `zeroInput` jako vstup `
 Výsledek měření použitý k určení, zda `zeroOp` nebo `oneOp` je použit.
 
 
-### <a name="zeroop--t--unit-ctl"></a>zeroOp: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="zeroop--t--unit--is-ctl"></a>zeroOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 Ověřitelné operace, která se má použít `result == Zero` , když.
 
@@ -49,7 +49,7 @@ Ověřitelné operace, která se má použít `result == Zero` , když.
 Vstup, který má být k dispozici v `zeroOp` případě `result == Zero` .
 
 
-### <a name="oneop--u--unit-ctl"></a>oneOp: U [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="oneop--u--unit--is-ctl"></a>oneOp: U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL.
 
 Ověřitelné operace, která se má použít `result == One` , když.
 

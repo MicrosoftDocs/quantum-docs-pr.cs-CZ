@@ -1,24 +1,60 @@
 ### YamlMime:QSharpNamespace
 functions:
+- summary: Krok implementace libovolného postupu přípravy stavu
+  uid: Microsoft.Quantum.Preparation.ApproximatelyUnprepareArbitraryStatePlan
 - summary: >-
     Vypočítá souřadnice sféry Bloch pro stav s jedním qubit.
 
     Předaná dvě složitá čísla $a 0, a1 $, která představuje stav qubit, vypočítá souřadnice Bloch koule tak, že $a 0 \ket {0} + a1 \ket {1} = r e ^ {IT} (e ^ {-i \phi/2}\cos{(\ théta/2)} \ket {0} + e ^ {i \phi/2}\sin{(\ théta/2)} \ket {1} ) $.
   uid: Microsoft.Quantum.Preparation.BlochSphereCoordinates
 - summary: >-
+    Vrátí operaci, která připraví čištění daného smíšeného stavu.
+
+    "Vyčištěný smíšený stav" odkazuje na stavy formuláře | ψ ⟩ = σi √ PI | i ⟩ | uvolňování ⟩ určené vektorem koeficientů {PI}. Stavy tohoto formuláře se dají snížit na smíšené stavy ρ ≔ PI | i ⟩ ⟨ i | trasováním v registru "uvolnění paměti" (to znamená smíšený stav, který je šikmý v výpočetních intervalech).
+
+
+    https://arxiv.org/pdf/1805.03662.pdf?page=15Další diskuzi najdete v tématu.
+  uid: Microsoft.Quantum.Preparation.PurifiedMixedState
+- summary: Vrátí celkový počet qubits, které musí být přiděleny, aby bylo možné použít operaci vrácenou @"microsoft.quantum.preparation.purifiedmixedstate" .
+  uid: Microsoft.Quantum.Preparation.PurifiedMixedStateRequirements
+- summary: >-
+    Vrátí operaci, která připraví čištění daného kombinovaného stavu, entangled s registrem reprezentujícím danou kolekci dat.
+
+    "Vyčištěný smíšený stav s daty" odkazuje na stav formuláře σi √ PI | i ⟩ | XI ⟩ | uvolňování ⟩, kde každé XI je BITSTRING kódování dalších dat přidružených k registru | i ⟩.
+
+
+    https://arxiv.org/pdf/1805.03662.pdf?page=15Další diskuzi najdete v tématu.
+  uid: Microsoft.Quantum.Preparation.PurifiedMixedStateWithData
+- summary: >-
+    > [!WARNING]
+
+    > QuantumROM se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PurifiedMixedState>Místo toho ho použijte.
+
+
     Vystupuje danou matici hustoty pomocí techniky paměti pro paměťová pole.
 
     V případě, že se zobrazí seznam $N alpha_j $ \ket{j}\bra{j} $, vrátí se jednotková $U $, která používá techniku pro vystavení paměti, k přípravě aproximace $ \tilde\rho\ sum_ {j = 0} ^ {N-1} p_j $ z čištění matrice hustoty $ \rho = \ sum_ {j = 0} ^ {N-1} \frac{| alpha_j |} {\ sum_k | \ alpha_k |} \ket{j}\bra{j} $. V této aproximaci je chyba $ \epsilon $ taková, že $ | p_j-\frac{| alpha_j |} {\ sum_k | \ alpha_k |} | \le \epsilon/N $ a $ \| \tilde\rho-\rho \| \le \epsilon $. Jinými slovy $ $ \begin{align} U\ket {0} ^ {\lceil\ Log_2 N\rceil} \ KET {0} ^ {m} = \ sum_ {j = 0} ^ {N-1} \sqrt{p_j} \ket{j}\ket{\Text{garbage} _J}. \end{align} $ $
   uid: Microsoft.Quantum.Preparation.QuantumROM
 - summary: ''
   uid: Microsoft.Quantum.Preparation.QuantumROMBitStringWriterByIndex
-- summary: Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM` .
+- summary: >-
+    > [!WARNING]
+
+    > QuantumROMQubitCount se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PurifiedMixedStateRequirements>Místo toho ho použijte.
+
+
+    Vrátí celkový počet qubits, které musí být přiděleny k operaci vrácené funkcí `QuantumROM` .
   uid: Microsoft.Quantum.Preparation.QuantumROMQubitCount
 - summary: ''
-  uid: Microsoft.Quantum.Preparation.RangeLength
-- summary: ''
   uid: Microsoft.Quantum.Preparation.RoundedDiscretizationCoefficients
+- summary: ''
+  uid: Microsoft.Quantum.Preparation.SplitSign
 - summary: >-
+    > [!WARNING]
+
+    > StatePreparationComplexCoefficients se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP>Místo toho ho použijte.
+
+
     Vrátí operaci, která připraví určitý stav nečinnosti.
 
     Vrácená operace $U $ připraví libovolný stav za běhu $ \ket{\psi} $ pomocí složitých koeficientů $r _j e ^ {i t_j} $ ze stavu výpočtu $n $-qubit výpočetního základu $ \ket{0...0} $.
@@ -26,6 +62,11 @@ functions:
     Akce U nově přiděleného registru je dána $ $ \begin{align} U\ket {0... 0} = \ket{\psi} = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} r_j e ^ {i t_j} \ket{j}}{\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | r_j | ^ 2}}. \end{align} $ $
   uid: Microsoft.Quantum.Preparation.StatePreparationComplexCoefficients
 - summary: >-
+    > [!WARNING]
+
+    > StatePreparationPositiveCoefficients se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateD>Místo toho ho použijte.
+
+
     Vrátí operaci, která připraví daný stav.
 
     Vrácená operace $U $ připraví libovolný stav pro každý kraj $ \ket{\psi} $ s pozitivním koeficientem $ \ alpha_j \ge $0 ze stavu $n $-qubit výpočetního základu $ \ket{0...0} $.
@@ -33,17 +74,17 @@ functions:
     Akce U nově přiděleného registru je dána $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} \ alpha_j \ket{j}}{\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | \ alpha_j | ^ 2}}. \end{align} $ $
   uid: Microsoft.Quantum.Preparation.StatePreparationPositiveCoefficients
 - summary: Krok implementace libovolného postupu přípravy stavu
-  uid: Microsoft.Quantum.Preparation._ApproximatelyUnprepareArbitraryStatePlan
+  uid: Microsoft.Quantum.Preparation.StatePreparationSBMComputeCoefficients
 - summary: ''
   uid: Microsoft.Quantum.Preparation._CompileApproximateArbitraryStatePreparation
 - summary: ''
   uid: Microsoft.Quantum.Preparation._QuantumROMDiscretization
-- summary: ''
-  uid: Microsoft.Quantum.Preparation._QuantumROMQubitManager
-- summary: Krok implementace libovolného postupu přípravy stavu
-  uid: Microsoft.Quantum.Preparation._StatePreparationSBMComputeCoefficients
 name: Microsoft.Quantum.Preparation
-newtypes: []
+newtypes:
+- summary: Představuje konkrétní smíšený stav, který lze připravit na index a uvolňování paměti.
+  uid: Microsoft.Quantum.Preparation.MixedStatePreparation
+- summary: Představuje počet qubits vyžadovaných pro přípravu daného smíšeného stavu.
+  uid: Microsoft.Quantum.Preparation.MixedStatePreparationRequirements
 operations:
 - summary: ''
   uid: Microsoft.Quantum.Preparation.ApplyGlobalRotationStep
@@ -51,17 +92,39 @@ operations:
   uid: Microsoft.Quantum.Preparation.ApplyMultiplexStep
 - summary: Aplikuje operaci na základní qubits, která vytváří registr s malým endian. Tato operace je označená jako interní, protože registr Little-endian má hodnotu neprůhledný, takže se jedná jenom o podrobnosti implementace.
   uid: Microsoft.Quantum.Preparation.ApplyToLittleEndian
-- summary: Vzhledem k sadě koeficientů a registru s kódováním ve formátu Little endian se připraví stav v tomto registru, který je popsán danými koeficienty, až do dané tolerance odhadu.
+- summary: >-
+    > [!WARNING]
+
+    > ApproximatelyPrepareArbitraryState se už nepoužívá. <xref:Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryStateCP>Místo toho ho použijte.
+
+
+    Vzhledem k sadě koeficientů a registru s kódováním ve formátu Little endian se připraví stav v tomto registru, který je popsán danými koeficienty, až do dané tolerance odhadu.
   uid: Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryState
-- summary: Vzhledem k sadě koeficientů a registru s kódováním nenaloženého formátu Little endian připraví stav v tomto registru, který je popsán v daných koeficientech.
+- summary: Vzhledem k sadě koeficientů a registru s kódováním ve formátu Little endian se připraví stav v tomto registru, který je popsán danými koeficienty, až do dané tolerance odhadu.
+  uid: Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryStateCP
+- summary: Vzhledem k sadě koeficientů a registru s kódováním ve formátu Little endian se připraví stav v tomto registru, který je popsán danými koeficienty, až do dané tolerance odhadu.
+  uid: Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryStateD
+- summary: ''
+  uid: Microsoft.Quantum.Preparation.IgnoreDataRegister
+- summary: >-
+    > [!WARNING]
+
+    > PrepareArbitraryState se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP>Místo toho ho použijte.
+
+
+    Vzhledem k sadě koeficientů a registru s kódováním nenaloženého formátu Little endian připraví stav v tomto registru, který je popsán v daných koeficientech.
   uid: Microsoft.Quantum.Preparation.PrepareArbitraryState
-- summary: Připraví stav Choi – Jamiłkowski pro danou operaci na daný odkaz a cílové Registry.
+- summary: Vzhledem k sadě koeficientů a registru s kódováním nenaloženého formátu Little endian připraví stav v tomto registru, který je popsán v daných koeficientech.
+  uid: Microsoft.Quantum.Preparation.PrepareArbitraryStateCP
+- summary: Vzhledem k sadě koeficientů a registru s kódováním nenaloženého formátu Little endian připraví stav v tomto registru, který je popsán v daných koeficientech.
+  uid: Microsoft.Quantum.Preparation.PrepareArbitraryStateD
+- summary: Připraví stav Choi – Jamiołkowski pro danou operaci na daný odkaz a cílové Registry.
   uid: Microsoft.Quantum.Preparation.PrepareChoiState
-- summary: Připraví stav Choi-Jamiłkowski pro danou operaci se sousední variantou typu na daný odkaz a cílové Registry.
+- summary: Připraví stav Choi-Jamiołkowski pro danou operaci se sousední variantou typu na daný odkaz a cílové Registry.
   uid: Microsoft.Quantum.Preparation.PrepareChoiStateA
-- summary: Připraví stav Choi-Jamiłkowski pro danou operaci se kontrolovanou variantou na daný odkaz a cílové Registry.
+- summary: Připraví stav Choi-Jamiołkowski pro danou operaci se kontrolovanou variantou na daný odkaz a cílové Registry.
   uid: Microsoft.Quantum.Preparation.PrepareChoiStateC
-- summary: Připraví stav Choi – Jamiłkowski pro danou operaci s použitím kontrolovaných i sousedících variant na daný odkaz a cílové Registry.
+- summary: Připraví stav Choi – Jamiołkowski pro danou operaci s použitím kontrolovaných i sousedících variant na daný odkaz a cílové Registry.
   uid: Microsoft.Quantum.Preparation.PrepareChoiStateCA
 - summary: >-
     Entangles dva Registry qubit.
@@ -73,9 +136,16 @@ operations:
 
     Registr se připravuje ve stavu $ \boldone/2 ^ N $ tím, že použije kompletní kanál depolarizing na každou qubit, kde $N $ je délka registru.
   uid: Microsoft.Quantum.Preparation.PrepareIdentity
+- summary: Připraví qubit v kladné eigenstate daného operátoru Pauli. Pokud se udělí operátor identity, qubit se připraví do maximálního smíšeného stavu.
+  uid: Microsoft.Quantum.Preparation.PreparePauliEigenstate
 - summary: ''
   uid: Microsoft.Quantum.Preparation.PrepareQuantumROMState
 - summary: >-
+    > [!WARNING]
+
+    > PrepareQubit se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PreparePauliEigenstate>Místo toho ho použijte.
+
+
     Připraví qubit na + 1 ( `Zero` ) eigenstate daného operátoru Pauli. Pokud se udělí operátor identity, qubit se připraví do maximálního smíšeného stavu.
 
     Pokud byl původně qubit ve stavu $ \ket {0} $, tato operace připraví qubit v $ + $1 eigenstate daného operátoru Pauli, nebo pro `PauliI` , v případě, že je místo toho ve stavu "maximálního smíšené" (viz <xref:microsoft.quantum.preparation.preparesinglequbitidentity> ).
@@ -93,15 +163,17 @@ operations:
     To znamená, že tato Jednotková $U $ vytvoří jednotnou polohu ve všech číselných stavech $0 $ to $M-$1 a zadá vstupní stav $ \ket{0\cdots 0} $. Jinými slovy $ $ \begin{align} U\ket {0} = \frac {1} {\sqrt{m}}\ sum_ {j = 0} ^ {M-1} \ket{j}. \end{align} $ $.
   uid: Microsoft.Quantum.Preparation.PrepareUniformSuperposition
 - summary: Krok implementace <xref:microsoft.quantum.canon.prepareuniformsuperposition>
-  uid: Microsoft.Quantum.Preparation.PrepareUniformSuperposition_
+  uid: Microsoft.Quantum.Preparation.PrepareUniformSuperpositionOracle
 - summary: ''
   uid: Microsoft.Quantum.Preparation.WriteQuantumROMBitString
+- summary: Vzhledem k množině koeficientů a zakódovanému registru unentangled qubits, který je ve formátu Little endian, všechny z nich jsou v nulovém stavu, připraví stav v tomto registru, který je popsán v daných koeficientech. Používá emulaci stavu, je-li podporováno cílem.
+  uid: Microsoft.Quantum.Preparation._PrepareAmplitudesFromZeroState
 summary: Tento obor názvů obsahuje funkce a operace pro přípravu qubits do libovolného počátečního stavu.
 uid: Microsoft.Quantum.Preparation
 metadata:
-  ms.openlocfilehash: f8dc07d5fe1073f626eea41e6291d8cc919d93b6
-  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.openlocfilehash: f08467fae166b83cbb71d86739b4cd1300259b8b
+  ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/27/2020
-  ms.locfileid: "92708373"
+  ms.lasthandoff: 11/26/2020
+  ms.locfileid: "96210297"

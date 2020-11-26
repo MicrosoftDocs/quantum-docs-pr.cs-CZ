@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfElseBC
 title: Operace ApplyIfElseBC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfElseBC
 qsharp.summary: Applies one of two controllable operations, depending on the value of a classical bit.
-ms.openlocfilehash: 032d92484dc96481cb981d9d8acfeed248a9116d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: ea06b0a0a07659407e13caa2baa4f3e37ca2a0f7
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705337"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96209515"
 ---
 # <a name="applyifelsebc-operation"></a>Operace ApplyIfElseBC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje jednu ze dvou přidaných operací v závislosti na hodnotě klasického bitu.
 
 ```qsharp
-operation ApplyIfElseBC<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Ctl), trueInput : 'T), (falseOp : ('U => Unit is Ctl), falseInput : 'U)) : Unit
+operation ApplyIfElseBC<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Ctl), trueInput : 'T), (falseOp : ('U => Unit is Ctl), falseInput : 'U)) : Unit is Ctl
 ```
 
 
@@ -39,7 +39,7 @@ V případě bitu `bit` použije operaci `trueOp` s `trueInput` jako vstup `bit`
 Logická hodnota, která určuje, zda `trueOp` nebo `falseOp` je použita.
 
 
-### <a name="trueop--t--unit-ctl"></a>trueOp: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="trueop--t--unit--is-ctl"></a>trueOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 Ověřitelné operace, která má být použita `bit` , pokud je `true` .
 
@@ -49,7 +49,7 @@ Ověřitelné operace, která má být použita `bit` , pokud je `true` .
 Vstup, který má být k dispozici, `trueOp` Když `bit` je `true` .
 
 
-### <a name="falseop--u--unit-ctl"></a>falseOp: U [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="falseop--u--unit--is-ctl"></a>falseOp: U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL.
 
 Ověřitelné operace, která má být použita `bit` , pokud je `false` .
 
