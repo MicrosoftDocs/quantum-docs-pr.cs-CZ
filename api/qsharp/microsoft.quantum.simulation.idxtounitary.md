@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.IdxToUnitary
 title: IdxToUnitary – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: IdxToUnitary
 qsharp.summary: Used in implementation of `PauliBlockEncoding`
-ms.openlocfilehash: a142d8a5af56a43de6341e3c0bdc77f50030f06e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: dd13b2d2e846dcddb820599ea26aa25b90903dbd
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697473"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96229269"
 ---
 # <a name="idxtounitary-function"></a>IdxToUnitary – funkce
 
 Obor názvů: [Microsoft.. simulace](xref:Microsoft.Quantum.Simulation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Používá se v implementaci `PauliBlockEncoding`
@@ -40,13 +40,13 @@ function IdxToUnitary (idx : Int, genFun : (Int -> Microsoft.Quantum.Simulation.
 
 
 
-### <a name="genidxtounitary--generatorindex---qubit--unit-adj--ctl"></a>genIdxToUnitary: [GeneratorIndex](xref:Microsoft.Quantum.Simulation.GeneratorIndex) -> [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotky](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+### <a name="genidxtounitary--generatorindex---qubit--unit--is-adj--ctl"></a>genIdxToUnitary: [GeneratorIndex](xref:Microsoft.Quantum.Simulation.GeneratorIndex) -> [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 
 
 
 
-## <a name="output--qubit--unit-adj--ctl"></a>Výstup: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+## <a name="output--qubit--unit--is-adj--ctl"></a>Výstup: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 
 
