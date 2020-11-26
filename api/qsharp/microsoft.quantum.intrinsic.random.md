@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Intrinsic.Random
 title: Náhodná operace
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Intrinsic
@@ -10,18 +10,18 @@ qsharp.summary: >-
   > [!WARNING]
 
   > Random has been deprecated. Please use <xref:Microsoft.Quantum.Random.DrawCategorical> instead.
-ms.openlocfilehash: d7657dd8c7b69df0d257033871bf9a2274ae4ba6
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 1ce3c7ef5a0baba7fdbbed638ada5697f05fcd06
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707121"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96198754"
 ---
 # <a name="random-operation"></a>Náhodná operace
 
 Obor názvů: [Microsoft.. vnitřní](xref:Microsoft.Quantum.Intrinsic)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 > [!WARNING]

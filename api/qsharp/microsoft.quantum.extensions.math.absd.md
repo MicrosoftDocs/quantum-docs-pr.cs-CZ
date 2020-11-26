@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.AbsD
 title: AbsD – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,18 +14,18 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.absd".
-ms.openlocfilehash: cc71acf4bec78fbc3ff554c700cdd681cfafda52
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: ab0b87ab8e0a644abc039b016b9fd350008c3dca
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697432"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96199859"
 ---
 # <a name="absd-function"></a>AbsD – funkce
 
 Obor názvů: [Microsoft.. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 > [!WARNING]
