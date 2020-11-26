@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning._EstimateDerivativeWithParameterShift
 title: Operace _EstimateDerivativeWithParameterShift
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: _EstimateDerivativeWithParameterShift
 qsharp.summary: ''
-ms.openlocfilehash: 66451cb34dfce9073cdfeb5dd593e31eee5a2eca
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 729e1b43f2efb8a512a6283f33846ea6eba88c79
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706961"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96212303"
 ---
 # <a name="_estimatederivativewithparametershift-operation"></a>Operace _EstimateDerivativeWithParameterShift
 
 Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)
 
 
 

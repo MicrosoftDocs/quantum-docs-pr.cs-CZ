@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning._Flipped
 title: _Flipped funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: _Flipped
 qsharp.summary: ''
-ms.openlocfilehash: 35f5c36671373cc2023eebd46c17b644a821cd93
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 7799b03a791466a8ae6c62168812437e8b875fbb
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708055"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96212235"
 ---
 # <a name="_flipped-function"></a>_Flipped funkce
 
 Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)
 
 
 
