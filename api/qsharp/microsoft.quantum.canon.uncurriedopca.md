@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.UncurriedOpCA
 title: UncurriedOpCA – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: UncurriedOpCA
 qsharp.summary: Given a function which returns operations, returns a new operation which takes both inputs as a tuple. The modifier `CA` indicates that the operations are controllable and adjointable.
-ms.openlocfilehash: 6a0f2e1b345d0ba3ac5c779c5dc2bfffaf659a0b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 45526c0202e417213aab3fe7819827588e794e23
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698789"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216383"
 ---
 # <a name="uncurriedopca-function"></a>UncurriedOpCA – funkce
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Funkce, která vrací operace, vrací novou operaci, která přijímá oba vstupy jako řazené kolekce členů.
@@ -31,13 +31,13 @@ function UncurriedOpCA<'T, 'U> (curriedOp : ('T -> ('U => Unit is Ctl + Adj))) :
 
 ## <a name="input"></a>Vstup
 
-### <a name="curriedop--t---u--unit-ctl--adj"></a>curriedOp: t-> ' U [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL a ADJ
+### <a name="curriedop--t---u--unit--is-adj--ctl"></a>curriedOp: t-> ' U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 Funkce, která vrací operace.
 
 
 
-## <a name="output--tu--unit-ctl--adj"></a>Výstup: (ne, ' U) [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL + ADJ
+## <a name="output--tu--unit--is-adj--ctl"></a>Výstup: (t, ' U) => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 Nová operace `op` , která `op(t, u)` je ekvivalentem `(curriedOp(t))(u)` .
 

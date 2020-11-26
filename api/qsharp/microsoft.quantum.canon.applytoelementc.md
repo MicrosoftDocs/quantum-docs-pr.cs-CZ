@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElementC
 title: Operace ApplyToElementC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElementC
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: bd466ff59e6e962be9a7e58b6d298c60b0d1d90d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: c8d7841e3846ab435671f7959c724f987d8ad5a0
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704904"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217573"
 ---
 # <a name="applytoelementc-operation"></a>Operace ApplyToElementC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Použije operaci na daný prvek pole.
 
 ```qsharp
-operation ApplyToElementC<'T> (op : ('T => Unit is Ctl), index : Int, targets : 'T[]) : Unit
+operation ApplyToElementC<'T> (op : ('T => Unit is Ctl), index : Int, targets : 'T[]) : Unit is Ctl
 ```
 
 
@@ -34,7 +34,7 @@ Pro danou operaci se `op` použije index `index` a pole cílů `targets` `op(tar
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--t--unit-ctl"></a>op: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>op: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 Operace, která se má použít.
 

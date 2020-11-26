@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyWithC
 title: Operace ApplyWithC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyWithC
 qsharp.summary: Given two operations, applies one as conjugated with the other.
-ms.openlocfilehash: 8de1ddf0bf176853b33926be7647bc5d1d35095d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 172f9098a53c97e71f160b4a48479c3184be4385
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704585"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217233"
 ---
 # <a name="applywithc-operation"></a>Operace ApplyWithC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Dané dvě operace platí pro sebe jako sdružené s druhou.
 
 ```qsharp
-operation ApplyWithC<'T> (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Ctl), target : 'T) : Unit
+operation ApplyWithC<'T> (outerOperation : ('T => Unit is Adj), innerOperation : ('T => Unit is Ctl), target : 'T) : Unit is Ctl
 ```
 
 
@@ -34,12 +34,12 @@ Vzhledem k dvěma operacím, které jsou popsány v rámci $U $ a $V $, jsou pou
 
 ## <a name="input"></a>Vstup
 
-### <a name="outeroperation--t--unit-adj"></a>outerOperation: t [=> ADJ](xref:microsoft.quantum.lang-ref.unit)
+### <a name="outeroperation--t--unit--is-adj"></a>outerOperation: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace $U $, která se má použít pro sdruženou $V $ Všimněte si, že vnější operace $U $ musí být sousední, ale nemusí být ovladatelné.
 
 
-### <a name="inneroperation--t--unit-ctl"></a>innerOperation: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="inneroperation--t--unit--is-ctl"></a>innerOperation: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 Operace $V $ je sdružená.
 

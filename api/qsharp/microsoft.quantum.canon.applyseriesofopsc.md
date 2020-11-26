@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplySeriesOfOpsC
 title: Operace ApplySeriesOfOpsC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplySeriesOfOpsC
 qsharp.summary: Applies a list of ops and their targets sequentially on an array. (Controlled)
-ms.openlocfilehash: d909aadbfe86f6d1314e9be5434249c40932ae4a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: eaa0ea3e33cce708af5879cfbe875397fbb82a8a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705016"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217930"
 ---
 # <a name="applyseriesofopsc-operation"></a>Operace ApplySeriesOfOpsC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje seznam operací OPS a jejich cílů postupně na pole. Kontrol
 
 ```qsharp
-operation ApplySeriesOfOpsC<'T> (listOfOps : ('T[] => Unit is Ctl)[], targets : Int[][], register : 'T[]) : Unit
+operation ApplySeriesOfOpsC<'T> (listOfOps : ('T[] => Unit is Ctl)[], targets : Int[][], register : 'T[]) : Unit is Ctl
 ```
 
 
 ## <a name="input"></a>Vstup
 
-### <a name="listofops--t--unit-ctl"></a>listOfOps: t [] [=> CTL](xref:microsoft.quantum.lang-ref.unit) []
+### <a name="listofops--t--unit--is-ctl"></a>listOfOps: t [] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je CTL []
 
 Seznam operací, přičemž každý z nich vezme pole, které se má použít. Jsou aplikované postupně, nejnižšími indexy jako první.
 Každý musí mít řízený funktor

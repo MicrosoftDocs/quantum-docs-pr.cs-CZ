@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.CY
 title: Operace CY
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Applies the controlled-Y (CY) gate to a pair of qubits.
 
   $$ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & -i \\\\ 0 & 0 & i & 0 \end{align}, $$ where rows and columns are organized as in the quantum concepts guide.
-ms.openlocfilehash: 291891457ff39cf7092d17aa1d900dd0d35d9cf8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4a1a533421dd9205e973d5e8237d67b20bc4886d
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704280"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216570"
 ---
 # <a name="cy-operation"></a>Operace CY
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje bránu řízená na Y (CY) na pár qubits.
@@ -29,7 +29,7 @@ Aplikuje bránu řízená na Y (CY) na pár qubits.
 $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 \\ \\ 0 & 0 & 0 &-i \\ \\ 0 & 0 & i & 0 \end{align}, $ $, kde jsou řádky a sloupce uspořádány jako v průvodci koncepty.
 
 ```qsharp
-operation CY (control : Qubit, target : Qubit) : Unit
+operation CY (control : Qubit, target : Qubit) : Unit is Adj + Ctl
 ```
 
 

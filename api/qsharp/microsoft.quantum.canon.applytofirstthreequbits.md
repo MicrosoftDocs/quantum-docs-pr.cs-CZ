@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToFirstThreeQubits
 title: Operace ApplyToFirstThreeQubits
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToFirstThreeQubits
 qsharp.summary: Applies an operation to the first three qubits in the register.
-ms.openlocfilehash: 61330f9e9b1f6b9f3965c9240505814b295aaefe
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5572bd2a096a4f9bdb1153ae80950ae854965b82
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704864"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217454"
 ---
 # <a name="applytofirstthreequbits-operation"></a>Operace ApplyToFirstThreeQubits
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Použije operaci na první tři qubits v registru.

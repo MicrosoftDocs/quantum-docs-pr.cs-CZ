@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayC
 title: Operace DelayC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayC
 qsharp.summary: Applies a given operation with a delay.
-ms.openlocfilehash: acb817c3322063353dc08c5d6f8c539391b3bf39
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 7a11c3990802ff36856a90de927b38d2ede8bd9d
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92704240"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216485"
 ---
 # <a name="delayc-operation"></a>Operace DelayC
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje danou operaci na zpoždění.
 
 ```qsharp
-operation DelayC<'T> (op : ('T => Unit is Ctl), arg : 'T, aux : Unit) : Unit
+operation DelayC<'T> (op : ('T => Unit is Ctl), arg : 'T, aux : Unit) : Unit is Ctl
 ```
 
 
@@ -36,7 +36,7 @@ Výraz `Delay(op,arg,_)` umožňuje zpožděnou aplikaci `op` .
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--t--unit-ctl"></a>op: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>op: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 Operace, která se má použít.
 
