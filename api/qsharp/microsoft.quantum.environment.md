@@ -1,19 +1,19 @@
 ---
 uid: Microsoft.Quantum.Environment
 title: Obor názvů Microsoft.. Environment
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: namespace
 qsharp.name: Microsoft.Quantum.Environment
 qsharp.summary: These functions provide information about the environment in which the quantum computation is occuring.
-ms.openlocfilehash: 22a4d9da0d42189ed0a75190433180780a98a9bd
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 68e929671b83652ee9f57a427875a02c8aa181de
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698037"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201355"
 ---
-# <a name="microsoftquantumenvironment-namespace"></a><span data-ttu-id="e62a2-102">Obor názvů Microsoft.. Environment</span><span class="sxs-lookup"><span data-stu-id="e62a2-102">Microsoft.Quantum.Environment namespace</span></span>
+# <a name="microsoftquantumenvironment-namespace"></a><span data-ttu-id="9f3d3-102">Obor názvů Microsoft.. Environment</span><span class="sxs-lookup"><span data-stu-id="9f3d3-102">Microsoft.Quantum.Environment namespace</span></span>
 
-<span data-ttu-id="e62a2-103">Tyto funkce poskytují informace o prostředí, ve kterém dochází k výpočtu doby.</span><span class="sxs-lookup"><span data-stu-id="e62a2-103">These functions provide information about the environment in which the quantum computation is occuring.</span></span>
+<span data-ttu-id="9f3d3-103">Tyto funkce poskytují informace o prostředí, ve kterém dochází k výpočtu doby.</span><span class="sxs-lookup"><span data-stu-id="9f3d3-103">These functions provide information about the environment in which the quantum computation is occuring.</span></span>
 
