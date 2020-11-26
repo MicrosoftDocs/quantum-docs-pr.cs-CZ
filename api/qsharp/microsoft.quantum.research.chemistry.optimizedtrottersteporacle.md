@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Research.Chemistry.OptimizedTrotterStepOracle
 title: OptimizedTrotterStepOracle – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Research.Chemistry
 qsharp.name: OptimizedTrotterStepOracle
 qsharp.summary: Returns optimized Trotter step operation and the parameters necessary to run it.
-ms.openlocfilehash: f78d80f7ab71f4fc759d8045c9a134d7178aaa15
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 04b1ea457277e0681596cb564fae3782a2d09db9
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697517"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96229813"
 ---
 # <a name="optimizedtrottersteporacle-function"></a>OptimizedTrotterStepOracle – funkce
 
 Obor názvů: [Microsoft. Prohledávejte. Research. chemie](xref:Microsoft.Quantum.Research.Chemistry)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. prostudoval. Research. chemie](https://nuget.org/packages/Microsoft.Quantum.Research.Chemistry)
 
 
 Vrátí optimalizovanou operaci kroku Trotter a parametry nezbytné ke spuštění.
@@ -46,6 +46,6 @@ Pořadí Trotter integrátoru.
 
 
 
-## <a name="output--intdoublequbit--unit-adj--ctl"></a>Výstup: ([int](xref:microsoft.quantum.lang-ref.int); ([Double](xref:microsoft.quantum.lang-ref.double);[qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [Unit](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL))
+## <a name="output--intdoublequbit--unit--is-adj--ctl"></a>Výstup: ([int](xref:microsoft.quantum.lang-ref.int), ([Double](xref:microsoft.quantum.lang-ref.double),[qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL))
 
 Řazená kolekce členů `Int` , kde: je počet přidělených qubits, `Double` je `1.0/trotterStepSize` a operace je krok Trotter.

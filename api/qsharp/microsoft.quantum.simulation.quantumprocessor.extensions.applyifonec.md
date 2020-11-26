@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions.ApplyIfOneC
 title: Operace ApplyIfOneC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions
 qsharp.name: ApplyIfOneC
 qsharp.summary: ''
-ms.openlocfilehash: 8456201d4ed137f3d84013f3b5170b52b27e66c5
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d7c4e39ba26befeabad612e888da4abd00efaeb5
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92709244"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96230952"
 ---
 # <a name="applyifonec-operation"></a>Operace ApplyIfOneC
 
 Obor názvů: [Microsoft.. simulace. QuantumProcessor. Extensions](xref:Microsoft.Quantum.Simulation.QuantumProcessor.Extensions)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 
 
 ```qsharp
-operation ApplyIfOneC<'T> (measurementResult : Result, (onResultOneOp : ('T => Unit is Ctl), oneArg : 'T)) : Unit
+operation ApplyIfOneC<'T> (measurementResult : Result, (onResultOneOp : ('T => Unit is Ctl), oneArg : 'T)) : Unit is Ctl
 ```
 
 
@@ -35,7 +35,7 @@ operation ApplyIfOneC<'T> (measurementResult : Result, (onResultOneOp : ('T => U
 
 
 
-### <a name="onresultoneop--t--unit-ctl"></a>onResultOneOp: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="onresultoneop--t--unit--is-ctl"></a>onResultOneOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 
 

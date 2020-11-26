@@ -1,46 +1,46 @@
 ---
 uid: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions.ApplyConditionallyA
 title: Operace ApplyConditionallyA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions
 qsharp.name: ApplyConditionallyA
 qsharp.summary: ''
-ms.openlocfilehash: b6f7e7d6d51e531b0ec9e7e4f2f5772038421933
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8117fd632b78c24c9ecb8545274eaf296645b645
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697453"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96230408"
 ---
 # <a name="applyconditionallya-operation"></a>Operace ApplyConditionallyA
 
 Obor názvů: [Microsoft.. simulace. QuantumProcessor. Extensions](xref:Microsoft.Quantum.Simulation.QuantumProcessor.Extensions)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 
 
 ```qsharp
-operation ApplyConditionallyA<'T, 'U> (measurementResults : Result[], resultsValues : Result[], (onEqualOp : ('T => Unit is Adj), equalArg : 'T), (onNonEqualOp : ('U => Unit is Adj), nonEqualArg : 'U)) : Unit
+operation ApplyConditionallyA<'T, 'U> (measurementResults : Result[], resultsValues : Result[], (onEqualOp : ('T => Unit is Adj), equalArg : 'T), (onNonEqualOp : ('U => Unit is Adj), nonEqualArg : 'U)) : Unit is Adj
 ```
 
 
 ## <a name="input"></a>Vstup
 
-### <a name="measurementresults--__invalidresult__"></a>measurementResults: __neplatná <Result>__ []
+### <a name="measurementresults--__invalidresult__"></a>measurementResults: __neplatná <Result>__[]
 
 
 
 
-### <a name="resultsvalues--__invalidresult__"></a>resultsValues: __neplatná <Result>__ []
+### <a name="resultsvalues--__invalidresult__"></a>resultsValues: __neplatná <Result>__[]
 
 
 
 
-### <a name="onequalop--t--unit-adj"></a>onEqualOp: t [=> ADJ](xref:microsoft.quantum.lang-ref.unit)
+### <a name="onequalop--t--unit--is-adj"></a>onEqualOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 
 
@@ -50,7 +50,7 @@ operation ApplyConditionallyA<'T, 'U> (measurementResults : Result[], resultsVal
 
 
 
-### <a name="onnonequalop--u--unit-adj"></a>onNonEqualOp: ' U => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="onnonequalop--u--unit--is-adj"></a>onNonEqualOp: jednotka U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 
 

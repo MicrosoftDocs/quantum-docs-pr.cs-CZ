@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.PauliEvolutionSet
 title: PauliEvolutionSet – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: PauliEvolutionSet
 qsharp.summary: Represents a dynamical generator as a set of simulatable gates and an expansion in the Pauli basis.
-ms.openlocfilehash: 89c81aca4cfad6087d764ac8f5a0f1426e905e4b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fb53b90b6ab5ce1003f66b68a8c2ad8b3631f627
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707815"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96230341"
 ---
 # <a name="paulievolutionset-function"></a>PauliEvolutionSet – funkce
 
 Obor názvů: [Microsoft.. simulace](xref:Microsoft.Quantum.Simulation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Představuje dynamický generátor jako sadu simulovaných bran a rozšíření v Pauli.

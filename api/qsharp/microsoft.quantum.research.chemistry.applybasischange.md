@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Research.Chemistry.ApplyBasisChange
 title: Operace ApplyBasisChange
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Research.Chemistry
 qsharp.name: ApplyBasisChange
 qsharp.summary: ''
-ms.openlocfilehash: 66f7b8d3442560c0437797fd8ba43b3c2ddfd2af
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 170b76470f0a020add95a245f8b7e814a3c9e471
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708907"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96230629"
 ---
 # <a name="applybasischange-operation"></a>Operace ApplyBasisChange
 
 Obor názvů: [Microsoft. Prohledávejte. Research. chemie](xref:Microsoft.Quantum.Research.Chemistry)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. prostudoval. Research. chemie](https://nuget.org/packages/Microsoft.Quantum.Research.Chemistry)
 
 
 
 
 ```qsharp
-operation ApplyBasisChange (ops : (Qubit => Unit is Adj + Ctl)[], qubits : Qubit[], targetQubit : Qubit) : Unit
+operation ApplyBasisChange (ops : (Qubit => Unit is Adj + Ctl)[], qubits : Qubit[], targetQubit : Qubit) : Unit is Adj + Ctl
 ```
 
 
 ## <a name="input"></a>Vstup
 
-### <a name="ops--qubit--unit-adj--ctl"></a>Ops: [qubit](xref:microsoft.quantum.lang-ref.qubit) => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL []
+### <a name="ops--qubit--unit--is-adj--ctl"></a>Ops: [Qubit](xref:microsoft.quantum.lang-ref.qubit) => [jednotka](xref:microsoft.quantum.lang-ref.unit) qubit je ADJ + CTL []
 
 
 

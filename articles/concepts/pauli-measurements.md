@@ -87,8 +87,8 @@ Autor: bradben UID: Microsoft.. koncepty. Pauli MS. Author: v-benbra MS. Date: 1
 
 V předchozích diskusích jsme se zaměřili na výpočetní základní měření.
 Ve skutečnosti existují další běžná měření, ke kterým dochází v množství náročném na výpočetní výkon, který je ze zapsaných perspektiv pohodlný, aby se vyjádřily na základě výpočetních měření.
-Když pracujete s Q# , nejběžnější druh měření, na který budete pracovat, bude pravděpodobně *Pauli měřením* , které generalizace výpočetních měření budou zahrnovat měření v jiných základech, a parity mezi různými qubits.
-V takových případech je běžné projednávat měření operátoru Pauli, a to obecně operátor, jako je $ x, Y, Z $ nebo $ z \otimes , x \otimes x, x \otimes Y $ a tak dále.
+Když pracujete s Q# , nejběžnější druh měření, na který budete pracovat, bude pravděpodobně *Pauli měřením*, které generalizace výpočetních měření budou zahrnovat měření v jiných základech, a parity mezi různými qubits.
+V takových případech je běžné projednávat měření operátoru Pauli, a to obecně operátor, jako je $ x, Y, Z $ nebo $ z \otimes , x \otimes x, x \otimes Y $ a tak dále. 
 
 > [!TIP]
 > V nástroji Q# jsou operátory qubit Pauli obvykle zastoupeny poli typu `Pauli[]` .
@@ -168,7 +168,7 @@ $$
 Proto tensor produkty dvou operátorů Pauli- $ Z $ tvoří matici tvořenou dvěma mezerami, které se skládají z $ + 1 $ a $ -1 $ eigenvalues.
 Stejně jako u jediného qubitu představuje prostor, který znamená, že polovina přístupného vektorového prostoru patří do rozmezí $ + 1 $ eigenspace a zbylé polovině k $ -1 $ eigenspace.
 Obecně se dá snadno zobrazit z definice tensor produktu, že se jedná o tensor $ a identitu Pauli-Z $ .
-Příklad:
+Třeba
 
 $$
 \begin{align}
@@ -247,12 +247,12 @@ Další informace najdete v tématu [`Measure`](xref:Microsoft.Quantum.Intrinsic
 Informace o nemocném případě jsou výkonné.
 Umožňuje nám dělat úžasné věci, jako jsou čísla faktorů exponenciálně rychleji než nejlepší známé klasické algoritmy, nebo efektivně simulovat korelační elektronické systémy, které Classic potřebují k přesnému simulaci exponenciálních nákladů.
 Existují však určitá omezení výkonu s využitím nároku na výpočetní výkon.
-Jedno takové omezení je dáno *větaem bez klonování* .
+Jedno takové omezení je dáno *větaem bez klonování*.
 
 No-Cloning věta je aptly s názvem.
 Neumožňuje klonování obecných stavových stavů počítačem s více než jednou.
 Důkaz věta je výjimečně přímočarý.
-Úplný důkaz věta bez klonování je pro naši diskuzi příliš technický, proto se v rámci našeho oboru nejedná o důkaz, že v případě žádného dalšího pomocného qubitsu není v našem rozsahu (pomocné qubits se qubits používá pro pomocné místo během výpočtu a snadno se používá a spravuje v najdete v Q# tématu [výpůjčkované qubits](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
+Úplný důkaz věta bez klonování je pro naši diskuzi příliš technický, proto se v rámci našeho oboru nejedná o důkaz v případě žádné další pomocné qubitsy.
 
 V případě takového počítače s více operačními systémem musí být operace klonování popsána jednotnou maticí.
 Nezakážeme měření, protože by došlo k poškození stavu, který se snažíme klonovat.
