@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Measurement.MeasureAllZ
 title: Operace MeasureAllZ
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Measurement
 qsharp.name: MeasureAllZ
 qsharp.summary: Jointly measures a register of qubits in the Pauli Z basis.
-ms.openlocfilehash: 4ac36a77b37f672859e61f3db89a43f4ca1fc93c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6c44ab6a7983697644071f0e3cf106e9825661ee
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92697609"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96227076"
 ---
 # <a name="measureallz-operation"></a>Operace MeasureAllZ
 
 Obor názvů: [Microsoft. proměření](xref:Microsoft.Quantum.Measurement)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Společně měří Registry qubits v Pauli Z.

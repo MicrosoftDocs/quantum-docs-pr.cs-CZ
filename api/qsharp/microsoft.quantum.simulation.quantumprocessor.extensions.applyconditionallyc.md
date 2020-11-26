@@ -1,46 +1,46 @@
 ---
 uid: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions.ApplyConditionallyC
 title: Operace ApplyConditionallyC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions
 qsharp.name: ApplyConditionallyC
 qsharp.summary: ''
-ms.openlocfilehash: fc1cf50b7befd40cf20720032329438715a9b856
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 963a85e0e442592c01a2e70fa0dc02d6048d8be7
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92706656"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96229031"
 ---
 # <a name="applyconditionallyc-operation"></a>Operace ApplyConditionallyC
 
 Obor názvů: [Microsoft.. simulace. QuantumProcessor. Extensions](xref:Microsoft.Quantum.Simulation.QuantumProcessor.Extensions)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 
 
 ```qsharp
-operation ApplyConditionallyC<'T, 'U> (measurementResults : Result[], resultsValues : Result[], (onEqualOp : ('T => Unit is Ctl), equalArg : 'T), (onNonEqualOp : ('U => Unit is Ctl), nonEqualArg : 'U)) : Unit
+operation ApplyConditionallyC<'T, 'U> (measurementResults : Result[], resultsValues : Result[], (onEqualOp : ('T => Unit is Ctl), equalArg : 'T), (onNonEqualOp : ('U => Unit is Ctl), nonEqualArg : 'U)) : Unit is Ctl
 ```
 
 
 ## <a name="input"></a>Vstup
 
-### <a name="measurementresults--__invalidresult__"></a>measurementResults: __neplatná <Result>__ []
+### <a name="measurementresults--__invalidresult__"></a>measurementResults: __neplatná <Result>__[]
 
 
 
 
-### <a name="resultsvalues--__invalidresult__"></a>resultsValues: __neplatná <Result>__ []
+### <a name="resultsvalues--__invalidresult__"></a>resultsValues: __neplatná <Result>__[]
 
 
 
 
-### <a name="onequalop--t--unit-ctl"></a>onEqualOp: t [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="onequalop--t--unit--is-ctl"></a>onEqualOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL
 
 
 
@@ -50,7 +50,7 @@ operation ApplyConditionallyC<'T, 'U> (measurementResults : Result[], resultsVal
 
 
 
-### <a name="onnonequalop--u--unit-ctl"></a>onNonEqualOp: U [=> seznamu](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="onnonequalop--u--unit--is-ctl"></a>onNonEqualOp: U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je seznam CTL.
 
 
 
