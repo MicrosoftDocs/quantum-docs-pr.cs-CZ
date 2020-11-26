@@ -87,7 +87,7 @@ Autor: bradben MS. Author: v-benbra MS. Date: 9/1/2020 MS. téma: UID článku: 
 
 ## <a name="adjoint"></a>Sousednít
 
-Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují operátor s jednou [jednotkou](xref:microsoft.quantum.glossary#unitary-operator) , je sousední osoba inverzní k operaci a je označena symbolem Dagger. Například pokud operace `U` představuje operátor s jednou jednotkou $ $ , pak `Adjoint U` představuje $ u ^ \dagger $ . Další informace najdete v tématu [sousednít](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+Složitá sdružená [operace](xref:microsoft.quantum.glossary#operation). Pro operace, které implementují operátor s jednou [jednotkou](xref:microsoft.quantum.glossary#unitary-operator) , je sousední osoba inverzní k operaci a je označena symbolem Dagger. Například pokud operace `U` představuje operátor s jednou jednotkou $ $ , pak `Adjoint U` představuje $ u ^ \dagger $ . Další informace najdete v tématu [funktor Application](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="ancilla"></a>Ancilla
 
@@ -103,7 +103,8 @@ Grafické znázornění[qubitch](xref:microsoft.quantum.glossary#qubit) [stavov�
 
 ## <a name="callable"></a>Kompatibilní
 
-[Operace](xref:microsoft.quantum.glossary#operation) nebo [funkce](xref:microsoft.quantum.glossary#function) v Q# jazyce. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
+[Operace](xref:microsoft.quantum.glossary#operation) nebo [funkce](xref:microsoft.quantum.glossary#function) v [ Q# jazyce](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language#q-language).
+Další informace najdete v tématu [ Q# programy](xref:microsoft.quantum.guide.programs) .
 
 ## <a name="clifford-group"></a>Skupina Clifford
 
@@ -111,7 +112,7 @@ Sada operací, které zabírají octants [koule Bloch](xref:microsoft.quantum.gl
 
 ## <a name="controlled"></a>Kontrol
 
-[Operace](xref:microsoft.quantum.glossary#operation) s incidentem, která přijímá jednu nebo více [qubits](xref:microsoft.quantum.glossary#qubit) jako EnableRSS pro cílovou operaci. Další informace najdete v tématu [řízené a sousedící operace](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+[Operace](xref:microsoft.quantum.glossary#operation) s incidentem, která přijímá jednu nebo více [qubits](xref:microsoft.quantum.glossary#qubit) jako EnableRSS pro cílovou operaci. Další informace najdete v tématu [funktor Application](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="dirac-notation"></a>Zápis Dirac
 
@@ -137,12 +138,12 @@ Jedno ze čtyř specifických entangledch [stavových stavů](xref:microsoft.qua
 
 Jak se v průběhu času mění [stav](xref:microsoft.quantum.glossary#quantum-state) u. Další informace najdete v tématu [exponenciální matice](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
-## <a name="function"></a>Function
-Typ subrutiny v Q# jazyce, který je čistě klasický (nestránkovaného). I když jsou funkce používány v rámci algoritmů doby provozu, nemohou působit na [operace](xref:microsoft.quantum.glossary#operation) [qubits](xref:microsoft.quantum.glossary#qubit) nebo volání. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
+## <a name="function"></a>Funkce
+Typ subrutiny v Q# jazyce, který je čistě deterministický. I když jsou funkce používány v rámci algoritmů doby provozu, nemohou působit na [operace](xref:microsoft.quantum.glossary#operation) [qubits](xref:microsoft.quantum.glossary#qubit) nebo volání. Další informace najdete v tématu [ Q# programy](xref:microsoft.quantum.guide.programs) .
 
 ## <a name="gate"></a>OTP
 
-Starší verze termínu pro [operaci](xref:microsoft.quantum.glossary#operation)na základě konceptu klasických bran logiky. [Okruh](xref:microsoft.quantum.glossary#quantum-circuit-diagram) doby provozu je síť bran (nebo operací) na základě podobného konceptu klasických logických okruhů.
+Zastaralý termín pro určité vnitřní [operace](xref:microsoft.quantum.glossary#operation)s více procesory na základě konceptu klasických bran. [Okruh](xref:microsoft.quantum.glossary#quantum-circuit-diagram) v police je síť bran na základě podobného konceptu klasických logických okruhů.
 
 ## <a name="global-phase"></a>Globální fáze
 
@@ -166,15 +167,11 @@ Proměnná, jejíž hodnota může být po vytvoření změněna. Proměnlivá p
 
 ## <a name="namespace"></a>Obor názvů
 
-Popisek pro kolekci souvisejících názvů (například [operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function)a [uživatelsky definované typy](xref:microsoft.quantum.glossary#user-defined-type)). Například obor názvů [Microsoft.. Preparation](xref:microsoft.quantum.preparation) označí všechny symboly definované ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.
+Popisek pro kolekci souvisejících názvů (například [operace](xref:microsoft.quantum.glossary#operation), [funkce](xref:microsoft.quantum.glossary#function)a [uživatelsky definované typy](xref:microsoft.quantum.glossary#user-defined-type)). Například obor názvů [Microsoft.. Preparation](xref:Microsoft.Quantum.Preparation) označí všechny symboly definované ve standardní knihovně, které vám pomůžou s přípravou počátečních stavů.
 
 ## <a name="operation"></a>Operace
 
-Základní jednotka výpočtu počtu procesorů Q# . Je zhruba ekvivalentní funkci v jazyce C, C++ nebo Python nebo statickou metodou v jazyce C# nebo Java. Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
-
-## <a name="operator-application"></a>Aplikace operátora
-
-Provádění operací s více operačními operacemi. To obvykle platí jednotnou matici s aktuálním vektorem stavu.
+Základní jednotka výpočtu počtu procesorů Q# . Je zhruba ekvivalentní funkci v jazyce C, C++ nebo Python nebo statickou metodou v jazyce C# nebo Java. Další informace najdete v tématu [ Q# programy](xref:microsoft.quantum.guide.programs).
 
 ## <a name="oracle"></a>Oracle
 
@@ -182,7 +179,7 @@ Podprogram, který poskytuje informace závislé na datech pro algoritmus v dob�
 
 ## <a name="partial-application"></a>Částečná aplikace
 
-Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. Tím se vrátí nový, který lze [volat](xref:microsoft.quantum.glossary#callable) , který potřebuje k zadání chybějících parametrů (označených podtržítkem), aby byl dodán v budoucí aplikaci. Například vzhledem k tomu, že se funkce `MyFunc(x : int, y : int) : int {return x + y;}` dá částečně použít pro novou funkci `let NewFunc = MyFunc(_, 3)` . Novou funkci můžete zavolat později s chybějícím parametrem, `NewFunc(2)` který vrátí hodnotu *5* .  Další informace naleznete v [části částečná aplikace](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
+Volání [funkce](xref:microsoft.quantum.glossary#function) nebo [operace](xref:microsoft.quantum.glossary#operation) bez všech požadovaných vstupů. Tím se vrátí nový, který lze [volat](xref:microsoft.quantum.glossary#callable) , který potřebuje k zadání chybějících parametrů (označených podtržítkem), aby byl dodán v budoucí aplikaci. Další informace naleznete v [části částečná aplikace](xref:microsoft.quantum.qsharp.partialapplication).
 
 ## <a name="pauli-operators"></a>Pauli operátory
 
@@ -190,7 +187,7 @@ Sada 3 2 × 2 maticových matricí, které se označují jako `X` `Y` a `Z` oper
 
 ## <a name="quantum-circuit-diagram"></a>Diagram okruhu doby
 
-Metoda pro grafickou reprezentaci posloupnosti [operací](xref:microsoft.quantum.glossary#operation) (nebo [bran](xref:microsoft.quantum.glossary#gate)) pro jednoduché programy pro práci s poli, například 
+Metoda, která graficky reprezentuje posloupnost [bran](xref:microsoft.quantum.glossary#gate) pro jednoduché programy pro více, například 
 
 ![Diagram ukázkového okruhu](~/media/qpe.png). 
 
@@ -210,7 +207,7 @@ Základní jednotkou informací, která je obdobou *bitu* v klasickém výpočet
 
 ## <a name="repeat-until-success"></a>Opakovat až do – úspěšné
 
-Algoritmus pro všechna ta, který se probabilistically úspěšně. Po selhání bude rutina opakovat až do úspěchu (nebo bylo dosaženo limitu). Další informace najdete v tématu [opakování do úspěchu (ru)](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop) .
+Koncept se často používá v algoritmech doby využívání, které se skládají z opakovaného použití výpočtu, dokud není splněna určitá podmínka. Pokud podmínka není splněna, často se vyžaduje oprava před opakováním zadáním další iterace. Další informace najdete v [ Q# uživatelské příručce](xref:microsoft.quantum.guide) .
 
 ## <a name="standard-libraries"></a>Standardní knihovny
 
@@ -230,7 +227,7 @@ Metoda pro opětovné generování dat nebo [stav](xref:microsoft.quantum.glossa
 
 ## <a name="tuple"></a>Řazené kolekce členů
 
-Kolekce hodnot oddělených čárkou, které fungují jako jediná hodnota. *Typ* řazené kolekce členů je definován typy hodnot, které obsahuje. V Q# , řazené kolekce členů jsou [neměnné](xref:microsoft.quantum.glossary#immutable) a mohou být vnořené, obsahují pole nebo použity v poli. Další informace naleznete v tématu [typy řazené kolekce členů](xref:microsoft.quantum.guide.types#tuple-types).
+Kolekce hodnot oddělených čárkou, které fungují jako jediná hodnota. *Typ* řazené kolekce členů je definován typy hodnot, které obsahuje. V Q# , řazené kolekce členů jsou [neměnné](xref:microsoft.quantum.glossary#immutable) a mohou být vnořené, obsahují pole nebo použity v poli. Další informace najdete v tématu [řazené kolekce členů](xref:microsoft.quantum.qsharp.valueliterals#tuple-literals).
 
 ## <a name="unitary-operator"></a>Operátor jednotných
 
@@ -238,4 +235,4 @@ Operátor, jehož invertování je rovno jeho [sousedním](xref:microsoft.quantu
 
 ## <a name="user-defined-type"></a>Uživatelem definovaný typ
 
-Kolekce předdefinovaných nebo dříve definovaných typů, které mohou být označovány jako jedna jednotka. Další informace naleznete v tématu [uživatelsky definované typy](xref:microsoft.quantum.guide.types#user-defined-types).
+Vlastní typ, který může obsahovat jednu nebo více pojmenovaných nebo anonymních položek. Další informace najdete v tématu [deklarace typu] Microsoft. qsharp.. typedeclarations # Type-Declarations.

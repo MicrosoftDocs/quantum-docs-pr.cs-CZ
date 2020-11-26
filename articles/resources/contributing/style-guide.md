@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7666974e255d537c8d611d0077b7f9b37a61f918
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cfc201a16b1b42c82314220f77ae120076291759
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691738"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231651"
 ---
 # <a name="no-locq-style-guide"></a>Q# Průvodce stylem #
 ## <a name="general-conventions"></a>Obecné konvence ##
@@ -215,7 +215,7 @@ _*_
 Vzhledem k Q# tomu, že se jedná o silný a staticky typový jazyk, lze hodnotu jednoho typu použít pouze jako hodnotu jiného typu pomocí explicitního volání funkce pro převod typu.
 To je v kontrastu s jazyky, které umožňují hodnotám měnit typy implicitně (např.: povýšení typu) nebo prostřednictvím přetypování.
 Výsledkem je, že funkce pro převod typu hrají důležitou roli při Q# vývoji knihovny a sestávají z nich jedno z častých rozhodnutí o pojmenování.
-Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_ , můžou být zapsány jako funkce a tak do výše uvedených rad.
+Upozorňujeme však, že protože převody typu jsou vždycky _deterministické_, můžou být zapsány jako funkce a tak do výše uvedených rad.
 Konkrétně doporučujeme, aby funkce pro převod typu neměly být nikdy pojmenovány jako slovesa (např.:) nebo typu příznaku příznaku `ConvertToX` ( `ToX` ), ale měly by být pojmenovány jako textová fráze s předumístěním, které označují zdrojové a cílové typy ( `XAsY` ).
 Při výpisu typů polí v názvech funkcí pro převod typu doporučujeme zkrácený `Arr` .
 Blokování výjimečných okolností, doporučujeme, aby všechny funkce pro převod typů byly pojmenovány pomocí, `As` aby je bylo možné rychle identifikovat.
@@ -390,7 +390,7 @@ Podobně jazykový Server, který je součástí vývojové sady pro plnění, p
 Používání dokumentačních komentářů tak může pomoci uživatelům vydávat smysl kódu tím, že poskytuje užitečnou referenci pro podrobnosti, které nejsou snadno vyjádřeny pomocí dalších úmluv v tomto dokumentu.
 
 > [!div class="nextstepaction"]
-> [Odkaz na syntaxi dokumentačních komentářů](xref:microsoft.quantum.guide.filestructure#documentation-comments).
+> [Odkaz na syntaxi dokumentačních komentářů](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
 Aby bylo možné efektivně využít tuto funkci, doporučujeme, abyste při psaní dokumentačních komentářů měli na paměti pár věcí.
 
@@ -400,7 +400,7 @@ Navrhujeme:
 
 - Každá veřejná funkce, operace a uživatelsky definované typy by měly hned předcházet dokumentační komentář.
 - Každý dokumentační komentář by měl mít minimálně následující oddíly:
-    - Souhrn
+    - Shrnutí
     - Vstup
     - Výstup (Pokud je k dispozici)
 - Ujistěte se, že všechny souhrny jsou dvě nebo méně vět. Pokud je potřeba více místa, poskytněte `# Description` hned následující část `# Summary` s úplnými podrobnostmi.

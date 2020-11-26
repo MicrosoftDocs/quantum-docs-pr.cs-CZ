@@ -96,7 +96,7 @@ Libovolný dvourozměrný vektor sloupce reálných nebo komplexních čísel s 
 
 $$\begin{bmatrix}1 \\\\ 0 \end{bmatrix} , \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} , \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { 1 } { \sqrt { 2 } } \end{bmatrix} , \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { – 1 } { \sqrt { 2 } } \end{bmatrix} \text { a } \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { i } { \sqrt { 2 } } \end{bmatrix} .      $$
 
-Vektory stavových stavů $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ a $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ mají zvláštní roli. Tyto dva vektory tvoří základ pro vektorový prostor, který popisuje stav qubit. To znamená, že každý objekt pro každý stav se může zapsat jako součet těchto základních vektorů. Konkrétně je možné, že vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ se zapisuje jako $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . I když by jakékoli rotace těchto vektorů sloužily jako naprosto platnému základu pro qubit, rozhodli jsme se pro ni toto oprávnění, a to voláním *výpočetního základu* .
+Vektory stavových stavů $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ a $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ mají zvláštní roli. Tyto dva vektory tvoří základ pro vektorový prostor, který popisuje stav qubit. To znamená, že každý objekt pro každý stav se může zapsat jako součet těchto základních vektorů. Konkrétně je možné, že vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ se zapisuje jako $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . I když by jakékoli rotace těchto vektorů sloužily jako naprosto platnému základu pro qubit, rozhodli jsme se pro ni toto oprávnění, a to voláním *výpočetního základu*.
 
 Tyto dva stavy dobereme, aby odpovídaly dvěma stavům klasického bitu, konkrétně $ 0 $ a $ 1 $ . Standardní konvence je výběr
 
@@ -128,17 +128,6 @@ Nastavování počítačů zpracovává data pomocí univerzální sady bran pro
 Tato pojem obecnosti se podobají na pojem univerzální pro tradiční (tj. klasický) výpočet, kde je sada brány považována za univerzální, pokud je možné provést každou transformaci vstupních bitů pomocí omezeného okruhu délky.
 Ve výpočetním prostředí jsou platné transformace, které můžeme provádět na qubit, jednotnou transformaci a měření.
 *Operace souseda* nebo složitá sdružená transformace má zásadní význam pro náročné na výpočetní výkon, protože je potřeba pro invertování transformací za sebou.
-Q# Toto reflektuje tím, že poskytuje metody pro automatické kompilování sekvencí brány do jejich sousedních procesů, které v mnoha případech ukládají programátorovi, aby adjoints kód. Příklad najdete tady:
-
-```qsharp
-operation PrepareSuperposition(qubit : Qubit) : Unit
-is Adj { // Auto-generate the adjoint of the operation
-    H(qubit);
-}
-```
-
-I když se jedná o triviální příklad (jako < operace odkazy XREF: Microsoft.. vnitřní. H > ), můžete zjistit, jak se to stalo nevýznamně u složitějších qubit operací.
-Další informace najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
 
 K dispozici jsou pouze čtyři funkce namapované na jeden bit na klasický počítač. Naproti tomu existuje nekonečný počet jednotkových transformací na jednom qubit počítače. Proto žádná konečná sada primitivních operací s názvem, která se označuje jako [*brány*](https://en.wikipedia.org/wiki/Quantum_logic_gate), může přesně replikovat nekonečnou sadu základních transformací, které jsou povolené při práci. To znamená, že na rozdíl od klasického výpočetního prostředí není možné, aby počítač bez nároků implementoval každý možný program na více systémů, a to přesně pomocí omezeného počtu bran. Proto by počítače nemohly být univerzální ve stejném smyslu klasických počítačů. V důsledku toho znamenáme, že sada bran je *univerzální* pro výpočetní výkon, ale ve skutečnosti se jedná o trochu slabší, než je u klasického výpočetního prostředí.
 V případě obecnosti vyžadujeme, aby počítač s více podsítěmi v rámci omezené velikosti *používal jenom každou* jednotkovou matici s omezenou délkou.

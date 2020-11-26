@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f1a4ef0616a8a3f1548b7a7207cf8cbb9dcc7260
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2c5bdebc826bb85f6d7e0ade6232e15e29e8fb19
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691697"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231685"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Způsoby spuštění Q# programu
 
@@ -26,7 +26,7 @@ Primární rozdíl je, že Q# lze spustit:
 - jako samostatná aplikace, kde Q# je jediný jazyk, který je součástí jediného jazyka a který program je vyvolán přímo. Do této kategorie ve skutečnosti patří dvě metody:
   - rozhraní příkazového řádku
   - Q# Jupyter poznámkové bloky
-- s dalším *hostitelským programem* , který je napsán v Pythonu nebo v jazyce .NET (například C# nebo F #), který potom vyvolá program a může pokračovat ve zpracování vrácených výsledků.
+- s dalším *hostitelským programem*, který je napsán v Pythonu nebo v jazyce .NET (například C# nebo F #), který potom vyvolá program a může pokračovat ve zpracování vrácených výsledků.
 
 Abychom těmto procesům a jejich rozdílům nejlépe pochopili, Uvažujme o jednoduchém Q# programu a porovnejte způsob, jakým je možné ho spustit.
 
@@ -45,7 +45,7 @@ V nástroji Q# by to bylo provedeno následujícím kódem:
 ```
 
 Samotný kód však nelze spustit pomocí Q# .
-V takovém případě musí sestavovat tělo [operace](xref:microsoft.quantum.guide.basics#q-operations-and-functions), která je pak spuštěna při volání---buď přímo, nebo jinou operací. Proto můžete napsat operaci následujícího formuláře:
+V takovém případě musí sestavovat tělo [operace](xref:microsoft.quantum.qsharp.operationsandfunctions), která je pak spuštěna při volání---buď přímo, nebo jinou operací. Proto můžete napsat operaci následujícího formuláře:
 ```qsharp
     operation MeasureSuperposition() : Result {
         using (q = Qubit()) {
@@ -54,18 +54,18 @@ V takovém případě musí sestavovat tělo [operace](xref:microsoft.quantum.gu
         }
     }
 ```
-Definovali jste operaci, `MeasureSuperposition` která nepřijímá žádné vstupy a vrací hodnotu typu [Result](xref:microsoft.quantum.guide.types).
+Definovali jste operaci, `MeasureSuperposition` která nepřijímá žádné vstupy a vrací hodnotu typu [Result](xref:microsoft.quantum.qsharp.typesystem-index#available-types).
 
-Zatímco příklady na této stránce se skládají jenom z Q# *operací* , všechny koncepce, které budeme projednávat, se budou vztahovat i na Q# *funkce* , a proto jsme na ně odkázali jako *volatelné* . Jejich rozdíly jsou vysvětleny na [ Q# základních základech: operace a funkce](xref:microsoft.quantum.guide.basics#q-operations-and-functions)a další podrobnosti o jejich definování najdete v tématu [operace a funkce](xref:microsoft.quantum.guide.operationsfunctions).
+Kromě operací Q# umožňuje také zapouzdřit deterministické výpočty do funkcí. Kromě determinismem záruky, která implikuje, že se výpočty, které se chovají na qubits, musí zapouzdřit do operací místo funkcí, existuje malý rozdíl mezi operacemi a funkcemi. Odkázat na ně souhrnně jako *volatelné*.
 
 ### <a name="callable-defined-in-a-no-locq-file"></a>V souboru se nedá volat definice. Q#
 
 Volání je přesně to, co se volá a spouští Q# .
 Nicméně vyžaduje několik dalších přídavků, které tvoří úplný `*.qs` Q# soubor.
 
-Všechny Q# typy a výzvy (které definujete i u těchto vnitřních objektů) jsou definovány v rámci *oborů názvů* , které poskytují každý úplný název, na který lze odkazovat.
+Všechny Q# typy a výzvy (které definujete i u těchto vnitřních objektů) jsou definovány v rámci *oborů názvů*, které poskytují každý úplný název, na který lze odkazovat.
 
-Například [`H`](xref:Microsoft.Quantum.Intrinsic.H) [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operace a se nacházejí v [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) oborech názvů a (součást [ Q# standardních knihoven](xref:microsoft.quantum.qsharplibintro)).
+Například [`H`](xref:Microsoft.Quantum.Intrinsic.H) [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) operace a se nacházejí v [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) oborech názvů a (součást [ Q# standardních knihoven](xref:microsoft.quantum.libraries.standard.intro)).
 V takovém případě mohou být vždy volány prostřednictvím jejich *úplných* názvů, `Microsoft.Quantum.Intrinsic.H(<qubit>)` `Microsoft.Quantum.Measurement.MResetZ(<qubit>)` ale vždy to vede k tomu, že by to vedlo k velmi zbytečnému kódu.
 
 Místo toho `open` příkazy umožňují volat odkazování pomocí výstižnější zkratky, jak jsme udělali v těle operace výše.
@@ -103,7 +103,7 @@ Nyní se model obecného spuštění Q# programu bude jasný.
 Za prvé, konkrétní spuštění, které se dá spustit, má přístup k jakýmkoli jiným volat a typům definovaným ve stejném oboru názvů.
 Také k nim přistupuje z libovolné [ Q# knihovny](xref:microsoft.quantum.libraries), ale musí být odkazovány buď prostřednictvím jejich úplného názvu, nebo pomocí `open` příkazů popsaných výše.
 
-Samostatně se pak spustí na *[cílovém počítači](xref:microsoft.quantum.machines)* .
+Samostatně se pak spustí na *[cílovém počítači](xref:microsoft.quantum.machines)*.
 Tyto cílové počítače můžou být skutečným hardwarem nebo s více simulátory, které jsou k dispozici jako součást QDK.
 Pro naše účely je nejužitečnější cílový počítač instancí [simulátoru s plným stavem](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` který počítá chování programu, jako kdyby bylo spuštěno na počítači se systémem bezproblémového provozu.
 
@@ -164,7 +164,7 @@ Nyní volání `dotnet run` z příkazového řádku vede ke `MeasureSuperpositi
 Zobrazí se buď `One` nebo `Zero` vytištěno. 
 
 Mějte na paměti, že pokud máte více než jedno navýšení volat, `MeasureSuperposition` bude spuštěno.
-Kromě toho není k dispozici žádný problém, pokud vaše volat obsahuje [dokumentační komentáře](xref:microsoft.quantum.guide.filestructure#documentation-comments) před jeho deklarací, `@EntryPoint()` atribut lze jednoduše umístit nad něj.
+Kromě toho není k dispozici žádný problém, pokud vaše volat obsahuje [dokumentační komentáře](xref:microsoft.quantum.qsharp.comments#documentation-comments) před jeho deklarací, `@EntryPoint()` atribut lze jednoduše umístit nad něj.
 
 ### <a name="callable-arguments"></a>Volat argumenty
 
@@ -589,7 +589,7 @@ Zde podrobně pomůžeme, jak spustit Q# výše uvedené operace, ale obecnějš
 
 V Q# Jupyter notebook zadáte Q# kód stejně jako v rámci oboru názvů Q# souboru.
 
-Proto můžeme povolit přístup k volat ze [ Q# standardních knihoven](xref:microsoft.quantum.qsharplibintro) s `open` příkazy pro jejich příslušné obory názvů.
+Proto můžeme povolit přístup k volat ze [ Q# standardních knihoven](xref:microsoft.quantum.libraries.standard.intro) s `open` příkazy pro jejich příslušné obory názvů.
 Po spuštění buňky s takovým příkazem jsou definice z těchto oborů názvů dostupné v celém pracovním prostoru.
 
 > [!NOTE]

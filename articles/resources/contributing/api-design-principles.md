@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6b196cf1be584a3157c7a9eb8cf497fe1121dd7a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b8623ba7e876c4ccda42d0ddaa07c0012a763292
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691815"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231770"
 ---
 # <a name="no-locq-api-design-principles"></a>Q# Principy návrhu rozhraní API
 
@@ -215,7 +215,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
   *Příklady:*
   - Preferovat "iteraci zesílení amplitud" na "Grover iterace"
 
-- ✅**Vyberte operace** a názvy funkcí, které jasně sdělují zamýšlený účinek, který lze volat, a nikoli jeho implementaci. Všimněte si, že implementace může a měla by se zdokumentovat v [dokumentaci k dokumentaci k rozhraní API](xref:microsoft.quantum.guide.filestructure#documentation-comments).
+- ✅**Vyberte operace** a názvy funkcí, které jasně sdělují zamýšlený účinek, který lze volat, a nikoli jeho implementaci. Všimněte si, že implementace může a měla by se zdokumentovat v [dokumentaci k dokumentaci k rozhraní API](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
   *Příklady:*
   - Preferovat "odhad překrytí" na "Hadamard test", protože ten pak komunikuje s implementací bývalého.
@@ -224,32 +224,32 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
   - **Příkazy**
 
-    - **Assert** : Ověřte, jestli předpoklad týkající se stavu cílového počítače a jeho qubits obsahuje, možná pomocí nefyzických prostředků. Operace používající tuto operaci by měly být vždy bezpečně vyměnitelná bez vlivu na funkce knihoven a spustitelných programů. Všimněte si, že na rozdíl od faktů mohou být kontrolní výrazy obecně závislé na externím stavu, jako je například stav registru qubit, prostředí pro spuštění nebo tak dále. Protože závislost na externím stavu je druh vedlejšího účinku, kontrolní výrazy musí být vystavené jako operace, nikoli funkce.
+    - **Assert**: Ověřte, jestli předpoklad týkající se stavu cílového počítače a jeho qubits obsahuje, možná pomocí nefyzických prostředků. Operace používající tuto operaci by měly být vždy bezpečně vyměnitelná bez vlivu na funkce knihoven a spustitelných programů. Všimněte si, že na rozdíl od faktů mohou být kontrolní výrazy obecně závislé na externím stavu, jako je například stav registru qubit, prostředí pro spuštění nebo tak dále. Protože závislost na externím stavu je druh vedlejšího účinku, kontrolní výrazy musí být vystavené jako operace, nikoli funkce.
 
-    - **Odhad** : použití jednoho nebo více možných opakovaných měření, odhadem klasického množství z výsledků měření.
+    - **Odhad**: použití jednoho nebo více možných opakovaných měření, odhadem klasického množství z výsledků měření.
 
       *Příklady:*
       - @"microsoft.quantum.characterization.estimatefrequency"
       - @"microsoft.quantum.characterization.estimateoverlapbetweenstates"
 
-    - **Příprava** : použití operace nebo posloupnosti operací na jeden nebo více qubits předpokládá, že se spustí v konkrétním počátečním stavu (obvykle $ \ket{00\cdots 0} $), což způsobí, že se stav těchto qubits bude vyvíjet do požadovaného koncového stavu. Obecně platí, že v případě jiných států, než je zadaný počáteční stav, **může** dojít k nedefinované jednotkové transformaci, ale **je třeba** zachovat tuto operaci a její sousední akci "zrušit výstup" a použít možnost No-op.
+    - **Příprava**: použití operace nebo posloupnosti operací na jeden nebo více qubits předpokládá, že se spustí v konkrétním počátečním stavu (obvykle $ \ket{00\cdots 0} $), což způsobí, že se stav těchto qubits bude vyvíjet do požadovaného koncového stavu. Obecně platí, že v případě jiných států, než je zadaný počáteční stav, **může** dojít k nedefinované jednotkové transformaci, ale **je třeba** zachovat tuto operaci a její sousední akci "zrušit výstup" a použít možnost No-op.
 
       *Příklady:*
       - @"microsoft.quantum.preparation.preparearbitrarystate"
       - @"microsoft.quantum.preparation.prepareuniformsuperposition"
 
-    - **Measure** : použijte operaci nebo sekvenci operací na jeden nebo více qubits a přečtěte si klasická data zpět.
+    - **Measure**: použijte operaci nebo sekvenci operací na jeden nebo více qubits a přečtěte si klasická data zpět.
 
       *Příklady:*
       - @"Microsoft.Quantum.Intrinsic.Measure"
       - @"microsoft.quantum.arithmetic.measurefxp"
       - @"microsoft.quantum.arithmetic.measureinteger"
 
-    - **Apply** : použijte operaci nebo sekvenci operací na jeden nebo více qubits, což způsobí, že se stav těchto qubits mění souvislým způsobem. Tato operace je nejobecnější sloveso v \# nomenklatuře Q a **neměla by být** použita, pokud je konkrétnější příkaz přímo relevantní.
+    - **Apply**: použijte operaci nebo sekvenci operací na jeden nebo více qubits, což způsobí, že se stav těchto qubits mění souvislým způsobem. Tato operace je nejobecnější sloveso v \# nomenklatuře Q a **neměla by být** použita, pokud je konkrétnější příkaz přímo relevantní.
 
-  - **Podstatná jména** :
+  - **Podstatná jména**:
 
-    - **Fakt** : logická podmínka, která závisí jenom na svých vstupech, a ne na stavu cílového počítače, jeho prostředí nebo stavu qubits počítače. Na rozdíl od kontrolního výrazu je fakt jenom citlivý na *hodnoty* , které jsou pro tuto skutečnost k dispozici. Příklad:
+    - **Fakt**: logická podmínka, která závisí jenom na svých vstupech, a ne na stavu cílového počítače, jeho prostředí nebo stavu qubits počítače. Na rozdíl od kontrolního výrazu je fakt jenom citlivý na *hodnoty* , které jsou pro tuto skutečnost k dispozici. Příklad:
 
       *Příklady:*
       - @"microsoft.quantum.diagnostics.equalityfacti": představuje fakt rovnosti o dvou celočíselných vstupech; celá čísla zadaná jako vstup jsou rovna sobě navzájem, nebo nejsou závislá na jakémkoli jiném stavu programu.
@@ -259,9 +259,9 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
       *Příklady:*
       - @"microsoft.quantum.machinelearning.trainingoptions"Parametr UDT zahrnuje pojmenované položky pro studijní kurzy, velikost minibatch a další konfigurovatelné parametry pro školení ml.
 
-  - **Přídavná jména** :
+  - **Přídavná jména**:
 
-    - ⛔️ **novinka** : Tento adjektivum by se neměl používat, protože se **nemusíte** používat jako sloveso v řadě programovacích jazyků (například C++, C#, Java, TypeScript, PowerShell).
+    - ⛔️ **novinka**: Tento adjektivum by se neměl používat, protože se **nemusíte** používat jako sloveso v řadě programovacích jazyků (například C++, C#, Java, TypeScript, PowerShell).
 
   - **Předpozice:** V některých případech je možné použít předpozice k dalšímu jednoznačnému nebo objasnění rolí podstatných jmen a operací v názvech funkcí a operací. K tomu by se mělo dbát opatrně a konzistentně, ale
 
