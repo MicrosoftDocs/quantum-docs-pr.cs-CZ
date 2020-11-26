@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Unzipped
 title: Funkce unzip
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Unzipped
 qsharp.summary: Given an array of 2-tuples, returns a tuple of two arrays, each containing the elements of the tuples of the input array.
-ms.openlocfilehash: 37c960dc5dbdb8099fbebe1ad63cb44ce642733c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: aee1d48c9e0a1f104040bc56c78fdbb8bc4d34ba
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705721"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219953"
 ---
 # <a name="unzipped-function"></a>Funkce unzip
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 V případě pole se dvěma řazenými kolekcemi členů vrátí řazenou kolekci členů dvou polí, z nichž každý obsahuje prvky pro vstupní pole.

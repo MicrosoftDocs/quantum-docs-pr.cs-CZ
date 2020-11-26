@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Bitwise.LeftShiftedL
 title: LeftShiftedL – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Bitwise
 qsharp.name: LeftShiftedL
 qsharp.summary: Shifts the bitwise representation of a number left by a given number of bits.
-ms.openlocfilehash: 17e5c845755f74e9703381bc82bfd63be836d038
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 00d4f9151c620e044074930933ea2912b52534ed
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705617"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219664"
 ---
 # <a name="leftshiftedl-function"></a>LeftShiftedL – funkce
 
 Obor názvů: [Microsoft.. bitové](xref:Microsoft.Quantum.Bitwise)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Posune bitovou reprezentaci čísla vlevo o daný počet bitů.

@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfElseRA
 title: Operace ApplyIfElseRA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfElseRA
 qsharp.summary: Applies one of two adjointable operations, depending on the value of a classical result.
-ms.openlocfilehash: d0181d98a9867f71d8a8f8dea4331e5a13f9e59c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3ebd09b1e5876ff397f3524ba828ba26a271e91e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705297"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218593"
 ---
 # <a name="applyifelsera-operation"></a>Operace ApplyIfElseRA
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje jednu ze dvou sousedících operací v závislosti na hodnotě klasického výsledku.
 
 ```qsharp
-operation ApplyIfElseRA<'T, 'U> (result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U)) : Unit
+operation ApplyIfElseRA<'T, 'U> (result : Result, (zeroOp : ('T => Unit is Adj), zeroInput : 'T), (oneOp : ('U => Unit is Adj), oneInput : 'U)) : Unit is Adj
 ```
 
 
@@ -39,7 +39,7 @@ Výsledkem `result` je, že použije operaci `zeroOp` s `zeroInput` jako vstup `
 Výsledek měření použitý k určení, zda `zeroOp` nebo `oneOp` je použit.
 
 
-### <a name="zeroop--t--unit-adj"></a>zeroOp: t [=> ADJ](xref:microsoft.quantum.lang-ref.unit)
+### <a name="zeroop--t--unit--is-adj"></a>zeroOp: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace sousedících operací, která má být použita v případě `result == Zero` .
 
@@ -49,7 +49,7 @@ Operace sousedících operací, která má být použita v případě `result ==
 Vstup, který má být k dispozici v `zeroOp` případě `result == Zero` .
 
 
-### <a name="oneop--u--unit-adj"></a>oneOp: ' U => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ
+### <a name="oneop--u--unit--is-adj"></a>oneOp: jednotka U => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace sousedících operací, která má být použita v případě `result == One` .
 

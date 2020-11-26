@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyBoundCA
 title: Operace ApplyBoundCA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyBoundCA
 qsharp.summary: ''
-ms.openlocfilehash: 2b38ec4de40285eff866d9863c1202ee8f8759ef
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8eb41318fbb9cbee46159ac3a570b21874358d32
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705472"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219205"
 ---
 # <a name="applyboundca-operation"></a>Operace ApplyBoundCA
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 
 
 ```qsharp
-operation ApplyBoundCA<'T> (operations : ('T => Unit is Adj + Ctl)[], target : 'T) : Unit
+operation ApplyBoundCA<'T> (operations : ('T => Unit is Adj + Ctl)[], target : 'T) : Unit is Adj + Ctl
 ```
 
 
 ## <a name="input"></a>Vstup
 
-### <a name="operations--t--unit-adj--ctl"></a>operace: t => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL []
+### <a name="operations--t--unit--is-adj--ctl"></a>operace: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL []
 
 
 

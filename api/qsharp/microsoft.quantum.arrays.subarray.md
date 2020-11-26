@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Subarray
 title: Subarray – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Subarray
 qsharp.summary: Takes an array and a list of locations and produces a new array formed from the elements of the original array that match the given locations.
-ms.openlocfilehash: be7b6ee1a396d67ebc311d8d97f4bd751a32d171
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cf72f04421b277ce64354d1eccec11cbc61d78cc
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705760"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220157"
 ---
 # <a name="subarray-function"></a>Subarray – funkce
 
 Obor názvů: [Microsoft. Forms. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Převezme pole a seznam umístění a vytvoří nové pole vytvořené z prvků původního pole, které odpovídá zadaným umístěním.

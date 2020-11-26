@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyAnd
 title: Operace ApplyAnd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyAnd
 qsharp.summary: Inverts a given target qubit if and only if both control qubits are in the 1 state, using measurement to perform the adjoint operation.
-ms.openlocfilehash: 5a4e18cb0361708e1fc00e8d62c0a6c2415d6bed
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b749013584c89273375da002ac36b3575085b7f2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705504"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219290"
 ---
 # <a name="applyand-operation"></a>Operace ApplyAnd
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Invertuje zadaný cílový qubit, pokud jsou oba ovládací prvky qubits ve 1 stavu, přičemž pomocí měření provede operaci sousedících operací.
 
 ```qsharp
-operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit
+operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit is Adj + Ctl
 ```
 
 
@@ -56,7 +56,7 @@ Cílová pomocná qubit; musí být ve stavu 0.
 
 
 
-## <a name="references"></a>Odkazy
+## <a name="references"></a>Reference
 
 - Cody Novotný: "nové konstrukce pro bránu Toffoli odolné proti chybám", fyz. rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) doi: 10.1103/PhysRevA. 87.022328
 - Craig Gidney: "snížení nákladů na sčítání, 2. stranu, strana 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) doi: 10.1103/PhysRevA. 85.044302

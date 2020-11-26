@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyControlledOnInt
 title: Operace ApplyControlledOnInt
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyControlledOnInt
 qsharp.summary: Applies a unitary operation on the target register if the control register state corresponds to a specified positive integer.
-ms.openlocfilehash: c8ea76946143967de4b6ac65986a1c4407ecb633
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3dd17e6bc913e84941a6b81f134e60536a4c4122
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705432"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219001"
 ---
 # <a name="applycontrolledonint-operation"></a>Operace ApplyControlledOnInt
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje jednotnou operaci v cílovém registru, pokud stav registru ovládacího prvku odpovídá zadanému kladnému celému číslu.
 
 ```qsharp
-operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is Adj + Ctl), controlRegister : Qubit[], targetRegister : 'T) : Unit
+operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is Adj + Ctl), controlRegister : Qubit[], targetRegister : 'T) : Unit is Adj + Ctl
 ```
 
 
@@ -35,7 +35,7 @@ operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is A
 Nezáporné celé číslo, na kterém `oracle` by měla být operace řízena.
 
 
-### <a name="oracle--t--unit-adj--ctl"></a>Oracle: t => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+### <a name="oracle--t--unit--is-adj--ctl"></a>Oracle: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 Jednotná operace, která se má řídit.
 

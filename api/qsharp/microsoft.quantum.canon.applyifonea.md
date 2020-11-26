@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfOneA
 title: Operace ApplyIfOneA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfOneA
 qsharp.summary: Applies an adjointable operation conditioned on a classical result value being one.
-ms.openlocfilehash: 76c15aba6042c2801ecfe8470e82099c54ba3846
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 200908f2958b74e4823c891ef901474d75d18336
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92705272"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218542"
 ---
 # <a name="applyifonea-operation"></a>Operace ApplyIfOneA
 
 Obor názvů: [Microsoft.. Canon](xref:Microsoft.Quantum.Canon)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Aplikuje na jednu operaci sousedících hodnot s hodnotou klasického výsledku.
 
 ```qsharp
-operation ApplyIfOneA<'T> (result : Result, (op : ('T => Unit is Adj), target : 'T)) : Unit
+operation ApplyIfOneA<'T> (result : Result, (op : ('T => Unit is Adj), target : 'T)) : Unit is Adj
 ```
 
 
@@ -40,7 +40,7 @@ Přípona `A` označuje, že operace, která se má použít, je sousední.
 Výsledek měření, který určuje, zda je použita možnost op nebo ne.
 
 
-### <a name="op--t--unit-adj"></a>op: t => ADJ. [Unit](xref:microsoft.quantum.lang-ref.unit)
+### <a name="op--t--unit--is-adj"></a>op: t => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ.
 
 Operace, která se má podmíněně použít
 
