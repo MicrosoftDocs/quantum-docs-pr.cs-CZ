@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._ApplyJordanWignerPQandPQQRTerm_
 title: Operace _ApplyJordanWignerPQandPQQRTerm_
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _ApplyJordanWignerPQandPQQRTerm_
 qsharp.summary: Applies time-evolution by a PQ or PQQR term described by a `GeneratorIndex`.
-ms.openlocfilehash: a2a74ddeb7ecefaf4aa21374302d2709ee676e5d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8b6d022c70052a91d3cf6d4549db5ed1434d3fc8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698672"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96203973"
 ---
 # <a name="_applyjordanwignerpqandpqqrterm_-operation"></a>Operace _ApplyJordanWignerPQandPQQRTerm_
 
 Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 Použije čas – vývoj na základě výrazu PQ nebo PQQR, který je popsán v `GeneratorIndex` .
 
 ```qsharp
-operation _ApplyJordanWignerPQandPQQRTerm_ (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit
+operation _ApplyJordanWignerPQandPQQRTerm_ (term : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit is Adj + Ctl
 ```
 
 

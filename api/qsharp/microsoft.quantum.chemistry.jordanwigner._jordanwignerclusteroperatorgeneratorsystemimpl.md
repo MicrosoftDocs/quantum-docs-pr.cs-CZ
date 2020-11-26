@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._JordanWignerClusterOperatorGeneratorSystemImpl
 title: _JordanWignerClusterOperatorGeneratorSystemImpl funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
 qsharp.name: _JordanWignerClusterOperatorGeneratorSystemImpl
 qsharp.summary: ''
-ms.openlocfilehash: d8fd5a55e63b5efdf3b8a789182cc08f1de91c58
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f81d7d4f2eb7fc3fdbd0b52d2c0f8c6eaa408bd8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92698624"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96203786"
 ---
 # <a name="_jordanwignerclusteroperatorgeneratorsystemimpl-function"></a>_JordanWignerClusterOperatorGeneratorSystemImpl funkce
 
 Obor názvů: [Microsoft. JordanWigner. chemie.](xref:Microsoft.Quantum.Chemistry.JordanWigner)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 
