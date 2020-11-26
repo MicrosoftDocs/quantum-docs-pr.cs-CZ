@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Oracles.OracleToDiscrete
 title: OracleToDiscrete – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Oracles
 qsharp.name: OracleToDiscrete
 qsharp.summary: Given an operation representing a "black-box" oracle, returns a discrete-time oracle which represents the "black-box" oracle repeated multiple times.
-ms.openlocfilehash: d26d57c587f24e7f74102c12753bcddb00fd8a9d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 158a90bbd0c68406e0a8507ae99fc08fad3b6d19
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708757"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96193841"
 ---
 # <a name="oracletodiscrete-function"></a>OracleToDiscrete – funkce
 
 Obor názvů: [Microsoft.... Oracle](xref:Microsoft.Quantum.Oracles)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vzhledem k tomu, že operace představující "černé pole" je Oracle, vrátí nediskrétní Oracle, který představuje "černý rámeček" Oracle se opakuje několikrát.
@@ -30,7 +30,7 @@ function OracleToDiscrete (blackBoxOracle : (Qubit[] => Unit is Adj + Ctl)) : Mi
 
 ## <a name="input"></a>Vstup
 
-### <a name="blackboxoracle--qubit--unit-adj--ctl"></a>blackBoxOracle: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotky](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+### <a name="blackboxoracle--qubit--unit--is-adj--ctl"></a>blackBoxOracle: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [jednotka](xref:microsoft.quantum.lang-ref.unit)  je ADJ + CTL
 
 Operace, která má být exponentiated.
 

@@ -1,30 +1,38 @@
 ---
 uid: Microsoft.Quantum.Preparation.StatePreparationPositiveCoefficients
 title: StatePreparationPositiveCoefficients – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Preparation
 qsharp.name: StatePreparationPositiveCoefficients
 qsharp.summary: >-
+  > [!WARNING]
+
+  > StatePreparationPositiveCoefficients has been deprecated. Please use <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateD> instead.
+
+
   Returns an operation that prepares the given quantum state.
 
   The returned operation $U$ prepares an arbitrary quantum state $\ket{\psi}$ with positive coefficients $\alpha_j\ge 0$ from the $n$-qubit computational basis state $\ket{0...0}$.
 
   The action of U on a newly-allocated register is given by $$ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\sum_{j=0}^{2^n-1}\alpha_j \ket{j}}{\sqrt{\sum_{j=0}^{2^n-1}|\alpha_j|^2}}. \end{align} $$
-ms.openlocfilehash: 39d961c71d231e7b51290f81c20c8c6b48c7e0b1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8f1fd7d77531996faf566adb78f452929d6cbd50
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92708176"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96193246"
 ---
 # <a name="statepreparationpositivecoefficients-function"></a>StatePreparationPositiveCoefficients – funkce
 
 Obor názvů: [Microsoft. přípravno. Preparation](xref:Microsoft.Quantum.Preparation)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
+
+> [!WARNING]
+> StatePreparationPositiveCoefficients se už nepoužívá. <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateD>Místo toho ho použijte.
 
 Vrátí operaci, která připraví daný stav.
 
@@ -46,7 +54,7 @@ Pole až do $2 ^ n $ koeficienty $ \ alpha_j $. $J $ th součinitel indexuje č�
 
 
 
-## <a name="output--littleendian--unit-adj--ctl"></a>Výstup: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) ADJ + CTL
+## <a name="output--littleendian--unit--is-adj--ctl"></a>Výstup: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) LittleEndian je ADJ + CTL
 
 Jednotná provozní operace pro přípravu stavu $U $.
 

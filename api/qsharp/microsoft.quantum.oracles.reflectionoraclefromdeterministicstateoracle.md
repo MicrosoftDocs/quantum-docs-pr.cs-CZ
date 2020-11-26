@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Oracles.ReflectionOracleFromDeterministicStateOracle
 title: ReflectionOracleFromDeterministicStateOracle – funkce
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Oracles
 qsharp.name: ReflectionOracleFromDeterministicStateOracle
 qsharp.summary: Constructs reflection about a given state from an oracle.
-ms.openlocfilehash: c2d37216aebcdc5243d0f1d6ec9db261cc9bd0c8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 09de63d615a4d80e2b59deeddc07567aefe7660e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92707870"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96193824"
 ---
 # <a name="reflectionoraclefromdeterministicstateoracle-function"></a>ReflectionOracleFromDeterministicStateOracle – funkce
 
 Obor názvů: [Microsoft.... Oracle](xref:Microsoft.Quantum.Oracles)
 
-Balíček [](https://nuget.org/packages/)
+Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Sestaví reflexi o daném stavu od Oracle.
