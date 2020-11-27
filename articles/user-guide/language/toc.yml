@@ -1,4 +1,12 @@
-- name: Typy v Q#
-  href: types.md
+- name: Přehled
+  href: index.md
+- name: Struktura programu
+  href: programstructure/toc.yml
+- name: Příkazy
+  href: statements/toc.yml
 - name: Výrazy
-  href: expressions.md
+  href: expressions/toc.yml
+- name: Systém typů
+  href: typesystem/toc.yml
+- name: Gramatika
+  href: grammar.md
