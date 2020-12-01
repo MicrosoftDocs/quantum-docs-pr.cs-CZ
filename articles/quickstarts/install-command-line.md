@@ -10,12 +10,12 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a6823888dcbe8cf79f0045d2615fe8b889dcc7c3
-ms.sourcegitcommit: a13c7c86fd52a05cbf129b8dd713d6586ca1cc2c
+ms.openlocfilehash: eeb567dedc1b8123b32faf7ed3a42bb51f16a7d2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376418"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228725"
 ---
 # <a name="develop-with-no-locq-applications-in-an-ide"></a>Vývoj s aplikacemi v Q# v integrovaném vývojovém prostředí
 
@@ -63,7 +63,7 @@ Vytvoření nového projektu:
 
 1. Klikněte na **Zobrazení** -> **Paleta příkazů** a vyberte **Q#: Vytvořit nový projekt**.
 2. Klikněte na **Samostatná konzolová aplikace**.
-3. Přejděte do umístění, kam chcete projekt uložit, a klikněte na **Vytvořit projekt**.
+3. Přejděte do umístění, kam chcete projekt uložit. Zadejte název projektu a klikněte na **Vytvořit projekt**.
 4. Po úspěšném vytvoření projektu klikněte na **Otevřít nový projekt...** v pravém dolním rohu.
 
 Prozkoumejte projekt. Měl by se zobrazit zdrojový soubor s názvem `Program.qs`, což je program v Q#, který definuje jednoduchou operaci pro tisk zprávy na konzolu.

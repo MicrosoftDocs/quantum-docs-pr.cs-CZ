@@ -1,0 +1,20 @@
+- name: Příkazy v jazyce Q#
+  href: index.md
+- name: Rozsahy vazeb
+  href: bindingscopes.md
+- name: Příkazy volání
+  href: callstatements.md
+- name: Návratové hodnoty a ukončení
+  href: returnsandtermination.md
+- name: Deklarace proměnné a změna přiřazení
+  href: variabledeclarationsandreassignments.md
+- name: Iterace
+  href: iterations.md
+- name: Podmíněné smyčky
+  href: conditionalloops.md
+- name: Podmíněné větvení
+  href: conditionalbranching.md
+- name: Konjugace
+  href: conjugations.md
+- name: Správa kvantové paměti
+  href: quantummemorymanagement.md

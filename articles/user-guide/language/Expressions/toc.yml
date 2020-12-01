@@ -1,0 +1,32 @@
+- name: Výrazy v jazyce Q#
+  href: index.md
+- name: Priorita a asociativita
+  href: precedenceandassociativity.md
+- name: Operátory
+  items:
+    - name: Výrazy kopírování a aktualizace
+      href: copyandupdateexpressions.md
+    - name: Podmíněné výrazy
+      href: conditionalexpressions.md
+    - name: Srovnávací výrazy
+      href: comparativeexpressions.md
+    - name: Logické výrazy
+      href: logicalexpressions.md
+    - name: Bitové výrazy
+      href: bitwiseexpressions.md
+    - name: Aritmetické výrazy
+      href: arithmeticexpressions.md
+    - name: Zřetězení
+      href: concatenation.md
+- name: Modifikátory a kombinátory
+  items:
+    - name: Částečná aplikace
+      href: partialapplication.md
+    - name: Aplikace funktoru
+      href: functorapplication.md
+    - name: Výrazy přístupu k položce
+      href: itemaccessexpressions.md
+- name: Kontextové výrazy
+  href: contextualexpressions.md
+- name: Hodnotové literály a výchozí hodnoty
+  href: valueliterals.md

@@ -9,44 +9,26 @@ uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 81f31a531a1b50ead332bb578ccf392ddced9e8d
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
+ms.openlocfilehash: 979e468cc743bd9125eaba0b71f794977c914447
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771373"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231753"
 ---
 # <a name="the-no-locq-user-guide"></a>Uživatelská příručka jazyka Q#
 
 Vítá vás uživatelská příručka jazyka Q#! 
 
-V různých tématech této příručky najdete podrobný popis základních konceptů jazyka Q# a všechny informace, které potřebujete k psaní kvantových programů.
+V různých tématech této příručky uvádíme některé základy k vývoji kvantových programů pomocí jazyka Q#.
+
+Úplnou specifikaci a dokumentaci programovacího jazyka Q# najdete v [příručce k jazyku Q#](xref:microsoft.quantum.qsharp.index). 
 
 ## <a name="user-guide-contents"></a>Obsah uživatelské příručky
 
-- [Základy Q#](xref:microsoft.quantum.guide.basics): Úvodní přehled účelu a funkcí programovacího jazyka Q#. 
+- [Programy Q#](xref:microsoft.quantum.guide.programs): Rychlý úvod do kvantových programům v jazyce Q#. 
 
 - [Způsoby spuštění programu v Q#Q#](xref:microsoft.quantum.guide.host-programs): Popisuje, jak se spustí program v Q#, a poskytuje přehled různých způsobů volání programu: z příkazového řádku, v aplikacích Jupyter Notebook s podporou Q# nebo z klasického hostitelského programu napsaného v Pythonu nebo v jazyce .NET.
-
-### <a name="no-locq-language"></a>Jazyk Q#
-
-- [Typy v Q#](xref:microsoft.quantum.guide.types): Vysvětluje model typů v jazyce Q# a popisuje syntaxi pro určování typů a práci s nimi.
-
-- [Výrazy typu:](xref:microsoft.quantum.guide.expressions) Podrobně popisuje, jak určovat hodnoty jednotlivých typů v jazyce Q#, odkazovat na ně, kombinovat je a pracovat s nimi. 
-
-### <a name="using-no-locq"></a>Používání akce Q#
-
-- [Struktura souborů v Q#](xref:microsoft.quantum.guide.filestructure): Popisuje strukturu a syntaxi souboru `*.qs` v jazyce Q#.
-
-- [Operace a funkce:](xref:microsoft.quantum.guide.operationsfunctions) Podrobně popisuje dva volatelné typy jazyka Q# – *operace*, které zahrnují akci s qubitovými registry, a *funkce*, které pracují výhradně s klasickými informacemi. 
-    Tady uvidíte, jak je definovat a volat, včetně sdružených a řízených verzí kvantových operací.
-
-- [Proměnné:](xref:microsoft.quantum.guide.variables) Popisuje roli proměnných v programech v jazyce Q# a jejich efektivní využití. 
-    Tady najdete například informace o rozsazích vazeb, rozdílech mezi neměnnými a proměnlivými proměnnými a postupu jejich přiřazení nebo změně jejich přiřazení.
-
-- [Práce s qubity:](xref:microsoft.quantum.guide.qubits) Popisuje funkce jazyka Q# sloužící k adresování jednotlivých qubitů a systémů qubitů, konkrétně jejich přidělování a měření a provádění operací s nimi. 
-
-- [Tok řízení:](xref:microsoft.quantum.guide.controlflow) Podrobně popisuje programovací vzory toku řízení, které jsou k dispozici v jazyce Q# a mezi které patří řada standardních technik (podmíněné zpracování, smyčky *for* a *while* atd.) a také vzor *Repeat-Until-Success* specifický pro kvantové výpočty.
 
 - [Testování a ladění:](xref:microsoft.quantum.guide.testingdebugging) Podrobně popisuje některé techniky k zajištění, že váš kód dělá to, co by měl. 
     Z důvodu obecné neprůhlednosti kvantových informací může ladění kvantového programu vyžadovat specializované techniky. 
