@@ -1,0 +1,12 @@
+- name: Implementace programu
+  href: index.md
+- name: Obory názvů
+  href: namespaces.md
+- name: Deklarace typu
+  href: typedeclarations.md
+- name: Volatelné deklarace
+  href: callabledeclarations.md
+- name: Deklarace specializace
+  href: specializationdeclarations.md
+- name: Komentáře
+  href: comments.md

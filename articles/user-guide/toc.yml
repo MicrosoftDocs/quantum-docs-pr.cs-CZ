@@ -1,13 +1,13 @@
 - name: Přehled / Obsah
   href: index.md
-- name: Základy Q#
-  href: basics.md
+- name: Programy Q#
+  href: programs.md
 - name: Způsoby spuštění programu Q#
   href: host-programs.md
-- name: Jazyk Q#
+- name: Testování a ladění
+  href: testing-debugging.md
+- name: Příručka jazyka Q#
   href: language/toc.yml
-- name: Použití Q#
-  href: using-qsharp/toc.yml
 - name: Simulátory a estimátory prostředků
   href: machines/toc.yml
 - name: Knihovny Q#
