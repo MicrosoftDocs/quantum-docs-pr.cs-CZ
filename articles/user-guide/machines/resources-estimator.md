@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 57f6602effd25fff353a8fee7f27acc529ce82af
-ms.sourcegitcommit: c3c892ef35eae6926d0c4339d9d26bfd8be77e9a
+ms.openlocfilehash: de425c2d91c6528b13c3bedd81acb4b4273ed711
+ms.sourcegitcommit: 7c687495a79d75ae9e029e5a41baec84d9e07bb0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96318486"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604639"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
@@ -28,9 +28,9 @@ Pomocí prostředků Estimator můžete spustit jakoukoli Q# operaci. Další po
 
 ### <a name="invoking-the-resources-estimator-from-c"></a>Vyvolání prostředků estimator z C # 
 
-Stejně jako u jiných cílových počítačů nejdřív vytvoříte instanci třídy `ResourceEstimator` a předáte ji jako první parametr metody `Run` příslušné operace.
+Stejně jako u jiných cílových počítačů nejdřív vytvoříte instanci třídy `ResourcesEstimator` a předáte ji jako první parametr metody `Run` příslušné operace.
 
-Na rozdíl od třídy `QuantumSimulator` ale třída `ResourceEstimator` neimplementuje rozhraní <xref:System.IDisposable>, a proto ji není nutné uzavírat příkazem `using`.
+Na rozdíl od třídy `QuantumSimulator` ale třída `ResourcesEstimator` neimplementuje rozhraní <xref:System.IDisposable>, a proto ji není nutné uzavírat příkazem `using`.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -123,7 +123,7 @@ namespace Quantum.MyProgram
 
 Prostředky Estimator sledují následující metriky:
 
-|Metric|Popis|
+|Metrika|Popis|
 |----|----|
 |__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
 |__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
@@ -131,7 +131,7 @@ Prostředky Estimator sledují následující metriky:
 |__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
 |__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
 |__Úrovní__|Hloubka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Délk__|Šířka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu o [čítači šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
+|__Width (Šířka)__|Šířka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu o [čítači šířky](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |Dolní mez pro maximální počet qubits přidělených během běhu Q# operace. Tato metrika nemusí být kompatibilní s __hloubkou__ (viz níže).  |
 |__BorrowedWidth__    |Maximální počet qubits, které byly v rámci operace vypůjčeny Q# .  |
 
