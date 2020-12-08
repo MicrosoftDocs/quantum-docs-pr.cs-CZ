@@ -1,3 +1,5 @@
+- href: index.md
+  name: Příkazy magic IQ#
 - href: azure.connect.md
   name: Příkaz magic %azure.connect
 - href: azure.execute.md
