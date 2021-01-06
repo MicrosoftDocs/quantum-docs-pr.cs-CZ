@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 72af3f5517b272d6d8159b158103b5af91d266b5
+ms.sourcegitcommit: c48cdafccb3487bf93d67fa80cdc64768445b691
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692158"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940882"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Charakterizace a statistika stavových stavů #
 
@@ -56,7 +56,7 @@ Zdůrazňujeme to tak, že stručně popisuje odhad iterativní fáze na teoreti
 
 Pokud je k dispozici vstupní stav, který není eigenstate, což znamená, že pokud $U (m) \ket{\phi \_ j} = e ^ {im\phi \_ j} $, pak proces odhadu fáze nedeterministickém způsobem přesměruje stav bez hodnoty na jedinou energetickou eigenstate.  Eigenstate, na který se nakonec konverguje, je eigenstate, který nejpravděpodobněji vyprodukuje zjištěnou hodnotu `Result` .
 
-Konkrétně jeden krok PE provádí následující nestandardní transformaci na stav \begin{align} \ sum_j \sqrt{\Pr (\phi \_ j)} \ket{\phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\phi \_ j)} \sqrt{\Pr (\Text{Result} | \phi \_ j)} \Ket{\phi \_ j}} {\sqrt{\Pr (\phi \_ j) \sum \_ j \Pr (\Text{Result} | \phi \_ j)}}.
+Konkrétně jeden krok PE provádí následující nestandardní transformaci na stav \begin{align} \ sum_j \sqrt{\Pr (\phi \_ j)} \ket{\phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\phi \_ j)} \sqrt{\Pr (\Text{Result} | \phi \_ j)} \Ket{\phi \_ j}} {\sqrt{\Pr (\phi \_ j) \sum \_ k \Pr (\Text{Result} | \phi \_ k)}}.
 \end{align} v případě, že se tento proces projde více `Result` hodnotami, eigenstates, které nemají maximální hodnoty $ \ prod_k \pr (\Text{Result} \_ k | \phi \_ j) $, budou exponenciálně potlačeny.
 V důsledku toho proces odvození bude v úmyslu v případě, že jsou experimenty zvoleni správně, sblížen do stavů s jediným eigenvalue.
 
@@ -153,7 +153,7 @@ operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, ei
 ```
 
 `bitsPrecision`Vstup je jedinečný pro `RobustPhaseEstimation` , zatímco `oracle` a `eigenstate` jsou společné.
-Proto, jak je vidět v **H2Sample** , může operace přijmout algoritmus odhadu iterativní fáze se vstupem formuláře `(DiscreteOracle, Qubit[]) => Unit` , aby uživatel mohl určit algoritmy pro odhad libovolné fáze:
+Proto, jak je vidět v **H2Sample**, může operace přijmout algoritmus odhadu iterativní fáze se vstupem formuláře `(DiscreteOracle, Qubit[]) => Unit` , aby uživatel mohl určit algoritmy pro odhad libovolné fáze:
 
 ```qsharp
 operation H2EstimateEnergy(
