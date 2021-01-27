@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e9b593ba69ed41a9fb3c1298b5b945a4cbe43d5d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692229"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858330"
 ---
 # <a name="data-structures-and-modeling"></a>Datové struktury a modelování #
 
@@ -72,7 +72,7 @@ ApplyToEach(
 ## <a name="oracles"></a>Oracle ##
 
 Ve [fázi odhadu](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) a [amplitudy zesílení amplitudy](https://en.wikipedia.org/wiki/Amplitude_amplification) se pojem Oracle objevuje často.
-V tomto případě se pojem Oracle vztahuje na podprogramovou rutinu Blackbox, která funguje na sadě qubits, a vrátí odpověď jako fázi.
+V tomto případě se pojem Oracle odkazuje na podprogram, který funguje na sadě qubits, a vrátí odpověď jako fázi.
 Tato podrutina se často může považovat za vstup do algoritmu pro plnění hodnoty, který přijímá Oracle, kromě některých dalších parametrů a používá řadu operací po sobě a zpracovává volání této podprocesu, jako by šlo o základní bránu.
 Aby bylo možné skutečně implementovat větší algoritmus, je nutné poskytnout konkrétní rozložené rozhraní Oracle do základních bran, ale takové rozložené není nutné, aby bylo možné pochopit algoritmus, který volá Oracle.
 V Q# nástroji je tato abstrakce reprezentována pomocí těchto operací jsou hodnoty první třídy, což znamená, že operace mohou být předány do implementace algoritmů pro plnění v černém poli.

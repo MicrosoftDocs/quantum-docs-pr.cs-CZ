@@ -1,6 +1,6 @@
 ---
 title: vektory a matice v popisu pro výpočetní výkon – Popis: Naučte se základy práce s vektory a maticemi.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -85,7 +85,7 @@ Autor: QuantumWriter UID: Microsoft.. koncepty. Vectors MS. Author: v-benbra MS.
 
 # <a name="vectors-and-matrices"></a>Vektory a matice
 
-Pro pochopení výpočetního prostředí je nezbytné, aby byly v některých zkušenostech vektory a matrice. Poskytujeme stručný úvod do výše uvedeného článku a zúčastněné čtenáře se doporučuje přečíst standardní odkaz na lineární algebraický, jako je *Strang, G. (1993). Seznámení s lineárním algebraický (obj. 3). Wellesley, MA: Wellesley-Cambridge Press* nebo online odkaz, jako je [lineární algebraický](http://joshua.smcvt.edu/linearalgebra/).
+Pro pochopení výpočetního prostředí je nezbytné, aby byly v některých zkušenostech vektory a matrice. Poskytujeme stručný úvod do výše uvedeného článku a zúčastněné čtenáře se doporučuje přečíst standardní odkaz na lineární algebraický, jako je *Strang, G. (1993). Seznámení s lineárním algebraický (obj. 3). Wellesley, MA: Wellesley-Cambridge stisknout* nebo online odkaz, jako je [lineární algebraický](http://joshua.smcvt.edu/linearalgebra/).
 
 Vektor sloupce (nebo jednoduše [*Vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $ v $ rozměru (nebo velikosti) $ n $ je kolekce $ n $ komplexních čísel $ (v_1, v_2, \ldots, v_n) $ uspořádaných jako sloupec:
 
@@ -174,7 +174,7 @@ $$\boldone=\begin{bmatrix}
 
 V případě čtvercové matice $ a $ říkáme, že matice $ B $ je její [*invertovaná*](https://en.wikipedia.org/wiki/Invertible_matrix) , pokud je to $ AB = ba = \boldone $ . Invertování matrice nemusí existovat, ale pokud existuje, je jedinečné a poznamenejte si ho $ ^ { -1 } $ . 
 
-Pro libovolnou matrici $ m $ je sousední nebo sdružená transpozice $ M $ matice $ N $ , což $ N_ { IJ } = M_ { ji } ^ \* $ . Sousední $ $ jednotka M je obvykle označena jako $ M ^ \dagger $ . V $ $ případě hodnoty uu ^ [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) $ \dagger = u ^ \dagger u = \boldone $ nebo ekvivalentu $ u ^ { -1 } = U ^ \dagger $ říkáme, že matice u je jednotná.  Například nejdůležitější vlastnost maticových matric je, že zachovávají normu vektoru.  K tomu dochází, protože 
+Pro libovolnou matrici $ m $ je sousední nebo sdružená transpozice $ M $ matice $ N $ , což $ N_ { IJ } = M_ { ji } ^ \* $ . Sousední $ $ jednotka M je obvykle označena jako $ M ^ \dagger $ . V $ $ případě hodnoty uu ^ [](https://en.wikipedia.org/wiki/Unitary_matrix) $ \dagger = u ^ \dagger u = \boldone $ nebo ekvivalentu $ u ^ { -1 } = U ^ \dagger $ říkáme, že matice u je jednotná.  Například nejdůležitější vlastnost maticových matric je, že zachovávají normu vektoru.  K tomu dochází, protože 
 
 $$\langlev, v \rangle = v ^ \dagger v = v ^ \dagger u ^ u ^ { -1 } u v = ^ \dagger u ^ \dagger u v v = \langle , \rangle u$$  
 

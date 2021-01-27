@@ -4,17 +4,17 @@ description: Podrobnosti o specifikacích pro schéma Broombridgech nech náklad
 author: cgranade
 ms.author: chgranad
 ms.date: 10/17/2018
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.chemistry.schema.spec_v_0_1
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b99c90c434958f7b04712580789b203766cd084d
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 0a306f59a823e76ba0518d023a41f1f9d5670e7a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835736"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858199"
 ---
 # <a name="broombridge-specification-v01"></a>Specifikace Broombridge v 0,1 #
 
@@ -169,7 +169,7 @@ Hodnota `hamiltonian` vlastnosti je označována jako objekt Hamiltonian a musí
 Objekt Hamiltonian může mít také vlastnost `particle_hole_representation` .
 Je-li k dispozici, hodnota `particle_hole_representation` musí následovat po formátu popsaném ve zbývající části této části.
 
-##### <a name="one-electron-integrals-object"></a>Objekt s jedním elektronovým integrálem #####
+##### <a name="one-electron-integrals-object"></a>Objekt One-Electron integrály #####
 
 Tato část je normativní.
 
@@ -199,7 +199,7 @@ one_electron_integrals:     # required
 > Broombridge používá indexování založené na 1.
 
 
-##### <a name="two-electron-integrals-object"></a>Objekt dvoumístné integrály #####
+##### <a name="two-electron-integrals-object"></a>Objekt Two-Electron integrály #####
 
 Tato část je normativní.
 

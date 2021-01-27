@@ -4,18 +4,17 @@ description: Tento článek popisuje aktualizaci projektů v Q# a sady Microsoft
 author: bradben
 ms.author: v-benbra
 ms.date: 5/30/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d9678a61f5fe4ca466b6a84e9e4b68321c5baee3
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: 1b5def3226bd073c878f8573aaddd757d733ec48
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834916"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858060"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Aktualizace sady Microsoft Quantum Development Kit (QDK)
 
@@ -282,7 +281,7 @@ Postup aktualizace závisí na tom, jestli jste původně provedli instalaci pom
     %workspace reload
     ```
 
-***
+**_
 
 Teď můžete pomocí aktualizovaného jádra IQ# spustit stávající služby Jupyter Notebook s podporou Q#.
 
@@ -301,7 +300,7 @@ Teď můžete pomocí aktualizovaného jádra IQ# spustit stávající služby J
 1. Aktualizujte rozšíření QDK sady VS Code
 
     - Restartujte VS Code
-    - Přejděte na kartu **Rozšíření**.
+    - Přejděte na kartu *rozšíření* _ *.
     - Vyberte rozšíření **Microsoft Quantum Development Kit pro Visual Studio Code**.
     - Znovu načtěte rozšíření.
 

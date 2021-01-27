@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Logical.NotNearlyEqualD
 title: NotNearlyEqualD – funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Logical
 qsharp.name: NotNearlyEqualD
 qsharp.summary: Returns true if and only if two inputs are not nearly equal (that is, are not within a tolerance of 1e-12).
-ms.openlocfilehash: 23229b1630982eba4485330cc2290aed733c4d86
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 6e4cf3ec009f55ecc6345453c080520a3af6a8ef
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96197139"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98848494"
 ---
 # <a name="notnearlyequald-function"></a>NotNearlyEqualD – funkce
 
@@ -49,7 +49,7 @@ Druhá hodnota, která se má porovnat.
 
 Následují ekvivalenty:
 
-```Q#
+```qsharp
 let cond = Microsoft.Quantum.Math.AbsD(a - b) >= 1e-12;
 let cond = NotNearlyEqualD(a, b);
 ```
