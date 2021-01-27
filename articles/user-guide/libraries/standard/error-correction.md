@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fc8e46aa22cb2575de42cfc3d4f57c43e5d3f7b0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692044"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857213"
 ---
 # <a name="error-correction"></a>Oprava chyb #
 
@@ -61,7 +61,7 @@ Poznamenejte si výsledky každého měření pomocí znaménka eigenvalue, kter
 | $X _2 $ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 Proto výsledky dvou měření jednoznačně určují, jakou chybu překlopení došlo k chybě, ale bez odhalení informací o tom, jaký stav je zakódovaný.
-Tyto výsledky říkáme *Syndrome* a přečtěte si proces mapování Syndrome zpátky na chybu, která způsobila *obnovení* .
+Tyto výsledky říkáme *Syndrome* a přečtěte si proces mapování Syndrome zpátky na chybu, která způsobila *obnovení*.
 Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který jako svůj vstup přebírá Syndrome, ke kterému došlo, a vrátí předpis pro opravu chyb, ke kterým mohlo dojít.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ Zejména jsme zdůraznili, že obnovení je *klasický* postup odvození, který
 > Podobně při použití operace překlápění fáze `Z` se namapuje $ \ket{\overline {1} } $ na $-\ket{\overline {1} } $, a proto se namapuje $ \ket{\overline{+}} $ na $ \ket{\overline {-} } $.
 > Obecněji je možné vytvářet kódy pro zpracování většího počtu chyb a zpracovávat chyby $Z $ a také chyby $X $.
 
-Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci* .
+Vhledem, jak můžeme popsat měření při opravách chyb, která působí stejným způsobem u všech stavů kódu, je podstata *formalit na stabilizaci*.
 Q#Canon poskytuje rozhraní pro popis kódování a dekódování z kódů stabilizovaných a pro popis toho, jak se jedno obnovuje z chyb.
 V této části popíšeme toto rozhraní a jeho aplikaci na několik jednoduchých chybných procesorů.
 
@@ -101,7 +101,7 @@ let syndMeasOp = SyndromeMeasOp(MeasureStabilizerGenerators([
 let code = QECC(encodeOp, decodeOp, syndMeasOp);
 ```
 
-Všimněte si, že `QECC` typ *not* nezahrnuje funkci obnovení.
+Všimněte si, že `QECC` typ  nezahrnuje funkci obnovení.
 Díky tomu můžeme změnit funkci obnovení, která se používá při opravách chyb beze změny definice samotného kódu; Tato možnost je užitečná zejména při začlenění zpětné vazby z měření popisu do modelu, který předpokládá obnovení.
 
 Po definování kódu tímto způsobem můžeme použít <xref:Microsoft.Quantum.ErrorCorrection.Recover> operaci k zotavení z chyb:

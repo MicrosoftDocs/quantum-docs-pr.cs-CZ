@@ -4,17 +4,17 @@ description: Seznamte se s vnitřními operacemi a funkcemi v QDK, včetně klas
 author: QuantumWriter
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4d15226fe46be79b7d3e6f414f33f1debd691f40
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6ed5b1677a204b9425f229a3ea0855bb789f3f75
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692124"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857190"
 ---
 # <a name="the-prelude"></a>Předehru #
 
@@ -109,13 +109,13 @@ Začneme vrácením se změnami, kterou můžeme vyjádřit pomocí $H $ a $T $,
 Brána $T $ je zase implementovaná <xref:Microsoft.Quantum.Intrinsic.T> operací a má signaturu `(Qubit => Unit is Adj + Ctl)` , která značí, že se jedná o jednotnou operaci na jednom qubit.
 
 I když je to v zásadě dostačující pro popsání jakékoli jakékoli operace s jedním qubit, mohou mít různé cílové počítače efektivnější reprezentace o Paulich operátorech, takže předehru obsahuje nejrůznější způsoby, jak convienently vyjádřit v takových rotacích.
-Nejběžnější je <xref:Microsoft.Quantum.Intrinsic.r> operace, která implementuje otočení kolem zadané osy Pauli, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je operátor Pauli, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální hodnotu matice.
+Nejběžnější je <xref:Microsoft.Quantum.Intrinsic.R> operace, která implementuje otočení kolem zadané osy Pauli, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} kde $ \sigma $ je operátor Pauli, $ \phi $ je úhel a kde $ \exp $ představuje exponenciální hodnotu matice.
 Má signaturu `((Pauli, Double, Qubit) => Unit is Adj + Ctl)` , kde první dvě části vstupu reprezentují klasické argumenty $ \sigma $ a $ \phi $ potřebné k určení jednotkového operátoru $R (\sigma, \phi) $.
 Částečně se dá použít $ \sigma $ a $ \phi $, aby se získala operace, jejíž typ je jedna qubit jednotně.
 Například `R(PauliZ, PI() / 4, _)` je typu `(Qubit => Unit is Adj + Ctl)` .
 
 > [!NOTE]
-> <xref:Microsoft.Quantum.Intrinsic.r>Operace rozdělí vstupní úhel o 2 a násobí ho hodnotou-1.
+> <xref:Microsoft.Quantum.Intrinsic.R>Operace rozdělí vstupní úhel o 2 a násobí ho hodnotou-1.
 > Pro $Z $ rotace to znamená, že $ \ket {0} $ eigenstate je otočeno pomocí $-\phi/$2 a $ \ket {1} $ eigenstate je otočeno $ \phi/$2, takže $ \ket {1} $ eigenstate je otočen $ \phi $ vzhledem k $ \ket {0} $ eigenstate.
 >
 > Konkrétně to znamená, že `T` a `R(PauliZ, PI() / 8, _)` liší se pouze nepodstatnými [globálními fázemi](xref:microsoft.quantum.glossary#global-phase).
@@ -217,7 +217,7 @@ Vzhledem k tomu, že provádění qubit měření je poměrně běžné, definuj
 Tato <xref:Microsoft.Quantum.Intrinsic.M> operace měří operátor Pauli $Z $ v jednom qubit a má signaturu `(Qubit => Result)` .
 `M(q)` je ekvivalentem k `Measure([PauliZ], [q])`.
 
-<xref:microsoft.quantum.measurement.MultiM>Měří operátor Pauli $Z $ *samostatně* pro každé pole qubits a vrací *pole* `Result` hodnot získaných pro každé qubit.
+<xref:Microsoft.Quantum.Measurement.MultiM>Měří operátor Pauli $Z $ *samostatně* pro každé pole qubits a vrací *pole* `Result` hodnot získaných pro každé qubit.
 V některých případech je to možné optimalizovat. Má signaturu ( `Qubit[] => Result[])` .
 `MultiM(qs)` je ekvivalentem:
 
