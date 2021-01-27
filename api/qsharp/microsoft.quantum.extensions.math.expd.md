@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.ExpD
 title: ExpD – funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.expd".
-ms.openlocfilehash: 788a25eeccd7ff3341a1138f5a871d2305899f56
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: d04cf47e9e27ca1c7a8a201a28d18c86a55e07a7
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96213017"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98822388"
 ---
-# <a name="expd-function"></a><span data-ttu-id="368b9-102">ExpD – funkce</span><span class="sxs-lookup"><span data-stu-id="368b9-102">ExpD function</span></span>
+# <a name="expd-function"></a><span data-ttu-id="8d9e1-102">ExpD – funkce</span><span class="sxs-lookup"><span data-stu-id="8d9e1-102">ExpD function</span></span>
 
-<span data-ttu-id="368b9-103">Obor názvů: [Microsoft.. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="368b9-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="8d9e1-103">Obor názvů: [Microsoft.. Extensions. Math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="8d9e1-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="368b9-104">Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="368b9-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="8d9e1-104">Balíček: [Microsoft. ProQSharpme. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="8d9e1-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="368b9-105">ExpD se už nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="368b9-105">ExpD has been deprecated.</span></span> <span data-ttu-id="368b9-106"><xref:Microsoft.Quantum.Math.ExpD>Místo toho ho použijte.</span><span class="sxs-lookup"><span data-stu-id="368b9-106">Please use <xref:Microsoft.Quantum.Math.ExpD> instead.</span></span>
+> <span data-ttu-id="8d9e1-105">ExpD se už nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="8d9e1-105">ExpD has been deprecated.</span></span> <span data-ttu-id="8d9e1-106"><xref:Microsoft.Quantum.Math.ExpD>Místo toho ho použijte.</span><span class="sxs-lookup"><span data-stu-id="8d9e1-106">Please use <xref:Microsoft.Quantum.Math.ExpD> instead.</span></span>
 >
-> <span data-ttu-id="368b9-107">Používejte @"microsoft.quantum.math.expd".</span><span class="sxs-lookup"><span data-stu-id="368b9-107">Please use @"microsoft.quantum.math.expd".</span></span>
+> <span data-ttu-id="8d9e1-107">Používejte @"microsoft.quantum.math.expd".</span><span class="sxs-lookup"><span data-stu-id="8d9e1-107">Please use @"microsoft.quantum.math.expd".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function ExpD (a : Double) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="368b9-108">Vstup</span><span class="sxs-lookup"><span data-stu-id="368b9-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="8d9e1-108">Vstup</span><span class="sxs-lookup"><span data-stu-id="8d9e1-108">Input</span></span>
 
-### <a name="a--double"></a><span data-ttu-id="368b9-109">Odpověď: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="368b9-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="a--double"></a><span data-ttu-id="8d9e1-109">Odpověď: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="8d9e1-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--double"></a><span data-ttu-id="368b9-110">Výstup: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="368b9-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+
+## <a name="output--double"></a><span data-ttu-id="8d9e1-110">Výstup: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="8d9e1-110">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
