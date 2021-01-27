@@ -1,6 +1,6 @@
 ---
 title: Popis okruhu provozu: Přečtěte si, jak vizuálně znázornit jednoduché a komplexní operace s využitím diagramů okruhu.
-Autor: QuantumWriter UID: Microsoft.. koncepty. okruhy MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. okruhy MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -89,7 +89,7 @@ Tato sekvence brány má zásadní význam pro výpočetní výkon, protože vyt
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu* .
+Operace s touto nebo větší složitou složitostí jsou všudypřítomný s využitím algoritmů pro provozní a přístupnosti chyb, takže by měly být skvělé, že pro svou vizualizaci se používá jednoduchá metoda, která se nazývá *diagram okruhu*.
 Diagram okruhu pro přípravu tohoto maximálního entangledého stavu je:
 
 <!--- ![](.\media\1.svg) --->

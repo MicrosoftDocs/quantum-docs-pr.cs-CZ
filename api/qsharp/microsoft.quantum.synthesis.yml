@@ -8,6 +8,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.Extended
 - summary: Vypočítá Hadamard transformaci logické funkce v {-1,1} kódování pomocí metody Yates.
   uid: Microsoft.Quantum.Synthesis.FastHadamardTransformed
+- summary: U každé dvě úrovně 2 se počítá "překlopná maska", která označuje qubits, která se má obrátit před a po použití odpovídající qubit brány. Pro praktické předřadí výsledek 0.
+  uid: Microsoft.Quantum.Synthesis.FlipMasks
 - summary: Sestaví MCMTMask typ jako pole typu Singleton, pokud nejsou cíle 0, v opačném případě vrátí prázdné pole.
   uid: Microsoft.Quantum.Synthesis.GateMask
 - summary: Vypočítá až dvě MCMT masky pro transformaci y na x.
@@ -20,6 +22,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.RMEncoding
 - summary: Upraví tabulku pravdy z pole logických hodnot podle počtu proměnných. nové pole je vráceno o délku `2^numVars` , pravděpodobně vyžaduje `table` větší velikost u `false` záznamů nebo jejich zkracování pro `2^numVars` prvky.
   uid: Microsoft.Quantum.Synthesis.SizeAdjustedTruthTable
+- summary: Kontroluje, zda dané pole představuje čtvercovou matici.
+  uid: Microsoft.Quantum.Synthesis.SquareMatrixFact
 - summary: Masky výpočetní brány pro syntetizaci permutace.
   uid: Microsoft.Quantum.Synthesis.TBSMain
 - summary: Vypočítá masky bran pro transformaci Perm [x] na x a aktualizuje aktuální permutaci.
@@ -34,6 +38,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.UpdatedPermutation
 - summary: Vložení 0 bitové čárky do celého čísla
   uid: Microsoft.Quantum.Synthesis.WithZeroInsertedAt
+- summary: ''
+  uid: Microsoft.Quantum.Synthesis._TwoLevelDecomposition
 name: Microsoft.Quantum.Synthesis
 newtypes:
 - summary: Stav během rozkladu na základě indexů proměnných
@@ -54,8 +60,15 @@ operations:
   uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingDecompositionWithVariableOrder
 - summary: Permutes amplitudy ve stavu bez stavového pole s ohledem na permutaci pomocí syntézy založené na transformaci.
   uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingTransformation
+- summary: Aplikuje jednu qubit bránu definovanou jednotkovou maticí 2x2.
+  uid: Microsoft.Quantum.Synthesis.ApplySingleQubitUnitary
 - summary: ''
   uid: Microsoft.Quantum.Synthesis.ApplyTransposition
+- summary: >-
+    Použije bránu definovanou 2 ^ n × 2 ^ n jednotkovou maticí.
+
+    Pokud matice není Jednotková nebo má nesprávnou velikost, dojde k chybě.
+  uid: Microsoft.Quantum.Synthesis.ApplyUnitary
 - summary: Aplikuje @"microsoft.quantum.intrinsic.x" operaci na `target` , pokud je logická funkce `func` vyhodnocena jako true pro klasické přiřazení v `controlRegister` .
   uid: Microsoft.Quantum.Synthesis.ApplyXControlledOnTruthTable
 - summary: Aplikuje @"microsoft.quantum.intrinsic.x" operaci na `target` , pokud je logická funkce `func` vyhodnocena jako true pro klasické přiřazení v `controlRegister` .
@@ -63,9 +76,9 @@ operations:
 summary: Tento obor názvů obsahuje funkce a operace pro syntetizování operací na základě permutací a logických funkcí.
 uid: Microsoft.Quantum.Synthesis
 metadata:
-  ms.openlocfilehash: 2f92f4662252148ff0e093f5392f5f00f26b661f
-  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.openlocfilehash: e238fdedcc931bb02c35591014d20b50b695b116
+  ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/27/2020
-  ms.locfileid: "92709388"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98855192"

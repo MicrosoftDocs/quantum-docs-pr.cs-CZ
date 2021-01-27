@@ -4,16 +4,16 @@ description: Přečtěte si o diagnostických funkcích a operacích v rámci Q#
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1ab9b77c7536a1860064110810371d3a68e95b40
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d13122187a24893d297cfdbb3ad4db03eb22ded0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690852"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858686"
 ---
 # <a name="diagnostics"></a>Diagnostika #
 
@@ -27,7 +27,7 @@ Diagnostiku o klasických hodnotách se dá získat pomocí <xref:Microsoft.Quan
 Ve výchozím nastavení zapíše řetězec do konzoly.
 Používá se společně s interpolované řetězce a usnadňuje <xref:Microsoft.Quantum.Intrinsic.Message> tak sestavy diagnostických informací o klasických hodnotách:
 
-```Q#
+```qsharp
 let angle = Microsoft.Quantum.Math.PI() * 2.0 / 3.0;
 Message($"About to rotate by an angle of {angle}...");
 ```
@@ -45,9 +45,9 @@ Porovnáním je cílový počítač [simulátoru Toffoli](xref:microsoft.quantum
 
 ## <a name="facts-and-assertions"></a>Fakta a kontrolní výrazy ##
 
-Jak je popsáno v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging), funkce nebo operace s podpisem `Unit -> Unit` nebo v `Unit => Unit` uvedeném pořadí může být označena jako *Test jednotky* .
+Jak je popsáno v tématu [testování a ladění](xref:microsoft.quantum.guide.testingdebugging), funkce nebo operace s podpisem `Unit -> Unit` nebo v `Unit => Unit` uvedeném pořadí může být označena jako *Test jednotky*.
 Každý test jednotek se obvykle skládá z malého programu v řádu a jedné nebo více podmínek, které kontrolují správnost tohoto programu.
-Tyto podmínky můžou být ve formě obou _skutečností_ , které kontrolují hodnoty jejich vstupů nebo _kontrolních výrazů_ , které kontrolují stavy jednoho nebo více qubits předaných jako vstup.
+Tyto podmínky můžou být ve formě obou _skutečností_, které kontrolují hodnoty jejich vstupů nebo _kontrolních výrazů_, které kontrolují stavy jednoho nebo více qubits předaných jako vstup.
 
 Například `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` představuje matematický fakt, který $1 + 1 = $2, zatímco `AssertQubit(One, qubit)` představuje podmínku, kterou měření `qubit` vrátí `One` s jistotou.
 V bývalém případě můžeme ověřit správnost podmínky, pokud jsou k disqubity jenom jeho hodnoty, ale v druhém případě je potřeba, abyste zjistili něco o stavu, abyste mohli kontrolní výraz vyhodnotit.
@@ -145,7 +145,7 @@ V případech, kdy operace implementuje vratné klasické operace, například z
 
 U těchto dvou přístupů se ale Nepostradatelně testují různé vlastnosti testovaných operací.
 Vzhledem k tomu, že místní kontrolní výraz volá každou operaci několikrát, jednou pro každý vstupní stav, jakékoli náhodné volby a výsledky měření mohou být mezi jednotlivými voláními změněny.
-Naproti tomu odkazovaný kontrolní výraz volá každou operaci přesně jednou, takže kontroluje, zda se operace rovnají *v jednom snímku* .
+Naproti tomu odkazovaný kontrolní výraz volá každou operaci přesně jednou, takže kontroluje, zda se operace rovnají *v jednom snímku*.
 Oba tyto testy jsou užitečné v případě, že jsou zajištěny správné množství programů.
 
 

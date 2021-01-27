@@ -4,17 +4,17 @@ description: Přečtěte si o čítači operací primitivního provozu Microsoft
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bf75eb94696a489a587316928bc3f33baa4a1785
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 19ea3c1f5a91c00de4d3e435318bf4cf8cdd83be
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690949"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858609"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Simulátor trasování doby provozu: čítač primitivních operací
 
@@ -34,7 +34,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-primitive-operation-counter-in-a-c-host-program"></a>Použití čítače primitivních operací v hostitelském programu C#
 
-Příklad jazyka C#, který následuje v této části, počítá <xref:Microsoft.Quantum.Intrinsic.T> , kolik operací je potřeba k implementaci <xref:Microsoft.Quantum.Intrinsic.ccnot> operace, na základě následujícího Q# ukázkového kódu:
+Příklad jazyka C#, který následuje v této části, počítá <xref:Microsoft.Quantum.Intrinsic.T> , kolik operací je potřeba k implementaci <xref:Microsoft.Quantum.Intrinsic.CCNOT> operace, na základě následujícího Q# ukázkového kódu:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

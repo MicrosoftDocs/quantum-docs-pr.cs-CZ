@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Synthesis.IntegerBits
 title: IntegerBits – funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Synthesis
 qsharp.name: IntegerBits
 qsharp.summary: Returns all positions in which bits of an integer are set.
-ms.openlocfilehash: d6566716f5a63c090668d9582b7b000c16d1f6a5
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 3352c1b3003ee387fb03b72461fedb400e29046d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231088"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98855405"
 ---
 # <a name="integerbits-function"></a>IntegerBits – funkce
 
@@ -44,3 +44,10 @@ Počet bitů v binárním rozbalování `value` .
 ## <a name="output--int"></a>Výstup: [int](xref:microsoft.quantum.lang-ref.int)[]
 
 Pole obsahující všechny bitové pozice (počínaje 0), které jsou 1 v binárním rozšíření s `value` ohledem na všechny bity až do pozice `length - 1` .  Všechny pozice jsou seřazené v poli podle pozice v rostoucím pořadí.
+
+## <a name="example"></a>Příklad
+
+```qsharp
+IntegerBits(23, 5); // [0, 1, 2, 4]
+IntegerBits(10, 4); // [1, 3]
+```

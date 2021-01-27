@@ -4,17 +4,17 @@ description: Přečtěte si o čítači šířky Microsoft QDK, který použív�
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e54e92cc4a76ce9f9c5aead84f2b64320d6b4f1c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e9a526ee1440544aace922bd83c6ea39cb83c1ae
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691115"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858580"
 ---
 # <a name="quantum-trace-simulator-width-counter"></a>Simulátor trasování doby využití: čítač šířky
 
@@ -44,7 +44,7 @@ operation ApplyMultiControlledX( numberOfQubits : Int ) : Unit {
 }
 ```
 
-Operace s hodnotou vynásobení <xref:Microsoft.Quantum.Intrinsic.X> funguje na celkem pět qubits, přiděluje dvě [pomocné qubits](xref:microsoft.quantum.glossary#ancilla)a má vstupní šířku **5** . Pomocí následujícího programu v jazyce C# ověřte počty:
+Operace s hodnotou vynásobení <xref:Microsoft.Quantum.Intrinsic.X> funguje na celkem pět qubits, přiděluje dvě [pomocné qubits](xref:microsoft.quantum.glossary#ancilla)a má vstupní šířku **5**. Pomocí následujícího programu v jazyce C# ověřte počty:
 
 ```csharp 
 var config = new QCTraceSimulatorConfiguration();

@@ -4,17 +4,17 @@ description: Přečtěte si o nástroji Microsoft QDK invalidateed qubits pro ko
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 18371b3798d0eaa12d4e7107f58f44379594619f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 9014097ace7c9f19d93a92372da40f71fa7f87ee
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835991"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858625"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Simulátor trasování provozu: neověřená Kontrola použití qubits
 
@@ -34,11 +34,11 @@ operation UseReleasedQubit() : Unit {
 }
 ```
 
-Při použití `H` operace na `q[0]` , odkazuje na již vydaný qubit, což může způsobit nedefinované chování. Pokud je povolená funkce Qubits pro kontrolu použití, vyvolá výjimku, `InvalidatedQubitsUseCheckerException` Pokud program použije operaci na už vydaný qubit. Další informace naleznete v tématu <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>.
+Při použití `H` operace na `q[0]` , odkazuje na již vydaný qubit, což může způsobit nedefinované chování. Pokud je povolená funkce Qubits pro kontrolu použití, vyvolá výjimku, `InvalidatedQubitsUseCheckerException` Pokud program použije operaci na už vydaný qubit. Další informace naleznete v tématu <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.InvalidatedQubitsUseCheckerException>.
 
 ## <a name="invoking-the-invalidated-qubits-use-checker"></a>Vyvolává se qubits pro kontrolu použití neověřených
 
-Chcete-li spustit simulátor trasování doby provozu s neověřeným qubits, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UseInvalidatedQubitsUseChecker` vlastnost na **hodnotu true**a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem. 
+Chcete-li spustit simulátor trasování doby provozu s neověřeným qubits, je nutné vytvořit <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instanci, nastavit `UseInvalidatedQubitsUseChecker` vlastnost na **hodnotu true** a poté vytvořit novou <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instanci s `QCTraceSimulatorConfiguration` parametrem. 
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -78,4 +78,4 @@ namespace Quantum.MyProgram
 - Přehled [simulátoru trasování](xref:microsoft.quantum.machines.qc-trace-simulator.intro) pro všechna ta.
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>Reference k rozhraní API.
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>Reference k rozhraní API.
-- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>Reference k rozhraní API.
+- <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.InvalidatedQubitsUseCheckerException>Reference k rozhraní API.

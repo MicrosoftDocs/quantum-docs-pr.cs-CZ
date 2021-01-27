@@ -1,6 +1,6 @@
 ---
 title: Popis pokročilých konceptů matrice: Přečtěte si o exponenciálních eigenvectors, eigenvalues a matricích, základních nástrojích, které se používají k popisu a simulaci algoritmů.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Matrix-rozšířené MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: article No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Matrix-rozšířené MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"

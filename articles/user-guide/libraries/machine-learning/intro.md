@@ -4,17 +4,17 @@ description: Přečtěte si, jak se Machine Learning používá v systémech na 
 author: alexeib2
 ms.author: alexeib
 ms.date: 11/22/2019
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9f7f892fb2b76432942c86163497c22f0c73d51f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e2f4a4a63eef40474856426b3b29652b5d3053b2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833809"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854021"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Seznámení s Machine Learningmi
 
@@ -30,7 +30,7 @@ Klasifikace je úloha strojového učení pod dohledem, kde cílem je odvozovat 
 Podobně jako u tradičních metod se klasifikace nestandardních hodnot skládá ze tří kroků:
 - kódování dat
 - Příprava stavu třídění
-- měření z důvodu pravděpodobnostní povahy měření se tyto tři kroky musí opakovat několikrát. Jak kódování, tak i výpočet stavu třídění se provádí prostřednictvím *okruhů*v počtu. I když je okruh kódování obvykle řízený daty a bez parametrů, okruh třídění obsahuje dostatečnou sadu podrobnějších parametrů. 
+- měření z důvodu pravděpodobnostní povahy měření se tyto tři kroky musí opakovat několikrát. Jak kódování, tak i výpočet stavu třídění se provádí prostřednictvím *okruhů* v počtu. I když je okruh kódování obvykle řízený daty a bez parametrů, okruh třídění obsahuje dostatečnou sadu podrobnějších parametrů. 
 
 V navrhovaném řešení se okruh třídění skládá z qubit otočení a dvou qubit řízených otočení. Zde popsané parametry jsou úhly otočení. Pro výpočet nenáročných hodnot se ví, že se u zařízení pro rotaci a řízenému otočení označují *univerzální* , což znamená, že jakákoli Jednotková matice je možné rozložit do dostatečně dlouhého okruhu skládajícího se z těchto bran
 
@@ -41,7 +41,7 @@ Proto řešení je obdobou nenáročného na počítač, který podporuje Vektor
 
 Jednoduchý návrh klasifikátoru pro období se dá porovnat s tradičním řešením SVM (support Vector Machine). Odvození pro ukázku dat $x $ v případě SVM se provádí pomocí optimálního formuláře jádra $ \sum \ alpha_j k (x_j, x) $, kde $k $ je určitá funkce jádra.
 
-Naproti tomu klasifikátorní využití používá prediktivní $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) × 〉 $, která je v duchu podobná, ale technicky poměrně odlišná. Proto když se používá přímočarý kódovací kódování, $p (y │ x, U (\theta)) $ je kvadratická forma ve amplitudách $x $, ale součinitele tohoto formuláře se již nenaučí. místo toho jsou agregovány z prvků matice $U okruhu (\theta) $, což obvykle má výrazně méně možností s možností učení $ \theta $, než je dimenze vektoru $x $. Stupeň polynomu $p (y │ x, U (\theta)) $ v původních funkcích se dá zvýšit na $2 ^ l $ pomocí kódování produktového pole v $l $ kopiích $x $.
+Naproti tomu klasifikátor v poli používá prediktivní $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) x 〉 $, která je v duchu podobná, ale technicky poměrně odlišná. Proto když se používá přímočarý kódovací kódování, $p (y │ x, U (\theta)) $ je kvadratická forma ve amplitudách $x $, ale součinitele tohoto formuláře se již nenaučí. místo toho jsou agregovány z prvků matice $U okruhu (\theta) $, což obvykle má výrazně méně možností s možností učení $ \theta $, než je dimenze vektoru $x $. Stupeň polynomu $p (y │ x, U (\theta)) $ v původních funkcích se dá zvýšit na $2 ^ l $ pomocí kódování produktového pole v $l $ kopiích $x $.
 
 Naše architektura zkoumá relativně omezené okruhy, které proto musí být *rychle Entangling* , aby bylo možné zachytit všechny korelace mezi funkcemi dat ve všech oblastech. Příkladem nejužitečnější komponenty pro rychlé Entangling okruhy vidíte na obrázku níže. I když okruh s touto geometrií sestává jenom z $3 n + 1 $ bran, matice s jednotkou váhy, kterou COMPUTE počítá, zajišťuje významné vzájemné rozhovory mezi funkcemi $2 ^ n $.
 
@@ -71,7 +71,7 @@ Jasně $b $ musí být v intervalu $ (-0.5, + 0,5) $, aby byly smysluplné.
 
 Školicí případ $ (x, y) \in \mathcal{D} $ se považuje za chybnou *klasifikaci* daného posunutí $b $, pokud je popisek odvozený pro $x $ jako na RULE1 v podstatě jiný než $y $. Celkový počet chybných klasifikací je *školicím skórem* daného třídění, které odpovídá posunu $b $. *Optimální* posun klasifikátoru $b $ minimalizuje skóre školení. Je snadné zjistit, že s ohledem na odhad předpočítaných pravděpodobností $ \{ P (M = y_2 | U (\theta) x) | (x, *) \in\mathcal{D} \} $, optimální posun klasifikátoru lze najít pomocí binárního vyhledávání v intervalu $ (-0,5, + 0,5) $ tím, že se provede maximálně $ \ Log_2 (| \mathcal{D} |). $ kroky.
 
-### <a name="reference"></a>Referenční informace
+### <a name="reference"></a>Reference
 
 Tyto informace by měly být dostatečné pro zahájení přehrávání s kódem. Pokud ale chcete získat další informace o tomto modelu, přečtěte si prosím původní návrh: [ *"klasifikátory zaměřené na okruhy", Marie Schuld, Alex Bocharov, Krysta Svore a Nathan* Wiebe](https://arxiv.org/abs/1804.00633)
 

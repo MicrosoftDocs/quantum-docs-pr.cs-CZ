@@ -4,26 +4,26 @@ description: Naučte se, jak nainstalovat knihovnu Microsoft pro seznámení pod
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.installation
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f1a7d1d041dab73980d8debc179d6c79acac6d33
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 5d32544bbce527a376345023d5549308fd4e7c79
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759795"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854079"
 ---
 # <a name="chemistry-library-installation"></a>Instalace knihovny chemie
 
-Ukázka [ **MolecularHydrogen** ](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) používá molekulová vstupní data, která jsou konfigurována ručně.
+Ukázka [ **MolecularHydrogen**](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) používá molekulová vstupní data, která jsou konfigurována ručně.
 I když je to v malých příkladech jemný, je chemie ve velkém rozsahu vyžaduje Hamiltonians s miliony nebo miliardami podmínek.
 Takové Hamiltonians, generované škálovatelnými výpočetními balíčky výpočtů, je příliš velké pro import rukou.
 
 Knihovna chemickéch procesorů pro práci s aplikacemi pro vývoj po závažnosti je navržená tak, aby dobře spolupracovala s výpočetními balíčky, zejména s výpočetními platformami [**NWChem**](http://www.nwchem-sw.org/) , které vyvinula laboratoř pro molekulární vědy (EMSL) v oblasti Tichomoří – severozápadní v národní laboratoři.
-Konkrétně [balíček **Microsoft. Broombridge. chemie** ](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) poskytuje nástroje pro načítání instancí pro načítající se problémy s simulací, které jsou znázorněné ve [schématu](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)a jsou podporované také pro export pomocí nejnovějších verzí NWChem.
+Konkrétně [balíček **Microsoft. Broombridge. chemie**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) poskytuje nástroje pro načítání instancí pro načítající se problémy s simulací, které jsou znázorněné ve [schématu](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)a jsou podporované také pro export pomocí nejnovějších verzí NWChem.
 
 Knihovna pro vytváření nenáročného vývojového prostředí poskytuje také nástroj příkazového řádku `qdk-chem` pro převod mezi staršími formáty a [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge).
 

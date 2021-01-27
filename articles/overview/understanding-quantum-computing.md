@@ -9,16 +9,16 @@ uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: c6c6249fd56c6fb65550c81ffee902eca555b0cd
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834988"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98855091"
 ---
 # <a name="understanding-quantum-computing"></a>Principy kvantových výpočtů
 
-Kvantové počítače využívají při zpracovávání informací principy kvantové mechaniky. Kvůli tomu kvantové výpočty vyžadují jiný přístup než ty klasické. Jedním z příkladů těchto rozdílů je procesor používaný v kvantových počítačích. Zatímco klasické počítače používají elektřinu a dobře známé čipy na bázi křemíku, kvantové počítače pracují s kvantovými stavy objektů jako atomy, ionty, fotony nebo elektrony. Používají jejich kvantové vlastnosti k reprezentaci bitů, které je možné připravit v různých kvantových superpozicích nul a jedniček.  
+Kvantové počítače využívají při zpracovávání informací principy kvantové mechaniky. Kvůli tomu kvantové výpočty vyžadují jiný přístup než ty klasické. Jedním z příkladů těchto rozdílů je procesor používaný v kvantových počítačích. Tam, kde klasické počítače používají známé čipy založené na Silicon, využívají počítače s procesorem, které používají systémy, ve kterých můžeme řídit jedinečné vlastnosti a chování mechanismu plnění, jako jsou například atomy, ionty, photons nebo Electrons. I když klasický počítač používá binární vysokou hodnotu založenou na logice a minima, tj. 1 a 0, počítače využívají své vlastnosti doby provozu, které reprezentují bity, které je možné připravit v různých hlavních polohách 1 a 0.  
 
 Kvantové objekty se chovají v souladu se zákony kvantové mechaniky, která využívá koncepty jako pravděpodobnostní výpočty, superpozice a provázání. Tyto koncepty poskytují základ pro kvantové algoritmy, které zapojují sílu kvantových výpočtů do řešení složitých problémů. Tento článek popisuje některé ze základních konceptů kvantové mechaniky, na kterých jsou kvantové výpočty založeny.
 
@@ -52,7 +52,7 @@ Kromě této vzájemné závislosti platí, že částice udržují toto propoje
 
 ### <a name="qubits-and-probability"></a>Qubity a pravděpodobnost
 
-Klasické počítače ukládají a zpracovávají informace po bitech, které můžou mít stav buď 1, nebo 0, ale nikdy ne obojí. Ekvivalentem bitů v kvantových výpočtech je **qubit**, který představuje stav kvantové částice. Díky superpozici může qubit nabývat stavu 1, 0 a čehokoli mezi tím. V závislosti na konfiguraci má qubit *určitou pravděpodobnost*, že zkolabuje do stavu 1 nebo 0. Pravděpodobnost kolapsu qubitu do jednoho nebo druhého stavu je dána **kvantovou interferencí**. 
+Klasické počítače ukládají a zpracovávají informace po bitech, které můžou mít stav buď 1, nebo 0, ale nikdy ne obojí. Ekvivalentem bitů v kvantových výpočtech je **qubit**, který představuje stav kvantové částice. Díky superpozici může qubit nabývat stavu 1, 0 a čehokoli mezi tím. V závislosti na konfiguraci má qubit *určitou pravděpodobnost*, že zkolabuje do stavu 1 nebo 0. Pravděpodobnost kolapsu qubitu do jednoho nebo druhého stavu je dána **kvantovou interferencí**.
 
 Vzpomínáte si na kamaráda, který vás přišel vyfotit? Předpokládejme, že má na fotoaparátu speciální *interferenční* filtr. Pokud si vybere filtr *70/30* a začne fotit, na 70 % snímků budete směřovat doleva a na 30 % budete směřovat doprava. Filtr ovlivnil normální funkci fotoaparátu tak, že změnil pravděpodobnost výsledku.
 

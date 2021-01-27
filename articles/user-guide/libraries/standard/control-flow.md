@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ad107f5c65a4bf368d12d30e4a72786f2076205c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8f4b69250ed49bd56c3066d5cd40db4b8abfc9cb
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690867"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858701"
 ---
 # <a name="higher-order-control-flow"></a>Tok řízení Higher-Order #
 
@@ -162,9 +162,9 @@ U(1, time / Float(nSteps), target);
 // ...
 ```
 
-V tuto chvíli teď můžeme mít k dispozici informace o rozšíření Trotter – Suzuki *bez odkazů na veškerou část* .
+V tuto chvíli teď můžeme mít k dispozici informace o rozšíření Trotter – Suzuki *bez odkazů na veškerou část*.
 Rozšíření je efektivně velmi konkrétní vzor iterace, který motivuje $ \eqref{EQ: Trotter-Suzuki-0} $.
-Tento vzor iterace implementuje <xref:Microsoft.Quantum.Canon.DecomposedIntoTimestepsCA> :
+Tento vzor iterace implementuje <xref:Microsoft.Quantum.Canon.DecomposedIntoTimeStepsCA> :
 
 ```qsharp
 // The 2 indicates how many terms we need to decompose,
@@ -213,7 +213,7 @@ Tato konstrukce je přesně ta `ApplyWith` , proto zapište text naší nové op
 ```
 
 Tady jsme použili <xref:Microsoft.Quantum.Canon.ApplyPauliFromBitString> pro použití s nástrojem $P $, částečně aplikované na jeho cíl `ApplyWith` .
-Všimněte si ale, že potřebujeme transformovat registraci *ovládacího prvku* do našeho formuláře, takže částečně použijeme interní operaci `(Controlled oracle)` na *cíli* .
+Všimněte si ale, že potřebujeme transformovat registraci *ovládacího prvku* do našeho formuláře, takže částečně použijeme interní operaci `(Controlled oracle)` na *cíli*.
 Tato činnost ponechá `ApplyWith` v závorce řídicího registru pomocí $P $, přesně podle potřeby.
 
 V tuto chvíli jsme se mohli udělat, ale nevyhovuje tomu, že se naše nová operace neshoduje s tím, jako když použijete `Controlled` funktor.
