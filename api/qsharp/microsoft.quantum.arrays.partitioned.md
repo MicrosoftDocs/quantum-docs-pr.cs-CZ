@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arrays.Partitioned
 title: Dělená funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Partitioned
 qsharp.summary: Splits an array into multiple parts.
-ms.openlocfilehash: bce46262e3ef64a43e578098d81c5dd39225915e
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 43d99a0e33a813e4af23a3890ace808e91c1049c
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220497"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845547"
 ---
 # <a name="partitioned-function"></a>Dělená funkce
 
@@ -49,3 +49,11 @@ Více polí, kde první pole je první `nElements[0]` z `arr` a druhé pole je d
 
 ### <a name="t"></a>'S
 
+
+
+## <a name="example"></a>Příklad
+
+```qsharp
+// The following returns [[1, 5], [3], [7]];
+let split = Partitioned([2,1], [1,5,3,7]);
+```

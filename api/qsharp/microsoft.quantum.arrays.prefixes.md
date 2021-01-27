@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arrays.Prefixes
 title: Funkce prefixs
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Prefixes
 qsharp.summary: Given an array, returns all its prefixes.
-ms.openlocfilehash: 3501c11437534b1623bffba272a4517487e5634a
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: a2e1721f8f59bf9aa425f04710637023d482a2ca
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220380"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845509"
 ---
 # <a name="prefixes-function"></a>Funkce prefixs
 
@@ -49,3 +49,10 @@ Pole prvků.
 ### <a name="t"></a>'S
 
 Typ `array` prvků.
+
+## <a name="example"></a>Příklad
+
+```qsharp
+let prefixes = Prefixes([23, 42, 144]);
+// prefixes = [[23], [23, 42], [23, 42, 144]]
+```
