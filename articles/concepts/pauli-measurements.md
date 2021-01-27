@@ -1,6 +1,6 @@
 ---
 title: Pauli měření Popis: Naučte se pracovat s operacemi měření jednoduchých a qubit Pauli.
-Autor: bradben UID: Microsoft.. koncepty. Pauli MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: bradben UID: Microsoft.. koncepty. Pauli MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -139,7 +139,7 @@ $$
 
 Je také ekvivalentní s použitím $ HS ^ \dagger $ na vektor stavu a následně na měření $ Z $ , aby následující operace byla rovnocenná `Measure([PauliY], [q])` :
 
-```Q#
+```qsharp
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {

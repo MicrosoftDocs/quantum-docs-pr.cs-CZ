@@ -4,17 +4,17 @@ description: Přečtěte si o druhém kvantizační přístupu k modelování el
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.secondquantization
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6becd348f7b3957cb60b16bbd5a28228527e1d4c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a08e20d5b53aa97cb12ead0dc3a36069d0ec5df8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835804"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858835"
 ---
 # <a name="second-quantization"></a>Druhý kvantizační
 
@@ -84,7 +84,7 @@ Stavy povolání pro orbitals $2N $ se můžou podobně ukládat v $2N $ qubits.
 Pokud například $N = $2, pak stav $ $ \ket {0} \ket {1} \ket {1} \ket {0} , $ $
 
 by odpovídaly číselníku orbitals $1 $ a $2 $, který je obsazený zbývajícím prázdným.
-Podobně platí, že stav $ $ \ket {0} \equiv \ket {0} _ {0} \cdots {0} \ket_{N-1}, $ $
+Podobně platí, že stav $ $ \ket {0} \equiv \ket {0} _{0} \cdots {0} \ket_{N-1}, $ $
 
 nemá žádný Electrons a je známý jako "podtlak State".
 
@@ -211,12 +211,12 @@ Všechny `FermionTerm` jsou automaticky vloženy do kanonického pořadí násle
     var signEqual = sign0 == sign1;
 ```
 
-## <a name="second-quantized-fermionic-hamiltonian"></a>Druhý – quantized Fermionic Hamiltonian
+## <a name="second-quantized-fermionic-hamiltonian"></a>Second-Quantized Fermionic Hamiltonian
 
 Je možné, že Hamiltonian v modelech neunsurprisingch hodnot [pro elektronické systémy](xref:microsoft.quantum.chemistry.concepts.quantummodels) se dají zapisovat z podmínek vytváření a annihilationch operátorů.
 Konkrétně platí, že pokud $ \psi \_ j $ jsou orbitals, které tvoří základ, pak
 
-\begin{Equation} \hat{H} = \sum \_ {pq} H \_ {pq} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {pqrs} h \_ {pqrs} a ^ \dagger \_ p a ^ \dagger \_ q a \_ RA \_ s + H \_ {\textrm NUC}, \label{EQ: totalHam} \end{Equation}, kde $h \_ {\textrm NUC} $ je jaderná energie (což je konstanta ve sbližování po Oppenheimer) a
+\begin{Equation} \hat{H} = \sum \_ {pq} H \_ {pq} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {pqrs} h \_ {pqrs} a ^ \dagger \_ p a ^ \dagger \_ q a \_ RA \_ s + H \_ {\textrm NUC}, \label{EQ: totalHam} \end{Equation}, kde $h \_ {\textrm nuc} $ je jaderná energie (což je konstanta pod odhadem Born-Oppenheimer) a
 
 \begin{align} h \_ {pq} &= \int \_ {-\infty} ^ \infty \psi ^ \* \_ p (x \_ 1) \left (-\Frac{\nabla ^ 2} {2} + V (x \_ 1) \right) \psi \_ q (x \_ 1) \mathrm{d} ^ 3x \_ 1, \end{align}
 

@@ -1,6 +1,6 @@
 ---
 title: počet, ve kterém se nacházejí Oracle s popisem: Naučte se pracovat s Oracle, operacemi s černým polem, které se používají jako vstup pro jiný algoritmus.
-Autor: cgranade UID: Microsoft.. koncepty. Oracle MS. Author: chgranad MS. Date: 07/11/2018 MS. téma: No-Loc:
+Autor: cgranade UID: Microsoft.. koncepty. Oracle MS. Author: chgranad MS. Date: 07/11/2018 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -134,7 +134,7 @@ kde $ \alpha : \\ { 0, 1 \\ } ^ n \times \\ { 0, 1 \\ } ^ m \to \mathbb { C } $ 
 
 $$
 \begin{align}
-O \ket { \psi } & = o \sum _ { × \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y } x \\\\ 0 & , = 1 ^ n, y 0, 1 ^ m (x, y) O \sum _ { \in \\ { \\ } \in \\ { \\ } } \alpha \ket { x } \ket { y }\\\\
+O \ket { \psi } & = o \sum _{ × \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y } x \\\\ 0 & , = 1 ^ n, y 0, 1 ^ m (x, y) O \sum_ { \in \\ { \\ } \in \\ { \\ } } \alpha \ket { x } \ket { y }\\\\
              &= \sum _ { x \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y \oplus f (x) } .
 \end{align}
 $$
@@ -157,6 +157,9 @@ Stisknutím $$
         &=(-1) ^ { f (0) } Z ^ { f (0)-f (1) } \ket { + } .
 \end{align}
 $$
+
+> [!NOTE]
+>Všimněte si, že $ z ^ { -1 } = Z ^ { \dagger } = z $ a tedy $ z ^ { f (0)-f (1) } = z ^ { f (1)-f (0) } .$
 
 Obecně platí, že obě zobrazení Oracle lze rozšířit tak, aby představovalo klasické funkce, které vracejí reálné hodnoty místo pouze jednoho bitu.
 

@@ -4,17 +4,17 @@ description: Seznamte se se základními výpočetními algoritmy, včetně zes�
 author: QuantumWriter
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 982103876b00718aa3b42c6bc3a07d242cde7594
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d4d8c35b3196ffb9915c6da06116b3c7dfd0562a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692214"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98859005"
 ---
 # <a name="quantum-algorithms"></a>Algoritmy doby. #
 
@@ -49,7 +49,7 @@ V případě pozadí můžete začít ze [standardního zesílení amplitud](htt
 Fourierova transformace je základní nástroj pro klasický rozbor a je stejně důležitá pro výpočetní prostředky.
 Kromě toho efektivita aplikace *Fourierova transformace* (QFT) daleko přebírá, co je možné na klasickém počítači, takže při navrhování algoritmu pro plnění hodnot.
 
-Jako přibližné generalizace QFT zajišťujeme <xref:Microsoft.Quantum.Canon.ApproximateQft> operaci, která umožňuje další optimalizace vyřazením rotací, které nejsou bezpodmínečně nutné pro požadovanou přesnost algoritmu.
+Jako přibližné generalizace QFT zajišťujeme <xref:Microsoft.Quantum.Canon.ApproximateQFT> operaci, která umožňuje další optimalizace vyřazením rotací, které nejsou bezpodmínečně nutné pro požadovanou přesnost algoritmu.
 Přibližná QFT vyžaduje operaci otočení dyadic $Z $- <xref:Microsoft.Quantum.Intrinsic.RFrac> a <xref:Microsoft.Quantum.Intrinsic.H> operaci.
 Předpokládá se, že vstup a výstup se zakódují do kódování ve formátu big endian---to znamená, že qubit s indexem `0` je kódovaný v binárním (největším) bitu binárního typu celého čísla.
 Tím se zarovnává s [KET Notation](xref:microsoft.quantum.concepts.dirac)jako registr tří qubits ve stavu $ \ket {100} $ odpovídá $q _0 $ ve stavu $ \ket {1} $, zatímco $q _1 $ a $q _2 $ jsou ve stavu $ \ket {0} $.
@@ -103,7 +103,7 @@ Další podrobnosti najdete v tématu [M. Roetteler, Th. Beth](http://doi.org/10
 
 ### <a name="quantum-phase-estimation"></a>Odhad kvantové fáze ###
 
-Jednou obzvláště důležitou aplikací pro Fourierova transformaci je naučit se eigenvaluesí jednotlivých operátorů, problém známý jako *odhad fáze* .
+Jednou obzvláště důležitou aplikací pro Fourierova transformaci je naučit se eigenvaluesí jednotlivých operátorů, problém známý jako *odhad fáze*.
 Vezměte v úvahu jednotkové $U $ a State $ \ket{\phi} $, což znamená, že $ \ket{\phi} $ je eigenstate $U $ s neznámým eigenvalue $ \phi $, \begin{Equation} U\ket {\ fí} = \phi\ket{\phi}.
 \end{Equation} Pokud máme přístup pouze k $U $ jako Oracle, můžeme se naučit fázi $ \phi $ pomocí toho, že $Z $ rotace aplikovaná na cíl kontrolované operace se rozšíří zpátky na ovládací prvek.
 

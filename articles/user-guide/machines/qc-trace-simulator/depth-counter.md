@@ -4,17 +4,17 @@ description: Přečtěte si o čítači hloubky Microsoft QDK, který používá
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 89d8a2c9f2ecd5c5332215cd4307bcf4a6422036
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9c3a772861582e5c49fe5ad27519c25a59d617b1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692109"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98859047"
 ---
 # <a name="quantum-trace-simulator-depth-counter"></a>Simulátor trasování doby využití: čítač hloubky
 
@@ -23,7 +23,7 @@ Můžete ji použít ke shromáždění počtů, které reprezentují spodní me
 
 ## <a name="depth-values"></a>Hodnoty hloubky
 
-Ve výchozím nastavení mají všechny operace hloubku **0** s výjimkou `T` operace, která má hloubku **1** . To znamená, že ve výchozím nastavení `T` je vypočítána pouze hloubka operací (což je často žádoucí). Čítač hloubky agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
+Ve výchozím nastavení mají všechny operace hloubku **0** s výjimkou `T` operace, která má hloubku **1**. To znamená, že ve výchozím nastavení `T` je vypočítána pouze hloubka operací (což je často žádoucí). Čítač hloubky agreguje a shromažďuje statistické údaje nad všemi hranami [grafu volání](https://en.wikipedia.org/wiki/Call_graph)operace.
 
 Všechny <xref:Microsoft.Quantum.Intrinsic> operace se vyjadřují v souvislosti s qubit rotacemi, <xref:Microsoft.Quantum.Intrinsic.T> operacemi, qubitmi Clifford operacemi, <xref:Microsoft.Quantum.Intrinsic.CNOT> operacemi a měřeními Pauli observables s více qubity. Uživatelé mohou nastavit hloubku pro jednotlivé primitivní operace prostřednictvím `gateTimes` pole <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
 
@@ -52,7 +52,7 @@ operation ApplySampleWithCCNOT() : Unit {
 }
 ```
 
-Chcete-li ověřit, zda `CCNOT` má `T` Hloubka **5** a `ApplySampleWithCCNOT` má `T` hloubku **6** , použijte následující kód jazyka C#:
+Chcete-li ověřit, zda `CCNOT` má `T` Hloubka **5** a `ApplySampleWithCCNOT` má `T` hloubku **6**, použijte následující kód jazyka C#:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
