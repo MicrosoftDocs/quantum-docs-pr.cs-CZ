@@ -4,18 +4,17 @@ description: Naučte se vytvářet aplikace v Q# pomocí Pythonu.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.python
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f6a2a7d1888cfe458fa3989a27d71fcdeed0f01f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: 1ec40b6f1b7a8d9144860e3b8cfd554eb51bae81
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834155"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844271"
 ---
 # <a name="develop-with-no-locq-and-python"></a>Vývoj s využitím Q# a Pythonu
 
@@ -72,7 +71,7 @@ Nainstalujte sadu QDK pro vývoj hostitelských programů v Pythonu pro volání
     > kde `/path/to/dotnet-iqsharp` nahraďte absolutní cestou k nástroji `dotnet-iqsharp` v systému souborů.
     > Obvykle bude ve složce `.dotnet/tools` ve vašem uživatelském profilu.
     
-***
+**_
 
 A to je vše! Nyní máte k dispozici balíček Pythonu `qsharp` i jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a spouštění operací Q# z Pythonu a umožňuje používat aplikace Jupyter Notebook s podporou Q#.
 
@@ -113,7 +112,7 @@ Teď jste připravení ověřit instalaci balíčku Pythonu `qsharp` napsáním 
 1. Měl by se zobrazit výsledek vyvolané operace. V tomto případě, kdy vaše operace generuje náhodný výsledek, se na obrazovce zobrazí buď `0`, nebo `1`. Pokud program spouštíte opakovaně, měli by se oba výsledky zobrazovat přibližně stejně často.
 
 > [!NOTE]
-> * Kód Pythonu je běžný program v Pythonu. K psaní programu Pythonu a volání operací Q# můžete použít libovolné prostředí Pythonu, včetně aplikací Jupyter Notebook založených na Pythonu. Program v Pythonu může importovat operace Q# z libovolného souboru .qs umístěného ve stejné složce jako samotný kód Pythonu.
+> _ Kód Pythonu je pouze běžný program v Pythonu. K psaní programu Pythonu a volání operací Q# můžete použít libovolné prostředí Pythonu, včetně aplikací Jupyter Notebook založených na Pythonu. Program v Pythonu může importovat operace Q# z libovolného souboru .qs umístěného ve stejné složce jako samotný kód Pythonu.
 
 ## <a name="next-steps"></a>Další kroky
 

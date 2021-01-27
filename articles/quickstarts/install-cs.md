@@ -4,18 +4,17 @@ description: Naučte se vytvářet aplikace v Q# pomocí jazyků .NET.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8733918daa02afaea0fc1994d5f0851d4be9b93
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: de79c361331766572f5608c341be766e071e01b5
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834325"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844304"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Vývoj s využitím Q# a .NET
 
@@ -78,11 +77,11 @@ Pokud používáte jiný editor než Visual Studio nebo VS Code, jednoduše post
   - Přejděte na **Soubor** → **Nový** → **Projekt**
   - Vyberte „Konzolová aplikace (.NET Core)“ pro C# nebo F#.
   - Vyberte **Další**.
-  - V části *řešení*vyberte „přidat do řešení“.
+  - V části *řešení* vyberte „přidat do řešení“.
   - Zvolte název hostitelského programu.
   - Vyberte **Vytvořit**.
 
-***
+**_
 
 ## <a name="calling-into-no-locq-from-net"></a>Volání Q# z .NET
 
@@ -103,7 +102,7 @@ K volání této operace z prostředí .NET na kvantovém simulátoru můžete p
 
 :::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-***
+_**
     
 ## <a name="next-steps"></a>Další kroky
 

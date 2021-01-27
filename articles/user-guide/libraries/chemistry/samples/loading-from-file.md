@@ -4,17 +4,17 @@ description: Naučte se, jak automaticky generovat velké Hamiltonian pomocí sc
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
-ms.topic: article-type-from-white-list
+ms.topic: sample
 uid: microsoft.quantum.chemistry.examples.loadhamiltonian
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 57e25bf55009797b01695cef0f3d29b94662ccc0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 4bd663ade7649be05058f07bee1acf541ec3e487
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869234"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844124"
 ---
 # <a name="loading-a-hamiltonian-from-file"></a>Načtení hamiltoniánu ze souboru
 Dříve jsme vytvořili Hamiltonians přidáním jednotlivých podmínek. I když je to v malých příkladech jemné, je chemie ve velkém měřítku vyžadovat Hamiltonians s miliony nebo miliardami podmínek. Takové Hamiltonians generované balíčky chemie, jako je NWChem, je příliš velké pro import rukou. V této ukázce ilustruje, jak `FermionHamiltonian` může být instance automaticky generovaná z molekuly reprezentovaných [Broombridge schématem](xref:microsoft.quantum.libraries.chemistry.schema.broombridge). V případě referenčních informací může být jedna z nich podrobena `LithiumHydrideGUI` `RunSimulation` ukázce. K dispozici je také omezená podpora pro import z formátu spotřebovaného [LIQUi |>](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/).

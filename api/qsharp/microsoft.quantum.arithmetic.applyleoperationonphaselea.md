@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ApplyLEOperationOnPhaseLEA
 title: Operace ApplyLEOperationOnPhaseLEA
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ApplyLEOperationOnPhaseLEA
 qsharp.summary: Applies an operation that takes a <xref:microsoft.quantum.arithmetic.phaselittleendian> register as input on a target register of type <xref:microsoft.quantum.arithmetic.littleendian>.
-ms.openlocfilehash: 408bd4e5d7146a74d7aec233765a63b2086b8ede
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 2d5b5ba1a2e8410b46997b2f0dd9764b6ba89cf3
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96190849"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98843787"
 ---
 # <a name="applyleoperationonphaselea-operation"></a>Operace ApplyLEOperationOnPhaseLEA
 
@@ -30,7 +30,7 @@ operation ApplyLEOperationOnPhaseLEA (op : (Microsoft.Quantum.Arithmetic.LittleE
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--littleendian--unit--is-adj"></a>op: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) LittleEndian je ADJ.
+### <a name="op--littleendian--unit--is-adj"></a>op: [](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) LittleEndian je ADJ.
 
 Operace, která se má použít.
 

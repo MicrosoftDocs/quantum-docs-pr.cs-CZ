@@ -4,18 +4,17 @@ description: Naučte se vytvářet aplikace v Q# pomocí poznámkových bloků J
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.jupyter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b34d89ab33a4644c1dd4342949685f9bf84babd8
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
-ms.translationtype: HT
+ms.openlocfilehash: 4cef9b7252a2199b2ea995c4cf819a3582d9ca8f
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771394"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844282"
 ---
 # <a name="develop-with-no-locq-jupyter-notebooks"></a>Vývoj s využitím aplikací Jupyter Notebook s podporou Q#
 
@@ -69,7 +68,7 @@ IQ# (anglicky se vyslovuje i-q-sharp) je rozšíření sady .NET Core SDK primá
 > kde `/path/to/dotnet-iqsharp` nahraďte absolutní cestou k nástroji `dotnet-iqsharp` v systému souborů.
 > Obvykle bude ve složce `.dotnet/tools` ve vašem uživatelském profilu.
     
-***
+**_
 
 A to je vše! Nyní máte jádro IQ# pro Jupyter, které poskytuje základní funkce pro kompilaci a spouštění operací Q# z aplikací Jupyter Notebook s podporou Q#.
 
@@ -85,7 +84,7 @@ Teď jste připravení ověřit instalaci aplikace Jupyter Notebook s podporou Q
 
     - Pokud se Jupyter Notebook neotevřete automaticky, zkopírujte a vložte do prohlížeče adresu URL poskytnutou příkazovým řádkem.
 
-1. Zvolte **New (Nový) → Q#** a vytvořte Jupyter Notebook s použitím jádra Q#. Do první buňky poznámkového bloku přidejte následující kód:
+1. Pomocí příkazu _ *New Q# →** vytvořte Jupyter notebook s Q# jádrem a přidejte do první buňky poznámkového bloku následující kód:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="6-13":::
 

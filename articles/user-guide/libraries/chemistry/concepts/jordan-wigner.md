@@ -1,30 +1,30 @@
 ---
-title: Jordánsko – reWigner reprezentace
-description: Přečtěte si o reprezentaci Wigner, která mapuje operátory Hamiltonian na jednotnou matrici, která se dá snadněji implementovat na počítač s procesorem.
+title: Jordan-Wigner reprezentaci
+description: Přečtěte si o Jordan-Wigner reprezentaci, která mapuje operátory Hamiltonian na jednotnou matrici, která se dá snadněji implementovat na počítač s více než jednou.
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 29abb4d2ef11239a58af45bc4eee3bd60d20a6c7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 738c8262ea66b8a02ea7541e402953237dc2ea48
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833859"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844136"
 ---
-# <a name="jordan-wigner-representation"></a>Jordánsko – reWigner reprezentace
+# <a name="jordan-wigner-representation"></a>Jordan-Wigner reprezentaci
 
 I když se druhý quantized Hamiltonians pohodlně prezentuje v $a ^ \dagger $ (vytváření) a $a $ (Annihilation), tyto operace nejsou základní operace v počítačích s více operačními čísly.
 V důsledku toho by v případě, že chceme, aby je implementovali na počítač s více společnostmi, musíme namapovat operátory na jednotnou matrici, která se dá implementovat na počítač s více než jednou.
 Jordánsko – Wigner reprezentace poskytuje jednu takovou mapu.
 Existují však i další, jako je například reprezentace Bravyi – Kitaev a jejich vlastní relativní výhody a nevýhody.
-Hlavní výhodou Wigner reprezentace je jeho jednoduchost.
+Hlavní výhodou Jordan-Wigner reprezentace je jeho jednoduchost.
 
-Reprezentací Jordánsko-Wigner je přímo předána k odvození.
+Jordan-Wigner reprezentace je přímo předána k odvození.
 Odvolání, že stav $ \ket {0} _J $ znamená, že $j Orbital $ je prázdný a $ \ket {1} _J $ znamená, že je obsazený.
 To znamená, že qubits může přirozeně ukládat povolání daného číselníku Orbital.
 Pak to máme $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ a $a ^ \ dagger_j \ket {1} _J = $0.
@@ -51,14 +51,14 @@ Proto můžeme připravovat $Z $ Operators do konstrukce operátoru, abychom moh
 \begin{Align} a ^ \ dagger_1 &= \left (\frac{X-iY} {2} \right) \otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1, \\ \\ ^ \ dagger_2 &= Z\otimes\left (\frac{X-iY} {2} \right) \otimes 1 \ otimes 1 \otimes \cdots \otimes 1, \\ \\ a ^ \ dagger_3 &= Z\otimes Z\otimes \left (\frac{X-iY} {2} \right) \otimes 1 \otimes \cdots \otimes 1, \\ \\ & \Vdots \\ \\ a ^ \ dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left (\frac{X-iY} {2} \right). \label{eq:JW} \end{align}
 
 Je také vhodné vyjádřit číselné operátory $n _j $, a to z podmínek operátorů Pauli.
-Naštěstí, po provedení této náhrady zruší řetězce $Z $ Operators (označované jako Jordánsko-Wigner řetězce).
+Naštěstí řetězce $Z $ Operators (označované jako Jordan-Wigner řetězce) zruší poté, co je tato náhrada.
 Po ukončení tohoto volání (a opětovném volání tohoto $X _jY_j = iZ_j $) máme \begin{Equation} n_j = a ^ \ dagger_j a_j = \frac{(1-Z_j)} {2} .
 \end{equation}
 
 
-## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Sestavování Hamiltonians v Jordánsko – Wigner reprezentace
+## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Sestavování Hamiltonians v reprezentaci Jordan-Wigner
 
-Jakmile jsme vyvolali reprezentaci Wigner, která překládá Hamiltonian na součet operátorů Pauli, je přímá dopřed.
+Jakmile jsme vyvolali Jordan-Wigner reprezentaci, která přeloží Hamiltonian na součet Paulich operátorů, je přímá předána.
 Jeden z nich musí nahradit každý z $a ^ \dagger $ a $a $ Operators v Hamiltonianu Fermionic s řetězci Pauli-Operators uvedených výše.
 Když jedna tato náhrada provede, je v rámci Hamiltonian jenom pět tříd podmínek.
 Tyto pět tříd odpovídají různým způsobům, jak můžeme vybrat $p, q $ a $p, q, r, s $ v rámci jednoho těla a podmínek obou těla v Hamiltonian.

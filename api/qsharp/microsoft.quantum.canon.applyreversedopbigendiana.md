@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyReversedOpBigEndianA
 title: Operace ApplyReversedOpBigEndianA
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -14,12 +14,12 @@ qsharp.summary: >-
   >
 
   > Please use @"Microsoft.Quantum.Arithmetic.ApplyReversedOpBEA".
-ms.openlocfilehash: b87463dc6585a88ae88680728c608332478fd1e7
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 66d16650b3c613420eeca33803625778a73afad0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96218151"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844735"
 ---
 # <a name="applyreversedopbigendiana-operation"></a>Operace ApplyReversedOpBigEndianA
 
@@ -42,7 +42,7 @@ operation ApplyReversedOpBigEndianA (op : (Microsoft.Quantum.Arithmetic.BigEndia
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--bigendian--unit--is-adj"></a>op: [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) bigEndian je ADJ.
+### <a name="op--bigendian--unit--is-adj"></a>op: [](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) bigEndian je ADJ.
 
 
 
