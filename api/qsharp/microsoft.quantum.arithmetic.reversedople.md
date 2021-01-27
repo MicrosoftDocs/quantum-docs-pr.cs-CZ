@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.ReversedOpLE
 title: ReversedOpLE – funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: ReversedOpLE
 qsharp.summary: Given an operation that takes a little-endian input, returns a new operation that takes a big-endian input.
-ms.openlocfilehash: 91b98663028b8a1d54c546e70d8bfe603d71d041
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: d02817e5372b841f3ab633cafa22af603c5310c2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96222248"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98846399"
 ---
 # <a name="reversedople-function"></a>ReversedOpLE – funkce
 
@@ -30,13 +30,13 @@ function ReversedOpLE (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit))
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--littleendian--unit"></a>op: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) LittleEndian 
+### <a name="op--littleendian--unit"></a>op: [](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) LittleEndian 
 
 Operace, jejíž vstup má být obrácený.
 
 
 
-## <a name="output--bigendian--unit"></a>Výstup: [BigEndian](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) bigEndian 
+## <a name="output--bigendian--unit"></a>Výstup: [](xref:Microsoft.Quantum.Arithmetic.BigEndian) => [jednotka](xref:microsoft.quantum.lang-ref.unit) bigEndian 
 
 Nová operace, která přijme svůj vstup jako registr big-endian.
 

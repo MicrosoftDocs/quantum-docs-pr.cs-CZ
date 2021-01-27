@@ -1,6 +1,6 @@
 ---
 title (název): qubit ve výpočetním prostředí Description: Přečtěte si o qubits, základní informace o výpočetním prostředí.
-Autor: QuantumWriter UID: Microsoft.. koncepty. qubit MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. qubit MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
