@@ -1,19 +1,19 @@
 ---
 uid: Microsoft.Quantum.Diagnostics
 title: Obor názvů Microsoft. prověříní
-ms.date: 11/25/2020 12:00:00 AM
-ms.topic: article
+ms.date: 1/23/2021 12:00:00 AM
+ms.topic: managed-reference
 qsharp.kind: namespace
 qsharp.name: Microsoft.Quantum.Diagnostics
 qsharp.summary: ''
-ms.openlocfilehash: 9d1b6bddc86ff0287e89360da599ee01a2eb5b33
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: d672bbfa690eed888dbbda63447f88395e69e9a8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96201627"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98853296"
 ---
-# <a name="microsoftquantumdiagnostics-namespace"></a><span data-ttu-id="f8a34-102">Obor názvů Microsoft. prověříní</span><span class="sxs-lookup"><span data-stu-id="f8a34-102">Microsoft.Quantum.Diagnostics namespace</span></span>
+# <a name="microsoftquantumdiagnostics-namespace"></a><span data-ttu-id="fe6c8-102">Obor názvů Microsoft. prověříní</span><span class="sxs-lookup"><span data-stu-id="fe6c8-102">Microsoft.Quantum.Diagnostics namespace</span></span>
 
 
 

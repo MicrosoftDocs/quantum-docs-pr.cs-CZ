@@ -1,56 +1,56 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.EstimateClassificationProbability
 title: Operace EstimateClassificationProbability
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: EstimateClassificationProbability
 qsharp.summary: Given a sample and a sequential classifier, estimates the classification probability for that sample by repeatedly measuring the output of the classifier on the given sample.
-ms.openlocfilehash: 9d127bba9624e178fbdb631a1249efe5fc2be3b0
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: c2b74bc55ad9005a8f52d05796e856f4f2fb62ba
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96196459"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98853944"
 ---
-# <a name="estimateclassificationprobability-operation"></a><span data-ttu-id="0b0ed-102">Operace EstimateClassificationProbability</span><span class="sxs-lookup"><span data-stu-id="0b0ed-102">EstimateClassificationProbability operation</span></span>
+# <a name="estimateclassificationprobability-operation"></a><span data-ttu-id="fe3b6-102">Operace EstimateClassificationProbability</span><span class="sxs-lookup"><span data-stu-id="fe3b6-102">EstimateClassificationProbability operation</span></span>
 
-<span data-ttu-id="0b0ed-103">Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-103">Namespace: [Microsoft.Quantum.MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span></span>
+<span data-ttu-id="fe3b6-103">Obor názvů: [Microsoft. MachineLearning.](xref:Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-103">Namespace: [Microsoft.Quantum.MachineLearning](xref:Microsoft.Quantum.MachineLearning)</span></span>
 
-<span data-ttu-id="0b0ed-104">Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-104">Package: [Microsoft.Quantum.MachineLearning](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span></span>
+<span data-ttu-id="fe3b6-104">Balíček: [Microsoft. MachineLearning.](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-104">Package: [Microsoft.Quantum.MachineLearning](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)</span></span>
 
 
-<span data-ttu-id="0b0ed-105">Vzhledem k ukázce a sekvenčnímu třídění odhadne pravděpodobnost klasifikace pro tento vzorek opakovaným měřením výstupu klasifikátoru v dané ukázce.</span><span class="sxs-lookup"><span data-stu-id="0b0ed-105">Given a sample and a sequential classifier, estimates the classification probability for that sample by repeatedly measuring the output of the classifier on the given sample.</span></span>
+<span data-ttu-id="fe3b6-105">Vzhledem k ukázce a sekvenčnímu třídění odhadne pravděpodobnost klasifikace pro tento vzorek opakovaným měřením výstupu klasifikátoru v dané ukázce.</span><span class="sxs-lookup"><span data-stu-id="fe3b6-105">Given a sample and a sequential classifier, estimates the classification probability for that sample by repeatedly measuring the output of the classifier on the given sample.</span></span>
 
 ```qsharp
 operation EstimateClassificationProbability (tolerance : Double, model : Microsoft.Quantum.MachineLearning.SequentialModel, sample : Double[], nMeasurements : Int) : Double
 ```
 
 
-## <a name="input"></a><span data-ttu-id="0b0ed-106">Vstup</span><span class="sxs-lookup"><span data-stu-id="0b0ed-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="fe3b6-106">Vstup</span><span class="sxs-lookup"><span data-stu-id="fe3b6-106">Input</span></span>
 
-### <a name="tolerance--double"></a><span data-ttu-id="0b0ed-107">tolerance: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-107">tolerance : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+### <a name="tolerance--double"></a><span data-ttu-id="fe3b6-107">tolerance: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-107">tolerance : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
-<span data-ttu-id="0b0ed-108">Tolerance, která umožňuje v kódování vzorku do operace přípravy stavu.</span><span class="sxs-lookup"><span data-stu-id="0b0ed-108">The tolerance to allow in encoding the sample into a state preparation operation.</span></span>
-
-
-### <a name="model--sequentialmodel"></a><span data-ttu-id="0b0ed-109">Model: [SequentialModel](xref:Microsoft.Quantum.MachineLearning.SequentialModel)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-109">model : [SequentialModel](xref:Microsoft.Quantum.MachineLearning.SequentialModel)</span></span>
-
-<span data-ttu-id="0b0ed-110">Sekvenční model, který má být použit k odhadu pravděpodobnosti klasifikace pro danou ukázku.</span><span class="sxs-lookup"><span data-stu-id="0b0ed-110">The sequential model to be used to estimate the classification probability for the given sample.</span></span>
+<span data-ttu-id="fe3b6-108">Tolerance, která umožňuje v kódování vzorku do operace přípravy stavu.</span><span class="sxs-lookup"><span data-stu-id="fe3b6-108">The tolerance to allow in encoding the sample into a state preparation operation.</span></span>
 
 
-### <a name="sample--double"></a><span data-ttu-id="0b0ed-111">Ukázka: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="0b0ed-111">sample : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
+### <a name="model--sequentialmodel"></a><span data-ttu-id="fe3b6-109">Model: [SequentialModel](xref:Microsoft.Quantum.MachineLearning.SequentialModel)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-109">model : [SequentialModel](xref:Microsoft.Quantum.MachineLearning.SequentialModel)</span></span>
 
-<span data-ttu-id="0b0ed-112">Vektor funkce pro ukázku, která má být klasifikována</span><span class="sxs-lookup"><span data-stu-id="0b0ed-112">The feature vector for the sample to be classified.</span></span>
-
-
-### <a name="nmeasurements--int"></a><span data-ttu-id="0b0ed-113">nMeasurements: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-113">nMeasurements : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-<span data-ttu-id="0b0ed-114">Počet měření, která se mají použít při odhadu pravděpodobnosti klasifikace.</span><span class="sxs-lookup"><span data-stu-id="0b0ed-114">The number of measurements to use in estimating the classification probability.</span></span>
+<span data-ttu-id="fe3b6-110">Sekvenční model, který má být použit k odhadu pravděpodobnosti klasifikace pro danou ukázku.</span><span class="sxs-lookup"><span data-stu-id="fe3b6-110">The sequential model to be used to estimate the classification probability for the given sample.</span></span>
 
 
+### <a name="sample--double"></a><span data-ttu-id="fe3b6-111">Ukázka: [Double](xref:microsoft.quantum.lang-ref.double)[]</span><span class="sxs-lookup"><span data-stu-id="fe3b6-111">sample : [Double](xref:microsoft.quantum.lang-ref.double)[]</span></span>
 
-## <a name="output--double"></a><span data-ttu-id="0b0ed-115">Výstup: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="0b0ed-115">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+<span data-ttu-id="fe3b6-112">Vektor funkce pro ukázku, která má být klasifikována</span><span class="sxs-lookup"><span data-stu-id="fe3b6-112">The feature vector for the sample to be classified.</span></span>
 
-<span data-ttu-id="0b0ed-116">Odhad pravděpodobnosti klasifikace pro danou ukázku.</span><span class="sxs-lookup"><span data-stu-id="0b0ed-116">An estimate of the classification probability for the given sample.</span></span>
+
+### <a name="nmeasurements--int"></a><span data-ttu-id="fe3b6-113">nMeasurements: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-113">nMeasurements : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+<span data-ttu-id="fe3b6-114">Počet měření, která se mají použít při odhadu pravděpodobnosti klasifikace.</span><span class="sxs-lookup"><span data-stu-id="fe3b6-114">The number of measurements to use in estimating the classification probability.</span></span>
+
+
+
+## <a name="output--double"></a><span data-ttu-id="fe3b6-115">Výstup: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="fe3b6-115">Output : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
+
+<span data-ttu-id="fe3b6-116">Odhad pravděpodobnosti klasifikace pro danou ukázku.</span><span class="sxs-lookup"><span data-stu-id="fe3b6-116">An estimate of the classification probability for the given sample.</span></span>
