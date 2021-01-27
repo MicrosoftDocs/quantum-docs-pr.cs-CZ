@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.TrainingOptions
 title: Uživatelem definovaný typ TrainingOptions
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: TrainingOptions
 qsharp.summary: A collection of options to be used in training quantum classifiers.
-ms.openlocfilehash: 280a3857aa7bc42f636a33f893d4f450e79b6a6a
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 762d6853910832c6d4cda522c0c5df706d1ed195
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96196119"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98842769"
 ---
 # <a name="trainingoptions-user-defined-type"></a>Uživatelem definovaný typ TrainingOptions
 
@@ -57,7 +57,7 @@ Množství, které má znovu škálovat zastavené modely, před opakováním ak
 
 Počet kroků přechodu mezi body bodování.
 Pro nejlepší přesnost nastavte na hodnotu 1.
-### <a name="verbosemessage--string---unit"></a>VerboseMessage: [String](xref:microsoft.quantum.lang-ref.string) -> [jednotka](xref:microsoft.quantum.lang-ref.unit) řetězce
+### <a name="verbosemessage--string---unit"></a>VerboseMessage: [](xref:microsoft.quantum.lang-ref.string) -> [jednotka](xref:microsoft.quantum.lang-ref.unit) řetězce
 
 Funkce, která může být použita k poskytnutí podrobné zpětné vazby.
 
@@ -67,7 +67,7 @@ Tento parametr UDT by neměl být vytvořen přímo, ale je třeba jej zadat vol
 
 Například pro použití měření 100 000 a maximálně 8 školicích epochs:
 
-```Q#
+```qsharp
 let options = DefaultTrainingOptions()
               w/ NMeasurements <- 100000
               w/ MaxEpochs <- 8;
