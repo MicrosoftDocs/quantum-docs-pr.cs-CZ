@@ -1,6 +1,6 @@
 ---
 title: terming Description Glosář Description: Glosář běžných podmínek, akcí a objektů používaných při práci.
-Autor: bradben MS. Author: v-benbra MS. Date: 9/1/2020 MS. téma: UID článku: Microsoft.. Glosář No-Loc:
+Autor: bradben MS. Author: v-benbra MS. Date: 9/1/2020 MS. téma: referenční UID: Microsoft.. Glosář No-Loc:
 - "Q#"
 - "$$v"
 - "$$"

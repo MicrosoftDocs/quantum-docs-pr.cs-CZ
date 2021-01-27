@@ -4,17 +4,17 @@ description: Q# Principy návrhu rozhraní API
 author: cgranade
 ms.author: chgranad
 ms.date: 3/9/2020
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b8623ba7e876c4ccda42d0ddaa07c0012a763292
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 452b32141dc660acbe8ef28530f1430e5acff9aa
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231770"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856703"
 ---
 # <a name="no-locq-api-design-principles"></a>Q# Principy návrhu rozhraní API
 
@@ -36,7 +36,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 **Princip klíče:** Zveřejňujte rozhraní API, která umístí fokus na aplikace.
 
 - ✅**Vyberte název** operace a funkce, který odráží strukturu algoritmů a aplikací vysoké úrovně.
-- ⛔️ **DON'T** nezveřejňujte rozhraní API, která se zaměřují hlavně na podrobnosti implementace nízké úrovně.
+- ⛔️  nezveřejňujte rozhraní API, která se zaměřují hlavně na podrobnosti implementace nízké úrovně.
 
 **Princip klíče:** Spusťte jednotlivé návrhy rozhraní API s použitím ukázkových případů použití, abyste zajistili, že je rozhraní API intuitivní.
 
@@ -55,7 +55,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 **Princip klíče:** Navrhněte rozhraní API pro podporu a podporu čitelného kódu.
 
 - ✅**Zajistěte, aby byl** kód čitelný odborníky v doméně a znalci bez expertů.
-- ✅**DO** Zaměřte se na účinky jednotlivých operací a funkcí v rámci algoritmu vysoké úrovně, a to pomocí dokumentace, která bude v případě potřeby podrobná v podrobnostech implementace.
+- ✅ Zaměřte se na účinky jednotlivých operací a funkcí v rámci algoritmu vysoké úrovně, a to pomocí dokumentace, která bude v případě potřeby podrobná v podrobnostech implementace.
 - ✅Pokaždé, když **je to možné, postupujte podle** návodu pro běžný [ \# styl Q](xref:microsoft.quantum.contributing.style) .
 
 **Princip klíče:** Navrhněte rozhraní API, aby byly stabilní a poskytovaly dopředné kompatibility.
@@ -77,7 +77,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
 **Klíčový princip:** Ujistěte se, že všechny funkce a operace mají v rámci rozhraní API jeden dobře definovaný účel.
 
-- ⛔️ **DON'T** nezveřejňujte funkce a operace, které provádějí více nesouvisejících úloh.
+- ⛔️  nezveřejňujte funkce a operace, které provádějí více nesouvisejících úloh.
 
 **Klíčový princip:** návrh funkcí a operací, které se mají co možná nejvíce použít, a pro předvídání budoucích potřeb.
 
@@ -152,13 +152,13 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
 **Klíčový princip:** použití uživatelsky definovaných typů způsobem, jak omezit zátěžové zatížení a které nevyžadují, aby se uživatel dozvěděl o dalších konceptech a nomenklatuře.
 
-- ⛔️ **DON'T** nezavádí uživatelsky definované typy, které vyžadují, aby uživatel mohl často používat operátor rozbalení ( `!` ), nebo který obvykle vyžaduje více úrovní rozbalení. Mezi možné strategie zmírňování patří:
+- ⛔️  nezavádí uživatelsky definované typy, které vyžadují, aby uživatel mohl často používat operátor rozbalení ( `!` ), nebo který obvykle vyžaduje více úrovní rozbalení. Mezi možné strategie zmírňování patří:
 
   - Při vystavení uživatelsky definovaného typu s jednou položkou zvažte definování názvu pro tuto položku. Zvažte například `newtype Encoder = (Apply : (Qubit[] => Unit is Adj + Ctl))` v Předvolby na `newtype Encoder = (Qubit[] => Unit is Adj + Ctl)` .
 
   - Zajištění, že jiné funkce a operace mohou přijímat "zabalené" instance UDT přímo.
 
-- ⛔️ **DON'T** nezavádět nové uživatelsky definované typy, které duplikují předdefinované typy bez poskytnutí dalších expresivity.
+- ⛔️  nezavádět nové uživatelsky definované typy, které duplikují předdefinované typy bez poskytnutí dalších expresivity.
 
   *Příklady:*
   - UDT `newtype QubitRegister = Qubit[]` neposkytuje žádné další expresivity nad `Qubit[]` a je proto těžší ho použít bez discernable výhody.
@@ -210,7 +210,7 @@ Tento článek obsahuje seznam těchto principů a popisuje příklady, které v
 
 - ✅**Použijte komentáře** k dokumentaci k rozhraní API k poskytnutí relevantního kontextu, příkladů a odkazů, zejména pro obtížnější koncepty.
 
-- ⛔️ **DON'T** Nepoužívejte názvy identifikátorů, které jsou zbytečně esoteričtějším nebo které vyžadují významné znalosti algoritmů pro čtení.
+- ⛔️  Nepoužívejte názvy identifikátorů, které jsou zbytečně esoteričtějším nebo které vyžadují významné znalosti algoritmů pro čtení.
 
   *Příklady:*
   - Preferovat "iteraci zesílení amplitud" na "Grover iterace"

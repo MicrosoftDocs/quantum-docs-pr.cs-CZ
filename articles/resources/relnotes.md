@@ -4,17 +4,17 @@ description: Přečtěte si o nejnovějších aktualizacích sady Microsoft Quan
 author: bradben
 ms.author: v-benbra
 ms.date: 8/30/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1c3c502b6487482f06820e07425b8516f259fb0d
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 8aa6072e9b495db6e127cac350d5bfaec1b090ce
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231787"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856665"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -24,6 +24,16 @@ Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
 
+## <a name="version-0152101125897"></a>0.15.2101125897 verze
+
+*Datum vydání: Leden 26, 2021*
+
+- Zjednodušené přidělování qubit, které poskytuje pohodlnější syntaxi pro přidělování qubits, [najdete v tématu podrobnosti v části Q# úložiště jazyka](https://github.com/microsoft/qsharp-language/blob/main/Approved/1-implicitly-scoped-qubit-allocation.md).
+- Vytvořili QDK-Python úložiště, které zahrnuje `azure-quantum` , klienta Pythonu pro odesílání úloh optimalizace s nechte inspirovatmi do provozu do služby Azure a také `qdk` , včetně `qdk.chemistry` kvalitních vrstev založených na Pythonu pro Q# knihovnu chemie, která zahrnuje molekulovou vizualizaci a funkčnost pro generování vstupních souborů pro několik balíčků chemie, jako je NWChem, Psi4 a OpenMolcas.
+- Kulaté závorky jsou nyní volitelné pro operace a typy funkcí `if` , a `elif` `while` `until` příkazy. Kulaté závorky pro `for` `use` `borrow` příkazy a jsou zastaralé.
+- Vylepšené odhady šířky pro optimální hloubku [najdete v podrobnostech](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/1159).
+- Použít jednotkovou operaci poskytnutou jako explicitní matici pomocí `ApplyUnitary` ([QuantumLibraries # 391](https://github.com/microsoft/QuantumLibraries/pull/391), externí příspěvek od Dmytro Fedoriaka)
+- Vyřešené https://github.com/microsoft/iqsharp/issues/387 omezením dopadu na výkon při Q# spuštění jádra.
 ## <a name="version-0142011120240"></a>0.14.2011120240 verze
 
 *Datum vydání: 25. listopadu 2020*
@@ -486,14 +496,7 @@ Přečtěte si další informace o [chemické knihovně sady Quantum Development
 
 S novou chemickou knihovnou oddělíme knihovny do nového úložiště GitHub [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries).  Ukázky zůstanou v úložišti [Microsoft/Quantum](https://github.com/Microsoft/Quantum).  Uvítáme příspěvky do obou!
 
-Tato verze zahrnuje opravy chyb a funkce pro problémy hlášené komunitou:
-
-* IntelliSense pro Q# ? ([UserVoice](https://quantum.uservoice.com/forums/906943/suggestions/32656918)).
-* Soubory .qs ([UserVoice](https://quantum.uservoice.com/forums/906097/suggestions/32593049)).
-* Vylepšení chybové zprávy při zkrácení složených závorek v příkazu if ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/34718518)).
-* Podpora dekonstrukce řazené kolekce členů při proměnlivé (opakované) vazbě ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/35020444)).
-* Chyba při spuštění poskytnutého kódu BitFlipCode ([UserVoice](https://quantum.uservoice.com/forums/906940/suggestions/35008546)).
-* H2SimulationGUI někdy zobrazuje velké špičky ([UserVoice](https://quantum.uservoice.com/forums/906946/suggestions/34668370)).
+Tato verze zahrnuje opravy chyb a funkce pro problémy hlášené komunitou.
 
 ### <a name="community-contributions"></a>Komunitní příspěvky
 
@@ -509,15 +512,7 @@ Děkujeme také uživatelům Rohit Gupta ([@guptarohit](https://github.com/gupta
 
 *Datum vydání: 10. září 2018*
 
-Tato verze zahrnuje opravy chyb pro problémy hlášené komunitou. Mezi ně patří:
-
-* Nelze použít operátor shift ([GitHub](https://github.com/Microsoft/Quantum/issues/75)).
-* Při tisku na konzole selže `DumpMachine` / `DumpRegister` pro `QCTraceSimulator` ([UserVoice](https://quantum.uservoice.com/forums/906946/suggestions/34709680)).
-* Je možné přidělit 0 qubitů ([UserVoice](https://quantum.uservoice.com/forums/906208-q-language/suggestions/34768069-allow-allocating-0-qubits)).
-* `AssertQubitState` vyžaduje explicitní volání Complex() ([UserVoice](https://quantum.uservoice.com/forums/906208-q-language/suggestions/34713733-assertqubitstate-requires-explicit-complex-call)).
-* Operace `Measure` vždycky vrací `One` v systému macOS ([UserVoice](https://quantum.uservoice.com/forums/906940/suggestions/35008546)).
-
-Děkujeme! 
+Tato verze zahrnuje opravy chyb pro problémy hlášené komunitou.
 
 ## <a name="version-0218063001"></a>Verze 0.2.1806.3001
 
