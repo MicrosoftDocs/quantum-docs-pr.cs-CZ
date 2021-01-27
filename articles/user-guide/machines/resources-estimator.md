@@ -1,20 +1,20 @@
 ---
 title: Prostředky pro procesory Estimator – pro vývojová prostředí
 description: Přečtěte si o QDK prostředcích Microsoft Estimator, které vyodhadují prostředky potřebné ke spuštění dané instance Q# operace na počítači s více operačními systémy.
-author: anpaz-msft
+author: anpaz
 ms.author: anpaz
 ms.date: 06/26/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: de425c2d91c6528b13c3bedd81acb4b4273ed711
-ms.sourcegitcommit: 7c687495a79d75ae9e029e5a41baec84d9e07bb0
+ms.openlocfilehash: c3aa94c8b34ad7247fbdeab4bf4dcb96ce746014
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604639"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847467"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Prostředky QDK (estimatoring Development Kit)
 
@@ -123,11 +123,11 @@ namespace Quantum.MyProgram
 
 Prostředky Estimator sledují následující metriky:
 
-|Metrika|Popis|
+|Metric|Popis|
 |----|----|
 |__CNOT__    |Počet spuštění `CNOT` operací (označovaný také jako řízené operace Pauli X).|
 |__QubitClifford__ |Počet spuštění všech qubitch operací Clifford a Pauli.|
-|__Míra__    |Počet spuštění všech měření.  |
+|__Measure__    |Počet spuštění všech měření.  |
 |__R__    |Počet spuštění všech rotací s jedním qubit, s výjimkou `T` operací Clifford a Pauli.  |
 |__T__    |Počet spuštění `T` operací a jejich sdružených, včetně `T` operací, T_x = H. t. h a T_y = hy. t. hy.  |
 |__Úrovní__|Hloubka okruhu nečinnosti, kterou spouští Q# operace (viz [níže](#depth-width-and-qubitcount)). Ve výchozím nastavení metrika hloubky počítá jenom `T` brány. Další podrobnosti najdete v tématu s [čítačem hloubky](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
@@ -143,8 +143,8 @@ Vykázaný odhad hloubky a šířky jsou vzájemně kompatibilní.
 
 Nahlásí se následující metriky:
 
-__Hloubka:__ Pro kořenovou operaci – čas potřebný ke spuštění předpokládá konkrétní dobu brány.
-Pro operace nazvané nebo následné operace – rozdíl mezi nejnovější qubitou dostupnosti na začátku a koncem operace.
+__Hloubka:__ Pro kořenovou operaci – čas potřebný ke spuštění za předpokladu, že se nakonfigurovali časy brány.
+Pro operace nazvané nebo následné operace rozdílového času mezi nejnovějším časem dostupnosti qubit na začátku a na konci operace.
 
 __Šířka:__ Pro kořenovou operaci – počet qubits, které se skutečně používají ke spuštění (a operace, kterou volá).
 Pro operace nazvané nebo následné operace – kolik dalších qubits bylo použito pro qubits, které již bylo na začátku operace použito.
@@ -157,9 +157,9 @@ Pro operace, které volaly nebo následné operace – minimální počet qubits
 
 Podporují se dva režimy provozu. Režim je vybrán nastavením QCTraceSimulatorConfiguration. OptimizeDepth.
 
-__OptimizeDepth = true:__ QubitManager se nedoporučuje používat k opakovanému použití qubit a přiděluje nové qubit pokaždé, když se výzva k qubit. __Hloubka__ kořenové operace se změní na minimální hloubku (s nižší mezí). Pro tuto hloubku je uvedena kompatibilní __Šířka__ (je možné dosáhnout současně). Všimněte si, že tato šířka pravděpodobně nebude optimální vzhledem k této hloubce. __QubitCount__ může být pro kořenovou operaci nižší než šířka, protože předpokládá opakované použití.
+__OptimizeDepth = false:__ Toto je výchozí režim. QubitManager se doporučuje znovu použít qubits a pak znovu použít vydaný qubits před přidělením nových. __Šířka__ kořenové operace se změní na minimální šířku (s nižší mezí). Je hlášena kompatibilní __Hloubka__ , na které je možné dosáhnout. __QubitCount__ bude stejná jako __Šířka__ pro kořenovou operaci, při které se nepředpokládá žádné výpůjčky.
 
-__OptimizeDepth = false:__ QubitManager se doporučuje znovu použít qubits a pak znovu použít vydaný qubits před přidělením nových. __Šířka__ kořenové operace se změní na minimální šířku (s nižší mezí). Je hlášena kompatibilní __Hloubka__ , na které je možné dosáhnout. __QubitCount__ bude stejná jako __Šířka__ pro kořenovou operaci, při které se nepředpokládá žádné výpůjčky.
+__OptimizeDepth = true:__ QubitManager se nedoporučuje z qubit opětovného použití a optimalizace založené na heuristikě pro qubit opakované použití se provádí během a po spuštění. __Hloubka__ kořenové operace se změní na minimální hloubku (s nižší mezí). Pro tuto hloubku je uvedena kompatibilní __Šířka__ (je možné dosáhnout současně). Z důvodu optimalizace šířky můžou být brány, které se později v programu naplánovaly, naplánované předtím, než se dříve v programu nastaly, ale qubits se naplánují tak, aby se znovu použily tak, že hloubka zůstane minimální. Jak se qubits opakovaně používají na základě časových hodnot, doporučuje se, aby časy v bráně byly nakonfigurované jako celočíselné hodnoty. Není zaručena optimální __Šířka__ . Další informace najdete v části [Šířka a hloubka](https://github.com/microsoft/qsharp-runtime/tree/main/src/Simulation/Simulators/QCTraceSimulator/Docs)dokumentu White Paper v trasování.
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Určování pravděpodobnosti výsledků měření
 

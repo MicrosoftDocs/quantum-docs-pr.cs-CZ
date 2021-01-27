@@ -4,17 +4,17 @@ description: Naučte se, jak přispívat k obsahu koncepčního nebo rozhraní A
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2debef858c38b9a8f11264858130ed7cb41543ae
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8602705d2dd071e822e2ff58a9a44cd0684f77f1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691783"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857360"
 ---
 # <a name="improving-documentation"></a>Vylepšování dokumentace
 
@@ -42,7 +42,7 @@ Další informace o žádostech o přijetí změn najdete níže, ale v současn
 - Někteří čtenáři naleznou abstraktní příkazy a definice, které jsou nejužitečnější, zatímco ostatní čtenáři fungují nejlépe pomocí extrapolace z konkrétních příkladů. Poskytnutím obecného případu a specifických příkladů může pomocníkům získat maximum z programu.
 - Zvlášť, pokud jste napsali i kód, který je dokumentován, může být zřejmé, že nebudete mít vůbec žádné zjevné pro čtenáře. Neexistuje žádný jedinečný způsob, jak programovat, takže bez ohledu na to, jakým způsobem chytřejší nebo se čtenář může stát, nemůžou odhadnout, jaké vzory návrhu se vám pro vyjádření vašich nápadů v kódu považují za užitečné. Nemusíte mít jasné informace o tom, jak může čtenář očekávat použití kódu, což může přispět k poskytnutí tohoto kontextu.
 - Mnoho členů komunity pro programování po dobu nevyužívání předpisů je školními výzkumníky a jejich příspěvky se v komunitě uznávají hlavně prostřednictvím citace. Kromě pomoci čtenářů najít další materiály, aby se zajistilo správné uvedení školních výstupů, jako jsou například dokumenty, přednášky, blogové příspěvky a softwarové nástroje, mohou pomoci akademickým přispěvatelům zajistit jejich nejlepší práci pro zlepšení komunity.
-- Komunita pro programování pro velké množství je širokou a skvělou různorodou komunitou. Použití žen v prostředníkech v příkladech třetích osob (např.: "Pokud uživatel..., bude...") může fungovat jako vyloučené místo zahrnutí. Společnost Cognizant jména lidí v citacích a odkazech a správným zahrnutím znaků, které nejsou ASCII, může obsluhovat různorodost komunity tím, že se bude brát ohled na její členy. Podobně se mnoho slov v anglickém jazyce často používá Hateful způsobem, takže jejich použití v technické dokumentaci může způsobit poškození jak na jednotlivé čtenáře, tak na komunitě.
+- Komunita pro programování pro velké množství je širokou a skvělou různorodou komunitou. Použití žen v prostředníkech v příkladech třetích osob (např., pokud uživatel..., bude...) může fungovat jako vyloučit místo zahrnutí. Společnost Cognizant jména lidí v citacích a odkazech a správným zahrnutím znaků, které nejsou ASCII, může obsluhovat různorodost komunity tím, že se bude brát ohled na její členy. Podobně se mnoho slov v anglickém jazyce často používá Hateful způsobem, takže jejich použití v technické dokumentaci může způsobit poškození jak na jednotlivé čtenáře, tak na komunitě.
 
 ### <a name="referencing-sample-code-from-conceptual-articles"></a>Odkazování na vzorový kód z koncepčních článků
 
@@ -54,6 +54,19 @@ Pokud chcete zahrnout kód z [úložiště ukázek](https://github.com/Microsoft
 
 Tento příkaz naimportuje řádky 4 do 8 [ `Game.qs` souboru z `chsh-game` ukázky](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs)a označí je jako Q# kód pro účely zvýrazňování syntaxe.
 Pomocí tohoto příkazu se můžete vyhnout duplikování kódu mezi koncepčními články a úložištěm ukázek, aby byl vzorový kód v dokumentaci vždy aktuální.
+
+### <a name="contributing-image-files"></a>Přispívající soubory obrázků
+
+**Důležité**: Pokud chcete, aby se obrázky v tmavém režimu správně vykreslit, musíte se vyhnout průhlednostem.
+
+- Pro soubory. jpg. nemusíte nic dělat, protože formát. jpg nepodporuje transparentní prvky.
+- Pro soubory. png musíte přidat bílé pozadí nebo změnit hodnotu alfa kanálu na **100**. Nejjednodušší způsob, jak to provést v systému Windows, je otevřít soubor v **programu Malování** a uložit ho a přepsat původní soubor.
+- Pro soubory. SVG musíte přidat bílý obdélník do nejnižší vrstvy. Můžete to provést pomocí **Inkscape**:
+  1. Otevřete soubor. SVG.
+  1. Vyberte nástroj čtvercového tvůrce a nakreslete bílý obdélník nad původní obrázek.
+  1. Vyberte nástroj pro **Výběr a transformaci objektů** kliknutím na šipku dolů nebo stisknutím klávesy **F1**.
+  1. Když máte vybraný obdélník, klikněte na panel nástrojů **dolní výběr na dolní (konec)**.
+  1. Upravte obdélník pomocí myši nebo kláves se šipkami.
 
 ## <a name="contributing-to-the-api-references"></a>Přispívání do referencí rozhraní API
 

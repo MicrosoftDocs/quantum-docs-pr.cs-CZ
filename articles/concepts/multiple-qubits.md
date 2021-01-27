@@ -1,6 +1,6 @@
 ---
 title: více qubits Popis: Naučte se provádět operace na dvou nebo více qubits.
-Autor: bradben UID: Microsoft.. koncepty. Multiple-qubits MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: article No-Loc:
+Autor: bradben UID: Microsoft.. koncepty. Multiple-qubits MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -105,10 +105,10 @@ Důvodem je to, že výpočetního základu pro qubit stavy je tvořen tensor pr
 Je snadné vidět, že obecněji stav u $ n- $ qubits je reprezentovaný vektorem jednotky dimenze $ 2 ^ n $ pomocí této konstrukce.  Vektor
 
 $$
-\begin{bmatrix}\alpha _ { 00 } 01 \\\\ 10 \alpha   _ { } \\\\ \alpha _ { 11 } \\\\ \alpha   _ { }  \end{bmatrix}
+\begin{bmatrix}\alpha _{ 00 } 01 \\\\ 10 \alpha_ { } \\\\ \alpha _{ 11 } \\\\ \alpha_ { }  \end{bmatrix}
 $$
 
-představuje stav u 2 qubits, pokud je $ | \alpha _ { 00 } | ^ 2 + | \alpha _ { 01 } | ^ 2 + | \alpha _ { 10 } | ^ 2 + | \alpha _ { 11 } | ^ 2 = 1 $ . Stejně jako u jediného qubits, znamená to, že vektor stavu ve více qubits uchovává všechny informace potřebné k popisu chování systému.
+představuje stav u 2 qubits, pokud je $ | \alpha _{ 00 } | ^ 2 + | \alpha_ { 01 } | ^ 2 + | \alpha _{ 10 } | ^ 2 + | \alpha_ { 11 } | ^ 2 = 1 $ . Stejně jako u jediného qubits, znamená to, že vektor stavu ve více qubits uchovává všechny informace potřebné k popisu chování systému.
 
 Pokud máme dvě samostatné qubits, jednu ve stavu $ \begin{bmatrix} \alpha \\\\ \beta \end{bmatrix} $ a druhý qubit ve stavu $ \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix} $ , bude odpovídající dva qubit stav    
 
@@ -124,22 +124,22 @@ $$\psi\otimes\phi = \begin{bmatrix} 1/ \sqrt { 2 } \\\\ 0 \\\\ 0 \\\\ 1/ \sqrt {
 
 Takový qubit stav, který není možné zapsat jako tensor produkt pro jeden qubit stav, se nazývá "entangled"; Tyto dvě qubits se označují jako [*entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Je volně řečeno, protože stav se nedokáže představit jako tensor produkt pro jeden qubit stavů, informace, že stav je uložený, není omezen na jednu z qubits jednotlivě.  Místo toho jsou informace v korelaci mezi dvěma stavy uloženy místně.  Tato nevýznamová informace je jedním z hlavních rozlišujících funkcí, které výpočetní výkon využívá v klasickém výpočetním prostředí, a je zásadní pro celou řadu protokolů [, včetně počtu](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) procesorů a [oprav chyb](xref:microsoft.quantum.libraries.error-correction).
 
-## <a name="measuring-two-qubit-states"></a>Měření qubit stavů ##
+## <a name="measuring-two-qubit-states"></a>Měření Two-Qubit stavů ##
 Měření dvou qubit stavů je velmi podobné měření s jedním qubit. Měření stavu
 
 $$
     \begin{bmatrix}
-        \alpha_ { 00 } 01 \\\\ \alpha _ { }\\\\ 
-        \alpha_ { 10 } 11 \\\\ \alpha _ {}
+        \alpha_{ 00 } 01 \\\\ \alpha_ { }\\\\ 
+        \alpha_{ 10 } 11 \\\\ \alpha_ {}
     \end{bmatrix}
 $$
 
-Výsledkem je $ 00 $ s pravděpodobností $ | \alpha _ { 00 } | ^ 2 $ , $ 01 $ s pravděpodobností $ | \alpha _ { 01 } | ^ 2 $ , $ 10 $ s pravděpodobností $ | \alpha _ { 10 } | ^ 2 $ a $ 11 $ s pravděpodobností $ | 11 \alpha _ { } | ^ 2 $ . Proměnné $ \alpha _ { 00 } , \alpha _ { 01 } , \alpha _ { 10 } $ a $ 11 \alpha _ { } $ byly záměrně pojmenovány, aby toto připojení bylo jasné. Pokud je výsledkem měření hodnota 00, znamená to, že $ $ stav 2 – 2 qubit systému se sbalí a teď je
+Výsledkem je $ 00 $ s pravděpodobností $ | \alpha _{ 00 } | ^ 2 $ , $ 01 $ s pravděpodobností $ | \alpha_ { 01 } | ^ 2 $ , $ 10 $ s pravděpodobností $ | \alpha _{ 10 } | ^ 2 $ a $ 11 $ s pravděpodobností $ | 11 \alpha_ { } | ^ 2 $ . Proměnné $ \alpha _{ 00 } , \alpha_ { 01 } , \alpha _{ 10 } $ a $ 11 \alpha_ { } $ byly záměrně pojmenovány, aby toto připojení bylo jasné. Pokud je výsledkem měření hodnota 00, znamená to, že $ $ stav 2 – 2 qubit systému se sbalí a teď je
 
 $$
     16.12.00 \equiv
     \begin{bmatrix}
-        první \\\\ 
+        1 \\\\ 
         0,8 \\\\ 
         0,8 \\\\ 
         0 \end{bmatrix} .
@@ -193,7 +193,7 @@ $$
 
 znovu v souladu s našimi Intuition.
 
-## <a name="two-qubit-operations"></a>Operace se dvěma qubit
+## <a name="two-qubit-operations"></a>Two-Qubit operace
 Stejně jako v případě qubit jsou jakékoli jednotkové transformace platnou operací na qubits. Obecně platí, že jednotná transformace na $ n $ qubits je matice $ o $ velikosti $ 2 ^ n \times 2 ^ n $ (takže funguje na vektorech velikosti $ 2 ^ n), což je $ $ u ^ { -1 } = u ^ \dagger $ .
 Například brána CNOT (řízená-NOT) je běžně používaná qubit brána a je reprezentována následující jednotkovou maticí:
 
@@ -240,7 +240,7 @@ Brány se taky dají řídit pomocí klasických informací.  Klasická řízen�
 Stejně jako v případě qubitho případu je qubit sada brány univerzální, pokud by každá $ 4 \times $ jednotná matice mohla být Přibližná součinem bran z této sady až po libovolnou přesnost.
 Jedním z příkladů univerzální sady brány je Hadamard brána, brána T a brána CNOT. Když vezmete produkty z těchto bran, můžeme v každé z nich zaokrouhlit každou jednotkovou matrici na dvě qubits.
 
-## <a name="many-qubit-systems"></a>Řada qubit systémů
+## <a name="many-qubit-systems"></a>Many-Qubit systémy
 Dodržujeme přesně stejné vzory, které jsme prozkoumali v obou qubit případech a Sestavujte mnoho qubitch stavových procesorů z menších systémů.  Tyto stavy jsou sestavené vytvořením tensor produktů menších států.  Zvažte například kódování bitového řetězce $ 1011001 $ v počítači s více poli.  Tuto možnost můžeme kódovat jako
 
 $$

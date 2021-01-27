@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.CyclicEntanglingLayer
 title: CyclicEntanglingLayer – funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: CyclicEntanglingLayer
 qsharp.summary: Returns an array of singly controlled rotations along a given axis, arranged cyclically across a register of qubits, and parameterized by distinct model parameters.
-ms.openlocfilehash: 5421765e36ef3e8e744e118206dafcb2bb582cc2
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 5d0af0a60217b69dc7eb8ece8952f2a7f0c09280
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96211929"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847385"
 ---
 # <a name="cyclicentanglinglayer-function"></a>CyclicEntanglingLayer – funkce
 
@@ -49,3 +49,16 @@ Oddělení mezi cílovou a řídicí index pro každé otočení.
 ## <a name="output--controlledrotation"></a>Výstup: [ControlledRotation](xref:Microsoft.Quantum.MachineLearning.ControlledRotation)[]
 
 Pole qubit řízených otočení, která jsou rozložená cyklicky v rámci registru `nQubits` qubits.
+
+## <a name="example"></a>Příklad
+
+Následují ekvivalenty:
+
+```qsharp
+let layer = CyclicEntanglingLayer(3, PauliX, 2);
+let layer = [
+    ControlledRotation((0, [2]), PauliX, 0),
+    ControlledRotation((1, [0]), PauliX, 1),
+    ControlledRotation((2, [1]), PauliX, 2)
+];
+```
