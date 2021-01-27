@@ -1,19 +1,19 @@
 ---
 uid: Microsoft.Quantum.Characterization
 title: Obor názvů Microsoft. v. Charakterization
-ms.date: 11/25/2020 12:00:00 AM
-ms.topic: article
+ms.date: 1/23/2021 12:00:00 AM
+ms.topic: managed-reference
 qsharp.kind: namespace
 qsharp.name: Microsoft.Quantum.Characterization
 qsharp.summary: This namespace contains functions and operations for learning properties of quantum states and processes, including tomography and phase estimation.
-ms.openlocfilehash: 96724a788f045b76473aee138d9c44ccfbef5d44
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 824bef750c8fd96be0e42802dbd684258db6140d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96216128"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98851837"
 ---
-# <a name="microsoftquantumcharacterization-namespace"></a><span data-ttu-id="367a1-102">Obor názvů Microsoft. v. Charakterization</span><span class="sxs-lookup"><span data-stu-id="367a1-102">Microsoft.Quantum.Characterization namespace</span></span>
+# <a name="microsoftquantumcharacterization-namespace"></a><span data-ttu-id="b6f20-102">Obor názvů Microsoft. v. Charakterization</span><span class="sxs-lookup"><span data-stu-id="b6f20-102">Microsoft.Quantum.Characterization namespace</span></span>
 
-<span data-ttu-id="367a1-103">Tento obor názvů obsahuje funkce a operace pro učení vlastností stavů a procesů, včetně odhadu tomography a fáze.</span><span class="sxs-lookup"><span data-stu-id="367a1-103">This namespace contains functions and operations for learning properties of quantum states and processes, including tomography and phase estimation.</span></span>
+<span data-ttu-id="b6f20-103">Tento obor názvů obsahuje funkce a operace pro učení vlastností stavů a procesů, včetně odhadu tomography a fáze.</span><span class="sxs-lookup"><span data-stu-id="b6f20-103">This namespace contains functions and operations for learning properties of quantum states and processes, including tomography and phase estimation.</span></span>
 

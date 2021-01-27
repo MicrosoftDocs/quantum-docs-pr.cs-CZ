@@ -1,28 +1,28 @@
 ---
 uid: Microsoft.Quantum.Chemistry.HTerm
 title: Uživatelem definovaný typ HTerm
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.Chemistry
 qsharp.name: HTerm
 qsharp.summary: Format of data passed from C# to Q# to represent a term of the Hamiltonian. The meaning of the data represented is determined by the algorithm that receives it.
-ms.openlocfilehash: 504d55dc57ce92c12e6f016e9afcedfd59664aa1
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 744668a4fe96ee00fe2f7991f4e1f05eea19d417
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96204126"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98851787"
 ---
-# <a name="hterm-user-defined-type"></a><span data-ttu-id="7695f-102">Uživatelem definovaný typ HTerm</span><span class="sxs-lookup"><span data-stu-id="7695f-102">HTerm user defined type</span></span>
+# <a name="hterm-user-defined-type"></a><span data-ttu-id="8d797-102">Uživatelem definovaný typ HTerm</span><span class="sxs-lookup"><span data-stu-id="8d797-102">HTerm user defined type</span></span>
 
-<span data-ttu-id="7695f-103">Obor názvů: [Microsoft.. chemie](xref:Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="7695f-103">Namespace: [Microsoft.Quantum.Chemistry](xref:Microsoft.Quantum.Chemistry)</span></span>
+<span data-ttu-id="8d797-103">Obor názvů: [Microsoft.. chemie](xref:Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="8d797-103">Namespace: [Microsoft.Quantum.Chemistry](xref:Microsoft.Quantum.Chemistry)</span></span>
 
-<span data-ttu-id="7695f-104">Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="7695f-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
+<span data-ttu-id="8d797-104">Balíček: [Microsoft.. chemie](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span><span class="sxs-lookup"><span data-stu-id="8d797-104">Package: [Microsoft.Quantum.Chemistry](https://nuget.org/packages/Microsoft.Quantum.Chemistry)</span></span>
 
 
-<span data-ttu-id="7695f-105">Formát dat předaných z C# na Q #, který představuje období Hamiltonian.</span><span class="sxs-lookup"><span data-stu-id="7695f-105">Format of data passed from C# to Q# to represent a term of the Hamiltonian.</span></span>
-<span data-ttu-id="7695f-106">Význam reprezentovaných dat je určen algoritmem, který ho přijímá.</span><span class="sxs-lookup"><span data-stu-id="7695f-106">The meaning of the data represented is determined by the algorithm that receives it.</span></span>
+<span data-ttu-id="8d797-105">Formát dat předaných z C# na Q #, který představuje období Hamiltonian.</span><span class="sxs-lookup"><span data-stu-id="8d797-105">Format of data passed from C# to Q# to represent a term of the Hamiltonian.</span></span>
+<span data-ttu-id="8d797-106">Význam reprezentovaných dat je určen algoritmem, který ho přijímá.</span><span class="sxs-lookup"><span data-stu-id="8d797-106">The meaning of the data represented is determined by the algorithm that receives it.</span></span>
 
 ```qsharp
 
