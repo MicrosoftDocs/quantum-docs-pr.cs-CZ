@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToFirstQubitCA
 title: Operace ApplyToFirstQubitCA
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToFirstQubitCA
 qsharp.summary: Applies operation op to the first qubit in the register. The modifier `CA` indicates that the operation is controllable and adjointable.
-ms.openlocfilehash: bc2b1275b4258b9cc2db45c9e5cfe14f7eee0c67
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: ba82199cc7a548d771027141780873c05de71c57
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96208801"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98841430"
 ---
 # <a name="applytofirstqubitca-operation"></a>Operace ApplyToFirstQubitCA
 
@@ -31,7 +31,7 @@ operation ApplyToFirstQubitCA (op : (Qubit => Unit is Adj + Ctl), register : Qub
 
 ## <a name="input"></a>Vstup
 
-### <a name="op--qubit--unit--is-adj--ctl"></a>op: [Qubit](xref:microsoft.quantum.lang-ref.qubit) => [jednotka](xref:microsoft.quantum.lang-ref.unit) qubit je ADJ + CTL
+### <a name="op--qubit--unit--is-adj--ctl"></a>op: [](xref:microsoft.quantum.lang-ref.qubit) => [jednotka](xref:microsoft.quantum.lang-ref.unit) qubit je ADJ + CTL
 
 Operace, která se má použít pro první qubit
 

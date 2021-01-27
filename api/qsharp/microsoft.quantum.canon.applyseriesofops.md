@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplySeriesOfOps
 title: Operace ApplySeriesOfOps
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplySeriesOfOps
 qsharp.summary: Applies a list of ops and their targets sequentially on an array.
-ms.openlocfilehash: b8810e7d31689046e72905195a3a25ef80fc8d67
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: b086b01b0be86bd25a6d6cdef26bfbb53e484cb2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96217998"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98841498"
 ---
 # <a name="applyseriesofops-operation"></a>Operace ApplySeriesOfOps
 
@@ -55,6 +55,10 @@ Qubit registrace, na které se má pracovat.
 ### <a name="t"></a>'S
 
 
+
+## <a name="example"></a>Příklad
+
+Následující příkaz použije EXP ([PauliX, PauliY], 0,5) na qubits 0, 1//then X na qubit 2 let OPS = [exp ([PauliX, PauliY], 0,5, _), ApplyToFirstQubit (X, _)]; Povolit indexy = [[0, 1], [2]]; ApplySeriesOfOps (OPS; Indexes; qubitArray);
 
 ## <a name="see-also"></a>Viz také
 

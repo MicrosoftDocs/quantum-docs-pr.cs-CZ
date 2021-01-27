@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayedA
 title: Opožděná funkce
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayedA
 qsharp.summary: Returns an operation that applies given operation with given argument.
-ms.openlocfilehash: 33ff4dab36a6c6e17b9496a623f70b814c9f2fed
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e53279bd3ddc5fa8bc0c862f998b273a9e17a85b
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96207067"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98840604"
 ---
 # <a name="delayeda-function"></a>Opožděná funkce
 
@@ -41,7 +41,7 @@ Vstup, na který se operace `op` používá
 
 
 
-## <a name="output--unit--unit--is-adj"></a>Výstup: jednotka [jednotky](xref:microsoft.quantum.lang-ref.unit) => [Unit](xref:microsoft.quantum.lang-ref.unit) je ADJ.
+## <a name="output--unit--unit--is-adj"></a>Výstup: jednotka [jednotky](xref:microsoft.quantum.lang-ref.unit) => [](xref:microsoft.quantum.lang-ref.unit) je ADJ.
 
 Nová operace, která se vztahuje na `op` vstup `arg`
 
