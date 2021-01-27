@@ -1,19 +1,19 @@
 ---
 uid: Microsoft.Quantum.Arrays
 title: Obor názvů Microsoft. Form. Arrays
-ms.date: 11/25/2020 12:00:00 AM
-ms.topic: article
+ms.date: 1/23/2021 12:00:00 AM
+ms.topic: managed-reference
 qsharp.kind: namespace
 qsharp.name: Microsoft.Quantum.Arrays
 qsharp.summary: This namespace contains functions for creating and manipulating arrays of data.
-ms.openlocfilehash: 70cb8583e0d35c7c554dfa781082017a25bec197
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 5b3a057073739607624de358216781e84d5e435d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220667"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845633"
 ---
-# <a name="microsoftquantumarrays-namespace"></a><span data-ttu-id="c46ca-102">Obor názvů Microsoft. Form. Arrays</span><span class="sxs-lookup"><span data-stu-id="c46ca-102">Microsoft.Quantum.Arrays namespace</span></span>
+# <a name="microsoftquantumarrays-namespace"></a><span data-ttu-id="33981-102">Obor názvů Microsoft. Form. Arrays</span><span class="sxs-lookup"><span data-stu-id="33981-102">Microsoft.Quantum.Arrays namespace</span></span>
 
-<span data-ttu-id="c46ca-103">Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat.</span><span class="sxs-lookup"><span data-stu-id="c46ca-103">This namespace contains functions for creating and manipulating arrays of data.</span></span>
+<span data-ttu-id="33981-103">Tento obor názvů obsahuje funkce pro vytváření a manipulaci s poli dat.</span><span class="sxs-lookup"><span data-stu-id="33981-103">This namespace contains functions for creating and manipulating arrays of data.</span></span>
 
