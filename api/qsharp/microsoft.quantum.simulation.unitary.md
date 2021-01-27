@@ -1,27 +1,27 @@
 ---
 uid: Microsoft.Quantum.Simulation.Unitary
 title: Typ jednotně definovaného uživatele
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: Unitary
 qsharp.summary: Represents evolution under a unitary operator.
-ms.openlocfilehash: c34d84fb5f319c285356b284bd1f1c18ec64ef46
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: f148b59d2445f964fc0332e2010571a0ace2d4ba
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96192141"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858400"
 ---
-# <a name="unitary-user-defined-type"></a><span data-ttu-id="02cc8-102">Typ jednotně definovaného uživatele</span><span class="sxs-lookup"><span data-stu-id="02cc8-102">Unitary user defined type</span></span>
+# <a name="unitary-user-defined-type"></a><span data-ttu-id="8d28d-102">Typ jednotně definovaného uživatele</span><span class="sxs-lookup"><span data-stu-id="8d28d-102">Unitary user defined type</span></span>
 
-<span data-ttu-id="02cc8-103">Obor názvů: [Microsoft.. simulace](xref:Microsoft.Quantum.Simulation)</span><span class="sxs-lookup"><span data-stu-id="02cc8-103">Namespace: [Microsoft.Quantum.Simulation](xref:Microsoft.Quantum.Simulation)</span></span>
+<span data-ttu-id="8d28d-103">Obor názvů: [Microsoft.. simulace](xref:Microsoft.Quantum.Simulation)</span><span class="sxs-lookup"><span data-stu-id="8d28d-103">Namespace: [Microsoft.Quantum.Simulation](xref:Microsoft.Quantum.Simulation)</span></span>
 
-<span data-ttu-id="02cc8-104">Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="02cc8-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="8d28d-104">Balíček: [Microsoft.. Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="8d28d-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="02cc8-105">Představuje vývoj pod operátorem s jednou jednotkou.</span><span class="sxs-lookup"><span data-stu-id="02cc8-105">Represents evolution under a unitary operator.</span></span>
+<span data-ttu-id="8d28d-105">Představuje vývoj pod operátorem s jednou jednotkou.</span><span class="sxs-lookup"><span data-stu-id="8d28d-105">Represents evolution under a unitary operator.</span></span>
 
 ```qsharp
 
