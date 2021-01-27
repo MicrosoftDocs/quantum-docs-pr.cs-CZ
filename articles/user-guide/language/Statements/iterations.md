@@ -1,6 +1,6 @@
 ---
 title: "iterace a smyčky v Q# " Description: Naučte se používat smyčky for v Q# programovacím jazyce.
-Autor: bettinaheim MS. Author: beheim MS. Date: 10/07/2020 MS. téma: UID článku: Microsoft.. qsharp. iterace No-Loc:
+Autor: bettinaheim MS. Author: beheim MS. Date: 10/07/2020 MS. téma: Reference UID: Microsoft.. qsharp. iteraces No-Loc:
 - "Q#"
 - "$$v"
 

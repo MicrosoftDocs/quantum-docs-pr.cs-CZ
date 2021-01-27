@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 214d584840f235868c66a1fb3ee24d0acab49630
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692173"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857244"
 ---
 # <a name="applications"></a>Aplikace #
 
@@ -140,7 +140,7 @@ operation EstimateAdiabaticStateEnergy(
 
 ## <a name="shors-algorithm"></a>Shorův algoritmus ##
 Shor algoritmus zůstává jedním z nejvýznamnějších vývojů ve výpočetním prostředí, protože ukázalo, že by se počítače mohly použít k řešení důležitých, aktuálně nerušivých problémů.
-Algoritmus Shor poskytuje rychlý způsob, jak rychle vyhodnotit Velká čísla pomocí počítače s velkým množstvím, což je problém s názvem *faktoringu* .
+Algoritmus Shor poskytuje rychlý způsob, jak rychle vyhodnotit Velká čísla pomocí počítače s velkým množstvím, což je problém s názvem *faktoringu*.
 Zabezpečení mnoha současných cryptosystemsch dnů vychází z předpokladu, že pro účely faktoringu neexistuje žádný rychlý algoritmus.
 Proto má Shorový algoritmus v podstatě vliv na zabezpečení v rámci po celém světě.
 
@@ -151,7 +151,7 @@ Tyto dva kroky prozkoumáme níže.
 
 ### <a name="period-finding"></a>Hledání období ###
 
-Zjistili jsme, jak funkce Fourierova transformace a odhad fáze funguje (viz [algoritmy](xref:microsoft.quantum.libraries.standard.algorithms)doby provozu), můžeme pomocí těchto nástrojů vyřešit klasický pevný výpočetní problém nazývaný *hledání období* .  V další části se dozvíte, jak použít hledání období pro faktoring.
+Zjistili jsme, jak funkce Fourierova transformace a odhad fáze funguje (viz [algoritmy](xref:microsoft.quantum.libraries.standard.algorithms)doby provozu), můžeme pomocí těchto nástrojů vyřešit klasický pevný výpočetní problém nazývaný *hledání období*.  V další části se dozvíte, jak použít hledání období pro faktoring.
 
 Zadaná dvě celá čísla $a $ a $N $, kde $a<N $, cílem hledání období, označovaného také jako hledání objednávek, je najít _objednávku_ $r $ z $a $ modulo $N $, kde $r $ je definováno jako nejmenší kladné celé číslo tak, aby $a ^ r \equiv 1 \Text{mod} N $.  
 
@@ -178,7 +178,7 @@ Brána QFT byla popsána [dříve](xref:microsoft.quantum.libraries.standard.alg
 Pokud chcete dosáhnout $ (a ^ NX) \Text{mod} N $, můžeme jednoduše použít řízené $U _ {a ^ N} $, kde vypočítáme $a ^ n \Text{mod} N $ Classic, aby se mohl připojit k okruhu.  
 Okruhy, které mají dosáhnout těchto modulárních aritmetických výpočtů, jsou popsané v [aritmetické dokumentaci](./algorithms.md#arithmetic)pro procesory, konkrétně pro implementaci operací řízených $U \_ {a ^ i} $ je potřeba modulární okruh umocnění.
 
-Zatímco okruh výše odpovídá [odhadu fáze](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání objednávek, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft.. Například [robustní odhad fáze](xref:microsoft.quantum.characterization.robustphaseestimation) také používá jednu další qubit.
+Zatímco okruh výše odpovídá [odhadu fáze](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) plnění a explicitně povoluje hledání objednávek, můžeme snížit počet požadovaných qubits. Můžeme buď použít metodu Beauregard pro hledání objednávek, jak je popsáno [na stránce 8 arXiv: quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8), nebo použijte jednu z rutin odhadu fáze, která je k dispozici v Microsoft.. Například [robustní odhad fáze](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) také používá jednu další qubit.
 
 ### <a name="factoring"></a>Které budou zohledňovat ###
 Cílem faktoringu je určit dva základní faktory typu Integer $N $, kde $N $ je $n číslo bitu.  
