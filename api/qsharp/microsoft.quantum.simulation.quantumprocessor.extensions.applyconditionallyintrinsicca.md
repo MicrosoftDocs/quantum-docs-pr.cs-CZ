@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions.ApplyConditionallyIntrinsicCA
 title: Operace ApplyConditionallyIntrinsicCA
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Simulation.QuantumProcessor.Extensions
 qsharp.name: ApplyConditionallyIntrinsicCA
 qsharp.summary: ''
-ms.openlocfilehash: 2dd7a9b6e281c62470defa64685dc58872694468
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 137168d7360842df18d1ed2893f7a1b2e9a548cc
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96230187"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854219"
 ---
 # <a name="applyconditionallyintrinsicca-operation"></a>Operace ApplyConditionallyIntrinsicCA
 
@@ -40,12 +40,12 @@ operation ApplyConditionallyIntrinsicCA (measurementResults : Result[], resultsV
 
 
 
-### <a name="onequalop--unit--unit--is-adj--ctl"></a>onEqualOp: [jednotka jednotky](xref:microsoft.quantum.lang-ref.unit) => [Unit](xref:microsoft.quantum.lang-ref.unit) je ADJ + CTL
+### <a name="onequalop--unit--unit--is-adj--ctl"></a>onEqualOp: [jednotka jednotky](xref:microsoft.quantum.lang-ref.unit) => [](xref:microsoft.quantum.lang-ref.unit) je ADJ + CTL
 
 
 
 
-### <a name="onnonequalop--unit--unit--is-adj--ctl"></a>onNonEqualOp: [jednotka jednotky](xref:microsoft.quantum.lang-ref.unit) => [Unit](xref:microsoft.quantum.lang-ref.unit) je ADJ + CTL
+### <a name="onnonequalop--unit--unit--is-adj--ctl"></a>onNonEqualOp: [jednotka jednotky](xref:microsoft.quantum.lang-ref.unit) => [](xref:microsoft.quantum.lang-ref.unit) je ADJ + CTL
 
 
 
