@@ -4,7 +4,7 @@ functions:
   uid: Microsoft.Quantum.Convert.BigIntAsBoolArray
 - summary: Převede dané pole logických hodnot na ekvivalentní velké celé číslo. Element 0 pole je nejméně významným bitem velkých celých čísel.
   uid: Microsoft.Quantum.Convert.BoolArrayAsBigInt
-- summary: Vytvoří kladné celé číslo z řetězce bitů ve formátu Little endian.
+- summary: Vytvoří nezáporné celé číslo z řetězce bitů ve formátu Little endian.
   uid: Microsoft.Quantum.Convert.BoolArrayAsInt
 - summary: V případě bitového řetězce vrátí operátor qubit Pauli, který je reprezentován jako pole operátorů s jedním qubit Pauli.
   uid: Microsoft.Quantum.Convert.BoolArrayAsPauli
@@ -22,7 +22,7 @@ functions:
   uid: Microsoft.Quantum.Convert.FunctionAsOperation
 - summary: Převede zadané celé číslo na ekvivalentní velké celé číslo.
   uid: Microsoft.Quantum.Convert.IntAsBigInt
-- summary: Vytvoří binární reprezentace kladného celého čísla s použitím reprezentace Little-endian pro vrácené pole.
+- summary: Vytvoří binární reprezentaci nezáporného čísla s použitím reprezentace Little-endian pro vrácené pole.
   uid: Microsoft.Quantum.Convert.IntAsBoolArray
 - summary: Převede zadané celé číslo na ekvivalentní číslo s plovoucí desetinnou čárkou s dvojitou přesností.
   uid: Microsoft.Quantum.Convert.IntAsDouble
@@ -38,7 +38,7 @@ functions:
   uid: Microsoft.Quantum.Convert.RangeAsIntArray
 - summary: Převede `Result[]` typ na `Bool[]` typ, kde `One` je mapován na `true` a `Zero` je mapován na `false` .
   uid: Microsoft.Quantum.Convert.ResultArrayAsBoolArray
-- summary: Vytvoří kladné celé číslo z řetězce výsledků ve formátu Little endian.
+- summary: Vytvoří nezáporné celé číslo z řetězce výsledků ve formátu Little endian.
   uid: Microsoft.Quantum.Convert.ResultArrayAsInt
 - summary: Převede `Result` typ na `Bool` typ, kde `One` je mapován na `true` a `Zero` je mapován na `false` .
   uid: Microsoft.Quantum.Convert.ResultAsBool
@@ -50,9 +50,9 @@ operations:
 summary: 'Tento obor názvů obsahuje funkce pro převod mezi různými datovými typy Q #.'
 uid: Microsoft.Quantum.Convert
 metadata:
-  ms.openlocfilehash: d22f0735b800d2e9a34f8c7ce58353850a4cdded
-  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.openlocfilehash: 18cef8a797a4657f1b846a5b2d2ba2a673378f9a
+  ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/27/2020
-  ms.locfileid: "92698393"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98850063"
