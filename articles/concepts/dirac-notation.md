@@ -1,6 +1,6 @@
 ---
 title: Dirac Notation Description: Naučte se používat zápis Dirac pro reprezentaci stavových a simulací operací.
-Autor: QuantumWriter UID: Microsoft.. koncepty. Dirac MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: No-Loc:
+Autor: QuantumWriter UID: Microsoft.. koncepty. Dirac MS. Author: v-benbra MS. Date: 12/11/2017 MS. téma: koncepční No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -120,6 +120,7 @@ $$
 $$
 
 ### <a name="computational-basis-vectors"></a>Vektory výpočetního základu
+
 To ukazuje, proč se tyto stavy často označují jako *výpočetní základ*: každý stav bez teček může být vždy vyjádřen jako součet výpočetních vektorů a tyto součty se snadno vyjadřují pomocí Dirac Notation.  Tato konverzace je také pravdivá v tom, že stavy $ \ket { + } $ a $ \ket { - } $ také tvoří základ pro stavové stavy.  Můžete to vidět z faktu, že
 
 $$
@@ -128,14 +129,20 @@ $$
 
 Jako příklad zápisu Dirac zvažte brzdu $ \braket { 0 | 1 } $ , což je vnitřní produkt mezi $ 0 $ a $ 1 $ .  Dá se zapsat jako 
 
-$$\braket{0 | 1 } = \begin{bmatrix} & 0 0 \end{bmatrix} \begin{bmatrix} \\\\ 1 0 \end{bmatrix} = .$$
+$$
+\braket{0 | 1 } = \begin{bmatrix} & 0 0 \end{bmatrix} \begin{bmatrix} \\\\ 1 0 \end{bmatrix} = .
+$$
 
 To říká, že $ \ket { 0 } $ a $ \ket { 1 } $ jsou kolmé vektory, což znamená, že $ \braket { 0 | 1 } = \braket { | 0 } = 0 $ .  Také definicí $ \braket { 0 | 0 1 1 } = \braket { | } = $ , což znamená, že dva vektory výpočetního základu mohou být také volány *orthonormal*.
-Tyto vlastnosti orthonormal budou užitečné v následujícím příkladu. Pokud máme stav $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 } } \ket { 0 } $ $ \braket { , potom 1 | 0 } = 0 $ , pravděpodobnost měření $ 1 $ je  
 
-$$\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .$$ 
+Tyto vlastnosti orthonormal budou užitečné v následujícím příkladu. Pokud máme stav $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 } } \ket { 0 } $ $ \braket { , potom 1 | 0 } = 0 $ , pravděpodobnost měření $ 1 $ je 
+
+$$
+\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .
+$$
 
 ### <a name="tensor-product-notation"></a>Zápis produktu tensor
+
 Zápis Dirac zahrnuje také implicitní strukturu produktů tensor v rámci něj.  To je důležité z toho důvodu, že v případě, že se jedná o výpočetní výkon, je vektor stavu, který popisuje dva nekorelační Registry, tensor produkty dvou vektorů stavu.  Stručně popisující strukturu produktu tensor nebo její nedostatečného je důležité, pokud chcete vysvětlit výpočet.  Struktura produktu tensor předpokládá, že můžeme napsat $ \psi \otimes \phi $ pro jakékoli dva vektory stavových prostředí $ \phi $ a $ \psi $ jako $ \ket { \psi } \ket { \phi } $ , někdy explicitně zapsané jako $ \ket { \psi } \otimes \ket { \phi } $ , ale v konvenci psaní $ \otimes $ v mezi vektory nejsou zbytečné.  Například stav se dvěma qubits inicializovanými do nulového stavu je dán
 
 $$
@@ -155,6 +162,7 @@ $$
 $$
 
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Příklad: popisující pozici Dirac Notation
+
 Jako další příklad, jak můžete použít Dirac Notation k popsání státu, zvažte následující ekvivalenty při psaní stavových stavů, který je stejně větší než u každého možného bitového řetězce délky $ n.$
 
 $$
@@ -165,6 +173,7 @@ V této části se můžete setkat s tím, proč součet přechází z $ 0 $ na 
 Jako Poznámka na straně, v tomto příkladu jsme nepoužívali $ \ket { + } ^ { \otimes n } = \ket { + } $ v analogii na $ \ket { 0 } ^ { \otimes n } = \ket { 0, } $ protože tato konvence zápisu je obvykle vyhrazena pro výpočetní stav na základě každého qubit inicializovaného na nulu.  I když by taková konvence rozumné v tomto případě, nejedná se o výpočetní prostředí.
 
 ### <a name="expressing-linearity-with-dirac-notation"></a>Vyjádření linearity pomocí notace Dirac
+
 Další dobrým prvkem Dirac Notation je skutečnost, že je lineární.  Pokud chceme napsat pro všechny čtyři stavy stavu, 
 
 $$( \alpha \ket { \psi }  + \beta \ket { \phi } ) \otimes ( \gamma \ket { \chi }  +  \delta \ket { \omega } ) = \alpha \gamma \ket { \psi } \ket { \chi }  +  \alpha \delta \ket { \psi } \ket { \omega } + \beta \gamma \ket { \phi } \ket { \chi } + \beta \delta \ket { \phi } \ket { \omega } .$$
@@ -180,6 +189,7 @@ $$|\braket{- |\psi}| ^ 2 = \left | \frac { 1 } { \sqrt { 2 } } ( \bra { 0 }  -  
 Skutečnost, že se záporné znaménko objeví při výpočtu pravděpodobnosti, je manifestem rušivého rušení, což je jeden z mechanismů, kterými výpočetní výkon získá výhody oproti klasickému výpočetnímu prostředí.
 
 ## <a name="ketbra-or-outer-product"></a>ketbra nebo vnější produkt
+
 Konečná položka, která je předmětem diskuze v Dirac Notation, je *ketbra* nebo vnější produkt.  Vnější produkt je reprezentován v Dirac zápisech jako $ \ket { \psi } \bra { \phi } $ a někdy označovaný jako ketbras, protože Bras a kets se vyskytují v opačném pořadí jako brakets.  Vnější produkt je definován pomocí násobení matic, jako u násobcích $ \ket { \psi } \bra { \phi } = \psi \phi ^ \dagger $ stavových vektorů $ \psi $ a $ \phi $ .  Nejjednodušším a pravděpodobně Nejběžnějším příkladem tohoto zápisu je
 
 $$
@@ -231,4 +241,5 @@ Obecné operátory státních stavů, nikoli vektory, se všudypřítomný v ně
 Pro zúčastněný čtenář doporučujeme přečíst si jednu z referenčních knih, které jsou k dispozici v tématu, [kde najdete další informace](xref:microsoft.quantum.more-information).
 
 ## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# sekvence brány rovnající se státům
+
 Konečný bod pro vyzvednutí zápisu do teček a Q# programovací jazyk: na začátku tohoto dokumentu jsme uvedli, že stav nekonečných stavů je základní objekt informací ve výpočetním prostředí.  Pak může nastat jako neočekávaně, že v Q# žádném případě neexistují žádné fiktivní stavy.  Místo toho jsou všechny stavy popsány pouze pomocí operací, které slouží k jejich přípravě.  Předchozí příklad představuje vynikající ilustraci.  Místo toho, abychom v registru vyjádřili jednotnou pozici pro všechny bitové řetězce, můžeme výsledek vyjádřit jako $ H ^ { \otimes n } \ket { 0 } $ .  Tento exponenciálně kratší popis stavu má nejen výhodu, že se na něj dá klasický důvod, ale také stručně definuje operace, které je potřeba rozšířit prostřednictvím softwarového zásobníku, aby se tento algoritmus implementoval.  Z tohoto důvodu Q# je navržena tak, aby vygenerovala sekvence brány místo nestavových stavů. na teoretické úrovni jsou však dva perspektivy stejné.

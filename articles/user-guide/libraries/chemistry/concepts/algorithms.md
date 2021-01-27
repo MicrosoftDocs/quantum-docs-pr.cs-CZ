@@ -4,17 +4,17 @@ description: Naučte se používat vzorce Trotter-Suzuki a qubitization pro prá
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a303d54476e42b98a14c6b452227b0e1346567c8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: eeaa13b99ab07ce22f8a3306a756bf7ac7cde65b
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691888"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857600"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulace Hamiltonian Dynamics
 
@@ -28,7 +28,7 @@ Vzorec na pozadí Trotter – vzorce Suzuki jsou jednoduché: vyjádřete Hamilt
 Konkrétně dejte $H = \ sum_ {j = 1} ^ m H_j $ být Hamiltonian.
 Pak $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $ to znamená, že pokud $t \ll $1, bude chyba v této aproximaci zanedbatelná.
 Všimněte si, že pokud $e ^ {-i H} $ byly normální exponenciální, chyba v této aproximaci nebude $O (m ^ 2 t ^ 2) $: by to bylo nula.
-K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění ( *tj.* $H _J H_k \Ne H_k H_j $ všeobecně).
+K této chybě dochází, protože $e ^ {-iHt} $ je exponenciální exponenciální a v důsledku toho dojde k chybě při použití tohoto vzorce z důvodu faktu, že $H _J $ podmínka neprobíhá po dojíždění (*tj.*$H _J H_k \Ne H_k H_j $ všeobecně).
 
 Pokud je $t $ velké, Trotter vzorce Suzuki se dají použít k tomu, aby se tento dynamika přesně simulovaly tím, že se rozbalí do sekvence krátkého časového intervalu.
 Nechte $r $ počet kroků provedených v čase vývoje, takže pokaždé, když se krok spustí pro čas $t/r $. Potom máme $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r), $ $ to znamená, že pokud se $r $ škáluje jako $m ^ 2 t ^ 2/\ Epsilon $, může být chyba vytvořená maximálně $ \epsilon $ pro všechny $ \epsilon>$0.
