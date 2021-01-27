@@ -4,17 +4,17 @@ description: Přečtěte si o názvech, vstupech, dokumentaci a konvencích form
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: cfc201a16b1b42c82314220f77ae120076291759
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 2edd6baf7375415e395d15bac422168216bcff9a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231651"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852745"
 ---
 # <a name="no-locq-style-guide"></a>Q# Průvodce stylem #
 ## <a name="general-conventions"></a>Obecné konvence ##
@@ -400,7 +400,7 @@ Navrhujeme:
 
 - Každá veřejná funkce, operace a uživatelsky definované typy by měly hned předcházet dokumentační komentář.
 - Každý dokumentační komentář by měl mít minimálně následující oddíly:
-    - Shrnutí
+    - Souhrn
     - Vstup
     - Výstup (Pokud je k dispozici)
 - Ujistěte se, že všechny souhrny jsou dvě nebo méně vět. Pokud je potřeba více místa, poskytněte `# Description` hned následující část `# Summary` s úplnými podrobnostmi.

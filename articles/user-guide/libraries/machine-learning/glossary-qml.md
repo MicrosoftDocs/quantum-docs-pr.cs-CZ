@@ -4,17 +4,17 @@ description: Glosář termínů strojového učení
 author: alexeib2
 ms.author: alexeib
 ms.date: 2/27/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.training
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 476e93e3737dee6ad8f3a97e8ffbcfb9b0012ee1
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b6133c1f3068dff597f71d2111e5e117131a7fd1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691506"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852717"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Machine Learning Glosář
 
@@ -30,7 +30,7 @@ Vzhledem ke vektoru parametru kandidáta a posunu klasifikátoru se jejich *skó
 
 ## <a name="hyperparameters"></a>Hyperparameters
 
-Proces školení modelů se řídí některými předem nastavenými hodnotami nazvanými *parametry* :
+Proces školení modelů se řídí některými předem nastavenými hodnotami nazvanými *parametry*:
 
 ### <a name="learning-rate"></a>Rychlost učení
 
