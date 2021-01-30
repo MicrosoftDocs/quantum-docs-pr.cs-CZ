@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8aa6072e9b495db6e127cac350d5bfaec1b090ce
-ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.openlocfilehash: dd37581dff2a512a29eb7729ecbf81412917b8f8
+ms.sourcegitcommit: e915baf3b84ee3a562004c5b31d157d21533d450
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98856665"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99101454"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Poznámky k verzi sady Quantum Development Kit
 
@@ -23,6 +23,15 @@ Tento článek obsahuje informace o jednotlivých vydáních sady Quantum Develo
 Pokyny k instalaci najdete v [příručce pro instalaci](xref:microsoft.quantum.install).
 
 Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quantum.update).
+
+## <a name="version-0152101126807"></a>0.15.2101.126807 verze
+
+*Datum vydání: leden vysílání 29., 2021*
+
+- Přidání šablon projektů do Q# kompilátoru pro spustitelné soubory cílené na poskytovatele IonQ a Honeywell
+- Aktualizovat Q# zvýrazňování syntaxe jádra, aby zahrnovaly změny Q# syntaxe představené ve verzi [0.15.2101125897](#version-0152101125897)
+- Opravu chyb na podporu předávání polí jako vstupních argumentů Q# programům odesílaným do Azure na základě služby `%azure.execute` , viz problém [#401](https://github.com/microsoft/iqsharp/issues/401)
+- Při použití v rámci imagí Docker došlo k chybě "oprávnění zamítnuté" `az` `iqsharp-base` , viz problém [#404](https://github.com/microsoft/iqsharp/issues/404)
 
 ## <a name="version-0152101125897"></a>0.15.2101125897 verze
 
@@ -34,6 +43,7 @@ Pokyny k aktualizaci najdete v [příručce pro aktualizaci](xref:microsoft.quan
 - Vylepšené odhady šířky pro optimální hloubku [najdete v podrobnostech](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/1159).
 - Použít jednotkovou operaci poskytnutou jako explicitní matici pomocí `ApplyUnitary` ([QuantumLibraries # 391](https://github.com/microsoft/QuantumLibraries/pull/391), externí příspěvek od Dmytro Fedoriaka)
 - Vyřešené https://github.com/microsoft/iqsharp/issues/387 omezením dopadu na výkon při Q# spuštění jádra.
+
 ## <a name="version-0142011120240"></a>0.14.2011120240 verze
 
 *Datum vydání: 25. listopadu 2020*
