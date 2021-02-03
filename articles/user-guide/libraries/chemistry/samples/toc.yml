@@ -1,8 +1,0 @@
-- name: Získání odhadů energetické úrovně
-  href: molecular-hydrogen.md
-- name: Načtení hamiltoniánu ze souboru
-  href: loading-from-file.md
-- name: Získání počtů prostředků
-  href: resource-counts.md
-- name: Kompletní použití NWChem
-  href: end-to-end.md
