@@ -1,9 +1,0 @@
-- name: Instalace a ověření
-  href: installation.md
-- name: Koncepty kvantové chemie
-  href: concepts/toc.yml
-- name: Vyvolání chemické knihovny
-  topicHref: samples/index.md
-  href: samples/toc.yml
-- name: Schéma
-  href: schema/toc.yml
